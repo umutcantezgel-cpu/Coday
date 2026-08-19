@@ -2,7 +2,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import ClientComponent from '@/features/booking/ui/BookingClient';
-import { getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getOrganizationSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -55,7 +55,23 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@graph': [getOrganizationSchema(_locale), breadcrumbs],
+    '@graph': [
+      getOrganizationSchema(_locale),
+      breadcrumbs,
+      {
+        '@type': 'ContactPage',
+        '@id': `${BASE_URL}/${_locale}/booking#webpage`,
+        name: isEn
+          ? 'Book Free Web Design Consultation | Coday Wetzlar'
+          : 'Kostenloses Erstgespräch buchen | Coday Wetzlar',
+        url: `${BASE_URL}/${_locale}/booking`,
+        description: isEn
+          ? 'Book your free 30-minute consultation with Coday in Wetzlar.'
+          : 'Buchen Sie Ihr kostenloses 30-Minuten-Beratungsgespräch mit Coday in Wetzlar.',
+        isPartOf: { '@id': `${BASE_URL}/#website` },
+        about: { '@id': `${BASE_URL}/#organization` },
+      },
+    ],
   };
 
   return (

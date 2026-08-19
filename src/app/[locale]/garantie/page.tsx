@@ -55,7 +55,21 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@graph': [getOrganizationSchema(_locale), breadcrumbs],
+    '@graph': [
+      getOrganizationSchema(_locale),
+      breadcrumbs,
+      {
+        '@type': 'WebPage',
+        '@id': `${BASE_URL}/${_locale}/garantie#webpage`,
+        name: isEn ? 'Coday Web Design Quality Guarantee' : 'Coday Qualitätsgarantie für Webdesign',
+        url: `${BASE_URL}/${_locale}/garantie`,
+        description: isEn
+          ? 'Coday guarantees premium web design from Wetzlar: satisfaction, fixed price and on-time delivery.'
+          : 'Coday garantiert Ihnen Premium Webdesign aus Wetzlar: Zufriedenheit, Festpreis und termingerechte Lieferung.',
+        isPartOf: { '@id': `${BASE_URL}/#website` },
+        about: { '@id': `${BASE_URL}/#organization` },
+      },
+    ],
   };
 
   return (
