@@ -2,7 +2,12 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { DesignSystemsClient } from '@/features/services/ui/DesignSystemsClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
+import {
+  BASE_URL,
+  getOrganizationSchema,
+  getServiceSchema,
+  getBreadcrumbSchema,
+} from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -17,6 +22,12 @@ export async function generateMetadata({
       title: 'Design Systems Wetzlar | Consistent Components',
       description:
         'Consistent design systems and reusable components by Coday in Wetzlar. Scalable UI libraries for businesses in Hesse. Get in touch to get started.',
+      keywords: [
+        'Design Systems Wetzlar',
+        'UI Component Library Hesse',
+        'Scalable UI Architecture',
+        'Coday Design Systems',
+      ],
       path: '/en/services/design/design-systems',
       type: 'money',
     });
@@ -25,6 +36,12 @@ export async function generateMetadata({
     title: 'Design Systems Wetzlar | Konsistente Komponenten',
     description:
       'Konsistente Design Systeme und wiederverwendbare Komponenten von Coday in Wetzlar. Skalierbare UI-Bibliotheken für Unternehmen in Hessen. Anfragen.',
+    keywords: [
+      'Design Systems Wetzlar',
+      'UI Komponenten Bibliothek',
+      'Skalierbare Designarchitektur Hessen',
+      'Coday Design Systems',
+    ],
     path: '/de/services/design/design-systems',
     type: 'money',
   });
@@ -36,9 +53,10 @@ export default async function DesignSystemsPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  setRequestLocale(locale);
+  const _locale = locale || 'de';
+  setRequestLocale(_locale);
+  const isEn = _locale === 'en';
 
-  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
       ? 'Design Systems Wetzlar | Consistent Components | Coday'
@@ -47,23 +65,36 @@ export default async function DesignSystemsPage({
     _locale === 'en'
       ? 'Consistent design systems and reusable components by Coday in Wetzlar. Scalable UI libraries for businesses in Hesse. Get in touch to get started.'
       : 'Konsistente Design Systeme und wiederverwendbare Komponenten von Coday in Wetzlar. Skalierbare UI-Bibliotheken für Unternehmen in Hessen. Anfragen.';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: 'Services', url: `/${_locale}/services` },
+    {
+      name: isEn ? 'Design Systems' : 'Design Systeme',
+      url: `/${_locale}/services/design/design-systems`,
+    },
+  ]);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      getOrganizationSchema(_locale),
+      breadcrumbs,
+      getServiceSchema({
+        name: _seoTitle,
+        description: _seoDesc,
+        url: `${BASE_URL}/${_locale}/services/design/design-systems`,
+      }),
+    ],
+  };
+
   return (
     <>
       <script
         id="schema-design-systems"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@graph': [
-              getOrganizationSchema(_locale),
-              getServiceSchema({
-                name: _seoTitle,
-                description: _seoDesc,
-                url: `${BASE_URL}/${_locale}/services/design/design-systems`,
-              }),
-            ],
-          }),
+          __html: JSON.stringify(jsonLd),
         }}
       />
       <DesignSystemsClient />

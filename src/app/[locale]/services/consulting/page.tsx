@@ -2,7 +2,12 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { ConsultingClient } from '@/features/services/ui/ConsultingClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
+import {
+  BASE_URL,
+  getOrganizationSchema,
+  getServiceSchema,
+  getBreadcrumbSchema,
+} from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -17,6 +22,12 @@ export async function generateMetadata({
       title: 'Digital Consulting & Web Strategy | Wetzlar',
       description:
         'Strategic digital consulting by Coday in Wetzlar. We guide businesses in Central Hesse through their digital transformation. Book your appointment.',
+      keywords: [
+        'Digital Consulting Wetzlar',
+        'Web Strategy Central Hesse',
+        'Website Architecture Consulting',
+        'Coday Consulting',
+      ],
       path: '/en/services/consulting',
       type: 'money',
     });
@@ -25,6 +36,12 @@ export async function generateMetadata({
     title: 'Digitale Beratung & Webstrategie | Wetzlar',
     description:
       'Strategische Digitalberatung von Coday in Wetzlar. Wir begleiten Unternehmen in Mittelhessen bei der digitalen Transformation. Jetzt Termin buchen.',
+    keywords: [
+      'Digitalberatung Wetzlar',
+      'Webstrategie Mittelhessen',
+      'Website Konzeption Beratung',
+      'Coday Consulting',
+    ],
     path: '/de/services/consulting',
     type: 'money',
   });
@@ -32,9 +49,10 @@ export async function generateMetadata({
 
 export default async function ConsultingPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  setRequestLocale(locale);
+  const _locale = locale || 'de';
+  setRequestLocale(_locale);
+  const isEn = _locale === 'en';
 
-  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
       ? 'Digital Consulting & Web Strategy | Wetzlar | Coday'
@@ -43,23 +61,36 @@ export default async function ConsultingPage({ params }: { params: Promise<{ loc
     _locale === 'en'
       ? 'Strategic digital consulting by Coday in Wetzlar. We guide businesses in Central Hesse through their digital transformation. Book your appointment.'
       : 'Strategische Digitalberatung von Coday in Wetzlar. Wir begleiten Unternehmen in Mittelhessen bei der digitalen Transformation. Jetzt Termin buchen.';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: 'Services', url: `/${_locale}/services` },
+    {
+      name: isEn ? 'Digital Consulting' : 'Digitale Beratung',
+      url: `/${_locale}/services/consulting`,
+    },
+  ]);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      getOrganizationSchema(_locale),
+      breadcrumbs,
+      getServiceSchema({
+        name: _seoTitle,
+        description: _seoDesc,
+        url: `${BASE_URL}/${_locale}/services/consulting`,
+      }),
+    ],
+  };
+
   return (
     <>
       <script
         id="schema-consulting"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@graph': [
-              getOrganizationSchema(_locale),
-              getServiceSchema({
-                name: _seoTitle,
-                description: _seoDesc,
-                url: `${BASE_URL}/${_locale}/services/consulting`,
-              }),
-            ],
-          }),
+          __html: JSON.stringify(jsonLd),
         }}
       />
       <ConsultingClient />

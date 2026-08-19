@@ -2,7 +2,12 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { HeadlessCmsClient } from '@/features/services/ui/HeadlessCmsClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
+import {
+  BASE_URL,
+  getOrganizationSchema,
+  getServiceSchema,
+  getBreadcrumbSchema,
+} from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -17,6 +22,12 @@ export async function generateMetadata({
       title: 'Headless CMS Development Wetzlar | Flexible',
       description:
         'Modern headless CMS solutions by Coday in Wetzlar. Flexible content management with Sanity, Strapi or Contentful for your business in Hesse region.',
+      keywords: [
+        'Headless CMS Wetzlar',
+        'Sanity CMS Development Hesse',
+        'Next.js Headless CMS',
+        'Coday CMS Solutions',
+      ],
       path: '/en/services/development/headless-cms',
       type: 'money',
     });
@@ -25,6 +36,12 @@ export async function generateMetadata({
     title: 'Headless CMS Entwicklung Wetzlar | Flexibel',
     description:
       'Moderne Headless CMS Lösungen von Coday in Wetzlar. Flexible Content-Verwaltung mit Sanity, Strapi oder Contentful für Ihr Unternehmen in Hessen.',
+    keywords: [
+      'Headless CMS Entwicklung Wetzlar',
+      'Sanity CMS Agentur Hessen',
+      'Next.js Headless CMS',
+      'Coday CMS Lösungen',
+    ],
     path: '/de/services/development/headless-cms',
     type: 'money',
   });
@@ -32,9 +49,10 @@ export async function generateMetadata({
 
 export default async function HeadlessCmsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  setRequestLocale(locale);
+  const _locale = locale || 'de';
+  setRequestLocale(_locale);
+  const isEn = _locale === 'en';
 
-  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
       ? 'Headless CMS Development Wetzlar | Flexible | Coday'
@@ -43,24 +61,33 @@ export default async function HeadlessCmsPage({ params }: { params: Promise<{ lo
     _locale === 'en'
       ? 'Modern headless CMS solutions by Coday in Wetzlar. Flexible content management with Sanity, Strapi or Contentful for your business in Hesse region.'
       : 'Moderne Headless CMS Lösungen von Coday in Wetzlar. Flexible Content-Verwaltung mit Sanity, Strapi oder Contentful für Ihr Unternehmen in Hessen.';
-  const isEn = _locale === 'en';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: 'Services', url: `/${_locale}/services` },
+    { name: 'Headless CMS', url: `/${_locale}/services/development/headless-cms` },
+  ]);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      getOrganizationSchema(_locale),
+      breadcrumbs,
+      getServiceSchema({
+        name: _seoTitle,
+        description: _seoDesc,
+        url: `${BASE_URL}/${_locale}/services/development/headless-cms`,
+      }),
+    ],
+  };
+
   return (
     <>
       <script
         id="schema-headless-cms"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@graph': [
-              getOrganizationSchema(_locale),
-              getServiceSchema({
-                name: _seoTitle,
-                description: _seoDesc,
-                url: `${BASE_URL}/${_locale}/services/development/headless-cms`,
-              }),
-            ],
-          }),
+          __html: JSON.stringify(jsonLd),
         }}
       />
       <HeadlessCmsClient />

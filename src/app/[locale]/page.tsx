@@ -36,6 +36,15 @@ export async function generateMetadata({
       title: 'Web Design Wetzlar | Web Development Wetzlar | Coday Web',
       description:
         'Coday is your web design agency in Wetzlar and Central Hesse. Fast, modern websites at a fixed price with personal support. Get your free consultation.',
+      keywords: [
+        'Web Design Wetzlar',
+        'Web Development Wetzlar',
+        'Web Agency Hesse',
+        'Website Creation Wetzlar',
+        'Coday Web',
+        'Next.js Web Development',
+        'Local SEO Central Hesse',
+      ],
       path: '/en',
       type: 'money',
     });
@@ -44,6 +53,15 @@ export async function generateMetadata({
     title: 'Webdesign Wetzlar | Webentwicklung Wetzlar | Coday Web',
     description:
       'Coday ist Ihre Webdesign Agentur in Wetzlar und Mittelhessen. Schnelle, moderne Webseiten zum Festpreis mit persönlicher Betreuung. Jetzt beraten lassen.',
+    keywords: [
+      'Webdesign Wetzlar',
+      'Webentwicklung Wetzlar',
+      'Webagentur Wetzlar',
+      'Website erstellen Wetzlar',
+      'Coday Web',
+      'Next.js Webdesign',
+      'Lokale SEO Mittelhessen',
+    ],
     path: '/de',
     type: 'money',
   });

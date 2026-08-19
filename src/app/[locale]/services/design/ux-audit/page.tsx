@@ -2,7 +2,12 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { UxAuditClient } from '@/features/services/ui/UxAuditClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
+import {
+  BASE_URL,
+  getOrganizationSchema,
+  getServiceSchema,
+  getBreadcrumbSchema,
+} from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -17,6 +22,12 @@ export async function generateMetadata({
       title: 'UX Audit & Usability Review Wetzlar | Analysis',
       description:
         'Professional UX audit by Coday in Wetzlar. We analyze your website for usability and conversion potential. For businesses across Hesse. Get started.',
+      keywords: [
+        'UX Audit Wetzlar',
+        'Website Usability Check Hesse',
+        'Conversion Rate Optimization',
+        'Coday UX Audit',
+      ],
       path: '/en/services/design/ux-audit',
       type: 'money',
     });
@@ -25,6 +36,12 @@ export async function generateMetadata({
     title: 'UX Audit & Usability Check Wetzlar | Optimierung',
     description:
       'Professioneller UX Audit von Coday in Wetzlar. Wir analysieren Ihre Website auf Nutzerfreundlichkeit und Konversionspotenzial. Für Firmen in Hessen.',
+    keywords: [
+      'UX Audit Wetzlar',
+      'Usability Check Hessen',
+      'Conversion Rate Optimierung',
+      'Coday UX Audit',
+    ],
     path: '/de/services/design/ux-audit',
     type: 'money',
   });
@@ -32,9 +49,10 @@ export async function generateMetadata({
 
 export default async function UxAuditPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  setRequestLocale(locale);
+  const _locale = locale || 'de';
+  setRequestLocale(_locale);
+  const isEn = _locale === 'en';
 
-  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
       ? 'UX Audit & Usability Review Wetzlar | Analysis | Coday'
@@ -43,23 +61,33 @@ export default async function UxAuditPage({ params }: { params: Promise<{ locale
     _locale === 'en'
       ? 'Professional UX audit by Coday in Wetzlar. We analyze your website for usability and conversion potential. For businesses across Hesse. Get started.'
       : 'Professioneller UX Audit von Coday in Wetzlar. Wir analysieren Ihre Website auf Nutzerfreundlichkeit und Konversionspotenzial. Für Firmen in Hessen.';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: 'Services', url: `/${_locale}/services` },
+    { name: 'UX Audit', url: `/${_locale}/services/design/ux-audit` },
+  ]);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      getOrganizationSchema(_locale),
+      breadcrumbs,
+      getServiceSchema({
+        name: _seoTitle,
+        description: _seoDesc,
+        url: `${BASE_URL}/${_locale}/services/design/ux-audit`,
+      }),
+    ],
+  };
+
   return (
     <>
       <script
         id="schema-ux-audit"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@graph': [
-              getOrganizationSchema(_locale),
-              getServiceSchema({
-                name: _seoTitle,
-                description: _seoDesc,
-                url: `${BASE_URL}/${_locale}/services/design/ux-audit`,
-              }),
-            ],
-          }),
+          __html: JSON.stringify(jsonLd),
         }}
       />
       <UxAuditClient />

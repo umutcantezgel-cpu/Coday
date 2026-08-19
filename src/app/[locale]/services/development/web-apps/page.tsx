@@ -2,7 +2,12 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { WebAppsClient } from '@/features/services/ui/WebAppsClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
+import {
+  BASE_URL,
+  getOrganizationSchema,
+  getServiceSchema,
+  getBreadcrumbSchema,
+} from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -17,6 +22,12 @@ export async function generateMetadata({
       title: 'Web App Development Wetzlar | Portals & Tools',
       description:
         'Custom web app development and portals by Coday in Wetzlar. Tailored solutions for businesses in Central Hesse. Start your project with us today.',
+      keywords: [
+        'Web App Development Wetzlar',
+        'Custom Web Applications Hesse',
+        'React Next.js Web App',
+        'Coday Web Apps',
+      ],
       path: '/en/services/development/web-apps',
       type: 'money',
     });
@@ -25,6 +36,12 @@ export async function generateMetadata({
     title: 'Web-App Entwicklung Wetzlar | Portale & Tools',
     description:
       'Individuelle Web-App Entwicklung und Portale von Coday in Wetzlar. Maßgeschneiderte Lösungen für Unternehmen in Mittelhessen. Jetzt Projekt starten.',
+    keywords: [
+      'Web-App Entwicklung Wetzlar',
+      'Individuelle Webanwendungen Hessen',
+      'React Next.js Web Apps',
+      'Coday Web Apps',
+    ],
     path: '/de/services/development/web-apps',
     type: 'money',
   });
@@ -32,9 +49,10 @@ export async function generateMetadata({
 
 export default async function WebAppsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  setRequestLocale(locale);
+  const _locale = locale || 'de';
+  setRequestLocale(_locale);
+  const isEn = _locale === 'en';
 
-  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
       ? 'Web App Development Wetzlar | Portals & Tools | Coday'
@@ -43,24 +61,33 @@ export default async function WebAppsPage({ params }: { params: Promise<{ locale
     _locale === 'en'
       ? 'Custom web app development and portals by Coday in Wetzlar. Tailored solutions for businesses in Central Hesse. Start your project with us today.'
       : 'Individuelle Web-App Entwicklung und Portale von Coday in Wetzlar. Maßgeschneiderte Lösungen für Unternehmen in Mittelhessen. Jetzt Projekt starten.';
-  const isEn = _locale === 'en';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: 'Services', url: `/${_locale}/services` },
+    { name: isEn ? 'Web Apps' : 'Web-Apps', url: `/${_locale}/services/development/web-apps` },
+  ]);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      getOrganizationSchema(_locale),
+      breadcrumbs,
+      getServiceSchema({
+        name: _seoTitle,
+        description: _seoDesc,
+        url: `${BASE_URL}/${_locale}/services/development/web-apps`,
+      }),
+    ],
+  };
+
   return (
     <>
       <script
         id="schema-web-apps"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@graph': [
-              getOrganizationSchema(_locale),
-              getServiceSchema({
-                name: _seoTitle,
-                description: _seoDesc,
-                url: `${BASE_URL}/${_locale}/services/development/web-apps`,
-              }),
-            ],
-          }),
+          __html: JSON.stringify(jsonLd),
         }}
       />
       <WebAppsClient />

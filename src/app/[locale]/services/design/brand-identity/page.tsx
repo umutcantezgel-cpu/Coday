@@ -2,7 +2,12 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { BrandIdentityClient } from '@/features/services/ui/BrandIdentityClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
+import {
+  BASE_URL,
+  getOrganizationSchema,
+  getServiceSchema,
+  getBreadcrumbSchema,
+} from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -17,6 +22,12 @@ export async function generateMetadata({
       title: 'Corporate Design & Branding Agency | Wetzlar',
       description:
         'Strong brand identity and corporate design by Coday in Wetzlar. Logo, colors and typography for your business in Hesse. Start building your brand now.',
+      keywords: [
+        'Brand Identity Agency Wetzlar',
+        'Corporate Design Hesse',
+        'Logo Design Mittelhessen',
+        'Brand Strategy Coday',
+      ],
       path: '/en/services/design/brand-identity',
       type: 'money',
     });
@@ -25,6 +36,12 @@ export async function generateMetadata({
     title: 'Corporate Design & Branding Agentur | Wetzlar',
     description:
       'Starke Markenidentität und Corporate Design von Coday in Wetzlar. Logo, Farben und Typografie für Ihr Unternehmen in Hessen. Jetzt Marke gestalten.',
+    keywords: [
+      'Corporate Design Agentur Wetzlar',
+      'Branding Hessen',
+      'Logo Design Mittelhessen',
+      'Markenidentität Coday',
+    ],
     path: '/de/services/design/brand-identity',
     type: 'money',
   });
@@ -36,9 +53,10 @@ export default async function BrandIdentityPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  setRequestLocale(locale);
+  const _locale = locale || 'de';
+  setRequestLocale(_locale);
+  const isEn = _locale === 'en';
 
-  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
       ? 'Corporate Design & Branding Agency | Wetzlar | Coday'
@@ -47,23 +65,36 @@ export default async function BrandIdentityPage({
     _locale === 'en'
       ? 'Strong brand identity and corporate design by Coday in Wetzlar. Logo, colors and typography for your business in Hesse. Start building your brand now.'
       : 'Starke Markenidentität und Corporate Design von Coday in Wetzlar. Logo, Farben und Typografie für Ihr Unternehmen in Hessen. Jetzt Marke gestalten.';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: 'Services', url: `/${_locale}/services` },
+    {
+      name: isEn ? 'Brand Identity' : 'Corporate Design',
+      url: `/${_locale}/services/design/brand-identity`,
+    },
+  ]);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      getOrganizationSchema(_locale),
+      breadcrumbs,
+      getServiceSchema({
+        name: _seoTitle,
+        description: _seoDesc,
+        url: `${BASE_URL}/${_locale}/services/design/brand-identity`,
+      }),
+    ],
+  };
+
   return (
     <>
       <script
         id="schema-brand-identity"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@graph': [
-              getOrganizationSchema(_locale),
-              getServiceSchema({
-                name: _seoTitle,
-                description: _seoDesc,
-                url: `${BASE_URL}/${_locale}/services/design/brand-identity`,
-              }),
-            ],
-          }),
+          __html: JSON.stringify(jsonLd),
         }}
       />
       <BrandIdentityClient />

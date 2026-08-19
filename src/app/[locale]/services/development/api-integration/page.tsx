@@ -2,7 +2,12 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { ApiIntegrationClient } from '@/features/services/ui/ApiIntegrationClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
+import {
+  BASE_URL,
+  getOrganizationSchema,
+  getServiceSchema,
+  getBreadcrumbSchema,
+} from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -17,6 +22,12 @@ export async function generateMetadata({
       title: 'API Integration & Interfaces | Wetzlar Hesse',
       description:
         'Seamless API integrations and interface development by Coday in Wetzlar. We connect your systems reliably and efficiently. For businesses in Hesse.',
+      keywords: [
+        'API Integration Wetzlar',
+        'Custom Interface Development Hesse',
+        'REST GraphQL API Integration',
+        'Coday API Development',
+      ],
       path: '/en/services/development/api-integration',
       type: 'money',
     });
@@ -25,6 +36,12 @@ export async function generateMetadata({
     title: 'API Integration & Schnittstellen | Wetzlar',
     description:
       'Nahtlose API Integrationen und Schnittstellenentwicklung von Coday in Wetzlar. Wir verbinden Ihre Systeme zuverlässig und effizient. Für Firmen in Hessen.',
+    keywords: [
+      'API Integration Wetzlar',
+      'Schnittstellenentwicklung Hessen',
+      'REST GraphQL Integration',
+      'Coday API Entwicklung',
+    ],
     path: '/de/services/development/api-integration',
     type: 'money',
   });
@@ -36,9 +53,10 @@ export default async function ApiIntegrationPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  setRequestLocale(locale);
+  const _locale = locale || 'de';
+  setRequestLocale(_locale);
+  const isEn = _locale === 'en';
 
-  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
       ? 'API Integration & Interfaces | Wetzlar Hesse | Coday'
@@ -47,24 +65,36 @@ export default async function ApiIntegrationPage({
     _locale === 'en'
       ? 'Seamless API integrations and interface development by Coday in Wetzlar. We connect your systems reliably and efficiently. For businesses in Hesse.'
       : 'Nahtlose API Integrationen und Schnittstellenentwicklung von Coday in Wetzlar. Wir verbinden Ihre Systeme zuverlässig und effizient. Für Firmen in Hessen.';
-  const isEn = _locale === 'en';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: 'Services', url: `/${_locale}/services` },
+    {
+      name: isEn ? 'API Integration' : 'API Integration',
+      url: `/${_locale}/services/development/api-integration`,
+    },
+  ]);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      getOrganizationSchema(_locale),
+      breadcrumbs,
+      getServiceSchema({
+        name: _seoTitle,
+        description: _seoDesc,
+        url: `${BASE_URL}/${_locale}/services/development/api-integration`,
+      }),
+    ],
+  };
+
   return (
     <>
       <script
         id="schema-api-integration"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@graph': [
-              getOrganizationSchema(_locale),
-              getServiceSchema({
-                name: _seoTitle,
-                description: _seoDesc,
-                url: `${BASE_URL}/${_locale}/services/development/api-integration`,
-              }),
-            ],
-          }),
+          __html: JSON.stringify(jsonLd),
         }}
       />
       <ApiIntegrationClient />
