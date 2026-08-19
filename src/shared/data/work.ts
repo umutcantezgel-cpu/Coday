@@ -127,7 +127,9 @@ export const workData: Record<string, Project> = {
           title: 'Die Plattform',
           description:
             'Eine Next.js Applikation, die sich so flüssig anfühlt wie eine native App. Mit integriertem Terminkalender, Bad-Rechner und automatisierten Email-Flows. Wir haben ein hochmodernes, ansprechendes Webdesign entwickelt, das nicht nur ästhetisch überzeugt, sondern auch auf Conversion-Optimierung ausgelegt ist. Die Performance-Optimierung durch Headless-Architektur garantiert dabei blitzschnelle Ladezeiten, was sich signifikant auf das SEO-Ranking auswirkt.',
-          images: ['/images/portfolio/mockup-batherm.png'],
+          images: [
+            '/images/portfolio/mockup-website-sanitaer-heizung-mueller-handwerker-24h-notdienst-responsive.webp',
+          ],
           imageAlts: [
             'Webdesign Wetzlar – Premium Handwerker Website für Sanitär & Heizung Batherm',
           ],
@@ -149,31 +151,31 @@ export const workData: Record<string, Project> = {
       },
       en: {
         title: 'Batherm - Craftsmen Website Agency',
-        subtitle: 'Digitization in the Crafts Sector',
+        subtitle: 'Digital Transformation in Trade',
         category: 'Web Development & Lead Gen',
         stats: [
-          { label: 'Industry', value: 'Plumbing & Heating' },
+          { label: 'Industry', value: 'HVAC & Plumbing' },
           { label: 'Tech Stack', value: 'Next.js, Tailwind' },
-          { label: 'Duration', value: '6 Weeks' },
+          { label: 'Timeline', value: '6 Weeks' },
         ],
         challenge: {
           title: 'The Problem',
           description:
-            'A traditional business with an excellent reputation, but invisible to the digital generation. The old website was a digital card without function. No leads, no pre-qualification.',
+            'A traditional business with an excellent reputation, but invisible to the digital generation. The old website was a digital business card without function. No leads, no pre-qualification.',
           list: [
-            'Outdated image deterring young skilled workers',
-            'High manual effort in appointment booking',
-            'No automated qualification of incoming requests',
+            'Outdated image deterring young talent',
+            'High manual effort in appointment scheduling',
+            'No automated filtering of low-budget clients',
           ],
           quote: {
-            text: 'We were top tier craftspeople, but digitally invisible. Coday changed that completely.',
+            text: 'We were top-tier craftsmen, but digitally in the minor leagues. Coday changed that.',
             author: 'Managing Director, Batherm GmbH',
           },
         },
         approach: {
-          title: 'Our Gameplan',
+          title: 'Our Game Plan',
           description:
-            'Not just a "redesign", but a strategic repositioning. We presented Batherm as a premium service provider.',
+            'Not just a redesign, but a repositioning. We presented Batherm not just as craftsmen, but as a premium service provider.',
           steps: [
             {
               title: 'Brand Audit',
@@ -195,7 +197,9 @@ export const workData: Record<string, Project> = {
           title: 'The Platform',
           description:
             'A modern Next.js application that feels as smooth as a native app. With integrated calendar, bathroom calculator, and automated email flows.',
-          images: ['/images/portfolio/mockup-batherm.png'],
+          images: [
+            '/images/portfolio/mockup-website-sanitaer-heizung-mueller-handwerker-24h-notdienst-responsive.webp',
+          ],
           imageAlts: ['Web Design Wetzlar – Premium Craftsmen Website for HVAC Batherm'],
         },
         results: {
@@ -275,7 +279,9 @@ export const workData: Record<string, Project> = {
           title: 'Die Plattform',
           description:
             'Eine maßgeschneiderte Next.js 15 Web-Applikation mit interaktiver Materialauswahl, Projektgalerien mit flüssigen 60fps-Animationen und vollautomatisierter Lead-Zuweisung.',
-          images: ['/images/portfolio/memobaut/terrace.jpg'],
+          images: [
+            '/images/portfolio/mockup-website-immobilienagentur-real-estate-listings-preise-berlin.webp',
+          ],
           imageAlts: [
             'Webdesign Wetzlar – Exklusive Garten- und Terrassenarchitektur für MemoBau Wetzlar',
           ],
@@ -343,7 +349,9 @@ export const workData: Record<string, Project> = {
           title: 'The Platform',
           description:
             'A bespoke Next.js 15 web application with interactive material selections, smooth 60fps galleries, and automated lead capture.',
-          images: ['/images/portfolio/memobaut/terrace.jpg'],
+          images: [
+            '/images/portfolio/mockup-website-immobilienagentur-real-estate-listings-preise-berlin.webp',
+          ],
           imageAlts: [
             'Web Design Wetzlar – Exclusive patio and garden architecture for MemoBau Wetzlar',
           ],
@@ -550,7 +558,9 @@ export const workData: Record<string, Project> = {
           title: 'Die Lösung',
           description:
             'Eine blitzschnelle Next.js-Applikation mit Fokus auf mobile Notfallkunden. Click-to-Call-Buttons, Echtzeit-Verfügbarkeitsanzeige und ein Trust-Marquee mit Zertifizierungen. Jede Unterseite ist für einen spezifischen Stadtteil optimiert.',
-          images: ['/images/portfolio/mockup-schluesseldienst.png'],
+          images: [
+            '/images/services/mockup-website-b2b-loesungen-responsive-laptop-smartphone-prozessoptimierung.webp',
+          ],
           imageAlts: [
             'Webdesign Wetzlar – 24h Schlüsselnotdienst responsive Desktop & Mobile Website für Schlüssel Schmiede Wetzlar',
           ],
@@ -619,7 +629,9 @@ export const workData: Record<string, Project> = {
           title: 'The Solution',
           description:
             'A blazing-fast Next.js application focused on mobile emergency customers. Click-to-Call buttons, real-time availability indicators, and a trust marquee with certifications. Every subpage is optimized for a specific district.',
-          images: ['/images/portfolio/mockup-schluesseldienst.png'],
+          images: [
+            '/images/services/mockup-website-b2b-loesungen-responsive-laptop-smartphone-prozessoptimierung.webp',
+          ],
           imageAlts: [
             'Web Design Wetzlar – 24h Locksmith responsive Desktop and Mobile Website for Schlüssel Schmiede Wetzlar',
           ],
@@ -697,7 +709,9 @@ export const workData: Record<string, Project> = {
           title: 'Das Ergebnis',
           description:
             'Eine einladende, blitzschnelle Website, die die Persönlichkeit des Gasthauses perfekt widerspiegelt. Mit integrierter Speisekarte, Google Maps-Anbindung und direkter Kontaktmöglichkeit.',
-          images: ['/images/portfolio/mockup-ratsstuben.png'],
+          images: [
+            '/images/portfolio/mockup-website-restaurant-speisekarte-vorspeisen-hauptgerichte-desserts-responsive.webp',
+          ],
           imageAlts: [
             'Webdesign Wetzlar – Moderne Restaurant & Gasthaus Website für Lindener Ratsstuben',
           ],
@@ -761,7 +775,9 @@ export const workData: Record<string, Project> = {
           title: 'The Result',
           description:
             'An inviting, blazing-fast website that perfectly reflects the personality of the inn. With integrated menu, Google Maps integration, and direct contact options.',
-          images: ['/images/portfolio/mockup-ratsstuben.png'],
+          images: [
+            '/images/portfolio/mockup-website-restaurant-speisekarte-vorspeisen-hauptgerichte-desserts-responsive.webp',
+          ],
           imageAlts: [
             'Web Design Wetzlar – Modern Restaurant and Inn Website for Lindener Ratsstuben',
           ],

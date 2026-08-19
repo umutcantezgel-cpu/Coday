@@ -4,6 +4,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import ClientComponent from '@/features/work/ui/ProjectDetailClient';
 import { workData } from '@/shared/data/work';
+import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
 import { notFound } from 'next/navigation';
 
 export const dynamicParams = false;
@@ -53,13 +54,37 @@ export default async function Page(props: { params: Promise<{ locale: string; sl
 
   const project = workData[params.slug];
   const content = params.locale === 'en' ? project.content.en : project.content.de;
+  const _locale = params.locale || 'de';
 
-  const _locale = (await params)?.locale || 'de';
-  const _seoTitle = _locale === 'en' ? 'Coday Web-Agentur' : 'Coday Web-Agentur';
-  const _seoDesc =
-    _locale === 'en' ? 'Premium Webentwicklung & Design' : 'Premium Webentwicklung & Design';
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      getOrganizationSchema(_locale),
+      {
+        '@type': 'CreativeWork',
+        '@id': `${BASE_URL}/${_locale}/work/${params.slug}#case-study`,
+        name: content.title,
+        headline: content.subtitle,
+        url: `${BASE_URL}/${_locale}/work/${params.slug}`,
+        description: content.challenge.description,
+        creator: {
+          '@id': `${BASE_URL}/#organization`,
+        },
+        about: {
+          '@type': 'Service',
+          name: content.category,
+        },
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        id="schema-case-study"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <SeoHead
         title={`${content.title} – Case Study | Coday`}
         description={`${content.title}: ${content.subtitle}. ${content.challenge.description}`}

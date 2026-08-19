@@ -25,9 +25,9 @@ export const aiReviewAggregates: ReviewAggregate[] = [
   {
     slug: 'google',
     platformName: 'Google Business',
-    sourceUrl: 'https://google.com/search?q=coday',
-    aggregateScore: 4.8,
-    totalReviews: 41,
+    sourceUrl: 'https://maps.app.goo.gl/9SagecgXw7Vf5csH7',
+    aggregateScore: 5.0,
+    totalReviews: 4,
     lastSynced: '2026-05-14T23:15:16.055Z',
     topReviews: [
       {
@@ -65,8 +65,8 @@ export const aiReviewAggregates: ReviewAggregate[] = [
   {
     slug: 'provenexpert',
     platformName: 'ProvenExpert',
-    sourceUrl: 'https://www.provenexpert.com/coday/',
-    aggregateScore: 4.9,
+    sourceUrl: 'https://www.provenexpert.com/de-de/coday-webagentur/',
+    aggregateScore: 5.0,
     totalReviews: 38,
     lastSynced: '2026-05-14T23:15:16.055Z',
     topReviews: [

@@ -277,6 +277,40 @@ export default async function Packages() {
               <span>{isEn ? 'Request Free Audit' : 'Kostenlose Beratung anfordern'}</span>
             </NavLink>
           </div>
+
+          {/* Dual Verified Reviews Badges: Google Maps & ProvenExpert */}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+            <a
+              href="https://maps.app.goo.gl/9SagecgXw7Vf5csH7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm text-slate-700 text-xs sm:text-sm font-medium hover:border-amber-400 hover:shadow-md transition-all group"
+              title="Google Maps Rezensionen für Coday ansehen"
+            >
+              <span className="font-bold text-slate-900">5,0 / 5,0</span>
+              <span className="text-amber-500 tracking-wider">★★★★★</span>
+              <span className="text-slate-300">|</span>
+              <span className="font-semibold text-slate-800 group-hover:text-amber-700 transition-colors">
+                Google Maps (Verifiziert)
+              </span>
+            </a>
+
+            <a
+              href="https://www.provenexpert.com/de-de/coday-webagentur/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm text-slate-700 text-xs sm:text-sm font-medium hover:border-emerald-500 hover:shadow-md transition-all group"
+              title="ProvenExpert Profil von Coday ansehen"
+            >
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="font-bold text-slate-900">5,0 / 5,0</span>
+              <span className="text-amber-500 tracking-wider">★★★★★</span>
+              <span className="text-slate-300">|</span>
+              <span className="font-semibold text-slate-800 group-hover:text-emerald-700 transition-colors">
+                ProvenExpert (100% Empfehlung)
+              </span>
+            </a>
+          </div>
         </div>
       </section>
 

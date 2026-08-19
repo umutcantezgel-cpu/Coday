@@ -75,17 +75,6 @@ export default async function RootLayout({
   setRequestLocale(locale);
 
   const messages = await getMessages();
-  const layoutMessages = pick(messages as any, [
-    'common',
-    'nav',
-    'footer',
-    'logobar',
-    'cookie',
-    'form',
-    'contact',
-    'legal',
-    'social',
-  ]);
 
   return (
     <html lang={locale} className={`${inter.variable} ${outfit.variable}`} suppressHydrationWarning>
@@ -109,7 +98,7 @@ export default async function RootLayout({
         className="bg-[#fafafa] text-slate-900 antialiased font-sans selection:bg-amber-500/20 selection:text-amber-900"
         suppressHydrationWarning
       >
-        <NextIntlClientProvider messages={layoutMessages} locale={locale}>
+        <NextIntlClientProvider messages={messages} locale={locale}>
           <MotionProvider>
             <div className="flex flex-col min-h-screen">
               <MainLayout>{children}</MainLayout>

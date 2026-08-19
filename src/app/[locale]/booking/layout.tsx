@@ -14,17 +14,6 @@ export default async function BookingLayout({
   const { locale } = await params;
   setRequestLocale(locale);
   const messages = await getMessages();
-  const pageMessages = pick(messages as any, [
-    'booking',
-    'common',
-    'faq',
-    'form',
-    'cookie',
-    'blog',
-    'industries',
-    'career',
-    'public-sector',
-  ]);
 
-  return <NextIntlClientProvider messages={pageMessages}>{children}</NextIntlClientProvider>;
+  return <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>;
 }

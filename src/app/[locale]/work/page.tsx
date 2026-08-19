@@ -16,6 +16,7 @@ import {
 } from '@phosphor-icons/react/dist/ssr';
 import GradientText from '@/shared/ui/GradientText';
 import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
+import { TrustBadges } from '@/shared/ui/TrustBadges';
 import { setRequestLocale } from 'next-intl/server';
 
 export const dynamic = 'force-static';
@@ -140,6 +141,40 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                 <ShieldCheck className="w-4 h-4 text-amber-600" />
                 <span>100% DSGVO & Eigentum</span>
               </div>
+            </div>
+
+            {/* Dual Verified Reviews Badges: Google Maps & ProvenExpert */}
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+              <a
+                href="https://maps.app.goo.gl/9SagecgXw7Vf5csH7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm text-slate-700 text-xs sm:text-sm font-medium hover:border-amber-400 hover:shadow-md transition-all group"
+                title="Google Maps Rezensionen für Coday ansehen"
+              >
+                <span className="font-bold text-slate-900">5,0 / 5,0</span>
+                <span className="text-amber-500 tracking-wider">★★★★★</span>
+                <span className="text-slate-300">|</span>
+                <span className="font-semibold text-slate-800 group-hover:text-amber-700 transition-colors">
+                  Google Maps (Verifiziert)
+                </span>
+              </a>
+
+              <a
+                href="https://www.provenexpert.com/de-de/coday-webagentur/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm text-slate-700 text-xs sm:text-sm font-medium hover:border-emerald-500 hover:shadow-md transition-all group"
+                title="ProvenExpert Profil von Coday ansehen"
+              >
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="font-bold text-slate-900">5,0 / 5,0</span>
+                <span className="text-amber-500 tracking-wider">★★★★★</span>
+                <span className="text-slate-300">|</span>
+                <span className="font-semibold text-slate-800 group-hover:text-emerald-700 transition-colors">
+                  ProvenExpert (100% Empfehlung)
+                </span>
+              </a>
             </div>
           </div>
         </section>
@@ -270,6 +305,11 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
               </p>
             </div>
           </div>
+        </section>
+
+        {/* Trust Badges Bar */}
+        <section className="px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto pb-16">
+          <TrustBadges align="center" />
         </section>
 
         {/* Final CTA */}

@@ -35,9 +35,40 @@ export const HeroSection: React.FC = () => {
             </GradientText>
           </h1>
 
-          <p className="max-w-2xl text-base sm:text-lg md:text-xl font-light text-text-secondary leading-relaxed mb-8">
+          <p className="max-w-2xl text-base sm:text-lg md:text-xl font-light text-text-secondary leading-relaxed mb-6">
             {t('hero.description')}
           </p>
+
+          {/* Dual Verified Review Authority Links */}
+          <div className="flex flex-wrap items-center gap-3 mb-6">
+            <a
+              href="https://maps.app.goo.gl/9SagecgXw7Vf5csH7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200 shadow-sm text-xs font-semibold text-slate-800 hover:border-amber-400 hover:shadow transition-all group"
+              title="Google Maps Rezensionen für Coday ansehen"
+            >
+              <span className="text-amber-500">★★★★★</span>
+              <span className="font-bold">5.0</span>
+              <span className="text-slate-400">·</span>
+              <span className="group-hover:text-amber-700 transition-colors">Google Maps</span>
+            </a>
+            <a
+              href="https://www.provenexpert.com/de-de/coday-webagentur/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200 shadow-sm text-xs font-semibold text-slate-800 hover:border-emerald-500 hover:shadow transition-all group"
+              title="ProvenExpert Profil von Coday ansehen"
+            >
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span className="text-amber-500">★★★★★</span>
+              <span className="font-bold">5.0</span>
+              <span className="text-slate-400">·</span>
+              <span className="group-hover:text-emerald-700 transition-colors">
+                ProvenExpert (100%)
+              </span>
+            </a>
+          </div>
 
           <div className="min-h-[60px] w-full flex items-center justify-start mb-4 lg:mb-0">
             <span className="hidden md:inline-flex w-full justify-start">

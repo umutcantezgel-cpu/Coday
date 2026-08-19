@@ -40,16 +40,6 @@ export default async function AnalyzerPage(props: { params: Promise<{ locale: st
   });
 
   const messages = await getMessages();
-  const pageMessages = pick(messages as any, [
-    'analyzer',
-    'common',
-    'faq',
-    'form',
-    'cookie',
-    'blog',
-    'industries',
-    'career',
-  ]);
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -67,7 +57,7 @@ export default async function AnalyzerPage(props: { params: Promise<{ locale: st
 
   const _locale = typeof params !== 'undefined' && params ? params.locale : 'de';
   return (
-    <NextIntlClientProvider messages={pageMessages}>
+    <NextIntlClientProvider messages={messages}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

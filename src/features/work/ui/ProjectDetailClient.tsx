@@ -262,6 +262,51 @@ const ProjectDetail: React.FC = () => {
                   </NavLink>
                 </div>
               </div>
+
+              {/* Verified Trust & Reviews Card */}
+              <div className="mt-8 pt-6 border-t border-gray-100">
+                <h3 className="font-display font-bold text-xs text-gray-900 mb-3 uppercase tracking-wider">
+                  {currentLang === 'en' ? 'Verified Client Ratings' : 'Verifizierte Bewertungen'}
+                </h3>
+                <div className="space-y-2.5">
+                  <a
+                    href="https://www.provenexpert.com/de-de/coday-webagentur/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-emerald-500/50 hover:bg-emerald-50/30 transition-all group"
+                    title="ProvenExpert Profil von Coday"
+                  >
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                      <span className="font-bold text-xs text-slate-900 group-hover:text-emerald-700 transition-colors">
+                        ProvenExpert
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <span className="text-amber-500 text-xs">★★★★★</span>
+                      <span className="text-xs font-bold text-slate-800">5.0</span>
+                    </div>
+                  </a>
+                  <a
+                    href="https://maps.app.goo.gl/9SagecgXw7Vf5csH7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-blue-500/50 hover:bg-blue-50/30 transition-all group"
+                    title="Google Maps Rezensionen für Coday"
+                  >
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+                      <span className="font-bold text-xs text-slate-900 group-hover:text-blue-700 transition-colors">
+                        Google Maps
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <span className="text-amber-500 text-xs">★★★★★</span>
+                      <span className="text-xs font-bold text-slate-800">5.0</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 

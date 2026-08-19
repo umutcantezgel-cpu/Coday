@@ -14,18 +14,6 @@ export default async function CareerLayout({
   const { locale } = await params;
   setRequestLocale(locale);
   const messages = await getMessages();
-  const pageMessages = pick(messages as any, [
-    'careers',
-    'common',
-    'faq',
-    'form',
-    'cookie',
-    'blog',
-    'industries',
-    'career',
-    'booking',
-    'public-sector',
-  ]);
 
-  return <NextIntlClientProvider messages={pageMessages}>{children}</NextIntlClientProvider>;
+  return <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>;
 }

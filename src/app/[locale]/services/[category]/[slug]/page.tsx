@@ -68,7 +68,6 @@ export default async function ServiceDetailPage({
 
   const _locale = (await params)?.locale || 'de';
   const messages = await getMessages();
-  const pageMessages = pick(messages as any, ['services', 'common']);
 
   return (
     <>
@@ -89,7 +88,7 @@ export default async function ServiceDetailPage({
           }),
         }}
       />
-      <NextIntlClientProvider messages={pageMessages}>
+      <NextIntlClientProvider messages={messages}>
         <ServiceDetailClient />
       </NextIntlClientProvider>
     </>

@@ -14,18 +14,6 @@ export default async function ContactLayout({
   const { locale } = await params;
   setRequestLocale(locale);
   const messages = await getMessages();
-  const pageMessages = pick(messages as any, [
-    'contact',
-    'form',
-    'common',
-    'faq',
-    'cookie',
-    'blog',
-    'industries',
-    'career',
-    'booking',
-    'public-sector',
-  ]);
 
-  return <NextIntlClientProvider messages={pageMessages}>{children}</NextIntlClientProvider>;
+  return <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>;
 }

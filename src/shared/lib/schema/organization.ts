@@ -65,7 +65,7 @@ export function getUmutSchema(): Person {
     '@id': UMUT_ID,
     name: 'Umutcan Tezgel',
     url: 'https://www.codayweb.de/de/about',
-    jobTitle: 'Founder & Full-Stack Developer',
+    jobTitle: 'Founder & Web Developer',
     sameAs: [
       'https://www.linkedin.com/in/umutcan-tezgel',
       'https://www.facebook.com/profile.php?id=61588758264018',

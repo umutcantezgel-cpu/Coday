@@ -14,18 +14,6 @@ export default async function KnowledgeLayout({
   const { locale } = await params;
   setRequestLocale(locale);
   const messages = await getMessages();
-  const pageMessages = pick(messages as any, [
-    'knowledge',
-    'blog',
-    'faq',
-    'common',
-    'form',
-    'cookie',
-    'industries',
-    'career',
-    'booking',
-    'public-sector',
-  ]);
 
-  return <NextIntlClientProvider messages={pageMessages}>{children}</NextIntlClientProvider>;
+  return <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>;
 }

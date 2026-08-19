@@ -43,9 +43,12 @@ export function getOrganizationSchema(locale: string = 'de') {
     image: `${BASE_URL}/images/og-image.jpg`,
     description:
       locale === 'en'
-        ? 'Premium Web Design & Generative Engine Optimization (GEO) for SMEs and craftsmen in Wetzlar, Giessen, and Hesse.'
-        : 'Premium Webdesign & Generative Engine Optimization (GEO) für KMUs und Handwerker in Wetzlar, Gießen und Hessen.',
-    slogan: locale === 'en' ? 'The Anti-Agency from Wetzlar.' : 'Die Anti-Agentur aus Wetzlar.',
+        ? 'Premium Web Design, high-conversion websites, and 100/100 PageSpeed SEO for businesses, craftsmen, and SMEs to acquire new customers and maximize digital presence in Wetzlar, Giessen, Hesse, and nationwide.'
+        : 'Premium Webdesign, verkaufsstarke Websites und 100/100 PageSpeed SEO für Unternehmen, Handwerker und den Mittelstand zur Neukundengewinnung und maximalen Webpräsenz in Wetzlar, Gießen, Hessen und deutschlandweit.',
+    slogan:
+      locale === 'en'
+        ? 'High-conversion websites and maximum digital attention.'
+        : 'Verkaufsstarke Webseiten für maximale Kunden-Aufmerksamkeit.',
     email: 'kontakt@codayweb.de',
     telephone: '+49-176-41195301',
     vatID: 'DE459754827',
@@ -73,7 +76,7 @@ export function getOrganizationSchema(locale: string = 'de') {
       name: 'Umutcan Emre Tezgel',
       givenName: 'Umutcan Emre',
       familyName: 'Tezgel',
-      jobTitle: 'Gründer & Full-Stack Developer',
+      jobTitle: 'Gründer & Web-Entwickler',
       worksFor: { '@id': ORG_ID },
       sameAs: [
         'https://www.linkedin.com/in/umutcan-emre-tezgel-156382218/',
@@ -84,22 +87,17 @@ export function getOrganizationSchema(locale: string = 'de') {
     knowsAbout: [
       'Webdesign',
       'Webentwicklung',
-      'Website Relaunch',
-      'Responsive Webdesign',
-      'Next.js',
-      'React',
-      'TypeScript',
-      'Tailwind CSS',
-      'Framer Motion',
-      'Headless CMS',
-      'Sanity',
-      'Supabase',
-      'Search Engine Optimization',
-      'Core Web Vitals',
-      'Generative Engine Optimization',
-      'Performance Optimization',
+      'High-Conversion Webseiten',
+      'Neukundengewinnung über Webseiten',
+      'Suchmaschinenoptimierung (SEO)',
+      'Lokale SEO (Local SEO)',
+      'Google PageSpeed 100/100',
+      'Ladezeitoptimierung & Core Web Vitals',
+      'Domain-Rating & Backlink-Aufbau',
+      'Webseiten für Handwerker & KMU',
+      'Next.js Webentwicklung',
+      'Responsive Design',
       'UI/UX Design',
-      'Premium Webentwicklung',
     ],
     knowsLanguage: ['de', 'en'],
     address: {

@@ -14,17 +14,6 @@ export default async function IndustriesLayout({
   const { locale } = await params;
   setRequestLocale(locale);
   const messages = await getMessages();
-  const pageMessages = pick(messages as any, [
-    'industries',
-    'public-sector',
-    'common',
-    'faq',
-    'form',
-    'cookie',
-    'blog',
-    'career',
-    'booking',
-  ]);
 
-  return <NextIntlClientProvider messages={pageMessages}>{children}</NextIntlClientProvider>;
+  return <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>;
 }

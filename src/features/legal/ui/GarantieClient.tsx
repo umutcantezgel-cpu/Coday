@@ -13,6 +13,7 @@ import {
   RocketLaunch,
   TrendUp,
 } from '@phosphor-icons/react/dist/ssr';
+import { TrustBadges } from '@/shared/ui/TrustBadges';
 
 const Garantie: React.FC = () => {
   const locale = useLocale();
@@ -209,6 +210,10 @@ const Garantie: React.FC = () => {
                 : 'Sollte es trotz unserer hohen Qualitätsstandards jemals zu einem Garantiefall kommen, gehen wir offen damit um. Wir dokumentieren den Fehler transparent in unserem Blog – denn durch ehrliche Fehlerkultur und kontinuierliche Verbesserung wächst echtes Vertrauen.'}
             </p>
           </m.div>
+
+          <div className="mt-16 pt-12 border-t border-gray-200">
+            <TrustBadges align="center" />
+          </div>
         </div>
       </div>
     </div>
