@@ -49,9 +49,9 @@
   },
   "philosophy": {
     "history": "Are History.",
-    "standard": "Coday is the new Standard.",
-    "text_overhead": "Traditional agencies charge you for endless overhead, countless meetings, and outdated processes. The classic agency model wastes your valuable time and budget.",
-    "text_standard": "Coday is the antithesis: We combine strategic design with uncompromisingly fast, custom code. No templates. No excuses. Only one goal: your measurable growth.",
+    "standard": "Coday Web is the new standard for web design in Wetzlar.",
+    "text_overhead": "Traditional agencies charge you for endless overhead, countless meetings, and outdated WordPress builders. The classic agency model wastes your valuable time and budget.",
+    "text_standard": "Coday Web is the antithesis: We combine strategic web design with uncompromisingly fast Next.js code. No page builders, no excuses — just 100/100 PageSpeed and measurable new clients for your business in Wetzlar.",
     "traditional": "Traditional Agencies"
   },
   "stats": {
@@ -71,10 +71,10 @@
   },
   "testimonials": {
     "excellence": "Real results, real clients.",
-    "rating": "5.0 Stars on ProvenExpert",
-    "text": "From craft businesses to medical practices: I build websites that measurably bring in more clients.",
-    "title_prefix": "Clients who",
-    "title_suffix": "Trust Us.",
+    "rating": "5.0 Stars on Google Maps & ProvenExpert",
+    "text": "Craftsmen, medical practices, and businesses in Wetzlar and Central Hesse trust Coday Web for more clients and top Google rankings.",
+    "title_prefix": "Clients trust",
+    "title_suffix": "Coday Web Design Wetzlar.",
     "items": [
       {
         "quote": "Coday elevated our digital presence to a completely new level. The new website is not only extremely fast, but perfectly reflects the quality of our work.",
@@ -132,21 +132,21 @@
     }
   },
   "services": {
-    "label": "Our Services",
-    "title_prefix": "We offer",
-    "title_suffix": "professional web services.",
+    "label": "Web Design & Web Services",
+    "title_prefix": "Coday Web:",
+    "title_suffix": "Web Design & Web Services in Wetzlar.",
     "items": {
       "web_dev": {
-        "title": "Web Development",
-        "description": "Fast, modern websites and web applications, built with React and Next.js."
+        "title": "Web Development & Next.js",
+        "description": "Coday Web builds lightning-fast, custom websites and web applications with Next.js and React for maximum performance and conversion in Wetzlar."
       },
       "web_design": {
-        "title": "Web & UX/UI Design",
-        "description": "Conversion-optimized, user-centric designs that turn visitors into clients."
+        "title": "Web Design & UX/UI",
+        "description": "High-conversion web design in Wetzlar: Conversion-optimized, user-centric designs that systematically turn visitors into clients."
       },
       "growth": {
-        "title": "Local SEO",
-        "description": "Data-driven SEO strategies so you get found in Wetzlar and the surrounding area."
+        "title": "Local SEO Wetzlar",
+        "description": "Data-driven SEO strategies for Wetzlar and Central Hesse: We rank your website on Google #1 for maximum local visibility."
       }
     },
     "cta": "View all services"
@@ -155,25 +155,25 @@
     "title": "Trusted by local businesses"
   },
   "portfolio_teaser": {
-    "overline": "Real Results",
-    "title": "Our work speaks for itself.",
-    "subtitle": "No assembly-line templates. Only hand-crafted websites that measurably bring in more clients.",
+    "overline": "Real Web Design Projects",
+    "title": "Successful Web Design Case Studies from Wetzlar.",
+    "subtitle": "No assembly-line templates. Only handcrafted Next.js websites by Coday Web that measurably bring in more clients.",
     "cta": "View all case studies"
   },
   "techStack": {
-    "eyebrow": "5.0 Stars on ProvenExpert",
+    "eyebrow": "5.0 Stars on Google Maps & ProvenExpert",
     "headingPrefix": "Cutting-Edge Technology",
     "headingSuffix": "for maximum performance"
   },
   "seo_content": {
-    "title": "Your Web Design Agency in Wetzlar",
-    "subtitle": "Websites that actually win new clients, for tradespeople, practices and local businesses in Central Hesse.",
+    "title": "Coday Web – Your Agency for Web Design & Web Development in Wetzlar",
+    "subtitle": "Websites that actually win new clients, for tradespeople, practices and businesses in Central Hesse.",
     "paragraphs": [
-      "As a web design agency in Wetzlar, we develop professional websites that actually win more clients, they don't just look good. Whether you're a trade business, medical practice, restaurant or local service provider, we understand the requirements of regional businesses in Wetzlar, Gießen, Marburg and throughout Central Hesse. Our websites are built with cutting-edge technologies like React and Next.js and load in under one second.",
-      "What sets us apart from other web design agencies: At Coday, you work directly with the developer, not a middleman. You get fixed pricing from €2,000, no hidden costs, no hourly billing. And the entire code belongs to you: no vendor lock-in, no monthly license fees, no dependency on page builders like WordPress or Wix.",
-      "Our clients, including Batherm Sanitär & Heizung, Schlüsseldienst Wetzlar and Lindener Ratsstuben, confirm: since their relaunch, they receive significantly more local enquiries via Google. This is thanks to our combination of technical performance (load time under 1 second, perfect Core Web Vitals) and thoughtful local search engine optimization. We optimize your website for exactly the search terms your customers use to find your services.",
-      "Whether you need a brand-new website or are planning a professional website relaunch for your existing presence: we handle the complete implementation. From analysis and UX design to development and search engine optimization, you get everything from a single source. Every website is built responsively for all devices and technically optimized for Google.",
-      "Want to find out whether a new website makes sense for your business in Wetzlar or Central Hesse? Book a free initial consultation, personal, non-binding and without sales pressure. In 30 minutes, we'll show you where your current website is leaving potential on the table and how a modern, fast website can concretely bring you more clients."
+      "As a leading web design agency in Wetzlar, Coday Web develops professional websites that measurably win new clients rather than just looking good. Whether you're a trade business, medical practice, restaurant or B2B service provider, we understand the digital requirements of businesses in Wetzlar, Gießen, Marburg and across Central Hesse. Our websites are engineered with Next.js and React, loading in under one second.",
+      "What sets Coday Web apart: You work directly with founder and developer Umutcan Emre Tezgel — without account managers or junior middlemen. You receive guaranteed fixed prices from €2,000 with zero hidden costs. 100% of the source code belongs to you: no vendor lock-in, no monthly platform fees, and no dependence on slow WordPress plugins.",
+      "Our clients, including Batherm Plumbing & Heating, MS Locksmith Wetzlar, and Lindener Ratsstuben, confirm: Since their website relaunch, they receive significantly more local inquiries through Google search. This success is powered by our combination of 100/100 Google PageSpeed scores, green Core Web Vitals, and targeted Local SEO for Wetzlar.",
+      "Whether you need a brand-new corporate website or a comprehensive relaunch of your existing digital presence: Coday Web handles everything from start to finish. From UX strategy and responsive design to fast Next.js development and search engine optimization.",
+      "Want to find out how a modern, lightning-fast website can concretely grow your business in Wetzlar and Central Hesse? Schedule your free, non-binding initial consultation today. In 30 minutes, we'll audit your current presence and show you actionable growth opportunities."
     ],
     "cta": "Book a Free Consultation"
   },

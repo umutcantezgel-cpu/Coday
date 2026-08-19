@@ -6,7 +6,6 @@ import { getMessages } from 'next-intl/server';
 import { Inter, Outfit } from 'next/font/google';
 import { setRequestLocale } from 'next-intl/server';
 import { Suspense } from 'react';
-import { pick } from '@/shared/lib/pick';
 
 import '../globals.css';
 

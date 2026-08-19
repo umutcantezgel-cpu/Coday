@@ -11,7 +11,6 @@ import { TrustBar } from '@/shared/ui/TrustBar';
 import { HeroSection } from '@/widgets/home/HeroSection';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
-import { pick } from '@/shared/lib/pick';
 import React from 'react';
 
 import { ScrollReveal } from '@/shared/ui/animations/ScrollReveal';

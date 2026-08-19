@@ -82,13 +82,34 @@ export function generatePageMetadata(opts: {
   path: string;
   type: 'money' | 'legal' | 'studio' | 'preview' | 'article' | 'default' | 'noindex';
   openGraph?: Metadata['openGraph'];
+  keywords?: string | string[];
 }): Metadata {
   const fullTitle = opts.title.includes('Coday') ? opts.title : `${opts.title} | Coday`;
 
   let finalDescription = opts.description;
   const isEn = opts.path.startsWith('/en');
 
-  // Removed artificial padding as it caused Seobility length warnings (> 160 chars)
+  const defaultKeywords = isEn
+    ? [
+        'Web Design Wetzlar',
+        'Web Development Wetzlar',
+        'Web Agency Wetzlar',
+        'Website Creation Wetzlar',
+        'Coday Web',
+        'Next.js Web Design',
+        'Local SEO Central Hesse',
+      ]
+    : [
+        'Webdesign Wetzlar',
+        'Webentwicklung Wetzlar',
+        'Webagentur Wetzlar',
+        'Website erstellen Wetzlar',
+        'Coday Web',
+        'Next.js Webdesign',
+        'Lokale SEO Mittelhessen',
+      ];
+
+  const keywords = opts.keywords || defaultKeywords;
 
   const defaultOg: Metadata['openGraph'] = {
     title: fullTitle,
@@ -113,6 +134,7 @@ export function generatePageMetadata(opts: {
     metadataBase: new URL(BASE_URL),
     title: fullTitle,
     description: finalDescription,
+    keywords,
     publisher: 'Coday',
     robots: generateRobotsMeta({ type: finalType }),
     alternates: generateAlternates(opts.path),

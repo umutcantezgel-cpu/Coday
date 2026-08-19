@@ -24,13 +24,13 @@ export const SeoContentSection: React.FC = () => {
             className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-slate-900 mt-2 mb-4 tracking-tight"
           >
             {isEn
-              ? 'Tailored Web Design & Next.js Development for Growth'
-              : 'Maßgeschneidertes Webdesign & Next.js Entwicklung für den Mittelstand'}
+              ? 'Coday Web – Your Agency for Web Design & Web Development in Wetzlar'
+              : 'Coday Web – Ihre Agentur für Webdesign & Webentwicklung in Wetzlar'}
           </h2>
           <p className="text-slate-700 text-base sm:text-lg">
             {isEn
-              ? 'Coday is your owner-operated web agency headquartered in Wetzlar with digital reach across Hesse & Germany.'
-              : 'Coday ist Ihre inhabergeführte Webagentur mit Headquarter in Wetzlar und digitaler Reichweite in ganz Hessen & Deutschland.'}
+              ? 'Coday Web is your owner-operated web agency headquartered in Wetzlar, building high-conversion websites for businesses across Hesse and Germany.'
+              : 'Coday Web ist Ihre inhabergeführte Webdesign Agentur mit Sitz in Wetzlar: Wir entwickeln verkaufsstarke Websites und Webanwendungen für Handwerker, Praxen und mittelständische Unternehmen in Wetzlar, Mittelhessen und ganz Deutschland.'}
           </p>
         </div>
 
@@ -42,8 +42,8 @@ export const SeoContentSection: React.FC = () => {
             <h3 className="text-xl font-bold text-slate-900 mb-3">100/100 Core Web Vitals</h3>
             <p className="text-slate-700 text-sm leading-relaxed">
               {isEn
-                ? 'Every line of code is manually optimized for minimal load times. Pre-rendered Next.js pages load in under 0.3 seconds on mobile devices.'
-                : 'Jede Zeile Code wird manuell für maximale Ladezeit optimiert. Vorkompilierte Next.js Seiten laden in unter 0,3 Sekunden auf mobilen Endgeräten.'}
+                ? 'Every line of code is optimized for minimal load times. Pre-rendered Next.js pages load in under 0.3 seconds on mobile devices with perfect Google PageSpeed scores.'
+                : 'Jede Zeile Code wird manuell für minimale Ladezeiten optimiert. Vorkompilierte Next.js Seiten laden in unter 0,3 Sekunden auf mobilen Endgeräten mit garantierten 100/100 PageSpeed-Werten.'}
             </p>
           </div>
 
@@ -51,11 +51,13 @@ export const SeoContentSection: React.FC = () => {
             <div className="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center text-amber-600 mb-6 border border-amber-200/50">
               <ShieldCheck className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-bold text-slate-900 mb-3">Zero Attack Surface</h3>
+            <h3 className="text-xl font-bold text-slate-900 mb-3">
+              {isEn ? 'Zero Attack Surface & Privacy' : '100% Sicherheit & DSGVO'}
+            </h3>
             <p className="text-slate-700 text-sm leading-relaxed">
               {isEn
-                ? 'No vulnerable MySQL databases or outdated PHP plugins. Our static Edge architecture is immune to common web vulnerabilities.'
-                : 'Keine angreifbare MySQL-Datenbank oder veraltete PHP-Plugins. Unsere statische Edge-Architektur ist immun gegen gängige Angriffsvektoren.'}
+                ? 'No vulnerable MySQL databases or outdated PHP plugins. Our static Edge architecture is immune to common web vulnerabilities and 100% GDPR-compliant.'
+                : 'Keine angreifbare MySQL-Datenbank oder veraltete PHP-Plugins. Unsere moderne Next.js Edge-Architektur ist wartungsfrei, sicher und 100% DSGVO-konform.'}
             </p>
           </div>
 
@@ -64,12 +66,12 @@ export const SeoContentSection: React.FC = () => {
               <CheckCircle className="w-6 h-6" />
             </div>
             <h3 className="text-xl font-bold text-slate-900 mb-3">
-              {isEn ? 'Measurable B2B Conversions' : 'Messbare B2B-Conversions'}
+              {isEn ? 'Measurable Lead Generation' : 'Messbare Neukundengewinnung'}
             </h3>
             <p className="text-slate-700 text-sm leading-relaxed">
               {isEn
-                ? 'Thoughtful UX design, clear conversion paths, and 60-second recruiting funnels built for sustainable business growth.'
-                : 'Durchdachte User Experience, klare Handlungsaufforderungen und 60-Sekunden Express-Recruiting-Strecken für planbares Unternehmenswachstum.'}
+                ? 'Strategic UX design, clear conversion funnels, and optimized contact forms designed to systematically turn website visitors into paying customers.'
+                : 'Strategisches Webdesign, klare Handlungsaufforderungen und conversion-optimierte Kontaktstrecken, die Besucher planbar in zahlende Kunden verwandeln.'}
             </p>
           </div>
         </div>
@@ -79,8 +81,9 @@ export const SeoContentSection: React.FC = () => {
           {isEn ? (
             <>
               <p>
-                As an owner-operated web agency rooted in Wetzlar (Central Hesse), we do not build
-                generic website templates. We architect and engineer bespoke digital platforms with{' '}
+                As an owner-operated web agency rooted in Wetzlar (Central Hesse), Coday Web does
+                not build generic website templates. We architect and engineer bespoke digital
+                platforms with{' '}
                 <strong className="text-slate-900">
                   Next.js 15, React 19, TypeScript, and Tailwind CSS 4
                 </strong>
@@ -89,8 +92,8 @@ export const SeoContentSection: React.FC = () => {
               <p>
                 Whether B2B enterprise, craft company, medical practice, or digital service
                 provider: outdated monolithic CMS setups slow down conversions. We replace sluggish
-                load times with instant Edge delivery and secure Headless CMS setups (Sanity) that
-                give editorial teams maximum creative freedom with enterprise-grade stability.
+                load times with instant Edge delivery, 100/100 PageSpeed scores, and local search
+                dominance that give your business maximum visibility and steady lead generation.
               </p>
               <p>
                 Explore our regional presence across Hesse — from our{' '}
@@ -161,17 +164,29 @@ export const SeoContentSection: React.FC = () => {
                 <strong className="text-slate-900">
                   Next.js 15, React 19, TypeScript und Tailwind CSS 4
                 </strong>
-                , die anspruchsvollen Unternehmen zu spürbarem Marktvorteil verhelfen.
+                , die anspruchsvollen regionalen und überregionalen Unternehmen zu spürbarem
+                Marktvorteil verhelfen.
               </p>
               <p>
-                Ob B2B-Industriebetrieb, Handwerksunternehmen, Arztpraxis oder
-                technologieorientierter Dienstleister: Veraltete monolithische CMS-Systeme bremsen
-                Conversions aus. Wir ersetzen langsame Ladezeiten durch blitzschnelle
-                Edge-Auslieferung und sichere Headless-CMS-Lösungen (Sanity), die Redakteuren
-                maximale Freiheit bei voller technischer Stabilität bieten.
+                Ob Handwerksbetrieb, Facharztpraxis, Gastronomiebetrieb oder mittelständisches
+                Industrieunternehmen: Ihre Firmen-Website ist Ihr wichtigster digitaler
+                Vertriebskanal. Veraltete WordPress-Systeme, überladene Baukästen und langsame
+                Ladezeiten kosten täglich bares Geld und wertvolle Neukunden. Wir ersetzen
+                schwerfällige Websites durch moderne, blitzschnelle Webapplikationen, die in unter
+                einer Sekunde laden, bei Google PageSpeed Insights perfekte 100/100 Punkte erzielen
+                und bei Google für relevante Suchbegriffe auf Platz 1 ranken.
               </p>
               <p>
-                Entdecken Sie unsere regionalen Kompetenzzentren in ganz Hessen — von unserem{' '}
+                Unser Versprechen bei Coday Web: Sie erhalten eine schlüsselfertige,
+                handprogrammierte Website zum garantierten Festpreis ab 2.000 Euro — ohne versteckte
+                Kosten, ohne monatliche Lizenzgebühren und mit 100% uneingeschränktem
+                Quellcode-Eigentum. Sie arbeiten von Tag eins an direkt mit dem Inhaber und
+                Entwickler Umutcan Emre Tezgel zusammen, ohne Zwischenhändler oder bürokratische
+                Hürden.
+              </p>
+              <p>
+                Entdecken Sie unsere regionalen Kompetenzzentren für Webdesign und Webentwicklung in
+                ganz Hessen — von unserem{' '}
                 <Link
                   href="/webdesign-agentur-wetzlar"
                   className="text-amber-700 hover:text-amber-800 font-medium hover:underline"

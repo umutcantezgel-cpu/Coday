@@ -9,7 +9,6 @@ import { servicesData } from '@/shared/data/services';
 import { getTranslations, getMessages } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { NextIntlClientProvider } from 'next-intl';
-import { pick } from '@/shared/lib/pick';
 
 export const dynamic = 'force-static';
 export const dynamicParams = false;
