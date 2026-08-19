@@ -74,10 +74,16 @@ export const PortfolioTeaserSection: React.FC = () => {
                         loading="lazy"
                       />
                     ) : (
-                      <div className="w-full h-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 flex items-center justify-center p-8 text-center">
-                        <span className="text-2xl font-bold font-display text-white">
-                          {content.title}
-                        </span>
+                      <div className="w-full h-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 flex items-center justify-center p-8 text-center relative overflow-hidden group-hover:scale-105 transition-transform duration-700">
+                        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]" />
+                        <div className="relative z-10">
+                          <span className="text-xs uppercase tracking-widest text-primary font-bold mb-2 block">
+                            {content.category}
+                          </span>
+                          <span className="text-3xl sm:text-4xl font-black font-display text-white tracking-tight">
+                            {content.title}
+                          </span>
+                        </div>
                       </div>
                     )}
 

@@ -166,11 +166,16 @@ const ProjectDetail: React.FC = () => {
                 height={1080}
               />
             ) : (
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-black flex items-center justify-center">
-                <OptimizedIcon
-                  icon={iconMap[projectData.thumbnail] || Wrench}
-                  className="text-9xl text-white/10 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms] duration-1000"
-                />
+              <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 flex flex-col items-center justify-center p-8 text-center">
+                <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:24px_24px]" />
+                <div className="relative z-10 max-w-xl">
+                  <span className="text-xs sm:text-sm uppercase tracking-widest text-primary font-bold mb-3 block">
+                    {project.category}
+                  </span>
+                  <span className="text-3xl sm:text-5xl lg:text-6xl font-black font-display text-white tracking-tight block mb-2">
+                    {project.title}
+                  </span>
+                </div>
               </div>
             )}
 
@@ -395,7 +400,7 @@ const ProjectDetail: React.FC = () => {
               <p className="text-gray-600 leading-relaxed mb-8 text-lg">
                 {project.solution.description}
               </p>
-              {project.solution.images && project.solution.images.length > 0 && (
+              {project.solution.images && project.solution.images.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {project.solution.images.map((img, i) => {
                     // Make every third image span full width to create layout variation
@@ -456,6 +461,26 @@ const ProjectDetail: React.FC = () => {
                       </div>
                     );
                   })}
+                </div>
+              ) : (
+                <div className="rounded-2xl border border-slate-200 shadow-md overflow-hidden bg-white">
+                  <div className="bg-slate-50 border-b border-slate-100 px-4 py-3 flex items-center gap-2">
+                    <div className="flex gap-1.5">
+                      <div className="w-2.5 h-2.5 rounded-full bg-red-400/80"></div>
+                      <div className="w-2.5 h-2.5 rounded-full bg-amber-400/80"></div>
+                      <div className="w-2.5 h-2.5 rounded-full bg-emerald-400/80"></div>
+                    </div>
+                    <div className="ml-2 w-full max-w-[200px] h-4 bg-white rounded-sm border border-slate-200/60"></div>
+                  </div>
+                  <div className="aspect-[21/9] bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 flex flex-col items-center justify-center p-8 text-center relative overflow-hidden">
+                    <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px]" />
+                    <span className="text-xs uppercase tracking-widest text-primary font-bold mb-2 block relative z-10">
+                      {project.category}
+                    </span>
+                    <span className="text-2xl sm:text-3xl lg:text-4xl font-black font-display text-white tracking-tight relative z-10">
+                      {project.title}
+                    </span>
+                  </div>
                 </div>
               )}
             </m.div>
