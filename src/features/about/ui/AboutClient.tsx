@@ -75,8 +75,8 @@ export const AboutClient: React.FC = () => {
       icon: Handshake,
       title: isEn ? 'Direct Founder Partnership' : 'Direkte Inhaber-Partnerschaft',
       description: isEn
-        ? 'Zero agency overhead, no inexperienced junior account managers. You work directly with Umutcan Emre Tezgel from day one.'
-        : 'Keine Agentur-Bürokratie, keine wechselnden Junior-Kräfte. Sie arbeiten von Tag 1 direkt mit Umutcan Emre Tezgel zusammen.',
+        ? 'Direct communication and dedicated focus. You work directly with founder Umutcan Emre Tezgel from day one.'
+        : 'Persönliche Betreuung und handwerklicher Fokus: Sie arbeiten von Tag 1 an direkt mit Gründer Umutcan Emre Tezgel zusammen.',
     },
   ];
 
@@ -220,7 +220,7 @@ export const AboutClient: React.FC = () => {
               : 'Coday ist Ihre inhabergeführte Agentur für High-End Webdesign und Next.js Webentwicklung mit Sitz in Wetzlar. Wir ersetzen langsame WordPress-Themes durch ultraschnelle, maßgeschneiderte Next.js Architekturen — mit 100/100 Core Web Vitals, Enterprise-Sicherheit und planbaren B2B-Leads.'}
           </m.p>
 
-          <m.div className="flex flex-col sm:flex-row justify-center gap-4" {...stagger(0.35)}>
+          <m.div className="flex flex-col sm:flex-row justify-center gap-4 mb-8" {...stagger(0.35)}>
             <Link
               href="/contact"
               className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-700 text-white rounded-full font-bold hover:bg-primary-800 transition duration-300 hover:scale-[1.02] shadow-md shadow-primary-700/20"
@@ -237,6 +237,43 @@ export const AboutClient: React.FC = () => {
             >
               {isEn ? 'View Real Case Studies' : 'Reale Kunden-Ergebnisse ansehen'}
             </Link>
+          </m.div>
+
+          {/* Dual Verified Review Authority Badges */}
+          <m.div
+            className="flex flex-wrap items-center justify-center gap-3 sm:gap-4"
+            {...stagger(0.4)}
+          >
+            <a
+              href="https://maps.app.goo.gl/9SagecgXw7Vf5csH7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm text-slate-700 text-xs sm:text-sm font-medium hover:border-amber-400 hover:shadow-md transition-all group"
+              title="Google Maps Rezensionen für Coday ansehen"
+            >
+              <span className="font-bold text-slate-900">5,0 / 5,0</span>
+              <span className="text-amber-500 tracking-wider">★★★★★</span>
+              <span className="text-slate-300">|</span>
+              <span className="font-semibold text-slate-800 group-hover:text-amber-700 transition-colors">
+                Google Maps (4 Rezensionen)
+              </span>
+            </a>
+
+            <a
+              href="https://www.provenexpert.com/de-de/coday-webagentur/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm text-slate-700 text-xs sm:text-sm font-medium hover:border-emerald-500 hover:shadow-md transition-all group"
+              title="ProvenExpert Profil von Coday ansehen"
+            >
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="font-bold text-slate-900">5,0 / 5,0</span>
+              <span className="text-amber-500 tracking-wider">★★★★★</span>
+              <span className="text-slate-300">|</span>
+              <span className="font-semibold text-slate-800 group-hover:text-emerald-700 transition-colors">
+                ProvenExpert (4 Bewertungen)
+              </span>
+            </a>
           </m.div>
         </div>
       </section>
@@ -290,8 +327,8 @@ export const AboutClient: React.FC = () => {
               {...stagger(0.1)}
             >
               {isEn
-                ? 'Why Agility Beats Traditional Agency Overhead'
-                : 'Warum Solo-Agilität klassischen Agentur-Overhead schlägt'}
+                ? 'The Advantages of an Agile, Founder-Led Studio'
+                : 'Die Vorteile eines agilen, inhabergeführten Digital-Studios'}
             </m.h2>
           </div>
 

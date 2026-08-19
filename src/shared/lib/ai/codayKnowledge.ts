@@ -11,17 +11,17 @@ export const CODAY_KNOWLEDGE_BASE = {
   // ============================================================
   company: {
     name: 'Coday',
-    tagline: 'The Agency Killer',
+    tagline: 'Moderne Webentwicklung & Digital Engineering',
     slogan: 'Wir bauen Ihren Digitalen Erfolg.',
     mission:
-      'Coday ist der neue Standard. Wir kombinieren strategisches Design mit High-End Engineering. Keine Baukästen, keine Ausreden. Nur Ergebnisse, die Ihr Unternehmen voranbringen.',
+      'Coday verbindet erstklassiges Design mit modernem High-End Engineering (Next.js 15, React 19). Wir schaffen schnelle, konversionsstarke und maßgeschneiderte Websites für den Mittelstand und fungieren als verlässlicher Technologiepartner für Agenturen.',
     philosophy:
-      'Traditionelle Agenturen sind Geschichte. Sie bezahlen für Overhead, Meetings und ineffiziente Prozesse. Das alte Agenturmodell funktioniert nicht mehr für moderne KMUs.',
+      'Direkter Gründerkontakt, schlanke Prozesse und höchste Code-Qualität. Keine Reibungsverluste über mehrstufige Zwischeninstanzen, sondern schnelle Umsetzung, agile Arbeitsweise und transparente Festpreise.',
     differentiators: [
-      'Schnell. Skalierbar. Professionell.',
-      'ROI-fokussiert. Ergebnisorientiert.',
-      'Premium Design. High-End Code.',
-      'Keine Ausreden. Nur Ergebnisse.',
+      'Direkter Gründerkontakt & agile Umsetzung',
+      '100/100 PageSpeed & Core Web Vitals',
+      'Modernster Tech-Stack: Next.js 15 & React 19',
+      '100% Quellcode-Eigentum & transparente Festpreise',
     ],
   },
 
@@ -56,7 +56,7 @@ export const CODAY_KNOWLEDGE_BASE = {
   // ============================================================
   packages: {
     model:
-      'Preise auf Anfrage — Individuelle, verbindliche Festpreise nach kostenloser Bedarfsanalyse (5-10x kosteneffizienter als Großagenturen bei 100/100 Spitzenqualität)',
+      'Preise auf Anfrage — Individuelle, verbindliche Festpreise nach kostenloser Bedarfsanalyse (maximale Kostentransparenz und 100/100 Spitzenqualität)',
     starter: {
       name: 'Starter / Local Authority',
       tagline: 'Perfekt für Handwerker & lokale Dienstleister',
@@ -252,7 +252,7 @@ export const CODAY_KNOWLEDGE_BASE = {
   // ============================================================
   faq: {
     pricing:
-      'Unsere Websites starten ab 1.250 EUR (Starter-Paket). Das meistgewählte Professional-Paket kostet 2.150 EUR. E-Commerce und Enterprise-Lösungen ab 2.950 EUR.',
+      'Wir kalkulieren individuelle, transparente Festpreise nach einer kostenlosen Bedarfsanalyse. Bei Coday erhalten Sie maximale Budgetsicherheit ohne versteckte Kosten oder unvorhersehbare Nachforderungen.',
     timeline:
       'Je nach Paket und Komplexität: Starter in 2-3 Wochen, Professional in 4-6 Wochen, Enterprise individuell nach Projektumfang.',
     technology:

@@ -32,8 +32,8 @@ const DEFAULT_LANGUAGE = 'de';
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.codayweb.de';
 
 export const SeoHead: React.FC<SeoHeadProps> = ({
-  title = 'Coday | Der Agentur-Killer',
-  description = 'Wir beenden Ineffizienz. High-End Webentwicklung & Design für Agenturen und Unternehmen.',
+  title = 'Coday | High-End Webentwicklung & Next.js 15 Architekturen',
+  description = 'Maßgeschneiderte Webentwicklung, High-End UI/UX Design & 100/100 Core Web Vitals für anspruchsvolle Unternehmen.',
   image = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.codayweb.de'}/images/og-image.jpg`,
   noIndex = false,
   breadcrumbs,

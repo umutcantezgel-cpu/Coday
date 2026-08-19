@@ -132,8 +132,7 @@ export const AgencyComparisonTable: React.FC = () => {
           <div className="p-6 rounded-xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
             <h3 className="text-amber-800 font-bold text-base mb-1">Kein Vendor-Lock-in</h3>
             <p className="text-slate-700 text-xs sm:text-sm">
-              Sie erhalten 100% Quellcode-Eigentum ohne monatliche Knebelverträge oder teure
-              Lizenzabos.
+              Sie erhalten 100% Quellcode-Eigentum ohne starre Bindung oder teure Lizenzabos.
             </p>
           </div>
           <div className="p-6 rounded-xl bg-slate-50/80 border border-slate-200/80 shadow-sm">

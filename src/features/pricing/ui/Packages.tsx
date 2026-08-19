@@ -147,27 +147,27 @@ export default async function Packages() {
   const valuePillars = [
     {
       icon: Percent,
-      title: isEn ? '5x to 10x More Cost-Effective' : '5 bis 10x Kostenvorteil',
-      subtitle: isEn ? 'Zero Agency Overhead' : 'Ohne Agentur-Overhead',
+      title: isEn ? 'Direct Founder Collaboration' : 'Direkter Gründerkontakt',
+      subtitle: isEn ? 'Fast & Agile Delivery' : 'Kurze Wege & Schnelligkeit',
       desc: isEn
-        ? 'Traditional agencies charge for account managers, project managers, and office overhead. At Coday, you work directly with the lead software architect. Automated KI-augmented development enables faster results at a fraction of the market cost.'
-        : 'Traditionelle Großagenturen verrechnen Vertriebler, Account-Manager und teure Büropaläste. Bei Coday arbeiten Sie direkt mit dem leitenden Software-Architekten. Durch KI-unterstützte Next.js Entwicklungsprozesse liefern wir Ergebnisse in Rekordzeit zu einem Bruchteil des Marktpreises.',
+        ? 'Work directly with the founder and lead engineer who builds your project. No middle management or long approval loops — just clear communication, rapid iterations, and bespoke results.'
+        : 'Bei Coday sprechen Sie von Tag eins an direkt mit dem Gründer und Lead-Entwickler, der Ihr Projekt realisiert. Keine Reibungsverluste über mehrstufige Zwischeninstanzen, sondern schnelle Abstimmungen, handwerklicher Fokus und maßgeschneiderte Ergebnisse.',
     },
     {
       icon: SealCheck,
       title: isEn ? '100/100 Certified Quality' : 'Garantierte 100/100 Qualität',
       subtitle: isEn ? 'Google & Seobility Audits' : 'Messbare Spitzenleistung',
       desc: isEn
-        ? 'Verified by independent SEO and performance tools. Every project achieves perfect scores in Google PageSpeed Insights (Mobile & Desktop), Seobility Site-Audits, and WCAG accessibility standards.'
-        : 'Durch unabhängige SEO- und Performance-Prüfungen schwarz auf weiß belegt: Jedes Coday-Projekt erzielt 100/100 Punkte bei Google PageSpeed Insights, fehlerfreie 100% Seobility On-Page Audits und subsekundäre Ladezeiten unter 0,3 Sekunden.',
+        ? 'Verified by independent SEO and performance tools. Every project achieves top scores in Google PageSpeed Insights, Seobility On-Page Audits, and WCAG accessibility standards.'
+        : 'Durch unabhängige SEO- und Performance-Prüfungen schwarz auf weiß belegt: Jedes Coday-Projekt erzielt Spitzenwerte bei Google PageSpeed Insights, fehlerfreie 100% Seobility On-Page Audits und subsekundäre Ladezeiten unter 0,3 Sekunden.',
     },
     {
       icon: LockKey,
-      title: isEn ? '100% Code & Asset Ownership' : '100% Eigentum ohne Abo-Fallen',
-      subtitle: isEn ? 'Zero Lock-in Guarantee' : 'Volle Unabhängigkeit',
+      title: isEn ? '100% Code & Asset Ownership' : '100% Quellcode- & Design-Eigentum',
+      subtitle: isEn ? 'Full Independence' : 'Volle Unabhängigkeit',
       desc: isEn
-        ? 'No mandatory monthly retainers or vendor lock-in. You receive full ownership of your custom source code, high-resolution design assets, and edge hosting infrastructure.'
-        : 'Keine monatlichen Wartungs-Knebelverträge, keine proprietären Baukasten-Fallen. Sie erhalten das uneingeschränkte Eigentum am gesamten Quellcode, allen Design-Assets und der Hosting-Infrastruktur.',
+        ? 'Complete ownership with full transparency. You receive full ownership of your custom source code, high-resolution design assets, and edge hosting infrastructure without hidden lock-ins.'
+        : 'Volle Transparenz und Unabhängigkeit: Sie erhalten das uneingeschränkte Eigentum am gesamten Quellcode, allen Design-Assets und der Hosting-Infrastruktur ohne versteckte Bindungen.',
     },
   ];
 
@@ -291,7 +291,7 @@ export default async function Packages() {
               <span className="text-amber-500 tracking-wider">★★★★★</span>
               <span className="text-slate-300">|</span>
               <span className="font-semibold text-slate-800 group-hover:text-amber-700 transition-colors">
-                Google Maps (Verifiziert)
+                Google Maps (4 Rezensionen)
               </span>
             </a>
 
@@ -307,27 +307,27 @@ export default async function Packages() {
               <span className="text-amber-500 tracking-wider">★★★★★</span>
               <span className="text-slate-300">|</span>
               <span className="font-semibold text-slate-800 group-hover:text-emerald-700 transition-colors">
-                ProvenExpert (100% Empfehlung)
+                ProvenExpert (4 Bewertungen)
               </span>
             </a>
           </div>
         </div>
       </section>
 
-      {/* 5-10x Cost Advantage & Value Proof Section */}
+      {/* Quality & Efficiency Proof Section */}
       <section className="py-20 bg-white border-y border-slate-200 w-full relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
-              Der Coday Effizienz-Vorteil
+              Der Coday Qualitäts- & Effizienz-Vorteil
             </span>
             <h2 className="font-display font-bold text-3xl sm:text-4xl text-slate-900 mt-2 mb-4">
-              Warum wir 5 bis 10x günstiger sind & bessere Qualität liefern
+              Direkte Zusammenarbeit, modernste Technologie & transparente Festpreise
             </h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Höhere Budgets bedeuten bei traditionellen Agenturen selten besseren Code. Sie zahlen
-              für teure Vertriebsapparate und veraltete WordPress-Monolithen. Wir investieren 100%
-              unserer Energie in messbare Spitzenleistung.
+              Wir investieren 100% unserer Energie in erstklassigen Code, messbare Ladezeiten und
+              persönliche Betreuung. Durch schlanke, moderne Next.js 15 Entwicklungsprozesse
+              erhalten Sie Spitzenqualität termintreu und planbar.
             </p>
           </div>
 
@@ -365,8 +365,8 @@ export default async function Packages() {
                   Schwarz auf weiß bewiesen: 100/100 PageSpeed & Top Seobility Score
                 </h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  Während durchschnittliche Agentur-Websites bei Google Lighthouse unter 60 Punkten
-                  einbrechen und wertvolle Leads verschenken, erzielt unsere Next.js 15
+                  Während viele herkömmliche Websites bei Google Lighthouse durch langsame
+                  Ladezeiten wertvolle Besucher verlieren, erzielt unsere Next.js 15
                   Edge-Architektur in allen offiziellen Audit-Werkzeugen Bestnoten.
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2">

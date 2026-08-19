@@ -72,8 +72,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
           'Voice-First Strategie 2026',
         'Das Anti-AI Manifest: Warum menschliches Design 2026 gewinnt 🛑':
           'Anti-AI Manifest: Menschliches Design',
-        "Der 'Agentur-Killer': Warum das klassische Agentur-Modell tot ist":
-          'Warum das klassische Agentur-Modell tot ist',
+        'Solo-Studio vs. Großagentur: Das passende Modell für Ihr Webprojekt finden':
+          'Solo-Studio vs. Großagentur im Vergleich',
         'Digitale Souveränität: Warum der US Cloud Act eine Zeitbombe ist':
           'Digitale Souveränität & US Cloud Act',
         'Die Psychologie des Dark Mode: Warum Dunkel sich teuer anfühlt':
@@ -215,8 +215,8 @@ export default async function BlogPostPage({ params }: PageProps) {
       'Voice-First Strategie 2026',
     'Das Anti-AI Manifest: Warum menschliches Design 2026 gewinnt 🛑':
       'Anti-AI Manifest: Menschliches Design',
-    "Der 'Agentur-Killer': Warum das klassische Agentur-Modell tot ist":
-      'Warum das klassische Agentur-Modell tot ist',
+    'Solo-Studio vs. Großagentur: Das passende Modell für Ihr Webprojekt finden':
+      'Solo-Studio vs. Großagentur im Vergleich',
     'Digitale Souveränität: Warum der US Cloud Act eine Zeitbombe ist':
       'Digitale Souveränität & US Cloud Act',
     'Die Psychologie des Dark Mode: Warum Dunkel sich teuer anfühlt':

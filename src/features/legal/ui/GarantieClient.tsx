@@ -127,7 +127,7 @@ const Garantie: React.FC = () => {
               <p className="text-gray-600 leading-relaxed">
                 {isEn
                   ? 'Your data belongs to you. All assets, source code, and credentials are fully handed over to you upon completion of payment. We do not bind you with unfair contracts — our clients stay because they are satisfied, not because they have to.'
-                  : 'Ihre Daten gehören Ihnen. Alle Assets, der Quellcode und sämtliche Zugangsdaten werden nach Abschluss der Zahlung vollständig an Sie übergeben. Wir binden Sie nicht durch unfaire Knebelverträge an uns – unsere Kunden bleiben, weil sie zufrieden sind, nicht weil sie müssen.'}
+                  : 'Ihre Daten gehören Ihnen. Alle Assets, der Quellcode und sämtliche Zugangsdaten werden nach Abschluss der Zahlung vollständig an Sie übergeben. Wir setzen auf partnerschaftliche Zusammenarbeit und Unabhängigkeit – unsere Kunden bleiben, weil sie zufrieden sind.'}
               </p>
             </m.div>
 

@@ -275,24 +275,6 @@ const ProjectDetail: React.FC = () => {
                 </h3>
                 <div className="space-y-2.5">
                   <a
-                    href="https://www.provenexpert.com/de-de/coday-webagentur/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-emerald-500/50 hover:bg-emerald-50/30 transition-all group"
-                    title="ProvenExpert Profil von Coday"
-                  >
-                    <div className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                      <span className="font-bold text-xs text-slate-900 group-hover:text-emerald-700 transition-colors">
-                        ProvenExpert
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <span className="text-amber-500 text-xs">★★★★★</span>
-                      <span className="text-xs font-bold text-slate-800">5.0</span>
-                    </div>
-                  </a>
-                  <a
                     href="https://maps.app.goo.gl/9SagecgXw7Vf5csH7"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -302,7 +284,25 @@ const ProjectDetail: React.FC = () => {
                     <div className="flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-blue-500"></span>
                       <span className="font-bold text-xs text-slate-900 group-hover:text-blue-700 transition-colors">
-                        Google Maps
+                        Google Maps (4 Rezensionen)
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <span className="text-amber-500 text-xs">★★★★★</span>
+                      <span className="text-xs font-bold text-slate-800">5.0</span>
+                    </div>
+                  </a>
+                  <a
+                    href="https://www.provenexpert.com/de-de/coday-webagentur/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-emerald-500/50 hover:bg-emerald-50/30 transition-all group"
+                    title="ProvenExpert Profil von Coday"
+                  >
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                      <span className="font-bold text-xs text-slate-900 group-hover:text-emerald-700 transition-colors">
+                        ProvenExpert (4 Bewertungen)
                       </span>
                     </div>
                     <div className="flex items-center gap-1">

@@ -233,36 +233,38 @@ export const ContactClient: React.FC = () => {
                       <span className="block font-bold text-secondary text-xs uppercase tracking-wider mb-2">
                         Verifizierte Bewertungen
                       </span>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                        <a
-                          href="https://www.provenexpert.com/de-de/coday-webagentur/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-emerald-500/50 hover:bg-emerald-50/30 transition-all group"
-                          title="ProvenExpert Profil von Coday"
-                        >
-                          <div className="flex items-center gap-1.5">
-                            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                            <span className="text-xs font-bold text-slate-800 group-hover:text-emerald-700">
-                              ProvenExpert
-                            </span>
-                          </div>
-                          <span className="text-xs font-bold text-amber-600">5.0 ★</span>
-                        </a>
+                      <div className="space-y-2">
                         <a
                           href="https://maps.app.goo.gl/9SagecgXw7Vf5csH7"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-blue-500/50 hover:bg-blue-50/30 transition-all group"
+                          className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-blue-500/50 hover:bg-blue-50/30 transition-all group"
                           title="Google Maps Rezensionen für Coday"
                         >
-                          <div className="flex items-center gap-1.5">
+                          <div className="flex items-center gap-2">
                             <span className="w-2 h-2 rounded-full bg-blue-500"></span>
                             <span className="text-xs font-bold text-slate-800 group-hover:text-blue-700">
-                              Google Maps
+                              Google Maps Rezensionen
                             </span>
+                            <span className="text-[11px] text-slate-500">(4 verifiziert)</span>
                           </div>
-                          <span className="text-xs font-bold text-amber-600">5.0 ★</span>
+                          <span className="text-xs font-bold text-amber-600">5.0 ★★★★★</span>
+                        </a>
+                        <a
+                          href="https://www.provenexpert.com/de-de/coday-webagentur/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-emerald-500/50 hover:bg-emerald-50/30 transition-all group"
+                          title="ProvenExpert Profil von Coday"
+                        >
+                          <div className="flex items-center gap-2">
+                            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                            <span className="text-xs font-bold text-slate-800 group-hover:text-emerald-700">
+                              ProvenExpert Profil
+                            </span>
+                            <span className="text-[11px] text-slate-500">(4 verifiziert)</span>
+                          </div>
+                          <span className="text-xs font-bold text-amber-600">5.0 ★★★★★</span>
                         </a>
                       </div>
                     </m.div>

@@ -176,7 +176,7 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                 <span className="text-amber-500 tracking-wider">★★★★★</span>
                 <span className="text-slate-300">|</span>
                 <span className="font-semibold text-slate-800 group-hover:text-amber-700 transition-colors">
-                  Google Maps (Verifiziert)
+                  Google Maps (4 Rezensionen)
                 </span>
               </a>
 
@@ -192,7 +192,7 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                 <span className="text-amber-500 tracking-wider">★★★★★</span>
                 <span className="text-slate-300">|</span>
                 <span className="font-semibold text-slate-800 group-hover:text-emerald-700 transition-colors">
-                  ProvenExpert (100% Empfehlung)
+                  ProvenExpert (4 Bewertungen)
                 </span>
               </a>
             </div>

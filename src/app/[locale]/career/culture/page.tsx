@@ -146,8 +146,8 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   Programmierung anschließend an wechselnde Junior-Entwickler oder externe
                   Subunternehmen. Bei{' '}
                   <strong className="text-slate-900 font-semibold">Coday in Wetzlar</strong> setzen
-                  wir auf das Anti-Agentur-Prinzip: 100% Inhaberbetreuung, radikale Transparenz und
-                  modernste KI-gestützte Entwicklung ohne bürokratischen Wasserkopf.
+                  wir auf direkte Inhaberbetreuung, verbindliche Transparenz und modernste
+                  Next.js-Entwicklung ohne bürokratische Umwege.
                 </p>
                 <p>
                   Unsere Arbeitskultur basiert auf echter handwerklicher Präzision und direkter

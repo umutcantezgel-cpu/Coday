@@ -21,11 +21,10 @@ const DEFAULT_BADGES: TrustBadge[] = [
     color: 'text-amber-500',
   },
   {
-    id: 'proven-expert',
+    id: 'inhabergefuehrt',
     icon: ShieldCheck,
-    title: 'ProvenExpert (5.0 ★)',
-    description: '100% Kundenzufriedenheit',
-    url: 'https://www.provenexpert.com/de-de/coday-webagentur/',
+    title: 'Inhabergeführt',
+    description: '100% Persönlicher Service',
     color: 'text-emerald-600',
   },
   {

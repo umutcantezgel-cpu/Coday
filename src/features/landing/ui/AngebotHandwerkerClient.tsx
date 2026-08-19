@@ -555,7 +555,7 @@ export default function AngebotHandwerker() {
               <p className="text-xl text-slate-600 mb-10 leading-relaxed">
                 {isEn
                   ? "No hidden costs. No lock-in contracts. When the house is built, it needs maintenance so it doesn't decay. You take care of the job site, I take care of the server."
-                  : 'Keine versteckten Kosten. Keine Knebelverträge. Wenn das Haus steht, muss es gepflegt werden, damit es nicht verfällt. Ihr kümmert euch um die Baustelle, ich um den Server.'}
+                  : 'Keine versteckten Kosten. Keine starren Mindestvertragslaufzeiten. Wenn das Haus steht, muss es gepflegt werden, damit es nicht verfällt. Ihr kümmert euch um die Baustelle, ich um den Server.'}
               </p>
               <div className="bg-slate-50 border border-slate-200 p-8 rounded-2xl border-l-4 border-l-teal-500 mb-8">
                 <div className="font-mono text-5xl font-black text-navy mb-2">

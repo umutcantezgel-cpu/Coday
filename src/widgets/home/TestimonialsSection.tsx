@@ -1,34 +1,33 @@
 'use client';
-import React from 'react';
-import { useTranslations } from 'next-intl';
+import React, { useState } from 'react';
+import { useTranslations, useLocale } from 'next-intl';
 
 import BlurText from '@/shared/ui/BlurText';
 import { TestimonialBlock } from '@/shared/ui/TestimonialBlock';
 import { FadeInUp } from '@/shared/ui/MotionWrappers';
-import { GOOGLE_REVIEWS, REVIEWS_SUMMARY } from '@/shared/data/reviews';
+import {
+  GOOGLE_REVIEWS,
+  PROVENEXPERT_REVIEWS,
+  REVIEWS_SUMMARY,
+  REVIEW_PROFILES,
+} from '@/shared/data/reviews';
+
+type ReviewPlatformFilter = 'all' | 'google' | 'provenexpert';
 
 export const TestimonialsSection: React.FC = () => {
   const t = useTranslations('home');
-  const items = t.raw('testimonials.items') as Array<{
-    quote: string;
-    authorName: string;
-    authorPosition: string;
-    authorImageUrl?: string;
-    authorCompany?: string;
-  }>;
+  const locale = useLocale();
+  const isEn = locale === 'en';
+  const [activeFilter, setActiveFilter] = useState<ReviewPlatformFilter>('all');
 
-  const testimonials = items.map((item, idx) => ({
-    quote: item.quote,
-    authorName: item.authorName,
-    authorPosition: item.authorPosition,
-    authorImageUrl: item.authorImageUrl,
-    authorCompany: item.authorCompany,
-    companyLogoUrl: undefined,
-    linkedInUrl: undefined,
-    rating: 5,
-    relativeTime: GOOGLE_REVIEWS[idx]?.relativeTime,
-    badge: GOOGLE_REVIEWS[idx]?.badge,
-  }));
+  const allReviews = [...GOOGLE_REVIEWS, ...PROVENEXPERT_REVIEWS];
+
+  const displayedReviews =
+    activeFilter === 'google'
+      ? GOOGLE_REVIEWS
+      : activeFilter === 'provenexpert'
+        ? PROVENEXPERT_REVIEWS
+        : allReviews;
 
   const reviewsSchema = {
     '@context': 'https://schema.org',
@@ -42,7 +41,7 @@ export const TestimonialsSection: React.FC = () => {
       bestRating: REVIEWS_SUMMARY.bestRating.toString(),
       worstRating: REVIEWS_SUMMARY.worstRating.toString(),
     },
-    review: GOOGLE_REVIEWS.map((review) => ({
+    review: allReviews.map((review) => ({
       '@type': 'Review',
       reviewRating: {
         '@type': 'Rating',
@@ -69,11 +68,11 @@ export const TestimonialsSection: React.FC = () => {
       <div className="absolute top-0 start-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          {/* Dual Verified Reviews Badges: Google Maps & ProvenExpert */}
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          {/* Dual Verified Trust Badges: Google Maps & ProvenExpert */}
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-6">
             <a
-              href="https://maps.app.goo.gl/9SagecgXw7Vf5csH7"
+              href={REVIEW_PROFILES.googleMaps.url}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-slate-200/80 shadow-sm text-slate-700 text-xs sm:text-sm font-medium hover:border-primary/50 hover:shadow-md transition-all duration-300 group"
@@ -101,12 +100,12 @@ export const TestimonialsSection: React.FC = () => {
               <span className="text-amber-500 tracking-wider">★★★★★</span>
               <span className="text-slate-300">|</span>
               <span className="font-semibold text-slate-800 group-hover:text-primary transition-colors">
-                Google Maps
+                Google Maps (4 Rezensionen)
               </span>
             </a>
 
             <a
-              href="https://www.provenexpert.com/de-de/coday-webagentur/"
+              href={REVIEW_PROFILES.provenExpert.url}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-slate-200/80 shadow-sm text-slate-700 text-xs sm:text-sm font-medium hover:border-emerald-500/50 hover:shadow-md transition-all duration-300 group"
@@ -117,7 +116,7 @@ export const TestimonialsSection: React.FC = () => {
               <span className="text-amber-500 tracking-wider">★★★★★</span>
               <span className="text-slate-300">|</span>
               <span className="font-semibold text-slate-800 group-hover:text-emerald-700 transition-colors">
-                ProvenExpert (100% Empfehlung)
+                ProvenExpert (4 Bewertungen)
               </span>
             </a>
           </div>
@@ -131,60 +130,110 @@ export const TestimonialsSection: React.FC = () => {
             />{' '}
             <span className="text-primary">{t('testimonials.title_suffix')}</span>
           </h2>
-          <p className="text-xl text-slate-700 font-light">{t('testimonials.text')}</p>
+          <p className="text-xl text-slate-700 font-light max-w-2xl mx-auto">
+            {isEn
+              ? '100% authentic client reviews — dual-verified on Google Maps and ProvenExpert with 5.0 out of 5 stars.'
+              : '100% echte Kundenstimmen — zweifach verifiziert auf Google Maps & ProvenExpert mit 5,0 von 5 Sternen.'}
+          </p>
+
+          {/* Platform Filter Buttons */}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
+            <button
+              type="button"
+              onClick={() => setActiveFilter('all')}
+              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+                activeFilter === 'all'
+                  ? 'bg-slate-900 text-white shadow-sm'
+                  : 'bg-white text-slate-700 border border-slate-200 hover:border-slate-300 hover:bg-slate-50'
+              }`}
+            >
+              {isEn ? 'All Reviews (8)' : 'Alle Bewertungen (8)'}
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveFilter('google')}
+              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+                activeFilter === 'google'
+                  ? 'bg-blue-600 text-white shadow-sm'
+                  : 'bg-white text-slate-700 border border-slate-200 hover:border-blue-300 hover:bg-blue-50/50'
+              }`}
+            >
+              <span className="w-2 h-2 rounded-full bg-blue-400" />
+              <span>Google Maps (4)</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveFilter('provenexpert')}
+              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+                activeFilter === 'provenexpert'
+                  ? 'bg-emerald-700 text-white shadow-sm'
+                  : 'bg-white text-slate-700 border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50/50'
+              }`}
+            >
+              <span className="w-2 h-2 rounded-full bg-emerald-400" />
+              <span>ProvenExpert (4)</span>
+            </button>
+          </div>
         </div>
 
-        {Array.isArray(testimonials) && testimonials.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-            {testimonials.map((testimonial, index) => (
-              <FadeInUp key={index} delay={index * 0.1} duration={0.5} className="h-full">
-                <TestimonialBlock
-                  quote={testimonial.quote}
-                  authorName={testimonial.authorName}
-                  authorPosition={testimonial.authorPosition}
-                  authorCompany={testimonial.authorCompany}
-                  authorImageUrl={testimonial.authorImageUrl}
-                  companyLogoUrl={testimonial.companyLogoUrl}
-                  linkedInUrl={testimonial.linkedInUrl}
-                  rating={testimonial.rating}
-                  featured={index === 0 || index === 3}
-                />
-              </FadeInUp>
-            ))}
-          </div>
-        )}
+        {/* Reviews Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          {displayedReviews.map((review, index) => (
+            <FadeInUp key={review.id} delay={index * 0.08} duration={0.4} className="h-full">
+              <TestimonialBlock
+                quote={isEn ? review.quote.en : review.quote.de}
+                authorName={review.authorName}
+                authorPosition={review.authorPosition}
+                authorCompany={review.authorCompany}
+                rating={review.rating}
+                source={review.source}
+                sourceUrl={
+                  review.source === 'Google'
+                    ? REVIEW_PROFILES.googleMaps.url
+                    : REVIEW_PROFILES.provenExpert.url
+                }
+                badge={review.badge}
+                relativeTime={review.relativeTime}
+                verified={review.verified}
+                featured={review.id === 'google-review-1' || review.id === 'google-review-4'}
+              />
+            </FadeInUp>
+          ))}
+        </div>
 
+        {/* Footer Authority Bar */}
         <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6">
-          <div className="flex -space-x-4">
-            {['B', 'Z', 'B', 'I'].map((initial, i) => (
+          <div className="flex -space-x-3">
+            {allReviews.map((rev, i) => (
               <div
                 key={i}
-                className="w-12 h-12 rounded-full bg-white border-2 border-surface-light flex items-center justify-center text-sm font-bold text-primary shadow-sm"
+                className="w-10 h-10 rounded-full bg-white border-2 border-surface-light flex items-center justify-center text-xs font-bold text-primary shadow-sm"
+                title={rev.authorName}
               >
-                {initial}
+                {rev.authorName.charAt(0)}
               </div>
             ))}
           </div>
           <div className="text-sm font-bold text-secondary text-center sm:text-left">
-            {t('testimonials.rating')}
+            <span>5,0 / 5,0 Sterne · 100% Weiterempfehlung</span>
             <br />
             <span className="text-sapphire font-normal flex items-center gap-3 mt-1 justify-center sm:justify-start">
               <a
-                href="https://maps.app.goo.gl/9SagecgXw7Vf5csH7"
+                href={REVIEW_PROFILES.googleMaps.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline hover:text-primary text-xs"
               >
-                Google Maps Profil ↗
+                Google Maps Profil (4 Rezensionen) ↗
               </a>
               <span>•</span>
               <a
-                href="https://www.provenexpert.com/de-de/coday-webagentur/"
+                href={REVIEW_PROFILES.provenExpert.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline hover:text-primary text-xs"
               >
-                ProvenExpert Profil ↗
+                ProvenExpert Profil (4 Bewertungen) ↗
               </a>
             </span>
           </div>
