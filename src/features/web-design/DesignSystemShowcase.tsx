@@ -115,7 +115,7 @@ const DesignSystemShowcase: React.FC = () => {
               layout
               id="design-email"
               type="text"
-              placeholder="hello@example.com"
+              placeholder="kontakt@unternehmen.de"
               className={`w-full px-4 py-3 outline-none transition motion-reduce:duration-[0.01ms] focus:ring-2`}
               style={{
                 borderRadius: current.radius,
