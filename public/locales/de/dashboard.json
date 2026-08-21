@@ -41,7 +41,7 @@
     }
   },
   "footer": {
-    "copyright": "© 2024 Geschwindigkeits-Übersicht. Betrieben durch Aurora System."
+    "copyright": "© {year} Geschwindigkeits-Übersicht. Betrieben durch Aurora System."
   },
   "header": {
     "live": "Live-Überwachung",

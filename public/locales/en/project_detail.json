@@ -4,12 +4,12 @@
   "breadcrumb_projects": "Projects",
   "sidebar": {
     "details": "Details",
-    "service": "service",
+    "service": "Service",
     "period": "Period",
     "result": "Result",
     "interested_title": "Interested in similar results?",
     "request_project": "Request a project",
-    "client": "customer",
+    "client": "Client",
     "industry": "Industry",
     "services": "Services",
     "year": "Year"
@@ -18,9 +18,9 @@
   "approach": "Our approach",
   "results": "The results",
   "impact": "Measurable success",
-  "before_after_title": "Before, afterwards",
-  "before": "Previously",
-  "after": "Afterward",
+  "before_after_title": "Before & After",
+  "before": "Before",
+  "after": "After",
   "nav": {
     "prev": "Previous project",
     "next": "Next project"

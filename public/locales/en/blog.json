@@ -213,19 +213,19 @@
         "description": "Simple HTML pages, no interactivity. The digital business card era.",
         "model": "Static Websites",
         "overhead": "Minimal",
-        "title": "Web 1.0 (1995 2004)"
+        "title": "Web 1.0 (1995–2004)"
       },
       "1": {
         "description": "CMS platforms like WordPress democratized web publishing but added bloat.",
         "model": "Templates & Plugins",
         "overhead": "Medium",
-        "title": "CMS Era (2004 2015)"
+        "title": "CMS Era (2004–2015)"
       },
       "2": {
         "description": "JavaScript frameworks enabled rich applications but increased complexity.",
         "model": "SaaS & Subscriptions",
         "overhead": "High",
-        "title": "SPA Era (2015 2022)"
+        "title": "SPA Era (2015–2022)"
       },
       "3": {
         "description": "Edge computing, AI-driven development, and serverless architectures. Maximum performance.",

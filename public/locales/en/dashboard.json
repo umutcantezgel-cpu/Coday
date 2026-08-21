@@ -41,7 +41,7 @@
     }
   },
   "footer": {
-    "copyright": "© 2024 Speed Overview. Powered by Aurora System."
+    "copyright": "© {year} Speed Overview. Powered by Aurora System."
   },
   "header": {
     "live": "Live Monitoring",

@@ -107,7 +107,7 @@
           "your_business": "Your Business"
         },
         "stats": {
-          "radius": "radius",
+          "radius": "Radius",
           "ranking": "Ranking",
           "market_share": "Market Share"
         }
@@ -145,7 +145,7 @@
             "desc": "Query: Driving license? Experience? Availability?",
             "mockup": {
               "question": "Do you have a Class B driving license?",
-              "yes": "Yes, logical",
+              "yes": "Yes, absolutely",
               "no": "No"
             }
           },
@@ -281,7 +281,7 @@
         }
       },
       "roi_calculator": {
-        "label": "Make more money",
+        "label": "Increase Revenue",
         "title": "Commission Check",
         "labels": {
           "property_value": "Property Value",
@@ -337,7 +337,7 @@
       },
       "team_vorstellung": {
         "title": "Team Introduction",
-        "description": "Sympathetic practice branding creates closeness before the visit."
+        "description": "Welcoming and personable practice branding builds trust before the visit."
       }
     },
     "customFeatures": {
@@ -447,7 +447,7 @@
         "description": "Content that proves your competence in niches."
       },
       "modernes_serioeses_design": {
-        "title": "Modern Serious Design",
+        "title": "Modern & Authoritative Design",
         "description": "The perfect balance between tradition and modernity."
       }
     },
@@ -587,7 +587,7 @@
         "description": "Customers drop off shortly before purchase."
       },
       "performance": {
-        "title": "performance",
+        "title": "Performance",
         "description": "Slow load times cost revenue, especially on mobile."
       },
       "marken_erlebnis": {
@@ -597,7 +597,7 @@
     },
     "solutions": {
       "high_speed_frontend": {
-        "title": "High speed front end",
+        "title": "High-Speed Frontend",
         "description": "Next.js solutions for lightning-fast shopping. Offer click-and-collect, endless aisle features, and integrated loyalty programs to boost customer loyalty. Our platforms synchronize inventory in real-time, ensuring that your customers always have access to accurate stock levels whether they shop online or in-store. This holistic approach bridges the gap between digital convenience and physical retail experiences."
       },
       "conversion_optimierung": {
@@ -733,7 +733,7 @@
         "filter_label": "Minimum Budget Filter",
         "table_headers": {
           "inbox": "Incoming Inquiry",
-          "status": "status"
+          "status": "Status"
         },
         "status_labels": {
           "accept": "Accept",

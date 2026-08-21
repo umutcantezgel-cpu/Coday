@@ -18,7 +18,7 @@
   },
   "hero": {
     "badge": "The Coday Standard",
-    "desc": "No Chaos. Just Results. We have systematized development. No guesswork, no hidden costs. A reliable process for your success. A good text or article should contain at least 500 words, but the quality of our Web Design Agency in Wetzlar is measured in more than just words. We focus on technical excellence, measurable performance (LCP under 2 seconds), and sustainable growth for both B2B and B2C companies. As your local partner in Central Hesse, we specialize in modern Next.js solutions, headless CMS, and highly secure, performant web applications. Transparency, fixed pricing, and direct communication are always at the forefront of our partnership.",
+    "desc": "The quality of our Web Design Agency in Wetzlar is measured in tangible results: Sub-0.3s load times, 100/100 Core Web Vitals, and predictable lead generation powered by modern Next.js architectures.",
     "title_gradient": "Just Results.",
     "title_start": "No Chaos."
   },
@@ -49,7 +49,7 @@
   "transparency": {
     "chat": {
       "desc": "Slack / WhatsApp Channel",
-      "msg1": "Design update is online! 🚀",
+      "msg1": "Design update is online!",
       "msg2": "Looks great! Approved.",
       "title": "Direct Line"
     },

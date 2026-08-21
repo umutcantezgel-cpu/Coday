@@ -18,7 +18,7 @@
   },
   "hero": {
     "badge": "Der Coday-Standard",
-    "desc": "Kein Chaos. Nur Ergebnisse. Wir haben Entwicklung systematisiert. Kein Rätselraten, keine versteckten Kosten. Ein verlässlicher Prozess für Ihren Erfolg. Ein guter Text oder Artikel sollte mindestens 500 Wörter enthalten, doch die Qualität unserer Webdesign Agentur aus Wetzlar bemisst sich nicht nur in Worten. Wir setzen auf technische Exzellenz, messbare Performance (LCP unter 2 Sekunden) und nachhaltiges Wachstum für B2B- und B2C-Unternehmen. Als lokaler Partner in Mittelhessen fokussieren wir uns auf moderne Next.js Lösungen, Headless CMS und sichere, performante Webanwendungen. Transparenz, Festpreise und direkter Kontakt stehen bei unserer Zusammenarbeit stets im Vordergrund.",
+    "desc": "Die Qualität unserer Webdesign Agentur aus Wetzlar bemisst sich in messbaren Ergebnissen: Sub-0,3s Ladezeiten, 100/100 Core Web Vitals und planbare Neukundengewinnung durch moderne Next.js Architekturen.",
     "title_gradient": "Nur Ergebnisse.",
     "title_start": "Kein Chaos."
   },
@@ -49,7 +49,7 @@
   "transparency": {
     "chat": {
       "desc": "Slack / WhatsApp Channel",
-      "msg1": "Design Update ist online! 🚀",
+      "msg1": "Design Update ist online!",
       "msg2": "Sieht mega aus! Freigabe erteilt.",
       "title": "Direct Line"
     },

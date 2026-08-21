@@ -476,14 +476,14 @@
     },
     "speed_section": {
       "description": "Google hates slow websites. Users do too. I build on Edge Computing and Next.js for load times under 500ms.",
-      "title": "Speed ​​is authority."
+      "title": "Speed is authority."
     },
     "stack_section": {
       "description": "No WordPress spaghetti. We use the tech stack of billion-dollar startups.",
       "title": "The Stack of Dominance"
     },
     "meta": {
-      "title": "premium Web Development & Headless Architectures | Coday",
+      "title": "Premium Web Development & Headless Architectures | Coday",
       "description": "High-performance web solutions for ambitious SMEs. Scalable, secure, and extremely fast architectures for the corporate sector."
     },
     "matrix": {
@@ -511,7 +511,7 @@
       }
     },
     "methodology": {
-      "title": "Our premium Process",
+      "title": "Our Premium Process",
       "subtitle": "From concept to global deployment.",
       "steps": {
         "1": {
@@ -537,7 +537,7 @@
       }
     },
     "case_study": {
-      "label": "premium in Action",
+      "label": "Premium in Action",
       "title": "10x Faster Time to Market.",
       "description": "How we increased the conversion rate of an industry leader by 40% through Headless Commerce and a modern Next.js architecture."
     },
@@ -586,7 +586,7 @@
     "long_description": "Traditional monolithic systems increasingly restrict the flexibility and scalability of modern digital products. A headless CMS architecture decouples the backend from the frontend, granting developers complete design freedom while enabling content teams to manage assets centrally and distribute them seamlessly across any channel, from websites to native mobile apps.\\n\\nWe implement market-leading headless platforms such as Sanity, Contentful, and Strapi, connecting them via high-performance GraphQL or REST APIs to cutting-edge Next.js and React frontends. This combination of an ultra-fast framework and flexible content management delivers blazing load times, stellar Core Web Vitals, and an unmatched user experience.\\n\\nBy leveraging Server-Side Rendering (SSR) and edge caching, we ensure your content is globally accessible within milliseconds. This modern architecture is not only highly secure and GDPR-compliant, but also provides the ideal future-proof foundation for boundless business growth and omnichannel excellence.",
     "cms_comparison": {
       "contentful": {
-        "badge": "premium Choice",
+        "badge": "Premium Choice",
         "desc": "The Premium Standard. Robust, proven, and perfect for large organizations with strict workflows.",
         "title": "Contentful"
       },
@@ -1306,7 +1306,7 @@
           "description": "I build architectures that grow with your success. From 100 to 100,000 users without redevelopment."
         },
         {
-          "icon": "stack.stack",
+          "icon": "stack",
           "title": "Modern Tech Stack",
           "description": "We rely on Next.js, React, TypeScript and Tailwind, the gold standard of modern web development."
         },
@@ -1321,14 +1321,14 @@
           "description": "No vendor lock-in. You receive clean, well-documented code that belongs to you."
         },
         {
-          "icon": "users.users",
+          "icon": "users",
           "title": "Experienced Team",
           "description": "Your project is implemented by senior developers who love complex challenges."
         }
       ],
       "design_advantages": [
         {
-          "icon": "user.user",
+          "icon": "user",
           "title": "User-centric",
           "description": "Design that works. We put the user in the center for intuitive experiences."
         },
