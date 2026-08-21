@@ -4,6 +4,7 @@ import { m, AnimatePresence } from 'motion/react';
 import { useForm, useWatch } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import { useSearchParams } from 'next/navigation';
 import { Icon } from '@/shared/ui/Icon';
 import { saveLeadInternalAction } from '@/features/contact/actions/saveLeadInternal';
 import { useTranslations, useLocale } from 'next-intl';
@@ -25,6 +26,7 @@ type WizardFormData = {
 export const ApplicationWizard: React.FC = () => {
   const t = useTranslations('form');
   const locale = useLocale();
+  const searchParams = useSearchParams();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -37,6 +39,17 @@ export const ApplicationWizard: React.FC = () => {
   const getSelectedModules = useCalculatorStore((state) => state.getSelectedModules);
   const getTotalOneTime = useCalculatorStore((state) => state.getTotalOneTime);
   const getTotalMonthly = useCalculatorStore((state) => state.getTotalMonthly);
+  const setPackageAndAddons = useCalculatorStore((state) => state.setPackageAndAddons);
+
+  // Sync with URL parameters if present
+  useEffect(() => {
+    const pkgParam = searchParams?.get('package');
+    const addonsParam = searchParams?.get('addons');
+    if (pkgParam) {
+      const addons = addonsParam ? addonsParam.split(',').filter(Boolean) : [];
+      setPackageAndAddons(pkgParam, addons);
+    }
+  }, [searchParams, setPackageAndAddons]);
 
   const hasPackage = !!selectedPackageId;
 
@@ -63,6 +76,7 @@ export const ApplicationWizard: React.FC = () => {
     register,
     handleSubmit,
     control,
+    setValue,
     formState: { errors },
   } = useForm<WizardFormData>({
     resolver: zodResolver(WizardSchema),
@@ -77,6 +91,16 @@ export const ApplicationWizard: React.FC = () => {
       _bot_trap_field: '', // honeypot
     },
   });
+
+  // Keep project field updated with selected package name
+  useEffect(() => {
+    if (hasPackage) {
+      const pkgName = getPackageName();
+      if (pkgName) {
+        setValue('project', pkgName);
+      }
+    }
+  }, [hasPackage, selectedPackageId, getPackageName, setValue]);
 
   const submittedEmail = useWatch({ control, name: 'email' }) || '';
   const submittedName = useWatch({ control, name: 'name' }) || '';
@@ -147,40 +171,63 @@ export const ApplicationWizard: React.FC = () => {
       <m.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
-        className="mb-6 p-5 bg-gradient-to-r from-primary/5 to-primary/10 rounded-2xl border border-primary/20"
+        className="mb-6 p-5 bg-gradient-to-br from-amber-500/10 via-amber-50/80 to-emerald-500/10 rounded-2xl border border-amber-500/30 shadow-xs"
       >
-        <div className="flex items-center justify-between mb-3">
-          <div className="flex items-center gap-2">
-            <Icon name="check_circle" className="text-primary" />
-            <span className="font-bold text-gray-900">{t('wizard.package_summary.title')}</span>
+        <div className="flex items-center justify-between mb-3.5 pb-3 border-b border-amber-200/60">
+          <div className="flex items-center gap-2.5">
+            <div className="w-6 h-6 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-xs shadow-xs">
+              ✓
+            </div>
+            <div>
+              <span className="text-[11px] font-bold text-amber-900 uppercase tracking-wider block">
+                {t('wizard.package_summary.title', { fallback: 'Ihre gewählte Konfiguration' })}
+              </span>
+              <span className="font-bold text-slate-900 text-sm sm:text-base">{packageName}</span>
+            </div>
           </div>
-          <span className="text-xs bg-primary/10 text-primary font-bold px-3 py-1 rounded-full">
-            {packageName}
+          <span className="text-xs bg-amber-100 text-amber-900 font-extrabold px-3 py-1 rounded-full border border-amber-200 whitespace-nowrap">
+            {selectedModules.length} {selectedModules.length === 1 ? 'Modul' : 'Module'}
           </span>
         </div>
-        <div className="space-y-1.5">
-          {selectedModules.slice(0, 5).map((mod) => (
-            <div key={mod.id} className="flex justify-between text-sm">
-              <span className="text-gray-600">{mod.name}</span>
-              <span className="text-gray-900 font-medium">
+
+        <div className="space-y-1.5 mb-3.5 max-h-48 overflow-y-auto pr-1">
+          {selectedModules.map((mod) => (
+            <div
+              key={mod.id}
+              className="flex justify-between items-center text-xs sm:text-sm py-1 border-b border-slate-100"
+            >
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0" />
+                <span className="text-slate-700 font-medium">{mod.name}</span>
+                {mod.category === 'basis' && (
+                  <span className="text-[10px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-semibold">
+                    Basis
+                  </span>
+                )}
+              </div>
+              <span className="text-slate-900 font-bold text-xs whitespace-nowrap">
                 {formatCurrency(mod.priceInCents / 100, 'EUR', locale)}
+                {mod.priceType === 'monthly' && '/mo'}
               </span>
             </div>
           ))}
-          {selectedModules.length > 5 && (
-            <p className="text-xs text-gray-500">
-              +{selectedModules.length - 5} {t('wizard.package_summary.more')}
-            </p>
-          )}
         </div>
-        <div className="mt-3 pt-3 border-t border-primary/10 flex justify-between font-bold text-sm">
-          <span className="text-gray-700">{t('wizard.package_summary.total')}</span>
-          <div className="text-right">
-            <span className="text-gray-900">
-              {formatCurrency(totalOneTime / 100, 'EUR', locale)}
+
+        <div className="pt-3 border-t border-amber-200/60 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+          <div>
+            <span className="text-[11px] text-slate-500 uppercase tracking-wider block font-semibold">
+              Kalkulierter Richtwert (Festpreis nach Erstberatung)
+            </span>
+            <span className="text-[11px] text-slate-400">
+              100% verbindlicher Festpreis ohne versteckte Kosten
+            </span>
+          </div>
+          <div className="text-left sm:text-right">
+            <span className="text-lg sm:text-xl font-black text-slate-900 font-display">
+              ab {formatCurrency(totalOneTime / 100, 'EUR', locale)}
             </span>
             {totalMonthly > 0 && (
-              <span className="text-gray-500 font-normal text-xs ml-2">
+              <span className="text-xs text-slate-600 font-semibold ml-1.5">
                 + {formatCurrency(totalMonthly / 100, 'EUR', locale)}/mo
               </span>
             )}

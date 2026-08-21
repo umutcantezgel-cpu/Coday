@@ -3,18 +3,11 @@ import { getTranslations, getLocale } from 'next-intl/server';
 import { Link as NavLink } from '@/i18n/navigation';
 import Image from 'next/image';
 import {
-  Clock,
-  CheckCircle,
-  MinusCircle,
   ArrowRight,
   ShieldCheck,
-  Lightning,
   Calendar,
   Sparkle,
-  TrendUp,
-  Cpu,
   LockKey,
-  ChartLineUp,
   SealCheck,
   Percent,
 } from '@phosphor-icons/react/dist/ssr';
@@ -22,7 +15,7 @@ import { SeoHead } from '@/shared/ui/SeoHead';
 import GradientText from '@/shared/ui/GradientText';
 import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
 
-import { PackageSelectButton } from './PackageSelectButton';
+import { PackagesConfigurator } from './PackagesConfigurator';
 import { FaqAccordion } from './FaqAccordion';
 import { StepInitializer } from './StepInitializer';
 
@@ -30,119 +23,6 @@ export default async function Packages() {
   const t = await getTranslations('pricing');
   const locale = await getLocale();
   const isEn = locale === 'en';
-
-  const packages = [
-    {
-      id: 'starter',
-      name: isEn ? 'Starter / Local Authority' : 'Starter / Local Authority',
-      tagline: isEn
-        ? 'Perfect for craftsmen & local service providers seeking online dominance.'
-        : 'Perfekt für Handwerker & lokale Dienstleister für planbare Neukunden.',
-      priceTag: isEn ? 'On Request' : 'Auf Anfrage',
-      subPrice: isEn ? 'Bespoke Fixed Price after Consultation' : 'Individuelles Festpreisangebot',
-      popular: false,
-      features: [
-        isEn
-          ? 'Custom Next.js 15 Website (up to 5 pages)'
-          : 'Maßgeschneiderte Next.js 15 Website (bis 5 Unterseiten)',
-        isEn
-          ? '100/100 Google Core Web Vitals Guaranteed'
-          : '100/100 Google Core Web Vitals Garantie',
-        isEn
-          ? 'Mobile-First UX & High-Converting Contact Forms'
-          : 'Mobile-First Design & DSGVO-Kontaktfunnel',
-        isEn
-          ? 'Local SEO & Google Business Profile Optimization'
-          : 'Lokale SEO-Optimierung & Google Maps Ausrichtung',
-        isEn
-          ? '100% Source Code & Design Ownership'
-          : '100% Quellcode- & Design-Eigentum (Kein Abo)',
-        isEn ? 'Zero-Downtime Global Edge Deployment' : 'Zero-Downtime Vercel Edge Hosting Setup',
-      ],
-      notIncluded: [
-        isEn ? 'Headless CMS for custom editing' : 'Headless CMS Redaktionssystem',
-        isEn ? '60-Second Express Recruiting Funnel' : '60-Sekunden Mobile-Recruiting Funnel',
-        isEn
-          ? 'Multi-Language Architecture (i18n)'
-          : 'Mehrsprachigkeit & globale Internationalisierung',
-      ],
-      cta: isEn ? 'Inquire Starter Package' : 'Starter unverbindlich anfragen',
-      deliveryDays: 14,
-    },
-    {
-      id: 'business',
-      name: isEn ? 'Business Enterprise / B2B' : 'Business Enterprise / B2B',
-      tagline: isEn
-        ? 'The gold standard for mid-market leaders, B2B companies & industry.'
-        : 'Der Maßstab für anspruchsvollen Mittelstand, Industrie & B2B.',
-      priceTag: isEn ? 'On Request' : 'Auf Anfrage',
-      subPrice: isEn ? 'Most Popular for High-Growth SME' : 'Maßgeschneidertes Festpreisangebot',
-      popular: true,
-      badge: isEn ? 'Most Popular' : 'Empfehlung für Mittelstand',
-      features: [
-        isEn
-          ? 'Bespoke Next.js 15 Enterprise Architecture (up to 12 pages)'
-          : 'Maßgeschneiderte Next.js 15 B2B-Plattform (bis 12 Unterseiten)',
-        isEn
-          ? 'Sanity v3 Headless CMS (Self-managed content)'
-          : 'Sanity v3 Headless CMS (Inhalte selbst verwalten)',
-        isEn
-          ? '60-Second Mobile Express-Recruiting Funnel'
-          : '60-Sekunden Express-Mitarbeitergewinnung',
-        isEn
-          ? '100/100 Core Web Vitals & Sub-0.3s Load Time'
-          : '100/100 Core Web Vitals & Sub-0,3s Ladezeit',
-        isEn
-          ? 'Technical SEO, Topic Silos & Schema Markup'
-          : 'Technisches SEO, Topic-Silos & Rich Snippets',
-        isEn
-          ? 'Micro-Animations & Dynamic Bento Grid Layouts'
-          : 'Micro-Animations & maßgeschneidertes Bento-UI',
-        isEn
-          ? 'Direct Line to Lead Architect Umutcan Emre Tezgel'
-          : 'Direkter Draht zum Lead-Architekten Umutcan Emre Tezgel',
-      ],
-      notIncluded: [
-        isEn ? 'Full E-Commerce Shop Checkout' : 'Vollständiger Online-Shop Checkout',
-        isEn ? 'Custom CRM / ERP Deep-Sync' : 'Tiefgreifende ERP-/CRM-Schnittstellen',
-      ],
-      cta: isEn ? 'Inquire Business Enterprise' : 'Business Enterprise anfragen',
-      deliveryDays: 21,
-    },
-    {
-      id: 'custom-app',
-      name: isEn ? 'Custom App & E-Commerce' : 'Custom App & E-Commerce',
-      tagline: isEn
-        ? 'High-performance web apps, client portals & headless shops.'
-        : 'Web-Applikationen, Kundenportale & Headless Online-Shops.',
-      priceTag: isEn ? 'On Request' : 'Auf Anfrage',
-      subPrice: isEn ? 'Custom Scope & Integration Architecture' : 'Individueller Projektumfang',
-      popular: false,
-      features: [
-        isEn
-          ? 'Full-Stack Next.js 15 & React 19 Web Application'
-          : 'Full-Stack Next.js 15 & React 19 Web-Applikation',
-        isEn
-          ? 'Headless E-Commerce (Shopify / Stripe) or Client Portal'
-          : 'Headless E-Commerce (Stripe/Shopify) oder B2B-Portal',
-        isEn
-          ? 'Deep API Integrations (ERP, CRM, Database & Auth)'
-          : 'API-Schnittstellen (ERP, Supabase Auth, CRM-Sync)',
-        isEn
-          ? 'Multi-Language Architecture (German + English)'
-          : 'Lückenlose Mehrsprachigkeit (next-intl)',
-        isEn
-          ? 'Advanced Search with Instant Filtering (Sub-50ms)'
-          : 'Instant-Suche & dynamische B2B-Katalogfilter',
-        isEn
-          ? 'Continuous Deployment & SLA Priority Support'
-          : 'CI/CD Pipelines & bevorzugter Priority-Support',
-      ],
-      notIncluded: [],
-      cta: isEn ? 'Request Custom Project' : 'Custom Projekt anfragen',
-      deliveryDays: 30,
-    },
-  ];
 
   const valuePillars = [
     {
@@ -178,15 +58,15 @@ export default async function Packages() {
         : 'Wie setzen sich die Preise zusammen, wenn keine festen Pauschalen angegeben sind?',
       answer: isEn
         ? 'Every company has unique requirements. In our free initial consultation, we analyze your current digital presence, define the exact feature scope, and provide a transparent, binding fixed-price quote. You only pay for what brings measurable value to your business.'
-        : 'Jedes Unternehmen hat individuelle Anforderungen und Ziele. In einer kostenlosen Erstberatung analysieren wir Ihren Bedarf, wählen gemeinsam die benötigten Module aus und erstellen ein verbindliches Festpreisangebot. Sie zahlen ausschließlich für Features, die messbaren Mehrwert stiften — ohne versteckte Kosten oder Überraschungen.',
+        : 'Jedes Unternehmen hat individuelle Anforderungen und Ziele. In einer kostenlosen Erstberatung analysieren wir Ihren Bedarf, wählen gemeinsam die benötigten Module aus und erstellen ein verbindliches Festpreisangebot ab 1.490 Euro. Sie zahlen ausschließlich für Features, die messbaren Mehrwert stiften — ohne versteckte Kosten oder Überraschungen.',
     },
     {
       question: isEn
-        ? 'Why is Coday significantly more cost-effective than traditional agencies?'
-        : 'Warum ist Coday 5 bis 10 Mal günstiger als traditionelle Werbeagenturen?',
+        ? 'Why is working with Coday particularly cost-effective and agile?'
+        : 'Warum ist die Zusammenarbeit mit Coday besonders effizient und agil?',
       answer: isEn
-        ? 'We eliminate the heavy overhead of large agencies: no non-technical sales staff, no junior developer delegation, and no bureaucratic delays. With our modern Next.js architecture and AI-augmented toolchain, a single expert engineer achieves what usually requires a team of five.'
-        : 'Wir verzichten bewusst auf administrative Wasserköpfe, Sales-Zwischenhändler und teure Prestige-Büros. Durch unsere hochmoderne Next.js 15 Architektur und modernste KI-gestützte Entwicklungsworkflows setzt Inhaber Umutcan Emre Tezgel Projekte schneller und präziser um als traditionelle Fünf-Personen-Teams.',
+        ? 'We eliminate the heavy overhead of large agencies: no non-technical sales staff, no junior developer delegation, and no bureaucratic delays. With modern Next.js 15 architecture and direct founder execution, Umutcan Emre Tezgel delivers projects faster, cleaner, and with maximum focus.'
+        : 'Wir verzichten bewusst auf administrative Wasserköpfe, Sales-Zwischenhändler und bürokratische Verzögerungen. Durch unsere moderne Next.js 15 Architektur und die direkte Inhaber-Realisierung durch Umutcan Emre Tezgel entstehen Webprojekte schneller, präziser und mit ungeteiltem Fokus auf Ihren Erfolg.',
     },
     {
       question: isEn
@@ -210,7 +90,7 @@ export default async function Packages() {
     <div className="min-h-[100dvh] bg-[#fafafa] text-slate-900 selection:bg-amber-500/20 selection:text-amber-900">
       <SeoHead
         title="Webdesign Preise & Maßgeschneiderte Angebote | Coday Webagentur"
-        description="Individuelle Festpreise für High-End Webdesign & Next.js Entwicklung. 5-10x kosteneffizienter als Großagenturen, 100/100 PageSpeed & 100% Quellcode-Eigentum."
+        description="Individuelle Festpreise für High-End Webdesign & Next.js Entwicklung. Signifikante Kosteneffizienz durch direkte Inhaber-Realisierung, 100/100 PageSpeed & 100% Quellcode-Eigentum."
         breadcrumbs={[
           { name: 'Home', url: 'https://codayweb.de' },
           { name: 'Preise', url: 'https://codayweb.de/pricing' },
@@ -256,7 +136,7 @@ export default async function Packages() {
             Wählen Sie exakt die Module und Funktionen, die Sie benötigen. Nach einer kostenlosen
             Bedarfsanalyse erhalten Sie ein maßgeschneidertes, verbindliches Festpreisangebot —{' '}
             <strong className="text-amber-800 font-semibold">
-              5 bis 10x kosteneffizienter als Großagenturen
+              maximale Kosteneffizienz durch direkte Inhaber-Umsetzung
             </strong>{' '}
             bei nachweislich überlegener 100/100 Spitzenqualität.
           </p>
@@ -428,97 +308,8 @@ export default async function Packages() {
         </div>
       </section>
 
-      {/* 3 Main Flexible Service Packages */}
-      <section className="py-24 px-4 w-full relative">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
-              Modulare Leistungspakete
-            </span>
-            <h2 className="font-display font-bold text-3xl sm:text-4xl text-slate-900 mt-2 mb-4">
-              Wählen Sie Ihren gewünschten Projektumfang
-            </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Sie wählen die Bausteine — wir schnüren Ihnen das wirtschaftlichste Angebot für Ihren
-              Erfolg. Alle Pakete sind flexibel erweiterbar.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-            {packages.map((pkg) => (
-              <div
-                key={pkg.id}
-                className={`relative rounded-2xl p-8 flex flex-col justify-between border transition-all ${
-                  pkg.popular
-                    ? 'bg-white border-amber-500/40 shadow-xl shadow-amber-500/5 ring-1 ring-amber-500/20 lg:-translate-y-3'
-                    : 'bg-white border-slate-200/80 hover:border-slate-300 shadow-sm hover:shadow-md'
-                }`}
-              >
-                {pkg.badge && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                    <span className="bg-amber-500 text-white text-xs font-extrabold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
-                      {pkg.badge}
-                    </span>
-                  </div>
-                )}
-
-                <div>
-                  <div className="text-center mb-8 pt-2">
-                    <h2 className="font-display font-bold text-2xl text-slate-900 mb-2">
-                      {pkg.name}
-                    </h2>
-                    <p className="text-slate-600 text-xs sm:text-sm min-h-[36px]">{pkg.tagline}</p>
-                  </div>
-
-                  <div className="text-center mb-8 pb-8 border-b border-slate-100">
-                    <div className="font-display font-black text-4xl text-primary-700 tracking-tight mb-2">
-                      {pkg.priceTag}
-                    </div>
-                    <div className="text-xs text-slate-500 mb-3">{pkg.subPrice}</div>
-                    <div className="inline-flex items-center gap-1.5 text-xs text-slate-600 bg-slate-100 px-3 py-1.5 rounded-full border border-slate-200">
-                      <Clock className="w-4 h-4 text-amber-600" />
-                      <span>Lieferzeit: ~{pkg.deliveryDays} Werktage</span>
-                    </div>
-                  </div>
-
-                  {/* Features List */}
-                  <ul className="space-y-3.5 mb-10 text-sm">
-                    {pkg.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-slate-700">
-                        <CheckCircle
-                          weight="fill"
-                          className="w-5 h-5 text-amber-600 shrink-0 mt-0.5"
-                        />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                    {pkg.notIncluded.map((feature, idx) => (
-                      <li key={`ni-${idx}`} className="flex items-start gap-3 text-slate-400">
-                        <MinusCircle className="w-5 h-5 text-slate-400 shrink-0 mt-0.5" />
-                        <span className="line-through">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="pt-6 border-t border-slate-100">
-                  <NavLink
-                    href="/contact"
-                    className={`group active:scale-[0.97] w-full py-4 px-6 rounded-full font-bold text-sm uppercase tracking-wider transition duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] flex items-center justify-between gap-2 focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none ${
-                      pkg.popular
-                        ? 'bg-primary-700 text-white hover:bg-primary-800 shadow-md'
-                        : 'bg-slate-900 text-white hover:bg-slate-800'
-                    }`}
-                  >
-                    <span className="flex-1 text-center">{pkg.cta}</span>
-                    <ArrowRight weight="bold" className="w-4 h-4" />
-                  </NavLink>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Interactive Packages & Add-ons Configurator */}
+      <PackagesConfigurator />
 
       {/* Feature Comparison Table */}
       <section className="py-24 px-4 bg-white border-y border-slate-200 w-full">

@@ -67,8 +67,8 @@ export const CalculatorSummary: React.FC = () => {
           </div>
           <div className="font-display font-bold text-2xl text-white">Preise auf Anfrage</div>
           <p className="text-xs text-slate-300 mt-2 leading-relaxed">
-            5 bis 10x kosteneffizienter als Großagenturen. Verbindliches Festpreisangebot nach
-            kostenloser Bedarfsanalyse.
+            Maximale Kosteneffizienz durch direkte Inhaber-Realisierung. Verbindliches
+            Festpreisangebot nach kostenloser Bedarfsanalyse.
           </p>
         </div>
       </div>

@@ -28,6 +28,7 @@ import {
   FacebookLogo,
 } from '@phosphor-icons/react/dist/ssr';
 import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
+import { useSearchParams } from 'next/navigation';
 import { useCalculatorStore } from '@/features/calculator/model/store';
 import StepIndicator from '@/shared/ui/StepIndicator';
 import { Skeleton } from '@/shared/ui/Skeleton';
@@ -36,9 +37,11 @@ import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 
 export const ContactClient: React.FC = () => {
   const t = useTranslations('contact');
+  const searchParams = useSearchParams();
   const selectedPackageId = useCalculatorStore((state) => state.selectedPackageId);
+  const setPackageAndAddons = useCalculatorStore((state) => state.setPackageAndAddons);
   const setStep = useCalculatorStore((state) => state.setStep);
-  const hasPackage = !!selectedPackageId;
+  const hasPackage = !!selectedPackageId || !!searchParams?.get('package');
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -46,12 +49,18 @@ export const ContactClient: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Set step when arriving from flow
+  // Sync URL parameters if present
   useEffect(() => {
-    if (hasPackage) {
+    const pkgParam = searchParams?.get('package');
+    const addonsParam = searchParams?.get('addons');
+    if (pkgParam) {
+      const addons = addonsParam ? addonsParam.split(',').filter(Boolean) : [];
+      setPackageAndAddons(pkgParam, addons);
+      setStep('contact');
+    } else if (selectedPackageId) {
       setStep('contact');
     }
-  }, [hasPackage, setStep]);
+  }, [searchParams, selectedPackageId, setPackageAndAddons, setStep]);
 
   const staggerContainer = {
     hidden: { opacity: 0 },

@@ -1,7 +1,9 @@
 'use client';
-import React, { useState, Suspense, lazy } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { m, AnimatePresence } from 'motion/react';
 import { useTranslations } from 'next-intl';
+import { useSearchParams } from 'next/navigation';
+import { useCalculatorStore } from '@/features/calculator/model/store';
 import BookingCalendar from '@/features/booking/ui/BookingCalendar';
 const ApplicationWizard = lazy(() => import('@/features/contact/ApplicationWizard'));
 import { Icon } from '@/shared/ui/Icon';
@@ -9,7 +11,13 @@ import { Skeleton } from '@/shared/ui/Skeleton';
 
 export const MobileContactLayout: React.FC = () => {
   const t = useTranslations('contact');
-  const [activeTab, setActiveTab] = useState<'booking' | 'contact'>('booking');
+  const searchParams = useSearchParams();
+  const selectedPackageId = useCalculatorStore((state) => state.selectedPackageId);
+  const hasPackage = !!selectedPackageId || !!searchParams?.get('package');
+
+  const [userTab, setUserTab] = useState<'booking' | 'contact' | null>(null);
+  const activeTab =
+    userTab ?? (hasPackage || searchParams?.get('tab') === 'contact' ? 'contact' : 'booking');
 
   return (
     <div className="min-h-dvh bg-gray-50 pb-20">
@@ -99,7 +107,7 @@ export const MobileContactLayout: React.FC = () => {
             role="tab"
             aria-selected={activeTab === 'booking'}
             aria-controls="tabpanel-booking"
-            onClick={() => setActiveTab('booking')}
+            onClick={() => setUserTab('booking')}
             className={`active:scale-[0.97] 
               flex flex-col items-center justify-center gap-1 py-2 px-4 rounded-xl text-xs font-bold transition motion-reduce:duration-[0.01ms] relative overflow-hidden
               ${activeTab === 'booking' ? 'text-primary' : 'text-slate-500 hover:bg-gray-50'}
@@ -125,7 +133,7 @@ export const MobileContactLayout: React.FC = () => {
             role="tab"
             aria-selected={activeTab === 'contact'}
             aria-controls="tabpanel-contact"
-            onClick={() => setActiveTab('contact')}
+            onClick={() => setUserTab('contact')}
             className={`active:scale-[0.97] 
               flex flex-col items-center justify-center gap-1 py-2 px-4 rounded-xl text-xs font-bold transition motion-reduce:duration-[0.01ms] relative overflow-hidden
               ${activeTab === 'contact' ? 'text-purple-600' : 'text-slate-500 hover:bg-gray-50'}

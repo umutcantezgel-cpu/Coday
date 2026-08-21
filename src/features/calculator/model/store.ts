@@ -7,7 +7,8 @@ interface CalculatorState {
   selectedModuleIds: Set<string>;
   selectedPackageId: string | null;
   currentStep: 'packages' | 'calculator' | 'contact';
-  selectPackage: (packageId: string) => void;
+  selectPackage: (packageId: string, keepAddons?: boolean) => void;
+  setPackageAndAddons: (packageId: string, addonIds?: string[]) => void;
   toggleModule: (moduleId: string) => void;
   selectBasePackage: (moduleId: string) => void;
   setStep: (step: 'packages' | 'calculator' | 'contact') => void;
@@ -28,10 +29,21 @@ export const useCalculatorStore = create<CalculatorState>()(
       selectedPackageId: null,
       currentStep: 'packages' as const,
 
-      selectPackage: (packageId) => {
+      selectPackage: (packageId, keepAddons = false) => {
+        const currentSet = get().selectedModuleIds;
         const newSet = new Set<string>();
 
-        // Map Packages exactly 1:1 to their base module to prevent hidden cost mismatches
+        if (keepAddons) {
+          // Keep existing non-basis modules
+          currentSet.forEach((id) => {
+            const mod = modules.find((m) => m.id === id);
+            if (mod && mod.category !== 'basis') {
+              newSet.add(id);
+            }
+          });
+        }
+
+        // Map Packages exactly 1:1 to their base module
         switch (packageId) {
           case 'onepager':
             newSet.add('basis-onepager');
@@ -40,9 +52,11 @@ export const useCalculatorStore = create<CalculatorState>()(
             newSet.add('basis-starter');
             break;
           case 'professional':
+          case 'business':
             newSet.add('basis-professional');
             break;
           case 'enterprise':
+          case 'custom-app':
             newSet.add('basis-enterprise');
             break;
           case 'ultimate':
@@ -51,6 +65,46 @@ export const useCalculatorStore = create<CalculatorState>()(
           default:
             newSet.add('basis-starter');
         }
+
+        set({
+          selectedPackageId: packageId,
+          selectedModuleIds: newSet,
+        });
+      },
+
+      setPackageAndAddons: (packageId, addonIds = []) => {
+        const newSet = new Set<string>();
+
+        // Add base package
+        switch (packageId) {
+          case 'onepager':
+            newSet.add('basis-onepager');
+            break;
+          case 'starter':
+            newSet.add('basis-starter');
+            break;
+          case 'professional':
+          case 'business':
+            newSet.add('basis-professional');
+            break;
+          case 'enterprise':
+          case 'custom-app':
+            newSet.add('basis-enterprise');
+            break;
+          case 'ultimate':
+            newSet.add('basis-ultimate');
+            break;
+          default:
+            newSet.add('basis-starter');
+        }
+
+        // Add verified add-on modules
+        addonIds.forEach((id) => {
+          const mod = modules.find((m) => m.id === id);
+          if (mod && mod.category !== 'basis') {
+            newSet.add(id);
+          }
+        });
 
         set({
           selectedPackageId: packageId,
@@ -122,11 +176,13 @@ export const useCalculatorStore = create<CalculatorState>()(
         const { selectedPackageId } = get();
         if (!selectedPackageId) return null;
         const names: Record<string, string> = {
-          onepager: 'Onepager',
-          starter: 'Starter',
-          professional: 'Professional',
-          enterprise: 'Enterprise',
-          ultimate: 'Ultimate',
+          onepager: 'Onepager / Landingpage',
+          starter: 'Starter / Local Authority',
+          business: 'Business Enterprise / B2B',
+          professional: 'Business Enterprise / B2B',
+          'custom-app': 'Custom App & E-Commerce',
+          enterprise: 'Custom App & E-Commerce',
+          ultimate: 'Ultimate Domination',
         };
         return names[selectedPackageId] || null;
       },
