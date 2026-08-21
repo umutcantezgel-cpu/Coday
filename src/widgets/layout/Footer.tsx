@@ -1,7 +1,6 @@
 'use client';
 import React from 'react';
 import { Link } from '@/i18n/navigation';
-import Image from 'next/image';
 import { m } from 'motion/react';
 import { useTranslations } from 'next-intl';
 
@@ -99,13 +98,48 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16 w-full border-t border-slate-200 pt-16">
           {/* Col 1: Brand Info */}
           <div className="flex flex-col items-start lg:col-span-1">
-            <Image
-              src="/images/brand/webdesign-wetzlar-coday-logo-footer.webp"
-              alt="Coday Webdesign Wetzlar"
-              width={240}
-              height={60}
-              className="w-48 sm:w-56 h-auto mb-6 opacity-95 object-contain hover:opacity-100 transition-opacity"
-            />
+            <Link
+              href="/"
+              className="group inline-flex items-center gap-3 mb-6 transition-all duration-300 hover:opacity-95"
+              title="Coday – Webdesign & Next.js Agentur Wetzlar"
+              aria-label="Coday – Zur Startseite"
+            >
+              <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-primary-600 via-primary-700 to-slate-900 flex items-center justify-center p-2 shadow-md shadow-primary-700/20 group-hover:shadow-lg group-hover:shadow-primary-700/30 group-hover:scale-105 transition-all duration-300">
+                <svg
+                  className="w-6 h-6"
+                  viewBox="0 0 512 512"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <defs>
+                    <linearGradient
+                      id="coday-footer-logo-grad"
+                      x1="0"
+                      y1="0"
+                      x2="512"
+                      y2="512"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop offset="0%" stopColor="#ffffff" />
+                      <stop offset="100%" stopColor="#5eead4" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M310 96C198.5 96 108 186.5 108 298s90.5 202 202 202c55.8 0 106.3-22.7 142.8-59.3 7.8-7.8 7.8-20.5 0-28.3s-20.5-7.8-28.3 0C393.3 443.7 353.5 460 310 460c-89.4 0-162-72.6-162-162s72.6-162 162-162c43.5 0 83.3 16.3 114.5 47.5 7.8 7.8 20.5 7.8 28.3 0s7.8-20.5 0-28.3C416.3 118.7 365.8 96 310 96z"
+                    fill="url(#coday-footer-logo-grad)"
+                  />
+                </svg>
+              </div>
+              <div className="flex flex-col">
+                <span className="font-display font-black text-2xl tracking-tight text-slate-900 leading-none group-hover:text-primary-800 transition-colors">
+                  Coday<span className="text-primary-600">.</span>
+                </span>
+                <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-700 mt-1">
+                  Webdesign & Next.js
+                </span>
+              </div>
+            </Link>
             <p className="text-sm text-slate-600 max-w-xs mb-8 leading-relaxed font-normal">
               {t('footer.slogan')}
             </p>
