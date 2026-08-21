@@ -9,8 +9,15 @@ export function getOrganizationSchema(): Organization {
     '@type': 'Organization',
     '@id': ORGANIZATION_ID,
     name: 'Coday',
+    alternateName: [
+      'Coday Web',
+      'Webdesign Coday',
+      'Webdesign Agentur Wetzlar',
+      'Webentwicklung Wetzlar',
+      'Coday Webagentur',
+    ],
     url: 'https://www.codayweb.de',
-    logo: 'https://www.codayweb.de/images/brand/coday-logo-footer.webp',
+    logo: 'https://www.codayweb.de/images/brand/coday-logo-footer.png',
     sameAs: [
       'https://www.provenexpert.com/de-de/coday-webagentur/',
       'https://maps.app.goo.gl/9SagecgXw7Vf5csH7',

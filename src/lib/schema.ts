@@ -40,17 +40,23 @@ export function getOrganizationSchema(locale: string = 'de') {
     '@id': ORG_ID,
     name: 'Coday',
     legalName: 'Umutcan Emre Tezgel',
-    alternateName: ['Coday Webentwicklung', 'Coday Web Agency'],
+    alternateName: [
+      'Coday Web',
+      'Webdesign Coday',
+      'Webdesign Agentur Wetzlar',
+      'Webentwicklung Wetzlar',
+      'Coday Webagentur',
+    ],
     url: BASE_URL,
     image: `${BASE_URL}/images/og-image.jpg`,
     description:
       locale === 'en'
-        ? 'Premium Web Design, high-conversion websites, and 100/100 PageSpeed SEO for businesses, craftsmen, and SMEs to acquire new customers and maximize digital presence in Wetzlar, Giessen, Hesse, and nationwide.'
-        : 'Premium Webdesign, verkaufsstarke Websites und 100/100 PageSpeed SEO für Unternehmen, Handwerker und den Mittelstand zur Neukundengewinnung und maximalen Webpräsenz in Wetzlar, Gießen, Hessen und deutschlandweit.',
+        ? 'Coday is your premier Web Design Agency in Wetzlar. We build high-performance & high-conversion websites, custom web development, and 100/100 PageSpeed SEO for businesses, medical practices, and trades across Wetzlar, Giessen, Hesse, and Germany.'
+        : 'Coday ist Ihre führende Webdesign Agentur in Wetzlar. Wir entwickeln High-Performance & High-Conversion Websites, maßgeschneiderte Webentwicklung und 100/100 PageSpeed SEO für Unternehmen, Handwerker und Praxen in Wetzlar, Gießen, Hessen und ganz Deutschland.',
     slogan:
       locale === 'en'
-        ? 'High-conversion websites and maximum digital attention.'
-        : 'Verkaufsstarke Webseiten für maximale Kunden-Aufmerksamkeit.',
+        ? 'High-Performance & High-Conversion Websites from Wetzlar.'
+        : 'High-Performance & High-Conversion Websites aus Wetzlar.',
     email: 'kontakt@codayweb.de',
     telephone: '+49-176-41195301',
     vatID: 'DE459754827',

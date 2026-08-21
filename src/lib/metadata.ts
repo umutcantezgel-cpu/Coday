@@ -102,20 +102,25 @@ export function generatePageMetadata(opts: {
   const defaultKeywords = isEn
     ? [
         'Web Design Wetzlar',
+        'Web Design Agency Wetzlar',
+        'Web Design Coday',
         'Web Development Wetzlar',
-        'Web Agency Wetzlar',
-        'Website Creation Wetzlar',
         'Coday Web',
-        'Next.js Web Design',
+        'Web Agency Wetzlar',
+        'High Performance Web Design',
+        'High Conversion Web Design',
         'Local SEO Central Hesse',
       ]
     : [
         'Webdesign Wetzlar',
+        'Webdesign Agentur Wetzlar',
+        'Webdesign Coday',
         'Webentwicklung Wetzlar',
-        'Webagentur Wetzlar',
-        'Website erstellen Wetzlar',
         'Coday Web',
-        'Next.js Webdesign',
+        'Webagentur Wetzlar',
+        'High Performance Webdesign',
+        'High Conversion Webdesign',
+        'Website erstellen lassen Wetzlar',
         'Lokale SEO Mittelhessen',
       ];
 

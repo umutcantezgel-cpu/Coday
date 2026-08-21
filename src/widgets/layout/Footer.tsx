@@ -102,14 +102,14 @@ export const Footer: React.FC = () => {
             <Link
               href="/"
               className="group inline-flex items-center mb-6 transition-all duration-300 hover:opacity-95"
-              title="Coday – Webdesign Agentur Wetzlar"
-              aria-label="Coday – Webdesign Agentur Wetzlar Startseite"
+              title="Coday Web – Webdesign Agentur Wetzlar"
+              aria-label="Coday Web – Webdesign Agentur Wetzlar Startseite"
             >
               <div className="px-4 py-2.5 rounded-2xl bg-slate-950 border border-slate-800 shadow-md shadow-slate-950/20 group-hover:shadow-lg group-hover:border-primary-500/40 group-hover:scale-[1.02] transition-all duration-300 flex items-center justify-center">
                 <Image
                   src="/images/brand/coday-logo-footer.png"
                   alt={t('footer.logo_alt', {
-                    defaultValue: 'Coday – Webdesign Agentur Wetzlar & Next.js Entwicklung',
+                    defaultValue: 'Coday Web – Webdesign Agentur Wetzlar & Webentwicklung',
                   })}
                   width={140}
                   height={44}
@@ -137,7 +137,7 @@ export const Footer: React.FC = () => {
                   {t('footer.trust.title', { defaultValue: 'Coday Web' })}
                 </div>
                 <div className="text-[10px] text-primary-700 font-semibold tracking-wide">
-                  {t('footer.trust.desc', { defaultValue: 'Premium Agency' })}
+                  {t('footer.trust.desc', { defaultValue: 'Webdesign Agentur Wetzlar' })}
                 </div>
               </div>
             </div>

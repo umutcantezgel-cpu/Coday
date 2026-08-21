@@ -1,16 +1,16 @@
 {
   "hero": {
-    "headline_gradient": "win more clients.",
-    "headline_prefix": "Websites that actually",
-    "description": "As a specialized agency for Web Design & Web Development Wetzlar, Coday creates high-performance websites that actually win more clients. Fixed pricing, load times under 1 second, and 100% code ownership for businesses in Wetzlar and Central Hesse.",
+    "headline_gradient": "High Performance & High Conversion.",
+    "headline_prefix": "Web Design Agency Wetzlar:",
+    "description": "As a premier Web Design Agency Coday based in Wetzlar, we build high-performance, high-converting websites for trades, medical practices, and SMEs. Ultra-fast sub-0.3s speed, 100/100 Core Web Vitals, and predictable lead generation across Central Hesse.",
     "rotating": [
-      "5.0 stars on ProvenExpert.",
-      "Load time under 1 second.",
-      "100% code ownership guaranteed.",
-      "Fixed pricing from €2,000, transparent."
+      "5.0 stars on Google Maps & ProvenExpert.",
+      "High-Performance sub-0.3s speed (100/100 PageSpeed).",
+      "High Conversion & predictable inbound leads.",
+      "100% code ownership at guaranteed fixed prices."
     ],
     "title": "Web Design & Development from Wetzlar",
-    "subtitle": "Professional websites with React & Next.js for trades, healthcare, and local service providers. Fixed pricing from €2,000.",
+    "subtitle": "High-Performance Web Design & Web Development Wetzlar for trades, healthcare, and service businesses. Fixed pricing from €2,000.",
     "cta": "Schedule Free Consultation",
     "eyebrow": "Web Design Agency in Wetzlar, since 2024",
     "view_projects": "See Results"
@@ -40,18 +40,18 @@
     "title_suffix": "Your Industry."
   },
   "meta": {
-    "description": "Coday is your web design agency in Wetzlar and Central Hesse. Fast, modern websites at a fixed price with personal support. Get your free consultation.",
-    "title": "Web Design Wetzlar | Web Development Wetzlar | Coday Web"
+    "description": "Coday is your web design agency in Wetzlar: High-performance & high-conversion websites for measurable customer acquisition. Fixed prices and personal support.",
+    "title": "Web Design Wetzlar | Web Agency & Web Development | Coday Web"
   },
   "images": {
-    "trust_collaboration": "Trusting Collaboration with your Web Design Agency Coday",
+    "trust_collaboration": "Trusting Collaboration with your Web Design Agency Coday in Wetzlar",
     "satisfied_partners": "Satisfied Clients of Web Design Agency Coday in Wetzlar"
   },
   "philosophy": {
     "history": "Are History.",
     "standard": "Coday Web is the new standard for web design in Wetzlar.",
     "text_overhead": "Traditional agencies charge you for endless overhead, countless meetings, and outdated WordPress builders. The classic agency model wastes your valuable time and budget.",
-    "text_standard": "Coday Web is the antithesis: We combine strategic web design with uncompromisingly fast Next.js code. No page builders, no excuses — just 100/100 PageSpeed and measurable new clients for your business in Wetzlar.",
+    "text_standard": "Coday Web is the antithesis: We combine strategic high-conversion web design with uncompromisingly fast high-performance architecture. No page builders, no excuses — just 100/100 PageSpeed and measurable new clients for your business in Wetzlar.",
     "traditional": "Traditional Agencies"
   },
   "stats": {

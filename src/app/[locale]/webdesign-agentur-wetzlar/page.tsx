@@ -45,30 +45,37 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Agency Wetzlar | High-End Websites · Coday',
+      title: 'Web Design Agency Wetzlar | High Performance & High Conversion · Coday',
       description:
-        'Your local web agency in Wetzlar. Next.js 15, <0.5s load time & measurable B2B leads for mid-market, optics & craft enterprises. Fixed price on request.',
+        'Your local web design agency in Wetzlar: High-performance & high-conversion websites, sub-0.3s speed & measurable leads for SMEs and crafts. Fixed prices.',
       keywords: [
         'Web Design Agency Wetzlar',
-        'Web Designer Wetzlar',
-        'Website Creation Wetzlar',
+        'Web Design Wetzlar',
+        'Web Design Coday',
         'Web Development Wetzlar',
-        'Coday Web Wetzlar',
+        'Coday Web',
+        'High Performance Web Design',
+        'High Conversion Web Design',
+        'Website Creation Wetzlar',
       ],
       path: '/en/webdesign-agentur-wetzlar',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Agentur Wetzlar | High-End Websites · Coday',
+    title: 'Webdesign Agentur Wetzlar | High-Performance Websites · Coday',
     description:
-      'Ihre lokale Webagentur in Wetzlar. Next.js 15, <0.5s Ladezeit & messbare B2B-Leads für Mittelstand, Optik & Handwerk. Verbindlicher Festpreis auf Anfrage.',
+      'Ihre lokale Webdesign Agentur in Wetzlar: High-Performance & High-Conversion Websites für Mittelstand, Handwerk & Praxen. Sub-0,3s Ladezeiten & messbare Leads.',
     keywords: [
       'Webdesign Agentur Wetzlar',
-      'Webdesigner Wetzlar',
-      'Homepage erstellen Wetzlar',
+      'Webdesign Wetzlar',
+      'Webdesign Coday',
       'Webentwicklung Wetzlar',
-      'Coday Web Wetzlar',
+      'Coday Web',
+      'High Performance Webdesign',
+      'High Conversion Webdesign',
+      'Homepage erstellen Wetzlar',
+      'Webagentur Wetzlar',
     ],
     path: '/de/webdesign-agentur-wetzlar',
     type: 'money',
@@ -96,7 +103,7 @@ export default async function WebdesignWetzlarPage({
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'Was kostet eine High-End Next.js Website in Wetzlar?',
+            name: 'Was kostet eine professionelle High-Performance Website in Wetzlar?',
             acceptedAnswer: {
               '@type': 'Answer',
               text: 'Wir kalkulieren für Wetzlarer Optikunternehmen, Medizintechnik-Betriebe, Kanzleien und Handwerker transparente Festpreise ab Projektstart. Sie erhalten absolute Budgetkontrolle ohne versteckte Folgegebühren.',

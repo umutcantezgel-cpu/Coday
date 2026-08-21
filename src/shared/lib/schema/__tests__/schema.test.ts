@@ -18,7 +18,7 @@ describe('JSON-LD Schema Generators', () => {
     expect(org['@id']).toBe(ORGANIZATION_ID);
     expect(org['name']).toBe('Coday');
     expect(org['url']).toBe('https://www.codayweb.de');
-    expect(org['logo']).toBe('https://www.codayweb.de/images/brand/coday-logo-footer.webp');
+    expect(org['logo']).toBe('https://www.codayweb.de/images/brand/coday-logo-footer.png');
     expect(org['contactPoint']).toBeDefined();
     expect(org['address']).toBeDefined();
     expect(org['vatID']).toBe('DE459754827');

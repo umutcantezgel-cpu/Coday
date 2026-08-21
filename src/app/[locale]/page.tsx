@@ -28,16 +28,18 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design & Web Development Wetzlar | Coday Agency',
+      title: 'Web Design Wetzlar | Web Agency & Web Development | Coday Web',
       description:
-        'Coday is your web design agency in Wetzlar and Central Hesse. Fast, modern websites at a fixed price with personal support. Get your free consultation.',
+        'Coday is your web design agency in Wetzlar: High-performance & high-conversion websites for measurable customer acquisition. Fixed prices and personal support.',
       keywords: [
         'Web Design Wetzlar',
+        'Web Design Agency Wetzlar',
+        'Web Design Coday',
         'Web Development Wetzlar',
-        'Web Agency Hesse',
-        'Website Creation Wetzlar',
         'Coday Web',
-        'Next.js Web Development',
+        'Web Agency Hesse',
+        'High Performance Web Design',
+        'High Conversion Web Design',
         'Local SEO Central Hesse',
       ],
       path: '/en',
@@ -45,16 +47,19 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign & Webentwicklung Wetzlar | Coday Agentur',
+    title: 'Webdesign Wetzlar | Webdesign Agentur & Webentwicklung | Coday Web',
     description:
-      'Coday ist Ihre Webdesign Agentur in Wetzlar und Mittelhessen. Schnelle, moderne Webseiten zum Festpreis mit persönlicher Betreuung. Jetzt beraten lassen.',
+      'Coday ist Ihre Webdesign Agentur in Wetzlar: High-Performance & High-Conversion Websites für messbar mehr Kundenanfragen. Feste Preise & persönliche Betreuung.',
     keywords: [
       'Webdesign Wetzlar',
+      'Webdesign Agentur Wetzlar',
+      'Webdesign Coday',
       'Webentwicklung Wetzlar',
-      'Webagentur Wetzlar',
-      'Website erstellen Wetzlar',
       'Coday Web',
-      'Next.js Webdesign',
+      'Webagentur Wetzlar',
+      'High Performance Webdesign',
+      'High Conversion Webdesign',
+      'Website erstellen lassen Wetzlar',
       'Lokale SEO Mittelhessen',
     ],
     path: '/de',

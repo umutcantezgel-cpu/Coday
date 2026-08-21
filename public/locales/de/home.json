@@ -2,15 +2,15 @@
   "hero": {
     "headline_gradient": "Websites, die Kunden gewinnen.",
     "headline_prefix": "Webdesign Agentur Wetzlar:",
-    "description": "Als spezialisierte Coday Agentur und führende Webdesign Agentur Wetzlar realisieren wir moderne Webentwicklung und Websites, die Kunden gewinnen. Blitzschnelle Ladezeiten unter 1 Sekunde, 100/100 PageSpeed, transparente Festpreise und 100% Code-Eigentum für Unternehmen in Wetzlar und Mittelhessen.",
+    "description": "Als führende Webdesign Agentur Coday aus Wetzlar entwickeln wir umsatzstarke, extrem schnelle Websites für Handwerk, Praxen und mittelständische Unternehmen. High Performance, 100/100 Google Core Web Vitals und planbare Neukundengewinnung in Wetzlar und ganz Mittelhessen.",
     "rotating": [
       "5,0 Sterne auf Google Maps & ProvenExpert.",
-      "Ladezeit unter 1 Sekunde (100/100 PageSpeed).",
-      "100% Code-Eigentum garantiert.",
-      "Transparente Festpreise ohne versteckte Kosten."
+      "High-Performance Ladezeit unter 0,3s (100/100 PageSpeed).",
+      "High Conversion & planbare Neukundenanfragen.",
+      "100% Code-Eigentum zum garantierten Festpreis."
     ],
     "title": "Webdesign & Entwicklung aus Wetzlar",
-    "subtitle": "Professionelle Websites mit React & Next.js für Handwerk, Gesundheitswesen und lokale Dienstleister. Festpreise ab 2.000 €.",
+    "subtitle": "High-Performance Webdesign & Webentwicklung Wetzlar für Handwerk, Gesundheitswesen und lokale Dienstleister. Festpreise ab 2.000 €.",
     "cta": "Kostenloses Erstgespräch",
     "eyebrow": "Webdesign-Agentur in Wetzlar, seit 2024",
     "view_projects": "Ergebnisse ansehen"
@@ -40,18 +40,18 @@
     "title_suffix": "Ihre Branche."
   },
   "meta": {
-    "description": "Coday ist Ihre Webdesign Agentur in Wetzlar und Mittelhessen. Schnelle, moderne Webseiten zum Festpreis mit persönlicher Betreuung. Jetzt beraten lassen.",
-    "title": "Webdesign Wetzlar | Webentwicklung Wetzlar | Coday Web"
+    "description": "Coday ist Ihre Webdesign Agentur in Wetzlar: High-Performance & High-Conversion Websites für messbar mehr Kundenanfragen. Feste Preise & persönliche Betreuung.",
+    "title": "Webdesign Wetzlar | Webdesign Agentur & Webentwicklung | Coday Web"
   },
   "images": {
-    "trust_collaboration": "Vertrauensvolle Zusammenarbeit mit Ihrer Webdesign Agentur Coday",
+    "trust_collaboration": "Vertrauensvolle Zusammenarbeit mit Ihrer Webdesign Agentur Coday in Wetzlar",
     "satisfied_partners": "Zufriedene Kunden der Webdesign Agentur Coday in Wetzlar"
   },
   "philosophy": {
     "history": "Sind Geschichte.",
     "standard": "Coday Web ist der neue Standard für Webdesign in Wetzlar.",
     "text_overhead": "Traditionelle Agenturen berechnen Ihnen endlosen Overhead, zahllose Meetings und veraltete WordPress-Baukästen. Das klassische Agenturmodell raubt Ihre wertvolle Zeit und Ihr Budget.",
-    "text_standard": "Coday Web ist die Antithese zur klassischen Agentur: Wir vereinen strategisches Webdesign mit kompromisslos schnellem Next.js-Code. Keine Baukästen, keine Ausreden — sondern 100/100 PageSpeed und messbare Neukunden für Ihr Unternehmen in Wetzlar.",
+    "text_standard": "Coday Web ist die Antithese zur klassischen Agentur: Wir vereinen strategisches High-Conversion Webdesign mit kompromisslos schneller High-Performance Architektur. Keine Baukästen, keine Ausreden — sondern 100/100 PageSpeed und messbare Neukunden für Ihr Unternehmen in Wetzlar.",
     "traditional": "Traditionelle Agenturen"
   },
   "stats": {
