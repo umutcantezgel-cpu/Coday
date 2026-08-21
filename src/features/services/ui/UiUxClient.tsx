@@ -27,8 +27,8 @@ export function UiUxClient() {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-24 px-6 overflow-hidden bg-surface-base">
+      {/* ═══ HERO SECTION ═══ */}
+      <section className="relative pt-4 pb-16 md:pt-6 md:pb-20 px-6 overflow-hidden bg-surface-base">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-start">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pink-50 text-pink-600 text-sm font-bold mb-8 border border-pink-100">

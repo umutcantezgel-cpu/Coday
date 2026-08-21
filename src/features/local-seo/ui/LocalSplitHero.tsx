@@ -95,7 +95,7 @@ export const LocalSplitHero: React.FC<LocalSplitHeroProps> = ({
   const activeStats = trustStats || defaultStats;
 
   return (
-    <section className="relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24 bg-[#fafafa] border-b border-slate-200/80">
+    <section className="relative overflow-hidden pt-4 pb-12 md:pt-6 md:pb-16 bg-[#fafafa] border-b border-slate-200/80">
       {/* Ambient background glow */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-100/40 via-white/80 to-transparent pointer-events-none" />
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-amber-400/10 blur-[150px] rounded-full pointer-events-none" />

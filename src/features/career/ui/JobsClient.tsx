@@ -3,7 +3,6 @@
 import React from 'react';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { useTranslations } from 'next-intl';
-import { SeoHead } from '@/shared/ui/SeoHead';
 // Premium UI Components
 import AnimatedList from '@/shared/ui/AnimatedList';
 import RotatingText from '@/shared/ui/RotatingText';
@@ -26,20 +25,7 @@ const Jobs: React.FC = () => {
   };
 
   return (
-    <div className="bg-aurora-white min-h-dvh pt-24 pb-20">
-      <SeoHead
-        title={`${t('jobs.hero_title_prefix')} | Coday Careers`}
-        description={t('jobs.hero_desc')}
-        pageType="job"
-        schemaData={{
-          jobs: jobs.map((job) => ({
-            title: job.title,
-            description: job.desc,
-            location: job.location,
-            type: job.type,
-          })),
-        }}
-      />
+    <div className="bg-aurora-white min-h-dvh pt-4 pb-16 md:pt-6 md:pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 relative">
           <div

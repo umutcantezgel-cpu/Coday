@@ -24,7 +24,6 @@ import {
   Link,
 } from '@phosphor-icons/react/dist/ssr';
 import { TechStackShowcase, TechItem } from '@/widgets/services/TechStackShowcase';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 
 export function SeoClient() {
@@ -57,20 +56,8 @@ export function SeoClient() {
 
   return (
     <div className="bg-surface-base min-h-dvh">
-      <SeoHead
-        title={t('seo_page.meta.title')}
-        description={t('seo_page.meta.description')}
-        pageType="service"
-        schemaData={{
-          service: {
-            name: 'SEO & Suchmaschinenoptimierung',
-            description: t('seo_page.meta.description'),
-            serviceType: 'Search Engine Optimization',
-          },
-        }}
-      />
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 px-4 overflow-hidden">
+      <section className="relative pt-4 pb-16 md:pt-6 md:pb-20 px-4 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-start">

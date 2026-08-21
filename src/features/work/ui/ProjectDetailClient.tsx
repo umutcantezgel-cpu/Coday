@@ -109,9 +109,9 @@ const ProjectDetail: React.FC = () => {
       {/* ═══════════════════════════════════════════════ */}
       {/* HERO — Fullwidth with Project Image or Gradient */}
       {/* ═══════════════════════════════════════════════ */}
-      <section className="relative pt-24 pb-0 overflow-hidden">
+      <section className="relative pt-4 pb-0 md:pt-6 overflow-hidden">
         {/* Breadcrumb (above hero) */}
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2 pb-4">
           <nav aria-label="Breadcrumb" className="flex items-center text-sm text-gray-500">
             <NavLink
               href="/work"

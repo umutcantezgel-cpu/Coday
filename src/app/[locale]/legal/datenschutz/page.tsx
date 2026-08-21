@@ -68,7 +68,7 @@ export default async function DatenschutzPage({ params }: { params: Promise<{ lo
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="max-w-3xl mx-auto px-4 py-20">
+      <div className="max-w-3xl mx-auto px-4 pt-4 pb-16 md:pt-6 md:pb-20">
         <h1 className="text-3xl font-bold mb-8 text-secondary-900">
           {isEn ? 'Privacy Policy' : 'Datenschutzerklärung'}
         </h1>

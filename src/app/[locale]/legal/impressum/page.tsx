@@ -65,7 +65,7 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="max-w-3xl mx-auto px-4 py-20">
+      <div className="max-w-3xl mx-auto px-4 pt-4 pb-16 md:pt-6 md:pb-20">
         <h1 className="text-3xl font-bold mb-8 text-secondary-900">
           {isEn ? 'Legal Notice' : 'Impressum'}
         </h1>

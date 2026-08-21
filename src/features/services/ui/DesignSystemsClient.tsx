@@ -23,7 +23,7 @@ export function DesignSystemsClient() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 px-6 overflow-hidden bg-surface-base">
+      <section className="relative pt-4 pb-16 md:pt-6 md:pb-20 px-6 overflow-hidden bg-surface-base">
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 text-indigo-600 text-sm font-bold mb-8 border border-indigo-100">
             <OptimizedIcon icon={SquaresFour} className="w-4 h-4" />

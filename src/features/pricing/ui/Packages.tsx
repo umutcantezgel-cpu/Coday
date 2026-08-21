@@ -90,7 +90,7 @@ export default async function Packages() {
       <StepInitializer />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 px-4 w-full relative overflow-hidden">
+      <section className="pt-4 pb-12 lg:pt-8 lg:pb-16 px-4 w-full relative overflow-hidden">
         {/* Ambient Glow */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-400/10 blur-[140px] rounded-full pointer-events-none" />
 

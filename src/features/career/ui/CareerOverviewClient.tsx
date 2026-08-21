@@ -18,7 +18,7 @@ export function CareerOverviewClient() {
   return (
     <div className="bg-background-light min-h-dvh">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 px-4 text-center">
+      <section className="relative pt-4 pb-16 md:pt-6 md:pb-20 px-4 text-center">
         <div className="max-w-4xl mx-auto relative z-10">
           <span className="text-sapphire font-bold tracking-wider uppercase text-sm mb-4 block">
             {t('hero.badge')}

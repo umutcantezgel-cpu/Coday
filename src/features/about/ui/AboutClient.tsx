@@ -172,7 +172,7 @@ export const AboutClient: React.FC = () => {
   return (
     <div className="bg-[#fafafa] min-h-dvh text-slate-900 selection:bg-amber-500/20 selection:text-amber-900">
       {/* ═══ HERO ═══ */}
-      <section className="relative pt-36 pb-28 px-4 overflow-hidden bg-[#fafafa]">
+      <section className="relative pt-4 pb-16 md:pt-6 md:pb-20 px-4 overflow-hidden bg-[#fafafa]">
         {/* Ambient Glow */}
         <div
           className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-3xl max-h-3xl bg-amber-400/10 blur-[150px] rounded-full pointer-events-none"

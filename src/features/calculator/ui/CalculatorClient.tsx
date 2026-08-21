@@ -60,7 +60,7 @@ const Calculator: React.FC = () => {
   };
 
   return (
-    <div className="bg-background-light pt-24 pb-20">
+    <div className="bg-background-light pt-4 pb-16 md:pt-6 md:pb-20">
       {/* Step Indicator */}
       <StepIndicator currentStep="calculator" className="mb-8" />
       {/* Hero */}

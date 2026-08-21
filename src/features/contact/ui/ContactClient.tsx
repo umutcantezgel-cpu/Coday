@@ -96,7 +96,7 @@ export const ContactClient: React.FC = () => {
       {/* Desktop Layout (Original Split) */}
       <div className="hidden lg:block">
         <section
-          className={`relative ${hasPackage ? 'pt-6 md:pt-12' : 'pt-32 md:pt-48'} pb-48 md:pb-64 px-4 overflow-hidden`}
+          className={`relative ${hasPackage ? 'pt-4 md:pt-6' : 'pt-4 md:pt-8'} pb-48 md:pb-64 px-4 overflow-hidden`}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">

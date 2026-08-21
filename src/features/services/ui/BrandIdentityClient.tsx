@@ -24,7 +24,7 @@ export function BrandIdentityClient() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 px-6 overflow-hidden bg-surface-base">
+      <section className="relative pt-4 pb-16 md:pt-6 md:pb-20 px-6 overflow-hidden bg-surface-base">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-start">
             <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl text-content-base mb-8 tracking-tight text-balance">

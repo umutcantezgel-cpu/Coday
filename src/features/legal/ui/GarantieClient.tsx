@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { useLocale } from 'next-intl';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import { m } from 'motion/react';
 import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
@@ -21,23 +20,7 @@ const Garantie: React.FC = () => {
 
   return (
     <div className="min-h-dvh bg-background-light">
-      <SeoHead
-        title={isEn ? 'Our Guarantees | Coday' : 'Unsere Garantien | Coday'}
-        description={
-          isEn
-            ? 'Start risk-free: Discover our Lighthouse 90 Guarantee, No Vendor Lock-In Guarantee, and Fixed Price Guarantee.'
-            : 'Risikofrei durchstarten: Entdecken Sie unsere Lighthouse-90-Garantie, No-Vendor-Lock-Garantie und Festpreis-Garantie.'
-        }
-        breadcrumbs={[
-          { name: 'Home', url: 'https://www.codayweb.de' },
-          {
-            name: isEn ? 'Guarantees' : 'Garantie',
-            url: 'https://www.codayweb.de/garantie',
-          },
-        ]}
-      />
-
-      <div className="pt-24 pb-12">
+      <div className="pt-4 pb-12 md:pt-6 md:pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
           <Breadcrumbs />
         </div>

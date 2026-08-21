@@ -115,7 +115,7 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
       />
       <div className="min-h-dvh bg-[#fafafa] text-slate-900 selection:bg-amber-500/20 selection:text-amber-900">
         {/* Hero Section */}
-        <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative overflow-hidden text-center">
+        <section className="pt-4 pb-12 lg:pt-8 lg:pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative overflow-hidden text-center">
           <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-400/10 blur-[140px] rounded-full pointer-events-none" />
 
           <div className="relative z-10 max-w-5xl mx-auto">

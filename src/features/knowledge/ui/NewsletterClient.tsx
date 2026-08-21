@@ -39,7 +39,7 @@ const Newsletter: React.FC = () => {
   };
 
   return (
-    <main className="bg-background-light min-h-dvh pt-24 pb-20 flex flex-col items-center justify-center">
+    <main className="bg-background-light min-h-dvh pt-4 pb-16 md:pt-6 md:pb-20 flex flex-col items-center justify-center">
       <div className="max-w-4xl w-full px-4 sm:px-6 lg:px-8 text-center">
         <div className="relative w-full max-w-lg mx-auto aspect-video mb-12 rounded-3xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition motion-reduce:duration-[0.01ms] duration-500">
           <OptimizedImage

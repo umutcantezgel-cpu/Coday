@@ -15,7 +15,7 @@ export const HeroSection: React.FC = () => {
   const t = useTranslations('home');
 
   return (
-    <section className="relative w-full min-h-[85svh] flex flex-col justify-center overflow-x-hidden bg-bg-primary px-4 pt-12 pb-12 md:pt-24 md:pb-24">
+    <section className="relative w-full min-h-[80svh] flex flex-col justify-center overflow-x-hidden bg-bg-primary px-4 pt-4 pb-12 md:pt-6 md:pb-16">
       <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         {/* Left Column: Text Content */}
         <div className="lg:col-span-7 flex flex-col items-start text-left">

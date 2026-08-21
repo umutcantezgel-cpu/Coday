@@ -15,7 +15,6 @@ import GradientText from '@/shared/ui/GradientText';
 import ValuesDeck from '@/features/culture/ValuesDeck';
 import TeamGallery from '@/features/culture/TeamGallery';
 import { useTranslations } from 'next-intl';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import { Link } from '@/i18n/navigation';
 
 const Culture: React.FC = () => {
@@ -24,14 +23,8 @@ const Culture: React.FC = () => {
 
   return (
     <div className="bg-slate-50/50 min-h-dvh">
-      <SeoHead
-        title={`${t('culture.hero.title_start')} ${t('culture.hero.title_gradient')} | Coday Webdesign Wetzlar`}
-        description={t('culture.hero.desc')}
-        pageType="about"
-      />
-
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 text-center">
+      <section className="relative pt-4 pb-12 md:pt-6 md:pb-16 px-4 text-center">
         {/* Subtle Background Glow */}
         <div
           className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-80 bg-gradient-to-r from-primary-500/10 via-indigo-500/10 to-amber-500/10 rounded-full blur-3xl pointer-events-none -z-10"

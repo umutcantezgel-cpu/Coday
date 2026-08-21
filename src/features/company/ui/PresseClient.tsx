@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { useLocale } from 'next-intl';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import { m } from 'motion/react';
 import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
@@ -14,20 +13,7 @@ const Presse: React.FC = () => {
 
   return (
     <div className="min-h-dvh bg-background-light">
-      <SeoHead
-        title={isEn ? 'Press & Media | Coday' : 'Presse & Media | Coday'}
-        description={
-          isEn
-            ? 'Press releases, mentions and our speaker history. Discover Coday in the media.'
-            : 'Pressemitteilungen, Mentions und unsere Speaker History. Entdecken Sie Coday in den Medien.'
-        }
-        breadcrumbs={[
-          { name: 'Home', url: 'https://www.codayweb.de' },
-          { name: isEn ? 'Press' : 'Presse', url: 'https://www.codayweb.de/presse' },
-        ]}
-      />
-
-      <div className="pt-24 pb-12">
+      <div className="pt-4 pb-12 md:pt-6 md:pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
           <Breadcrumbs />
         </div>

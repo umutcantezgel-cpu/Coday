@@ -182,7 +182,7 @@ export default async function NextJsMigrationPage({
       />
 
       {/* 1. HERO SECTION MIT LEAD CAPTURE */}
-      <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28 bg-[#fafafa]">
+      <section className="relative overflow-hidden pt-4 pb-12 md:pt-8 md:pb-16 bg-[#fafafa]">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-teal-100/40 via-white/80 to-transparent pointer-events-none" />
         <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-teal-400/10 blur-[140px] rounded-full pointer-events-none" />
 

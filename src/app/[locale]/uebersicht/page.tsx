@@ -122,7 +122,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <main className="bg-background-light min-h-dvh pt-32 pb-20">
+      <main className="bg-background-light min-h-dvh pt-4 pb-16 md:pt-6 md:pb-20">
         <div className="container mx-auto px-4 max-w-5xl">
           <h1 className="text-4xl md:text-5xl font-bold font-display text-secondary mb-12">
             {locale === 'en'

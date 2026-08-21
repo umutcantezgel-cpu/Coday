@@ -36,7 +36,7 @@ export function ApiIntegrationClient() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6 overflow-hidden bg-surface-base">
+      <section className="relative pt-4 pb-16 md:pt-6 md:pb-20 px-6 overflow-hidden bg-surface-base">
         {/* Animated Background Mesh */}
         <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
           <svg aria-hidden="true" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">

@@ -30,7 +30,7 @@ export function HeadlessCmsClient() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6 overflow-hidden bg-surface-base">
+      <section className="relative pt-4 pb-16 md:pt-6 md:pb-20 px-6 overflow-hidden bg-surface-base">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/5 text-content-base text-sm font-bold mb-8 border border-secondary/10">

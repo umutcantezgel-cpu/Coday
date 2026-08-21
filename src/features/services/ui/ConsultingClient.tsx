@@ -19,7 +19,7 @@ export function ConsultingClient() {
   return (
     <div className="min-h-dvh bg-[#fafafa]">
       {/* --- HERO SECTION --- */}
-      <section className="relative min-h-[80vh] flex items-center justify-center bg-[#fafafa] text-slate-900 overflow-hidden pb-24 pt-32">
+      <section className="relative min-h-[80vh] flex items-center justify-center bg-[#fafafa] text-slate-900 overflow-hidden pt-4 pb-16 md:pt-6 md:pb-20">
         {/* Background Gradient & Glow */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-100/40 via-white/80 to-transparent pointer-events-none" />
         <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-500/10 blur-[140px] rounded-full pointer-events-none" />

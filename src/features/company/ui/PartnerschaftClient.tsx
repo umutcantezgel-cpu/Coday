@@ -5,7 +5,6 @@ import { m } from 'motion/react';
 import { useLocale } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { ArrowRight, Users, Handshake, TrendUp, CheckCircle } from '@phosphor-icons/react/dist/ssr';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import { Link as NavLink } from '@/i18n/navigation';
 import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
 import GradientText from '@/shared/ui/GradientText';
@@ -16,21 +15,8 @@ const Partnerschaft: React.FC = () => {
 
   return (
     <div className="min-h-dvh bg-background-light">
-      <SeoHead
-        title={isEn ? 'Partner & Referral Program | Coday' : 'Partner & Referral Programm | Coday'}
-        description={
-          isEn
-            ? 'Become a Coday partner. Recommend us and secure 10% commission or expand your portfolio as an agency.'
-            : 'Werden Sie Coday Partner. Empfehlen Sie uns weiter und sichern Sie sich 10% Provision oder erweitern Sie als Agentur Ihr Portfolio.'
-        }
-        breadcrumbs={[
-          { name: 'Home', url: 'https://www.codayweb.de' },
-          { name: 'Partnerschaft', url: 'https://www.codayweb.de/partnerschaft' },
-        ]}
-      />
-
       {/* Hero Section */}
-      <div className="pt-24 pb-16 sm:pt-32 sm:pb-24 overflow-hidden relative">
+      <div className="pt-4 pb-12 sm:pt-6 sm:pb-16 overflow-hidden relative">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] -z-10" />
           <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[80px] -z-10" />

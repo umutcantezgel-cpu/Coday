@@ -53,7 +53,7 @@ export const ServicesOverview = async () => {
   return (
     <div className="bg-surface-base">
       {/* Header with Hero Image */}
-      <section className="pt-12 pb-8 md:pt-24 md:pb-16 px-4 sm:px-6 lg:px-8">
+      <section className="pt-4 pb-8 md:pt-6 md:pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-start">
             <div className="mb-4 flex justify-center lg:justify-start">

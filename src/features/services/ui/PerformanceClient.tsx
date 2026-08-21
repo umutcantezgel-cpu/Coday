@@ -17,7 +17,7 @@ export function PerformanceClient() {
   return (
     <div className="bg-surface-base min-h-dvh">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 px-4 overflow-hidden">
+      <section className="relative pt-4 pb-16 md:pt-6 md:pb-20 px-4 overflow-hidden">
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <span className="text-sapphire font-bold tracking-wider uppercase text-sm mb-4 block">
             {t('performance_page.hero.badge')}

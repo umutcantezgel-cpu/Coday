@@ -7,7 +7,7 @@ import { BookingCalendar } from '@/features/booking';
 export default function Booking() {
   const t = useTranslations('booking');
   return (
-    <main className="pt-24 pb-20 container mx-auto px-4 min-h-dvh">
+    <main className="pt-4 pb-16 md:pt-6 md:pb-20 container mx-auto px-4 min-h-dvh">
       <h1 className="text-4xl font-black font-display mb-8 text-center bg-gradient-to-r from-aurora-deep to-aurora-sapphire bg-clip-text text-transparent">
         {t('page.title')}
       </h1>

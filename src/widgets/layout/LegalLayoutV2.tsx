@@ -1,6 +1,5 @@
 'use client';
 import React, { useState, useEffect, useMemo } from 'react';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import {
   Gavel,
@@ -94,11 +93,6 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
 
   return (
     <div className="bg-gradient-to-b from-slate-50 to-white min-h-dvh">
-      <SeoHead
-        title={`${title} | Coday`}
-        description={typeof subtitle === 'string' ? subtitle : title}
-      />
-
       {/* Progress Bar */}
       <div className="fixed top-0 left-0 right-0 h-1 bg-gray-100 z-50">
         <m.div
@@ -109,7 +103,7 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
       </div>
 
       {/* Legal Navigation Bar */}
-      <div className="bg-white/80 backdrop-blur-lg border-b border-gray-100 sticky top-0 z-40 pt-16">
+      <div className="bg-white/80 backdrop-blur-lg border-b border-gray-100 sticky top-0 z-40 pt-4">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14">
             <nav
@@ -155,7 +149,7 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
         </div>
       </div>
 
-      <div className="pt-32 pb-48">
+      <div className="pt-4 pb-24 md:pt-6 md:pb-32">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <header role="banner" className="mb-24 text-center">
