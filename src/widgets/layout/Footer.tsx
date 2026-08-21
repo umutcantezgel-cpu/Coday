@@ -7,7 +7,6 @@ import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import Image from 'next/image';
-import CodayLogo from '@/assets/images/coday_logo.png';
 import GradientText from '@/shared/ui/GradientText';
 import {
   FacebookLogo,
@@ -102,26 +101,21 @@ export const Footer: React.FC = () => {
           <div className="flex flex-col items-start lg:col-span-1">
             <Link
               href="/"
-              className="group inline-flex items-center gap-3 mb-6 transition-all duration-300 hover:opacity-95"
-              title="Coday – Webdesign & Next.js Agentur Wetzlar"
-              aria-label="Coday – Zur Startseite"
+              className="group inline-flex items-center mb-6 transition-all duration-300 hover:opacity-95"
+              title="Coday – Webdesign Agentur Wetzlar"
+              aria-label="Coday – Webdesign Agentur Wetzlar Startseite"
             >
-              <div className="w-11 h-11 rounded-2xl bg-slate-950 border border-slate-800 flex items-center justify-center p-2 shadow-md shadow-slate-950/20 group-hover:shadow-lg group-hover:shadow-slate-950/30 group-hover:scale-105 group-hover:border-primary-500/30 transition-all duration-300">
+              <div className="px-4 py-2.5 rounded-2xl bg-slate-950 border border-slate-800 shadow-md shadow-slate-950/20 group-hover:shadow-lg group-hover:border-primary-500/40 group-hover:scale-[1.02] transition-all duration-300 flex items-center justify-center">
                 <Image
-                  src={CodayLogo}
-                  alt="Coday Logo"
-                  width={28}
-                  height={28}
-                  className="w-7 h-7 object-contain"
+                  src="/images/brand/coday-logo-footer.png"
+                  alt={t('footer.logo_alt', {
+                    defaultValue: 'Coday – Webdesign Agentur Wetzlar & Next.js Entwicklung',
+                  })}
+                  width={140}
+                  height={44}
+                  className="h-8 w-auto object-contain"
+                  priority={false}
                 />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-display font-black text-2xl tracking-tight text-slate-900 leading-none group-hover:text-primary-800 transition-colors">
-                  Coday<span className="text-primary-600">.</span>
-                </span>
-                <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-700 mt-1">
-                  Webdesign & Next.js
-                </span>
               </div>
             </Link>
             <p className="text-sm text-slate-600 max-w-xs mb-8 leading-relaxed font-normal">
