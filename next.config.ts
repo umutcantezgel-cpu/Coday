@@ -39,6 +39,68 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Webagentur -> Webdesign Landing Pages
+      {
+        source: '/webagentur-wetzlar',
+        destination: '/webdesign-agentur-wetzlar',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/webagentur-wetzlar',
+        destination: '/:locale/webdesign-agentur-wetzlar',
+        permanent: true,
+      },
+      {
+        source: '/webagentur-:city',
+        destination: '/webdesign-:city',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/webagentur-:city',
+        destination: '/:locale/webdesign-:city',
+        permanent: true,
+      },
+      // Career & Karriere redirects
+      {
+        source: '/careers/:path*',
+        destination: '/career/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/careers/:path*',
+        destination: '/:locale/career/:path*',
+        permanent: true,
+      },
+      {
+        source: '/careers',
+        destination: '/career',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/careers',
+        destination: '/:locale/career',
+        permanent: true,
+      },
+      {
+        source: '/karriere/:path*',
+        destination: '/career/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/karriere/:path*',
+        destination: '/:locale/career/:path*',
+        permanent: true,
+      },
+      {
+        source: '/karriere',
+        destination: '/career',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/karriere',
+        destination: '/:locale/career',
+        permanent: true,
+      },
       {
         source: '/standorte/wetzlar',
         destination: '/webdesign-agentur-wetzlar',
