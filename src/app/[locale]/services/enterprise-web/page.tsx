@@ -19,7 +19,7 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Enterprise Web Development Wetzlar | Scalable Web Apps | Coday',
+      title: 'Enterprise Web Development Wetzlar | Web-Apps · Coday',
       description:
         'Scalable and secure enterprise web solutions by Coday in Wetzlar. Portals, intranets and complex web applications for businesses in Hesse. Inquire.',
       keywords: [
@@ -34,7 +34,7 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: 'Enterprise Webentwicklung Wetzlar | Skalierbare Web-Apps | Coday',
+    title: 'Enterprise Webentwicklung Wetzlar | Web-Apps · Coday',
     description:
       'Skalierbare und sichere Enterprise Web-Lösungen von Coday in Wetzlar. Portale, Intranets und Webanwendungen für Unternehmen in Hessen. Jetzt anfragen.',
     keywords: [

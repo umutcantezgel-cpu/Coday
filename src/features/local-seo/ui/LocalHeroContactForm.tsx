@@ -120,9 +120,9 @@ export const LocalHeroContactForm: React.FC<LocalHeroContactFormProps> = ({
           <Sparkle className="w-3.5 h-3.5 text-amber-600" />
           <span>{isEn ? 'Direct Project Contact' : 'Direkter Projektkontakt'}</span>
         </div>
-        <h2 className="text-lg sm:text-xl font-bold font-display text-slate-900 leading-tight">
+        <p className="text-lg sm:text-xl font-bold font-display text-slate-900 leading-tight">
           {headingText || defaultTitle}
-        </h2>
+        </p>
         <p className="text-xs text-slate-500 mt-1 leading-relaxed">
           {subtitleText || defaultSubtitle}
         </p>
@@ -138,9 +138,9 @@ export const LocalHeroContactForm: React.FC<LocalHeroContactFormProps> = ({
             <CheckCircle className="w-6 h-6" weight="bold" />
           </div>
           <div>
-            <h3 className="text-lg font-bold text-slate-900">
+            <p className="text-lg font-bold text-slate-900">
               {isEn ? 'Request Received!' : 'Anfrage erfolgreich erhalten!'}
-            </h3>
+            </p>
             <p className="text-xs text-slate-600 mt-1.5 leading-relaxed max-w-xs mx-auto">
               {isEn
                 ? `Thank you. We will review your project in ${cityName} and contact you within 24 hours.`

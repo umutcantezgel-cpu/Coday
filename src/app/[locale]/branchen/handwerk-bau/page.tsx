@@ -150,14 +150,14 @@ export default async function HandwerkBauPage({ params }: { params: Promise<{ lo
 
         <h1 className="text-4xl sm:text-6xl font-display font-extrabold tracking-tight text-slate-900 mb-6 leading-tight max-w-4xl">
           {isEn
-            ? 'Web Design & Mobile Recruiting for Craft & Construction'
+            ? 'Web Design for Craft & Construction — End the Skills Shortage'
             : 'Webdesign für Handwerk & Bau — Schluss mit Fachkräftemangel'}
         </h1>
 
         <p className="text-lg sm:text-xl text-slate-600 max-w-3xl leading-relaxed mb-10">
-          Wir verwandeln Ihre Website in eine automatisierte Auftrags- und Mitarbeiter-Pipeline.
-          60-Sekunden Express-Bewerbung für Gesellen, automatische Kunden-Vorfilterung und 100/100
-          PageSpeed für SHK-, Elektro- und Baubetriebe in Hessen.
+          {isEn
+            ? 'Web Design for Craft & Construction: End the skills shortage with an automated order and recruiting pipeline. 60-second express applications for skilled craftsmen, automated client qualification, and 100/100 PageSpeed for SHK, electrical, and construction companies in Hesse.'
+            : 'Webdesign für Handwerk & Bau: Schluss mit Fachkräftemangel durch eine automatisierte Auftrags- und Mitarbeiter-Pipeline. 60-Sekunden Express-Bewerbung für Gesellen, automatische Kunden-Vorfilterung und 100/100 PageSpeed für SHK-, Elektro- und Baubetriebe in Hessen.'}
         </p>
 
         <div className="flex flex-wrap gap-4">

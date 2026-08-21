@@ -374,9 +374,9 @@ export const PackagesConfigurator: React.FC = () => {
 
                   <div>
                     <div className="text-center mb-8 pt-2">
-                      <h3 className="font-display font-bold text-2xl text-slate-900 mb-2">
+                      <p className="font-display font-bold text-2xl text-slate-900 mb-2">
                         {pkg.name}
-                      </h3>
+                      </p>
                       <p className="text-slate-600 text-xs sm:text-sm min-h-[36px]">
                         {pkg.tagline}
                       </p>
@@ -523,9 +523,9 @@ export const PackagesConfigurator: React.FC = () => {
                       </div>
                     </div>
 
-                    <h3 className="font-display font-bold text-base text-slate-900 mb-2">
+                    <p className="font-display font-bold text-base text-slate-900 mb-2">
                       {addon.name}
-                    </h3>
+                    </p>
                     <p className="text-slate-600 text-xs leading-relaxed mb-6">{addon.desc}</p>
                   </div>
 
@@ -559,7 +559,7 @@ export const PackagesConfigurator: React.FC = () => {
                   <Sparkle className="w-3.5 h-3.5" />
                   <span>{isEn ? 'Your Project Configuration' : 'Ihre Projekt-Konfiguration'}</span>
                 </div>
-                <h3 className="text-2xl font-display font-bold text-white">
+                <p className="text-2xl font-display font-bold text-white">
                   {selectedPackage.name}{' '}
                   <span className="text-amber-400 font-normal text-lg">
                     ({selectedAddonIds.length}{' '}
@@ -572,7 +572,7 @@ export const PackagesConfigurator: React.FC = () => {
                         : 'Zusatzmodule'}
                     )
                   </span>
-                </h3>
+                </p>
                 <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
                   {isEn
                     ? 'Transparent estimate based on your selection. Binding fixed-price proposal provided after a free consultation.'

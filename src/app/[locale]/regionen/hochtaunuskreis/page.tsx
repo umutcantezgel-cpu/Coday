@@ -273,9 +273,9 @@ export default async function HochtaunuskreisPage({
                     <MapPin
                       className={`w-4 h-4 ${k.highlight ? 'text-amber-600' : 'text-slate-400'}`}
                     />
-                    <h3 className="font-bold text-slate-900 group-hover:text-amber-700 transition-colors text-base">
+                    <p className="font-bold text-slate-900 group-hover:text-amber-700 transition-colors text-base">
                       {k.name}
-                    </h3>
+                    </p>
                   </div>
                   <p className="text-xs text-slate-500 mt-1">{k.note}</p>
                 </div>
@@ -305,7 +305,7 @@ export default async function HochtaunuskreisPage({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit im Taunus</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Ladezeit im Taunus</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Subsekundäre Ladezeiten für anspruchsvolle Mandanten und mobile Entscheider.
               </p>
@@ -313,7 +313,7 @@ export default async function HochtaunuskreisPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Volle Rechte an Ihrem Quellcode ohne monatliche CMS-Lizenzgebühren oder
                 Lock-in-Effekte.
@@ -322,7 +322,7 @@ export default async function HochtaunuskreisPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Direkte Betreuung durch Gründer Umutcan Emre Tezgel ohne zeitraubende Hierarchien.
               </p>
@@ -330,7 +330,7 @@ export default async function HochtaunuskreisPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">Festpreis</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Transparente Festpreis-Garantie ohne versteckte Nachforderungen oder unkalkulierbare
                 Stundensätze.

@@ -95,42 +95,42 @@ export default async function WebdesignGiessenPage({
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'Wie viel kostet professionelles Webdesign für Gießen?',
+            name: 'Wie setzen sich die Kosten für Webdesign in Gießen zusammen?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen bieten wir maximale Kosteneffizienz ohne teuren Agentur-Wasserkopf.',
+              text: 'Wir kalkulieren für Gießener Praxen, Dienstleister und B2B-Unternehmen individuelle, transparente Festpreise nach einer kostenlosen Bedarfsanalyse. Durch schlanke Next.js 15 Architekturen entfallen teure Agentur-Wasserköpfe und monatliche Lizenzgebühren.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wie schnell ist eine neue Website in Gießen online?',
+            name: 'Wie schnell erfolgt der Go-Live für Unternehmen in Gießen?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online.',
+              text: 'Dank standardisierter High-End-Workflows steht Ihre neue Website in Gießen im Regelfall innerhalb von 10 bis 14 Werktagen schlüsselfertig online.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Kommen Sie für ein Beratungsgespräch direkt nach Gießen?',
+            name: 'Bieten Sie Vor-Ort-Termine in Gießen und den Gewerbegebieten an?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja, sehr gerne. Von unserem Wetzlarer HQ aus sind wir über die B49/A485 in weniger als 10 Minuten direkt bei Ihnen vor Ort in Gießen, Linden oder Pohlheim.',
+              text: 'Ja, gerne vor Ort im Technologie- und Innovationszentrum Gießen (TIG), Europaviertel, Seltersweg oder Schiffenberger Tal. Von unserem Wetzlarer Büro aus erreichen wir Sie über die B49/A485 in rund 10 Minuten.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Bieten Sie auch Lösungen für Gastronomie und Events in Gießen?',
+            name: 'Wie unterstützt Coday das Recruiting von Fachkräften in Gießen?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja. Mit Referenzen wie den Lindener Ratsstuben bieten wir schnelle Buchungsstrecken und mobil optimierte Erlebnisseiten für Gastronomie und Hotellerie.',
+              text: 'Wir integrieren barrierefreie 60-Sekunden-Express-Bewerbungsstrecken, die gezielt auf Smartphone-Nutzer, JLU- und THM-Absolventen sowie Fachkräfte aus Mittelhessen ausgerichtet sind.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wer ist unser fester Ansprechpartner?',
+            name: 'Wer betreut mein Webprojekt in Gießen als fester Ansprechpartner?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.',
+              text: 'Inhaber und Lead-Entwickler Umutcan Emre Tezgel berät Sie direkt und setzt das Projekt ohne Umwege persönlich um.',
             },
           },
         ],
@@ -150,7 +150,7 @@ export default async function WebdesignGiessenPage({
         badgeText="HIGH-END WEBAGENTUR FÜR GIESSEN & MITTELHESSEN"
         headline="Webdesign & Next.js Entwicklung in"
         headlineGradient="Gießen & Umgebung"
-        description="Entwickelt für Gießener Ärzte, Kliniken, Tech-Startups und führende Mittelständler. Maximale Ladezeiten unter 500ms, perfekte Google-Rankings und automatisierte Lead-Erfassung. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+        description="Als spezialisierte High-Performance Webagentur für Gießen entwickeln wir maßgeschneiderte B2B-Websites, Klinik-Portale und moderne Next.js Entwicklung für anspruchsvolle Unternehmen. Maximale Ladezeiten unter 500ms, perfekte Google-Rankings und automatisierte Lead-Erfassung zum verbindlichen Festpreis."
         cityName="Gießen"
         sourceTag="local_seo_giessen"
         formHeading="Kostenlose Bedarfsanalyse für Gießen"
@@ -181,7 +181,7 @@ export default async function WebdesignGiessenPage({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Gießen</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Gießen</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Subsekundäre Ladezeiten für ungeduldige B2B-Entscheider und mobile Patienten.
               </p>
@@ -189,7 +189,7 @@ export default async function WebdesignGiessenPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Volle Rechte an Ihrem Quellcode ohne monatliche CMS-Lizenzgebühren oder
                 Abhängigkeiten.
@@ -198,7 +198,7 @@ export default async function WebdesignGiessenPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Direkter Kontakt mit Gründer Umutcan Emre Tezgel ohne Agentur-Warteschleifen.
               </p>
@@ -206,7 +206,7 @@ export default async function WebdesignGiessenPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">Festpreis</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Transparente Festpreise ohne versteckte Kosten oder unerwartete Agentur-Aufschläge.
               </p>
@@ -223,7 +223,7 @@ export default async function WebdesignGiessenPage({
               Technologie-Vergleich
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
-              Warum Gießener Praxen & B2B-Firmen auf Next.js umsteigen
+              Next.js Entwicklung: Warum Gießener Praxen & B2B-Websites auf Next.js umsteigen
             </h2>
             <p className="text-slate-600 text-base sm:text-lg">
               Der direkte Vergleich zwischen klassischem WordPress und zukunftssicherer
@@ -304,26 +304,26 @@ export default async function WebdesignGiessenPage({
                 Inhabergeführte Betreuung
               </span>
               <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mt-2 mb-6">
-                Echtes Handwerk statt Agentur-Overhead für Gießen
+                Wissenschaftliche Präzision im Code für Gießener Unternehmen
               </h2>
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
-                Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Als
-                spezialisierter Solo-Entwickler mit Sitz im benachbarten Wetzlar baue ich Ihre
-                Website ohne Reibungsverluste: Technisch perfekt, visuell herausragend und
-                wirtschaftlich unschlagbar fair.
+                Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Für
+                Gießener Arztpraxen, TIG-Startups und Traditionsunternehmen kombiniere ich moderne
+                Next.js 15 Entwicklung mit messbarer Conversion-Stärke. Keine Reibungsverluste durch
+                Zwischenhändler, sondern direkte Abstimmung und handwerklicher Fokus.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-slate-200 text-sm">
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">Direkter Entwickler-Kontakt</span>
+                  <span className="text-slate-700">Persönliche Entwickler-Betreuung</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">Voller Quellcode-Besitz</span>
+                  <span className="text-slate-700">Uneingeschränktes Code-Eigentum</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">Verbindliche Festpreis-Garantie</span>
+                  <span className="text-slate-700">Garantierte Festpreis-Kalkulation</span>
                 </div>
               </div>
             </div>
@@ -458,7 +458,7 @@ export default async function WebdesignGiessenPage({
               <strong>Technischen Hochschule Mittelhessen (THM)</strong>
               und dem <strong>Universitätsklinikum Gießen und Marburg (UKGM)</strong> das
               wissenschaftliche und medizinische Zentrum Mittelhessens. Im{' '}
-              <strong>Technologie- und Innovationszentrum Gießen (TIG)</strong>, im
+              <strong>Technologie- und Innovationszentrum Gießen (TIG)</strong>, im{' '}
               <strong>Gewerbegebiet West / Europaviertel</strong> sowie entlang der Einkaufsmeile{' '}
               <strong>Seltersweg</strong>
               konzentriert sich eine dynamische Mischung aus Hightech-Unternehmen, Praxen und
@@ -507,51 +507,55 @@ export default async function WebdesignGiessenPage({
           <div className="space-y-6">
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie viel kostet professionelles Webdesign für Gießen?
+                Wie setzen sich die Kosten für Webdesign in Gießen zusammen?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Wir kalkulieren jedes Projekt nach einer kostenlosen Bedarfsanalyse als
-                verbindlichen Festpreis. Durch unsere schlanken Next.js Architekturen bieten wir
-                höchste Performance und volle Kostensicherheit ohne unerwartete Agentur-Aufschläge.
+                Wir kalkulieren für Gießener Praxen, Dienstleister und B2B-Unternehmen individuelle,
+                transparente Festpreise nach einer kostenlosen Bedarfsanalyse. Durch schlanke
+                Next.js 15 Architekturen entfallen teure Agentur-Wasserköpfe und monatliche
+                Lizenzgebühren.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie schnell ist eine neue Website in Gießen online?
+                Wie schnell erfolgt der Go-Live für Unternehmen in Gießen?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett
-                schlüsselfertig fertiggestellt und online.
+                Dank standardisierter High-End-Workflows steht Ihre neue Website in Gießen im
+                Regelfall innerhalb von 10 bis 14 Werktagen schlüsselfertig online.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Kommen Sie für ein Beratungsgespräch direkt nach Gießen?
+                Bieten Sie Vor-Ort-Termine in Gießen und den Gewerbegebieten an?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja, sehr gerne. Von unserem Wetzlarer HQ aus sind wir über die B49/A485 in weniger
-                als 10 Minuten direkt bei Ihnen vor Ort in Gießen, Linden oder Pohlheim.
+                Ja, gerne vor Ort im Technologie- und Innovationszentrum Gießen (TIG),
+                Europaviertel, Seltersweg oder Schiffenberger Tal. Von unserem Wetzlarer Büro aus
+                erreichen wir Sie über die B49/A485 in rund 10 Minuten.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Bieten Sie auch Lösungen für Gastronomie und Events in Gießen?
+                Wie unterstützt Coday das Recruiting von Fachkräften in Gießen?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja. Mit Referenzen wie den Lindener Ratsstuben bieten wir schnelle Buchungsstrecken
-                und mobil optimierte Erlebnisseiten für Gastronomie und Hotellerie.
+                Wir integrieren barrierefreie 60-Sekunden-Express-Bewerbungsstrecken, die gezielt
+                auf Smartphone-Nutzer, JLU- und THM-Absolventen sowie Fachkräfte aus Mittelhessen
+                ausgerichtet sind.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wer ist unser fester Ansprechpartner?
+                Wer betreut mein Webprojekt in Gießen als fester Ansprechpartner?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.
+                Inhaber und Lead-Entwickler Umutcan Emre Tezgel berät Sie direkt und setzt das
+                Projekt ohne Umwege persönlich um.
               </p>
             </div>
           </div>
@@ -562,11 +566,11 @@ export default async function WebdesignGiessenPage({
       <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
-            Bereit für mehr Patienten, Kunden & Talente in Gießen?
+            Digitale Spitzenposition für Ihr Gießener Unternehmen sichern
           </h2>
           <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-            Vereinbaren Sie jetzt ein unverbindliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
-            Emre Tezgel.
+            Lassen Sie uns in einem unverbindlichen 20-Minuten-Gespräch analysieren, wie Next.js 15
+            und lokales SEO messbare Anfragen für Ihren Standort in Gießen generieren.
           </p>
           <Link href="/contact">
             <Button
@@ -574,7 +578,7 @@ export default async function WebdesignGiessenPage({
               size="lg"
               className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
             >
-              Kostenloses Erstgespräch anfordern
+              Gießener Strategiegespräch anfordern
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>

@@ -461,9 +461,9 @@ export default async function HessenMasterPage({
                           <MapPin
                             className={`w-4 h-4 ${loc.highlight ? 'text-amber-600' : 'text-slate-400'}`}
                           />
-                          <h4 className="font-bold text-slate-900 group-hover:text-amber-700 transition-colors text-sm sm:text-base">
+                          <p className="font-bold text-slate-900 group-hover:text-amber-700 transition-colors text-sm sm:text-base">
                             {loc.name}
-                          </h4>
+                          </p>
                         </div>
                         <p className="text-xs text-slate-500 mt-1">{loc.note}</p>
                       </div>
@@ -496,7 +496,7 @@ export default async function HessenMasterPage({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Hessen</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Hessen</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Subsekundäre Ladezeiten via deutsches Edge-Hosting für maximale Conversion-Rates.
               </p>
@@ -504,7 +504,7 @@ export default async function HessenMasterPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Volle Rechte an Ihrem Quellcode ohne monatliche CMS-Lizenzgebühren oder
                 Lock-in-Effekte.
@@ -513,7 +513,7 @@ export default async function HessenMasterPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Direkte Betreuung durch Gründer Umutcan Emre Tezgel ohne zeitraubende Hierarchien.
               </p>
@@ -521,7 +521,7 @@ export default async function HessenMasterPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">Festpreis</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Transparente Festpreis-Garantie ohne versteckte Nachforderungen oder unkalkulierbare
                 Stundensätze.
@@ -833,11 +833,11 @@ export default async function HessenMasterPage({
       <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
-            Bereit für den digitalen Vorsprung in Hessen?
+            Digitale Spitzenklasse für Ihr Unternehmen in ganz Hessen sichern
           </h2>
           <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-            Vereinbaren Sie jetzt ein unverbindliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
-            Emre Tezgel.
+            Vereinbaren Sie jetzt ein persönliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
+            Emre Tezgel für Ihr hessenweites Webprojekt.
           </p>
           <Link href="/contact">
             <Button
@@ -845,7 +845,7 @@ export default async function HessenMasterPage({
               size="lg"
               className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
             >
-              Kostenloses Erstgespräch anfordern
+              Erstgespräch für Hessen anfordern
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>

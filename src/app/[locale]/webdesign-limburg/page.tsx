@@ -97,42 +97,42 @@ export default async function WebdesignLimburgPage({
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'Wie viel kostet eine neue Website in Limburg?',
+            name: 'Was kostet eine professionelle Website in Limburg an der Lahn?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen bieten wir maximale Kosteneffizienz ohne teuren Agentur-Wasserkopf.',
+              text: 'Wir vereinbaren für Limburger Handels- und Logistikbetriebe, Kanzleien und Arztpraxen transparente Festpreise nach einer kostenlosen Analyse Ihres Projektumfangs.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wie schnell ist eine neue Website in Limburg online?',
+            name: 'Wie schnell ist eine moderne Next.js Website in Limburg online?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online.',
+              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online erreichbar.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Kommen Sie für ein Beratungsgespräch direkt nach Limburg?',
+            name: 'Kommen Sie für Vor-Ort-Termine nach Limburg, Diez oder Elz?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja, sehr gerne. Über die vierspurige B49 sind wir von unserem Wetzlarer HQ in unter 25 Minuten direkt bei Ihnen vor Ort in Limburg, Diez oder Elz.',
+              text: 'Ja, gerne. Über die vierspurige B49 erreichen wir Sie von unserem Wetzlarer Büro aus in rund 20 bis 25 Minuten direkt vor Ort.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Bieten Sie auch Lösungen für Kanzleien und Ärzte?',
+            name: 'Bieten Sie auch Lösungen für Kanzleien, Notare und Praxen in Limburg?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja. Wir entwickeln hochsichere, barrierefreie Websites mit DSGVO-konformer Online-Terminbuchung und schnellen Ladezeiten.',
+              text: 'Ja. Wir entwickeln barrierefreie Websites mit 100% DSGVO-konformen Buchungs- und Kontaktstrecken für maximale Mandanten- und Patientengewinnung.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wer ist unser fester Ansprechpartner?',
+            name: 'Wer ist mein fester Entwickler und Ansprechpartner?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.',
+              text: 'Inhaber Umutcan Emre Tezgel berät und entwickelt direkt ohne wechselnde Projektmanager.',
             },
           },
         ],
@@ -183,7 +183,7 @@ export default async function WebdesignLimburgPage({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Limburg</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Limburg</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Subsekundäre Ladezeiten für überregionale Kunden, Einkäufer und mobile Nutzer.
               </p>
@@ -191,7 +191,7 @@ export default async function WebdesignLimburgPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Volle Rechte an Ihrem Quellcode ohne monatliche CMS-Lizenzgebühren oder
                 Lock-in-Effekte.
@@ -200,7 +200,7 @@ export default async function WebdesignLimburgPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Direkte Betreuung durch Gründer Umutcan Emre Tezgel ohne Agentur-Warteschleifen.
               </p>
@@ -208,7 +208,7 @@ export default async function WebdesignLimburgPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">Festpreis</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Transparente Festpreise ohne versteckte Kosten oder unerwartete Agentur-Aufschläge.
               </p>
@@ -306,13 +306,13 @@ export default async function WebdesignLimburgPage({
                 Inhabergeführte Betreuung
               </span>
               <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mt-2 mb-6">
-                Echtes Handwerk statt Agentur-Overhead für Limburg
+                Maßgeschneiderte Webentwicklung für Handel & Kanzleien in Limburg
               </h2>
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
-                Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Als
-                spezialisierter Solo-Entwickler mit Sitz in Wetzlar baue ich Ihre Webpräsenz für
-                Limburg, Diez und Elz: Technisch perfekt, hochgradig conversion-stark und
-                wirtschaftlich unschlagbar fair.
+                Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Für
+                Limburger Handels- und Logistikbetriebe, Fachkanzleien und medizinische Praxen baue
+                ich hochmoderne Webanwendungen mit Ladezeiten unter 0,4 Sekunden, voller
+                DSGVO-Konformität und messbarer Leadgenerierung.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-slate-200 text-sm">
                 <div className="flex items-center gap-3">
@@ -321,7 +321,7 @@ export default async function WebdesignLimburgPage({
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">Voller Quellcode-Besitz</span>
+                  <span className="text-slate-700">100% Quellcode-Besitz ohne Abo</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
@@ -405,13 +405,12 @@ export default async function WebdesignLimburgPage({
               ICE-Knotenpunkt, Handelszentrum & Limburger Kreuz
             </h2>
             <p className="text-slate-700 leading-relaxed text-base">
-              Limburg an der Lahn nimmt mit dem <strong>ICE-Bahnhof Limburg Süd</strong> und dem
+              Limburg an der Lahn nimmt mit dem <strong>ICE-Bahnhof Limburg Süd</strong> und dem{' '}
               <strong>Limburger Kreuz (A3 / B49 / B54)</strong> eine herausragende strategische
               Position an der Schnittstelle zwischen Hessen und Rheinland-Pfalz ein. Im
-              Gewerbegebiet
-              <strong>Dietkircher Höhe</strong> sowie in den Nachbargemeinden <strong>Diez</strong>,
-              <strong>Elz</strong> und <strong>Hadamar</strong> floriert ein starker Handels-,
-              Logistik- und Dienstleistungssektor.
+              Gewerbegebiet <strong>Dietkircher Höhe</strong> sowie in den Nachbargemeinden{' '}
+              <strong>Diez</strong>, <strong>Elz</strong> und <strong>Hadamar</strong> floriert ein
+              starker Handels-, Logistik- und Dienstleistungssektor.
             </p>
           </div>
 
@@ -453,51 +452,52 @@ export default async function WebdesignLimburgPage({
           <div className="space-y-6">
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie viel kostet eine neue Website in Limburg?
+                Was kostet eine professionelle Website in Limburg an der Lahn?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Wir kalkulieren jedes Projekt nach einer kostenlosen Bedarfsanalyse als
-                verbindlichen Festpreis. Durch unsere schlanken Next.js Architekturen bieten wir
-                höchste Performance und volle Kostensicherheit ohne unerwartete Agentur-Aufschläge.
+                Wir vereinbaren für Limburger Handels- und Logistikbetriebe, Kanzleien und
+                Arztpraxen transparente Festpreise nach einer kostenlosen Analyse Ihres
+                Projektumfangs.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie schnell ist eine neue Website in Limburg online?
+                Wie schnell ist eine moderne Next.js Website in Limburg online?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett
-                schlüsselfertig fertiggestellt und online.
+                schlüsselfertig fertiggestellt und online erreichbar.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Kommen Sie für ein Beratungsgespräch direkt nach Limburg?
+                Kommen Sie für Vor-Ort-Termine nach Limburg, Diez oder Elz?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja, sehr gerne. Über die vierspurige B49 sind wir von unserem Wetzlarer HQ in unter
-                25 Minuten direkt bei Ihnen vor Ort in Limburg, Diez oder Elz.
+                Ja, gerne. Über die vierspurige B49 erreichen wir Sie von unserem Wetzlarer Büro aus
+                in rund 20 bis 25 Minuten direkt vor Ort.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Bieten Sie auch Lösungen für Kanzleien und Ärzte?
+                Bieten Sie auch Lösungen für Kanzleien, Notare und Praxen in Limburg?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja. Wir entwickeln hochsichere, barrierefreie Websites mit DSGVO-konformer
-                Online-Terminbuchung und schnellen Ladezeiten.
+                Ja. Wir entwickeln barrierefreie Websites mit 100% DSGVO-konformen Buchungs- und
+                Kontaktstrecken für maximale Mandanten- und Patientengewinnung.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wer ist unser fester Ansprechpartner?
+                Wer ist mein fester Entwickler und Ansprechpartner?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.
+                Inhaber Umutcan Emre Tezgel berät und entwickelt direkt ohne wechselnde
+                Projektmanager.
               </p>
             </div>
           </div>
@@ -508,11 +508,11 @@ export default async function WebdesignLimburgPage({
       <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
-            Bereit für den digitalen Vorsprung in Limburg?
+            Digitale Marktführerschaft für Limburg & das Lahntal sichern
           </h2>
           <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-            Vereinbaren Sie jetzt ein unverbindliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
-            Emre Tezgel.
+            Vereinbaren Sie jetzt ein persönliches 20-Minuten-Strategiegespräch direkt mit Inhaber
+            Umutcan Emre Tezgel für Ihren Standort in Limburg und Umgebung.
           </p>
           <Link href="/contact">
             <Button
@@ -520,7 +520,7 @@ export default async function WebdesignLimburgPage({
               size="lg"
               className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
             >
-              Kostenloses Erstgespräch anfordern
+              Limburger Erstgespräch anfordern
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>

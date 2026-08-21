@@ -46,11 +46,11 @@
           "desc": "Current jobs"
         },
         "culture": {
-          "label": "Culture",
+          "label": "Company Culture",
           "desc": "How we work"
         },
         "benefits": {
-          "label": "Benefits",
+          "label": "Benefits & Perks",
           "desc": "Your perks"
         }
       },

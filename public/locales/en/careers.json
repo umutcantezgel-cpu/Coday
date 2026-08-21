@@ -1,25 +1,45 @@
 {
   "benefits": {
     "hero": {
-      "badge": "Benefits",
-      "desc": "We offer more than just a job.",
-      "title": "Your Benefits at Coday"
+      "badge": "Exclusive Team Benefits",
+      "title": "Benefits of Working at Coday",
+      "subtitle": "Elite equipment, remote freedom & continuous growth for developers & designers",
+      "desc": "We offer far more than just a standard workspace. Experience a modern engineering culture featuring high-end Apple Silicon hardware, 100% remote flexibility, competitive compensation with direct profit sharing, and an unlimited learning budget for your personal career growth."
     },
+    "grid_title": "Our Core Benefits Overview",
+    "grid_subtitle": "Everything you need for sustainable engineering flow, peak performance, and modern web development.",
+    "gear_title": "Choose Your High-End Hardware Setup",
+    "gear_subtitle": "Configure your bespoke dream setup before day one — fully funded and shipped straight to your doorstep.",
     "items": [
       {
+        "icon": "lightning",
+        "title": "High-End M-Series Hardware",
+        "text": "MacBook Pro 16-inch with Apple Silicon M3/M4 Max (up to 128 GB RAM) or flagship Dell XPS 15 plus 5K Studio Display. Keep all equipment permanently after 24 months."
+      },
+      {
+        "icon": "globe",
+        "title": "100% Remote & Hybrid Freedom",
+        "text": "Work flexibly from anywhere in Germany, enjoy up to 60 days of annual European workations, or drop by our creative engineering hub in the Wetzlar / Giessen area."
+      },
+      {
         "icon": "rocket_launch",
-        "title": "Growth",
-        "text": "Continuous learning."
+        "title": "€2,500+ Learning Budget",
+        "text": "Dedicated annual stipend for conferences (Next.js Conf, React Summit), advanced masterclasses, technical books, and 10% weekly paid Lab-Time for open-source experiments."
+      },
+      {
+        "icon": "chart_bar",
+        "title": "Profit Sharing & Fair Salaries",
+        "text": "Transparent salary bands tied to engineering mastery, direct annual profit-sharing bonuses from agency revenue, and 30 days of paid vacation."
       },
       {
         "icon": "heart",
-        "title": "Health",
-        "text": "We care about your health."
+        "title": "Health & Ergonomics Package",
+        "text": "Herman Miller ergonomic seating, motorized standing desks, active noise-cancelling headphones, and fully funded Urban Sports Club memberships for fitness and wellness."
       },
       {
         "icon": "users",
-        "title": "Great Team",
-        "text": "We work together on exciting projects."
+        "title": "Async Culture & Deep Work",
+        "text": "Meeting-light workflow (< 3h meetings/week) using GitHub, Notion, Linear & Loom. Full trust-based working hours for uninterrupted deep focus without communication fatigue."
       }
     ]
   },
@@ -104,7 +124,8 @@
   },
   "jobs": {
     "button": "Apply now",
-    "culture_badge": "Culture",
+    "culture_badge": "Careers at Coday",
+    "h1_title": "Careers at Coday – Open Positions & Jobs in Wetzlar",
     "details": {
       "fulltime": "Full-time",
       "parttime": "Part-time / Freelance",

@@ -96,42 +96,42 @@ export default async function WebdesignOberurselPage({
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'Wie viel kostet eine neue Website in Oberursel?',
+            name: 'Was kostet eine moderne Website für IT & Mittelstand in Oberursel?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen bieten wir maximale Kosteneffizienz ohne teuren Agentur-Wasserkopf.',
+              text: 'Wir vereinbaren für IT-Dienstleister An den Drei Hasen, Engineering-Büros und B2B-Mittelständler transparente Festpreise nach genauer technischer Leistungsanalyse.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wie schnell ist eine neue Website in Oberursel online?',
+            name: 'Wie schnell ist eine Next.js Plattform in Oberursel online?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online.',
+              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online erreichbar.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Kommen Sie für ein Beratungsgespräch direkt nach Oberursel?',
+            name: 'Kommen Sie für Vor-Ort-Termine ins Gewerbegebiet An den Drei Hasen oder zum Zimmersmühlenweg?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja, sehr gerne. Über die A5 und A661 sind wir von unserem Wetzlarer HQ in unter 30 Minuten direkt bei Ihnen vor Ort im Gewerbegebiet An den Drei Hasen oder am Zimmersmühlenweg.',
+              text: 'Ja, sehr gerne. Über die A5 und A661 sind wir von unserem Wetzlarer HQ in unter 30 Minuten direkt bei Ihnen vor Ort in Oberursel, Steinbach oder Kronberg.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?',
+            name: 'Bieten Sie integrierte Recruiting-Funnels zur IT-Fachkräftegewinnung in Oberursel an?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet.',
+              text: 'Ja. Wir integrieren 60-Sekunden-Express-Bewerbungsstrecken zur schnellen und hürdenfreien Lead- und Bewerbergewinnung auf allen Endgeräten.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wer ist unser fester Ansprechpartner?',
+            name: 'Wer ist unser persönlicher Entwickler & Ansprechpartner?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.',
+              text: 'Inhaber Umutcan Emre Tezgel persönlich berät und entwickelt direkt ohne zwischengeschaltete Agentur-Hierarchien.',
             },
           },
         ],
@@ -182,7 +182,7 @@ export default async function WebdesignOberurselPage({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit im Taunus</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Ladezeit im Taunus</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Subsekundäre Ladezeiten für vielbeschäftigte B2B-Entscheider und mobile Nutzer.
               </p>
@@ -190,7 +190,7 @@ export default async function WebdesignOberurselPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Volle Rechte an Ihrem Quellcode ohne monatliche CMS-Lizenzgebühren oder
                 Lock-in-Effekte.
@@ -199,7 +199,7 @@ export default async function WebdesignOberurselPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Direkte Betreuung durch Gründer Umutcan Emre Tezgel ohne zeitraubende Hierarchien.
               </p>
@@ -207,7 +207,7 @@ export default async function WebdesignOberurselPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">Festpreis</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Transparente Festpreise ohne versteckte Kosten oder unvorhersehbare
                 Agentur-Stundensätze.
@@ -306,7 +306,7 @@ export default async function WebdesignOberurselPage({
                 Inhabergeführte Betreuung
               </span>
               <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mt-2 mb-6">
-                Echtes Handwerk statt Agentur-Overhead für Oberursel
+                Maßgeschneiderte Webentwicklung für IT & Mittelstand in Oberursel
               </h2>
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
                 Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Als
@@ -322,11 +322,11 @@ export default async function WebdesignOberurselPage({
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">Voller Quellcode-Besitz</span>
+                  <span className="text-slate-700">100% Quellcode-Besitz</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">Volle Kostensicherheit & Festpreis</span>
+                  <span className="text-slate-700">Verbindliche Festpreis-Garantie</span>
                 </div>
               </div>
             </div>
@@ -409,9 +409,8 @@ export default async function WebdesignOberurselPage({
               Oberursel (Taunus) besticht durch seine herausragende Lage im Vordertaunus mit
               direkter Anbindung an Frankfurt über die <strong>U3</strong>, <strong>S5</strong> und
               die <strong>A661</strong>. In den etablierten Gewerbegebieten{' '}
-              <strong>An den Drei Hasen</strong> und am <strong>Zimmersmühlenweg</strong>
-              haben sich führende{' '}
-              <strong>IT-Dienstleister, Engineering-Büros und B2B-Mittelständler</strong>
+              <strong>An den Drei Hasen</strong> und am <strong>Zimmersmühlenweg</strong> haben sich
+              führende <strong>IT-Dienstleister, Engineering-Büros und B2B-Mittelständler</strong>{' '}
               angesiedelt, die auf zukunftssichere, hochperformante Webarchitekturen setzen.
             </p>
           </div>
@@ -455,54 +454,54 @@ export default async function WebdesignOberurselPage({
           <div className="space-y-6">
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie viel kostet eine neue Website in Oberursel?
+                Was kostet eine moderne Website für IT & Mittelstand in Oberursel?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und
-                verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Architekturen
-                garantieren wir volle Kostensicherheit und Spitzen-Performance ohne teuren
-                Agentur-Overhead.
+                Wir vereinbaren für IT-Dienstleister An den Drei Hasen, Engineering-Büros und
+                B2B-Mittelständler transparente Festpreise nach genauer technischer
+                Leistungsanalyse.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie schnell ist eine neue Website in Oberursel online?
+                Wie schnell ist eine Next.js Plattform in Oberursel online?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett
-                schlüsselfertig fertiggestellt und online.
+                schlüsselfertig fertiggestellt und online erreichbar.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Kommen Sie für ein Beratungsgespräch direkt nach Oberursel?
+                Kommen Sie für Vor-Ort-Termine ins Gewerbegebiet An den Drei Hasen oder zum
+                Zimmersmühlenweg?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Ja, sehr gerne. Über die A5 und A661 sind wir von unserem Wetzlarer HQ in unter 30
-                Minuten direkt bei Ihnen vor Ort im Gewerbegebiet An den Drei Hasen oder am
-                Zimmersmühlenweg.
+                Minuten direkt bei Ihnen vor Ort in Oberursel, Steinbach oder Kronberg.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?
+                Bieten Sie integrierte Recruiting-Funnels zur IT-Fachkräftegewinnung in Oberursel
+                an?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es
-                keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform
-                in ISO-zertifizierten deutschen Rechenzentren gehostet.
+                Ja. Wir integrieren 60-Sekunden-Express-Bewerbungsstrecken zur schnellen und
+                hürdenfreien Lead- und Bewerbergewinnung auf allen Endgeräten.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wer ist unser fester Ansprechpartner?
+                Wer ist unser persönlicher Entwickler & Ansprechpartner?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.
+                Inhaber Umutcan Emre Tezgel persönlich berät und entwickelt direkt ohne
+                zwischengeschaltete Agentur-Hierarchien.
               </p>
             </div>
           </div>
@@ -513,11 +512,11 @@ export default async function WebdesignOberurselPage({
       <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
-            Bereit für den digitalen Vorsprung in Oberursel?
+            Digitale Spitzenklasse für Ihr Unternehmen in Oberursel sichern
           </h2>
           <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-            Vereinbaren Sie jetzt ein unverbindliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
-            Emre Tezgel.
+            Vereinbaren Sie jetzt ein persönliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
+            Emre Tezgel für Ihren Standort in Oberursel und dem Vordertaunus.
           </p>
           <Link href="/contact">
             <Button
@@ -525,7 +524,7 @@ export default async function WebdesignOberurselPage({
               size="lg"
               className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
             >
-              Kostenloses Erstgespräch anfordern
+              Oberurseler Erstgespräch anfordern
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>

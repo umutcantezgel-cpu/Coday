@@ -96,42 +96,42 @@ export default async function WebdesignWeilburgPage({
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'Wie viel kostet eine neue Website in Weilburg?',
+            name: 'Was kostet eine neue Website für Unternehmen in Weilburg?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen bieten wir maximale Kosteneffizienz ohne teuren Agentur-Wasserkopf.',
+              text: 'Wir kalkulieren für Weilburger Handwerksmeister, Hotels und Dienstleister transparente Festpreise ohne versteckte Monatsabos oder unerwartete Mehrkosten.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wie schnell ist eine neue Website in Weilburg online?',
+            name: 'Wie schnell ist eine neue Next.js Homepage in Weilburg online?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online.',
+              text: 'In der Regel steht Ihre Website innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig online.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Kommen Sie für ein Beratungsgespräch direkt nach Weilburg?',
+            name: 'Kommen Sie für Termine direkt nach Weilburg, Löhnberg oder Kubach?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja, sehr gerne. Über die vierspurige B49 sind wir von unserem Wetzlarer HQ in unter 15 Minuten direkt bei Ihnen vor Ort in Weilburg, Löhnberg oder Kubach.',
+              text: 'Ja, gerne. Über die vierspurige B49 erreichen wir Sie von unserem Wetzlarer Büro aus in rund 15 Minuten direkt vor Ort.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Bieten Sie auch Lösungen zur Mitarbeitergewinnung im Handwerk?',
+            name: 'Bieten Sie Buchungssysteme für Tourismus- und Gastronomiebetriebe in Weilburg?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja. Wir entwickeln mobil optimierte 60-Sekunden-Bewerbungsverfahren ohne Anschreiben, die die Hürde für qualifizierte Fachkräfte drastisch senken.',
+              text: 'Ja. Wir entwickeln mobil optimierte Direktbuchungsstrecken für Hotels, Pensionen und Restaurants im Lahntal ohne Provisionsabgaben an Drittportale.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wer ist unser fester Ansprechpartner?',
+            name: 'Wer betreut mein Projekt in Weilburg persönlich?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.',
+              text: 'Gründer Umutcan Emre Tezgel berät und entwickelt Ihre Plattform persönlich mit direktem Draht.',
             },
           },
         ],
@@ -182,7 +182,7 @@ export default async function WebdesignWeilburgPage({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Weilburg</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Weilburg</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Subsekundäre Ladezeiten für Touristen, mobile Gäste und B2B-Kunden.
               </p>
@@ -190,7 +190,7 @@ export default async function WebdesignWeilburgPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Volle Rechte an Ihrem Quellcode ohne monatliche CMS-Lizenzgebühren oder
                 Lock-in-Effekte.
@@ -199,7 +199,7 @@ export default async function WebdesignWeilburgPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Direkte Betreuung durch Gründer Umutcan Emre Tezgel ohne Agentur-Warteschleifen.
               </p>
@@ -207,7 +207,7 @@ export default async function WebdesignWeilburgPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">Festpreis</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Transparente Festpreise ohne versteckte Kosten oder unerwartete Agentur-Aufschläge.
               </p>
@@ -305,22 +305,22 @@ export default async function WebdesignWeilburgPage({
                 Inhabergeführte Betreuung
               </span>
               <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mt-2 mb-6">
-                Echtes Handwerk statt Agentur-Overhead für Weilburg
+                Moderne Webarchitektur für Handwerk & Tourismus in Weilburg
               </h2>
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
-                Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Als
-                spezialisierter Solo-Entwickler mit Sitz in Wetzlar baue ich Ihre Webpräsenz für
-                Weilburg, Löhnberg und Merenberg: Technisch perfekt, hochgradig conversion-stark und
-                wirtschaftlich unschlagbar fair.
+                Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Für
+                Weilburger Meisterbetriebe, Bauunternehmer und touristische Anbieter entwickle ich
+                performante, maßgeschneiderte Websites mit kompromissloser Ladezeit unter 0,4
+                Sekunden und messbarem Conversion-Fokus.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-slate-200 text-sm">
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">Direkter Entwickler-Kontakt</span>
+                  <span className="text-slate-700">Persönlicher Entwickler-Kontakt</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">Voller Quellcode-Besitz</span>
+                  <span className="text-slate-700">100% Quellcode-Besitz ohne Abo</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
@@ -410,9 +410,8 @@ export default async function WebdesignWeilburgPage({
               Tourismus- und Hotellerie-Branche. Gleichzeitig bilden die Gewerbeparks{' '}
               <strong>Kubach</strong> und <strong>Guntersau</strong>
               sowie die direkten Nachbargemeinden <strong>Löhnberg</strong>,{' '}
-              <strong>Weinbach</strong> und
-              <strong>Merenberg</strong> ein leistungsstarkes Zentrum für Bauunternehmen,
-              Handwerksmeister und modernen Mittelstand.
+              <strong>Weinbach</strong> und <strong>Merenberg</strong> ein leistungsstarkes Zentrum
+              für Bauunternehmen, Handwerksmeister und modernen Mittelstand.
             </p>
           </div>
 
@@ -455,51 +454,51 @@ export default async function WebdesignWeilburgPage({
           <div className="space-y-6">
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie viel kostet eine neue Website in Weilburg?
+                Was kostet eine neue Website für Unternehmen in Weilburg?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Wir kalkulieren jedes Projekt nach einer kostenlosen Bedarfsanalyse als
-                verbindlichen Festpreis. Durch unsere schlanken Next.js Architekturen bieten wir
-                höchste Performance und volle Kostensicherheit ohne unerwartete Agentur-Aufschläge.
+                Wir kalkulieren für Weilburger Handwerksmeister, Hotels und Dienstleister
+                transparente Festpreise ohne versteckte Monatsabos oder unerwartete Mehrkosten.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie schnell ist eine neue Website in Weilburg online?
+                Wie schnell ist eine neue Next.js Homepage in Weilburg online?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett
-                schlüsselfertig fertiggestellt und online.
+                In der Regel steht Ihre Website innerhalb von 10 bis 14 Werktagen komplett
+                schlüsselfertig online.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Kommen Sie für ein Beratungsgespräch direkt nach Weilburg?
+                Kommen Sie für Termine direkt nach Weilburg, Löhnberg oder Kubach?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja, sehr gerne. Über die vierspurige B49 sind wir von unserem Wetzlarer HQ in unter
-                15 Minuten direkt bei Ihnen vor Ort in Weilburg, Löhnberg oder Kubach.
+                Ja, gerne. Über die vierspurige B49 erreichen wir Sie von unserem Wetzlarer Büro aus
+                in rund 15 Minuten direkt vor Ort.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Bieten Sie auch Lösungen zur Mitarbeitergewinnung im Handwerk?
+                Bieten Sie Buchungssysteme für Tourismus- und Gastronomiebetriebe in Weilburg?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja. Wir entwickeln mobil optimierte 60-Sekunden-Bewerbungsverfahren ohne
-                Anschreiben, die die Hürde für qualifizierte Fachkräfte drastisch senken.
+                Ja. Wir entwickeln mobil optimierte Direktbuchungsstrecken für Hotels, Pensionen und
+                Restaurants im Lahntal ohne Provisionsabgaben an Drittportale.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wer ist unser fester Ansprechpartner?
+                Wer betreut mein Projekt in Weilburg persönlich?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.
+                Gründer Umutcan Emre Tezgel berät und entwickelt Ihre Plattform persönlich mit
+                direktem Draht.
               </p>
             </div>
           </div>
@@ -510,11 +509,11 @@ export default async function WebdesignWeilburgPage({
       <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
-            Bereit für den digitalen Vorsprung in Weilburg?
+            Digitale Spitzenklasse für Ihr Weilburger Unternehmen sichern
           </h2>
           <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-            Vereinbaren Sie jetzt ein unverbindliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
-            Emre Tezgel.
+            Vereinbaren Sie jetzt ein persönliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
+            Emre Tezgel für Ihren Standort in Weilburg und im Lahntal.
           </p>
           <Link href="/contact">
             <Button
@@ -522,7 +521,7 @@ export default async function WebdesignWeilburgPage({
               size="lg"
               className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
             >
-              Kostenloses Erstgespräch anfordern
+              Weilburger Erstgespräch anfordern
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>

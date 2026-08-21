@@ -192,23 +192,23 @@ export default async function LandkreisLimburgWeilburgPage({
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'Wie viel kostet eine neue Website im Landkreis Limburg-Weilburg?',
+            name: 'Was kostet eine moderne Website im Landkreis Limburg-Weilburg?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere modernen Next.js Architekturen bieten wir maximale Kosteneffizienz ohne Agentur-Wasserkopf.',
+              text: 'Wir vereinbaren für Großhändler in Limburg, Maschinenbauer in Weilburg und Kliniken in Bad Camberg transparente Festpreise nach technischer Leistungsanalyse.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wie schnell ist eine neue Website in Limburg-Weilburg online?',
+            name: 'Wie schnell ist eine Next.js Plattform in Limburg-Weilburg online?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online.',
+              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online erreichbar.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Kommen Sie für ein Beratungsgespräch direkt zu uns nach Limburg, Weilburg oder Bad Camberg?',
+            name: 'Kommen Sie für Vor-Ort-Termine nach Limburg, Weilburg, Hadamar oder Bad Camberg?',
             acceptedAnswer: {
               '@type': 'Answer',
               text: 'Ja, absolut. Über die B49 sind wir von unserem Wetzlarer HQ in rund 25 Minuten direkt bei Ihnen vor Ort im Betrieb oder Büro.',
@@ -216,18 +216,18 @@ export default async function LandkreisLimburgWeilburgPage({
           },
           {
             '@type': 'Question',
-            name: 'Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?',
+            name: 'Entwickeln Sie barrierefreie Portale (BITV 2.0 / WCAG) für Gesundheitseinrichtungen und Kliniken?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet.',
+              text: 'Ja. Wir programmieren barrierefreie und datenschutzkonforme Patienten- und Klinikportale für den Goldenen Grund und das Lahntal.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wer ist mein fester Ansprechpartner?',
+            name: 'Wer ist unser persönlicher Entwickler & Ansprechpartner?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.',
+              text: 'Inhaber Umutcan Emre Tezgel persönlich berät und entwickelt direkt ohne zwischengeschaltete Agentur-Mitarbeiter.',
             },
           },
         ],
@@ -292,9 +292,9 @@ export default async function LandkreisLimburgWeilburgPage({
                     <MapPin
                       className={`w-4 h-4 ${k.highlight ? 'text-amber-600' : 'text-slate-400'}`}
                     />
-                    <h3 className="font-bold text-slate-900 group-hover:text-amber-700 transition-colors text-base">
+                    <p className="font-bold text-slate-900 group-hover:text-amber-700 transition-colors text-base">
                       {k.name}
-                    </h3>
+                    </p>
                   </div>
                   <p className="text-xs text-slate-500 mt-1">{k.note}</p>
                 </div>
@@ -323,7 +323,7 @@ export default async function LandkreisLimburgWeilburgPage({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit im Lahntal</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Ladezeit im Lahntal</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Subsekundäre Ladezeiten für mobile Nutzer und B2B-Kunden an der A3 / B49.
               </p>
@@ -331,7 +331,7 @@ export default async function LandkreisLimburgWeilburgPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Volle Rechte an Ihrem Quellcode ohne monatliche CMS-Lizenzgebühren oder
                 Lock-in-Effekte.
@@ -340,7 +340,7 @@ export default async function LandkreisLimburgWeilburgPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Direkte Betreuung durch Gründer Umutcan Emre Tezgel ohne zeitraubende Hierarchien.
               </p>
@@ -348,7 +348,7 @@ export default async function LandkreisLimburgWeilburgPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">Festpreis</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Transparente Festpreis-Garantie ohne versteckte Nachforderungen oder unkalkulierbare
                 Stundensätze.
@@ -447,7 +447,7 @@ export default async function LandkreisLimburgWeilburgPage({
                 Inhabergeführte Betreuung
               </span>
               <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mt-2 mb-6">
-                Echtes Handwerk statt Agentur-Overhead für Limburg-Weilburg
+                Maßgeschneiderte Webentwicklung für Handel, Industrie & Kurwesen in Limburg-Weilburg
               </h2>
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
                 Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Als
@@ -462,7 +462,7 @@ export default async function LandkreisLimburgWeilburgPage({
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">Voller Quellcode-Besitz</span>
+                  <span className="text-slate-700">100% Quellcode-Besitz</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
@@ -600,52 +600,52 @@ export default async function LandkreisLimburgWeilburgPage({
           <div className="space-y-6">
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie viel kostet eine neue Website im Landkreis Limburg-Weilburg?
+                Was kostet eine moderne Website im Landkreis Limburg-Weilburg?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und
-                verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir
-                5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance.
+                Wir vereinbaren für Großhändler in Limburg, Maschinenbauer in Weilburg und Kliniken
+                in Bad Camberg transparente Festpreise nach technischer Leistungsanalyse.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie schnell ist eine neue Website im Landkreis Limburg-Weilburg online?
+                Wie schnell ist eine Next.js Plattform in Limburg-Weilburg online?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett
-                schlüsselfertig fertiggestellt und online.
+                schlüsselfertig fertiggestellt und online erreichbar.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Kommen Sie für ein Beratungsgespräch direkt zu uns in den Betrieb?
+                Kommen Sie für Vor-Ort-Termine nach Limburg, Weilburg, Hadamar oder Bad Camberg?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja, selbstverständlich. Über die B49 sind wir von unserem Wetzlarer HQ in rund 25
-                Minuten direkt bei Ihnen vor Ort in Limburg, Weilburg, Hadamar oder Bad Camberg.
+                Ja, absolut. Über die B49 sind wir von unserem Wetzlarer HQ in rund 25 Minuten
+                direkt bei Ihnen vor Ort im Betrieb oder Büro.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?
+                Entwickeln Sie barrierefreie Portale (BITV 2.0 / WCAG) für Gesundheitseinrichtungen
+                und Kliniken?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es
-                keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform
-                in ISO-zertifizierten deutschen Rechenzentren gehostet.
+                Ja. Wir programmieren barrierefreie und datenschutzkonforme Patienten- und
+                Klinikportale für den Goldenen Grund und das Lahntal.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wer ist unser fester Ansprechpartner?
+                Wer ist unser persönlicher Entwickler & Ansprechpartner?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.
+                Inhaber Umutcan Emre Tezgel persönlich berät und entwickelt direkt ohne
+                zwischengeschaltete Agentur-Mitarbeiter.
               </p>
             </div>
           </div>
@@ -656,11 +656,11 @@ export default async function LandkreisLimburgWeilburgPage({
       <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
-            Bereit für den digitalen Vorsprung im Landkreis Limburg-Weilburg?
+            Digitale Spitzenklasse für Ihr Unternehmen im Landkreis Limburg-Weilburg sichern
           </h2>
           <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-            Vereinbaren Sie jetzt ein unverbindliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
-            Emre Tezgel.
+            Vereinbaren Sie jetzt ein persönliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
+            Emre Tezgel für Ihren Standort im Landkreis Limburg-Weilburg.
           </p>
           <Link href="/contact">
             <Button
@@ -668,7 +668,7 @@ export default async function LandkreisLimburgWeilburgPage({
               size="lg"
               className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
             >
-              Kostenloses Erstgespräch anfordern
+              Erstgespräch für Limburg-Weilburg anfordern
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>

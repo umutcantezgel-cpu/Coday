@@ -46,7 +46,7 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: 'Web Design Frankfurt | High-End Next.js Web Agency · Coday',
       description:
-        'Enterprise web design & development in Frankfurt am Main. Next.js 15, <0.4s load time & B2B leads for FinTech, law firms & mid-market. Fixed price on request.',
+        'Enterprise web design in Frankfurt am Main. Next.js 15, <0.4s load time & B2B leads for FinTech, law firms & mid-market. Fixed price.',
       keywords: [
         'Web Design Frankfurt',
         'Web Agency Frankfurt am Main',
@@ -61,7 +61,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Webdesign Frankfurt | High-End Next.js Webagentur · Coday',
     description:
-      'Enterprise Webdesign & Webentwicklung in Frankfurt am Main. Next.js 15, <0.4s Ladezeit & B2B-Leads für FinTech, Kanzleien & Mittelstand. Festpreis auf Anfrage.',
+      'Enterprise Webdesign in Frankfurt am Main. Next.js 15, <0.4s Ladezeit & B2B-Leads für FinTech, Kanzleien & Mittelstand. Verbindlicher Festpreis.',
     keywords: [
       'Webdesign Frankfurt',
       'Webagentur Frankfurt am Main',
@@ -95,42 +95,42 @@ export default async function WebdesignFrankfurtPage({
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'Wie viel kostet eine Enterprise-Website in Frankfurt?',
+            name: 'Was kostet eine Enterprise-Website in Frankfurt am Main?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen bieten wir maximale Kosteneffizienz ohne teuren Agentur-Wasserkopf.',
+              text: 'Wir vereinbaren für Frankfurter FinTechs, Kanzleien im Westend und B2B-Unternehmen transparente Festpreise nach einer detaillierten Scope-Definition.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wie schnell ist eine neue Website in Frankfurt online?',
+            name: 'Wie schnell ist eine Next.js Plattform in Frankfurt einsatzbereit?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online.',
+              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und über globale Edge-Server live.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Kommen Sie für ein Beratungsgespräch direkt nach Frankfurt?',
+            name: 'Kommen Sie für persönliche Meetings ins Bankenviertel oder Westend?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja, sehr gerne. Über die A5 sind wir von unserem Wetzlarer HQ in unter 40 Minuten direkt bei Ihnen vor Ort im Bankenviertel, Westend oder am Westhafen.',
+              text: 'Ja, sehr gerne. Über die A5 sind wir in unter 40 Minuten direkt bei Ihnen vor Ort in Frankfurt, am Westhafen oder in Gateway Gardens.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Erfüllen Ihre Websites die Sicherheitsanforderungen für FinTechs und Kanzleien?',
+            name: 'Wie garantiert Coday Compliance & Datensicherheit für Frankfurter Kanzleien?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in zertifizierten deutschen Rechenzentren verarbeitet.',
+              text: 'Durch entkoppelte Headless-Architekturen ohne SQL-Angriffsflächen und Hosting in deutschen ISO-27001 zertifizierten Rechenzentren.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wer ist unser fester Ansprechpartner?',
+            name: 'Wer leitet die technische Entwicklung meines Projekts?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.',
+              text: 'Inhaber Umutcan Emre Tezgel entwickelt Ihre Webapplikation persönlich als erfahrener Senior Engineer.',
             },
           },
         ],
@@ -150,7 +150,7 @@ export default async function WebdesignFrankfurtPage({
         badgeText="ENTERPRISE NEXT.JS WEBAGENTUR FRANKFURT AM MAIN"
         headline="Webdesign & Enterprise Next.js Entwicklung in"
         headlineGradient="Frankfurt am Main"
-        description="Ultraschnelle Webapplikationen, kompromisslose Datensicherheit und hochkonvertierende Websites für anspruchsvolle Frankfurter FinTechs, Kanzleien, Family Offices und Mittelständler. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+        description="Als spezialisierte High-Performance Webagentur für Frankfurt am Main entwickeln wir enterprise-fähige Next.js Entwicklung und konversionsstarke B2B-Websites für FinTechs, Kanzleien, Family Offices und Marktführer. Subsekundäre Ladezeiten, 100/100 Core Web Vitals und garantierte Festpreise."
         cityName="Frankfurt am Main"
         sourceTag="local_seo_frankfurt"
         formHeading="Kostenlose Bedarfsanalyse für Frankfurt"
@@ -181,7 +181,7 @@ export default async function WebdesignFrankfurtPage({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Frankfurt</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Frankfurt</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Subsekundäre Ladezeiten für vielbeschäftigte B2B-Entscheider und Investoren im
                 Bankenviertel.
@@ -190,7 +190,7 @@ export default async function WebdesignFrankfurtPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Volle Rechte an Ihrem Quellcode ohne monatliche CMS-Lizenzgebühren oder
                 Lock-in-Effekte.
@@ -199,7 +199,7 @@ export default async function WebdesignFrankfurtPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Direkte Betreuung durch Gründer Umutcan Emre Tezgel ohne zeitraubende
                 Agentur-Hierarchien.
@@ -208,7 +208,7 @@ export default async function WebdesignFrankfurtPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">Festpreis</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Transparente Festpreise ohne versteckte Kosten oder unvorhersehbare
                 Agentur-Stundensätze.
@@ -226,7 +226,7 @@ export default async function WebdesignFrankfurtPage({
               Technologie-Vergleich
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
-              Warum Frankfurter Marktführer auf Next.js umsteigen
+              Next.js Entwicklung: Warum Frankfurter Unternehmen auf moderne B2B-Websites setzen
             </h2>
             <p className="text-slate-600 text-base sm:text-lg">
               Der direkte Vergleich zwischen klassischem WordPress und zukunftssicherer
@@ -307,13 +307,13 @@ export default async function WebdesignFrankfurtPage({
                 Inhabergeführte Betreuung
               </span>
               <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mt-2 mb-6">
-                Echtes Handwerk statt Agentur-Overhead für Frankfurt
+                Enterprise Next.js Webentwicklung für den Finanzplatz Frankfurt
               </h2>
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
-                Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Als
-                spezialisierter Solo-Entwickler mit Sitz in Wetzlar baue ich Ihre Webpräsenz für
-                Frankfurt am Main: Technisch perfekt, kompromisslos sicher und wirtschaftlich
-                kalkulierbar mit garantierten Festpreisen ohne teuren Agentur-Overhead.
+                Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Für
+                Frankfurter FinTechs, Kanzleien im Westend und B2B-Unternehmen konzipiere und
+                programmiere ich skalierbare Webplattformen mit extremen Ladezeiten unter 0,4
+                Sekunden, höchster Datensicherheit und messbarem Conversion-Impact.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-slate-200 text-sm">
                 <div className="flex items-center gap-3">
@@ -322,11 +322,11 @@ export default async function WebdesignFrankfurtPage({
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">Voller Quellcode-Besitz</span>
+                  <span className="text-slate-700">100% Quellcode-Besitz</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">Volle Kostensicherheit & Festpreis</span>
+                  <span className="text-slate-700">Verbindliche Festpreis-Garantie</span>
                 </div>
               </div>
             </div>
@@ -411,12 +411,10 @@ export default async function WebdesignFrankfurtPage({
             <p className="text-slate-700 leading-relaxed text-base">
               Frankfurt am Main ist das pulsierende Herz der europäischen Finanzwelt und mit dem
               <strong>DE-CIX</strong> der weltgrößte Datenknotenpunkt. Vom ikonischen{' '}
-              <strong>Bankenviertel</strong>
-              über das renommierte <strong>Westend</strong> und den modernen{' '}
-              <strong>Westhafen</strong> bis zum
-              <strong>Industriepark Höchst</strong> und <strong>Gateway Gardens</strong> am
-              Flughafen verlangen Unternehmen nach absolut kompromissloser digitaler Performance,
-              Zuverlässigkeit und Sicherheit.
+              <strong>Bankenviertel</strong> über das renommierte <strong>Westend</strong> und den
+              modernen <strong>Westhafen</strong> bis zum <strong>Industriepark Höchst</strong> und{' '}
+              <strong>Gateway Gardens</strong> am Flughafen verlangen Unternehmen nach absolut
+              kompromissloser digitaler Performance, Zuverlässigkeit und Sicherheit.
             </p>
           </div>
 
@@ -460,53 +458,51 @@ export default async function WebdesignFrankfurtPage({
           <div className="space-y-6">
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie viel kostet eine Enterprise-Website in Frankfurt?
+                Was kostet eine Enterprise-Website in Frankfurt am Main?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und
-                verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Architekturen
-                garantieren wir volle Kostensicherheit und Spitzen-Performance ohne teuren
-                Agentur-Overhead.
+                Wir vereinbaren für Frankfurter FinTechs, Kanzleien im Westend und B2B-Unternehmen
+                transparente Festpreise nach einer detaillierten Scope-Definition.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie schnell ist eine neue Website in Frankfurt online?
+                Wie schnell ist eine Next.js Plattform in Frankfurt einsatzbereit?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett
-                schlüsselfertig fertiggestellt und online.
+                schlüsselfertig fertiggestellt und über globale Edge-Server live.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Kommen Sie für ein Beratungsgespräch direkt nach Frankfurt?
+                Kommen Sie für persönliche Meetings ins Bankenviertel oder Westend?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja, sehr gerne. Über die A5 sind wir von unserem Wetzlarer HQ in unter 40 Minuten
-                direkt bei Ihnen vor Ort im Bankenviertel, Westend oder am Westhafen.
+                Ja, sehr gerne. Über die A5 sind wir in unter 40 Minuten direkt bei Ihnen vor Ort in
+                Frankfurt, am Westhafen oder in Gateway Gardens.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Erfüllen Ihre Websites die Sicherheitsanforderungen für FinTechs und Kanzleien?
+                Wie garantiert Coday Compliance & Datensicherheit für Frankfurter Kanzleien?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es
-                keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform
-                in zertifizierten deutschen Rechenzentren verarbeitet.
+                Durch entkoppelte Headless-Architekturen ohne SQL-Angriffsflächen und Hosting in
+                deutschen ISO-27001 zertifizierten Rechenzentren.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wer ist unser fester Ansprechpartner?
+                Wer leitet die technische Entwicklung meines Projekts?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.
+                Inhaber Umutcan Emre Tezgel entwickelt Ihre Webapplikation persönlich als erfahrener
+                Senior Engineer.
               </p>
             </div>
           </div>
@@ -517,11 +513,11 @@ export default async function WebdesignFrankfurtPage({
       <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
-            Bereit für den digitalen Vorsprung in Frankfurt?
+            Digitale Spitzenposition für Ihr Frankfurter Unternehmen sichern
           </h2>
           <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-            Vereinbaren Sie jetzt ein unverbindliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
-            Emre Tezgel.
+            Vereinbaren Sie jetzt ein persönliches 20-Minuten-Strategiegespräch direkt mit Inhaber
+            Umutcan Emre Tezgel für Ihren Standort in Frankfurt am Main.
           </p>
           <Link href="/contact">
             <Button
@@ -529,7 +525,7 @@ export default async function WebdesignFrankfurtPage({
               size="lg"
               className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
             >
-              Kostenloses Erstgespräch anfordern
+              Frankfurter Strategiegespräch anfordern
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>

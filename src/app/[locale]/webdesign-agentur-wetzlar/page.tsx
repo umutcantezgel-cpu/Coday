@@ -96,42 +96,42 @@ export default async function WebdesignWetzlarPage({
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'Wie viel kostet eine professionelle Website in Wetzlar?',
+            name: 'Was kostet eine High-End Next.js Website in Wetzlar?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einer kostenlosen Bedarfsanalyse als verbindlichen Festpreis. Durch unsere moderne Next.js Architektur erhalten Sie Premium-Qualität mit voller Kostensicherheit ohne unerwartete Agentur-Aufschläge.',
+              text: 'Wir kalkulieren für Wetzlarer Optikunternehmen, Medizintechnik-Betriebe, Kanzleien und Handwerker transparente Festpreise ab Projektstart. Sie erhalten absolute Budgetkontrolle ohne versteckte Folgegebühren.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wie lange dauert die Umsetzung?',
+            name: 'Wie schnell wird mein Webdesign-Projekt in Wetzlar umgesetzt?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'In der Regel 10 bis 14 Werktage bis zum schlüsselfertigen Go-Live Ihrer neuen Website.',
+              text: 'In der Regel ist Ihre maßgeschneiderte Website in 10 bis 14 Werktagen schlüsselfertig fertiggestellt und live auf globalen Edge-Servern erreichbar.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Können wir uns persönlich in Wetzlar treffen?',
+            name: 'Können wir uns persönlich in Wetzlar oder im Leitz-Park treffen?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja, sehr gerne. Unser Agentur-HQ befindet sich direkt in Wetzlar. Wir kommen für ein persönliches Beratungsgespräch direkt zu Ihnen in den Betrieb.',
+              text: 'Ja, sehr gerne. Unser Agentursitz ist in Wetzlar. Wir kommen für ein persönliches Beratungsgespräch direkt zu Ihnen in Spilburg, Dillfeld oder die Altstadt.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Bieten Sie eine Zufriedenheits- und Performance-Garantie?',
+            name: 'Welche Performance- und Qualitäts-Garantien bietet Coday?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja, wir garantieren erstklassige Lighthouse-Scores von über 90 Punkten und perfekte Google Core Web Vitals.',
+              text: 'Wir garantieren PageSpeed-Scores von 100/100, Ladezeiten unter 0,4 Sekunden und 100% fehlerfreie Seobility- und Lighthouse-Prüfungen.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wer betreut die Website nach dem Launch?',
+            name: 'Wer ist während und nach dem Launch mein direkter Ansprechpartner?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Inhaber Umutcan Emre Tezgel persönlich mit garantiertem 24h-Support.',
+              text: 'Inhaber Umutcan Emre Tezgel betreut Sie persönlich mit direktem 24h-Support ohne Ticket-Warteschlangen.',
             },
           },
         ],
@@ -183,7 +183,7 @@ export default async function WebdesignWetzlarPage({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Wetzlar</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Wetzlar</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 TTFB unter 50ms via deutsches Edge-Netzwerk. Perfekt für mobile Kunden und
                 Top-Google-Rankings.
@@ -192,7 +192,7 @@ export default async function WebdesignWetzlarPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Keine monatlichen Lizenzgebühren, kein Vendor-Lock-in. Der Quellcode gehört
                 vollständig Ihnen.
@@ -201,7 +201,7 @@ export default async function WebdesignWetzlarPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Lokale Reaktionszeit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Lokale Reaktionszeit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Direkte Betreuung durch Inhaber Umutcan Emre Tezgel in Wetzlar ohne
                 Callcenter-Warteschleifen.
@@ -210,7 +210,7 @@ export default async function WebdesignWetzlarPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">Festpreis</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Transparente Festpreise ohne versteckte Kosten oder unerwartete Agentur-Aufschläge.
               </p>
@@ -307,22 +307,22 @@ export default async function WebdesignWetzlarPage({
                 Inhabergeführte Handwerkskunst
               </span>
               <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mt-2 mb-6">
-                Echtes Handwerk statt Agentur-Overhead in Wetzlar
+                Echtes Meisterhandwerk & Optik-Präzision in Wetzlar
               </h2>
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
                 Bei Coday sprechen Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Keine
                 ahnungslosen Junior-Projektmanager, keine verdeckten Subunternehmer. Reine
-                Ingenieurskunst und KI-gestützte Entwicklungsgeschwindigkeit für maximale Ergebnisse
+                Ingenieurskunst und KI-gestützte Entwicklungsgeschwindigkeit für messbare Ergebnisse
                 in Wetzlar und im gesamten Lahn-Dill-Kreis.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-slate-200 text-sm">
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">Direkter Entwickler-Kontakt</span>
+                  <span className="text-slate-700">Direkte Beratung vor Ort in Wetzlar</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">Voller Quellcode-Besitz</span>
+                  <span className="text-slate-700">100% Quellcode-Besitz ohne Abo</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
@@ -510,52 +510,52 @@ export default async function WebdesignWetzlarPage({
           <div className="space-y-6">
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie viel kostet eine professionelle Website in Wetzlar?
+                Was kostet eine High-End Next.js Website in Wetzlar?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Wir kalkulieren jedes Projekt nach einer kostenlosen Bedarfsanalyse als
-                verbindlichen Festpreis. Durch unsere schlanken Workflows und Next.js Entwicklung
-                erhalten Sie Premium-Agenturqualität mit voller Kostensicherheit ohne versteckte
-                Nebenkosten.
+                Wir kalkulieren für Wetzlarer Optikunternehmen, Medizintechnik-Betriebe, Kanzleien
+                und Handwerker transparente Festpreise ab Projektstart. Sie erhalten absolute
+                Budgetkontrolle ohne versteckte Folgegebühren.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie lange dauert die Umsetzung unseres Webprojekts?
+                Wie schnell wird mein Webdesign-Projekt in Wetzlar umgesetzt?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                In der Regel 10 bis 14 Werktage bis zum schlüsselfertigen Go-Live Ihrer neuen
-                Website.
+                In der Regel ist Ihre maßgeschneiderte Website in 10 bis 14 Werktagen
+                schlüsselfertig fertiggestellt und live auf globalen Edge-Servern erreichbar.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Können wir uns persönlich in Wetzlar treffen?
+                Können wir uns persönlich in Wetzlar oder im Leitz-Park treffen?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja, sehr gerne. Unser Agentur-HQ befindet sich direkt in Wetzlar. Wir kommen für ein
-                persönliches Beratungsgespräch direkt zu Ihnen in den Betrieb.
+                Ja, sehr gerne. Unser Agentursitz ist in Wetzlar. Wir kommen für ein persönliches
+                Beratungsgespräch direkt zu Ihnen in Spilburg, Dillfeld oder die Altstadt.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Bieten Sie eine Zufriedenheits- und Performance-Garantie?
+                Welche Performance- und Qualitäts-Garantien bietet Coday?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja, vertraglich garantierte Lighthouse-Scores von über 90 Punkten und perfekte
-                Google Core Web Vitals.
+                Wir garantieren PageSpeed-Scores von 100/100, Ladezeiten unter 0,4 Sekunden und 100%
+                fehlerfreie Seobility- und Lighthouse-Prüfungen.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wer betreut die Website nach dem Launch?
+                Wer ist während und nach dem Launch mein direkter Ansprechpartner?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Inhaber Umutcan Emre Tezgel persönlich mit garantiertem 24h-Support.
+                Inhaber Umutcan Emre Tezgel betreut Sie persönlich mit direktem 24h-Support ohne
+                Ticket-Warteschlangen.
               </p>
             </div>
           </div>
@@ -566,11 +566,11 @@ export default async function WebdesignWetzlarPage({
       <section className="py-20 bg-slate-50/80 text-center border-t border-slate-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
-            Bereit für den digitalen Vorsprung in Wetzlar?
+            Digitalen Spitzenplatz für Ihr Wetzlarer Unternehmen sichern
           </h2>
           <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-            Vereinbaren Sie jetzt ein unverbindliches 20-Minuten-Strategiegespräch direkt mit
-            Inhaber Umutcan Emre Tezgel in Wetzlar.
+            Vereinbaren Sie jetzt ein persönliches 20-Minuten-Strategiegespräch direkt mit Inhaber
+            Umutcan Emre Tezgel in Wetzlar.
           </p>
           <Link href="/contact">
             <Button
@@ -578,7 +578,7 @@ export default async function WebdesignWetzlarPage({
               size="lg"
               className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
             >
-              Kostenloses Erstgespräch anfordern
+              Wetzlarer Strategiegespräch anfordern
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>

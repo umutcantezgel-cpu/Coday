@@ -97,42 +97,42 @@ export default async function WebdesignDillenburgPage({
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'Wie viel kostet eine neue B2B-Website in Dillenburg?',
+            name: 'Was kostet eine Website für Werkzeugbau & Industrie in Dillenburg?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen bieten wir maximale Kosteneffizienz ohne teuren Agentur-Wasserkopf.',
+              text: 'Wir vereinbaren für Unternehmen im Gewerbepark Dillfeld, Frohnhausen und Manderbach verbindliche Festpreise nach einer detaillierten Anforderungsanalyse. Sie profitieren von maximaler Planungssicherheit ohne Folgekosten.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wie schnell ist eine neue Website in Dillenburg online?',
+            name: 'Wie schnell ist eine Next.js Plattform in Dillenburg einsatzbereit?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online.',
+              text: 'Durch unsere erprobte Entwicklungspipeline ist Ihre schlüsselfertige B2B-Website in 10 bis 14 Werktagen online.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Kommen Sie für ein Beratungsgespräch direkt nach Dillenburg?',
+            name: 'Sind Vor-Ort-Termine in Dillenburg, Frohnhausen oder Manderbach möglich?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja, sehr gerne. Von unserem Wetzlarer HQ aus sind wir über die B277 oder A45 in unter 20 Minuten direkt bei Ihnen vor Ort in Dillenburg, Frohnhausen oder Manderbach.',
+              text: 'Ja, gerne. Über die B277 und A45 sind wir von unserem Wetzlarer Büro in rund 15 bis 20 Minuten direkt bei Ihnen vor Ort im Betrieb.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Bieten Sie auch Lösungen zur Fachkräftegewinnung im Dillgebiet?',
+            name: 'Wie optimiert Coday die Mitarbeitergewinnung im oberen Dilltal?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja. Wir entwickeln mobil optimierte 60-Sekunden-Bewerbungsverfahren ohne Anschreiben, die die Hürde für qualifizierte Fachkräfte drastisch senken.',
+              text: 'Wir implementieren schlanke Smartphone-Bewerbungsprozesse ohne Lebenslauf-Pflicht, über die sich Zerspanungsmechaniker, Werkzeugbauer und Meister in 60 Sekunden bewerben.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wer ist unser fester Ansprechpartner?',
+            name: 'Wer ist mein direkter Ansprechpartner?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.',
+              text: 'Inhaber Umutcan Emre Tezgel berät und entwickelt direkt – keine wechselnden Kundenbetreuer.',
             },
           },
         ],
@@ -152,7 +152,7 @@ export default async function WebdesignDillenburgPage({
         badgeText="WERKZEUGBAU, METALLTECHNIK & B2B WEBAGENTUR DILLENBURG"
         headline="Webdesign & Next.js Entwicklung in der"
         headlineGradient="Oranienstadt Dillenburg"
-        description="Speziell für Werkzeugbau, Metallverarbeitung, Kunststofftechnik und Meisterbetriebe in Dillenburg, Frohnhausen und Manderbach. Maximale Ladezeiten unter 500ms, perfekte Google-Rankings und planbare Neukunden- und Mitarbeitergewinnung. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+        description="Als spezialisierte High-Performance Webagentur für Dillenburg liefern wir erstklassige Next.js Entwicklung und moderne B2B-Websites für Werkzeugbau, Metalltechnik und Meisterbetriebe. Maximale Ladezeiten unter 500ms, Spitzenplatzierungen bei Google und planbare Neukundengewinnung zum Festpreis."
         cityName="Dillenburg"
         sourceTag="local_seo_dillenburg"
         formHeading="Kostenlose Bedarfsanalyse für Dillenburg"
@@ -183,7 +183,7 @@ export default async function WebdesignDillenburgPage({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Dillenburg</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Dillenburg</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Subsekundäre Ladezeiten für ungeduldige B2B-Einkäufer und mobile Nutzer.
               </p>
@@ -191,7 +191,7 @@ export default async function WebdesignDillenburgPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Volle Rechte an Ihrem Quellcode ohne monatliche CMS-Lizenzgebühren oder
                 Lock-in-Effekte.
@@ -200,7 +200,7 @@ export default async function WebdesignDillenburgPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Direkte Betreuung durch Gründer Umutcan Emre Tezgel ohne Agentur-Warteschleifen.
               </p>
@@ -208,7 +208,7 @@ export default async function WebdesignDillenburgPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">Festpreis</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Transparente Festpreise ohne versteckte Kosten oder unerwartete Agentur-Aufschläge.
               </p>
@@ -225,7 +225,7 @@ export default async function WebdesignDillenburgPage({
               Technologie-Vergleich
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
-              Warum Dillenburger Industrie- & Handwerksbetriebe auf Next.js setzen
+              Next.js Entwicklung: Warum Dillenburger Betriebe auf moderne B2B-Websites setzen
             </h2>
             <p className="text-slate-600 text-base sm:text-lg">
               Der direkte Vergleich zwischen klassischem WordPress und zukunftssicherer
@@ -306,13 +306,13 @@ export default async function WebdesignDillenburgPage({
                 Inhabergeführte Betreuung
               </span>
               <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mt-2 mb-6">
-                Echtes Handwerk statt Agentur-Overhead für Dillenburg
+                Maßgeschneiderte Webentwicklung für Werkzeugbau & Handwerk in Dillenburg
               </h2>
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
-                Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Als
-                spezialisierter Solo-Entwickler mit Sitz in Wetzlar baue ich Ihre Webpräsenz für
-                Dillenburg, Frohnhausen und Manderbach: Technisch perfekt, hochgradig
-                conversion-stark und wirtschaftlich unschlagbar fair.
+                Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Für
+                Dillenburger Industrie- und Handwerksbetriebe entwickle ich hochmoderne,
+                ausfallsichere Webpräsenzen mit extremen Ladezeiten unter 0,4 Sekunden und messbarer
+                B2B-Leadgenerierung ohne unnötige Agentur-Hierarchien.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-slate-200 text-sm">
                 <div className="flex items-center gap-3">
@@ -321,7 +321,7 @@ export default async function WebdesignDillenburgPage({
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">Voller Quellcode-Besitz</span>
+                  <span className="text-slate-700">100% Quellcode-Besitz</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
@@ -456,52 +456,53 @@ export default async function WebdesignDillenburgPage({
           <div className="space-y-6">
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie viel kostet eine neue B2B-Website in Dillenburg?
+                Was kostet eine Website für Werkzeugbau & Industrie in Dillenburg?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Wir kalkulieren jedes Projekt nach einer kostenlosen Bedarfsanalyse als
-                verbindlichen Festpreis. Durch unsere schlanken Next.js Architekturen bieten wir
-                höchste Performance und volle Kostensicherheit ohne unerwartete Agentur-Aufschläge.
+                Wir vereinbaren für Unternehmen im Gewerbepark Dillfeld, Frohnhausen und Manderbach
+                verbindliche Festpreise nach einer detaillierten Anforderungsanalyse. Sie
+                profitieren von maximaler Planungssicherheit ohne Folgekosten.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie schnell ist eine neue Website in Dillenburg online?
+                Wie schnell ist eine Next.js Plattform in Dillenburg einsatzbereit?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett
-                schlüsselfertig fertiggestellt und online.
+                Durch unsere erprobte Entwicklungspipeline ist Ihre schlüsselfertige B2B-Website in
+                10 bis 14 Werktagen online.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Kommen Sie für ein Beratungsgespräch direkt nach Dillenburg?
+                Sind Vor-Ort-Termine in Dillenburg, Frohnhausen oder Manderbach möglich?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja, sehr gerne. Von unserem Wetzlarer HQ aus sind wir über die B277 oder A45 in
-                unter 20 Minuten direkt bei Ihnen vor Ort in Dillenburg, Frohnhausen oder
-                Manderbach.
+                Ja, gerne. Über die B277 und A45 sind wir von unserem Wetzlarer Büro in rund 15 bis
+                20 Minuten direkt bei Ihnen vor Ort im Betrieb.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Bieten Sie auch Lösungen zur Fachkräftegewinnung im Dillgebiet?
+                Wie optimiert Coday die Mitarbeitergewinnung im oberen Dilltal?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja. Wir entwickeln mobil optimierte 60-Sekunden-Bewerbungsverfahren ohne
-                Anschreiben, die die Hürde für qualifizierte Fachkräfte drastisch senken.
+                Wir implementieren schlanke Smartphone-Bewerbungsprozesse ohne Lebenslauf-Pflicht,
+                über die sich Zerspanungsmechaniker, Werkzeugbauer und Meister in 60 Sekunden
+                bewerben.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wer ist unser fester Ansprechpartner?
+                Wer ist mein direkter Ansprechpartner?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.
+                Inhaber Umutcan Emre Tezgel berät und entwickelt direkt – keine wechselnden
+                Kundenbetreuer.
               </p>
             </div>
           </div>
@@ -512,11 +513,11 @@ export default async function WebdesignDillenburgPage({
       <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
-            Bereit für mehr B2B-Kunden & Fachkräfte in Dillenburg?
+            Digitale Marktführerschaft für Ihr Dillenburger Unternehmen sichern
           </h2>
           <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-            Vereinbaren Sie jetzt ein unverbindliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
-            Emre Tezgel.
+            Vereinbaren Sie jetzt ein persönliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
+            Emre Tezgel für Ihren Standort in Dillenburg und Umgebung.
           </p>
           <Link href="/contact">
             <Button
@@ -524,7 +525,7 @@ export default async function WebdesignDillenburgPage({
               size="lg"
               className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
             >
-              Kostenloses Erstgespräch anfordern
+              Dillenburger Erstgespräch anfordern
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>

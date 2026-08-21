@@ -227,7 +227,7 @@ export default async function StandorteGiessenPage({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Gießen</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Gießen</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Serverlose Edge-Auslieferung in Frankfurt für ultraschnelle Seitenaufrufe auf jedem
                 Endgerät.
@@ -236,7 +236,7 @@ export default async function StandorteGiessenPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Voller Besitz des Quellcodes ohne monatliche Lizenzgebühren, Plugin-Abos oder
                 Vendor-Lock-in.
@@ -245,7 +245,7 @@ export default async function StandorteGiessenPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Persönlicher Ansprechpartner direkt aus der Nachbarschaft Wetzlar ohne
                 Ticket-Warteschlangen.
@@ -254,7 +254,7 @@ export default async function StandorteGiessenPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">Festpreis</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Transparente Festpreise ohne versteckte Kosten oder unerwartete Agentur-Aufschläge.
               </p>
@@ -369,7 +369,7 @@ export default async function StandorteGiessenPage({
                   <span className="text-3xl font-black text-amber-600/40 mb-3 block">
                     {step.num}
                   </span>
-                  <h3 className="text-base font-bold text-slate-900 mb-2">{step.title}</h3>
+                  <p className="text-base font-bold text-slate-900 mb-2">{step.title}</p>
                   <p className="text-slate-600 text-xs leading-relaxed">{step.desc}</p>
                 </div>
               </div>
@@ -580,7 +580,7 @@ export default async function StandorteGiessenPage({
                 className="p-5 rounded-xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 transition-colors"
               >
                 <div className="flex items-center justify-between mb-1">
-                  <h4 className="font-bold text-slate-900 text-sm">{c.name}</h4>
+                  <p className="font-bold text-slate-900 text-sm">{c.name}</p>
                   <span className="text-xs font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded">
                     {c.dist}
                   </span>
@@ -698,11 +698,11 @@ export default async function StandorteGiessenPage({
       <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
-            Bereit für den digitalen Vorsprung in Gießen?
+            Digitale Spitzenklasse für Ihren Gießener Standort sichern
           </h2>
           <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-            Vereinbaren Sie jetzt ein unverbindliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
-            Emre Tezgel.
+            Vereinbaren Sie jetzt ein persönliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
+            Emre Tezgel für Ihr Vorhaben in Gießen oder Umgebung.
           </p>
           <Link href="/contact">
             <Button
@@ -710,7 +710,7 @@ export default async function StandorteGiessenPage({
               size="lg"
               className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
             >
-              Kostenloses Erstgespräch anfordern
+              Erstgespräch für Standort Gießen anfordern
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>

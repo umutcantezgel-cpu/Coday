@@ -97,42 +97,42 @@ export default async function WebdesignHanauPage({
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'Wie viel kostet eine neue Website in Hanau?',
+            name: 'Was kostet eine Website für Industrie & Materialtechnik in Hanau?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen bieten wir maximale Kosteneffizienz ohne teuren Agentur-Wasserkopf.',
+              text: 'Wir vereinbaren für Betriebe im Industriepark Wolfgang, Großauheim und dem Main-Kinzig-Kreis transparente Festpreise nach technischer Leistungsanalyse.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wie schnell ist eine neue Website in Hanau online?',
+            name: 'Wie schnell ist eine Next.js Plattform in Hanau online?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online.',
+              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online erreichbar.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Kommen Sie für ein Beratungsgespräch direkt nach Hanau?',
+            name: 'Kommen Sie für Vor-Ort-Gespräche in den Industriepark Wolfgang oder nach Steinheim?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja, sehr gerne. Über die A45 und A66 sind wir von unserem Wetzlarer HQ in unter 45 Minuten direkt bei Ihnen vor Ort im Industriepark Wolfgang oder in Großauheim/Steinheim.',
+              text: 'Ja, sehr gerne. Über die A45 und A66 erreichen wir Sie von unserem Wetzlarer HQ aus in unter 45 Minuten direkt vor Ort.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?',
+            name: 'Bieten Sie mehrsprachige B2B-Websites für international agierende Hanauer Konzerne?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet.',
+              text: 'Ja. Wir implementieren modulare i18n-Architekturen mit automatischem Language-Routing und optimierten SEO-Tags für globale Märkte.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wer ist unser fester Ansprechpartner?',
+            name: 'Wer ist unser persönlicher Entwickler & Ansprechpartner?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.',
+              text: 'Inhaber Umutcan Emre Tezgel persönlich berät und entwickelt direkt ohne zwischengeschaltete Agentur-Hierarchien.',
             },
           },
         ],
@@ -152,7 +152,7 @@ export default async function WebdesignHanauPage({
         badgeText="MATERIALTECHNIK-, INDUSTRIE- & B2B-WEBAGENTUR HANAU"
         headline="Webdesign & Next.js Entwicklung in der Brüder-Grimm-Stadt"
         headlineGradient="Hanau"
-        description="Speziell für Materialtechnik-, Chemie-, Industrie- und Handwerksbetriebe in Hanau, Wolfgang, Großauheim und dem Main-Kinzig-Kreis. Subsekundäre Ladezeiten unter 500ms, perfekte Google-Rankings und planbare B2B-Leads. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+        description="Als spezialisierte High-Performance Webagentur für Hanau und den Main-Kinzig-Kreis schaffen wir maßgeschneiderte Next.js Entwicklung und conversionstarke B2B-Websites für Materialtechnik, Industrie und Handwerk. Ladezeiten unter 500ms, 100/100 PageSpeed und planbare Lead-Generierung zum Festpreis."
         cityName="Hanau"
         sourceTag="local_seo_hanau"
         formHeading="Kostenlose Bedarfsanalyse für Hanau"
@@ -183,7 +183,7 @@ export default async function WebdesignHanauPage({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Hanau</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Hanau</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Subsekundäre Ladezeiten für B2B-Einkäufer, Industrie-Partner und mobile Kunden.
               </p>
@@ -191,7 +191,7 @@ export default async function WebdesignHanauPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Volle Rechte an Ihrem Quellcode ohne monatliche CMS-Lizenzgebühren oder
                 Lock-in-Effekte.
@@ -200,7 +200,7 @@ export default async function WebdesignHanauPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Direkte Betreuung durch Gründer Umutcan Emre Tezgel ohne zeitraubende Hierarchien.
               </p>
@@ -208,7 +208,7 @@ export default async function WebdesignHanauPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">Festpreis</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Transparente Festpreise ohne versteckte Kosten oder unerwartete Agentur-Aufschläge.
               </p>
@@ -225,7 +225,7 @@ export default async function WebdesignHanauPage({
               Technologie-Vergleich
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
-              Warum Hanauer Industrie & Handwerk auf Next.js setzen
+              Next.js Entwicklung: Warum Hanauer Unternehmen auf moderne B2B-Websites setzen
             </h2>
             <p className="text-slate-600 text-base sm:text-lg">
               Der direkte Vergleich zwischen klassischem WordPress und zukunftssicherer
@@ -306,7 +306,7 @@ export default async function WebdesignHanauPage({
                 Inhabergeführte Betreuung
               </span>
               <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mt-2 mb-6">
-                Echtes Handwerk statt Agentur-Overhead für Hanau
+                Maßgeschneiderte Webentwicklung für Materialtechnik & Industrie in Hanau
               </h2>
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
                 Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Als
@@ -322,7 +322,7 @@ export default async function WebdesignHanauPage({
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">Voller Quellcode-Besitz</span>
+                  <span className="text-slate-700">100% Quellcode-Besitz</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
@@ -411,11 +411,11 @@ export default async function WebdesignHanauPage({
             <p className="text-slate-700 leading-relaxed text-base">
               Hanau, die Geburtsstadt der <strong>Brüder Grimm</strong>, ist das wirtschaftliche
               Kraftzentrum des Main-Kinzig-Kreises. Mit dem weltweit führenden{' '}
-              <strong>Industriepark Wolfgang</strong>
-              für Materialwissenschaften, Edelmetalle und Chemie sowie den florierenden Stadtteilen
-              <strong>Großauheim</strong> und <strong>Steinheim</strong> bietet Hanau am
-              <strong>Hanauer Kreuz (A45 / A66)</strong> perfekte logistische Bedingungen für
-              Industrie, Handwerk und anspruchsvolle B2B-Unternehmen.
+              <strong>Industriepark Wolfgang</strong> für Materialwissenschaften, Edelmetalle und
+              Chemie sowie den florierenden Stadtteilen <strong>Großauheim</strong> und{' '}
+              <strong>Steinheim</strong> bietet Hanau am <strong>Hanauer Kreuz (A45 / A66)</strong>{' '}
+              perfekte logistische Bedingungen für Industrie, Handwerk und anspruchsvolle
+              B2B-Unternehmen.
             </p>
           </div>
 
@@ -458,54 +458,51 @@ export default async function WebdesignHanauPage({
           <div className="space-y-6">
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie viel kostet eine neue Website in Hanau?
+                Was kostet eine Website für Industrie & Materialtechnik in Hanau?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und
-                verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen
-                bieten wir maximale Kosteneffizienz bei voller Kostensicherheit und höchster
-                Performance.
+                Wir vereinbaren für Betriebe im Industriepark Wolfgang, Großauheim und dem
+                Main-Kinzig-Kreis transparente Festpreise nach technischer Leistungsanalyse.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie schnell ist eine neue Website in Hanau online?
+                Wie schnell ist eine Next.js Plattform in Hanau online?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett
-                schlüsselfertig fertiggestellt und online.
+                schlüsselfertig fertiggestellt und online erreichbar.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Kommen Sie für ein Beratungsgespräch direkt nach Hanau?
+                Kommen Sie für Vor-Ort-Gespräche in den Industriepark Wolfgang oder nach Steinheim?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja, sehr gerne. Über die A45 und A66 sind wir von unserem Wetzlarer HQ in unter 45
-                Minuten direkt bei Ihnen vor Ort im Industriepark Wolfgang oder in
-                Großauheim/Steinheim.
+                Ja, sehr gerne. Über die A45 und A66 erreichen wir Sie von unserem Wetzlarer HQ aus
+                in unter 45 Minuten direkt vor Ort.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?
+                Bieten Sie mehrsprachige B2B-Websites für international agierende Hanauer Konzerne?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es
-                keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform
-                in ISO-zertifizierten deutschen Rechenzentren gehostet.
+                Ja. Wir implementieren modulare i18n-Architekturen mit automatischem
+                Language-Routing und optimierten SEO-Tags für globale Märkte.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wer ist unser fester Ansprechpartner?
+                Wer ist unser persönlicher Entwickler & Ansprechpartner?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.
+                Inhaber Umutcan Emre Tezgel persönlich berät und entwickelt direkt ohne
+                zwischengeschaltete Agentur-Hierarchien.
               </p>
             </div>
           </div>
@@ -516,11 +513,11 @@ export default async function WebdesignHanauPage({
       <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
-            Bereit für den digitalen Vorsprung in Hanau?
+            Digitale Spitzenklasse für Ihr Unternehmen in Hanau sichern
           </h2>
           <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-            Vereinbaren Sie jetzt ein unverbindliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
-            Emre Tezgel.
+            Vereinbaren Sie jetzt ein persönliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
+            Emre Tezgel für Ihren Standort in Hanau und im Main-Kinzig-Kreis.
           </p>
           <Link href="/contact">
             <Button
@@ -528,7 +525,7 @@ export default async function WebdesignHanauPage({
               size="lg"
               className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
             >
-              Kostenloses Erstgespräch anfordern
+              Hanauer Erstgespräch anfordern
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>

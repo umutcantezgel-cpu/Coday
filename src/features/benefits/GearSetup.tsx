@@ -3,8 +3,12 @@ import React, { useState } from 'react';
 import { m } from 'motion/react';
 import { Desktop, Laptop, Monitor, Headphones } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { useLocale } from 'next-intl';
 
 const GearSetup: React.FC = () => {
+  const locale = useLocale();
+  const isEn = locale === 'en';
+
   const [laptop, setLaptop] = useState<'mac' | 'win'>('mac');
   const [monitor, setMonitor] = useState<'ultra' | 'dual' | 'pro'>('ultra');
   const [audio, setAudio] = useState<'pods' | 'over'>('over');
@@ -34,9 +38,13 @@ const GearSetup: React.FC = () => {
       <div className="relative z-10 grid lg:grid-cols-2 gap-12">
         {/* Controls */}
         <div>
-          <h3 className="font-display font-bold text-3xl text-secondary-900 mb-2">Dein Setup.</h3>
+          <h3 className="font-display font-bold text-3xl text-secondary-900 mb-2">
+            {isEn ? 'Your Setup.' : 'Dein Setup.'}
+          </h3>
           <p className="text-secondary-600 mb-8">
-            Wähle deine Waffen. Wir bestellen alles vor deinem ersten Tag.
+            {isEn
+              ? 'Choose your tools. We order everything before your first day.'
+              : 'Wähle deine Waffen. Wir bestellen alles vor deinem ersten Tag.'}
           </p>
 
           <div className="space-y-8">
@@ -45,8 +53,13 @@ const GearSetup: React.FC = () => {
               <label className="text-xs font-bold text-secondary-500 uppercase tracking-wider mb-3 block">
                 Machine
               </label>
-              <div className="flex gap-4" role="group" aria-label="Machine auswählen">
+              <div
+                className="flex gap-4"
+                role="group"
+                aria-label={isEn ? 'Select machine' : 'Machine auswählen'}
+              >
                 <button
+                  type="button"
                   aria-pressed={laptop === 'mac'}
                   onClick={() => setLaptop('mac')}
                   className={`active:scale-[0.97] flex-1 p-4 rounded-xl border transition motion-reduce:duration-[0.01ms] text-left ${laptop === 'mac' ? 'bg-primary-50 border-primary-300 text-primary-900 shadow-sm' : 'bg-white border-neutral-200 text-secondary-600 hover:bg-neutral-50'}`}
@@ -55,6 +68,7 @@ const GearSetup: React.FC = () => {
                   <div className="text-xs opacity-70">M3 Max</div>
                 </button>
                 <button
+                  type="button"
                   aria-pressed={laptop === 'win'}
                   onClick={() => setLaptop('win')}
                   className={`active:scale-[0.97] flex-1 p-4 rounded-xl border transition motion-reduce:duration-[0.01ms] text-left ${laptop === 'win' ? 'bg-primary-50 border-primary-300 text-primary-900 shadow-sm' : 'bg-white border-neutral-200 text-secondary-600 hover:bg-neutral-50'}`}
@@ -70,7 +84,11 @@ const GearSetup: React.FC = () => {
               <label className="text-xs font-bold text-secondary-500 uppercase tracking-wider mb-3 block">
                 Display
               </label>
-              <div className="grid grid-cols-3 gap-2" role="group" aria-label="Display auswählen">
+              <div
+                className="grid grid-cols-3 gap-2"
+                role="group"
+                aria-label={isEn ? 'Select display' : 'Display auswählen'}
+              >
                 {[
                   { id: 'ultra', label: 'Ultrawide' },
                   { id: 'dual', label: 'Dual 4K' },
@@ -78,6 +96,7 @@ const GearSetup: React.FC = () => {
                 ].map((opt) => (
                   <button
                     key={opt.id}
+                    type="button"
                     aria-pressed={monitor === opt.id}
                     onClick={() => setMonitor(opt.id as 'ultra' | 'dual' | 'pro')}
                     className={`active:scale-[0.97] p-3 rounded-lg border transition motion-reduce:duration-[0.01ms] text-sm font-bold ${monitor === opt.id ? 'bg-primary-50 border-primary-300 text-primary-900 shadow-sm' : 'bg-white border-neutral-200 text-secondary-600 hover:bg-neutral-50'}`}
@@ -93,8 +112,13 @@ const GearSetup: React.FC = () => {
               <label className="text-xs font-bold text-secondary-500 uppercase tracking-wider mb-3 block">
                 Audio
               </label>
-              <div className="flex gap-4" role="group" aria-label="Audio auswählen">
+              <div
+                className="flex gap-4"
+                role="group"
+                aria-label={isEn ? 'Select audio' : 'Audio auswählen'}
+              >
                 <button
+                  type="button"
                   aria-pressed={audio === 'over'}
                   onClick={() => setAudio('over')}
                   className={`active:scale-[0.97] flex-1 p-4 rounded-xl border transition motion-reduce:duration-[0.01ms] text-left ${audio === 'over' ? 'bg-primary-50 border-primary-300 text-primary-900 shadow-sm' : 'bg-white border-neutral-200 text-secondary-600 hover:bg-neutral-50'}`}
@@ -103,6 +127,7 @@ const GearSetup: React.FC = () => {
                   <div className="text-xs opacity-70">Sony XM5</div>
                 </button>
                 <button
+                  type="button"
                   aria-pressed={audio === 'pods'}
                   onClick={() => setAudio('pods')}
                   className={`active:scale-[0.97] flex-1 p-4 rounded-xl border transition motion-reduce:duration-[0.01ms] text-left ${audio === 'pods' ? 'bg-primary-50 border-primary-300 text-primary-900 shadow-sm' : 'bg-white border-neutral-200 text-secondary-600 hover:bg-neutral-50'}`}
@@ -136,7 +161,7 @@ const GearSetup: React.FC = () => {
                 <OptimizedIcon icon={Laptop} className="text-2xl" />
               </div>
               <div>
-                <h4 className="font-bold text-secondary-900">{equipment.laptops[laptop].name}</h4>
+                <p className="font-bold text-secondary-900">{equipment.laptops[laptop].name}</p>
                 <p className="text-secondary-500 text-sm">{equipment.laptops[laptop].desc}</p>
               </div>
             </m.div>
@@ -152,7 +177,7 @@ const GearSetup: React.FC = () => {
                 <OptimizedIcon icon={Monitor} className="text-2xl" />
               </div>
               <div>
-                <h4 className="font-bold text-secondary-900">{equipment.monitors[monitor].name}</h4>
+                <p className="font-bold text-secondary-900">{equipment.monitors[monitor].name}</p>
                 <p className="text-secondary-500 text-sm">{equipment.monitors[monitor].desc}</p>
               </div>
             </m.div>
@@ -168,7 +193,7 @@ const GearSetup: React.FC = () => {
                 <OptimizedIcon icon={Headphones} className="text-2xl" />
               </div>
               <div>
-                <h4 className="font-bold text-secondary-900">{equipment.audio[audio].name}</h4>
+                <p className="font-bold text-secondary-900">{equipment.audio[audio].name}</p>
                 <p className="text-secondary-500 text-sm">{equipment.audio[audio].desc}</p>
               </div>
             </m.div>
@@ -177,15 +202,15 @@ const GearSetup: React.FC = () => {
               <div className="flex justify-between items-end">
                 <div>
                   <p className="text-secondary-500 text-xs uppercase tracking-wider mb-1 font-bold">
-                    Gesamtwert (ca.)
+                    {isEn ? 'Total value (approx.)' : 'Gesamtwert (ca.)'}
                   </p>
                   <div className="text-3xl font-bold text-secondary-900 font-mono">
                     {laptop === 'mac' ? '€5.800' : '€4.200'}
                   </div>
                 </div>
-                <button className="active:scale-[0.97] px-4 py-2 bg-primary-600 text-white font-bold rounded-lg text-sm hover:bg-primary-700 transition-colors motion-reduce:duration-[0.01ms] shadow-sm">
-                  Bestellung simulieren
-                </button>
+                <div className="px-4 py-2 bg-primary-600 text-white font-bold rounded-lg text-sm shadow-sm text-center">
+                  {isEn ? '100% Funded by Coday' : '100% von Coday finanziert'}
+                </div>
               </div>
             </div>
           </div>

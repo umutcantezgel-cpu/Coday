@@ -97,42 +97,42 @@ export default async function WebdesignHerbornPage({
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'Wie viel kostet eine neue B2B-Website in Herborn?',
+            name: 'Was kostet eine moderne B2B- oder Handwerker-Website in Herborn?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen bieten wir maximale Kosteneffizienz ohne teuren Agentur-Wasserkopf.',
+              text: 'Wir kalkulieren für Herborner Industrieunternehmen, Handwerksbetriebe und Dienstleister verbindliche Festpreise auf Basis Ihres tatsächlichen Bedarfs. Keine versteckten Kosten, kein Wartungszwang.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wie schnell ist eine neue Website in Herborn online?',
+            name: 'Wie lange dauert die Fertigstellung eines Webprojekts in Herborn?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online.',
+              text: 'In der Regel ist Ihre maßgeschneiderte Next.js Website innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig online.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Kommen Sie für ein Beratungsgespräch direkt nach Herborn?',
+            name: 'Kommen Sie für Termine direkt nach Herborn, Sinn oder Mittenaar?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja, sehr gerne. Von unserem Wetzlarer HQ aus sind wir über die A45 oder B277 in unter 15 Minuten direkt bei Ihnen vor Ort in Herborn, Sinn oder Mittenaar.',
+              text: 'Ja, absolut. Über die A45 und B277 erreichen wir Ihr Unternehmen im Gewerbegebiet Untere Au, Altheimer Feld oder den Nachbargemeinden in unter 15 Minuten.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Bieten Sie auch Lösungen zur Fachkräftegewinnung im Dillgebiet?',
+            name: 'Wie hilft Coday bei der Mitarbeiter- und Azubi-Gewinnung im Dillgebiet?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja. Wir entwickeln mobil optimierte 60-Sekunden-Bewerbungsverfahren ohne Anschreiben, die die Hürde für qualifizierte Fachkräfte drastisch senken.',
+              text: 'Wir konzipieren mobile 60-Sekunden-Express-Funnels, mit denen sich Gesellen, Techniker und Fachkräfte ohne Anschreiben direkt per Smartphone bei Ihnen bewerben können.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wer ist unser fester Ansprechpartner?',
+            name: 'Wer begleitet mich als fester Projektleiter?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.',
+              text: 'Gründer Umutcan Emre Tezgel begleitet Sie persönlich von der ersten Skizze bis zur Liveschaltung.',
             },
           },
         ],
@@ -152,7 +152,7 @@ export default async function WebdesignHerbornPage({
         badgeText="B2B & INDUSTRIE WEBAGENTUR HERBORN & LAHN-DILL"
         headline="Webdesign & Next.js Entwicklung in"
         headlineGradient="Herborn & Lahn-Dill"
-        description="Speziell für Maschinenbau, Schaltschrankbau, B2B-Zulieferer und Handwerksbetriebe in Herborn, Sinn und Mittenaar. Maximale Ladezeiten unter 500ms, perfekte Google-Rankings und planbare Neukunden- und Mitarbeitergewinnung. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+        description="Als spezialisierte High-Performance Webagentur für Herborn und den Lahn-Dill-Kreis bieten wir moderne Next.js Entwicklung und hochkonvertierende B2B-Websites für Maschinenbau, Schaltschrankbau und Handwerk. Maximale Ladezeiten unter 500ms, Top-Google-Rankings und planbare Neukundengewinnung."
         cityName="Herborn"
         sourceTag="local_seo_herborn"
         formHeading="Kostenlose Bedarfsanalyse für Herborn"
@@ -183,7 +183,7 @@ export default async function WebdesignHerbornPage({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Herborn</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Herborn</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Subsekundäre Ladezeiten für ungeduldige B2B-Einkäufer und mobile Nutzer.
               </p>
@@ -191,7 +191,7 @@ export default async function WebdesignHerbornPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Volle Rechte an Ihrem Quellcode ohne monatliche CMS-Lizenzgebühren oder
                 Lock-in-Effekte.
@@ -200,7 +200,7 @@ export default async function WebdesignHerbornPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Direkte Betreuung durch Gründer Umutcan Emre Tezgel ohne Agentur-Warteschleifen.
               </p>
@@ -208,7 +208,7 @@ export default async function WebdesignHerbornPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">Festpreis</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Transparente Festpreise ohne versteckte Kosten oder unerwartete Agentur-Aufschläge.
               </p>
@@ -225,7 +225,7 @@ export default async function WebdesignHerbornPage({
               Technologie-Vergleich
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
-              Warum Herborner Industrie- & Handwerksbetriebe auf Next.js setzen
+              Next.js Entwicklung: Warum Herborner Betriebe auf moderne B2B-Websites setzen
             </h2>
             <p className="text-slate-600 text-base sm:text-lg">
               Der direkte Vergleich zwischen klassischem WordPress und zukunftssicherer
@@ -306,22 +306,22 @@ export default async function WebdesignHerbornPage({
                 Inhabergeführte Betreuung
               </span>
               <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mt-2 mb-6">
-                Echtes Handwerk statt Agentur-Overhead für Herborn
+                Präzision & Industrie-Fokus für Unternehmen in Herborn
               </h2>
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
-                Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Als
-                spezialisierter Solo-Entwickler mit Sitz in Wetzlar baue ich Ihre Webpräsenz für
-                Herborn, Sinn und Mittenaar: Technisch perfekt, hochgradig conversion-stark und
-                wirtschaftlich unschlagbar fair.
+                Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Für
+                Herborner Schaltschrankbauer, Zerspanungsbetriebe und Handwerksmeister erstelle ich
+                technologisch führende Webauftritte: Subsekundäre Ladezeiten, absolute
+                Datensicherheit und messbare B2B-Anfragen ohne Agentur-Wasserkopf.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-slate-200 text-sm">
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">Direkter Entwickler-Kontakt</span>
+                  <span className="text-slate-700">Persönliche Beratung & Entwicklung</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">Voller Quellcode-Besitz</span>
+                  <span className="text-slate-700">100% Quellcode-Besitz ohne Abo</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
@@ -456,51 +456,53 @@ export default async function WebdesignHerbornPage({
           <div className="space-y-6">
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie viel kostet eine neue B2B-Website in Herborn?
+                Was kostet eine moderne B2B- oder Handwerker-Website in Herborn?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Wir kalkulieren jedes Projekt nach einer kostenlosen Bedarfsanalyse als
-                verbindlichen Festpreis. Durch unsere schlanken Next.js Architekturen bieten wir
-                höchste Performance und volle Kostensicherheit ohne unerwartete Agentur-Aufschläge.
+                Wir kalkulieren für Herborner Industrieunternehmen, Handwerksbetriebe und
+                Dienstleister verbindliche Festpreise auf Basis Ihres tatsächlichen Bedarfs. Keine
+                versteckten Kosten, kein Wartungszwang.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie schnell ist eine neue Website in Herborn online?
+                Wie lange dauert die Fertigstellung eines Webprojekts in Herborn?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett
-                schlüsselfertig fertiggestellt und online.
+                In der Regel ist Ihre maßgeschneiderte Next.js Website innerhalb von 10 bis 14
+                Werktagen komplett schlüsselfertig online.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Kommen Sie für ein Beratungsgespräch direkt nach Herborn?
+                Kommen Sie für Termine direkt nach Herborn, Sinn oder Mittenaar?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja, sehr gerne. Von unserem Wetzlarer HQ aus sind wir über die A45 oder B277 in
-                unter 15 Minuten direkt bei Ihnen vor Ort in Herborn, Sinn oder Mittenaar.
+                Ja, absolut. Über die A45 und B277 erreichen wir Ihr Unternehmen im Gewerbegebiet
+                Untere Au, Altheimer Feld oder den Nachbargemeinden in unter 15 Minuten.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Bieten Sie auch Lösungen zur Fachkräftegewinnung im Dillgebiet?
+                Wie hilft Coday bei der Mitarbeiter- und Azubi-Gewinnung im Dillgebiet?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja. Wir entwickeln mobil optimierte 60-Sekunden-Bewerbungsverfahren ohne
-                Anschreiben, die die Hürde für qualifizierte Fachkräfte drastisch senken.
+                Wir konzipieren mobile 60-Sekunden-Express-Funnels, mit denen sich Gesellen,
+                Techniker und Fachkräfte ohne Anschreiben direkt per Smartphone bei Ihnen bewerben
+                können.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wer ist unser fester Ansprechpartner?
+                Wer begleitet mich als fester Projektleiter?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.
+                Gründer Umutcan Emre Tezgel begleitet Sie persönlich von der ersten Skizze bis zur
+                Liveschaltung.
               </p>
             </div>
           </div>
@@ -511,11 +513,11 @@ export default async function WebdesignHerbornPage({
       <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
-            Bereit für mehr B2B-Kunden & Fachkräfte in Herborn?
+            Digitale Marktführerschaft für Herborn & das Dilltal sichern
           </h2>
           <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-            Vereinbaren Sie jetzt ein unverbindliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
-            Emre Tezgel.
+            Vereinbaren Sie jetzt ein persönliches 20-Minuten-Strategiegespräch direkt mit Inhaber
+            Umutcan Emre Tezgel für Ihren Betrieb in Herborn.
           </p>
           <Link href="/contact">
             <Button
@@ -523,7 +525,7 @@ export default async function WebdesignHerbornPage({
               size="lg"
               className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
             >
-              Kostenloses Erstgespräch anfordern
+              Herborner Erstgespräch vereinbaren
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>

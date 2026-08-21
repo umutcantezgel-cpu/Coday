@@ -202,23 +202,23 @@ export default async function LandkreisGiessenPage({
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'Wie viel kostet eine neue Website im Landkreis Gießen?',
+            name: 'Was kostet eine moderne Website im Landkreis Gießen?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere modernen Next.js Architekturen bieten wir höchste Kosteneffizienz ohne Agentur-Wasserkopf.',
+              text: 'Wir vereinbaren für Arztpraxen in Lich, Handwerksbetriebe in Linden und Pohlheim sowie Unternehmen in Gießen transparente Festpreise nach Bedarfsanalyse.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wie schnell ist eine neue Website im Landkreis Gießen online?',
+            name: 'Wie schnell ist eine Next.js Plattform im Landkreis Gießen online?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online.',
+              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online erreichbar.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Kommen Sie für ein Beratungsgespräch direkt zu uns nach Gießen, Linden oder Pohlheim?',
+            name: 'Kommen Sie für Vor-Ort-Termine direkt nach Gießen, Linden, Pohlheim oder Lich?',
             acceptedAnswer: {
               '@type': 'Answer',
               text: 'Ja, absolut. Über die B49 und A485 sind wir in maximal 15 Minuten bei Ihnen vor Ort in der Praxis, Kanzlei oder im Handwerksbetrieb.',
@@ -226,18 +226,18 @@ export default async function LandkreisGiessenPage({
           },
           {
             '@type': 'Question',
-            name: 'Erfüllen Ihre Websites alle DSGVO- und Barrierefreiheits-Standards?',
+            name: 'Erfüllen Ihre Websites die Barrierefreiheits-Standards nach BFSG / BITV 2.0 für Praxen und Kliniken?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja. Alle Webseiten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet und erfüllen moderne Barrierefreiheits-Standards.',
+              text: 'Ja. Alle Websites erfüllen modernste Barrierefreiheits-Richtlinien (WCAG 2.2 / BFSG) und werden datenschutzkonform in deutschen Rechenzentren gehostet.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wer ist mein fester Ansprechpartner?',
+            name: 'Wer ist mein persönlicher Ansprechpartner?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.',
+              text: 'Inhaber Umutcan Emre Tezgel persönlich berät und entwickelt direkt ohne zwischengeschaltete Agentur-Mitarbeiter.',
             },
           },
         ],
@@ -301,9 +301,9 @@ export default async function LandkreisGiessenPage({
                     <MapPin
                       className={`w-4 h-4 ${k.highlight ? 'text-amber-600' : 'text-slate-400'}`}
                     />
-                    <h3 className="font-bold text-slate-900 group-hover:text-amber-700 transition-colors text-base">
+                    <p className="font-bold text-slate-900 group-hover:text-amber-700 transition-colors text-base">
                       {k.name}
-                    </h3>
+                    </p>
                   </div>
                   <p className="text-xs text-slate-500 mt-1">{k.note}</p>
                 </div>
@@ -332,7 +332,7 @@ export default async function LandkreisGiessenPage({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit im Landkreis</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Ladezeit im Landkreis</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Subsekundäre Ladezeiten für Patienten, B2B-Kunden und mobile Nutzer.
               </p>
@@ -340,7 +340,7 @@ export default async function LandkreisGiessenPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Volle Rechte an Ihrem Quellcode ohne monatliche CMS-Lizenzgebühren oder
                 Lock-in-Effekte.
@@ -349,7 +349,7 @@ export default async function LandkreisGiessenPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Direkte Betreuung durch Gründer Umutcan Emre Tezgel ohne zeitraubende Hierarchien.
               </p>
@@ -357,7 +357,7 @@ export default async function LandkreisGiessenPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">Festpreis</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Transparente Festpreis-Garantie ohne versteckte Nachforderungen oder unkalkulierbare
                 Stundensätze.
@@ -456,7 +456,8 @@ export default async function LandkreisGiessenPage({
                 Inhabergeführte Betreuung
               </span>
               <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mt-2 mb-6">
-                Echtes Handwerk statt Agentur-Overhead für den Landkreis Gießen
+                Maßgeschneiderte Webentwicklung für Praxen, Mittelstand & Handwerk im Landkreis
+                Gießen
               </h2>
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
                 Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Als
@@ -471,7 +472,7 @@ export default async function LandkreisGiessenPage({
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">Voller Quellcode-Besitz</span>
+                  <span className="text-slate-700">100% Quellcode-Besitz</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
@@ -558,12 +559,12 @@ export default async function LandkreisGiessenPage({
             </h2>
             <p className="text-slate-700 leading-relaxed text-base">
               Der <strong>Landkreis Gießen</strong> verbindet Spitzenforschung und Bildungskraft
-              rund um die
-              <strong>Justus-Liebig-Universität</strong> und den <strong>THM-Campus Gießen</strong>{' '}
-              mit florierendem Handwerk und mittelständischem Gewerbe in{' '}
-              <strong>Linden und Pohlheim</strong> (Batherm, Lindener Ratsstuben), erstklassiger
-              Gesundheitsversorgung in <strong>Lich</strong> sowie innovativen Maschinenbau- und
-              Logistikstandorten in <strong>Grünberg, Reiskirchen und Buseck</strong>. Durch das{' '}
+              rund um die <strong>Justus-Liebig-Universität</strong> und den{' '}
+              <strong>THM-Campus Gießen</strong> mit florierendem Handwerk und mittelständischem
+              Gewerbe in <strong>Linden und Pohlheim</strong> (Batherm, Lindener Ratsstuben),
+              erstklassiger Gesundheitsversorgung in <strong>Lich</strong> sowie innovativen
+              Maschinenbau- und Logistikstandorten in{' '}
+              <strong>Grünberg, Reiskirchen und Buseck</strong>. Durch das{' '}
               <strong>Gießener Ring-Autobahnnetz (A485, A480, B49, A5)</strong> ist die Region
               hervorragend angebunden.
             </p>
@@ -608,52 +609,52 @@ export default async function LandkreisGiessenPage({
           <div className="space-y-6">
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie viel kostet eine neue Website im Landkreis Gießen?
+                Was kostet eine moderne Website im Landkreis Gießen?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und
-                verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir
-                5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance.
+                Wir vereinbaren für Arztpraxen in Lich, Handwerksbetriebe in Linden und Pohlheim
+                sowie Unternehmen in Gießen transparente Festpreise nach Bedarfsanalyse.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie schnell ist eine neue Website im Landkreis Gießen online?
+                Wie schnell ist eine Next.js Plattform im Landkreis Gießen online?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett
-                schlüsselfertig fertiggestellt und online.
+                schlüsselfertig fertiggestellt und online erreichbar.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Kommen Sie für ein Beratungsgespräch direkt zu uns in den Betrieb?
+                Kommen Sie für Vor-Ort-Termine direkt nach Gießen, Linden, Pohlheim oder Lich?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja, selbstverständlich. Über die B49 oder A485 sind wir von unserem Wetzlarer HQ in
-                unter 15 Minuten direkt bei Ihnen vor Ort in Linden, Pohlheim, Gießen oder Lich.
+                Ja, absolut. Über die B49 und A485 sind wir in maximal 15 Minuten bei Ihnen vor Ort
+                in der Praxis, Kanzlei oder im Handwerksbetrieb.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?
+                Erfüllen Ihre Websites die Barrierefreiheits-Standards nach BFSG / BITV 2.0 für
+                Praxen und Kliniken?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es
-                keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform
-                in ISO-zertifizierten deutschen Rechenzentren gehostet.
+                Ja. Alle Websites erfüllen modernste Barrierefreiheits-Richtlinien (WCAG 2.2 / BFSG)
+                und werden datenschutzkonform in deutschen Rechenzentren gehostet.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wer ist unser fester Ansprechpartner?
+                Wer ist mein persönlicher Ansprechpartner?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.
+                Inhaber Umutcan Emre Tezgel persönlich berät und entwickelt direkt ohne
+                zwischengeschaltete Agentur-Mitarbeiter.
               </p>
             </div>
           </div>
@@ -664,11 +665,11 @@ export default async function LandkreisGiessenPage({
       <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
-            Bereit für den digitalen Vorsprung im Landkreis Gießen?
+            Digitale Spitzenklasse für Ihr Unternehmen im Landkreis Gießen sichern
           </h2>
           <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-            Vereinbaren Sie jetzt ein unverbindliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
-            Emre Tezgel.
+            Vereinbaren Sie jetzt ein persönliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
+            Emre Tezgel für Ihren Standort im Landkreis Gießen.
           </p>
           <Link href="/contact">
             <Button
@@ -676,7 +677,7 @@ export default async function LandkreisGiessenPage({
               size="lg"
               className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
             >
-              Kostenloses Erstgespräch anfordern
+              Erstgespräch für den Landkreis Gießen anfordern
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>

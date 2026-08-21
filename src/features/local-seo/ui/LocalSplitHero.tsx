@@ -165,7 +165,7 @@ export const LocalSplitHero: React.FC<LocalSplitHeroProps> = ({
                     ✓
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-900 text-xs sm:text-sm">{usp.title}</h3>
+                    <p className="font-bold text-slate-900 text-xs sm:text-sm">{usp.title}</p>
                     <p className="text-[11px] sm:text-xs text-slate-500 leading-snug mt-0.5">
                       {usp.desc}
                     </p>

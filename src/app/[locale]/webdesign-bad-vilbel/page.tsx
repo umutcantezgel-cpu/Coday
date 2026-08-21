@@ -62,7 +62,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Webdesign Bad Vilbel | Webentwicklung & SEO · Coday',
     description:
-      'Professionelles Webdesign in Bad Vilbel. Moderne Websites, Top-PageSpeed & lokale Google-Rankings für Mittelstand & Dienstleister. Festpreise auf Anfrage.',
+      'Webdesign in Bad Vilbel: Schnelle Next.js Websites, Top-PageSpeed & lokale Google-Rankings für Mittelstand & Dienstleister. Verbindlicher Festpreis.',
     keywords: [
       'Webdesign Bad Vilbel',
       'Webagentur Bad Vilbel',
@@ -96,42 +96,42 @@ export default async function WebdesignBadVilbelPage({
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'Wie viel kostet eine neue Website in Bad Vilbel?',
+            name: 'Was kostet eine moderne Website in Bad Vilbel?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen bieten wir maximale Kosteneffizienz ohne teuren Agentur-Wasserkopf.',
+              text: 'Wir vereinbaren für Medienunternehmen, Pharma-Dienstleister in Dortelweil und Betriebe am Quellenpark transparente Festpreise nach einer detaillierten Anforderungsanalyse.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wie schnell ist eine neue Website in Bad Vilbel online?',
+            name: 'Wie schnell ist eine Next.js Website in Bad Vilbel online?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online.',
+              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online erreichbar.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Kommen Sie für ein Beratungsgespräch direkt nach Bad Vilbel?',
+            name: 'Kommen Sie für Vor-Ort-Termine nach Bad Vilbel, Dortelweil oder Massenheim?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja, sehr gerne. Über die A5 und B3 sind wir von unserem Wetzlarer HQ in unter 35 Minuten direkt bei Ihnen vor Ort im Quellenpark oder im Gewerbegebiet Dortelweil.',
+              text: 'Ja, sehr gerne. Über die B3 und A5 erreichen wir Sie von unserem Wetzlarer Büro aus in rund 35 Minuten direkt vor Ort.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?',
+            name: 'Bieten Sie Headless CMS Lösungen für Medien- und Rundfunkportale in Bad Vilbel?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet.',
+              text: 'Ja. Wir integrieren Sanity CMS für intuitive, blitzschnelle Redaktions-Workflows ohne Programmieraufwand.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wer ist unser fester Ansprechpartner?',
+            name: 'Wer ist unser fester technischer Ansprechpartner?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.',
+              text: 'Inhaber Umutcan Emre Tezgel berät und entwickelt direkt mit 24h-Support.',
             },
           },
         ],
@@ -182,7 +182,7 @@ export default async function WebdesignBadVilbelPage({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Bad Vilbel</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Bad Vilbel</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Subsekundäre Ladezeiten für vielbeschäftigte B2B-Kunden und Medienkonsumenten.
               </p>
@@ -190,7 +190,7 @@ export default async function WebdesignBadVilbelPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Volle Rechte an Ihrem Quellcode ohne monatliche CMS-Lizenzgebühren oder
                 Lock-in-Effekte.
@@ -199,7 +199,7 @@ export default async function WebdesignBadVilbelPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Direkte Betreuung durch Gründer Umutcan Emre Tezgel ohne zeitraubende Hierarchien.
               </p>
@@ -207,7 +207,7 @@ export default async function WebdesignBadVilbelPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">Festpreis</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Transparente Festpreise ohne versteckte Kosten oder unvorhersehbare
                 Agentur-Stundensätze.
@@ -306,7 +306,7 @@ export default async function WebdesignBadVilbelPage({
                 Inhabergeführte Betreuung
               </span>
               <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mt-2 mb-6">
-                Echtes Handwerk statt Agentur-Overhead für Bad Vilbel
+                Maßgeschneiderte Webentwicklung für Medien & Pharma in Bad Vilbel
               </h2>
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
                 Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Als
@@ -322,11 +322,11 @@ export default async function WebdesignBadVilbelPage({
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">Voller Quellcode-Besitz</span>
+                  <span className="text-slate-700">100% Quellcode-Besitz</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">Volle Kostensicherheit & Festpreis</span>
+                  <span className="text-slate-700">Verbindliche Festpreis-Garantie</span>
                 </div>
               </div>
             </div>
@@ -411,11 +411,10 @@ export default async function WebdesignBadVilbelPage({
             <p className="text-slate-700 leading-relaxed text-base">
               Bad Vilbel verbindet als traditionsreiche <strong>Quellenstadt</strong> höchste
               Lebensqualität mit außergewöhnlicher Wirtschaftskraft. Neben dem modernen{' '}
-              <strong>Quellenpark</strong> und dem florierenden
+              <strong>Quellenpark</strong> und dem florierenden{' '}
               <strong>Gewerbegebiet Dortelweil</strong> hat sich Bad Vilbel als führender{' '}
-              <strong>Medienstandort</strong>
-              und Heimat global agierender <strong>Pharma- und Gesundheitsunternehmen</strong>{' '}
-              etabliert. Über die
+              <strong>Medienstandort</strong> und Heimat global agierender{' '}
+              <strong>Pharma- und Gesundheitsunternehmen</strong> etabliert. Über die{' '}
               <strong>B3-Schnellstraße</strong> und die <strong>S6-Bahnlinie</strong> besteht eine
               nahtlose Verbindung nach Frankfurt am Main und Mittelhessen.
             </p>
@@ -461,53 +460,51 @@ export default async function WebdesignBadVilbelPage({
           <div className="space-y-6">
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie viel kostet eine neue Website in Bad Vilbel?
+                Was kostet eine moderne Website in Bad Vilbel?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und
-                verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Architekturen
-                garantieren wir volle Kostensicherheit und Spitzen-Performance ohne teuren
-                Agentur-Overhead.
+                Wir vereinbaren für Medienunternehmen, Pharma-Dienstleister in Dortelweil und
+                Betriebe am Quellenpark transparente Festpreise nach einer detaillierten
+                Anforderungsanalyse.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie schnell ist eine neue Website in Bad Vilbel online?
+                Wie schnell ist eine Next.js Website in Bad Vilbel online?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett
-                schlüsselfertig fertiggestellt und online.
+                schlüsselfertig fertiggestellt und online erreichbar.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Kommen Sie für ein Beratungsgespräch direkt nach Bad Vilbel?
+                Kommen Sie für Vor-Ort-Termine nach Bad Vilbel, Dortelweil oder Massenheim?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja, sehr gerne. Über die A5 und B3 sind wir von unserem Wetzlarer HQ in unter 35
-                Minuten direkt bei Ihnen vor Ort im Quellenpark oder im Gewerbegebiet Dortelweil.
+                Ja, sehr gerne. Über die B3 und A5 erreichen wir Sie von unserem Wetzlarer Büro aus
+                in rund 35 Minuten direkt vor Ort.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?
+                Bieten Sie Headless CMS Lösungen für Medien- und Rundfunkportale in Bad Vilbel?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es
-                keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform
-                in ISO-zertifizierten deutschen Rechenzentren gehostet.
+                Ja. Wir integrieren Sanity CMS für intuitive, blitzschnelle Redaktions-Workflows
+                ohne Programmieraufwand.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wer ist unser fester Ansprechpartner?
+                Wer ist unser fester technischer Ansprechpartner?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.
+                Inhaber Umutcan Emre Tezgel berät und entwickelt direkt mit 24h-Support.
               </p>
             </div>
           </div>
@@ -518,11 +515,11 @@ export default async function WebdesignBadVilbelPage({
       <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
-            Bereit für den digitalen Vorsprung in Bad Vilbel?
+            Digitale Spitzenklasse für Ihr Unternehmen in Bad Vilbel sichern
           </h2>
           <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-            Vereinbaren Sie jetzt ein unverbindliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
-            Emre Tezgel.
+            Vereinbaren Sie jetzt ein persönliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
+            Emre Tezgel für Ihren Standort in Bad Vilbel und der Wetterau.
           </p>
           <Link href="/contact">
             <Button
@@ -530,7 +527,7 @@ export default async function WebdesignBadVilbelPage({
               size="lg"
               className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
             >
-              Kostenloses Erstgespräch anfordern
+              Bad Vilbeler Erstgespräch anfordern
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>

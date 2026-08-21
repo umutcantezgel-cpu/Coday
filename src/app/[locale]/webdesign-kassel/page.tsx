@@ -62,7 +62,7 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Kassel | Next.js Agentur · Coday',
+    title: 'Webdesign Kassel | High-Performance Agentur · Coday',
     description:
       'Webdesign & Webentwicklung in Kassel. Next.js 15 Plattformen für Industrie, Logistik & Mittelstand in Nordhessen. Verbindliche Festpreise auf Anfrage.',
     keywords: [
@@ -98,42 +98,42 @@ export default async function WebdesignKasselPage({
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'Wie viel kostet eine neue Website in Kassel?',
+            name: 'Was kostet eine moderne Website für Industrie & Mittelstand in Kassel?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen bieten wir maximale Kosteneffizienz ohne teuren Agentur-Wasserkopf.',
+              text: 'Wir vereinbaren für Industrieunternehmen im Waldau, Startups im Science Park und Logistiker im GVZ transparente Festpreise nach technischer Bedarfsanalyse.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wie schnell ist eine neue Website in Kassel online?',
+            name: 'Wie schnell ist eine Next.js Plattform in Kassel online?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online.',
+              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online erreichbar.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Kommen Sie für ein Beratungsgespräch direkt nach Kassel?',
+            name: 'Kommen Sie für Vor-Ort-Termine in den Science Park oder nach Waldau?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja, sehr gerne. Über die A7 oder A49 sind wir von unserem Wetzlarer HQ schnell direkt bei Ihnen vor Ort im Science Park, in Waldau oder im GVZ Kassel.',
+              text: 'Ja, sehr gerne. Über die A7 oder A49 erreichen wir Sie von unserem Wetzlarer HQ aus schnell direkt vor Ort in Kassel, Baunatal oder Lohfelden.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?',
+            name: 'Bieten Sie interaktive Produktkataloge für Kasseler Maschinenbauer an?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet.',
+              text: 'Ja. Wir entwickeln dynamische, blitzschnelle Produktkataloge mit Filterfunktionen und direkter B2B-Anfragefunktion.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wer ist unser fester Ansprechpartner?',
+            name: 'Wer ist unser persönlicher Entwickler & Ansprechpartner?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.',
+              text: 'Inhaber Umutcan Emre Tezgel persönlich berät und entwickelt direkt ohne zwischengeschaltete Agentur-Mitarbeiter.',
             },
           },
         ],
@@ -153,7 +153,7 @@ export default async function WebdesignKasselPage({
         badgeText="INDUSTRIE-, LOGISTIK- & B2B-WEBAGENTUR KASSEL & NORDHESSEN"
         headline="Webdesign & Next.js Entwicklung in"
         headlineGradient="Kassel & Nordhessen"
-        description="Speziell für Industrieunternehmen, Logistikdienstleister, Maschinenbau und Erneuerbare Energien in Kassel, Baunatal, Lohfelden und Vellmar. Subsekundäre Ladezeiten unter 500ms, ausdrucksstarkes B2B-Design und planbare Kundenanfragen. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+        description="Als spezialisierte High-Performance Webagentur für Kassel und Nordhessen realisieren wir zukunftssichere Next.js Entwicklung und maßgeschneiderte B2B-Websites für Industrie, Logistik und den Mittelstand. Ladezeiten unter 500ms, 100/100 Core Web Vitals und automatisierte Neukundengewinnung."
         cityName="Kassel"
         sourceTag="local_seo_kassel"
         formHeading="Kostenlose Bedarfsanalyse für Kassel"
@@ -185,7 +185,7 @@ export default async function WebdesignKasselPage({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Nordhessen</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Nordhessen</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Subsekundäre Ladezeiten für weltweite B2B-Kunden und mobile Nutzer.
               </p>
@@ -193,7 +193,7 @@ export default async function WebdesignKasselPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Volle Rechte an Ihrem Quellcode ohne monatliche CMS-Lizenzgebühren oder
                 Lock-in-Effekte.
@@ -202,7 +202,7 @@ export default async function WebdesignKasselPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Direkte Betreuung durch Gründer Umutcan Emre Tezgel ohne zeitraubende Hierarchien.
               </p>
@@ -210,7 +210,7 @@ export default async function WebdesignKasselPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">Festpreis</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Transparente Festpreise ohne versteckte Kosten oder unerwartete Agentur-Aufschläge.
               </p>
@@ -227,7 +227,7 @@ export default async function WebdesignKasselPage({
               Technologie-Vergleich
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
-              Warum Kasseler Industrieunternehmen auf Next.js setzen
+              Next.js Entwicklung: Warum Kasseler Betriebe auf moderne B2B-Websites setzen
             </h2>
             <p className="text-slate-600 text-base sm:text-lg">
               Der direkte Vergleich zwischen klassischem WordPress und zukunftssicherer
@@ -308,7 +308,7 @@ export default async function WebdesignKasselPage({
                 Inhabergeführte Betreuung
               </span>
               <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mt-2 mb-6">
-                Echtes Handwerk statt Agentur-Overhead für Kassel
+                Maßgeschneiderte Webentwicklung für Industrie & Logistik in Kassel
               </h2>
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
                 Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Als
@@ -323,7 +323,7 @@ export default async function WebdesignKasselPage({
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">Voller Quellcode-Besitz</span>
+                  <span className="text-slate-700">100% Quellcode-Besitz</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
@@ -413,7 +413,7 @@ export default async function WebdesignKasselPage({
               Nordhessens. Mit dem <strong>Science Park Kassel</strong> an der Universität,
               traditionsreichen Industriestandorten im <strong>Gewerbegebiet Waldau</strong> und in{' '}
               <strong>Baunatal</strong> sowie dem hochmodernen{' '}
-              <strong>Güterverkehrszentrum (GVZ)</strong> am Autobahnknotenpunkt von
+              <strong>Güterverkehrszentrum (GVZ)</strong> am Autobahnknotenpunkt von{' '}
               <strong>A7, A44 und A49</strong> bietet Kassel eine herausragende Infrastruktur für
               Industrie, Mobilität und CleanTech.
             </p>
@@ -458,53 +458,51 @@ export default async function WebdesignKasselPage({
           <div className="space-y-6">
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie viel kostet eine neue Website in Kassel?
+                Was kostet eine moderne Website für Industrie & Mittelstand in Kassel?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und
-                verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen
-                bieten wir maximale Kosteneffizienz bei voller Kostensicherheit und höchster
-                Performance.
+                Wir vereinbaren für Industrieunternehmen im Waldau, Startups im Science Park und
+                Logistiker im GVZ transparente Festpreise nach technischer Bedarfsanalyse.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie schnell ist eine neue Website in Kassel online?
+                Wie schnell ist eine Next.js Plattform in Kassel online?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett
-                schlüsselfertig fertiggestellt und online.
+                schlüsselfertig fertiggestellt und online erreichbar.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Kommen Sie für ein Beratungsgespräch direkt nach Kassel?
+                Kommen Sie für Vor-Ort-Termine in den Science Park oder nach Waldau?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja, sehr gerne. Über die A7 oder A49 sind wir von unserem Wetzlarer HQ schnell
-                direkt bei Ihnen vor Ort im Science Park, in Waldau oder im GVZ Kassel.
+                Ja, sehr gerne. Über die A7 oder A49 erreichen wir Sie von unserem Wetzlarer HQ aus
+                schnell direkt vor Ort in Kassel, Baunatal oder Lohfelden.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?
+                Bieten Sie interaktive Produktkataloge für Kasseler Maschinenbauer an?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es
-                keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform
-                in ISO-zertifizierten deutschen Rechenzentren gehostet.
+                Ja. Wir entwickeln dynamische, blitzschnelle Produktkataloge mit Filterfunktionen
+                und direkter B2B-Anfragefunktion.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wer ist unser fester Ansprechpartner?
+                Wer ist unser persönlicher Entwickler & Ansprechpartner?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.
+                Inhaber Umutcan Emre Tezgel persönlich berät und entwickelt direkt ohne
+                zwischengeschaltete Agentur-Mitarbeiter.
               </p>
             </div>
           </div>
@@ -515,11 +513,11 @@ export default async function WebdesignKasselPage({
       <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
-            Bereit für den digitalen Vorsprung in Kassel?
+            Digitale Spitzenklasse für Ihr Unternehmen in Kassel sichern
           </h2>
           <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-            Vereinbaren Sie jetzt ein unverbindliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
-            Emre Tezgel.
+            Vereinbaren Sie jetzt ein persönliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
+            Emre Tezgel für Ihren Standort in Kassel und ganz Nordhessen.
           </p>
           <Link href="/contact">
             <Button
@@ -527,7 +525,7 @@ export default async function WebdesignKasselPage({
               size="lg"
               className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
             >
-              Kostenloses Erstgespräch anfordern
+              Kasseler Erstgespräch anfordern
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>

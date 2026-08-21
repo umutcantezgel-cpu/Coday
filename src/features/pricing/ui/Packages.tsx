@@ -107,7 +107,7 @@ export default async function Packages() {
           </div>
 
           <h1 className="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl text-slate-900 leading-[1.1] tracking-tight mb-8 max-w-5xl mx-auto">
-            Maßgeschneiderte Angebote für{' '}
+            {isEn ? 'Bespoke Quotes for ' : 'Maßgeschneiderte Angebote für '}
             <GradientText
               colors={[
                 'var(--color-primary-600)',
@@ -118,17 +118,32 @@ export default async function Packages() {
               showBorder={false}
               className="inline-block"
             >
-              High-End Webentwicklung
+              {isEn ? 'High-End Web Development' : 'High-End Webentwicklung'}
             </GradientText>
           </h1>
 
           <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-12">
-            Wählen Sie exakt die Module und Funktionen, die Sie benötigen. Nach einer kostenlosen
-            Bedarfsanalyse erhalten Sie ein maßgeschneidertes, verbindliches Festpreisangebot —{' '}
-            <strong className="text-amber-800 font-semibold">
-              maximale Kosteneffizienz durch direkte Inhaber-Umsetzung
-            </strong>{' '}
-            bei nachweislich überlegener 100/100 Spitzenqualität.
+            {isEn ? (
+              <>
+                Bespoke Quotes for High-End Web Development: Choose the exact modules and
+                capabilities you need. Following a free discovery audit, you receive a binding
+                fixed-price quote —{' '}
+                <strong className="text-amber-800 font-semibold">
+                  maximum cost efficiency through direct founder execution
+                </strong>{' '}
+                with guaranteed 100/100 performance scores.
+              </>
+            ) : (
+              <>
+                Maßgeschneiderte Angebote für High-End Webentwicklung: Wählen Sie exakt die Module
+                und Funktionen, die Sie benötigen. Nach einer kostenlosen Bedarfsanalyse erhalten
+                Sie ein maßgeschneidertes, verbindliches Festpreisangebot —{' '}
+                <strong className="text-amber-800 font-semibold">
+                  maximale Kosteneffizienz durch direkte Inhaber-Umsetzung
+                </strong>{' '}
+                bei nachweislich überlegener 100/100 Spitzenqualität.
+              </>
+            )}
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -214,9 +229,9 @@ export default async function Packages() {
                   <span className="text-xs font-semibold text-amber-800 uppercase tracking-wider block mb-1">
                     {pillar.subtitle}
                   </span>
-                  <h3 className="font-display font-bold text-xl text-slate-900 mb-3">
+                  <p className="font-display font-bold text-xl text-slate-900 mb-3">
                     {pillar.title}
-                  </h3>
+                  </p>
                   <p className="text-slate-600 text-sm leading-relaxed">{pillar.desc}</p>
                 </div>
               </div>
@@ -231,9 +246,9 @@ export default async function Packages() {
                   <ShieldCheck className="w-4 h-4 text-emerald-600" />
                   100% Verifizierte Audit-Ergebnisse
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-display font-bold text-slate-900 leading-tight">
+                <p className="text-2xl sm:text-3xl font-display font-bold text-slate-900 leading-tight">
                   Schwarz auf weiß bewiesen: 100/100 PageSpeed & Top Seobility Score
-                </h3>
+                </p>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   Während viele herkömmliche Websites bei Google Lighthouse durch langsame
                   Ladezeiten wertvolle Besucher verlieren, erzielt unsere Next.js 15
@@ -423,25 +438,28 @@ export default async function Packages() {
       <section className="py-24 px-4 bg-slate-50/80 border-t border-slate-200 w-full">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-display font-bold text-3xl sm:text-5xl text-slate-900 mb-6">
-            Lassen Sie uns Ihr maßgeschneidertes Angebot berechnen
+            {isEn
+              ? 'Let Us Calculate Your Bespoke Fixed-Price Quote'
+              : 'Lassen Sie uns Ihr maßgeschneidertes Angebot berechnen'}
           </h2>
           <p className="text-lg text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Fordern Sie jetzt Ihr kostenloses Website-Audit oder ein persönliches Strategiegespräch
-            mit Umutcan Emre Tezgel an — unverbindlich, transparent und ohne Risiko.
+            {isEn
+              ? 'Request your free website audit or personal strategy consultation with Umutcan Emre Tezgel — non-binding, transparent, and risk-free.'
+              : 'Fordern Sie jetzt Ihr kostenloses Website-Audit oder ein persönliches Strategiegespräch mit Umutcan Emre Tezgel an — unverbindlich, transparent und ohne Risiko.'}
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <NavLink
               href="/contact"
               className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-primary-700 text-white font-bold rounded-full hover:bg-primary-800 transition duration-300 shadow-xl shadow-primary-700/20 hover:scale-[1.02] text-lg"
             >
-              <span>Kostenloses Angebot anfordern</span>
+              <span>{isEn ? 'Request Free Quote' : 'Kostenloses Angebot anfordern'}</span>
               <ArrowRight weight="bold" className="w-5 h-5" />
             </NavLink>
             <NavLink
               href="/calculator"
               className="inline-flex items-center justify-center gap-2 px-8 py-5 bg-white text-slate-700 font-semibold rounded-full border border-slate-200 hover:bg-slate-50 transition duration-300 shadow-sm"
             >
-              <span>Projekt selbst konfigurieren</span>
+              <span>{isEn ? 'Configure Project Yourself' : 'Projekt selbst konfigurieren'}</span>
             </NavLink>
           </div>
         </div>

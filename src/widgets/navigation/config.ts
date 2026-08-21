@@ -377,6 +377,23 @@ export const getNavItems = (): NavItem[] => [
         ],
       },
       {
+        title: 'nav.career.label',
+        links: [
+          { label: 'nav.career.label', href: '/career', desc: 'nav.career.desc' },
+          { label: 'nav.career.jobs.label', href: '/career/jobs', desc: 'nav.career.jobs.desc' },
+          {
+            label: 'nav.career.culture.label',
+            href: '/career/culture',
+            desc: 'nav.career.culture.desc',
+          },
+          {
+            label: 'nav.career.benefits.label',
+            href: '/career/benefits',
+            desc: 'nav.career.benefits.desc',
+          },
+        ],
+      },
+      {
         title: 'nav.company.action',
         links: [
           { label: 'nav.about.contact.label', href: '/contact', desc: 'nav.about.contact.desc' },

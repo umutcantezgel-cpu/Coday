@@ -1,25 +1,45 @@
 {
   "benefits": {
     "hero": {
-      "badge": "Vorteile",
-      "desc": "Wir bieten dir mehr als nur einen Arbeitsplatz.",
-      "title": "Deine Benefits bei Coday"
+      "badge": "Exklusive Mitarbeiter-Vorteile",
+      "title": "Benefits beim Arbeiten bei Coday",
+      "subtitle": "Spitzenausstattung, Remote-Freiheit & kontinuierliches Wachstum für Entwickler & Designer",
+      "desc": "Wir bieten dir mehr als nur einen Arbeitsplatz. Erlebe eine moderne Ingenieurskultur mit High-End Apple Silicon Hardware, 100% Remote-Work, überdurchschnittlicher Vergütung mit Gewinnbeteiligung und einem unbegrenzten Weiterbildungsbudget für deinen persönlichen Karriereerfolg."
     },
+    "grid_title": "Unsere Kern-Benefits im Überblick",
+    "grid_subtitle": "Alles, was du für Spitzenleistungen und nachhaltigen Flow bei der modernen Webentwicklung benötigst.",
+    "gear_title": "Dein High-End Hardware-Setup frei wählbar",
+    "gear_subtitle": "Stelle dir vor deinem ersten Tag dein individuelles Wunsch-Equipment zusammen – komplett von uns finanziert.",
     "items": [
       {
+        "icon": "lightning",
+        "title": "High-End M-Series Hardware",
+        "text": "MacBook Pro 16 Zoll mit Apple Silicon M3/M4 Max (bis 128 GB RAM) oder Dell XPS 15 Flaggschiff plus 5K Studio Display. Nach 24 Monaten gehört alles dauerhaft dir."
+      },
+      {
+        "icon": "globe",
+        "title": "100% Remote & Hybrid-Freiheit",
+        "text": "Arbeite flexibel im Homeoffice aus ganz Deutschland, während einer jährlichen Workation im EU-Ausland (bis 60 Tage) oder in unserem Kreativ-Hub im Raum Wetzlar / Gießen."
+      },
+      {
         "icon": "rocket_launch",
-        "title": "Weiterentwicklung",
-        "text": "Stetiges Lernen."
+        "title": "2.500 €+ Weiterbildungsbudget",
+        "text": "Festes jährliches Lernbudget für Konferenzen (Next.js Conf, React Summit), Fachliteratur, Pro-Masterclasses und 10% bezahlte wöchentliche Lab-Time für eigene Tech-Experimente."
+      },
+      {
+        "icon": "chart_bar",
+        "title": "Gewinnbeteiligung & Top-Gehälter",
+        "text": "Überdurchschnittliche Festgehälter mit transparenten Entwicklungsstufen, direkte jährliche Beteiligung am Agenturgewinn (Profit Share) und 30 Tage bezahlter Jahresurlaub."
       },
       {
         "icon": "heart",
-        "title": "Gesundheit",
-        "text": "Wir kümmern uns um deine Gesundheit."
+        "title": "Gesundheit & Ergonomie-Paket",
+        "text": "Herman Miller Bürostühle, elektrisch verstellbare Schreibtische, Noise-Cancelling-Kopfhörer sowie eine voll bezahlte Urban Sports Club Mitgliedschaft für Sport und Wellness."
       },
       {
         "icon": "users",
-        "title": "Tolles Team",
-        "text": "Wir arbeiten zusammen an spannenden Projekten."
+        "title": "Asynchrone Kultur & Deep Work",
+        "text": "Meeting-arme Arbeitsweise (< 3h Meetings/Woche) mit GitHub, Notion, Linear & Loom. Vertrauensarbeitszeit für maximalen Fokus ohne störende Benachrichtigungsfluten."
       }
     ]
   },
@@ -104,7 +124,8 @@
   },
   "jobs": {
     "button": "Jetzt bewerben",
-    "culture_badge": "Teamkultur",
+    "culture_badge": "Karriere bei Coday",
+    "h1_title": "Karriere bei Coday – Offene Stellen & Jobs in Wetzlar",
     "details": {
       "fulltime": "Vollzeit",
       "parttime": "Teilzeit / Freelance",

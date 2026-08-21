@@ -64,7 +64,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Webdesign Dietzenbach | Webagentur & SEO · Coday',
     description:
-      'Webdesign & Webentwicklung in Dietzenbach. Schnelle Ladezeiten, top Google-Rankings für Gewerbe, Logistik & Handwerk. Verbindlicher Festpreis auf Anfrage.',
+      'Webdesign in Dietzenbach: Schnelle Next.js Websites & Top Google-Rankings für Gewerbe, Logistik & Handwerk im Kreis Offenbach. Festpreis.',
     keywords: [
       'Webdesign Dietzenbach',
       'Webagentur Dietzenbach',
@@ -98,42 +98,42 @@ export default async function WebdesignDietzenbachPage({
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'Wie viel kostet eine neue Website in Dietzenbach?',
+            name: 'Was kostet eine moderne Website für Betriebe in Dietzenbach?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen bieten wir maximale Kosteneffizienz ohne teuren Agentur-Wasserkopf.',
+              text: 'Wir vereinbaren für Gewerbe- und Logistikbetriebe im Gewerbegebiet Süd sowie Handwerksbetriebe in Steinberg transparente Festpreise nach individueller Bedarfsanalyse.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wie schnell ist eine neue Website in Dietzenbach online?',
+            name: 'Wie schnell ist eine Next.js Website in Dietzenbach online?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online.',
+              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online erreichbar.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Kommen Sie für ein Beratungsgespräch direkt nach Dietzenbach?',
+            name: 'Kommen Sie für Vor-Ort-Termine in das Gewerbegebiet Süd oder nach Steinberg?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja, sehr gerne. Über die A5 und A661 sind wir von unserem Wetzlarer HQ in unter 45 Minuten direkt bei Ihnen vor Ort im Gewerbegebiet Süd oder in Steinberg.',
+              text: 'Ja, sehr gerne. Über die A5 und A661 erreichen wir Sie von unserem Wetzlarer HQ aus in rund 45 Minuten direkt vor Ort.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?',
+            name: 'Bieten Sie integrierte Bewerbungs-Funnels zur Mitarbeitergewinnung in Dietzenbach?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet.',
+              text: 'Ja. Wir entwickeln 60-Sekunden-Express-Bewerbungsstrecken, mit denen Sie qualifizierte Fachkräfte direkt über das Smartphone ansprechen und gewinnen.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wer ist unser fester Ansprechpartner?',
+            name: 'Wer ist unser fester technischer Ansprechpartner?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.',
+              text: 'Inhaber Umutcan Emre Tezgel berät und entwickelt direkt ohne zwischengeschaltete Agentur-Hierarchien.',
             },
           },
         ],
@@ -184,7 +184,7 @@ export default async function WebdesignDietzenbachPage({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Dietzenbach</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Dietzenbach</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Subsekundäre Ladezeiten für B2B-Einkäufer, Logistikpartner und mobile Kunden.
               </p>
@@ -192,7 +192,7 @@ export default async function WebdesignDietzenbachPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Volle Rechte an Ihrem Quellcode ohne monatliche CMS-Lizenzgebühren oder
                 Lock-in-Effekte.
@@ -201,7 +201,7 @@ export default async function WebdesignDietzenbachPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Direkte Betreuung durch Gründer Umutcan Emre Tezgel ohne zeitraubende Hierarchien.
               </p>
@@ -209,7 +209,7 @@ export default async function WebdesignDietzenbachPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">Festpreis</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Transparente Festpreise ohne versteckte Kosten oder unerwartete Agentur-Aufschläge.
               </p>
@@ -307,7 +307,7 @@ export default async function WebdesignDietzenbachPage({
                 Inhabergeführte Betreuung
               </span>
               <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mt-2 mb-6">
-                Echtes Handwerk statt Agentur-Overhead für Dietzenbach
+                Maßgeschneiderte Webentwicklung für Gewerbe & Logistik in Dietzenbach
               </h2>
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
                 Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Als
@@ -323,7 +323,7 @@ export default async function WebdesignDietzenbachPage({
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">Voller Quellcode-Besitz</span>
+                  <span className="text-slate-700">100% Quellcode-Besitz</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
@@ -412,7 +412,7 @@ export default async function WebdesignDietzenbachPage({
               Dietzenbach ist der administrative Verwaltungssitz des{' '}
               <strong>Kreises Offenbach</strong> und verbindet urbane Lebensqualität in{' '}
               <strong>Steinberg</strong> und am <strong>Hexenberg</strong> mit großflächigen
-              Gewerbe- und Logistikarealen im <strong>Gewerbegebiet Süd</strong>. Über die
+              Gewerbe- und Logistikarealen im <strong>Gewerbegebiet Süd</strong>. Über die{' '}
               <strong>Bundesstraße B459</strong>, die <strong>Autobahn A661</strong> und die S-Bahn
               S2 ist Dietzenbach optimal an Frankfurt und die gesamte Metropolregion Rhein-Main
               angebunden.
@@ -459,53 +459,52 @@ export default async function WebdesignDietzenbachPage({
           <div className="space-y-6">
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie viel kostet eine neue Website in Dietzenbach?
+                Was kostet eine moderne Website für Betriebe in Dietzenbach?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und
-                verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen
-                bieten wir maximale Kosteneffizienz bei voller Kostensicherheit und höchster
-                Performance.
+                Wir vereinbaren für Gewerbe- und Logistikbetriebe im Gewerbegebiet Süd sowie
+                Handwerksbetriebe in Steinberg transparente Festpreise nach individueller
+                Bedarfsanalyse.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie schnell ist eine neue Website in Dietzenbach online?
+                Wie schnell ist eine Next.js Website in Dietzenbach online?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett
-                schlüsselfertig fertiggestellt und online.
+                schlüsselfertig fertiggestellt und online erreichbar.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Kommen Sie für ein Beratungsgespräch direkt nach Dietzenbach?
+                Kommen Sie für Vor-Ort-Termine in das Gewerbegebiet Süd oder nach Steinberg?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja, sehr gerne. Über die A5 und A661 sind wir von unserem Wetzlarer HQ in unter 45
-                Minuten direkt bei Ihnen vor Ort im Gewerbegebiet Süd oder in Steinberg.
+                Ja, sehr gerne. Über die A5 und A661 erreichen wir Sie von unserem Wetzlarer HQ aus
+                in rund 45 Minuten direkt vor Ort.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?
+                Bieten Sie integrierte Bewerbungs-Funnels zur Mitarbeitergewinnung in Dietzenbach?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es
-                keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform
-                in ISO-zertifizierten deutschen Rechenzentren gehostet.
+                Ja. Wir entwickeln 60-Sekunden-Express-Bewerbungsstrecken, mit denen Sie
+                qualifizierte Fachkräfte direkt über das Smartphone ansprechen und gewinnen.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wer ist unser fester Ansprechpartner?
+                Wer ist unser fester technischer Ansprechpartner?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.
+                Inhaber Umutcan Emre Tezgel berät und entwickelt direkt ohne zwischengeschaltete
+                Agentur-Hierarchien.
               </p>
             </div>
           </div>
@@ -516,11 +515,11 @@ export default async function WebdesignDietzenbachPage({
       <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
-            Bereit für den digitalen Vorsprung in Dietzenbach?
+            Digitale Spitzenklasse für Ihr Unternehmen in Dietzenbach sichern
           </h2>
           <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-            Vereinbaren Sie jetzt ein unverbindliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
-            Emre Tezgel.
+            Vereinbaren Sie jetzt ein persönliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
+            Emre Tezgel für Ihren Standort in Dietzenbach und dem Kreis Offenbach.
           </p>
           <Link href="/contact">
             <Button
@@ -528,7 +527,7 @@ export default async function WebdesignDietzenbachPage({
               size="lg"
               className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
             >
-              Kostenloses Erstgespräch anfordern
+              Dietzenbacher Erstgespräch anfordern
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>

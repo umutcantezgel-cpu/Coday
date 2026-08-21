@@ -216,8 +216,8 @@ export const AboutClient: React.FC = () => {
             {...stagger(0.25)}
           >
             {isEn
-              ? 'Coday is an independent agency for high-end web design and Next.js development based in Wetzlar, Germany. We replace sluggish WordPress templates with ultra-fast, bespoke Next.js architectures — delivering 100/100 Core Web Vitals, enterprise security, and measurable B2B conversions.'
-              : 'Coday ist Ihre inhabergeführte Agentur für High-End Webdesign und Next.js Webentwicklung mit Sitz in Wetzlar. Wir ersetzen langsame WordPress-Themes durch ultraschnelle, maßgeschneiderte Next.js Architekturen — mit 100/100 Core Web Vitals, Enterprise-Sicherheit und planbaren B2B-Leads.'}
+              ? 'Coday is an independent agency for high-end web design and engineering based in Wetzlar, Germany. Bespoke Next.js Web Development delivered directly by your Lead Architect: We replace sluggish WordPress templates with ultra-fast web architectures — with 100/100 Core Web Vitals, enterprise security, and measurable B2B conversions.'
+              : 'Coday ist Ihre inhabergeführte Agentur für Webdesign und Webentwicklung mit Sitz in Wetzlar. Maßgeschneiderte Next.js Webentwicklung direkt von Ihrem Lead-Architekten: Wir ersetzen langsame WordPress-Themes durch ultraschnelle Web-Architekturen — mit 100/100 Core Web Vitals, Enterprise-Sicherheit und planbaren B2B-Leads.'}
           </m.p>
 
           <m.div className="flex flex-col sm:flex-row justify-center gap-4 mb-8" {...stagger(0.35)}>
@@ -369,9 +369,9 @@ export const AboutClient: React.FC = () => {
                 : 'Der High-Tech Stack hinter jeder Coday-Plattform'}
             </h2>
             <p className="text-slate-600 text-base sm:text-lg">
-              Keine trägen Page-Builder, keine Sicherheitslücken. Wir setzen auf dieselbe
-              Technologie, die auch von OpenAI, Netflix und Vercel für weltweite Höchstleistung
-              genutzt wird.
+              {isEn
+                ? 'No sluggish page builders, no security vulnerabilities. We rely on the exact technology used by OpenAI, Netflix, and Vercel for worldwide top performance.'
+                : 'Keine trägen Page-Builder, keine Sicherheitslücken. Wir setzen auf dieselbe Technologie, die auch von OpenAI, Netflix und Vercel für weltweite Höchstleistung genutzt wird.'}
             </p>
           </div>
 

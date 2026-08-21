@@ -96,42 +96,42 @@ export default async function WebdesignBensheimPage({
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'Wie viel kostet eine neue Website in Bensheim?',
+            name: 'Was kostet eine Website für Dentaltechnik & Mittelstand in Bensheim?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen bieten wir maximale Kosteneffizienz ohne teuren Agentur-Wasserkopf.',
+              text: 'Wir vereinbaren für Medtech-Unternehmen im Stubenwald, Weingüter an der Bergstraße und Dienstleister transparente Festpreise nach genauer Leistungsdefinition.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wie schnell ist eine neue Website in Bensheim online?',
+            name: 'Wie schnell ist eine moderne Next.js Website in Bensheim online?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online.',
+              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online erreichbar.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Kommen Sie für ein Beratungsgespräch direkt nach Bensheim?',
+            name: 'Sind Vor-Ort-Termine im Stubenwald oder im Gewerbepark Süd möglich?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja, sehr gerne. Über die A5 sind wir von unserem Wetzlarer HQ in rund 50 Minuten direkt bei Ihnen vor Ort im Stubenwald, im Gewerbepark Süd oder in der Bensheimer Innenstadt.',
+              text: 'Ja, sehr gerne. Über die A5 erreichen wir Sie von unserem Wetzlarer Büro aus in rund 50 Minuten direkt in Bensheim, Heppenheim oder Zwingenberg.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?',
+            name: 'Erfüllen Ihre Websites die DSGVO- und Sicherheitsstandards für Medizintechnik?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet.',
+              text: 'Ja. Entkoppelte Headless-Architekturen ohne offene Angriffsflächen sowie deutsches ISO-27001 zertifiziertes Hosting garantieren absolute Datensicherheit.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wer ist unser fester Ansprechpartner?',
+            name: 'Wer ist unser fester Ansprechpartner & Entwickler?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.',
+              text: 'Inhaber Umutcan Emre Tezgel persönlich berät und entwickelt direkt ohne zwischengeschaltete Agentur-Hierarchien.',
             },
           },
         ],
@@ -182,7 +182,7 @@ export default async function WebdesignBensheimPage({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit an der Bergstraße</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Ladezeit an der Bergstraße</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Subsekundäre Ladezeiten für B2B-Kunden, Patienten und Gäste.
               </p>
@@ -190,7 +190,7 @@ export default async function WebdesignBensheimPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Volle Rechte an Ihrem Quellcode ohne monatliche CMS-Lizenzgebühren oder
                 Lock-in-Effekte.
@@ -199,7 +199,7 @@ export default async function WebdesignBensheimPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Direkte Betreuung durch Gründer Umutcan Emre Tezgel ohne zeitraubende Hierarchien.
               </p>
@@ -207,7 +207,7 @@ export default async function WebdesignBensheimPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">Festpreis</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Transparente Festpreise ohne versteckte Kosten oder unerwartete Agentur-Aufschläge.
               </p>
@@ -305,7 +305,7 @@ export default async function WebdesignBensheimPage({
                 Inhabergeführte Betreuung
               </span>
               <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mt-2 mb-6">
-                Echtes Handwerk statt Agentur-Overhead für Bensheim
+                Maßgeschneiderte Webentwicklung für Bensheim & die Bergstraße
               </h2>
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
                 Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Als
@@ -321,7 +321,7 @@ export default async function WebdesignBensheimPage({
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">Voller Quellcode-Besitz</span>
+                  <span className="text-slate-700">100% Quellcode-Besitz</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
@@ -408,9 +408,8 @@ export default async function WebdesignBensheimPage({
             </h2>
             <p className="text-slate-700 leading-relaxed text-base">
               <strong>Bensheim</strong> ist die wirtschaftlich stärkste und bevölkerungsreichste
-              Stadt des
-              <strong>Kreises Bergstraße</strong>. Mit weltweit führenden Medizintechnik- und
-              Dentalunternehmen, hochmodernen Gewerbegebieten im <strong>Stubenwald</strong> und{' '}
+              Stadt des <strong>Kreises Bergstraße</strong>. Mit weltweit führenden Medizintechnik-
+              und Dentalunternehmen, hochmodernen Gewerbegebieten im <strong>Stubenwald</strong> und{' '}
               <strong>Gewerbepark Süd</strong> sowie einer unverwechselbaren Lebensqualität durch
               Weinbau und Tourismus bildet Bensheim das Bindeglied zwischen der{' '}
               <strong>Metropolregion Frankfurt Rhein-Main</strong> und der{' '}
@@ -457,54 +456,51 @@ export default async function WebdesignBensheimPage({
           <div className="space-y-6">
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie viel kostet eine neue Website in Bensheim?
+                Was kostet eine Website für Dentaltechnik & Mittelstand in Bensheim?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und
-                verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen
-                bieten wir maximale Kosteneffizienz bei voller Kostensicherheit und höchster
-                Performance.
+                Wir vereinbaren für Medtech-Unternehmen im Stubenwald, Weingüter an der Bergstraße
+                und Dienstleister transparente Festpreise nach genauer Leistungsdefinition.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie schnell ist eine neue Website in Bensheim online?
+                Wie schnell ist eine moderne Next.js Website in Bensheim online?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett
-                schlüsselfertig fertiggestellt und online.
+                schlüsselfertig fertiggestellt und online erreichbar.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Kommen Sie für ein Beratungsgespräch direkt nach Bensheim?
+                Sind Vor-Ort-Termine im Stubenwald oder im Gewerbepark Süd möglich?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja, sehr gerne. Über die A5 sind wir von unserem Wetzlarer HQ in rund 50 Minuten
-                direkt bei Ihnen vor Ort im Stubenwald, im Gewerbepark Süd oder in der Bensheimer
-                Innenstadt.
+                Ja, sehr gerne. Über die A5 erreichen wir Sie von unserem Wetzlarer Büro aus in rund
+                50 Minuten direkt in Bensheim, Heppenheim oder Zwingenberg.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?
+                Erfüllen Ihre Websites die DSGVO- und Sicherheitsstandards für Medizintechnik?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es
-                keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform
-                in ISO-zertifizierten deutschen Rechenzentren gehostet.
+                Ja. Entkoppelte Headless-Architekturen ohne offene Angriffsflächen sowie deutsches
+                ISO-27001 zertifiziertes Hosting garantieren absolute Datensicherheit.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wer ist unser fester Ansprechpartner?
+                Wer ist unser fester Ansprechpartner & Entwickler?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.
+                Inhaber Umutcan Emre Tezgel persönlich berät und entwickelt direkt ohne
+                zwischengeschaltete Agentur-Hierarchien.
               </p>
             </div>
           </div>
@@ -515,11 +511,11 @@ export default async function WebdesignBensheimPage({
       <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
-            Bereit für den digitalen Vorsprung in Bensheim?
+            Digitale Spitzenklasse für Ihr Unternehmen in Bensheim sichern
           </h2>
           <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-            Vereinbaren Sie jetzt ein unverbindliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
-            Emre Tezgel.
+            Vereinbaren Sie jetzt ein persönliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
+            Emre Tezgel für Ihren Standort in Bensheim und an der Bergstraße.
           </p>
           <Link href="/contact">
             <Button
@@ -527,7 +523,7 @@ export default async function WebdesignBensheimPage({
               size="lg"
               className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
             >
-              Kostenloses Erstgespräch anfordern
+              Bensheimer Erstgespräch anfordern
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>

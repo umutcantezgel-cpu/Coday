@@ -96,42 +96,42 @@ export default async function WebdesignOffenbachPage({
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'Wie viel kostet eine neue Website in Offenbach?',
+            name: 'Was kostet eine moderne Website für Kreative & Betriebe in Offenbach?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen bieten wir maximale Kosteneffizienz ohne teuren Agentur-Wasserkopf.',
+              text: 'Wir vereinbaren für Designstudios am Hafen, Automotive-Partner am Kaiserlei und Dienstleister transparente Festpreise nach technischer Leistungsanalyse.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wie schnell ist eine neue Website in Offenbach online?',
+            name: 'Wie schnell ist eine Next.js Website in Offenbach am Main online?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online.',
+              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online erreichbar.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Kommen Sie für ein Beratungsgespräch direkt nach Offenbach?',
+            name: 'Kommen Sie für Vor-Ort-Termine an den Hafen Offenbach oder an den Kaiserlei?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja, sehr gerne. Über die A5 und A661 sind wir von unserem Wetzlarer HQ in unter 40 Minuten direkt bei Ihnen vor Ort am Hafen Offenbach oder am Kaiserlei.',
+              text: 'Ja, sehr gerne. Über die A5 und A661 erreichen wir Sie von unserem Wetzlarer HQ aus in unter 40 Minuten direkt vor Ort.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?',
+            name: 'Bieten Sie maßgeschneiderte Animationen und High-End UI/UX für Offenbacher Marken?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet.',
+              text: 'Ja. Wir programmieren maßgeschneiderte Framer-Motion-Interaktionen und hochperformante visuelle Erlebnisse auf Next.js 15 Basis.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wer ist unser fester Ansprechpartner?',
+            name: 'Wer ist unser persönlicher Entwickler & Ansprechpartner?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.',
+              text: 'Inhaber Umutcan Emre Tezgel persönlich berät und entwickelt direkt ohne zwischengeschaltete Agentur-Mitarbeiter.',
             },
           },
         ],
@@ -182,7 +182,7 @@ export default async function WebdesignOffenbachPage({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Offenbach</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Offenbach</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Subsekundäre Ladezeiten für vielbeschäftigte B2B-Käufer und mobile Nutzer.
               </p>
@@ -190,7 +190,7 @@ export default async function WebdesignOffenbachPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Volle Rechte an Ihrem Quellcode ohne monatliche CMS-Lizenzgebühren oder
                 Lock-in-Effekte.
@@ -199,7 +199,7 @@ export default async function WebdesignOffenbachPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Direkte Betreuung durch Gründer Umutcan Emre Tezgel ohne zeitraubende Hierarchien.
               </p>
@@ -207,7 +207,7 @@ export default async function WebdesignOffenbachPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">Festpreis</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Transparente Festpreise ohne versteckte Kosten oder unerwartete Agentur-Aufschläge.
               </p>
@@ -305,7 +305,7 @@ export default async function WebdesignOffenbachPage({
                 Inhabergeführte Betreuung
               </span>
               <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mt-2 mb-6">
-                Echtes Handwerk statt Agentur-Overhead für Offenbach
+                Maßgeschneiderte Webentwicklung für Design & Gewerbe in Offenbach
               </h2>
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
                 Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Als
@@ -320,7 +320,7 @@ export default async function WebdesignOffenbachPage({
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">Voller Quellcode-Besitz</span>
+                  <span className="text-slate-700">100% Quellcode-Besitz</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
@@ -406,12 +406,12 @@ export default async function WebdesignOffenbachPage({
               Hafen Offenbach, Kaiserlei-Areal & HfG-Kreativcluster
             </h2>
             <p className="text-slate-700 leading-relaxed text-base">
-              Offenbach am Main durchlebt eine beispiellose urbane Transformation. Vom lebendigen
+              Offenbach am Main durchlebt eine beispiellose urbane Transformation. Vom lebendigen{' '}
               <strong>Hafen Offenbach</strong> über die traditionsreiche{' '}
-              <strong>Hochschule für Gestaltung (HfG)</strong>
-              bis zum zukunftsträchtigen <strong>Kaiserlei-Areal</strong> mit direkter Schnittstelle
-              nach Frankfurt am Main verlangen Unternehmen nach digitalen Auftritten, die modernes
-              Designgefühl mit erstklassiger Next.js Ingenieurskunst vereinen.
+              <strong>Hochschule für Gestaltung (HfG)</strong> bis zum zukunftsträchtigen{' '}
+              <strong>Kaiserlei-Areal</strong> mit direkter Schnittstelle nach Frankfurt am Main
+              verlangen Unternehmen nach digitalen Auftritten, die modernes Designgefühl mit
+              erstklassiger Next.js Ingenieurskunst vereinen.
             </p>
           </div>
 
@@ -454,53 +454,51 @@ export default async function WebdesignOffenbachPage({
           <div className="space-y-6">
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie viel kostet eine neue Website in Offenbach?
+                Was kostet eine moderne Website für Kreative & Betriebe in Offenbach?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und
-                verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen
-                bieten wir maximale Kosteneffizienz bei voller Kostensicherheit und höchster
-                Performance.
+                Wir vereinbaren für Designstudios am Hafen, Automotive-Partner am Kaiserlei und
+                Dienstleister transparente Festpreise nach technischer Leistungsanalyse.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie schnell ist eine neue Website in Offenbach online?
+                Wie schnell ist eine Next.js Website in Offenbach am Main online?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett
-                schlüsselfertig fertiggestellt und online.
+                schlüsselfertig fertiggestellt und online erreichbar.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Kommen Sie für ein Beratungsgespräch direkt nach Offenbach?
+                Kommen Sie für Vor-Ort-Termine an den Hafen Offenbach oder an den Kaiserlei?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja, sehr gerne. Über die A5 und A661 sind wir von unserem Wetzlarer HQ in unter 40
-                Minuten direkt bei Ihnen vor Ort am Hafen Offenbach oder am Kaiserlei.
+                Ja, sehr gerne. Über die A5 und A661 erreichen wir Sie von unserem Wetzlarer HQ aus
+                in unter 40 Minuten direkt vor Ort.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?
+                Bieten Sie maßgeschneiderte Animationen und High-End UI/UX für Offenbacher Marken?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es
-                keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform
-                in ISO-zertifizierten deutschen Rechenzentren gehostet.
+                Ja. Wir programmieren maßgeschneiderte Framer-Motion-Interaktionen und
+                hochperformante visuelle Erlebnisse auf Next.js 15 Basis.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wer ist unser fester Ansprechpartner?
+                Wer ist unser persönlicher Entwickler & Ansprechpartner?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.
+                Inhaber Umutcan Emre Tezgel persönlich berät und entwickelt direkt ohne
+                zwischengeschaltete Agentur-Mitarbeiter.
               </p>
             </div>
           </div>
@@ -511,11 +509,11 @@ export default async function WebdesignOffenbachPage({
       <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
-            Bereit für den digitalen Vorsprung in Offenbach?
+            Digitale Spitzenklasse für Ihr Unternehmen in Offenbach sichern
           </h2>
           <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-            Vereinbaren Sie jetzt ein unverbindliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
-            Emre Tezgel.
+            Vereinbaren Sie jetzt ein persönliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
+            Emre Tezgel für Ihren Standort in Offenbach am Main und Rhein-Main.
           </p>
           <Link href="/contact">
             <Button
@@ -523,7 +521,7 @@ export default async function WebdesignOffenbachPage({
               size="lg"
               className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
             >
-              Kostenloses Erstgespräch anfordern
+              Offenbacher Erstgespräch anfordern
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>

@@ -98,42 +98,42 @@ export default async function WebdesignFuldaPage({
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'Wie viel kostet eine neue Website in Fulda?',
+            name: 'Was kostet eine Website für Industrie & Logistik in Fulda?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen bieten wir maximale Kosteneffizienz ohne teuren Agentur-Wasserkopf.',
+              text: 'Wir vereinbaren für Sensorik-Hersteller in Fulda-West, Logistiker in Eichenzell und Mittelständler transparente Festpreise nach technischer Leistungsbeschreibung.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wie schnell ist eine neue Website in Fulda online?',
+            name: 'Wie schnell ist eine Next.js Plattform in Fulda online?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online.',
+              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online erreichbar.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Kommen Sie für ein Beratungsgespräch direkt nach Fulda?',
+            name: 'Kommen Sie für ein Vor-Ort-Gespräch in den Industriepark Fulda-West oder nach Eichenzell?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja, sehr gerne. Über die A5/A7 oder A66 sind wir von unserem Wetzlarer HQ schnell direkt bei Ihnen vor Ort in Fulda-West, Münsterfeld oder Eichenzell.',
+              text: 'Ja, sehr gerne. Über die A5/A7 oder A66 erreichen wir Sie von unserem Wetzlarer HQ aus schnell direkt vor Ort in Fulda, Münsterfeld oder Eichenzell.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?',
+            name: 'Können Sie B2B-Kundenportale und ERP-Schnittstellen für Fuldaer Betriebe integrieren?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet.',
+              text: 'Ja. Wir entwickeln modulare Next.js & Supabase Architekturen mit nahtlosen REST- und GraphQL-Schnittstellen für bestehende ERP- und CRM-Systeme.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wer ist unser fester Ansprechpartner?',
+            name: 'Wer ist unser persönlicher Entwickler & Ansprechpartner?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.',
+              text: 'Inhaber Umutcan Emre Tezgel persönlich berät und entwickelt direkt ohne zwischengeschaltete Agentur-Mitarbeiter.',
             },
           },
         ],
@@ -153,7 +153,7 @@ export default async function WebdesignFuldaPage({
         badgeText="INDUSTRIE-, LOGISTIK- & HANDWERKS-WEBAGENTUR FULDA & OSTHESSEN"
         headline="Webdesign & Next.js Entwicklung in"
         headlineGradient="Fulda & Osthessen"
-        description="Speziell für Industrie, Maschinenbau, Großhandel, Logistik und Meisterbetriebe in Fulda, Künzell, Petersberg und Eichenzell. Subsekundäre Ladezeiten unter 500ms, ausdrucksstarkes B2B-Design und planbare Kundenanfragen. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+        description="Als spezialisierte High-Performance Webagentur für Fulda und Osthessen bieten wir professionelle Next.js Entwicklung und umsatzstarke B2B-Websites für Industrie, Logistik, Großhandel und Meisterbetriebe. Ladezeiten unter 500ms, Spitzen-Rankings bei Google und planbare Kundenanfragen."
         cityName="Fulda"
         sourceTag="local_seo_fulda"
         formHeading="Kostenlose Bedarfsanalyse für Fulda"
@@ -184,7 +184,7 @@ export default async function WebdesignFuldaPage({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Osthessen</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Osthessen</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Subsekundäre Ladezeiten für weltweite B2B-Kunden und mobile Nutzer.
               </p>
@@ -192,7 +192,7 @@ export default async function WebdesignFuldaPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Volle Rechte an Ihrem Quellcode ohne monatliche CMS-Lizenzgebühren oder
                 Lock-in-Effekte.
@@ -201,7 +201,7 @@ export default async function WebdesignFuldaPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Direkte Betreuung durch Gründer Umutcan Emre Tezgel ohne zeitraubende Hierarchien.
               </p>
@@ -209,7 +209,7 @@ export default async function WebdesignFuldaPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">Festpreis</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Transparente Festpreise ohne versteckte Kosten oder unerwartete Agentur-Aufschläge.
               </p>
@@ -226,7 +226,7 @@ export default async function WebdesignFuldaPage({
               Technologie-Vergleich
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
-              Warum Fuldaer Unternehmen auf Next.js setzen
+              Next.js Entwicklung: Warum Fuldaer Unternehmen auf moderne B2B-Websites setzen
             </h2>
             <p className="text-slate-600 text-base sm:text-lg">
               Der direkte Vergleich zwischen klassischem WordPress und zukunftssicherer
@@ -307,7 +307,7 @@ export default async function WebdesignFuldaPage({
                 Inhabergeführte Betreuung
               </span>
               <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mt-2 mb-6">
-                Echtes Handwerk statt Agentur-Overhead für Fulda
+                Maßgeschneiderte Webentwicklung für Industrie & Logistik in Fulda
               </h2>
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
                 Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Als
@@ -323,7 +323,7 @@ export default async function WebdesignFuldaPage({
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">Voller Quellcode-Besitz</span>
+                  <span className="text-slate-700">100% Quellcode-Besitz</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
@@ -411,14 +411,10 @@ export default async function WebdesignFuldaPage({
             <p className="text-slate-700 leading-relaxed text-base">
               Die <strong>Barockstadt Fulda</strong> ist das wirtschaftliche Kraftzentrum
               Osthessens. Mit dem <strong>Industriepark Fulda-West</strong>, dem traditionsreichen
-              Gewerbegebiet
-              <strong>Münsterfeld</strong> und dem hochmodernen{' '}
-              <strong>Rhön-Logistikpark in Eichenzell</strong>
-              verbindet Fulda weltmarktführende Sensorik-, Textil- und Maschinenbau-Unternehmen mit
-              erstklassiger Verkehrslogistik am Autobahnknotenpunkt von <strong>
-                A7 und A66
-              </strong>{' '}
-              sowie dem ICE-Knotenbahnhof.
+              Gewerbegebiet <strong>Münsterfeld</strong> und dem hochmodernen{' '}
+              <strong>Rhön-Logistikpark in Eichenzell</strong> verbindet Fulda weltmarktführende
+              Sensorik-, Textil- und Maschinenbau-Unternehmen mit erstklassiger Verkehrslogistik am
+              Autobahnknotenpunkt von <strong>A7 und A66</strong> sowie dem ICE-Knotenbahnhof.
             </p>
           </div>
 
@@ -461,53 +457,53 @@ export default async function WebdesignFuldaPage({
           <div className="space-y-6">
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie viel kostet eine neue Website in Fulda?
+                Was kostet eine Website für Industrie & Logistik in Fulda?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und
-                verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen
-                bieten wir maximale Kosteneffizienz bei voller Kostensicherheit und höchster
-                Performance.
+                Wir vereinbaren für Sensorik-Hersteller in Fulda-West, Logistiker in Eichenzell und
+                Mittelständler transparente Festpreise nach technischer Leistungsbeschreibung.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie schnell ist eine neue Website in Fulda online?
+                Wie schnell ist eine Next.js Plattform in Fulda online?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett
-                schlüsselfertig fertiggestellt und online.
+                schlüsselfertig fertiggestellt und online erreichbar.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Kommen Sie für ein Beratungsgespräch direkt nach Fulda?
+                Kommen Sie für ein Vor-Ort-Gespräch in den Industriepark Fulda-West oder nach
+                Eichenzell?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja, sehr gerne. Über die A5/A7 oder A66 sind wir von unserem Wetzlarer HQ schnell
-                direkt bei Ihnen vor Ort in Fulda-West, Münsterfeld oder Eichenzell.
+                Ja, sehr gerne. Über die A5/A7 oder A66 erreichen wir Sie von unserem Wetzlarer HQ
+                aus schnell direkt vor Ort in Fulda, Münsterfeld oder Eichenzell.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?
+                Können Sie B2B-Kundenportale und ERP-Schnittstellen für Fuldaer Betriebe
+                integrieren?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es
-                keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform
-                in ISO-zertifizierten deutschen Rechenzentren gehostet.
+                Ja. Wir entwickeln modulare Next.js & Supabase Architekturen mit nahtlosen REST- und
+                GraphQL-Schnittstellen für bestehende ERP- und CRM-Systeme.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wer ist unser fester Ansprechpartner?
+                Wer ist unser persönlicher Entwickler & Ansprechpartner?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.
+                Inhaber Umutcan Emre Tezgel persönlich berät und entwickelt direkt ohne
+                zwischengeschaltete Agentur-Mitarbeiter.
               </p>
             </div>
           </div>
@@ -518,11 +514,11 @@ export default async function WebdesignFuldaPage({
       <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
-            Bereit für den digitalen Vorsprung in Fulda?
+            Digitale Spitzenklasse für Ihr Fuldaer Unternehmen sichern
           </h2>
           <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-            Vereinbaren Sie jetzt ein unverbindliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
-            Emre Tezgel.
+            Vereinbaren Sie jetzt ein persönliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
+            Emre Tezgel für Ihren Standort in Fulda und ganz Osthessen.
           </p>
           <Link href="/contact">
             <Button
@@ -530,7 +526,7 @@ export default async function WebdesignFuldaPage({
               size="lg"
               className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
             >
-              Kostenloses Erstgespräch anfordern
+              Fuldaer Erstgespräch anfordern
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>

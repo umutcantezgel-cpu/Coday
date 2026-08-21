@@ -165,19 +165,34 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Col 2: Navigation */}
-          <nav aria-label={t('footer.sections.navigation', { defaultValue: 'Navigation' })}>
+          {/* Col 2: Company / Unternehmen Navigation */}
+          <nav aria-label={t('nav.company.label', { defaultValue: 'Unternehmen' })}>
             <h3 className="text-xs font-bold text-slate-900 uppercase tracking-[0.15em] mb-6 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-primary-600"></span>
-              {t('footer.sections.navigation', { defaultValue: 'Navigation' })}
+              {t('nav.company.label', { defaultValue: 'Unternehmen' })}
             </h3>
-            <ul className="space-y-3.5">
+            <ul className="space-y-3">
               {[
                 { href: '/', label: t('nav.main.home', { defaultValue: 'Startseite' }) },
-                { href: '/work', label: t('nav.main.work', { defaultValue: 'Portfolio' }) },
                 { href: '/about', label: t('nav.company.about', { defaultValue: 'Über uns' }) },
+                { href: '/work', label: t('nav.main.work', { defaultValue: 'Portfolio' }) },
                 { href: '/process', label: t('nav.main.process', { defaultValue: 'Prozess' }) },
                 { href: '/pricing', label: t('nav.main.pricing', { defaultValue: 'Preise' }) },
+                { href: '/career', label: t('nav.company.career', { defaultValue: 'Karriere' }) },
+                {
+                  href: '/career/jobs',
+                  label: t('nav.career.jobs.label', { defaultValue: 'Offene Stellen' }),
+                },
+                {
+                  href: '/career/culture',
+                  label: t('nav.career.culture.label', { defaultValue: 'Teamkultur' }),
+                },
+                {
+                  href: '/career/benefits',
+                  label: t('nav.career.benefits.label', {
+                    defaultValue: 'Benefits & Arbeitsmodell',
+                  }),
+                },
                 {
                   href: '/calculator',
                   label: t('nav.resources.calculator', { defaultValue: 'Preis-Rechner' }),

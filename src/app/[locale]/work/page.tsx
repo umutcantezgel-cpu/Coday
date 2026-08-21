@@ -131,35 +131,35 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
             </div>
 
             <h1 className="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl text-slate-900 leading-[1.1] tracking-tight mb-8">
-              Messbarer Impact für den{' '}
+              {isEn ? 'Measurable Impact for ' : 'Messbarer Impact für den '}
               <GradientText
                 colors={['#b45309', '#d97706', '#f59e0b']}
                 animationSpeed={5}
                 showBorder={false}
                 className="inline-block"
               >
-                Mittelstand
+                {isEn ? 'Businesses' : 'Mittelstand'}
               </GradientText>
             </h1>
 
             <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-12">
-              Keine fiktiven Mockups oder Platzhalter-Logos. Jedes Projekt demonstriert
-              handgeschriebene Next.js-Architektur, 100/100 PageSpeed und messbare
-              Conversion-Steigerungen.
+              {isEn
+                ? 'Measurable Impact for Businesses: No fictional mockups or placeholder logos. Every project demonstrates handcrafted Next.js architecture, 100/100 PageSpeed, and measurable conversion growth.'
+                : 'Messbarer Impact für den Mittelstand: Keine fiktiven Mockups oder Platzhalter-Logos. Jedes Projekt demonstriert handgeschriebene Next.js-Architektur, 100/100 PageSpeed und messbare Conversion-Steigerungen.'}
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 text-sm font-semibold text-slate-700">
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm">
                 <Lightning className="w-4 h-4 text-amber-600" />
-                <span>Sub-0,3s Ladezeiten</span>
+                <span>{isEn ? 'Sub-0.3s Load Times' : 'Sub-0,3s Ladezeiten'}</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm">
                 <TrendUp className="w-4 h-4 text-amber-600" />
-                <span>Bis zu +320% Lead-Wachstum</span>
+                <span>{isEn ? 'Up to +320% Lead Growth' : 'Bis zu +320% Lead-Wachstum'}</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm">
                 <ShieldCheck className="w-4 h-4 text-amber-600" />
-                <span>100% DSGVO & Eigentum</span>
+                <span>{isEn ? '100% GDPR & Ownership' : '100% DSGVO & Eigentum'}</span>
               </div>
             </div>
 
@@ -308,20 +308,20 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
         <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto pb-24 text-slate-600">
           <div className="p-8 lg:p-12 rounded-3xl bg-white border border-slate-200 shadow-sm">
             <h2 className="text-2xl sm:text-3xl font-display font-bold text-slate-900 mb-6">
-              Webdesign Referenzen & messbarer Projekterfolg in Hessen
+              {isEn
+                ? 'Web Design Case Studies & Measurable Project Success'
+                : 'Webdesign Referenzen & messbarer Projekterfolg in Hessen'}
             </h2>
             <div className="space-y-4 text-sm sm:text-base leading-relaxed">
               <p>
-                Als spezialisierte Webagentur mit Fokus auf High-Performance Next.js-Lösungen setzen
-                wir ausschließlich auf verifizierbare Kundenprojekte. Ob Handwerksbetriebe wie
-                Batherm und MemoBau, E-Commerce Flagships wie Talia Boutique oder
-                Notdienst-Unternehmen wie MS Schlüsseldienst Wetzlar: Wir transformieren langsame,
-                ineffiziente Websites in planbare Umsatzbringer.
+                {isEn
+                  ? 'As a specialized web agency focused on high-performance Next.js solutions, we rely exclusively on verifiable client projects. From craft businesses like Batherm and MemoBau to e-commerce flagships like Talia Boutique or emergency services like Locksmith Wetzlar: We transform sluggish websites into predictable revenue engines.'
+                  : 'Als spezialisierte Webagentur mit Fokus auf High-Performance Next.js-Lösungen setzen wir ausschließlich auf verifizierbare Kundenprojekte. Ob Handwerksbetriebe wie Batherm und MemoBau, E-Commerce Flagships wie Talia Boutique oder Notdienst-Unternehmen wie MS Schlüsseldienst Wetzlar: Wir transformieren langsame, ineffiziente Websites in planbare Umsatzbringer.'}
               </p>
               <p>
-                Jede Website wird mit 100/100 Core Web Vitals, server-seitigem Rendering (SSG/SSR)
-                und zielgerichteter Suchmaschinenoptimierung für Hessen und ganz Deutschland
-                ausgeliefert.
+                {isEn
+                  ? 'Every website is engineered with 100/100 Core Web Vitals, server-side rendering (SSG/SSR), and targeted search engine optimization for Germany and international markets.'
+                  : 'Jede Website wird mit 100/100 Core Web Vitals, server-seitigem Rendering (SSG/SSR) und zielgerichteter Suchmaschinenoptimierung für Hessen und ganz Deutschland ausgeliefert.'}
               </p>
             </div>
           </div>
@@ -336,17 +336,22 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
         <section className="py-24 px-4 bg-white border-t border-slate-200 w-full text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-display font-bold text-3xl sm:text-5xl text-slate-900 mb-6">
-              Möchten Sie ähnliche Ergebnisse für Ihr Unternehmen?
+              {isEn
+                ? 'Want Similar Results for Your Business?'
+                : 'Möchten Sie ähnliche Ergebnisse für Ihr Unternehmen?'}
             </h2>
             <p className="text-lg text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Lassen Sie uns Ihre aktuelle Web-Präsenz analysieren. Wir zeigen Ihnen die konkreten
-              Hebel für mehr Anfragen, Top-PageSpeed und regionale Sichtbarkeit.
+              {isEn
+                ? 'Let us audit your current web presence. We will show you actionable levers for more inquiries, top PageSpeed, and market visibility.'
+                : 'Lassen Sie uns Ihre aktuelle Web-Präsenz analysieren. Wir zeigen Ihnen die konkreten Hebel für mehr Anfragen, Top-PageSpeed und regionale Sichtbarkeit.'}
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-10 py-5 bg-primary-700 text-white font-bold rounded-full hover:bg-primary-800 transition duration-300 shadow-lg shadow-primary-700/25 hover:scale-[1.02] text-lg"
             >
-              <span>Kostenloses Website-Audit anfordern</span>
+              <span>
+                {isEn ? 'Request Free Website Audit' : 'Kostenloses Website-Audit anfordern'}
+              </span>
               <ArrowRight weight="bold" className="w-5 h-5" />
             </Link>
           </div>

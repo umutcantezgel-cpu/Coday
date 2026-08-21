@@ -97,31 +97,31 @@ export default async function WebdesignWiesbadenPage({
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'Wie viel kostet eine neue Website in Wiesbaden?',
+            name: 'Was kostet eine Website für Kanzleien & Praxen in Wiesbaden?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen bieten wir maximale Kosteneffizienz ohne teuren Agentur-Wasserkopf.',
+              text: 'Wir vereinbaren für Rechtsanwälte, Notariate an der Wilhelmstraße und Privatkliniken in Wiesbaden transparente Festpreise nach einer individuellen Anforderungsanalyse.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wie schnell ist eine neue Website in Wiesbaden online?',
+            name: 'Wie schnell ist eine neue Next.js Plattform in Wiesbaden online?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online.',
+              text: 'In der Regel ist Ihr Webauftritt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und live erreichbar.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Kommen Sie für ein Beratungsgespräch direkt nach Wiesbaden?',
+            name: 'Sind persönliche Beratungsgespräche vor Ort in Wiesbaden möglich?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja, sehr gerne. Über die A3 und A66 sind wir von unserem Wetzlarer HQ in unter 45 Minuten direkt bei Ihnen vor Ort an der Wilhelmstraße, in Nordenstadt oder Schierstein.',
+              text: 'Ja, sehr gerne. Über die A3 und A66 sind wir von unserem Wetzlarer HQ in unter 45 Minuten direkt bei Ihnen vor Ort an der Wilhelmstraße, in Nordenstadt oder Biebrich.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Erfüllen Ihre Websites die Barrierefreiheitsstandards nach BITV 2.0 / WCAG?',
+            name: 'Erfüllen Ihre Webdesigns die Barrierefreiheitsstandards nach BITV 2.0 / WCAG?',
             acceptedAnswer: {
               '@type': 'Answer',
               text: 'Ja. Wir entwickeln barrierefreie Interfaces mit semantischem HTML, Tastaturnavigation und Screenreader-Unterstützung gemäß WCAG 2.2 und BITV 2.0.',
@@ -129,10 +129,10 @@ export default async function WebdesignWiesbadenPage({
           },
           {
             '@type': 'Question',
-            name: 'Wer ist unser fester Ansprechpartner?',
+            name: 'Wer ist unser persönlicher Entwickler & Ansprechpartner?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.',
+              text: 'Inhaber Umutcan Emre Tezgel berät und entwickelt direkt ohne zwischengeschaltete Kundenbetreuer.',
             },
           },
         ],
@@ -152,7 +152,7 @@ export default async function WebdesignWiesbadenPage({
         badgeText="KANZLEIEN, PRAXEN & CONSULTING WEBAGENTUR WIESBADEN"
         headline="Webdesign & Next.js Entwicklung in der Landeshauptstadt"
         headlineGradient="Wiesbaden"
-        description="Speziell für Wirtschaftskanzleien, Privatkliniken, Consulting-Boutiquen und Premium-Dienstleister in Wiesbaden und dem Rheingau. Maximale Ladezeiten unter 500ms, perfekte Google-Rankings und planbare Mandanten- und Patientengewinnung. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+        description="Als spezialisierte High-Performance Webagentur für Wiesbaden und den Rheingau bieten wir exzellente Next.js Entwicklung und erstklassige B2B-Websites für Wirtschaftskanzleien, Privatkliniken und Premium-Dienstleister. Ladezeiten unter 500ms, Top-Google-Rankings und planbare Mandantengewinnung."
         cityName="Wiesbaden"
         sourceTag="local_seo_wiesbaden"
         formHeading="Kostenlose Bedarfsanalyse für Wiesbaden"
@@ -183,7 +183,7 @@ export default async function WebdesignWiesbadenPage({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Wiesbaden</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Wiesbaden</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Subsekundäre Ladezeiten für anspruchsvolle Mandanten, Privatpatienten und
                 B2B-Kunden.
@@ -192,7 +192,7 @@ export default async function WebdesignWiesbadenPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Volle Rechte an Ihrem Quellcode ohne monatliche CMS-Lizenzgebühren oder
                 Lock-in-Effekte.
@@ -201,7 +201,7 @@ export default async function WebdesignWiesbadenPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Direkte Betreuung durch Gründer Umutcan Emre Tezgel ohne Agentur-Warteschleifen.
               </p>
@@ -209,7 +209,7 @@ export default async function WebdesignWiesbadenPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">Festpreis</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Transparente Festpreise ohne versteckte Kosten oder unerwartete Agentur-Aufschläge.
               </p>
@@ -226,7 +226,7 @@ export default async function WebdesignWiesbadenPage({
               Technologie-Vergleich
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
-              Warum Wiesbadener Kanzleien & Kliniken auf Next.js setzen
+              Next.js Entwicklung: Warum Wiesbadener Kanzleien auf moderne B2B-Websites setzen
             </h2>
             <p className="text-slate-600 text-base sm:text-lg">
               Der direkte Vergleich zwischen klassischem WordPress und zukunftssicherer
@@ -309,7 +309,7 @@ export default async function WebdesignWiesbadenPage({
                 Inhabergeführte Betreuung
               </span>
               <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mt-2 mb-6">
-                Echtes Handwerk statt Agentur-Overhead für Wiesbaden
+                Maßgeschneiderte Webentwicklung für Kanzleien & Kliniken in Wiesbaden
               </h2>
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
                 Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Als
@@ -324,7 +324,7 @@ export default async function WebdesignWiesbadenPage({
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">Voller Quellcode-Besitz</span>
+                  <span className="text-slate-700">100% Quellcode-Besitz</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
@@ -411,13 +411,11 @@ export default async function WebdesignWiesbadenPage({
             </h2>
             <p className="text-slate-700 leading-relaxed text-base">
               Wiesbaden vereint den Glanz des <strong>Kurhauses</strong> und der{' '}
-              <strong>Wilhelmstraße</strong>
-              mit der Wirtschaftskraft als hessische <strong>Landeshauptstadt</strong>. In den
-              Gewerbegebieten
-              <strong>Nordenstadt</strong> und <strong>Schierstein</strong> sowie am Rhein in{' '}
-              <strong>Biebrich</strong>
-              floriert ein anspruchsvoller Dienstleistungs-, Beratungs- und Kliniksektor, der
-              höchste Maßstäbe an Design, Barrierefreiheit und Datensicherheit anlegt.
+              <strong>Wilhelmstraße</strong> mit der Wirtschaftskraft als hessische{' '}
+              <strong>Landeshauptstadt</strong>. In den Gewerbegebieten <strong>Nordenstadt</strong>{' '}
+              und <strong>Schierstein</strong> sowie am Rhein in <strong>Biebrich</strong> floriert
+              ein anspruchsvoller Dienstleistungs-, Beratungs- und Kliniksektor, der höchste
+              Maßstäbe an Design, Barrierefreiheit und Datensicherheit anlegt.
             </p>
           </div>
 
@@ -459,40 +457,37 @@ export default async function WebdesignWiesbadenPage({
           <div className="space-y-6">
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie viel kostet eine neue Website in Wiesbaden?
+                Was kostet eine Website für Kanzleien & Praxen in Wiesbaden?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und
-                verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen
-                bieten wir maximale Kosteneffizienz bei voller Kostensicherheit und höchster
-                Performance.
+                Wir vereinbaren für Rechtsanwälte, Notariate an der Wilhelmstraße und Privatkliniken
+                in Wiesbaden transparente Festpreise nach einer individuellen Anforderungsanalyse.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie schnell ist eine neue Website in Wiesbaden online?
+                Wie schnell ist eine neue Next.js Plattform in Wiesbaden online?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett
-                schlüsselfertig fertiggestellt und online.
+                In der Regel ist Ihr Webauftritt innerhalb von 10 bis 14 Werktagen komplett
+                schlüsselfertig fertiggestellt und live erreichbar.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Kommen Sie für ein Beratungsgespräch direkt nach Wiesbaden?
+                Sind persönliche Beratungsgespräche vor Ort in Wiesbaden möglich?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Ja, sehr gerne. Über die A3 und A66 sind wir von unserem Wetzlarer HQ in unter 45
-                Minuten direkt bei Ihnen vor Ort an der Wilhelmstraße, in Nordenstadt oder
-                Schierstein.
+                Minuten direkt bei Ihnen vor Ort an der Wilhelmstraße, in Nordenstadt oder Biebrich.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Erfüllen Ihre Websites die Barrierefreiheitsstandards nach BITV 2.0 / WCAG?
+                Erfüllen Ihre Webdesigns die Barrierefreiheitsstandards nach BITV 2.0 / WCAG?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Ja. Wir entwickeln barrierefreie Interfaces mit semantischem HTML,
@@ -502,10 +497,11 @@ export default async function WebdesignWiesbadenPage({
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wer ist unser fester Ansprechpartner?
+                Wer ist unser persönlicher Entwickler & Ansprechpartner?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.
+                Inhaber Umutcan Emre Tezgel berät und entwickelt direkt ohne zwischengeschaltete
+                Kundenbetreuer.
               </p>
             </div>
           </div>
@@ -516,11 +512,11 @@ export default async function WebdesignWiesbadenPage({
       <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
-            Bereit für den digitalen Vorsprung in Wiesbaden?
+            Digitale Spitzenposition für Ihr Wiesbadener Unternehmen sichern
           </h2>
           <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-            Vereinbaren Sie jetzt ein unverbindliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
-            Emre Tezgel.
+            Vereinbaren Sie jetzt ein persönliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
+            Emre Tezgel für Ihren Standort in Wiesbaden und im Rheingau.
           </p>
           <Link href="/contact">
             <Button
@@ -528,7 +524,7 @@ export default async function WebdesignWiesbadenPage({
               size="lg"
               className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
             >
-              Kostenloses Erstgespräch anfordern
+              Wiesbadener Erstgespräch anfordern
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>

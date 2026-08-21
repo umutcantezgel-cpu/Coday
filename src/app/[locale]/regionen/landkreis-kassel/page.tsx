@@ -174,42 +174,42 @@ export default async function LandkreisKasselPage({
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'Wie viel kostet eine neue Website im Landkreis Kassel?',
+            name: 'Was kostet eine moderne Website im Landkreis Kassel?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen bieten wir maximale Kosteneffizienz ohne teuren Agentur-Wasserkopf.',
+              text: 'Wir vereinbaren für Automotive-Zulieferer in Baunatal, Logistiker in Lohfelden und Betriebe in Hofgeismar transparente Festpreise nach technischer Leistungsanalyse.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wie schnell ist eine neue Website im Landkreis Kassel online?',
+            name: 'Wie schnell ist eine Next.js Plattform im Landkreis Kassel online?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online.',
+              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online erreichbar.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Kommen Sie für ein Beratungsgespräch direkt zu uns nach Baunatal, Vellmar oder Hofgeismar?',
+            name: 'Kommen Sie für Vor-Ort-Termine nach Baunatal, Vellmar, Hofgeismar oder Lohfelden?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja, absolut. Über die A49 und A7 sind wir von unserem Wetzlarer HQ in rund 75 Minuten direkt bei Ihnen vor Ort im Betrieb oder Büro.',
+              text: 'Ja, sehr gerne. Über die A49 und A7 sind wir von unserem Wetzlarer HQ in rund 75 Minuten direkt bei Ihnen vor Ort im Betrieb oder Büro.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?',
+            name: 'Bieten Sie integrierte Recruiting-Funnels für technische Betriebe und Zulieferer in Nordhessen an?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet.',
+              text: 'Ja. Wir integrieren mobil optimierte 60-Sekunden-Express-Bewerbungsstrecken zur automatisierten Gewinnung von Fachkräften und Ingenieuren.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wer ist unser fester Ansprechpartner?',
+            name: 'Wer ist unser persönlicher Entwickler & Ansprechpartner?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.',
+              text: 'Inhaber Umutcan Emre Tezgel persönlich berät und entwickelt direkt ohne zwischengeschaltete Agentur-Mitarbeiter.',
             },
           },
         ],
@@ -274,9 +274,9 @@ export default async function LandkreisKasselPage({
                     <MapPin
                       className={`w-4 h-4 ${k.highlight ? 'text-amber-600' : 'text-slate-400'}`}
                     />
-                    <h3 className="font-bold text-slate-900 group-hover:text-amber-700 transition-colors text-base">
+                    <p className="font-bold text-slate-900 group-hover:text-amber-700 transition-colors text-base">
                       {k.name}
-                    </h3>
+                    </p>
                   </div>
                   <p className="text-xs text-slate-500 mt-1">{k.note}</p>
                 </div>
@@ -305,7 +305,7 @@ export default async function LandkreisKasselPage({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit im Landkreis</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Ladezeit im Landkreis</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Subsekundäre Ladezeiten für B2B-Kunden an der A7 / A44 / A49.
               </p>
@@ -313,7 +313,7 @@ export default async function LandkreisKasselPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Volle Rechte an Ihrem Quellcode ohne monatliche CMS-Lizenzgebühren oder
                 Lock-in-Effekte.
@@ -322,7 +322,7 @@ export default async function LandkreisKasselPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Direkte Betreuung durch Gründer Umutcan Emre Tezgel ohne zeitraubende Hierarchien.
               </p>
@@ -330,7 +330,7 @@ export default async function LandkreisKasselPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">Festpreis</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Transparente Festpreis-Garantie ohne versteckte Nachforderungen oder unkalkulierbare
                 Stundensätze.
@@ -429,7 +429,8 @@ export default async function LandkreisKasselPage({
                 Inhabergeführte Betreuung
               </span>
               <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mt-2 mb-6">
-                Echtes Handwerk statt Agentur-Overhead für den Landkreis Kassel
+                Maßgeschneiderte Webentwicklung für Automotive, Cleantech & Logistik im Landkreis
+                Kassel
               </h2>
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
                 Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Als
@@ -444,7 +445,7 @@ export default async function LandkreisKasselPage({
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">Voller Quellcode-Besitz</span>
+                  <span className="text-slate-700">100% Quellcode-Besitz</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
@@ -533,9 +534,9 @@ export default async function LandkreisKasselPage({
               Der <strong>Landkreis Kassel</strong> umschließt das Oberzentrum Kassel und bildet den
               industriellen Kern Nordhessens. Er zeichnet sich durch den weltweiten Leitstandort des{' '}
               <strong>Volkswagen-Werks Baunatal</strong> (Getriebe- und E-Antriebsproduktion), das
-              hochfrequentierte <strong>Güterverkehrszentrum Lohfelden</strong> an den
-              <strong>Bundesautobahnen A7, A44 und A49</strong>, die preisgekrönte
-              <strong>Klimakommune Wolfhagen</strong> sowie dynamischen Gewerbemittelstand in
+              hochfrequentierte <strong>Güterverkehrszentrum Lohfelden</strong> an den{' '}
+              <strong>Bundesautobahnen A7, A44 und A49</strong>, die preisgekrönte{' '}
+              <strong>Klimakommune Wolfhagen</strong> sowie dynamischen Gewerbemittelstand in{' '}
               <strong>Vellmar, Kaufungen und Hofgeismar</strong> aus. Ergänzt wird die Region durch
               Gesundheitseinrichtungen und Tourismus im Reinhardswald und Habichtswald.
             </p>
@@ -580,53 +581,52 @@ export default async function LandkreisKasselPage({
           <div className="space-y-6">
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie viel kostet eine neue Website im Landkreis Kassel?
+                Was kostet eine moderne Website im Landkreis Kassel?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und
-                verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir
-                5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance.
+                Wir vereinbaren für Automotive-Zulieferer in Baunatal, Logistiker in Lohfelden und
+                Betriebe in Hofgeismar transparente Festpreise nach technischer Leistungsanalyse.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie schnell ist eine neue Website im Landkreis Kassel online?
+                Wie schnell ist eine Next.js Plattform im Landkreis Kassel online?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett
-                schlüsselfertig fertiggestellt und online.
+                schlüsselfertig fertiggestellt und online erreichbar.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Kommen Sie für ein Beratungsgespräch direkt zu uns in den Betrieb?
+                Kommen Sie für Vor-Ort-Termine nach Baunatal, Vellmar, Hofgeismar oder Lohfelden?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja, selbstverständlich. Über die A49 oder A7 sind wir von unserem Wetzlarer HQ in
-                rund 75 Minuten direkt bei Ihnen vor Ort in Baunatal, Vellmar, Hofgeismar oder
-                Lohfelden.
+                Ja, sehr gerne. Über die A49 und A7 sind wir von unserem Wetzlarer HQ in rund 75
+                Minuten direkt bei Ihnen vor Ort im Betrieb oder Büro.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?
+                Bieten Sie integrierte Recruiting-Funnels für technische Betriebe und Zulieferer in
+                Nordhessen an?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es
-                keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform
-                in ISO-zertifizierten deutschen Rechenzentren gehostet.
+                Ja. Wir integrieren mobil optimierte 60-Sekunden-Express-Bewerbungsstrecken zur
+                automatisierten Gewinnung von Fachkräften und Ingenieuren.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wer ist unser fester Ansprechpartner?
+                Wer ist unser persönlicher Entwickler & Ansprechpartner?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.
+                Inhaber Umutcan Emre Tezgel persönlich berät und entwickelt direkt ohne
+                zwischengeschaltete Agentur-Mitarbeiter.
               </p>
             </div>
           </div>
@@ -637,11 +637,11 @@ export default async function LandkreisKasselPage({
       <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
-            Bereit für den digitalen Vorsprung im Landkreis Kassel?
+            Digitale Spitzenklasse für Ihr Unternehmen im Landkreis Kassel sichern
           </h2>
           <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-            Vereinbaren Sie jetzt ein unverbindliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
-            Emre Tezgel.
+            Vereinbaren Sie jetzt ein persönliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
+            Emre Tezgel für Ihren Standort im Landkreis Kassel.
           </p>
           <Link href="/contact">
             <Button
@@ -649,7 +649,7 @@ export default async function LandkreisKasselPage({
               size="lg"
               className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
             >
-              Kostenloses Erstgespräch anfordern
+              Erstgespräch für den Landkreis Kassel anfordern
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>

@@ -228,42 +228,42 @@ export default async function WetteraukreisPage({
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'Wie viel kostet eine neue Website im Wetteraukreis?',
+            name: 'Was kostet eine moderne Website im Wetteraukreis?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen bieten wir maximale Kosteneffizienz ohne teuren Agentur-Wasserkopf.',
+              text: 'Wir vereinbaren für Facharztpraxen in Bad Nauheim, THM-Spin-offs in Friedberg und Industrieunternehmen in Butzbach oder Bad Vilbel transparente Festpreise nach technischer Leistungsanalyse.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wie schnell ist eine neue Website im Wetteraukreis online?',
+            name: 'Wie schnell ist eine Next.js Plattform im Wetteraukreis online?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online.',
+              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online erreichbar.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Kommen Sie für ein Beratungsgespräch direkt zu uns nach Friedberg, Bad Nauheim oder Bad Vilbel?',
+            name: 'Kommen Sie für Vor-Ort-Termine nach Friedberg, Bad Nauheim, Butzbach oder Bad Vilbel?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja, selbstverständlich. Über die A5 und B3 sind wir von unserem Wetzlarer HQ in rund 25 Minuten direkt bei Ihnen vor Ort im Betrieb oder Büro.',
+              text: 'Ja, sehr gerne. Über die A5 und B3 sind wir von unserem Wetzlarer HQ in rund 25 Minuten direkt bei Ihnen vor Ort im Betrieb, der Klinik oder dem Büro.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?',
+            name: 'Bieten Sie barrierefreie Lösungen nach BITV 2.0 für Rehakliniken und Praxen im Wetteraukreis?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet.',
+              text: 'Ja. Wir programmieren barrierefreie (WCAG / BITV 2.0 konforme) Patientenportale mit hochsicheren Online-Formularen.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wer ist unser fester Ansprechpartner?',
+            name: 'Wer ist unser persönlicher Entwickler & Ansprechpartner?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.',
+              text: 'Inhaber Umutcan Emre Tezgel persönlich berät und entwickelt direkt ohne zwischengeschaltete Agentur-Mitarbeiter.',
             },
           },
         ],
@@ -328,9 +328,9 @@ export default async function WetteraukreisPage({
                     <MapPin
                       className={`w-4 h-4 ${k.highlight ? 'text-amber-600' : 'text-slate-400'}`}
                     />
-                    <h3 className="font-bold text-slate-900 group-hover:text-amber-700 transition-colors text-base">
+                    <p className="font-bold text-slate-900 group-hover:text-amber-700 transition-colors text-base">
                       {k.name}
-                    </h3>
+                    </p>
                   </div>
                   <p className="text-xs text-slate-500 mt-1">{k.note}</p>
                 </div>
@@ -359,7 +359,7 @@ export default async function WetteraukreisPage({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit im Wetteraukreis</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Ladezeit im Wetteraukreis</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Subsekundäre Ladezeiten für Patienten, B2B-Kunden und mobile Nutzer.
               </p>
@@ -367,7 +367,7 @@ export default async function WetteraukreisPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Volle Rechte an Ihrem Quellcode ohne monatliche CMS-Lizenzgebühren oder
                 Lock-in-Effekte.
@@ -376,7 +376,7 @@ export default async function WetteraukreisPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Direkte Betreuung durch Gründer Umutcan Emre Tezgel ohne zeitraubende Hierarchien.
               </p>
@@ -384,7 +384,7 @@ export default async function WetteraukreisPage({
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
               <div className="text-4xl font-black text-amber-600 mb-2">Festpreis</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</h3>
+              <p className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</p>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Transparente Festpreis-Garantie ohne versteckte Nachforderungen oder unkalkulierbare
                 Stundensätze.
@@ -483,7 +483,8 @@ export default async function WetteraukreisPage({
                 Inhabergeführte Betreuung
               </span>
               <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mt-2 mb-6">
-                Echtes Handwerk statt Agentur-Overhead für den Wetteraukreis
+                Maßgeschneiderte Webentwicklung für Gesundheitswirtschaft, THM-Spin-offs &
+                Wetterauer Mittelstand
               </h2>
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
                 Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Als
@@ -498,7 +499,7 @@ export default async function WetteraukreisPage({
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">Voller Quellcode-Besitz</span>
+                  <span className="text-slate-700">100% Quellcode-Besitz</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
@@ -634,53 +635,54 @@ export default async function WetteraukreisPage({
           <div className="space-y-6">
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie viel kostet eine neue Website im Wetteraukreis?
+                Was kostet eine moderne Website im Wetteraukreis?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und
-                verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir
-                5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance.
+                Wir vereinbaren für Facharztpraxen in Bad Nauheim, THM-Spin-offs in Friedberg und
+                Industrieunternehmen in Butzbach oder Bad Vilbel transparente Festpreise nach
+                technischer Leistungsanalyse.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wie schnell ist eine neue Website im Wetteraukreis online?
+                Wie schnell ist eine Next.js Plattform im Wetteraukreis online?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett
-                schlüsselfertig fertiggestellt und online.
+                schlüsselfertig fertiggestellt und online erreichbar.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Kommen Sie für ein Beratungsgespräch direkt zu uns in den Betrieb?
+                Kommen Sie für Vor-Ort-Termine nach Friedberg, Bad Nauheim, Butzbach oder Bad
+                Vilbel?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja, selbstverständlich. Über die B3 oder A5 sind wir von unserem Wetzlarer HQ in
-                rund 25 Minuten direkt bei Ihnen vor Ort in Friedberg, Bad Nauheim, Butzbach oder
-                Bad Vilbel.
+                Ja, sehr gerne. Über die A5 und B3 sind wir von unserem Wetzlarer HQ in rund 25
+                Minuten direkt bei Ihnen vor Ort im Betrieb, der Klinik oder dem Büro.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?
+                Bieten Sie barrierefreie Lösungen nach BITV 2.0 für Rehakliniken und Praxen im
+                Wetteraukreis?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es
-                keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform
-                in ISO-zertifizierten deutschen Rechenzentren gehostet.
+                Ja. Wir programmieren barrierefreie (WCAG / BITV 2.0 konforme) Patientenportale mit
+                hochsicheren Online-Formularen.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Wer ist unser fester Ansprechpartner?
+                Wer ist unser persönlicher Entwickler & Ansprechpartner?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.
+                Inhaber Umutcan Emre Tezgel persönlich berät und entwickelt direkt ohne
+                zwischengeschaltete Agentur-Mitarbeiter.
               </p>
             </div>
           </div>
@@ -691,11 +693,11 @@ export default async function WetteraukreisPage({
       <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
-            Bereit für den digitalen Vorsprung im Wetteraukreis?
+            Digitale Spitzenklasse für Ihr Unternehmen im Wetteraukreis sichern
           </h2>
           <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-            Vereinbaren Sie jetzt ein unverbindliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
-            Emre Tezgel.
+            Vereinbaren Sie jetzt ein persönliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
+            Emre Tezgel für Ihren Standort im Wetteraukreis.
           </p>
           <Link href="/contact">
             <Button
@@ -703,7 +705,7 @@ export default async function WetteraukreisPage({
               size="lg"
               className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
             >
-              Kostenloses Erstgespräch anfordern
+              Erstgespräch für den Wetteraukreis anfordern
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>

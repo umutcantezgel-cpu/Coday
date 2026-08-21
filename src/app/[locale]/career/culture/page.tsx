@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { getOrganizationSchema, BASE_URL } from '@/lib/schema';
 import ClientComponent from '@/features/career/ui/CultureClient';
+import { Link } from '@/i18n/navigation';
 
 export const dynamic = 'force-static';
 
@@ -14,7 +15,7 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Our Philosophy & Work Culture | Web Design Wetzlar Hesse | Coday',
+      title: 'Philosophy & Work Culture | Coday Web Agency Wetzlar',
       description:
         '100% founder-led web design & Next.js development from Wetzlar, Hesse. Radical transparency, AI-augmented engineering & uncompromising performance.',
       path: '/en/career/culture',
@@ -108,9 +109,12 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                 <p>
                   Our work culture is rooted in deep technical competence and personal
                   accountability. When you partner with Coday for{' '}
-                  <strong className="text-slate-900 font-semibold">
+                  <Link
+                    href="/webdesign-agentur-wetzlar"
+                    className="text-primary-700 underline font-semibold"
+                  >
                     Web Design in Wetzlar, Giessen, and Hesse
-                  </strong>
+                  </Link>
                   , every design token, Next.js route, and SEO schema is engineered directly by
                   founder Umutcan Emre Tezgel. This eliminates communication loss and ensures that
                   your strategic business goals are directly translated into high-converting digital
@@ -125,12 +129,54 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   integrate vetted specialists from our curated network across the DACH region.
                 </p>
                 <p>
-                  Whether you are a mid-sized enterprise, an established craft business, or an
-                  ambitious service provider in Hesse, our mission is to build digital platforms
-                  that generate measurable inquiries and sustainable search engine authority. Honest
-                  collaboration, guaranteed fixed pricing, and clean engineering — that is the Coday
-                  philosophy.
+                  Whether you are looking to collaborate with us on our{' '}
+                  <Link href="/career/jobs" className="text-primary-700 underline font-semibold">
+                    open job positions
+                  </Link>
+                  , explore our{' '}
+                  <Link
+                    href="/career/benefits"
+                    className="text-primary-700 underline font-semibold"
+                  >
+                    remote-first employee benefits
+                  </Link>
+                  , or partner with us via our{' '}
+                  <Link href="/contact" className="text-primary-700 underline font-semibold">
+                    contact inquiry
+                  </Link>
+                  : Honest collaboration, guaranteed fixed pricing, and clean engineering define the
+                  Coday philosophy.
                 </p>
+              </div>
+
+              {/* Career Hub Navigation */}
+              <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm space-y-4 mt-12">
+                <h3 className="text-xl font-bold text-slate-900">
+                  Explore Opportunities & Working with Coday
+                </h3>
+                <p className="text-slate-600 leading-relaxed text-base">
+                  Discover more about our open roles, engineering standards, and developer perks:
+                </p>
+                <div className="flex flex-wrap gap-4 pt-2">
+                  <Link
+                    href="/career/jobs"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary-700 text-white font-bold hover:bg-primary-800 transition-colors shadow-sm text-sm"
+                  >
+                    View Open Positions →
+                  </Link>
+                  <Link
+                    href="/career/benefits"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-100 text-slate-800 font-bold hover:bg-slate-200 transition-colors text-sm"
+                  >
+                    Benefits & Perks →
+                  </Link>
+                  <Link
+                    href="/career"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-100 text-slate-800 font-bold hover:bg-slate-200 transition-colors text-sm"
+                  >
+                    Career Hub Overview →
+                  </Link>
+                </div>
               </div>
             </>
           ) : (
@@ -152,9 +198,12 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                 <p>
                   Unsere Arbeitskultur basiert auf echter handwerklicher Präzision und direkter
                   Verantwortung. Wenn Sie mit Coday ein Projekt für{' '}
-                  <strong className="text-slate-900 font-semibold">
+                  <Link
+                    href="/webdesign-agentur-wetzlar"
+                    className="text-primary-700 underline font-semibold"
+                  >
                     Webdesign in Wetzlar, Gießen und ganz Hessen
-                  </strong>{' '}
+                  </Link>{' '}
                   starten, wird jede Zeile TypeScript, jede UI-Komponente und jede SEO-Struktur
                   direkt von Gründer & Lead Developer Umutcan Emre Tezgel umgesetzt. Sie sprechen
                   ohne Stille-Post-Effekt immer mit dem Experten, der Ihre Website baut.
@@ -169,12 +218,55 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   deutschsprachigen Raum zurück.
                 </p>
                 <p>
-                  Ganz gleich, ob Sie als mittelständisches Unternehmen, renommierter
-                  Handwerksbetrieb oder moderner Dienstleister in Mittelhessen und darüber hinaus
-                  Ihre Online-Sichtbarkeit ausbauen wollen: Wir schaffen digitale Erlebnisse, die
-                  Vertrauen aufbauen, qualifizierte Kundenanfragen generieren und bei Google
-                  nachhaltig auf den vordersten Plätzen ranken.
+                  Ganz gleich, ob Sie als Entwickler über unsere{' '}
+                  <Link href="/career/jobs" className="text-primary-700 underline font-semibold">
+                    offenen Stellen
+                  </Link>{' '}
+                  zu uns stoßen, unsere{' '}
+                  <Link
+                    href="/career/benefits"
+                    className="text-primary-700 underline font-semibold"
+                  >
+                    Mitarbeiter-Benefits
+                  </Link>{' '}
+                  kennenlernen möchten oder als Unternehmen eine Anfrage über unser{' '}
+                  <Link href="/contact" className="text-primary-700 underline font-semibold">
+                    Kontaktformular
+                  </Link>{' '}
+                  stellen: Wir schaffen digitale Flaggschiffe, die Vertrauen aufbauen und messbar
+                  performen.
                 </p>
+              </div>
+
+              {/* Career Hub Navigation */}
+              <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm space-y-4 mt-12">
+                <h3 className="text-xl font-bold text-slate-900">
+                  Mehr über Karriere & Einstieg bei Coday erfahren
+                </h3>
+                <p className="text-slate-600 leading-relaxed text-base">
+                  Entdecken Sie alle Möglichkeiten der Zusammenarbeit und unsere
+                  Entwickler-Vorteile:
+                </p>
+                <div className="flex flex-wrap gap-4 pt-2">
+                  <Link
+                    href="/career/jobs"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary-700 text-white font-bold hover:bg-primary-800 transition-colors shadow-sm text-sm"
+                  >
+                    Offene Stellen ansehen →
+                  </Link>
+                  <Link
+                    href="/career/benefits"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-100 text-slate-800 font-bold hover:bg-slate-200 transition-colors text-sm"
+                  >
+                    Benefits & Arbeitsmodell →
+                  </Link>
+                  <Link
+                    href="/career"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-100 text-slate-800 font-bold hover:bg-slate-200 transition-colors text-sm"
+                  >
+                    Karriere-Hauptseite →
+                  </Link>
+                </div>
               </div>
             </>
           )}

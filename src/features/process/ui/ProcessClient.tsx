@@ -143,7 +143,7 @@ export const ProcessClient: React.FC = () => {
           </div>
 
           <h1 className="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl text-slate-900 leading-[1.1] tracking-tight mb-8">
-            In 4 Stufen zur{' '}
+            {isEn ? 'In 4 Steps to a ' : 'In 4 Stufen zur '}
             <GradientText
               colors={[
                 'var(--color-primary-600)',
@@ -154,13 +154,14 @@ export const ProcessClient: React.FC = () => {
               showBorder={false}
               className="inline-block"
             >
-              High-Performance Website
+              {isEn ? 'High-Performance Website' : 'High-Performance Website'}
             </GradientText>
           </h1>
 
           <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-12">
-            Vom kostenlosen Audit bis zum 100/100 PageSpeed Launch in 14 bis 28 Werktagen: Erfahren
-            Sie, wie unser agiler Entwicklungsprozess planbaren Projekterfolg garantiert.
+            {isEn
+              ? 'In 4 Steps to a High-Performance Website: From initial audit to 100/100 PageSpeed launch in 14 to 28 business days — discover how our agile web development workflow guarantees predictable project success.'
+              : 'In 4 Stufen zur High-Performance Website: Vom kostenlosen Audit bis zum 100/100 PageSpeed Launch in 14 bis 28 Werktagen — erfahren Sie, wie unser agiler Entwicklungsprozess planbaren Projekterfolg garantiert.'}
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -168,14 +169,14 @@ export const ProcessClient: React.FC = () => {
               href="/contact"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-700 text-white font-bold rounded-full hover:bg-primary-800 transition duration-300 shadow-md hover:scale-[1.02]"
             >
-              <span>Projekt jetzt starten</span>
+              <span>{isEn ? 'Start Project Now' : 'Projekt jetzt starten'}</span>
               <ArrowRight weight="bold" className="w-5 h-5" />
             </Link>
             <Link
               href="/pricing"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-full font-medium hover:bg-slate-50 transition duration-300 shadow-sm"
             >
-              <span>Preise & Pakete ansehen</span>
+              <span>{isEn ? 'View Pricing & Packages' : 'Preise & Pakete ansehen'}</span>
             </Link>
           </div>
         </div>
@@ -186,13 +187,17 @@ export const ProcessClient: React.FC = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
-              Agile Meilensteine
+              {isEn ? 'Agile Milestones' : 'Agile Meilensteine'}
             </span>
             <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-slate-900 mt-2 mb-4">
-              Die 4 Phasen Ihrer neuen Web-Präsenz
+              {isEn
+                ? 'The 4 Phases of Your New Web Presence'
+                : 'Die 4 Phasen Ihrer neuen Web-Präsenz'}
             </h2>
             <p className="text-slate-600 text-base sm:text-lg">
-              Jede Phase hat klare Deliverables, feste Zeithorizonte und volle Transparenz.
+              {isEn
+                ? 'Every phase features clear deliverables, fixed timelines, and full transparency.'
+                : 'Jede Phase hat klare Deliverables, feste Zeithorizonte und volle Transparenz.'}
             </p>
           </div>
 
@@ -245,13 +250,17 @@ export const ProcessClient: React.FC = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
-              Stressfreies Kunden-Onboarding
+              {isEn ? 'Stress-Free Client Onboarding' : 'Stressfreies Kunden-Onboarding'}
             </span>
             <h2 className="font-display font-bold text-3xl sm:text-4xl text-slate-900 mt-2 mb-4">
-              Warum der Ablauf mit Coday so reibungslos funktioniert
+              {isEn
+                ? 'Why the Process with Coday Works So Smoothly'
+                : 'Warum der Ablauf mit Coday so reibungslos funktioniert'}
             </h2>
             <p className="text-slate-600 text-base">
-              Sie müssen kein Technik-Experte sein. Wir führen Sie strukturiert durch das Projekt.
+              {isEn
+                ? 'You do not need to be a technical expert. We guide you systematically through the entire project.'
+                : 'Sie müssen kein Technik-Experte sein. Wir führen Sie strukturiert durch das Projekt.'}
             </p>
           </div>
 
@@ -345,17 +354,18 @@ export const ProcessClient: React.FC = () => {
       <section className="py-24 px-4 bg-slate-50/80 border-t border-slate-200 w-full text-center">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-display font-bold text-3xl sm:text-5xl text-slate-900 mb-6">
-            Starten wir Ihr Projekt in 4 Stufen
+            {isEn ? 'Let’s Start Your Project in 4 Steps' : 'Starten wir Ihr Projekt in 4 Stufen'}
           </h2>
           <p className="text-lg text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Fordern Sie jetzt Ihr unverbindliches Strategiegespräch oder ein kostenloses
-            Website-Audit an und lassen Sie uns den genauen Zeitplan besprechen.
+            {isEn
+              ? 'Request your non-binding strategy consultation or a free website audit today and let’s discuss the exact timeline.'
+              : 'Fordern Sie jetzt Ihr unverbindliches Strategiegespräch oder ein kostenloses Website-Audit an und lassen Sie uns den genauen Zeitplan besprechen.'}
           </p>
           <Link
             href="/contact"
             className="inline-flex items-center gap-2 px-10 py-5 bg-primary-700 text-white font-bold rounded-full hover:bg-primary-800 transition duration-300 shadow-xl shadow-primary-700/20 hover:scale-[1.02] text-lg"
           >
-            <span>Jetzt Erstgespräch anfordern</span>
+            <span>{isEn ? 'Request Consultation Now' : 'Jetzt Erstgespräch anfordern'}</span>
             <ArrowRight weight="bold" className="w-5 h-5" />
           </Link>
         </div>

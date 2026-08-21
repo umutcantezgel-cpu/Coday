@@ -134,7 +134,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
             {/* Main Pages */}
             <section>
               <h2 className="text-xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
-                {locale === 'en' ? 'Main Pages' : 'Hauptseiten'}
+                {locale === 'en' ? 'Main Navigation & Core Pages' : 'Hauptseiten & Navigation'}
               </h2>
               <ul className="space-y-2 text-sm">
                 <li>
@@ -206,7 +206,9 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
             {/* Services */}
             <section>
               <h2 className="text-xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
-                {locale === 'en' ? 'Web Services' : 'Webdesign & Entwicklung'}
+                {locale === 'en'
+                  ? 'Web Design & Engineering Services'
+                  : 'Webdesign & Webentwicklung Services'}
               </h2>
               <ul className="space-y-2 text-sm">
                 <li>
@@ -351,7 +353,9 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
             {/* Growth & SEO */}
             <section>
               <h2 className="text-xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
-                {locale === 'en' ? 'Growth & SEO' : 'SEO & Performance'}
+                {locale === 'en'
+                  ? 'Search Engine Optimization & Performance'
+                  : 'SEO & Performance Optimierung'}
               </h2>
               <ul className="space-y-2 text-sm">
                 <li>
@@ -416,7 +420,9 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
             {/* Industries */}
             <section>
               <h2 className="text-xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
-                {locale === 'en' ? 'Industries' : 'Branchenlösungen'}
+                {locale === 'en'
+                  ? 'Industry-Specific Web Solutions'
+                  : 'Branchenspezifische Weblösungen'}
               </h2>
               <ul className="space-y-2 text-sm">
                 <li>
@@ -585,7 +591,9 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
             {/* Local Cities */}
             <section>
               <h2 className="text-xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
-                {locale === 'en' ? 'Cities & Towns' : 'Städte & Standorte'}
+                {locale === 'en'
+                  ? 'Regional Locations & Cities in Hesse'
+                  : 'Städte & Regionale Standorte'}
               </h2>
               <ul className="space-y-2 text-sm">
                 {localTowns.map((town) => (
@@ -604,7 +612,9 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
             {/* Regional Districts */}
             <section>
               <h2 className="text-xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
-                {locale === 'en' ? 'Districts & Regions' : 'Landkreise & Regionen'}
+                {locale === 'en'
+                  ? 'Administrative Districts & Counties'
+                  : 'Landkreise & Regionen in Mittelhessen'}
               </h2>
               <ul className="space-y-2 text-sm">
                 {localDistricts.map((district) => (
@@ -623,7 +633,9 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
             {/* Tools & Resources */}
             <section>
               <h2 className="text-xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
-                {locale === 'en' ? 'Tools & Resources' : 'Tools & Wissen'}
+                {locale === 'en'
+                  ? 'Digital Tools, Calculators & Resources'
+                  : 'Tools, Rechner & Fachwissen'}
               </h2>
               <ul className="space-y-2 text-sm">
                 <li>
@@ -631,7 +643,9 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                     href="/analyzer"
                     className="text-text-light hover:text-primary transition-colors"
                   >
-                    Kostenlose Website-Analyse & Audit
+                    {locale === 'en'
+                      ? 'Free Website Audit & Analysis Tool'
+                      : 'Kostenlose Website-Analyse & Audit'}
                   </Link>
                 </li>
                 <li>
@@ -639,7 +653,9 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                     href="/calculator"
                     className="text-text-light hover:text-primary transition-colors"
                   >
-                    Website Kostenrechner
+                    {locale === 'en'
+                      ? 'Interactive Website Cost Calculator'
+                      : 'Website Kostenrechner'}
                   </Link>
                 </li>
                 <li>
@@ -647,7 +663,9 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                     href="/booking"
                     className="text-text-light hover:text-primary transition-colors"
                   >
-                    Strategiegespräch buchen
+                    {locale === 'en'
+                      ? 'Book a Free Strategy Consultation'
+                      : 'Strategiegespräch buchen'}
                   </Link>
                 </li>
                 <li>
@@ -655,7 +673,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                     href="/knowledge/blog"
                     className="text-text-light hover:text-primary transition-colors"
                   >
-                    Coday Tech & SEO Blog
+                    {locale === 'en' ? 'Coday Web & SEO Blog' : 'Coday Tech & SEO Blog'}
                   </Link>
                 </li>
                 <li>
@@ -663,7 +681,9 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                     href="/knowledge/faq"
                     className="text-text-light hover:text-primary transition-colors"
                   >
-                    Häufig gestellte Fragen (FAQ)
+                    {locale === 'en'
+                      ? 'Frequently Asked Questions (FAQ)'
+                      : 'Häufig gestellte Fragen (FAQ)'}
                   </Link>
                 </li>
                 <li>
@@ -671,7 +691,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                     href="/garantie"
                     className="text-text-light hover:text-primary transition-colors"
                   >
-                    100% Performance-Garantie
+                    {locale === 'en' ? '100% Performance Guarantee' : '100% Performance-Garantie'}
                   </Link>
                 </li>
                 <li>
@@ -679,7 +699,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                     href="/presse"
                     className="text-text-light hover:text-primary transition-colors"
                   >
-                    Presse & Medien
+                    {locale === 'en' ? 'Press & Media Coverage' : 'Presse & Medien'}
                   </Link>
                 </li>
                 <li>
@@ -687,15 +707,56 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                     href="/partnerschaft"
                     className="text-text-light hover:text-primary transition-colors"
                   >
-                    Agentur Partnerschaften
+                    {locale === 'en' ? 'Agency Partnership Program' : 'Agentur Partnerschaften'}
                   </Link>
                 </li>
+              </ul>
+            </section>
+
+            {/* Careers */}
+            <section>
+              <h2 className="text-xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
+                {locale === 'en' ? 'Careers & Jobs' : 'Karriere & Stellenangebote'}
+              </h2>
+              <ul className="space-y-2 text-sm">
                 <li>
                   <Link
                     href="/career"
                     className="text-text-light hover:text-primary transition-colors"
                   >
-                    Karriere bei Coday
+                    {locale === 'en'
+                      ? 'Careers at Coday (Overview & Opportunities)'
+                      : 'Karriere bei Coday (Übersicht & Einstieg)'}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/career/jobs"
+                    className="text-text-light hover:text-primary transition-colors"
+                  >
+                    {locale === 'en'
+                      ? 'Open Positions & Job Openings (Web Design & Dev)'
+                      : 'Offene Stellen & Jobangebote (Webdesign & Dev)'}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/career/culture"
+                    className="text-text-light hover:text-primary transition-colors"
+                  >
+                    {locale === 'en'
+                      ? 'Team Culture & Agency Philosophy'
+                      : 'Teamkultur & Agentur-Philosophie'}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/career/benefits"
+                    className="text-text-light hover:text-primary transition-colors"
+                  >
+                    {locale === 'en'
+                      ? 'Benefits & Work Model (Remote & Hardware Setup)'
+                      : 'Benefits & Arbeitsmodell (Remote & Hardware-Setup)'}
                   </Link>
                 </li>
               </ul>
@@ -704,7 +765,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
             {/* Legal */}
             <section>
               <h2 className="text-xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
-                {locale === 'en' ? 'Legal' : 'Rechtliches'}
+                {locale === 'en' ? 'Legal Information & Compliance' : 'Rechtliches & Compliance'}
               </h2>
               <ul className="space-y-2 text-sm">
                 <li>
@@ -738,8 +799,8 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
           <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
             <h2 className="text-3xl font-display font-bold mb-6">
               {locale === 'en'
-                ? 'Digital Services & Solutions Overview'
-                : 'Übersicht: Digitale Leistungen & Lösungen'}
+                ? 'Comprehensive Digital Services & Directory Overview'
+                : 'Ausführliche Übersicht aller digitalen Leistungen & Standorte'}
             </h2>
             <div className="space-y-4 text-base leading-relaxed">
               {locale === 'en' ? (

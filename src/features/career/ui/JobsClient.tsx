@@ -44,22 +44,13 @@ const Jobs: React.FC = () => {
               height={1080}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 md:p-12 text-left">
-              <h1 className="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-bold uppercase tracking-wider mb-4 w-fit">
+              <span className="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-bold uppercase tracking-wider mb-4 w-fit">
                 {t('jobs.culture_badge')}
+              </span>
+              <h1 className="block font-display font-black text-3xl sm:text-4xl md:text-5xl text-white mb-6">
+                {t('jobs.h1_title')}
               </h1>
-              <h2 className="block font-display font-black text-4xl sm:text-5xl text-white mb-6">
-                {t('jobs.hero_title_prefix')} <br />
-                <RotatingText
-                  texts={t.raw('jobs.hero_rotating') as string[]}
-                  rotationInterval={3000}
-                  staggerFrom="last"
-                  staggerDuration={0.025}
-                  mainClassName="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-purple-500"
-                />
-              </h2>
-              <p className="text-xl text-gray-600 mb-8 max-w-2xl text-white/90">
-                {t('jobs.hero_desc')}
-              </p>
+              <p className="text-xl mb-8 max-w-2xl text-white/90">{t('jobs.hero_desc')}</p>
             </div>
           </div>
         </div>

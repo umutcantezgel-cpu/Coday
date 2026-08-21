@@ -1396,7 +1396,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Solo-Studio vs. Großagentur: Das passende Modell für Ihr Webprojekt finden',
     slug: 'agentur-killer-modell',
     excerpt:
-      'Wann lohnt sich eine Full-Service-Agentur und wann ein spezialisiertes Studio mit direktem Gründerkontakt? Ein sachlicher Entscheidungsleitfaden für Unternehmen.',
+      'Full-Service-Agentur oder spezialisiertes Solo-Studio? Ein praxisnaher Entscheidungsleitfaden für Unternehmen auf der Suche nach maximaler Effizienz.',
     category: 'Agency Models',
     readTime: '12 Min.',
     image: '/images/services/dienstleistung-service-illustration-01.webp',
@@ -2573,7 +2573,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     id: 16,
-    title: 'Transparente Budgetplanung: Wie sich Kosten für Webdesign & Relaunches zusammensetzen',
+    title: 'Webdesign Kosten & Budgetplanung für Relaunches | Coday',
     slug: 'agency-pricing-secrets',
     excerpt:
       'Von Stundensätzen bis zu Festpreis-Paketen: Wie Unternehmen Webdesign-Angebote realistisch vergleichen und versteckte Kostenfallen vermeiden.',
