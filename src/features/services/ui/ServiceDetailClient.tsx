@@ -147,7 +147,7 @@ export function ServiceDetailClient() {
     : [];
 
   return (
-    <main className="bg-surface-base pt-24 pb-0">
+    <main className="bg-surface-base pt-4 pb-0 md:pt-6">
       {/* Breadcrumb */}
       <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <ol className="flex items-center text-sm text-gray-500">

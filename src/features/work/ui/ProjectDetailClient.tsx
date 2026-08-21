@@ -16,7 +16,6 @@ import {
 } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { workData } from '@/shared/data/work';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import { AnimatedCounter } from '@/shared/ui/AnimatedCounter';
 
 import { m, AnimatePresence } from 'motion/react';
@@ -81,7 +80,6 @@ const ProjectDetail: React.FC = () => {
   if (!project || !projectData) {
     return (
       <div className="min-h-dvh flex items-center justify-center bg-background-light">
-        <SeoHead title="Projekt nicht gefunden | Coday" noIndex />
         <div className="text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('project_detail.not_found')}</h2>
           <NavLink href="/work" className="text-primary hover:underline">
@@ -94,18 +92,6 @@ const ProjectDetail: React.FC = () => {
 
   return (
     <div className="bg-background-light">
-      <SeoHead
-        title={`${project.title} – ${project.subtitle} | Case Study | Coday`}
-        description={`${project.title}: ${project.subtitle}. ${project.challenge.description}`}
-        schemaData={{
-          service: {
-            name: `${project.title} - ${project.category}`,
-            description: project.challenge.description,
-            serviceType: project.category,
-          },
-        }}
-      />
-
       {/* ═══════════════════════════════════════════════ */}
       {/* HERO — Fullwidth with Project Image or Gradient */}
       {/* ═══════════════════════════════════════════════ */}

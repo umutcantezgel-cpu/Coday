@@ -41,7 +41,7 @@ const FAQ = () => {
   };
 
   return (
-    <main className="min-h-dvh bg-background-light pt-24 pb-20">
+    <main className="min-h-dvh bg-background-light pt-4 pb-16 md:pt-6 md:pb-20">
       <JsonLd
         pageType="faq"
         data={{

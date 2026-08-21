@@ -33,7 +33,7 @@ const PublicSectorPage: React.FC = () => {
   return (
     <div className="bg-background-light min-h-dvh font-sans">
       {/* --- HERO SECTION --- */}
-      <section className="relative pt-32 pb-24 px-4 overflow-hidden bg-gradient-to-b from-slate-50 to-white">
+      <section className="relative pt-4 pb-12 md:pt-6 md:pb-16 px-4 overflow-hidden bg-gradient-to-b from-slate-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           {/* Gov Badge */}
           <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-800 px-4 py-1.5 rounded-full text-sm font-semibold mb-8 animate-fade-in-up motion-reduce:animate-none">

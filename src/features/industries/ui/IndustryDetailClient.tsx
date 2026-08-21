@@ -59,7 +59,7 @@ export function IndustryDetailClient({ industrySlug }: { industrySlug?: string }
   }
 
   return (
-    <main className="bg-background-light min-h-dvh pt-24">
+    <main className="bg-background-light min-h-dvh pt-4 pb-16 md:pt-6 md:pb-20">
       {/* Navigation */}
       <nav aria-label={t('detail.nav.back')} className="container mx-auto px-4 mb-8">
         <Link

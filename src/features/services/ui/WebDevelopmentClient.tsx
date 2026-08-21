@@ -95,7 +95,7 @@ export function WebDevelopmentClient() {
   ];
 
   return (
-    <div className="bg-surface-base pt-24 pb-16">
+    <div className="bg-surface-base pt-4 pb-12 md:pt-6 md:pb-16">
       {/* Hero Section */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24 text-center lg:text-start">
         <div className="grid lg:grid-cols-2 gap-12 items-center">

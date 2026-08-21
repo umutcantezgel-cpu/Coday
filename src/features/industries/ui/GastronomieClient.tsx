@@ -26,7 +26,7 @@ const Gastronomie: React.FC = () => {
   return (
     <div className="bg-background-light min-h-dvh">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 px-4 overflow-hidden">
+      <section className="relative pt-4 pb-12 md:pt-6 md:pb-16 px-4 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <OptimizedImage

@@ -120,7 +120,7 @@ export const PackagesClient: React.FC = () => {
   return (
     <div className="min-h-dvh">
       {/* Light Hero Section */}
-      <div className="bg-background-light pt-24 pb-4">
+      <div className="bg-background-light pt-4 md:pt-6 pb-4">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
           <Breadcrumbs />
         </div>

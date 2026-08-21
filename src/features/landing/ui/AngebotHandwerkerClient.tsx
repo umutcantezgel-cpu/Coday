@@ -31,7 +31,7 @@ export default function AngebotHandwerker() {
   return (
     <div className="bg-slate-50 min-h-dvh font-sans selection:bg-teal-500 selection:text-white">
       {/* HERO SECTION */}
-      <section className="relative pt-32 pb-20 overflow-hidden bg-white border-b border-slate-200">
+      <section className="relative pt-4 pb-12 md:pt-6 md:pb-16 overflow-hidden bg-white border-b border-slate-200">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-teal-100 rounded-full blur-[120px] opacity-30 -translate-y-1/2 translate-x-1/4 pointer-events-none" />
         <div className="container mx-auto px-6 relative z-10">
           <m.div initial="hidden" animate="visible" variants={fadeIn} className="max-w-4xl">

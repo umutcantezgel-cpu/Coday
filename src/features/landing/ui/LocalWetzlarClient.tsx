@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { useLocale } from 'next-intl';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import { BuildingOffice, Lightning, ChartLineUp, MapPin } from '@phosphor-icons/react/dist/ssr';
 
 // Using dummy imports to make sure components resolve correctly or replacing them with inline if they don't exist.
@@ -14,21 +13,7 @@ const LocalWetzlar: React.FC = () => {
   const isEn = locale === 'en';
   return (
     <div className="bg-background-light min-h-dvh">
-      <SeoHead
-        title={
-          isEn
-            ? 'Web Design Wetzlar | High-Performance Websites by Coday'
-            : 'Webdesign Wetzlar | High-Performance Websites von Coday'
-        }
-        description={
-          isEn
-            ? 'Premium web design and development in Wetzlar. We build websites that sell. Secure your free audit now.'
-            : 'Premium Webdesign und Entwicklung in Wetzlar. Wir bauen Websites, die verkaufen. Sichern Sie sich jetzt Ihr kostenloses Audit.'
-        }
-        pageType="service"
-      />
-
-      <section className="relative pt-32 pb-24 px-4 overflow-hidden bg-white">
+      <section className="relative pt-4 pb-12 md:pt-6 md:pb-16 px-4 overflow-hidden bg-white">
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <span className="text-primary font-bold tracking-wider uppercase text-sm mb-6 block flex items-center justify-center gap-2">
             <MapPin size={20} weight="fill" aria-hidden="true" />{' '}

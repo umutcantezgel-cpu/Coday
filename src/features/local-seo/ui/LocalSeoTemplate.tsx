@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { useLocale } from 'next-intl';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import { Button } from '@/shared/ui/Button';
 import { Link } from '@/i18n/navigation';
 import { SeoLocalExpertiseBlock } from '@/features/industries/ui/SeoLocalExpertiseBlock';
@@ -59,12 +58,6 @@ export const LocalSeoTemplate: React.FC<LocalSeoTemplateProps> = ({ content, cit
 
   return (
     <div className="bg-background-light min-h-dvh">
-      {/* Dynamic SEO Meta Tags via JSON content */}
-      <SeoHead
-        title={content.meta.title}
-        description={content.meta.description}
-        pageType="service"
-      />
       {cityData && <LocalSchemaBuilder city={cityData} />}
 
       {/* Split Hero Section with Above-the-Fold Contact Form */}

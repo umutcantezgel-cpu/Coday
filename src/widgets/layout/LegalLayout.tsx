@@ -1,5 +1,4 @@
 import React from 'react';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { Clock } from '@phosphor-icons/react/dist/ssr';
 
@@ -24,11 +23,7 @@ export const LegalLayout: React.FC<LegalLayoutProps> = ({
   tocItems = [],
 }) => {
   return (
-    <div className="bg-background-light min-h-dvh pt-48 pb-48">
-      <SeoHead
-        title={`${title} | Coday`}
-        description={typeof subtitle === 'string' ? subtitle : title}
-      />
+    <div className="bg-background-light min-h-dvh pt-4 pb-16 md:pt-6 md:pb-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <header role="banner" className="mb-24 text-center">

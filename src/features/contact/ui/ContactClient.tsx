@@ -85,13 +85,13 @@ export const ContactClient: React.FC = () => {
     <div className="bg-background-light min-h-dvh">
       {/* Step Indicator - only shown when coming from package flow */}
       {hasPackage && (
-        <div className="pt-20 md:pt-24 pb-4">
+        <div className="pt-4 md:pt-6 pb-4">
           <StepIndicator currentStep="contact" className="mb-0" />
         </div>
       )}
 
       {/* Mobile Layout (Tabbed) */}
-      <div className="lg:hidden mt-20 min-h-screen">{isMounted && <MobileContactLayout />}</div>
+      <div className="lg:hidden mt-4 min-h-screen">{isMounted && <MobileContactLayout />}</div>
 
       {/* Desktop Layout (Original Split) */}
       <div className="hidden lg:block">

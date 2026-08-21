@@ -35,7 +35,7 @@ export function IndustryOverviewClient() {
   const t = useTranslations('industries');
 
   return (
-    <main className="bg-background-light min-h-dvh pt-24 pb-20">
+    <main className="bg-background-light min-h-dvh pt-4 pb-16 md:pt-6 md:pb-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 max-w-2xl mx-auto">
           <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">

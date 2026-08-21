@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { m } from 'motion/react';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import { Button } from '@/shared/ui/Button';
 import { Link } from '@/i18n/navigation';
 import { useLocale } from 'next-intl';
@@ -57,11 +56,10 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
 
   return (
     <div className="bg-background-light min-h-dvh overflow-x-hidden">
-      <SeoHead title={meta.title} description={meta.description} pageType="service" />
       {cityData && <LocalSchemaBuilder city={cityData} />}
 
       {/* 1. GAMIFIED HERO */}
-      <section className="relative min-h-[90dvh] flex flex-col justify-center pt-32 pb-24 px-4 overflow-hidden bg-white">
+      <section className="relative flex flex-col justify-center pt-4 pb-12 md:pt-6 md:pb-16 px-4 overflow-hidden bg-white">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-bg-primary/20 to-transparent pointer-events-none" />
         <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center relative z-10">
           <div>

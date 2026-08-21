@@ -6,6 +6,8 @@ import { useTranslations } from 'next-intl';
 
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
+import Image from 'next/image';
+import CodayLogo from '@/assets/images/coday_logo.png';
 import GradientText from '@/shared/ui/GradientText';
 import {
   FacebookLogo,
@@ -104,32 +106,14 @@ export const Footer: React.FC = () => {
               title="Coday – Webdesign & Next.js Agentur Wetzlar"
               aria-label="Coday – Zur Startseite"
             >
-              <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-primary-600 via-primary-700 to-slate-900 flex items-center justify-center p-2 shadow-md shadow-primary-700/20 group-hover:shadow-lg group-hover:shadow-primary-700/30 group-hover:scale-105 transition-all duration-300">
-                <svg
-                  className="w-6 h-6"
-                  viewBox="0 0 512 512"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-                  <defs>
-                    <linearGradient
-                      id="coday-footer-logo-grad"
-                      x1="0"
-                      y1="0"
-                      x2="512"
-                      y2="512"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop offset="0%" stopColor="#ffffff" />
-                      <stop offset="100%" stopColor="#5eead4" />
-                    </linearGradient>
-                  </defs>
-                  <path
-                    d="M310 96C198.5 96 108 186.5 108 298s90.5 202 202 202c55.8 0 106.3-22.7 142.8-59.3 7.8-7.8 7.8-20.5 0-28.3s-20.5-7.8-28.3 0C393.3 443.7 353.5 460 310 460c-89.4 0-162-72.6-162-162s72.6-162 162-162c43.5 0 83.3 16.3 114.5 47.5 7.8 7.8 20.5 7.8 28.3 0s7.8-20.5 0-28.3C416.3 118.7 365.8 96 310 96z"
-                    fill="url(#coday-footer-logo-grad)"
-                  />
-                </svg>
+              <div className="w-11 h-11 rounded-2xl bg-slate-950 border border-slate-800 flex items-center justify-center p-2 shadow-md shadow-slate-950/20 group-hover:shadow-lg group-hover:shadow-slate-950/30 group-hover:scale-105 group-hover:border-primary-500/30 transition-all duration-300">
+                <Image
+                  src={CodayLogo}
+                  alt="Coday Logo"
+                  width={28}
+                  height={28}
+                  className="w-7 h-7 object-contain"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-display font-black text-2xl tracking-tight text-slate-900 leading-none group-hover:text-primary-800 transition-colors">

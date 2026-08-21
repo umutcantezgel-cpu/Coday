@@ -21,7 +21,6 @@ import { RelatedArticles, ShareFAB } from '@/features/blog/ui/NavigationLoop';
 import { SeoAuthorBlock } from '@/features/knowledge/ui/SeoAuthorBlock';
 import { ReadingScore } from '@/features/blog/ui/ReadingScore';
 import { useTranslations, useLocale } from 'next-intl';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import { SeoTextInjector } from '@/features/seo/ui/SeoTextInjector';
 
 const BlogPost: React.FC = () => {
@@ -85,39 +84,6 @@ const BlogPost: React.FC = () => {
   return (
     <div className="bg-background-light min-h-dvh pb-20">
       <ReadingProgress />
-
-      <SeoHead
-        title={`${post.title} | Coday Blog`}
-        description={post.excerpt}
-        image={post.image}
-        pageType="article"
-        alternateLinks={alternateLinks}
-        breadcrumbs={[
-          { name: 'Home', url: `https://www.codayweb.de/${currentLocale}` },
-          { name: 'Knowledge', url: `https://www.codayweb.de/${currentLocale}/knowledge` },
-          { name: 'Blog', url: `https://www.codayweb.de/${currentLocale}/knowledge/blog` },
-          {
-            name: post.title,
-            url: `https://www.codayweb.de/${currentLocale}/knowledge/blog/${post.slug}`,
-          },
-        ]}
-        schemaData={{
-          article: {
-            headline: post.title,
-            image: post.image,
-            datePublished: post.date || new Date().toISOString(),
-            author: post.author,
-            description: post.excerpt,
-            wordCount:
-              post.content.reduce((acc, block) => {
-                const text = 'body' in block && typeof block.body === 'string' ? block.body : '';
-                return acc + text.split(/\s+/).filter(Boolean).length;
-              }, 0) || undefined,
-            articleSection: post.category,
-            keywords: [post.category, 'Coday', 'Webentwicklung'],
-          },
-        }}
-      />
 
       {/* Navigation Overlay */}
       <nav className="fixed top-24 left-4 z-40 md:left-8">

@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { useLocale } from 'next-intl';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import { Code, RocketLaunch, ShieldCheck, Lightning } from '@phosphor-icons/react/dist/ssr';
 
 interface NextJsMigrationProps {
@@ -15,21 +14,7 @@ const NextJsMigration: React.FC<NextJsMigrationProps> = ({ h1Title, h1Highlight 
   const isEn = locale === 'en';
   return (
     <div className="bg-background-light min-h-dvh">
-      <SeoHead
-        title={
-          isEn
-            ? 'Next.js Migration & Relaunch | High-Performance by Coday'
-            : 'Next.js Migration & Relaunch | High-Performance von Coday'
-        }
-        description={
-          isEn
-            ? 'Switch to Next.js for unmatched speed, better SEO, and future-proof architecture. Your expert for Next.js migrations.'
-            : 'Wechseln Sie zu Next.js für unübertroffene Geschwindigkeit, bessere SEO und zukunftssichere Architektur. Ihr Experte für Next.js Migrationen.'
-        }
-        pageType="service"
-      />
-
-      <section className="relative pt-32 pb-24 px-4 overflow-hidden bg-slate-900 text-white">
+      <section className="relative pt-4 pb-12 md:pt-6 md:pb-16 px-4 overflow-hidden bg-slate-900 text-white">
         <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/40 via-slate-900 to-black"></div>
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <span className="text-blue-400 font-bold tracking-wider uppercase text-sm mb-6 block flex items-center justify-center gap-2">

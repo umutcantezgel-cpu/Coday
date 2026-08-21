@@ -7,7 +7,7 @@ import { Clock } from '@phosphor-icons/react/dist/ssr';
 
 const Events: React.FC = () => {
   return (
-    <div className="bg-background-light min-h-dvh pt-24 pb-20">
+    <div className="bg-background-light min-h-dvh pt-4 pb-16 md:pt-6 md:pb-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="font-display font-black text-5xl md:text-6xl text-gradient mb-6">

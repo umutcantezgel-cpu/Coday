@@ -38,7 +38,7 @@ export default function WikiHub() {
   };
 
   return (
-    <main className="bg-coday-black min-h-screen pt-32 pb-24 text-coday-gray-100 font-sans selection:bg-coday-gold selection:text-coday-black">
+    <main className="bg-coday-black min-h-screen pt-4 pb-16 md:pt-6 md:pb-20 text-coday-gray-100 font-sans selection:bg-coday-gold selection:text-coday-black">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <header className="mb-16">
           <m.div

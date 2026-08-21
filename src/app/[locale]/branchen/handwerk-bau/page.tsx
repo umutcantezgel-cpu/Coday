@@ -142,7 +142,7 @@ export default async function HandwerkBauPage({ params }: { params: Promise<{ lo
       />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden bg-[#fafafa]">
+      <section className="relative pt-4 pb-12 md:pt-8 md:pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden bg-[#fafafa]">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-50 text-amber-800 text-xs font-semibold uppercase tracking-wider mb-6 shadow-sm">
           <Wrench className="w-4 h-4 text-amber-600" />
           <span>HANDWERK 4.0 & RECRUITING-SYSTEM</span>

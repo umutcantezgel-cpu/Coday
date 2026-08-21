@@ -5,7 +5,6 @@ import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { MagicBento, BentoCard } from '@/shared/ui/MagicBento';
 import GearSetup from '@/features/benefits/GearSetup';
 import { useTranslations, useLocale } from 'next-intl';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import { Link } from '@/i18n/navigation';
 import {
   RocketLaunch,
@@ -51,12 +50,7 @@ const Benefits: React.FC = () => {
   }));
 
   return (
-    <div className="bg-slate-50/50 min-h-dvh pt-16 pb-20 md:pt-20 md:pb-28">
-      <SeoHead
-        title={`${t('benefits.hero.title')} | Coday Benefits`}
-        description={t('benefits.hero.desc')}
-      />
-
+    <div className="bg-slate-50/50 min-h-dvh pt-4 pb-16 md:pt-6 md:pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero */}
         <section className="text-center mb-20 max-w-4xl mx-auto relative">
