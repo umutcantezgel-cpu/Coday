@@ -15,11 +15,43 @@ export const HeroSection: React.FC = () => {
   const t = useTranslations('home');
 
   return (
-    <section className="relative w-full min-h-[80svh] flex flex-col justify-center overflow-x-hidden bg-bg-primary px-4 pt-4 pb-12 md:pt-6 md:pb-16">
-      <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+    <section className="relative w-full overflow-x-hidden bg-bg-primary px-4 pt-2 pb-8 md:pt-4 md:pb-12">
+      <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-start lg:items-center">
         {/* Left Column: Text Content */}
         <div className="lg:col-span-7 flex flex-col items-start text-left">
-          <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] tracking-tight text-text-primary mb-6 lg:mb-8 leading-[1.1] lg:leading-[1.05]">
+          {/* Dual Verified Review Authority Links (Above-the-Fold Trust Kicker) */}
+          <div className="flex flex-wrap items-center gap-2.5 mb-4 lg:mb-5">
+            <a
+              href="https://maps.app.goo.gl/9SagecgXw7Vf5csH7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-xs text-xs font-semibold text-slate-800 hover:border-amber-400 hover:bg-amber-50/50 hover:shadow-sm transition-all group cursor-pointer"
+              title="Google Maps Rezensionen für Coday ansehen"
+            >
+              <span className="text-amber-500">★★★★★</span>
+              <span className="font-bold">5.0</span>
+              <span className="text-slate-400">·</span>
+              <span className="text-slate-600 group-hover:text-amber-900 transition-colors">
+                4 Google-Rezensionen
+              </span>
+            </a>
+            <a
+              href="https://www.provenexpert.com/de-de/coday-webagentur/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-xs text-xs font-semibold text-slate-800 hover:border-emerald-500 hover:bg-emerald-50/50 hover:shadow-sm transition-all group cursor-pointer"
+              title="ProvenExpert Profil von Coday ansehen"
+            >
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span className="font-bold">5.0</span>
+              <span className="text-slate-400">·</span>
+              <span className="text-slate-600 group-hover:text-emerald-800 transition-colors">
+                ProvenExpert
+              </span>
+            </a>
+          </div>
+
+          <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-[4.75rem] xl:text-[5.25rem] tracking-tight text-text-primary mb-4 lg:mb-5 leading-[1.1] lg:leading-[1.05]">
             {t('hero.headline_prefix')} <br />
             <GradientText
               colors={[
@@ -29,45 +61,15 @@ export const HeroSection: React.FC = () => {
               ]}
               animationSpeed={8}
               showBorder={false}
-              className="inline-block mt-2 lg:mt-0"
+              className="inline-block mt-1 lg:mt-0"
             >
               {t('hero.headline_gradient')}
             </GradientText>
           </h1>
 
-          <p className="max-w-2xl text-base sm:text-lg md:text-xl font-light text-text-secondary leading-relaxed mb-6">
+          <p className="max-w-2xl text-base sm:text-lg md:text-xl font-light text-text-secondary leading-relaxed mb-4 lg:mb-5">
             {t('hero.description')}
           </p>
-
-          {/* Dual Verified Review Authority Links */}
-          <div className="flex flex-wrap items-center gap-3 mb-6">
-            <a
-              href="https://maps.app.goo.gl/9SagecgXw7Vf5csH7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm text-xs font-semibold text-slate-800 hover:border-amber-400 hover:shadow transition-all group"
-              title="Google Maps Rezensionen für Coday ansehen"
-            >
-              <span className="text-amber-500">★★★★★</span>
-              <span className="font-bold">5.0</span>
-              <span className="text-slate-400">·</span>
-              <span className="text-slate-600">4 Google-Rezensionen</span>
-            </a>
-            <a
-              href="https://www.provenexpert.com/de-de/coday-webagentur/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm text-xs font-semibold text-slate-800 hover:border-emerald-500 hover:shadow transition-all group"
-              title="ProvenExpert Profil von Coday ansehen"
-            >
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span className="font-bold">5.0</span>
-              <span className="text-slate-400">·</span>
-              <span className="text-slate-600 group-hover:text-emerald-700 transition-colors">
-                ProvenExpert
-              </span>
-            </a>
-          </div>
 
           <div className="min-h-[60px] w-full flex items-center justify-start mb-4 lg:mb-0">
             <span className="hidden md:inline-flex w-full justify-start">
