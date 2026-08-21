@@ -413,6 +413,57 @@ const nextConfig: NextConfig = {
         destination: '/:locale/services/web-design',
         permanent: true,
       },
+      // --- Legacy /ai/ programmatically generated landing pages (301 redirects) ---
+      {
+        source: '/sitemap-ai-triples.xml',
+        destination: '/sitemap.xml',
+        permanent: true,
+      },
+      {
+        source: '/sitemap_index.xml',
+        destination: '/sitemap.xml',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/ai/:city([a-z0-9-]+)-seo',
+        destination: '/:locale/services/seo',
+        permanent: true,
+      },
+      {
+        source: '/ai/:city([a-z0-9-]+)-seo',
+        destination: '/services/seo',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/ai/:city([a-z0-9-]+)-webdesign',
+        destination: '/:locale/services/web-design',
+        permanent: true,
+      },
+      {
+        source: '/ai/:city([a-z0-9-]+)-webdesign',
+        destination: '/services/web-design',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/ai/:city([a-z0-9-]+)-headless-cms',
+        destination: '/:locale/services/development/headless-cms',
+        permanent: true,
+      },
+      {
+        source: '/ai/:city([a-z0-9-]+)-headless-cms',
+        destination: '/services/development/headless-cms',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/ai/:path*',
+        destination: '/:locale/services/generative-engine-optimization',
+        permanent: true,
+      },
+      {
+        source: '/ai/:path*',
+        destination: '/services/generative-engine-optimization',
+        permanent: true,
+      },
     ];
   },
   async headers() {
