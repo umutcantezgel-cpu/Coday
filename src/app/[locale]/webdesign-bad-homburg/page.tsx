@@ -11,7 +11,6 @@ import { LocalSplitHero } from '@/features/local-seo/ui/LocalSplitHero';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
-import { LazyQuickContactForm } from '@/widgets/home/LazyQuickContactForm';
 import {
   ArrowRight,
   Lightning,
@@ -208,11 +207,11 @@ export default async function WebdesignBadHomburgPage({
             </div>
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
-              <div className="text-4xl font-black text-amber-600 mb-2">5-10x</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Kosteneffizienter</h3>
+              <div className="text-4xl font-black text-amber-600 mb-2">Festpreis</div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Günstiger als traditionelle Großagenturen durch automatisierte
-                KI-Engineering-Workflows.
+                Transparente Festpreise ohne versteckte Kosten oder unvorhersehbare
+                Agentur-Stundensätze.
               </p>
             </div>
           </div>
@@ -314,8 +313,8 @@ export default async function WebdesignBadHomburgPage({
                 Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Als
                 spezialisierter Solo-Entwickler mit Sitz in Wetzlar baue ich Ihre Webpräsenz für Bad
                 Homburg vor der Höhe, Friedrichsdorf und den Hochtaunuskreis: Technisch perfekt,
-                visuell exklusiv und wirtschaftlich 5–10x effizienter als traditionelle
-                Agentur-Wasserköpfe.
+                visuell exklusiv und wirtschaftlich kalkulierbar mit garantierten Festpreisen ohne
+                teuren Agentur-Overhead.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-slate-200 text-sm">
                 <div className="flex items-center gap-3">
@@ -328,7 +327,7 @@ export default async function WebdesignBadHomburgPage({
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">5-10x günstiger als Großagenturen</span>
+                  <span className="text-slate-700">Volle Kostensicherheit & Festpreis</span>
                 </div>
               </div>
             </div>
@@ -464,8 +463,9 @@ export default async function WebdesignBadHomburgPage({
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und
-                verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir
-                5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance.
+                verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Architekturen
+                garantieren wir volle Kostensicherheit und Spitzen-Performance ohne teuren
+                Agentur-Overhead.
               </p>
             </div>
 

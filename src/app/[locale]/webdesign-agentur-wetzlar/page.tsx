@@ -99,7 +99,7 @@ export default async function WebdesignWetzlarPage({
             name: 'Wie viel kostet eine professionelle Website in Wetzlar?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen bieten wir maximale Kosteneffizienz bei höchster technologischer Performance.',
+              text: 'Wir kalkulieren jedes Projekt nach einer kostenlosen Bedarfsanalyse als verbindlichen Festpreis. Durch unsere moderne Next.js Architektur erhalten Sie Premium-Qualität mit voller Kostensicherheit ohne unerwartete Agentur-Aufschläge.',
             },
           },
           {
@@ -209,11 +209,10 @@ export default async function WebdesignWetzlarPage({
             </div>
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
-              <div className="text-4xl font-black text-amber-600 mb-2">5-10x</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Kosteneffizienter</h3>
+              <div className="text-4xl font-black text-amber-600 mb-2">Festpreis</div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Günstiger als traditionelle Großagenturen dank hochgradig optimierter
-                KI-Ingenieursworkflows.
+                Transparente Festpreise ohne versteckte Kosten oder unerwartete Agentur-Aufschläge.
               </p>
             </div>
           </div>
@@ -327,7 +326,7 @@ export default async function WebdesignWetzlarPage({
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">5-10x günstiger als Großagenturen</span>
+                  <span className="text-slate-700">Verbindliche Festpreis-Garantie</span>
                 </div>
               </div>
             </div>
@@ -514,10 +513,10 @@ export default async function WebdesignWetzlarPage({
                 Wie viel kostet eine professionelle Website in Wetzlar?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und
-                verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-gestützten
-                Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant
-                höherer technischer Performance.
+                Wir kalkulieren jedes Projekt nach einer kostenlosen Bedarfsanalyse als
+                verbindlichen Festpreis. Durch unsere schlanken Workflows und Next.js Entwicklung
+                erhalten Sie Premium-Agenturqualität mit voller Kostensicherheit ohne versteckte
+                Nebenkosten.
               </p>
             </div>
 

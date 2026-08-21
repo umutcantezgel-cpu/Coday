@@ -329,11 +329,11 @@ export default async function HochtaunuskreisPage({
             </div>
 
             <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
-              <div className="text-4xl font-black text-amber-600 mb-2">5-10x</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Kosteneffizienter</h3>
+              <div className="text-4xl font-black text-amber-600 mb-2">Festpreis</div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Volle Kostensicherheit</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Günstiger als traditionelle Großagenturen durch automatisierte
-                KI-Engineering-Workflows.
+                Transparente Festpreis-Garantie ohne versteckte Nachforderungen oder unkalkulierbare
+                Stundensätze.
               </p>
             </div>
           </div>
@@ -448,7 +448,7 @@ export default async function HochtaunuskreisPage({
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                  <span className="text-slate-700">5-10x günstiger als Großagenturen</span>
+                  <span className="text-slate-700">Festpreis & volle Kostensicherheit</span>
                 </div>
               </div>
             </div>
