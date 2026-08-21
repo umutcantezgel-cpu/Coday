@@ -3,10 +3,14 @@ import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import {
+  getCountyHierarchySchema,
+  getPyramidBreadcrumbs,
+} from '@/features/local-seo/model/schemaPyramid';
+import { LocalSplitHero } from '@/features/local-seo/ui/LocalSplitHero';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
-import { LazyQuickContactForm } from '@/widgets/home/LazyQuickContactForm';
 import {
   ArrowRight,
   Lightning,
@@ -161,82 +165,14 @@ export default async function KreisOffenbachPage({
       note: 'Main-Gewerbe & Handwerksbetriebe',
     },
   ];
+  const isEn = _locale === 'en';
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
-      {
-        '@type': 'LocalBusiness',
-        '@id': `${BASE_URL}/${_locale}/regionen/kreis-offenbach#localbusiness`,
-        name: 'Coday – Webagentur Kreis Offenbach',
-        url: `${BASE_URL}/${_locale}/regionen/kreis-offenbach`,
-        logo: `${BASE_URL}/icon.png`,
-        image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49-176-41195301',
-        email: 'kontakt@codayweb.de',
-        priceRange: '€€€€',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: 'HQ Wetzlar / Regionalbüro Kreis Offenbach',
-          addressLocality: 'Wetzlar',
-          postalCode: '35578',
-          addressRegion: 'Hessen',
-          addressCountry: 'DE',
-        },
-        geo: {
-          '@type': 'GeoCoordinates',
-          latitude: 50.0086,
-          longitude: 8.7847,
-        },
-        areaServed: [
-          { '@type': 'City', name: 'Rodgau' },
-          { '@type': 'City', name: 'Dietzenbach' },
-          { '@type': 'City', name: 'Dreieich' },
-          { '@type': 'City', name: 'Neu-Isenburg' },
-          { '@type': 'City', name: 'Langen (Hessen)' },
-          { '@type': 'AdministrativeArea', name: 'Kreis Offenbach' },
-          { '@type': 'AdministrativeArea', name: 'Rhein-Main' },
-        ],
-      },
-      {
-        '@type': 'ProfessionalService',
-        '@id': `${BASE_URL}/${_locale}/regionen/kreis-offenbach#service`,
-        name: 'B2B Webdesign & Handwerk Webentwicklung Kreis Offenbach',
-        provider: {
-          '@id': `${BASE_URL}/#organization`,
-        },
-        serviceType: [
-          'B2B- & Handwerks-Webportale',
-          'Corporate & Airport-City Webdesign',
-          'Next.js 15 Webentwicklung',
-          'Local SEO Kreis Offenbach',
-          'Sanity Headless CMS',
-        ],
-      },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Home',
-            item: `${BASE_URL}/${_locale}`,
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Regionen',
-            item: `${BASE_URL}/${_locale}/standorte/hessen`,
-          },
-          {
-            '@type': 'ListItem',
-            position: 3,
-            name: 'Kreis Offenbach',
-            item: `${BASE_URL}/${_locale}/regionen/kreis-offenbach`,
-          },
-        ],
-      },
+      getPyramidBreadcrumbs(2, { countySlug: 'kreis-offenbach' }, _locale),
+      ...(getCountyHierarchySchema('kreis-offenbach', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',
         mainEntity: [
@@ -245,7 +181,7 @@ export default async function KreisOffenbachPage({
             name: 'Wie viel kostet eine neue Website im Kreis Offenbach?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance.',
+              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen bieten wir maximale Kosteneffizienz ohne teuren Agentur-Wasserkopf.',
             },
           },
           {
@@ -258,10 +194,10 @@ export default async function KreisOffenbachPage({
           },
           {
             '@type': 'Question',
-            name: 'Kommen Sie für ein Beratungsgespräch direkt zu uns in den Betrieb?',
+            name: 'Kommen Sie für ein Beratungsgespräch direkt zu uns nach Rodgau, Dietzenbach oder Dreieich?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja, selbstverständlich. Über die A5 oder A3/A661 sind wir von unserem Wetzlarer HQ in rund 40 Minuten direkt bei Ihnen vor Ort in Rodgau, Dietzenbach, Dreieich oder Neu-Isenburg.',
+              text: 'Ja, sehr gerne. Über die A5, A3 und A661 sind wir von unserem Wetzlarer HQ in rund 40 Minuten direkt bei Ihnen vor Ort im Betrieb oder Büro.',
             },
           },
           {
@@ -292,64 +228,18 @@ export default async function KreisOffenbachPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* 1. HERO SECTION MIT LEAD CAPTURE */}
-      <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28 bg-[#fafafa]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-100/40 via-white/80 to-transparent pointer-events-none" />
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-400/10 blur-[140px] rounded-full pointer-events-none" />
-
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-50 text-amber-800 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-8 shadow-sm">
-            <Sparkle className="w-4 h-4 text-amber-600" />
-            REGIONALER MASTER-HUB · KREIS OFFENBACH
-          </div>
-
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-8 leading-[1.1]">
-            Webdesign & Next.js Entwicklung im{' '}
-            <span className="bg-gradient-to-r from-amber-600 via-amber-700 to-teal-700 bg-clip-text text-transparent">
-              Kreis Offenbach
-            </span>
-          </h1>
-
-          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-10">
-            Ihre High-Performance Webagentur für Rodgau, Dietzenbach, Dreieich, Neu-Isenburg und den
-            gesamten Kreis Offenbach. Blitzschnelle Next.js Webapplikationen, modernste
-            Headless-Systeme und automatisierte B2B-Leads für Mittelstand, Handwerk und
-            Corporate-Hubs. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse.
-          </p>
-
-          {/* Lead Capture Form in Hero */}
-          <div className="max-w-xl mx-auto mb-16 p-6 rounded-3xl bg-white border border-slate-200 shadow-xl">
-            <h2 className="text-lg font-bold text-slate-900 mb-4 text-center">
-              Kostenlose Bedarfsanalyse im Kreis Offenbach anfordern
-            </h2>
-            <LazyQuickContactForm />
-          </div>
-
-          {/* Trust Badges */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-200">
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100/100</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">Core Web Vitals</div>
-            </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">&lt; 0.4s</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">Ladezeit via Edge</div>
-            </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">40 Min</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">
-                Vor Ort via A5 / A3 / A661
-              </div>
-            </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100%</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">
-                DSGVO & Deutsches Hosting
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
+      <LocalSplitHero
+        badgeText="REGIONALER MASTER-HUB · KREIS OFFENBACH"
+        headline="Webdesign & Next.js Entwicklung im"
+        headlineGradient="Kreis Offenbach"
+        description="Ihre High-Performance Webagentur für Rodgau, Dietzenbach, Dreieich, Neu-Isenburg und den gesamten Kreis Offenbach. Blitzschnelle Next.js Webapplikationen, modernste Headless-Systeme und automatisierte B2B-Leads für Mittelstand, Handwerk und Corporate-Hubs. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+        cityName="Kreis Offenbach"
+        sourceTag="local_seo_kreis_offenbach"
+        formHeading="Kostenlose Bedarfsanalyse für Kreis Offenbach"
+        formSubtitle="Persönliche Beratung durch Inhaber Umutcan Emre Tezgel innerhalb von 24h."
+        secondaryCtaText="Kreis Offenbach Referenzen ansehen"
+      />
 
       {/* 2. TRUSTBAR (REAL PROOF) */}
       <section className="border-y border-slate-200 bg-white">

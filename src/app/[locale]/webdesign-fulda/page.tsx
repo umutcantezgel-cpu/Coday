@@ -3,6 +3,11 @@ import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import {
+  getCityHierarchySchema,
+  getPyramidBreadcrumbs,
+} from '@/features/local-seo/model/schemaPyramid';
+import { LocalSplitHero } from '@/features/local-seo/ui/LocalSplitHero';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -82,112 +87,12 @@ export default async function WebdesignFuldaPage({
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: isEn ? 'Locations' : 'Standorte', url: `/${_locale}/uebersicht` },
-    { name: 'Fulda', url: `/${_locale}/webdesign-fulda` },
-  ]);
-
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
-      breadcrumbs,
-      {
-        '@type': 'LocalBusiness',
-        '@id': `${BASE_URL}/${_locale}/webdesign-fulda#localbusiness`,
-        name: 'Coday – Webdesign Agentur Fulda & Osthessen',
-        url: `${BASE_URL}/${_locale}/webdesign-fulda`,
-        logo: `${BASE_URL}/icon.png`,
-        image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49-176-41195301',
-        email: 'kontakt@codayweb.de',
-        priceRange: '€€€€',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: 'Regionalbüro Osthessen / HQ Wetzlar',
-          addressLocality: 'Wetzlar',
-          postalCode: '35578',
-          addressRegion: 'Hessen',
-          addressCountry: 'DE',
-        },
-        geo: {
-          '@type': 'GeoCoordinates',
-          latitude: 50.5558,
-          longitude: 9.6808,
-        },
-        areaServed: [
-          { '@type': 'City', name: 'Fulda' },
-          { '@type': 'City', name: 'Petersberg' },
-          { '@type': 'City', name: 'Künzell' },
-          { '@type': 'City', name: 'Eichenzell' },
-          { '@type': 'City', name: 'Hünfeld' },
-          { '@type': 'AdministrativeArea', name: 'Landkreis Fulda' },
-          { '@type': 'AdministrativeArea', name: 'Osthessen' },
-        ],
-      },
-      {
-        '@type': 'ProfessionalService',
-        '@id': `${BASE_URL}/${_locale}/webdesign-fulda#service`,
-        name: 'Industrie, Logistik & Handwerk Webentwicklung Fulda',
-        provider: {
-          '@id': `${BASE_URL}/#organization`,
-        },
-        serviceType: [
-          'Industrie- & Sensorik Webportale',
-          'Logistik- & Großhandels Webdesign',
-          'Next.js 15 Webentwicklung',
-          'Local SEO Osthessen',
-          'Sanity Headless CMS',
-        ],
-        hasOfferCatalog: {
-          '@type': 'OfferCatalog',
-          name: 'Dienstleistungen für Fulda & Osthessen',
-          itemListElement: [
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
-                name: 'Industrie- & Maschinenbau-Webportale',
-                description:
-                  'Performante B2B-Plattformen für Sensortechnik und Industrieunternehmen in Fulda-West und Münsterfeld.',
-              },
-            },
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
-                name: 'Logistik- & Großhandels-Plattformen',
-                description:
-                  'Websysteme mit ERP- und Schnittstellenanbindung für Logistiker im Rhön-Logistikpark Eichenzell und an der A7/A66.',
-              },
-            },
-          ],
-        },
-      },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Home',
-            item: `${BASE_URL}/${_locale}`,
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Standorte',
-            item: `${BASE_URL}/${_locale}/standorte/hessen`,
-          },
-          {
-            '@type': 'ListItem',
-            position: 3,
-            name: 'Fulda',
-            item: `${BASE_URL}/${_locale}/webdesign-fulda`,
-          },
-        ],
-      },
+      getPyramidBreadcrumbs(3, { citySlug: 'webdesign-fulda' }, _locale),
+      ...(getCityHierarchySchema('webdesign-fulda', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',
         mainEntity: [
@@ -196,7 +101,7 @@ export default async function WebdesignFuldaPage({
             name: 'Wie viel kostet eine neue Website in Fulda?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance.',
+              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen bieten wir maximale Kosteneffizienz ohne teuren Agentur-Wasserkopf.',
             },
           },
           {
@@ -243,77 +148,18 @@ export default async function WebdesignFuldaPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28 bg-[#fafafa]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-100/40 via-white/80 to-transparent pointer-events-none" />
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-400/10 blur-[140px] rounded-full pointer-events-none" />
-
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-50 text-amber-800 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-8 shadow-sm">
-            <Sparkle className="w-4 h-4 text-amber-600" />
-            INDUSTRIE-, LOGISTIK- & HANDWERKS-WEBAGENTUR FULDA & OSTHESSEN
-          </div>
-
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-8 leading-[1.1]">
-            Webdesign & Next.js Entwicklung in{' '}
-            <span className="bg-gradient-to-r from-amber-600 via-amber-700 to-teal-700 bg-clip-text text-transparent">
-              Fulda & Osthessen
-            </span>
-          </h1>
-
-          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-10">
-            Speziell für Industrie, Maschinenbau, Großhandel, Logistik und Meisterbetriebe in Fulda,
-            Künzell, Petersberg und Eichenzell. Subsekundäre Ladezeiten unter 500ms,
-            ausdrucksstarkes B2B-Design und planbare Kundenanfragen. Verbindlicher Festpreis nach
-            kostenloser Bedarfsanalyse.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <Link href="/contact" className="w-full sm:w-auto">
-              <Button
-                variant="primary"
-                size="lg"
-                className="w-full sm:w-auto bg-primary-700 hover:bg-primary-800 text-white font-bold px-8 py-4 text-base shadow-lg shadow-primary-700/25 transition-all hover:scale-[1.02]"
-              >
-                Kostenloses Erstgespräch anfordern
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-            </Link>
-            <Link href="/work" className="w-full sm:w-auto">
-              <Button
-                variant="secondary"
-                size="lg"
-                className="w-full sm:w-auto border-slate-300 hover:border-slate-400 bg-white hover:bg-slate-50 text-slate-700 px-8 py-4 text-base shadow-sm"
-              >
-                Fuldaer Referenzen ansehen
-              </Button>
-            </Link>
-          </div>
-
-          {/* Trust Badges */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-200">
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100/100</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">Core Web Vitals</div>
-            </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">&lt; 0.4s</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">Ladezeit via Edge</div>
-            </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">A7 / A66</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">Direkt vor Ort</div>
-            </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100%</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">
-                DSGVO & Deutsches Hosting
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
+      <LocalSplitHero
+        badgeText="INDUSTRIE-, LOGISTIK- & HANDWERKS-WEBAGENTUR FULDA & OSTHESSEN"
+        headline="Webdesign & Next.js Entwicklung in"
+        headlineGradient="Fulda & Osthessen"
+        description="Speziell für Industrie, Maschinenbau, Großhandel, Logistik und Meisterbetriebe in Fulda, Künzell, Petersberg und Eichenzell. Subsekundäre Ladezeiten unter 500ms, ausdrucksstarkes B2B-Design und planbare Kundenanfragen. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+        cityName="Fulda"
+        sourceTag="local_seo_fulda"
+        formHeading="Kostenlose Bedarfsanalyse für Fulda"
+        formSubtitle="Persönliche Beratung durch Inhaber Umutcan Emre Tezgel innerhalb von 24h."
+        secondaryCtaText="Fuldaer Referenzen ansehen"
+      />
 
       {/* 2. TRUSTBAR (REAL PROOF) */}
       <section className="border-y border-slate-200 bg-white">

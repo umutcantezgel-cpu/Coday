@@ -3,10 +3,14 @@ import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import {
+  getCountyHierarchySchema,
+  getPyramidBreadcrumbs,
+} from '@/features/local-seo/model/schemaPyramid';
+import { LocalSplitHero } from '@/features/local-seo/ui/LocalSplitHero';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
-import { LazyQuickContactForm } from '@/widgets/home/LazyQuickContactForm';
 import {
   ArrowRight,
   Lightning,
@@ -162,81 +166,14 @@ export default async function LandkreisMarburgBiedenkopfPage({
     },
   ];
 
+  const isEn = _locale === 'en';
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
-      {
-        '@type': 'LocalBusiness',
-        '@id': `${BASE_URL}/${_locale}/regionen/landkreis-marburg-biedenkopf#localbusiness`,
-        name: 'Coday – Webagentur Landkreis Marburg-Biedenkopf',
-        url: `${BASE_URL}/${_locale}/regionen/landkreis-marburg-biedenkopf`,
-        logo: `${BASE_URL}/icon.png`,
-        image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49-176-41195301',
-        email: 'kontakt@codayweb.de',
-        priceRange: '€€€€',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: 'HQ Wetzlar / Regionalbüro Mittelhessen',
-          addressLocality: 'Wetzlar',
-          postalCode: '35578',
-          addressRegion: 'Hessen',
-          addressCountry: 'DE',
-        },
-        geo: {
-          '@type': 'GeoCoordinates',
-          latitude: 50.8022,
-          longitude: 8.7668,
-        },
-        areaServed: [
-          { '@type': 'City', name: 'Marburg' },
-          { '@type': 'City', name: 'Biedenkopf' },
-          { '@type': 'City', name: 'Stadtallendorf' },
-          { '@type': 'City', name: 'Gladenbach' },
-          { '@type': 'City', name: 'Kirchhain' },
-          { '@type': 'AdministrativeArea', name: 'Landkreis Marburg-Biedenkopf' },
-          { '@type': 'AdministrativeArea', name: 'Mittelhessen' },
-        ],
-      },
-      {
-        '@type': 'ProfessionalService',
-        '@id': `${BASE_URL}/${_locale}/regionen/landkreis-marburg-biedenkopf#service`,
-        name: 'Pharma, Industrie & Handwerk Webentwicklung Marburg-Biedenkopf',
-        provider: {
-          '@id': `${BASE_URL}/#organization`,
-        },
-        serviceType: [
-          'Pharma- & Biotech Webportale',
-          'Industrie & Formenbau Webdesign',
-          'Next.js 15 Webentwicklung',
-          'Local SEO Marburg-Biedenkopf',
-          'Sanity Headless CMS',
-        ],
-      },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Home',
-            item: `${BASE_URL}/${_locale}`,
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Regionen',
-            item: `${BASE_URL}/${_locale}/standorte/hessen`,
-          },
-          {
-            '@type': 'ListItem',
-            position: 3,
-            name: 'Landkreis Marburg-Biedenkopf',
-            item: `${BASE_URL}/${_locale}/regionen/landkreis-marburg-biedenkopf`,
-          },
-        ],
-      },
+      getPyramidBreadcrumbs(2, { countySlug: 'landkreis-marburg-biedenkopf' }, _locale),
+      ...(getCountyHierarchySchema('landkreis-marburg-biedenkopf', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',
         mainEntity: [
@@ -245,7 +182,7 @@ export default async function LandkreisMarburgBiedenkopfPage({
             name: 'Wie viel kostet eine neue Website im Landkreis Marburg-Biedenkopf?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance.',
+              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere modernen Next.js Architekturen bieten wir maximale Kosteneffizienz bei höchster technologischer Performance.',
             },
           },
           {
@@ -258,10 +195,10 @@ export default async function LandkreisMarburgBiedenkopfPage({
           },
           {
             '@type': 'Question',
-            name: 'Kommen Sie für ein Beratungsgespräch direkt zu uns in den Betrieb?',
+            name: 'Kommen Sie für ein Beratungsgespräch direkt zu uns nach Marburg, Biedenkopf oder Stadtallendorf?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja, selbstverständlich. Über die B3 oder B255 sind wir von unserem Wetzlarer HQ in rund 30 Minuten direkt bei Ihnen vor Ort in Marburg, Biedenkopf, Gladenbach oder Stadtallendorf.',
+              text: 'Ja, sehr gerne. Über die B3 oder B255 sind wir von unserem Wetzlarer HQ in rund 30 Minuten direkt bei Ihnen vor Ort im Betrieb oder der Praxis.',
             },
           },
           {
@@ -292,64 +229,18 @@ export default async function LandkreisMarburgBiedenkopfPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* 1. HERO SECTION MIT LEAD CAPTURE */}
-      <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28 bg-[#fafafa]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-100/40 via-white/80 to-transparent pointer-events-none" />
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-400/10 blur-[140px] rounded-full pointer-events-none" />
-
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-50 text-amber-800 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-8 shadow-sm">
-            <Sparkle className="w-4 h-4 text-amber-600" />
-            REGIONALER MASTER-HUB · LANDKREIS MARBURG-BIEDENKOPF
-          </div>
-
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-8 leading-[1.1]">
-            Webdesign & Next.js Entwicklung in{' '}
-            <span className="bg-gradient-to-r from-amber-600 via-amber-700 to-teal-700 bg-clip-text text-transparent">
-              Marburg-Biedenkopf
-            </span>
-          </h1>
-
-          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-10">
-            Ihre lokale High-End Webagentur für Marburg, Biedenkopf, Stadtallendorf, Gladenbach und
-            den gesamten Landkreis. Blitzschnelle Next.js Webapplikationen, modernste
-            Headless-Systeme und automatisierte B2B-Leads für Pharma, Industrie und Handwerk.
-            Verbindlicher Festpreis nach kostenloser Bedarfsanalyse.
-          </p>
-
-          {/* Lead Capture Form in Hero */}
-          <div className="max-w-xl mx-auto mb-16 p-6 rounded-3xl bg-white border border-slate-200 shadow-xl">
-            <h2 className="text-lg font-bold text-slate-900 mb-4 text-center">
-              Kostenlose Bedarfsanalyse in Marburg-Biedenkopf anfordern
-            </h2>
-            <LazyQuickContactForm />
-          </div>
-
-          {/* Trust Badges */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-200">
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100/100</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">Core Web Vitals</div>
-            </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">&lt; 0.4s</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">Ladezeit via Edge</div>
-            </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">30 Min</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">
-                Vor Ort via B3 / B255
-              </div>
-            </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100%</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">
-                DSGVO & Deutsches Hosting
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
+      <LocalSplitHero
+        badgeText="REGIONALER MASTER-HUB · LANDKREIS MARBURG-BIEDENKOPF"
+        headline="Webdesign & Next.js Entwicklung in"
+        headlineGradient="Marburg-Biedenkopf"
+        description="Ihre lokale High-End Webagentur für Marburg, Biedenkopf, Stadtallendorf, Gladenbach und den gesamten Landkreis. Blitzschnelle Next.js Webapplikationen, modernste Headless-Systeme und automatisierte B2B-Leads für Pharma, Industrie und Handwerk. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+        cityName="Landkreis Marburg-Biedenkopf"
+        sourceTag="local_seo_marburg_biedenkopf"
+        formHeading="Kostenlose Bedarfsanalyse für Marburg-Biedenkopf"
+        formSubtitle="Persönliche Beratung durch Inhaber Umutcan Emre Tezgel innerhalb von 24h."
+        secondaryCtaText="Marburger Referenzen ansehen"
+      />
 
       {/* 2. TRUSTBAR (REAL PROOF) */}
       <section className="border-y border-slate-200 bg-white">

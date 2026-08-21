@@ -3,10 +3,14 @@ import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import {
+  getCountyHierarchySchema,
+  getPyramidBreadcrumbs,
+} from '@/features/local-seo/model/schemaPyramid';
+import { LocalSplitHero } from '@/features/local-seo/ui/LocalSplitHero';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
-import { LazyQuickContactForm } from '@/widgets/home/LazyQuickContactForm';
 import {
   ArrowRight,
   Lightning,
@@ -187,91 +191,12 @@ export default async function LandkreisGiessenPage({
 
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: isEn ? 'Regions' : 'Regionen', url: `/${_locale}/standorte/hessen` },
-    {
-      name: isEn ? 'District Giessen' : 'Landkreis Gießen',
-      url: `/${_locale}/regionen/landkreis-giessen`,
-    },
-  ]);
-
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
-      breadcrumbs,
-      {
-        '@type': 'LocalBusiness',
-        '@id': `${BASE_URL}/${_locale}/regionen/landkreis-giessen#localbusiness`,
-        name: 'Coday – Regionale Webagentur Landkreis Gießen',
-        url: `${BASE_URL}/${_locale}/regionen/landkreis-giessen`,
-        logo: `${BASE_URL}/icon.png`,
-        image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49-176-41195301',
-        email: 'kontakt@codayweb.de',
-        priceRange: '€€€€',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: 'HQ Wetzlar / Regionalbüro Mittelhessen',
-          addressLocality: 'Wetzlar',
-          postalCode: '35578',
-          addressRegion: 'Hessen',
-          addressCountry: 'DE',
-        },
-        geo: {
-          '@type': 'GeoCoordinates',
-          latitude: 50.5872,
-          longitude: 8.6755,
-        },
-        areaServed: [
-          { '@type': 'City', name: 'Gießen' },
-          { '@type': 'City', name: 'Linden' },
-          { '@type': 'City', name: 'Pohlheim' },
-          { '@type': 'City', name: 'Lich' },
-          { '@type': 'City', name: 'Grünberg' },
-          { '@type': 'AdministrativeArea', name: 'Landkreis Gießen' },
-          { '@type': 'AdministrativeArea', name: 'Mittelhessen' },
-        ],
-      },
-      {
-        '@type': 'ProfessionalService',
-        '@id': `${BASE_URL}/${_locale}/regionen/landkreis-giessen#service`,
-        name: 'Praxen, Handwerk & B2B Webentwicklung Landkreis Gießen',
-        provider: {
-          '@id': `${BASE_URL}/#organization`,
-        },
-        serviceType: [
-          'Facharzt- & Klinik Webportale',
-          'Handwerks- & B2B Webdesign',
-          'Next.js 15 Webentwicklung',
-          'Local SEO Landkreis Gießen',
-          'Sanity Headless CMS',
-        ],
-      },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Home',
-            item: `${BASE_URL}/${_locale}`,
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Regionen',
-            item: `${BASE_URL}/${_locale}/standorte/hessen`,
-          },
-          {
-            '@type': 'ListItem',
-            position: 3,
-            name: 'Landkreis Gießen',
-            item: `${BASE_URL}/${_locale}/regionen/landkreis-giessen`,
-          },
-        ],
-      },
+      getPyramidBreadcrumbs(2, { countySlug: 'landkreis-giessen' }, _locale),
+      ...(getCountyHierarchySchema('landkreis-giessen', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',
         mainEntity: [
@@ -280,7 +205,7 @@ export default async function LandkreisGiessenPage({
             name: 'Wie viel kostet eine neue Website im Landkreis Gießen?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance.',
+              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere modernen Next.js Architekturen bieten wir höchste Kosteneffizienz ohne Agentur-Wasserkopf.',
             },
           },
           {
@@ -293,23 +218,23 @@ export default async function LandkreisGiessenPage({
           },
           {
             '@type': 'Question',
-            name: 'Kommen Sie für ein Beratungsgespräch direkt zu uns in den Betrieb?',
+            name: 'Kommen Sie für ein Beratungsgespräch direkt zu uns nach Gießen, Linden oder Pohlheim?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja, selbstverständlich. Über die B49 oder A485 sind wir von unserem Wetzlarer HQ in unter 15 Minuten direkt bei Ihnen vor Ort in Linden, Pohlheim, Gießen oder Lich.',
+              text: 'Ja, absolut. Über die B49 und A485 sind wir in maximal 15 Minuten bei Ihnen vor Ort in der Praxis, Kanzlei oder im Handwerksbetrieb.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?',
+            name: 'Erfüllen Ihre Websites alle DSGVO- und Barrierefreiheits-Standards?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet.',
+              text: 'Ja. Alle Webseiten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet und erfüllen moderne Barrierefreiheits-Standards.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Wer ist unser fester Ansprechpartner?',
+            name: 'Wer ist mein fester Ansprechpartner?',
             acceptedAnswer: {
               '@type': 'Answer',
               text: 'Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.',
@@ -327,64 +252,17 @@ export default async function LandkreisGiessenPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* 1. HERO SECTION MIT LEAD CAPTURE */}
-      <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28 bg-[#fafafa]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-100/40 via-white/80 to-transparent pointer-events-none" />
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-400/10 blur-[140px] rounded-full pointer-events-none" />
-
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-50 text-amber-800 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-8 shadow-sm">
-            <Sparkle className="w-4 h-4 text-amber-600" />
-            REGIONALER MASTER-HUB · LANDKREIS GIESSEN
-          </div>
-
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-8 leading-[1.1]">
-            Webdesign & Next.js Entwicklung im{' '}
-            <span className="bg-gradient-to-r from-amber-600 via-amber-700 to-teal-700 bg-clip-text text-transparent">
-              Landkreis Gießen
-            </span>
-          </h1>
-
-          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-10">
-            Ihre lokale High-End Webagentur für Universitätsstadt und Umland. Blitzschnelle Next.js
-            Webapplikationen, modernste Headless-Systeme und automatisierte B2B-Leads für Praxen,
-            Handwerk und Mittelstand im gesamten Landkreis. Verbindlicher Festpreis nach kostenloser
-            Bedarfsanalyse.
-          </p>
-
-          {/* Lead Capture Form in Hero */}
-          <div className="max-w-xl mx-auto mb-16 p-6 rounded-3xl bg-white border border-slate-200 shadow-xl">
-            <h2 className="text-lg font-bold text-slate-900 mb-4 text-center">
-              Kostenlose Bedarfsanalyse im Landkreis Gießen anfordern
-            </h2>
-            <LazyQuickContactForm />
-          </div>
-
-          {/* Trust Badges */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-200">
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100/100</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">Core Web Vitals</div>
-            </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">&lt; 0.4s</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">Ladezeit via Edge</div>
-            </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">15 Min</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">
-                Vor Ort via B49 / A485
-              </div>
-            </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100%</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">
-                DSGVO & Deutsches Hosting
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <LocalSplitHero
+        badgeText="REGIONALER MASTER-HUB · LANDKREIS GIESSEN"
+        headline="Webdesign & Next.js Entwicklung im"
+        headlineGradient="Landkreis Gießen"
+        description="Ihre lokale High-End Webagentur für Universitätsstadt und Umland. Blitzschnelle Next.js Webapplikationen, modernste Headless-Systeme und automatisierte B2B-Leads für Praxen, Handwerk und Mittelstand im gesamten Landkreis. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+        cityName="Landkreis Gießen"
+        sourceTag="local_seo_landkreis_giessen"
+        formHeading="Kostenlose Bedarfsanalyse für Landkreis Gießen"
+        formSubtitle="Persönliche Beratung durch Inhaber Umutcan Emre Tezgel innerhalb von 24h."
+        secondaryCtaText="Gießener Referenzen ansehen"
+      />
 
       {/* 2. TRUSTBAR (REAL PROOF) */}
       <section className="border-y border-slate-200 bg-white">

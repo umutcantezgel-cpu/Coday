@@ -3,10 +3,14 @@ import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import {
+  getHessenMasterSchema,
+  getPyramidBreadcrumbs,
+} from '@/features/local-seo/model/schemaPyramid';
+import { LocalSplitHero } from '@/features/local-seo/ui/LocalSplitHero';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
-import { LazyQuickContactForm } from '@/widgets/home/LazyQuickContactForm';
 import {
   ArrowRight,
   Lightning,
@@ -328,104 +332,12 @@ export default async function HessenMasterPage({
 
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: isEn ? 'Locations' : 'Standorte', url: `/${_locale}/uebersicht` },
-    { name: 'Hessen', url: `/${_locale}/standorte/hessen` },
-  ]);
-
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
-      breadcrumbs,
-      {
-        '@type': 'LocalBusiness',
-        '@id': `${BASE_URL}/${_locale}/standorte/hessen#localbusiness`,
-        name: 'Coday – High-End Webdesign & Webentwicklung Hessen',
-        url: `${BASE_URL}/${_locale}/standorte/hessen`,
-        logo: `${BASE_URL}/icon.png`,
-        image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49-176-41195301',
-        email: 'kontakt@codayweb.de',
-        priceRange: '€€€€',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: 'HQ Wetzlar / Regionalnetzwerk Hessen',
-          addressLocality: 'Wetzlar',
-          postalCode: '35578',
-          addressRegion: 'Hessen',
-          addressCountry: 'DE',
-        },
-        geo: {
-          '@type': 'GeoCoordinates',
-          latitude: 50.5558,
-          longitude: 8.5022,
-        },
-        areaServed: [
-          { '@type': 'AdministrativeArea', name: 'Hessen' },
-          { '@type': 'AdministrativeArea', name: 'Mittelhessen' },
-          { '@type': 'AdministrativeArea', name: 'Rhein-Main' },
-          { '@type': 'AdministrativeArea', name: 'Nordhessen' },
-          { '@type': 'AdministrativeArea', name: 'Osthessen' },
-          { '@type': 'AdministrativeArea', name: 'Südhessen' },
-          { '@type': 'City', name: 'Wetzlar' },
-          { '@type': 'City', name: 'Frankfurt am Main' },
-          { '@type': 'City', name: 'Wiesbaden' },
-          { '@type': 'City', name: 'Kassel' },
-          { '@type': 'City', name: 'Darmstadt' },
-          { '@type': 'City', name: 'Offenbach' },
-          { '@type': 'City', name: 'Hanau' },
-          { '@type': 'City', name: 'Gießen' },
-          { '@type': 'City', name: 'Fulda' },
-          { '@type': 'City', name: 'Marburg' },
-          { '@type': 'City', name: 'Rüsselsheim' },
-          { '@type': 'City', name: 'Bad Homburg' },
-          { '@type': 'City', name: 'Oberursel' },
-          { '@type': 'City', name: 'Rodgau' },
-          { '@type': 'City', name: 'Dietzenbach' },
-          { '@type': 'City', name: 'Bensheim' },
-          { '@type': 'City', name: 'Hofheim' },
-          { '@type': 'City', name: 'Friedberg' },
-          { '@type': 'City', name: 'Bad Vilbel' },
-          { '@type': 'City', name: 'Limburg' },
-          { '@type': 'City', name: 'Herborn' },
-          { '@type': 'City', name: 'Dillenburg' },
-          { '@type': 'City', name: 'Weilburg' },
-        ],
-      },
-      {
-        '@type': 'ProfessionalService',
-        '@id': `${BASE_URL}/${_locale}/standorte/hessen#service`,
-        name: 'Enterprise & B2B Webentwicklung Hessen',
-        provider: {
-          '@id': `${BASE_URL}/#organization`,
-        },
-        serviceType: [
-          'High-End Webdesign Hessen',
-          'Next.js 15 Webentwicklung',
-          'Headless CMS Architekturen (Sanity)',
-          'Local SEO Hessen Dominanz',
-          'B2B Lead-Funnels & Express-Recruiting',
-        ],
-      },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Home',
-            item: `${BASE_URL}/${_locale}`,
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Standorte & Regionen Hessen',
-            item: `${BASE_URL}/${_locale}/standorte/hessen`,
-          },
-        ],
-      },
+      getPyramidBreadcrumbs(1, {}, _locale),
+      ...(getHessenMasterSchema(_locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',
         mainEntity: [
@@ -434,7 +346,7 @@ export default async function HessenMasterPage({
             name: 'Wie viel kostet eine professionelle Website bei Coday in Hessen?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere hochgradig optimierten KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance.',
+              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen und direkte Inhaber-Realisierung bieten wir maximale Kosteneffizienz bei höchster technischer Performance.',
             },
           },
           {
@@ -450,7 +362,7 @@ export default async function HessenMasterPage({
             name: 'Bieten Sie Vor-Ort-Termine in ganz Hessen an?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja, absolut. Durch unsere zentrale Lage in Wetzlar an den Autobahnen A45 und A5 erreichen wir Frankfurt, Wiesbaden, Gießen, Marburg, Limburg, Darmstadt, Fulda und Kassel schnell für persönliche Termine.',
+              text: 'Ja, absolut. Durch unsere zentrale Lage in Wetzlar an den Autobahnen A45 und A5 erreichen wir Frankfurt, Wiesbaden, Gießen, Marburg, Limburg, Darmstadt, Fulda und Kassel schnell für persönliche Termine vor Ort.',
             },
           },
           {
@@ -481,64 +393,18 @@ export default async function HessenMasterPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* 1. HERO SECTION MIT LEAD CAPTURE */}
-      <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28 bg-[#fafafa]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-100/40 via-white/80 to-transparent pointer-events-none" />
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-400/10 blur-[140px] rounded-full pointer-events-none" />
-
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-50 text-amber-800 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-8 shadow-sm">
-            <Sparkle className="w-4 h-4 text-amber-600" />
-            HESSEN MASTER-HUB · ALLE 23 STÄDTE & REGIONEN
-          </div>
-
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-8 leading-[1.1]">
-            Webdesign & Next.js Entwicklung in{' '}
-            <span className="bg-gradient-to-r from-amber-600 via-amber-700 to-teal-700 bg-clip-text text-transparent">
-              ganz Hessen
-            </span>
-          </h1>
-
-          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-10">
-            Ihre High-End Webagentur mit Hauptsitz in Wetzlar. Blitzschnelle Next.js Architekturen,
-            moderne Headless-Systeme und automatisierte Leads für Mittelstand, Industrie und
-            Tech-Unternehmen in allen Regionen Hessens. Verbindlicher Festpreis nach kostenloser
-            Bedarfsanalyse.
-          </p>
-
-          {/* Lead Capture Form in Hero */}
-          <div className="max-w-xl mx-auto mb-16 p-6 rounded-3xl bg-white border border-slate-200 shadow-xl">
-            <h2 className="text-lg font-bold text-slate-900 mb-4 text-center">
-              Kostenlose Bedarfsanalyse für Hessen anfordern
-            </h2>
-            <LazyQuickContactForm />
-          </div>
-
-          {/* Trust Badges */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-200">
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100/100</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">Core Web Vitals</div>
-            </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">&lt; 0.4s</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">Ladezeit via Edge</div>
-            </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">Vor Ort</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">
-                In ganz Hessen mobil
-              </div>
-            </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100%</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">
-                DSGVO & Deutsches Hosting
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
+      <LocalSplitHero
+        badgeText="HESSEN MASTER-HUB · ALLE 23 STÄDTE & REGIONEN"
+        headline="Webdesign & Next.js Entwicklung in"
+        headlineGradient="ganz Hessen"
+        description="Ihre High-End Webagentur mit Hauptsitz in Wetzlar. Blitzschnelle Next.js Architekturen, moderne Headless-Systeme und automatisierte Leads für Mittelstand, Industrie und Tech-Unternehmen in allen Regionen Hessens. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+        cityName="Hessen"
+        sourceTag="local_seo_hessen"
+        formHeading="Kostenlose Bedarfsanalyse für Hessen"
+        formSubtitle="Direkte Prüfung Ihrer Anforderungen durch Inhaber Umutcan Emre Tezgel innerhalb von 24h."
+        secondaryCtaText="Hessenweite Referenzen ansehen"
+      />
 
       {/* 2. TRUSTBAR (REAL PROOF) */}
       <section className="border-y border-slate-200 bg-white">

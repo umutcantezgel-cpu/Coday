@@ -3,10 +3,14 @@ import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import {
+  getCityHierarchySchema,
+  getPyramidBreadcrumbs,
+} from '@/features/local-seo/model/schemaPyramid';
+import { LocalSplitHero } from '@/features/local-seo/ui/LocalSplitHero';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
-import { LazyQuickContactForm } from '@/widgets/home/LazyQuickContactForm';
 import {
   ArrowRight,
   Lightning,
@@ -83,112 +87,12 @@ export default async function WebdesignDarmstadtPage({
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: isEn ? 'Locations' : 'Standorte', url: `/${_locale}/uebersicht` },
-    { name: 'Darmstadt', url: `/${_locale}/webdesign-darmstadt` },
-  ]);
-
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
-      breadcrumbs,
-      {
-        '@type': 'LocalBusiness',
-        '@id': `${BASE_URL}/${_locale}/webdesign-darmstadt#localbusiness`,
-        name: 'Coday – Tech & Next.js Webagentur Darmstadt',
-        url: `${BASE_URL}/${_locale}/webdesign-darmstadt`,
-        logo: `${BASE_URL}/icon.png`,
-        image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49-176-41195301',
-        email: 'kontakt@codayweb.de',
-        priceRange: '€€€€',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: 'Regionalbüro Darmstadt-Dieburg / HQ Wetzlar',
-          addressLocality: 'Wetzlar',
-          postalCode: '35578',
-          addressRegion: 'Hessen',
-          addressCountry: 'DE',
-        },
-        geo: {
-          '@type': 'GeoCoordinates',
-          latitude: 49.8728,
-          longitude: 8.6512,
-        },
-        areaServed: [
-          { '@type': 'City', name: 'Darmstadt' },
-          { '@type': 'AdministrativeArea', name: 'Wissenschaftsstadt' },
-          { '@type': 'City', name: 'Griesheim' },
-          { '@type': 'City', name: 'Weiterstadt' },
-          { '@type': 'City', name: 'Pfungstadt' },
-          { '@type': 'AdministrativeArea', name: 'Landkreis Darmstadt-Dieburg' },
-          { '@type': 'AdministrativeArea', name: 'Metropolregion Frankfurt Rhein-Main' },
-        ],
-      },
-      {
-        '@type': 'ProfessionalService',
-        '@id': `${BASE_URL}/${_locale}/webdesign-darmstadt#service`,
-        name: 'Tech, Wissenschaft & B2B Webentwicklung Darmstadt',
-        provider: {
-          '@id': `${BASE_URL}/#organization`,
-        },
-        serviceType: [
-          'Software- & Tech-Startup Webportale',
-          'Cybersecurity- & Raumfahrt Webdesign',
-          'Next.js 15 Webentwicklung',
-          'Local SEO Wissenschaftsstadt Darmstadt',
-          'Sanity Headless CMS',
-        ],
-        hasOfferCatalog: {
-          '@type': 'OfferCatalog',
-          name: 'Dienstleistungen für Darmstadt & Südhessen',
-          itemListElement: [
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
-                name: 'Software- & Startup-Webportale',
-                description:
-                  'Performante B2B-Plattformen für TU Darmstadt Spin-offs und Tech-Scale-ups im TZ Rhein Main.',
-              },
-            },
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
-                name: 'Cybersecurity- & Pharma-Plattformen',
-                description:
-                  'Headless-Webauftritte mit 100/100 Core Web Vitals und maximaler Datensicherheit ohne anfällige PHP-Plugins.',
-              },
-            },
-          ],
-        },
-      },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Home',
-            item: `${BASE_URL}/${_locale}`,
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Standorte',
-            item: `${BASE_URL}/${_locale}/standorte/hessen`,
-          },
-          {
-            '@type': 'ListItem',
-            position: 3,
-            name: 'Darmstadt',
-            item: `${BASE_URL}/${_locale}/webdesign-darmstadt`,
-          },
-        ],
-      },
+      getPyramidBreadcrumbs(3, { citySlug: 'webdesign-darmstadt' }, _locale),
+      ...(getCityHierarchySchema('webdesign-darmstadt', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',
         mainEntity: [
@@ -197,7 +101,7 @@ export default async function WebdesignDarmstadtPage({
             name: 'Wie viel kostet eine neue Website in Darmstadt?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance.',
+              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen bieten wir maximale Kosteneffizienz ohne teuren Agentur-Wasserkopf.',
             },
           },
           {
@@ -244,61 +148,18 @@ export default async function WebdesignDarmstadtPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* 1. HERO SECTION MIT INTEGRATION DES LEAD CAPTURE */}
-      <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28 bg-[#fafafa]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-100/40 via-white/80 to-transparent pointer-events-none" />
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-400/10 blur-[140px] rounded-full pointer-events-none" />
-
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-50 text-amber-800 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-8 shadow-sm">
-            <Sparkle className="w-4 h-4 text-amber-600" />
-            WISSENSCHAFTS-, TECH- & B2B-WEBAGENTUR DARMSTADT
-          </div>
-
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-8 leading-[1.1]">
-            Webdesign & High-Performance Next.js in{' '}
-            <span className="bg-gradient-to-r from-amber-600 via-amber-700 to-teal-700 bg-clip-text text-transparent">
-              Darmstadt
-            </span>
-          </h1>
-
-          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-10">
-            Entwickelt für die Digitalstadt Darmstadt: Blitzschnelle Webapplikationen, modernste
-            Headless CMS Lösungen und kompromisslose technische Exzellenz. Verbindlicher Festpreis
-            auf Anfrage.
-          </p>
-
-          {/* Direct Lead Capture Form in Hero */}
-          <div className="max-w-xl mx-auto mb-16 p-6 rounded-3xl bg-white border border-slate-200 shadow-xl">
-            <h2 className="text-lg font-bold text-slate-900 mb-4 text-center">
-              Kostenlose Bedarfsanalyse für Darmstadt anfordern
-            </h2>
-            <LazyQuickContactForm />
-          </div>
-
-          {/* Trust Badges */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-200">
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100/100</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">Core Web Vitals</div>
-            </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">&lt; 0.4s</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">Ladezeit weltweit</div>
-            </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">45 Min</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">Vor Ort via A5</div>
-            </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100%</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">
-                DSGVO & Cloud-Souveränität
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
+      <LocalSplitHero
+        badgeText="WISSENSCHAFTS-, TECH- & B2B-WEBAGENTUR DARMSTADT"
+        headline="Webdesign & High-Performance Next.js in"
+        headlineGradient="Darmstadt"
+        description="Entwickelt für die Digitalstadt Darmstadt: Blitzschnelle Webapplikationen, modernste Headless CMS Lösungen und kompromisslose technische Exzellenz. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+        cityName="Darmstadt"
+        sourceTag="local_seo_darmstadt"
+        formHeading="Kostenlose Bedarfsanalyse für Darmstadt"
+        formSubtitle="Persönliche Beratung durch Inhaber Umutcan Emre Tezgel innerhalb von 24h."
+        secondaryCtaText="Darmstädter Referenzen ansehen"
+      />
 
       {/* 2. TRUSTBAR (REAL PROOF) */}
       <section className="border-y border-slate-200 bg-white">

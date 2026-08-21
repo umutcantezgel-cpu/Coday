@@ -3,6 +3,11 @@ import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import {
+  getCityHierarchySchema,
+  getPyramidBreadcrumbs,
+} from '@/features/local-seo/model/schemaPyramid';
+import { LocalSplitHero } from '@/features/local-seo/ui/LocalSplitHero';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -81,113 +86,12 @@ export default async function WebdesignWiesbadenPage({
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: isEn ? 'Locations' : 'Standorte', url: `/${_locale}/uebersicht` },
-    { name: 'Wiesbaden', url: `/${_locale}/webdesign-wiesbaden` },
-  ]);
-
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
-      breadcrumbs,
-      {
-        '@type': 'LocalBusiness',
-        '@id': `${BASE_URL}/${_locale}/webdesign-wiesbaden#localbusiness`,
-        name: 'Coday – Webdesign Agentur Wiesbaden',
-        url: `${BASE_URL}/${_locale}/webdesign-wiesbaden`,
-        logo: `${BASE_URL}/icon.png`,
-        image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49-176-41195301',
-        email: 'kontakt@codayweb.de',
-        priceRange: '€€€€',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: 'Regionalbüro Wiesbaden-Rheingau / HQ Wetzlar',
-          addressLocality: 'Wetzlar',
-          postalCode: '35578',
-          addressRegion: 'Hessen',
-          addressCountry: 'DE',
-        },
-        geo: {
-          '@type': 'GeoCoordinates',
-          latitude: 50.0826,
-          longitude: 8.24,
-        },
-        areaServed: [
-          { '@type': 'City', name: 'Wiesbaden' },
-          { '@type': 'AdministrativeArea', name: 'Wilhelmstraße' },
-          { '@type': 'AdministrativeArea', name: 'Nordenstadt' },
-          { '@type': 'AdministrativeArea', name: 'Schierstein' },
-          { '@type': 'AdministrativeArea', name: 'Biebrich' },
-          { '@type': 'AdministrativeArea', name: 'Sonnenberg' },
-          { '@type': 'AdministrativeArea', name: 'Rheingau-Taunus-Kreis' },
-          { '@type': 'AdministrativeArea', name: 'Metropolregion Frankfurt Rhein-Main' },
-        ],
-      },
-      {
-        '@type': 'ProfessionalService',
-        '@id': `${BASE_URL}/${_locale}/webdesign-wiesbaden#service`,
-        name: 'High-End Webdesign & Next.js Webentwicklung Wiesbaden',
-        provider: {
-          '@id': `${BASE_URL}/#organization`,
-        },
-        serviceType: [
-          'Kanzlei- & Notariat-Webportale',
-          'Privatklinik & Facharzt Webdesign',
-          'Next.js 15 Webentwicklung',
-          'Local SEO Wilhelmstraße & Nordenstadt',
-          'Sanity Headless CMS',
-        ],
-        hasOfferCatalog: {
-          '@type': 'OfferCatalog',
-          name: 'Dienstleistungen für Wiesbaden & den Rheingau',
-          itemListElement: [
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
-                name: 'Kanzleien & Beratung Webportale',
-                description:
-                  'Seriöse, minimalistische Webauftritte mit barrierefreier Usability und höchster DSGVO-Sicherheit für Wiesbaden.',
-              },
-            },
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
-                name: 'Privatkliniken & Praxen Portale',
-                description:
-                  'Exklusive Ästhetik mit DSGVO-konformer Online-Terminbuchung und subsekundären Ladezeiten.',
-              },
-            },
-          ],
-        },
-      },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Home',
-            item: `${BASE_URL}/${_locale}`,
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Standorte',
-            item: `${BASE_URL}/${_locale}/standorte/hessen`,
-          },
-          {
-            '@type': 'ListItem',
-            position: 3,
-            name: 'Wiesbaden',
-            item: `${BASE_URL}/${_locale}/webdesign-wiesbaden`,
-          },
-        ],
-      },
+      getPyramidBreadcrumbs(3, { citySlug: 'webdesign-wiesbaden' }, _locale),
+      ...(getCityHierarchySchema('webdesign-wiesbaden', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',
         mainEntity: [
@@ -196,7 +100,7 @@ export default async function WebdesignWiesbadenPage({
             name: 'Wie viel kostet eine neue Website in Wiesbaden?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance.',
+              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen bieten wir maximale Kosteneffizienz ohne teuren Agentur-Wasserkopf.',
             },
           },
           {
@@ -243,79 +147,18 @@ export default async function WebdesignWiesbadenPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28 bg-[#fafafa]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-100/40 via-white/80 to-transparent pointer-events-none" />
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-400/10 blur-[140px] rounded-full pointer-events-none" />
-
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-50 text-amber-800 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-8 shadow-sm">
-            <Sparkle className="w-4 h-4 text-amber-600" />
-            KANZLEIEN, PRAXEN & CONSULTING WEBAGENTUR WIESBADEN
-          </div>
-
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-8 leading-[1.1]">
-            Webdesign & Next.js Entwicklung in der Landeshauptstadt{' '}
-            <span className="bg-gradient-to-r from-amber-600 via-amber-700 to-teal-700 bg-clip-text text-transparent">
-              Wiesbaden
-            </span>
-          </h1>
-
-          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-10">
-            Speziell für Wirtschaftskanzleien, Privatkliniken, Consulting-Boutiquen und
-            Premium-Dienstleister in Wiesbaden und dem Rheingau. Maximale Ladezeiten unter 500ms,
-            perfekte Google-Rankings und planbare Mandanten- und Patientengewinnung. Verbindlicher
-            Festpreis nach kostenloser Bedarfsanalyse.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <Link href="/contact" className="w-full sm:w-auto">
-              <Button
-                variant="primary"
-                size="lg"
-                className="w-full sm:w-auto bg-primary-700 hover:bg-primary-800 text-white font-bold px-8 py-4 text-base shadow-lg shadow-primary-700/25 transition-all hover:scale-[1.02]"
-              >
-                Kostenloses Erstgespräch anfordern
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-            </Link>
-            <Link href="/work" className="w-full sm:w-auto">
-              <Button
-                variant="secondary"
-                size="lg"
-                className="w-full sm:w-auto border-slate-300 hover:border-slate-400 bg-white hover:bg-slate-50 text-slate-700 px-8 py-4 text-base shadow-sm"
-              >
-                Wiesbadener Referenzen ansehen
-              </Button>
-            </Link>
-          </div>
-
-          {/* Trust Badges */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-200">
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100/100</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">Core Web Vitals</div>
-            </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">&lt; 0.4s</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">Ladezeit via Edge</div>
-            </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">45 Min</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">
-                Vor Ort via A3 / A66
-              </div>
-            </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100%</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">
-                DSGVO & Deutsches Hosting
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
+      <LocalSplitHero
+        badgeText="KANZLEIEN, PRAXEN & CONSULTING WEBAGENTUR WIESBADEN"
+        headline="Webdesign & Next.js Entwicklung in der Landeshauptstadt"
+        headlineGradient="Wiesbaden"
+        description="Speziell für Wirtschaftskanzleien, Privatkliniken, Consulting-Boutiquen und Premium-Dienstleister in Wiesbaden und dem Rheingau. Maximale Ladezeiten unter 500ms, perfekte Google-Rankings und planbare Mandanten- und Patientengewinnung. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+        cityName="Wiesbaden"
+        sourceTag="local_seo_wiesbaden"
+        formHeading="Kostenlose Bedarfsanalyse für Wiesbaden"
+        formSubtitle="Persönliche Beratung durch Inhaber Umutcan Emre Tezgel innerhalb von 24h."
+        secondaryCtaText="Wiesbadener Referenzen ansehen"
+      />
 
       {/* 2. TRUSTBAR (REAL PROOF) */}
       <section className="border-y border-slate-200 bg-white">

@@ -3,10 +3,14 @@ import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import {
+  getCountyHierarchySchema,
+  getPyramidBreadcrumbs,
+} from '@/features/local-seo/model/schemaPyramid';
+import { LocalSplitHero } from '@/features/local-seo/ui/LocalSplitHero';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
-import { LazyQuickContactForm } from '@/widgets/home/LazyQuickContactForm';
 import {
   ArrowRight,
   Lightning,
@@ -163,81 +167,14 @@ export default async function RheingauTaunusKreisPage({
     },
   ];
 
+  const isEn = _locale === 'en';
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
-      {
-        '@type': 'LocalBusiness',
-        '@id': `${BASE_URL}/${_locale}/regionen/rheingau-taunus-kreis#localbusiness`,
-        name: 'Coday – Webagentur Rheingau-Taunus-Kreis',
-        url: `${BASE_URL}/${_locale}/regionen/rheingau-taunus-kreis`,
-        logo: `${BASE_URL}/icon.png`,
-        image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49-176-41195301',
-        email: 'kontakt@codayweb.de',
-        priceRange: '€€€€',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: 'HQ Wetzlar / Regionalbüro Untertaunus',
-          addressLocality: 'Wetzlar',
-          postalCode: '35578',
-          addressRegion: 'Hessen',
-          addressCountry: 'DE',
-        },
-        geo: {
-          '@type': 'GeoCoordinates',
-          latitude: 50.1447,
-          longitude: 8.0722,
-        },
-        areaServed: [
-          { '@type': 'City', name: 'Taunusstein' },
-          { '@type': 'City', name: 'Idstein' },
-          { '@type': 'City', name: 'Eltville am Rhein' },
-          { '@type': 'City', name: 'Rüdesheim am Rhein' },
-          { '@type': 'City', name: 'Geisenheim' },
-          { '@type': 'AdministrativeArea', name: 'Rheingau-Taunus-Kreis' },
-          { '@type': 'AdministrativeArea', name: 'Rheingau' },
-        ],
-      },
-      {
-        '@type': 'ProfessionalService',
-        '@id': `${BASE_URL}/${_locale}/regionen/rheingau-taunus-kreis#service`,
-        name: 'Weinbau, Bildung & Mittelstand Webentwicklung Rheingau-Taunus',
-        provider: {
-          '@id': `${BASE_URL}/#organization`,
-        },
-        serviceType: [
-          'Weinguts- & Tourismus Webportale',
-          'Bildungs- & Hochschul-Webdesign',
-          'Next.js 15 Webentwicklung',
-          'Local SEO Rheingau-Taunus-Kreis',
-          'Sanity Headless CMS',
-        ],
-      },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Home',
-            item: `${BASE_URL}/${_locale}`,
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Regionen',
-            item: `${BASE_URL}/${_locale}/standorte/hessen`,
-          },
-          {
-            '@type': 'ListItem',
-            position: 3,
-            name: 'Rheingau-Taunus-Kreis',
-            item: `${BASE_URL}/${_locale}/regionen/rheingau-taunus-kreis`,
-          },
-        ],
-      },
+      getPyramidBreadcrumbs(2, { countySlug: 'rheingau-taunus-kreis' }, _locale),
+      ...(getCountyHierarchySchema('rheingau-taunus-kreis', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',
         mainEntity: [
@@ -246,7 +183,7 @@ export default async function RheingauTaunusKreisPage({
             name: 'Wie viel kostet eine neue Website im Rheingau-Taunus-Kreis?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance.',
+              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen bieten wir maximale Kosteneffizienz ohne teuren Agentur-Wasserkopf.',
             },
           },
           {
@@ -259,10 +196,10 @@ export default async function RheingauTaunusKreisPage({
           },
           {
             '@type': 'Question',
-            name: 'Kommen Sie für ein Beratungsgespräch direkt zu uns in den Betrieb?',
+            name: 'Kommen Sie für ein Beratungsgespräch direkt zu uns nach Taunusstein, Idstein oder Eltville?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ja, selbstverständlich. Über die A3 oder B54 sind wir von unserem Wetzlarer HQ in rund 40 Minuten direkt bei Ihnen vor Ort in Taunusstein, Idstein, Eltville oder Bad Schwalbach.',
+              text: 'Ja, sehr gerne. Über die A3 und B54 sind wir von unserem Wetzlarer HQ in rund 40 Minuten direkt bei Ihnen vor Ort im Betrieb oder Weingut.',
             },
           },
           {
@@ -293,64 +230,18 @@ export default async function RheingauTaunusKreisPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* 1. HERO SECTION MIT LEAD CAPTURE */}
-      <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28 bg-[#fafafa]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-100/40 via-white/80 to-transparent pointer-events-none" />
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-400/10 blur-[140px] rounded-full pointer-events-none" />
-
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-50 text-amber-800 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-8 shadow-sm">
-            <Sparkle className="w-4 h-4 text-amber-600" />
-            REGIONALER MASTER-HUB · RHEINGAU-TAUNUS-KREIS
-          </div>
-
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-8 leading-[1.1]">
-            Webdesign & Next.js Entwicklung im{' '}
-            <span className="bg-gradient-to-r from-amber-600 via-amber-700 to-teal-700 bg-clip-text text-transparent">
-              Rheingau-Taunus-Kreis
-            </span>
-          </h1>
-
-          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-10">
-            Ihre High-End Webagentur für Taunusstein, Idstein, Eltville, Rüdesheim und den gesamten
-            Untertaunus & Rheingau. Blitzschnelle Next.js Webapplikationen, modernste
-            Headless-Systeme und automatisierte Leads für Weinbau, Tourismus, Bildung und
-            Dienstleister. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse.
-          </p>
-
-          {/* Lead Capture Form in Hero */}
-          <div className="max-w-xl mx-auto mb-16 p-6 rounded-3xl bg-white border border-slate-200 shadow-xl">
-            <h2 className="text-lg font-bold text-slate-900 mb-4 text-center">
-              Kostenlose Bedarfsanalyse im Rheingau-Taunus-Kreis anfordern
-            </h2>
-            <LazyQuickContactForm />
-          </div>
-
-          {/* Trust Badges */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-200">
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100/100</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">Core Web Vitals</div>
-            </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">&lt; 0.4s</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">Ladezeit via Edge</div>
-            </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">40 Min</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">
-                Vor Ort via A3 / B54
-              </div>
-            </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100%</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">
-                DSGVO & Deutsches Hosting
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
+      <LocalSplitHero
+        badgeText="REGIONALER MASTER-HUB · RHEINGAU-TAUNUS-KREIS"
+        headline="Webdesign & Next.js Entwicklung im"
+        headlineGradient="Rheingau-Taunus-Kreis"
+        description="Ihre High-End Webagentur für Taunusstein, Idstein, Eltville, Rüdesheim und den gesamten Untertaunus & Rheingau. Blitzschnelle Next.js Webapplikationen, modernste Headless-Systeme und automatisierte Leads für Weinbau, Tourismus, Bildung und Dienstleister. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+        cityName="Rheingau-Taunus-Kreis"
+        sourceTag="local_seo_rheingau_taunus_kreis"
+        formHeading="Kostenlose Bedarfsanalyse für Rheingau-Taunus"
+        formSubtitle="Persönliche Beratung durch Inhaber Umutcan Emre Tezgel innerhalb von 24h."
+        secondaryCtaText="Rheingau Referenzen ansehen"
+      />
 
       {/* 2. TRUSTBAR (REAL PROOF) */}
       <section className="border-y border-slate-200 bg-white">

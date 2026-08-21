@@ -3,6 +3,11 @@ import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import {
+  getCityHierarchySchema,
+  getPyramidBreadcrumbs,
+} from '@/features/local-seo/model/schemaPyramid';
+import { LocalSplitHero } from '@/features/local-seo/ui/LocalSplitHero';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -81,114 +86,12 @@ export default async function WebdesignHerbornPage({
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: isEn ? 'Locations' : 'Standorte', url: `/${_locale}/uebersicht` },
-    { name: 'Herborn', url: `/${_locale}/webdesign-herborn` },
-  ]);
-
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
-      breadcrumbs,
-      {
-        '@type': 'LocalBusiness',
-        '@id': `${BASE_URL}/${_locale}/webdesign-herborn#localbusiness`,
-        name: 'Coday – Webdesign Agentur Herborn',
-        url: `${BASE_URL}/${_locale}/webdesign-herborn`,
-        logo: `${BASE_URL}/icon.png`,
-        image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49-176-41195301',
-        email: 'kontakt@codayweb.de',
-        priceRange: '€€€',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: 'Regionalbüro Mittelhessen / HQ Wetzlar',
-          addressLocality: 'Wetzlar',
-          postalCode: '35578',
-          addressRegion: 'Hessen',
-          addressCountry: 'DE',
-        },
-        geo: {
-          '@type': 'GeoCoordinates',
-          latitude: 50.6833,
-          longitude: 8.3,
-        },
-        areaServed: [
-          { '@type': 'City', name: 'Herborn' },
-          { '@type': 'City', name: 'Sinn' },
-          { '@type': 'City', name: 'Mittenaar' },
-          { '@type': 'City', name: 'Dillenburg' },
-          { '@type': 'City', name: 'Haiger' },
-          { '@type': 'City', name: 'Driedorf' },
-          { '@type': 'City', name: 'Breitscheid' },
-          { '@type': 'AdministrativeArea', name: 'Lahn-Dill-Kreis' },
-          { '@type': 'AdministrativeArea', name: 'Regierungsbezirk Gießen' },
-        ],
-      },
-      {
-        '@type': 'ProfessionalService',
-        '@id': `${BASE_URL}/${_locale}/webdesign-herborn#service`,
-        name: 'High-End Webdesign & Next.js Webentwicklung Herborn',
-        provider: {
-          '@id': `${BASE_URL}/#organization`,
-        },
-        serviceType: [
-          'B2B Industrie- & Maschinenbau Webportale',
-          'Schaltschrankbau & Zulieferer Webdesign',
-          'Next.js 15 Webentwicklung',
-          'Local SEO Gewerbegebiete Untere Au & Altheimer Feld',
-          'Mitarbeitergewinnung im Handwerk',
-        ],
-        hasOfferCatalog: {
-          '@type': 'OfferCatalog',
-          name: 'Dienstleistungen für Herborn, Sinn, Mittenaar & Lahn-Dill',
-          itemListElement: [
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
-                name: 'B2B & Industrie Webportale',
-                description:
-                  'Serverlose Webanwendungen mit statischer Vorabgenerierung, schnellen Datenblatt-Ladezeiten und hoher B2B-Konversion.',
-              },
-            },
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
-                name: 'Handwerk & Recruiting Funnels',
-                description:
-                  'Moderne Webauftritte mit 60-Sekunden-Bewerbungsverfahren zur Gewinnung von Fachkräften im Dillgebiet.',
-              },
-            },
-          ],
-        },
-      },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Home',
-            item: `${BASE_URL}/${_locale}`,
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Standorte',
-            item: `${BASE_URL}/${_locale}/standorte/hessen`,
-          },
-          {
-            '@type': 'ListItem',
-            position: 3,
-            name: 'Herborn',
-            item: `${BASE_URL}/${_locale}/webdesign-herborn`,
-          },
-        ],
-      },
+      getPyramidBreadcrumbs(3, { citySlug: 'webdesign-herborn' }, _locale),
+      ...(getCityHierarchySchema('webdesign-herborn', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',
         mainEntity: [
@@ -197,7 +100,7 @@ export default async function WebdesignHerbornPage({
             name: 'Wie viel kostet eine neue B2B-Website in Herborn?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance.',
+              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken Next.js Architekturen bieten wir maximale Kosteneffizienz ohne teuren Agentur-Wasserkopf.',
             },
           },
           {
@@ -244,79 +147,18 @@ export default async function WebdesignHerbornPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28 bg-[#fafafa]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-100/40 via-white/80 to-transparent pointer-events-none" />
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-400/10 blur-[140px] rounded-full pointer-events-none" />
-
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-50 text-amber-800 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-8 shadow-sm">
-            <Sparkle className="w-4 h-4 text-amber-600" />
-            B2B & INDUSTRIE WEBAGENTUR HERBORN & LAHN-DILL
-          </div>
-
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-8 leading-[1.1]">
-            Webdesign & Next.js Entwicklung in{' '}
-            <span className="bg-gradient-to-r from-amber-600 via-amber-700 to-teal-700 bg-clip-text text-transparent">
-              Herborn & Lahn-Dill
-            </span>
-          </h1>
-
-          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-10">
-            Speziell für Maschinenbau, Schaltschrankbau, B2B-Zulieferer und Handwerksbetriebe in
-            Herborn, Sinn und Mittenaar. Maximale Ladezeiten unter 500ms, perfekte Google-Rankings
-            und planbare Neukunden- und Mitarbeitergewinnung. Verbindlicher Festpreis nach
-            kostenloser Bedarfsanalyse.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <Link href="/contact" className="w-full sm:w-auto">
-              <Button
-                variant="primary"
-                size="lg"
-                className="w-full sm:w-auto bg-primary-700 hover:bg-primary-800 text-white font-bold px-8 py-4 text-base shadow-lg shadow-primary-700/25 transition-all hover:scale-[1.02]"
-              >
-                Kostenloses Erstgespräch anfordern
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-            </Link>
-            <Link href="/work" className="w-full sm:w-auto">
-              <Button
-                variant="secondary"
-                size="lg"
-                className="w-full sm:w-auto border-slate-300 hover:border-slate-400 bg-white hover:bg-slate-50 text-slate-700 px-8 py-4 text-base shadow-sm"
-              >
-                Herborner Referenzen ansehen
-              </Button>
-            </Link>
-          </div>
-
-          {/* Trust Badges */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-200">
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100/100</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">Core Web Vitals</div>
-            </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">&lt; 0.4s</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">Ladezeit via Edge</div>
-            </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">15 Min</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">
-                Vor Ort via A45 / B277
-              </div>
-            </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
-              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100%</div>
-              <div className="text-xs sm:text-sm text-slate-600 font-medium">
-                DSGVO & Deutsches Hosting
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
+      <LocalSplitHero
+        badgeText="B2B & INDUSTRIE WEBAGENTUR HERBORN & LAHN-DILL"
+        headline="Webdesign & Next.js Entwicklung in"
+        headlineGradient="Herborn & Lahn-Dill"
+        description="Speziell für Maschinenbau, Schaltschrankbau, B2B-Zulieferer und Handwerksbetriebe in Herborn, Sinn und Mittenaar. Maximale Ladezeiten unter 500ms, perfekte Google-Rankings und planbare Neukunden- und Mitarbeitergewinnung. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+        cityName="Herborn"
+        sourceTag="local_seo_herborn"
+        formHeading="Kostenlose Bedarfsanalyse für Herborn"
+        formSubtitle="Persönliche Beratung durch Inhaber Umutcan Emre Tezgel innerhalb von 24h."
+        secondaryCtaText="Herborner Referenzen ansehen"
+      />
 
       {/* 2. TRUSTBAR (REAL PROOF) */}
       <section className="border-y border-slate-200 bg-white">

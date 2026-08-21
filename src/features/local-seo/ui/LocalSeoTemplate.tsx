@@ -11,6 +11,7 @@ import { CheckCircle, MapPin } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';
+import { LocalSplitHero } from './LocalSplitHero';
 import { LocalSchemaBuilder } from './LocalSchemaBuilder';
 
 interface LocalSeoContent {
@@ -54,6 +55,7 @@ interface LocalSeoTemplateProps {
 export const LocalSeoTemplate: React.FC<LocalSeoTemplateProps> = ({ content, cityData }) => {
   const locale = useLocale();
   const isEn = locale === 'en';
+  const cityName = content.displayName || content.target.split('-').join(' ');
 
   return (
     <div className="bg-background-light min-h-dvh">
@@ -65,27 +67,15 @@ export const LocalSeoTemplate: React.FC<LocalSeoTemplateProps> = ({ content, cit
       />
       {cityData && <LocalSchemaBuilder city={cityData} />}
 
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-24 px-4 overflow-hidden bg-gradient-to-br from-bg-primary to-bg-secondary">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(59,130,246,0.08),transparent_60%)]" />
-        <div className="max-w-5xl mx-auto text-center relative z-10">
-          <span className="text-primary-700 font-bold uppercase tracking-wider text-sm mb-4 block">
-            {content.hero.headline}
-          </span>
-          <h1 className="font-display font-black text-4xl sm:text-6xl text-secondary-900 mb-6 tracking-tight">
-            {content.hero.headline} ·{' '}
-            <span className="text-primary-700">{content.hero.subheadline}</span>
-          </h1>
-          <p className="text-xl text-secondary-800 font-medium leading-relaxed mb-10 max-w-2xl mx-auto">
-            {content.hero.description}
-          </p>
-          <Link href="/contact">
-            <Button variant="primary" size="lg">
-              {isEn ? 'Free Strategy Session' : 'Kostenlose Strategy Session'}
-            </Button>
-          </Link>
-        </div>
-      </section>
+      {/* Split Hero Section with Above-the-Fold Contact Form */}
+      <LocalSplitHero
+        badgeText={content.hero.headline}
+        headline={content.hero.headline}
+        headlineGradient={content.hero.subheadline}
+        description={content.hero.description}
+        cityName={cityName}
+        sourceTag={`local_seo_${content.target.toLowerCase().replace(/[^a-z0-9]/g, '_')}`}
+      />
 
       {/* Content Sections */}
       <section className="py-24 bg-white relative">
