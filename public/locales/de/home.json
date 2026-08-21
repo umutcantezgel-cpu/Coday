@@ -51,7 +51,7 @@
     "history": "Sind Geschichte.",
     "standard": "Coday Web ist der neue Standard für Webdesign in Wetzlar.",
     "text_overhead": "Traditionelle Agenturen berechnen Ihnen endlosen Overhead, zahllose Meetings und veraltete WordPress-Baukästen. Das klassische Agenturmodell raubt Ihre wertvolle Zeit und Ihr Budget.",
-    "text_standard": "Coday Web ist die Antithese zur klassischen Agentur: Wir vereinen strategisches High-Conversion Webdesign mit kompromisslos schneller High-Performance Architektur. Keine Baukästen, keine Ausreden — sondern 100/100 PageSpeed und messbare Neukunden für Ihr Unternehmen in Wetzlar.",
+    "text_standard": "Coday Web ist die Antithese zur klassischen Agentur: Wir vereinen strategisches High-Conversion Webdesign mit kompromisslos schneller High-Performance Architektur. Keine Baukästen, keine Ausreden, sondern 100/100 PageSpeed und messbare Neukunden für Ihr Unternehmen in Wetzlar.",
     "traditional": "Traditionelle Agenturen"
   },
   "stats": {
@@ -155,9 +155,10 @@
     "title": "Vertrauen schenken uns lokale Unternehmen"
   },
   "portfolio_teaser": {
-    "overline": "Echte Webdesign Projekte",
-    "title": "Erfolgreiche Webdesign Referenzen aus Wetzlar.",
-    "subtitle": "Keine Fließband-Templates. Nur handgefertigte Next.js-Websites von Coday Web, die messbar mehr Neukunden bringen.",
+    "eyebrow": "Ausgewählte Arbeiten",
+    "title_prefix": "Echte Projekte mit",
+    "title_suffix": "messbarem Erfolg.",
+    "subtitle": "Keine Fließband Templates. Nur handgefertigte Websites von Coday Web, die messbar mehr Neukunden bringen.",
     "cta": "Alle Referenzen ansehen"
   },
   "techStack": {
@@ -166,13 +167,13 @@
     "headingSuffix": "für maximale Performance"
   },
   "seo_content": {
-    "title": "Coday Web – Ihre Agentur für Webdesign & Webentwicklung in Wetzlar",
+    "title": "Coday Web: Ihre Agentur für Webdesign & Webentwicklung in Wetzlar",
     "subtitle": "Professionelle Websites, verkaufsstarkes Webdesign und Website Relaunch für Handwerker, Praxen und Unternehmen in Mittelhessen.",
     "paragraphs": [
       "Als führende Webdesign Agentur in Wetzlar entwickeln wir mit Coday Web professionelle Webseiten, die nicht nur modern gestaltet sind, sondern für Sie messbar neue Kunden gewinnen. Ob Handwerksbetrieb, Arztpraxis, Restaurant oder mittelständischer Dienstleister: Wir verstehen die Anforderungen regionaler Unternehmen in Wetzlar, Gießen, Marburg und ganz Mittelhessen. Unsere Websites werden mit modernsten Technologien wie React und Next.js gebaut und laden garantiert in unter einer Sekunde.",
-      "Was uns von traditionellen Webdesign Agenturen in Wetzlar unterscheidet: Bei Coday Web arbeiten Sie direkt mit dem Gründer und Entwickler zusammen — ohne zwischengeschaltete Vertriebler oder wechselnde Junior-Kräfte. Sie erhalten transparente Festpreise ab 2.000 Euro, ohne versteckte Kosten und ohne unerwartete Stundenabrechnungen. Zudem gehört der gesamte Quellcode zu 100% Ihnen: kein Vendor-Lock-In, keine monatlichen Plattformgebühren und keine Abhängigkeit von langsamen WordPress-Plugins.",
-      "Unsere Kunden aus Wetzlar und Mittelhessen, darunter Batherm Sanitär & Heizung, MS Schlüsseldienst Wetzlar und die Lindener Ratsstuben, belegen den Erfolg: Seit dem Website-Relaunch verzeichnen sie deutlich mehr qualifizierte Anfragen über die Google-Suche. Der Grund liegt in unserer kompromisslosen Kombination aus technischer Perfektion (100/100 Google PageSpeed Score, grüne Core Web Vitals) und lokaler Suchmaschinenoptimierung (Local SEO Wetzlar).",
-      "Ganz gleich, ob Sie eine komplett neue Firmen-Website erstellen lassen möchten oder einen umfassenden Relaunch Ihrer bestehenden Internetpräsenz planen: Coday Web übernimmt die gesamte Umsetzung aus einer Hand. Von der strategischen Beratung über verkaufsstarkes UI/UX-Webdesign bis hin zur schnellen Programmierung und Google-Suchmaschinenoptimierung. Jede Website wird voll responsiv für Smartphones, Tablets und Desktops optimiert.",
+      "Was uns von traditionellen Webdesign Agenturen in Wetzlar unterscheidet: Bei Coday Web arbeiten Sie direkt mit dem Gründer und Entwickler zusammen, ohne zwischengeschaltete Vertriebler oder wechselnde Junior Kräfte. Sie erhalten transparente Festpreise ab 2.000 Euro, ohne versteckte Kosten und ohne unerwartete Stundenabrechnungen. Zudem gehört der gesamte Quellcode zu 100% Ihnen: kein Vendor Lock in, keine monatlichen Plattformgebühren und keine Abhängigkeit von langsamen WordPress Plugins.",
+      "Unsere Kunden aus Wetzlar und Mittelhessen, darunter Batherm Sanitär & Heizung, MS Schlüsseldienst Wetzlar und die Lindener Ratsstuben, belegen den Erfolg: Seit dem Website Relaunch verzeichnen sie deutlich mehr qualifizierte Anfragen über die Google Suche. Der Grund liegt in unserer kompromisslosen Kombination aus technischer Perfektion (100/100 Google PageSpeed Score, grüne Core Web Vitals) und lokaler Suchmaschinenoptimierung (Local SEO Wetzlar).",
+      "Ganz gleich, ob Sie eine komplett neue Firmenwebsite erstellen lassen möchten oder einen umfassenden Relaunch Ihrer bestehenden Internetpräsenz planen: Coday Web übernimmt die gesamte Umsetzung aus einer Hand. Von der strategischen Beratung über verkaufsstarkes UI UX Webdesign bis hin zur schnellen Programmierung und Google Suchmaschinenoptimierung. Jede Website wird voll responsiv für Smartphones, Tablets und Desktops optimiert.",
       "Möchten Sie erfahren, wie eine moderne, blitzschnelle Website Ihrem Unternehmen in Wetzlar und Mittelhessen konkret zu mehr Neukunden und Spitzenplatzierungen bei Google verhelfen kann? Vereinbaren Sie jetzt ein unverbindliches, kostenloses Erstgespräch. In 30 Minuten analysieren wir Ihre aktuelle Webpräsenz und zeigen Ihnen sofort umsetzbare Potenziale auf."
     ],
     "cta": "Kostenloses Erstgespräch vereinbaren"

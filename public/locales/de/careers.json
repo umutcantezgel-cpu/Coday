@@ -9,7 +9,7 @@
     "grid_title": "Unsere Kern-Benefits im Überblick",
     "grid_subtitle": "Alles, was du für Spitzenleistungen und nachhaltigen Flow bei der modernen Webentwicklung benötigst.",
     "gear_title": "Dein High-End Hardware-Setup frei wählbar",
-    "gear_subtitle": "Stelle dir vor deinem ersten Tag dein individuelles Wunsch-Equipment zusammen – komplett von uns finanziert.",
+    "gear_subtitle": "Stelle dir vor deinem ersten Tag dein individuelles Wunsch-Equipment zusammen, komplett von uns finanziert.",
     "items": [
       {
         "icon": "lightning",
@@ -46,7 +46,7 @@
   "culture": {
     "hero": {
       "badge": "Arbeitsweise & Werte",
-      "desc": "100% Inhabergeführt. Keine Junior-Entwickler, kein Agentur-Overhead – dafür kompromisslose Code-Qualität, KI-gestütztes Handwerk und echte Partnerschaft auf Augenhöhe.",
+      "desc": "100% Inhabergeführt. Keine Junior-Entwickler, kein Agentur Overhead, dafür kompromisslose Code-Qualität, KI-gestütztes Handwerk und echte Partnerschaft auf Augenhöhe.",
       "title_gradient": "Arbeitskultur",
       "title_start": "Unsere Philosophie &"
     },
@@ -106,7 +106,7 @@
         "title": "Radikales Eigentum"
       },
       "speed": {
-        "desc": "Schnelle, iterative Auslieferung durch modernste Toolchains – ohne zeitraubende Agentur-Meetings und bürokratische Schleifen.",
+        "desc": "Schnelle, iterative Auslieferung durch modernste Toolchains, ohne zeitraubende Agentur-Meetings und bürokratische Schleifen.",
         "title": "Präzision & Tempo"
       },
       "truth": {
@@ -125,7 +125,7 @@
   "jobs": {
     "button": "Jetzt bewerben",
     "culture_badge": "Karriere bei Coday",
-    "h1_title": "Karriere bei Coday – Offene Stellen & Jobs in Wetzlar",
+    "h1_title": "Karriere bei Coday: Offene Stellen & Jobs in Wetzlar",
     "details": {
       "fulltime": "Vollzeit",
       "parttime": "Teilzeit / Freelance",

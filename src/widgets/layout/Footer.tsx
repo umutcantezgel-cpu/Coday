@@ -15,6 +15,8 @@ import {
   LinkedinLogo,
   ArrowRight,
   RocketLaunch,
+  EnvelopeSimple,
+  Phone,
 } from '@phosphor-icons/react/dist/ssr';
 
 import LogoLoop from '@/shared/ui/LogoLoop';
@@ -101,27 +103,32 @@ export const Footer: React.FC = () => {
           <div className="flex flex-col items-start lg:col-span-1">
             <Link
               href="/"
-              className="group inline-flex items-center mb-6 transition-all duration-300"
-              title="Coday Web – Webdesign Agentur Wetzlar"
-              aria-label="Coday Web – Webdesign Agentur Wetzlar Startseite"
+              className="group relative inline-flex items-center mb-6 transition-all duration-300"
+              title="Coday Web: Webdesign Agentur Wetzlar"
+              aria-label="Coday Web: Webdesign Agentur Wetzlar Startseite"
             >
-              <div className="relative flex items-center justify-center">
-                {/* Soft brushed grey ambient halo blending seamlessly with the footer background */}
+              <div className="relative flex items-center justify-center p-2 sm:p-3">
+                {/* Outer soft light-grey airbrush spray halo dissolving seamlessly into bg-slate-50 */}
                 <div
-                  className="absolute -inset-3.5 bg-gradient-to-r from-slate-400/30 via-slate-300/40 to-slate-400/25 rounded-3xl blur-xl pointer-events-none opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                  className="absolute -inset-6 bg-[radial-gradient(ellipse_at_center,rgba(203,213,225,0.75)_0%,rgba(226,232,240,0.5)_40%,transparent_75%)] rounded-full blur-2xl pointer-events-none group-hover:scale-110 transition-transform duration-700"
+                  aria-hidden="true"
+                />
+                {/* Inner subtle spray layer */}
+                <div
+                  className="absolute -inset-2 bg-[radial-gradient(circle,rgba(203,213,225,0.6)_0%,transparent_70%)] rounded-full blur-lg pointer-events-none opacity-90"
                   aria-hidden="true"
                 />
 
-                {/* Soft dark charcoal container with smooth blended edges */}
-                <div className="relative px-6 py-3.5 rounded-2xl sm:rounded-3xl bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 border border-slate-800/80 shadow-lg shadow-slate-950/15 group-hover:border-primary-500/50 group-hover:shadow-xl group-hover:shadow-primary-950/20 group-hover:scale-[1.02] transition-all duration-300 flex items-center justify-center">
+                {/* Crisp, large Coday logo rendered directly on the soft light spray background */}
+                <div className="relative flex items-center justify-center">
                   <Image
                     src="/images/brand/coday-logo-footer.png"
                     alt={t('footer.logo_alt', {
-                      defaultValue: 'Coday Web – Webdesign Agentur Wetzlar & Webentwicklung',
+                      defaultValue: 'Coday Web: Webdesign Agentur Wetzlar & Webentwicklung',
                     })}
                     width={220}
                     height={68}
-                    className="h-10 sm:h-12 w-auto object-contain drop-shadow-md"
+                    className="h-10 sm:h-12 w-auto object-contain brightness-0 contrast-200 group-hover:opacity-85 transition-all duration-300"
                     priority={false}
                   />
                 </div>
@@ -312,7 +319,10 @@ export const Footer: React.FC = () => {
                   className="hover:text-primary-700 transition-colors duration-200 flex items-center gap-3 group font-medium"
                 >
                   <div className="w-8 h-8 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center group-hover:bg-primary-50 group-hover:text-primary-700 transition-colors">
-                    <span className="text-xs">@</span>
+                    <OptimizedIcon
+                      icon={EnvelopeSimple}
+                      className="w-4 h-4 text-slate-600 group-hover:text-primary-700 transition-colors"
+                    />
                   </div>
                   kontakt@codayweb.de
                 </a>
@@ -323,7 +333,10 @@ export const Footer: React.FC = () => {
                   className="hover:text-primary-700 transition-colors duration-200 flex items-center gap-3 group font-medium"
                 >
                   <div className="w-8 h-8 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center group-hover:bg-primary-50 group-hover:text-primary-700 transition-colors">
-                    <span className="text-xs">✆</span>
+                    <OptimizedIcon
+                      icon={Phone}
+                      className="w-4 h-4 text-slate-600 group-hover:text-primary-700 transition-colors"
+                    />
                   </div>
                   +49 176 41195301
                 </a>

@@ -251,7 +251,7 @@ const Events: React.FC = () => {
 
                 {event.seatsRemaining <= 6 && (
                   <div className="relative z-10 md:mt-4 px-2.5 py-1 bg-amber-500/20 border border-amber-400/30 rounded-full text-amber-300 text-[11px] font-bold">
-                    🔥 Nur {event.seatsRemaining} Plätze
+                    Nur {event.seatsRemaining} Plätze
                   </div>
                 )}
               </div>

@@ -9,7 +9,7 @@
     "grid_title": "Our Core Benefits Overview",
     "grid_subtitle": "Everything you need for sustainable engineering flow, peak performance, and modern web development.",
     "gear_title": "Choose Your High-End Hardware Setup",
-    "gear_subtitle": "Configure your bespoke dream setup before day one — fully funded and shipped straight to your doorstep.",
+    "gear_subtitle": "Configure your bespoke dream setup before day one, fully funded and shipped straight to your doorstep.",
     "items": [
       {
         "icon": "lightning",
@@ -46,7 +46,7 @@
   "culture": {
     "hero": {
       "badge": "Work Ethics & Values",
-      "desc": "100% founder-led. No junior developers, no agency overhead — just uncompromising code quality, AI-augmented engineering, and genuine partnership.",
+      "desc": "100% founder-led. No junior developers, no agency overhead, just uncompromising code quality, AI-augmented engineering, and genuine partnership.",
       "title_gradient": "Work Culture",
       "title_start": "Our Philosophy &"
     },
@@ -106,7 +106,7 @@
         "title": "Radical Ownership"
       },
       "speed": {
-        "desc": "Fast iterative delivery powered by modern toolchains — eliminating bloated agency meetings and bureaucratic bottlenecks.",
+        "desc": "Fast iterative delivery powered by modern toolchains, eliminating bloated agency meetings and bureaucratic bottlenecks.",
         "title": "Precision & Velocity"
       },
       "truth": {
@@ -125,7 +125,7 @@
   "jobs": {
     "button": "Apply now",
     "culture_badge": "Careers at Coday",
-    "h1_title": "Careers at Coday – Open Positions & Jobs in Wetzlar",
+    "h1_title": "Careers at Coday: Open Positions & Jobs in Wetzlar",
     "details": {
       "fulltime": "Full-time",
       "parttime": "Part-time / Freelance",

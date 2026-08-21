@@ -6,6 +6,9 @@ import {
   XCircle,
   ArrowRight,
   ArrowCounterClockwise,
+  Trophy,
+  Sparkle,
+  BookOpen,
 } from '@phosphor-icons/react/dist/ssr';
 import { useRtl } from '@/shared/hooks/useRtl';
 
@@ -173,18 +176,16 @@ const InteractiveQuiz: React.FC<InteractiveQuizProps> = ({ title, questions, cla
             animate={{ opacity: 1, scale: 1 }}
             className="text-center py-8"
           >
-            <div
-              className="text-6xl mb-4"
-              role="img"
-              aria-label={
-                score === questions.length
-                  ? 'Pokal'
-                  : score >= questions.length / 2
-                    ? 'Party'
-                    : 'Bücher'
-              }
-            >
-              {score === questions.length ? '🏆' : score >= questions.length / 2 ? '🎉' : '📚'}
+            <div className="flex justify-center mb-4">
+              <div className="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-500">
+                {score === questions.length ? (
+                  <Trophy size={36} className="text-amber-500" />
+                ) : score >= questions.length / 2 ? (
+                  <Sparkle size={36} className="text-primary-500" />
+                ) : (
+                  <BookOpen size={36} className="text-slate-500" />
+                )}
+              </div>
             </div>
             <h4 className="text-2xl font-bold text-secondary mb-2" aria-live="polite">
               {score}/{questions.length} richtig!

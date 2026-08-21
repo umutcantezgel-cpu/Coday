@@ -3,6 +3,8 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { getOrganizationSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
 import { CareerOverviewClient } from '@/features/career/ui/CareerOverviewClient';
 import { Link } from '@/i18n/navigation';
+import { Briefcase, Buildings, Lightning } from '@phosphor-icons/react/dist/ssr';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
 export const dynamic = 'force-static';
 
@@ -100,7 +102,7 @@ export default async function CareerPage({ params }: { params: Promise<{ locale:
             <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group hover:border-primary-300">
               <div>
                 <div className="w-12 h-12 rounded-xl bg-primary-50 text-primary-700 font-bold flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
-                  💼
+                  <OptimizedIcon icon={Briefcase} className="w-6 h-6 text-primary-700" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 group-hover:text-primary-700 transition-colors mb-3">
                   {isEn ? 'Open Positions & Jobs' : 'Offene Stellen & Jobangebote'}
@@ -124,7 +126,7 @@ export default async function CareerPage({ params }: { params: Promise<{ locale:
             <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group hover:border-primary-300">
               <div>
                 <div className="w-12 h-12 rounded-xl bg-purple-50 text-purple-700 font-bold flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
-                  🏛️
+                  <OptimizedIcon icon={Buildings} className="w-6 h-6 text-purple-700" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 group-hover:text-primary-700 transition-colors mb-3">
                   {isEn ? 'Team Culture & Philosophy' : 'Teamkultur & Philosophie'}
@@ -148,7 +150,7 @@ export default async function CareerPage({ params }: { params: Promise<{ locale:
             <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group hover:border-primary-300">
               <div>
                 <div className="w-12 h-12 rounded-xl bg-amber-50 text-amber-700 font-bold flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
-                  ⚡
+                  <OptimizedIcon icon={Lightning} className="w-6 h-6 text-amber-700" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 group-hover:text-primary-700 transition-colors mb-3">
                   {isEn ? 'Benefits & Work Model' : 'Benefits & Arbeitsmodell'}
@@ -176,7 +178,7 @@ export default async function CareerPage({ params }: { params: Promise<{ locale:
         {isEn ? (
           <>
             <h2 className="text-3xl font-display font-bold mb-6">
-              Careers at Coday – Your Future in Web Development in Wetzlar
+              Careers at Coday: Your Future in Web Development in Wetzlar
             </h2>
             <div className="space-y-4 text-base leading-relaxed">
               <p>
@@ -238,7 +240,7 @@ export default async function CareerPage({ params }: { params: Promise<{ locale:
         ) : (
           <>
             <h2 className="text-3xl font-display font-bold mb-6">
-              Karriere bei Coday – Ihre Zukunft in der Webentwicklung in Wetzlar
+              Karriere bei Coday: Ihre Zukunft in der Webentwicklung in Wetzlar
             </h2>
             <div className="space-y-4 text-base leading-relaxed">
               <p>

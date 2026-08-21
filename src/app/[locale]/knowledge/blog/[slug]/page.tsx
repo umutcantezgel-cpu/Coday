@@ -113,8 +113,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         'Why WordPress is Dying in 2026 (And Why Agencies Still Sell It)':
           'Why WordPress is Dying in 2026',
         "The AI Revolution: Why 2026 is the Year of 'Voice-First'": 'Voice-First Strategy 2026',
-        'The Anti-AI Manifesto: Why Human Design Still Wins (2026) ✨':
-          'The Anti-AI Manifesto (2026)',
+        'The Anti-AI Manifesto: Why Human Design Still Wins (2026)': 'The Anti-AI Manifesto (2026)',
         "The 'Agency Killer': Why the Classic Agency Model is Dead":
           'The Classic Agency Model is Dead',
         'Digital Sovereignty: Why the US Cloud Act is a Ticking Time Bomb':
@@ -255,7 +254,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     'Why WordPress is Dying in 2026 (And Why Agencies Still Sell It)':
       'Why WordPress is Dying in 2026',
     "The AI Revolution: Why 2026 is the Year of 'Voice-First'": 'Voice-First Strategy 2026',
-    'The Anti-AI Manifesto: Why Human Design Still Wins (2026) ✨': 'The Anti-AI Manifesto (2026)',
+    'The Anti-AI Manifesto: Why Human Design Still Wins (2026)': 'The Anti-AI Manifesto (2026)',
     "The 'Agency Killer': Why the Classic Agency Model is Dead": 'The Classic Agency Model is Dead',
     'Digital Sovereignty: Why the US Cloud Act is a Ticking Time Bomb':
       'Digital Sovereignty & US Cloud Act',

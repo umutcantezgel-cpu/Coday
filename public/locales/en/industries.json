@@ -36,19 +36,19 @@
       "row1_generic": "Static contact form with spam vulnerability and no qualification",
       "row1_coday": "Interactive multi-step calculator with automatic lead pre-qualification",
       "row2_title": "Talent Acquisition (HR)",
-      "row2_generic": "Outdated PDF upload field – high drop-off rate on mobile devices",
+      "row2_generic": "Outdated PDF upload field, high drop-off rate on mobile devices",
       "row2_coday": "60-second mobile recruiting funnel with zero resume friction",
       "row3_title": "System Integrations",
-      "row3_generic": "No interfaces – time-consuming manual data entry",
+      "row3_generic": "No interfaces, time-consuming manual data entry",
       "row3_coday": "Seamless API connection to ERP, practice management systems & CRM",
       "row4_title": "Performance & SEO",
-      "row4_generic": "3–5s load times due to plugin bloat, generic meta descriptions",
-      "row4_coday": "Sub-0.3s speed, 100/100 Core Web Vitals & hyper-local geo targeting"
+      "row4_generic": "3 to 5s load times due to plugin bloat, generic meta descriptions",
+      "row4_coday": "Sub 0.3s speed, 100/100 Core Web Vitals & hyper-local geo targeting"
     },
     "proof": {
       "badge": "Real Clients & Measurable Results",
       "title": "Real-World Industry Case Studies",
-      "subtitle": "No fictional showcases – authentic companies scaling digitally with Coday.",
+      "subtitle": "No fictional showcases: authentic companies scaling digitally with Coday.",
       "batherm_title": "Batherm Haustechnik",
       "batherm_desc": "Fully digitized heating calculator with automated lead routing and predictable client acquisition.",
       "schluessel_title": "MS Schlüsseldienst Wetzlar",
@@ -59,13 +59,13 @@
     "cta_banner": {
       "badge": "Custom Growth Check",
       "title": "Ready for Digital Market Leadership in Your Sector?",
-      "description": "Let us audit your current web presence and identify concrete growth levers for your market – free and without obligation.",
+      "description": "Let us audit your current web presence and identify concrete growth levers for your market, free and without obligation.",
       "button": "Request Free Consultation",
       "calculator_btn": "Calculate Project Scope"
     },
     "cta": "View Concept",
     "meta": {
-      "title": "Industry Solutions | B2B Web Design & E-Commerce - Coday",
+      "title": "Industry Solutions | B2B Web Design & E-Commerce | Coday",
       "description": "Tailored web design and SEO concepts for B2B, industry, e-commerce, and service providers. We understand the specific rules of your industry."
     }
   },

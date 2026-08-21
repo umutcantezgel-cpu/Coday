@@ -185,7 +185,7 @@ const Newsletter: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
                 <div className="absolute bottom-3 left-4 right-4 text-white text-xs font-semibold">
-                  <span>✨ Exklusive Deep Dives für Webentwickler & Gründer</span>
+                  <span>Exklusive Deep Dives für Webentwickler & Gründer</span>
                 </div>
               </div>
 

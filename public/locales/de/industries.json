@@ -36,19 +36,19 @@
       "row1_generic": "Statisches Kontaktformular mit Spam-Risiko und ohne Vorqualifizierung",
       "row1_coday": "Interaktiver Mehrschritt-Kalkulator mit automatischer Lead-Vorqualifizierung",
       "row2_title": "Mitarbeitergewinnung (HR)",
-      "row2_generic": "Veraltetes PDF-Upload-Feld – hohe Abbruchrate auf mobilen Endgeräten",
+      "row2_generic": "Veraltetes PDF-Upload-Feld, hohe Abbruchrate auf mobilen Endgeräten",
       "row2_coday": "60-Sekunden Mobile-Recruiting-Funnel ohne lästigen Lebenslauf",
       "row3_title": "System-Integrationen",
-      "row3_generic": "Keine Schnittstellen – zeitaufwendige manuelle Datenübertragung",
+      "row3_generic": "Keine Schnittstellen, zeitaufwendige manuelle Datenübertragung",
       "row3_coday": "Nahtlose API-Anbindung an Handwerker-Software, Praxissysteme & CRM",
       "row4_title": "Performance & SEO",
-      "row4_generic": "3–5 Sekunden Ladezeit durch Plugin-Ballast, generische Meta-Texte",
-      "row4_coday": "Sub-0,3s Ladezeit, 100/100 Core Web Vitals & lokales Geo-Targeting"
+      "row4_generic": "3 bis 5 Sekunden Ladezeit durch Plugin-Ballast, generische Meta-Texte",
+      "row4_coday": "unter 0,3s Ladezeit, 100/100 Core Web Vitals & lokales Geo-Targeting"
     },
     "proof": {
       "badge": "Echte Kunden & Messbare Erfolge",
       "title": "Branchen-Referenzen aus der Praxis",
-      "subtitle": "Keine fiktiven Showcases – echte Unternehmen aus Hessen, die durch Coday digital dominieren.",
+      "subtitle": "Keine fiktiven Showcases: echte Unternehmen aus Hessen, die durch Coday digital dominieren.",
       "batherm_title": "Batherm Haustechnik",
       "batherm_desc": "Vollständig digitalisierter Heizungs-Kalkulator mit automatischem Lead-Routing und planbarer Neukundengewinnung.",
       "schluessel_title": "MS Schlüsseldienst Wetzlar",
@@ -59,13 +59,13 @@
     "cta_banner": {
       "badge": "Individuelle Potenzialanalyse",
       "title": "Bereit für die digitale Marktführerschaft in Ihrer Branche?",
-      "description": "Lassen Sie uns Ihre aktuelle Webpräsenz prüfen und konkrete Wachstumshebel für Ihren Markt identifizieren – kostenfrei und unverbindlich.",
+      "description": "Lassen Sie uns Ihre aktuelle Webpräsenz prüfen und konkrete Wachstumshebel für Ihren Markt identifizieren, kostenfrei und unverbindlich.",
       "button": "Kostenloses Erstgespräch anfordern",
-      "calculator_btn": "Projekt-Kosten kalkulieren"
+      "calculator_btn": "Projektkosten kalkulieren"
     },
     "cta": "Konzept ansehen",
     "meta": {
-      "title": "Branchenlösungen | B2B Webdesign & E-Commerce - Coday",
+      "title": "Branchenlösungen | B2B Webdesign & E-Commerce | Coday",
       "description": "Maßgeschneiderte Webdesign- und SEO-Konzepte für B2B, Industrie, E-Commerce und Dienstleister. Wir kennen die Regeln Ihrer Branche."
     }
   },

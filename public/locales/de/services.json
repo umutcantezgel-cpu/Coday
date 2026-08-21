@@ -211,8 +211,8 @@
       "title": "Webdesign"
     },
     "web_development": {
-      "description": "Wir bauen schnelle und leistungsfähige Webseiten und Web-Anwendungen mit moderner Technik.",
-      "title": "Web-Entwicklung"
+      "description": "Wir bauen schnelle und leistungsfähige Webseiten und Webanwendungen mit moderner Technik.",
+      "title": "Webentwicklung"
     },
     "seo": {
       "title": "Suchmaschinenoptimierung (SEO)",
@@ -299,7 +299,7 @@
     },
     "meta": {
       "title": "Design Systems & UI Pattern Libraries | Coday",
-      "description": "Konsistente, skalierbare Design-Systeme für effiziente Web-Entwicklung. Wir standardisieren Ihre UI für schnellere Iterationen und markentreue."
+      "description": "Konsistente, skalierbare Design-Systeme für effiziente Webentwicklung. Wir standardisieren Ihre UI für schnellere Iterationen und markentreue."
     },
     "seoText": {
       "title": "Digitale Exzellenz für Ihren Erfolg",
@@ -677,7 +677,7 @@
     ],
     "title": "Webentwicklung & SEO Agentur | Leistungen - Coday",
     "description": "Unsere Expertise: High-End Webdesign, React & Next.js Entwicklung, Conversion-Optimierung und datengetriebene SEO-Strategien für maximalen ROI.",
-    "rotatingTexts": ["Web-Design", "Web-Entwicklung", "SEO"]
+    "rotatingTexts": ["Webdesign", "Webentwicklung", "SEO"]
   },
   "migration_page": {
     "long_description": "Der Wechsel von veralteten, monolithischen Altsystemen wie WordPress, Typo3 oder Magento hin zu modernen, dezentralen Architekturen ist ein entscheidender Hebel für die Wettbewerbsfähigkeit Ihres Unternehmens. Es geht dabei nicht nur um den Einsatz neuer Technologien, sondern um die nachhaltige Zukunftssicherung durch Eliminierung von Sicherheitsrisiken und Performance-Flaschenhälsen.\\n\\nWir sind auf risikofreie System- und Datenmigrationen spezialisiert, komplett ohne Ausfallzeiten für Ihren laufenden Betrieb. Mit modernen Frameworks wie Next.js bauen wir ein blitzschnelles Frontend auf, während wir alle bestehenden Nutzerdaten, Assets und Content-Strukturen über robuste Skripte und APIs sicher in das neue System übertragen. Strikte SEO-Protokolle und 301-Weiterleitungen garantieren, dass Ihre wertvollen Google-Rankings vollständig erhalten bleiben.\\n\\nNach der Migration profitieren Sie sofort von drastisch verkürzten Ladezeiten, skalierbarer Infrastruktur und reduzierten Serverkosten. Diese hochmoderne, API-gestützte Architektur passt sich flexibel an künftige Marktveränderungen an und positioniert Ihr Unternehmen optimal, um messbar höhere Conversion-Rates und maximales Wachstum zu realisieren.",
