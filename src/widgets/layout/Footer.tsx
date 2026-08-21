@@ -101,21 +101,30 @@ export const Footer: React.FC = () => {
           <div className="flex flex-col items-start lg:col-span-1">
             <Link
               href="/"
-              className="group inline-flex items-center mb-6 transition-all duration-300 hover:opacity-95"
+              className="group inline-flex items-center mb-6 transition-all duration-300"
               title="Coday Web – Webdesign Agentur Wetzlar"
               aria-label="Coday Web – Webdesign Agentur Wetzlar Startseite"
             >
-              <div className="px-4 py-2.5 rounded-2xl bg-slate-950 border border-slate-800 shadow-md shadow-slate-950/20 group-hover:shadow-lg group-hover:border-primary-500/40 group-hover:scale-[1.02] transition-all duration-300 flex items-center justify-center">
-                <Image
-                  src="/images/brand/coday-logo-footer.png"
-                  alt={t('footer.logo_alt', {
-                    defaultValue: 'Coday Web – Webdesign Agentur Wetzlar & Webentwicklung',
-                  })}
-                  width={140}
-                  height={44}
-                  className="h-8 w-auto object-contain"
-                  priority={false}
+              <div className="relative flex items-center justify-center">
+                {/* Soft brushed grey ambient halo blending seamlessly with the footer background */}
+                <div
+                  className="absolute -inset-3.5 bg-gradient-to-r from-slate-400/30 via-slate-300/40 to-slate-400/25 rounded-3xl blur-xl pointer-events-none opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                  aria-hidden="true"
                 />
+
+                {/* Soft dark charcoal container with smooth blended edges */}
+                <div className="relative px-6 py-3.5 rounded-2xl sm:rounded-3xl bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 border border-slate-800/80 shadow-lg shadow-slate-950/15 group-hover:border-primary-500/50 group-hover:shadow-xl group-hover:shadow-primary-950/20 group-hover:scale-[1.02] transition-all duration-300 flex items-center justify-center">
+                  <Image
+                    src="/images/brand/coday-logo-footer.png"
+                    alt={t('footer.logo_alt', {
+                      defaultValue: 'Coday Web – Webdesign Agentur Wetzlar & Webentwicklung',
+                    })}
+                    width={220}
+                    height={68}
+                    className="h-10 sm:h-12 w-auto object-contain drop-shadow-md"
+                    priority={false}
+                  />
+                </div>
               </div>
             </Link>
             <p className="text-sm text-slate-600 max-w-xs mb-8 leading-relaxed font-normal">
