@@ -1,8 +1,68 @@
 {
   "overview": {
-    "label": "Unsere Expertise",
-    "title": "Spezialisierte Webdesign Branchenlösungen",
-    "description": "Jede Branche hat eigene Regeln. Wir kennen sie. Entdecken Sie unsere spezialisierten Konzepte für Ihren Erfolg.\n\nEine erfolgreiche digitale Präsenz erfordert weit mehr als nur ein ansprechendes Design, sie bedarf eines tiefgreifenden Verständnisses für die spezifischen Mechanismen, Zielgruppen und Herausforderungen der jeweiligen Branche. Ob es um die Gewinnung qualifizierter Fachkräfte im Handwerk, die digitale Akquise von Alleinaufträgen für Immobilienmakler, die Automatisierung von Patienten-Onboardings in Arztpraxen oder um die hochkomplexe Lead-Generierung für Unternehmensberatungen und Tech-Startups geht: Wir entwickeln maßgeschneiderte Webdesign- und IT-Lösungen, die exakt auf Ihre unternehmerischen Ziele zugeschnitten sind. Jede unserer Branchenlösungen basiert auf fundierten Marktanalysen, erprobten Best Practices und modernsten Technologien, um messbare Ergebnisse und einen klaren Wettbewerbsvorteil zu garantieren.\n\nWir verstehen uns nicht nur als reine Webdesign-Agentur, sondern als strategischer Partner für Ihre digitale Transformation. Unser interdisziplinäres Team aus erfahrenen Designern, Frontend-Entwicklern und SEO-Experten konzipiert digitale Ökosysteme, die Ihren Vertrieb automatisieren, interne Prozesse verschlanken und Ihre Markenautorität im digitalen Raum nachhaltig etablieren. Durch den Einsatz von performanten Headless-Architekturen, conversion-optimierten User Interfaces (UI/UX) und datengetriebenen Suchmaschinenstrategien verwandeln wir Ihre Website von einer statischen digitalen Visitenkarte in einen skalierbaren, hochprofitablen Vertriebskanal. Setzen Sie auf spezialisierte Branchenexpertise und lassen Sie uns gemeinsam das volle digitale Potenzial Ihres Unternehmens ausschöpfen, für mehr Sichtbarkeit, mehr Anfragen und nachhaltiges Wachstum in Ihrem spezifischen Marktumfeld.",
+    "label": "Branchenarchitektur mit System",
+    "badge": "9+ Spezialisierte Branchenlösungen",
+    "title": "Web-Systeme, die die Sprache Ihrer Branche sprechen",
+    "headline_prefix": "Maßgeschneiderte Webdesign",
+    "headline_gradient": "Branchenlösungen",
+    "description": "Jede Branche folgt eigenen Marktregeln. Wir entwickeln keine 08/15-Templates, sondern maßgeschneiderte Next.js Plattformen mit integrierten Lead-Funnels, Recruiting-Tools und API-Schnittstellen für messbares Wachstum in Mittelhessen und ganz Deutschland.",
+    "search_placeholder": "Branche oder Anwendungsfall suchen (z. B. Handwerk, Kanzlei, Praxis)...",
+    "filter_all": "Alle Branchen",
+    "filters": {
+      "all": "Alle Branchen",
+      "craft": "Handwerk & Bau",
+      "healthcare": "Medizin & Gesundheit",
+      "legal": "Kanzleien & Recht",
+      "services": "B2B & Beratung",
+      "hospitality": "Gastronomie & Food",
+      "retail": "Handel & E-Commerce",
+      "automotive": "Automobil & Werkstatt",
+      "realestate": "Immobilien & Makler",
+      "tech": "Startups & IT"
+    },
+    "card": {
+      "view_solution": "Branchen-Lösung ansehen",
+      "lead_boost": "+140% qualifizierte Anfragen",
+      "speed_guarantee": "< 0,3s Ladezeit",
+      "features_label": "Integrierte Module"
+    },
+    "comparison": {
+      "badge": "Technologie-Vorsprung",
+      "title": "Generische WordPress-Templates vs. Coday Branchen-Plattform",
+      "subtitle": "Warum Standard-Baukästen in anspruchsvollen Branchen scheitern und wie moderne Headless-Architektur den Unterschied macht.",
+      "col_generic": "Klassische Agentur / Theme-Baukasten",
+      "col_coday": "Coday Next.js 15 Branchen-System",
+      "row1_title": "Lead-Generierung",
+      "row1_generic": "Statisches Kontaktformular mit Spam-Risiko und ohne Vorqualifizierung",
+      "row1_coday": "Interaktiver Mehrschritt-Kalkulator mit automatischer Lead-Vorqualifizierung",
+      "row2_title": "Mitarbeitergewinnung (HR)",
+      "row2_generic": "Veraltetes PDF-Upload-Feld – hohe Abbruchrate auf mobilen Endgeräten",
+      "row2_coday": "60-Sekunden Mobile-Recruiting-Funnel ohne lästigen Lebenslauf",
+      "row3_title": "System-Integrationen",
+      "row3_generic": "Keine Schnittstellen – zeitaufwendige manuelle Datenübertragung",
+      "row3_coday": "Nahtlose API-Anbindung an Handwerker-Software, Praxissysteme & CRM",
+      "row4_title": "Performance & SEO",
+      "row4_generic": "3–5 Sekunden Ladezeit durch Plugin-Ballast, generische Meta-Texte",
+      "row4_coday": "Sub-0,3s Ladezeit, 100/100 Core Web Vitals & lokales Geo-Targeting"
+    },
+    "proof": {
+      "badge": "Echte Kunden & Messbare Erfolge",
+      "title": "Branchen-Referenzen aus der Praxis",
+      "subtitle": "Keine fiktiven Showcases – echte Unternehmen aus Hessen, die durch Coday digital dominieren.",
+      "batherm_title": "Batherm Haustechnik",
+      "batherm_desc": "Vollständig digitalisierter Heizungs-Kalkulator mit automatischem Lead-Routing und planbarer Neukundengewinnung.",
+      "schluessel_title": "MS Schlüsseldienst Wetzlar",
+      "schluessel_desc": "Platz 1 bei lokalen Notdienst-Suchanfragen und blitzschnelle mobile Anruffunktion bei Notfällen.",
+      "ratsstuben_title": "Lindener Ratsstuben",
+      "ratsstuben_desc": "Moderne digitale Speisekarte, integriertes Tischreservierungssystem und erstklassiges lokales Ranking."
+    },
+    "cta_banner": {
+      "badge": "Individuelle Potenzialanalyse",
+      "title": "Bereit für die digitale Marktführerschaft in Ihrer Branche?",
+      "description": "Lassen Sie uns Ihre aktuelle Webpräsenz prüfen und konkrete Wachstumshebel für Ihren Markt identifizieren – kostenfrei und unverbindlich.",
+      "button": "Kostenloses Erstgespräch anfordern",
+      "calculator_btn": "Projekt-Kosten kalkulieren"
+    },
     "cta": "Konzept ansehen",
     "meta": {
       "title": "Branchenlösungen | B2B Webdesign & E-Commerce - Coday",

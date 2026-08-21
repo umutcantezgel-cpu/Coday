@@ -3,9 +3,17 @@
  * Maps industry slugs to their corresponding illustration paths and SEO alt-texts.
  */
 export const industryHeroImages: Record<string, { src: string; alt: string }> = {
+  automobil: {
+    src: '/images/industries/kfz.webp',
+    alt: 'KFZ-Mechaniker in moderner Werkstatt mit Diagnose-Computer',
+  },
   'handwerk-bau': {
     src: '/images/industries/handwerker-hero.webp',
     alt: 'Handwerker in Arbeitskleidung mit professionellem Werkzeug im Einsatz',
+  },
+  immobilien: {
+    src: '/images/industries/immobilien-hero.webp',
+    alt: 'Architekt plant modernes Gebäude am CAD-System mit 3D-Modell',
   },
   'immobilien-makler': {
     src: '/images/industries/immobilien-hero.webp',
@@ -18,6 +26,10 @@ export const industryHeroImages: Record<string, { src: string; alt: string }> = 
   'gastronomie-hotellerie': {
     src: '/images/industries/gastronomie-hero.webp',
     alt: 'Gastronom begrüßt herzlich Gäste am Restauranteingang mit Menütafel',
+  },
+  retail: {
+    src: '/images/industries/lokales-geschaeft-inhaber-schaufenster-laden.webp',
+    alt: 'Lokaler Geschäftsinhaber vor seinem Schaufenster freut sich auf Kunden',
   },
   'ecommerce-retail': {
     src: '/images/industries/lokales-geschaeft-inhaber-schaufenster-laden.webp',

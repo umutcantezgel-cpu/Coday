@@ -1,8 +1,68 @@
 {
   "overview": {
-    "label": "Our Expertise",
-    "title": "Specialized Web Design Industry Solutions (Branchen)",
-    "description": "Every distinct industry operates strictly by its own unique set of unwritten rules, specific consumer expectations, and complex digital requirements. At Coday, we intimately know, thoroughly understand, and strategically leverage these industry-specific nuances to ensure your digital dominance. Discover our deeply Specialized Web Design Industry Solutions (Branchen), meticulously engineered to guarantee your long-term commercial success and establish your brand as the undisputed market leader in your specific niche. We firmly believe that generic, one-size-fits-all website templates are fundamentally incapable of addressing the sophisticated needs of modern, high-performing businesses. Instead, we dive deep into the core mechanics of your daily operations, carefully analyzing your target audience's psychological triggers, and identifying the precise technological bottlenecks that are currently holding your company back from reaching its full revenue potential.\\n\\nOur comprehensive, industry-specific approach means that we do not merely build aesthetically pleasing digital brochures; we engineer highly robust, conversion-optimized digital sales machines tailored exclusively to your sector's exact specifications. Whether you are operating in the fast-paced, visually driven world of gastronomy and hospitality, the highly regulated, trust-centric medical and legal fields, or the hyper-competitive, rapidly scaling tech and software startup ecosystem, we deploy specialized IT architectures designed to solve your exact pain points. By integrating custom-developed digital tools such as intelligent online appointment booking systems for healthcare providers, highly secure and encrypted client intake portals for prestigious law firms, or incredibly fast, seamlessly synchronized e-commerce omnichannel platforms for modern retail businesses we drastically reduce your administrative overhead and significantly streamline your internal workflows.\\n\\nFurthermore, our digital industry solutions are deeply intertwined with aggressive, highly targeted, and data-driven Search Engine Optimization (SEO) strategies. We understand that even the most technologically advanced and visually stunning website is entirely useless if your ideal customers cannot find it on the first page of Google. Therefore, we conduct exhaustive, sector-specific keyword research, implement flawless technical SEO foundations, and execute hyper-local visibility campaigns to ensure you capture the most lucrative search traffic available in your specific market. We systematically optimize your digital presence to outrank established competitors, capture high-intent leads, and continuously drive sustainable organic growth. By closely aligning our advanced technical web development expertise with deep, granular industry insights, we empower your business to navigate the complexities of the digital age with absolute confidence.\\n\\nUltimately, our mission is to transform your digital presence into your most valuable, hardest-working, and most profitable asset. We partner closely with ambitious B2B enterprises, elite service providers, and forward-thinking brands to architect digital experiences that not only captivate users visually but also convert them reliably into loyal, long-term clients. From the initial strategic consultation and immersive brand design to complex backend system integrations and continuous post-launch performance optimization, we provide a holistic, end-to-end digital partnership. Explore our diverse portfolio of specialized industry solutions and discover exactly how we can propel your business to unprecedented heights of digital excellence and market dominance.",
+    "label": "Industry Architecture by Design",
+    "badge": "9+ Specialized Industry Solutions",
+    "title": "Web Systems Tailored to Your Industry's Dynamics",
+    "headline_prefix": "Tailored Web Design",
+    "headline_gradient": "Industry Solutions",
+    "description": "Every industry operates by its own market rules. We don't build generic 08/15 templates. We engineer custom Next.js platforms with integrated lead funnels, recruiting systems, and API integrations for measurable growth across Germany and Europe.",
+    "search_placeholder": "Search industry or use case (e.g. Craft, Legal, Medical)...",
+    "filter_all": "All Industries",
+    "filters": {
+      "all": "All Industries",
+      "craft": "Craft & Construction",
+      "healthcare": "Medicine & Healthcare",
+      "legal": "Law & Legal Services",
+      "services": "B2B & Consulting",
+      "hospitality": "Gastronomy & Food",
+      "retail": "Retail & E-Commerce",
+      "automotive": "Automotive & Workshops",
+      "realestate": "Real Estate & Agencies",
+      "tech": "Startups & IT"
+    },
+    "card": {
+      "view_solution": "View Industry Solution",
+      "lead_boost": "+140% Qualified Inquiries",
+      "speed_guarantee": "< 0.3s Load Time",
+      "features_label": "Integrated Modules"
+    },
+    "comparison": {
+      "badge": "Technology Advantage",
+      "title": "Generic WordPress Templates vs. Coday Industry Platforms",
+      "subtitle": "Why standard builders fail in specialized industries and how modern headless architecture makes the difference.",
+      "col_generic": "Traditional Agency / Theme Builders",
+      "col_coday": "Coday Next.js 15 Industry Platform",
+      "row1_title": "Lead Generation",
+      "row1_generic": "Static contact form with spam vulnerability and no qualification",
+      "row1_coday": "Interactive multi-step calculator with automatic lead pre-qualification",
+      "row2_title": "Talent Acquisition (HR)",
+      "row2_generic": "Outdated PDF upload field – high drop-off rate on mobile devices",
+      "row2_coday": "60-second mobile recruiting funnel with zero resume friction",
+      "row3_title": "System Integrations",
+      "row3_generic": "No interfaces – time-consuming manual data entry",
+      "row3_coday": "Seamless API connection to ERP, practice management systems & CRM",
+      "row4_title": "Performance & SEO",
+      "row4_generic": "3–5s load times due to plugin bloat, generic meta descriptions",
+      "row4_coday": "Sub-0.3s speed, 100/100 Core Web Vitals & hyper-local geo targeting"
+    },
+    "proof": {
+      "badge": "Real Clients & Measurable Results",
+      "title": "Real-World Industry Case Studies",
+      "subtitle": "No fictional showcases – authentic companies scaling digitally with Coday.",
+      "batherm_title": "Batherm Haustechnik",
+      "batherm_desc": "Fully digitized heating calculator with automated lead routing and predictable client acquisition.",
+      "schluessel_title": "MS Schlüsseldienst Wetzlar",
+      "schluessel_desc": "Rank #1 for local emergency locksmith searches with instant mobile emergency call routing.",
+      "ratsstuben_title": "Lindener Ratsstuben",
+      "ratsstuben_desc": "Modern digital menu, integrated table booking system, and premier local ranking."
+    },
+    "cta_banner": {
+      "badge": "Custom Growth Check",
+      "title": "Ready for Digital Market Leadership in Your Sector?",
+      "description": "Let us audit your current web presence and identify concrete growth levers for your market – free and without obligation.",
+      "button": "Request Free Consultation",
+      "calculator_btn": "Calculate Project Scope"
+    },
     "cta": "View Concept",
     "meta": {
       "title": "Industry Solutions | B2B Web Design & E-Commerce - Coday",

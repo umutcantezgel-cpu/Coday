@@ -1,138 +1,217 @@
 'use client';
 
-import React, { useState } from 'react';
-
+import React, { useState, useMemo } from 'react';
 import { Link } from '@/i18n/navigation';
-import { useTranslations } from 'next-intl';
-import { m } from 'motion/react';
+import { useTranslations, useLocale } from 'next-intl';
 import { wikiEntities } from '@/features/knowledge/model/entities';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
+import GradientText from '@/shared/ui/GradientText';
+import {
+  BookBookmark,
+  EnvelopeSimple,
+  VideoCamera,
+  FilePdf,
+  Question,
+  MagnifyingGlass,
+  ArrowRight,
+} from '@phosphor-icons/react/dist/ssr';
 
 export default function WikiHub() {
   const t = useTranslations('knowledge.wiki');
-  const [searchTerm, setSearchTerm] = useState('');
-  const [activeCategory, setActiveCategory] = useState<string | 'All'>('All');
+  const locale = useLocale();
+  const isEn = locale === 'en';
 
-  const filteredEntities = wikiEntities.filter((entity) => {
-    const matchesSearch =
-      entity.displayName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      entity.aliases.some((a) => a.toLowerCase().includes(searchTerm.toLowerCase()));
-    const matchesCategory = activeCategory === 'All' || entity.category === activeCategory;
-    return matchesSearch && matchesCategory;
-  });
+  const [searchTerm, setSearchTerm] = useState('');
+  const [activeCategory, setActiveCategory] = useState<string>('All');
+
+  const knowledgeNav = [
+    { label: isEn ? 'Tech Wiki' : 'Tech-Wiki', href: '/knowledge/wiki', icon: BookBookmark },
+    {
+      label: isEn ? 'Newsletter' : 'Newsletter',
+      href: '/knowledge/newsletter',
+      icon: EnvelopeSimple,
+    },
+    { label: isEn ? 'Academy' : 'Academy & Videos', href: '/knowledge/academy', icon: VideoCamera },
+    { label: isEn ? 'Whitepapers' : 'Whitepapers', href: '/knowledge/whitepapers', icon: FilePdf },
+    { label: isEn ? 'FAQ' : 'FAQ & Support', href: '/knowledge/faq', icon: Question },
+  ];
 
   const categories = ['All', 'Tech', 'Business', 'Design'];
 
-  const schemaOrg = {
-    '@context': 'https://schema.org',
-    '@type': 'DefinedTermSet',
-    '@id': 'https://www.codayweb.de/knowledge/wiki#set',
-    name: 'Coday AI & Digital Excellence Wiki',
-    description: t('subtitle'),
-    hasDefinedTerm: wikiEntities.map((entity) => ({
-      '@type': 'DefinedTerm',
-      '@id': `https://www.codayweb.de/knowledge/wiki/${entity.slug}#term`,
-      name: entity.displayName,
-      termCode: entity.slug,
-      inDefinedTermSet: 'https://www.codayweb.de/knowledge/wiki#set',
-    })),
-  };
+  const filteredEntities = useMemo(() => {
+    return wikiEntities.filter((entity) => {
+      const q = searchTerm.trim().toLowerCase();
+      const matchesSearch =
+        q === '' ||
+        entity.displayName.toLowerCase().includes(q) ||
+        entity.aliases.some((a) => a.toLowerCase().includes(q)) ||
+        entity.relatedEntities.some((r) => r.toLowerCase().includes(q));
+      const matchesCategory = activeCategory === 'All' || entity.category === activeCategory;
+      return matchesSearch && matchesCategory;
+    });
+  }, [searchTerm, activeCategory]);
 
   return (
-    <main className="bg-coday-black min-h-screen pt-4 pb-16 md:pt-6 md:pb-20 text-coday-gray-100 font-sans selection:bg-coday-gold selection:text-coday-black">
-      <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-        <header className="mb-16">
-          <m.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-              AI <span className="text-coday-gold">&amp;</span> Digital Excellence{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-coday-gray-100 to-coday-gray-500">
-                Wiki
-              </span>
-            </h1>
-            <p className="text-xl text-coday-gray-400 max-w-3xl">{t('subtitle')}</p>
-          </m.div>
-        </header>
+    <main className="bg-background-light min-h-dvh pt-4 pb-20 md:pt-6 md:pb-28">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-6 flex justify-start">
+          <Breadcrumbs />
+        </div>
 
-        <div className="mb-12">
-          <div className="flex flex-col md:flex-row gap-6 justify-between items-center bg-coday-dark border border-coday-gray-800 p-4 rounded-xl">
-            <div className="w-full md:w-1/2 relative">
-              <label htmlFor="wiki-search" className="sr-only">
-                {t('search_aria')}
-              </label>
+        <nav aria-label="Knowledge Navigation" className="flex justify-center mb-10">
+          <div className="inline-flex p-1.5 bg-white/80 backdrop-blur-md rounded-2xl border border-slate-200/80 shadow-xs gap-1 sm:gap-2 overflow-x-auto max-w-full">
+            {knowledgeNav.map((tab) => {
+              const isActive = tab.href === '/knowledge/wiki';
+              const Icon = tab.icon;
+              return (
+                <Link
+                  key={tab.href}
+                  href={tab.href}
+                  className={`flex items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap ${
+                    isActive
+                      ? 'bg-primary text-white shadow-sm font-bold'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                  }`}
+                >
+                  <OptimizedIcon
+                    icon={Icon}
+                    className={`w-4 h-4 ${isActive ? 'text-white' : 'text-slate-400'}`}
+                    weight={isActive ? 'fill' : 'regular'}
+                  />
+                  <span>{tab.label}</span>
+                </Link>
+              );
+            })}
+          </div>
+        </nav>
+
+        <div className="grid lg:grid-cols-12 gap-8 items-center mb-10">
+          <div className="lg:col-span-8 space-y-4">
+            <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-wider">
+              {isEn ? 'Engineering & AI Glossary' : 'Entwickler- & KI-Glossar'}
+            </span>
+            <h1 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl text-secondary tracking-tight">
+              <span>AI & Tech </span>
+              <GradientText
+                colors={['#147a7a', '#2563eb', '#147a7a']}
+                animationSpeed={8}
+                className="inline-block"
+              >
+                Wiki
+              </GradientText>
+            </h1>
+            <p className="text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed">
+              {t('subtitle')}
+            </p>
+          </div>
+
+          <div className="lg:col-span-4">
+            <div className="relative">
+              <OptimizedIcon
+                icon={MagnifyingGlass}
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5"
+              />
               <input
                 id="wiki-search"
                 type="search"
-                placeholder={t('search_placeholder')}
-                className="w-full bg-coday-black border border-coday-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-coday-gold transition-colors motion-reduce:duration-[0.01ms]"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
+                placeholder={t('search_placeholder')}
+                aria-label={t('search_aria')}
+                className="w-full pl-12 pr-4 py-3.5 bg-white border border-slate-200 rounded-2xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all shadow-xs text-sm"
               />
-              <svg
-                className="w-5 h-5 absolute right-4 top-3.5 text-coday-gray-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                ></path>
-              </svg>
-            </div>
-
-            <div className="flex flex-wrap gap-2 w-full md:w-auto">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`active:scale-[0.97] px-4 py-2 rounded-lg text-sm font-medium transition-colors motion-reduce:duration-[0.01ms] ${activeCategory === cat ? 'bg-coday-gold text-coday-black' : 'bg-coday-gray-800 text-coday-gray-300 hover:bg-coday-gray-700'}`}
-                  aria-pressed={activeCategory === cat}
-                >
-                  {cat === 'All' ? t('categories.all') : cat}
-                </button>
-              ))}
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredEntities.map((entity, idx) => (
-            <m.div
-              key={entity.slug}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: Math.min(idx * 0.05, 0.5), duration: 0.4 }}
-            >
-              <Link
-                href={`/knowledge/wiki/${entity.slug}`}
-                className="block p-6 rounded-xl bg-coday-dark border border-coday-gray-800 hover:border-coday-gold/50 hover:bg-coday-gray-900 transition motion-reduce:duration-[0.01ms] group h-full"
+        <div className="flex items-center gap-2 overflow-x-auto pb-2 mb-8 scrollbar-none">
+          {categories.map((cat) => {
+            const isActive = activeCategory === cat;
+            return (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all ${
+                  isActive
+                    ? 'bg-secondary text-white shadow-sm'
+                    : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                }`}
+                aria-pressed={isActive}
               >
-                <div className="flex justify-between items-start mb-4">
-                  <span className="text-xs font-bold uppercase tracking-wider text-coday-gold bg-coday-gold/10 px-2 py-1 rounded">
+                {cat === 'All' ? t('categories.all') : cat}
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          {filteredEntities.map((entity) => (
+            <Link
+              key={entity.slug}
+              href={`/knowledge/wiki/${entity.slug}`}
+              className="group bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 hover:shadow-xl hover:border-primary/40 transition-all duration-300 flex flex-col justify-between"
+            >
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold px-2.5 py-1 rounded-lg bg-primary/10 text-primary uppercase tracking-wider">
                     {entity.category}
                   </span>
+                  <span className="text-[11px] font-mono text-slate-400">/{entity.slug}</span>
                 </div>
-                <h2 className="text-xl font-semibold mb-2 group-hover:text-coday-gold transition-colors motion-reduce:duration-[0.01ms]">
+
+                <h2 className="text-xl font-bold font-display text-slate-900 group-hover:text-primary transition-colors">
                   {entity.displayName}
                 </h2>
-                <div className="text-sm text-coday-gray-500 line-clamp-2">
-                  {t('aliases')} {entity.aliases.slice(0, 3).join(', ')}{' '}
-                  {entity.aliases.length > 3 && '...'}
+
+                <div className="flex flex-wrap gap-1.5 pt-1">
+                  {entity.aliases &&
+                    entity.aliases.length > 0 &&
+                    entity.aliases.slice(0, 2).map((alias, idx) => (
+                      <span
+                        key={`alias-${idx}`}
+                        className="text-[11px] bg-slate-50 text-slate-600 px-2 py-0.5 rounded-md border border-slate-200"
+                      >
+                        {alias}
+                      </span>
+                    ))}
+                  {entity.relatedEntities &&
+                    entity.relatedEntities.slice(0, 3).map((rel, idx) => (
+                      <span
+                        key={`rel-${idx}`}
+                        className="text-[11px] bg-primary/5 text-primary px-2 py-0.5 rounded-md border border-primary/10"
+                      >
+                        #{rel}
+                      </span>
+                    ))}
                 </div>
-              </Link>
-            </m.div>
+              </div>
+
+              <div className="pt-4 mt-6 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-700 group-hover:text-primary transition-colors">
+                <span>{isEn ? 'Read article' : 'Artikel lesen'}</span>
+                <OptimizedIcon
+                  icon={ArrowRight}
+                  className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                />
+              </div>
+            </Link>
           ))}
         </div>
 
         {filteredEntities.length === 0 && (
-          <div className="text-center py-20 text-coday-gray-500">
-            <p className="text-xl">{t('no_results', { searchTerm })}</p>
+          <div className="text-center py-16 bg-white rounded-3xl border border-slate-200 p-8 max-w-xl mx-auto shadow-xs">
+            <OptimizedIcon
+              icon={MagnifyingGlass}
+              className="w-12 h-12 text-slate-300 mx-auto mb-4"
+            />
+            <h3 className="text-lg font-bold text-slate-900 mb-1">
+              {isEn ? 'No terms found' : 'Keine Begriffe gefunden'}
+            </h3>
+            <p className="text-sm text-slate-500">
+              {isEn
+                ? 'Try adjusting your search query or switching the category filter.'
+                : 'Versuche es mit einem anderen Suchbegriff oder wechsle die Kategorie.'}
+            </p>
           </div>
         )}
       </div>

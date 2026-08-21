@@ -5,7 +5,19 @@ import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { m, AnimatePresence } from 'motion/react';
-import { MagnifyingGlass, CaretDown, X } from '@phosphor-icons/react/dist/ssr';
+import {
+  MagnifyingGlass,
+  CaretDown,
+  X,
+  BookBookmark,
+  EnvelopeSimple,
+  VideoCamera,
+  FilePdf,
+  Question,
+} from '@phosphor-icons/react/dist/ssr';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
+import GradientText from '@/shared/ui/GradientText';
 import { JsonLd } from '@/shared/ui/JsonLd';
 import { getFAQs, getFAQCategories } from '@/features/faq/model';
 import TroubleshooterWizard from '@/features/faq/ui/TroubleshooterWizard';
@@ -13,9 +25,22 @@ import TroubleshooterWizard from '@/features/faq/ui/TroubleshooterWizard';
 const FAQ = () => {
   const t = useTranslations('faq');
   const locale = useLocale();
+  const isEn = locale === 'en';
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [openItem, setOpenItem] = useState<string | null>(null);
+
+  const knowledgeNav = [
+    { label: isEn ? 'Tech Wiki' : 'Tech-Wiki', href: '/knowledge/wiki', icon: BookBookmark },
+    {
+      label: isEn ? 'Newsletter' : 'Newsletter',
+      href: '/knowledge/newsletter',
+      icon: EnvelopeSimple,
+    },
+    { label: isEn ? 'Academy' : 'Academy & Videos', href: '/knowledge/academy', icon: VideoCamera },
+    { label: isEn ? 'Whitepapers' : 'Whitepapers', href: '/knowledge/whitepapers', icon: FilePdf },
+    { label: isEn ? 'FAQ' : 'FAQ & Support', href: '/knowledge/faq', icon: Question },
+  ];
 
   const faqs = getFAQs(locale);
   const categories = getFAQCategories(locale);
@@ -41,7 +66,7 @@ const FAQ = () => {
   };
 
   return (
-    <main className="min-h-dvh bg-background-light pt-4 pb-16 md:pt-6 md:pb-20">
+    <main className="min-h-dvh bg-background-light pt-4 pb-20 md:pt-6 md:pb-28">
       <JsonLd
         pageType="faq"
         data={{
@@ -54,23 +79,54 @@ const FAQ = () => {
         }}
       />
 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Breadcrumbs */}
+        <div className="mb-6 flex justify-start">
+          <Breadcrumbs />
+        </div>
+
+        {/* Knowledge Subnavigation */}
+        <nav aria-label="Knowledge Navigation" className="flex justify-center mb-10">
+          <div className="inline-flex p-1.5 bg-white/80 backdrop-blur-md rounded-2xl border border-slate-200/80 shadow-xs gap-1 sm:gap-2 overflow-x-auto max-w-full">
+            {knowledgeNav.map((tab) => {
+              const isActive = tab.href === '/knowledge/faq';
+              const Icon = tab.icon;
+              return (
+                <Link
+                  key={tab.href}
+                  href={tab.href}
+                  className={`flex items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap ${
+                    isActive
+                      ? 'bg-primary text-white shadow-sm font-bold'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                  }`}
+                >
+                  <OptimizedIcon
+                    icon={Icon}
+                    className={`w-4 h-4 ${isActive ? 'text-white' : 'text-slate-400'}`}
+                    weight={isActive ? 'fill' : 'regular'}
+                  />
+                  <span>{tab.label}</span>
+                </Link>
+              );
+            })}
+          </div>
+        </nav>
+      </div>
+
       {/* Hero & Search */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
-        <m.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="font-display font-black text-4xl md:text-5xl text-gradient mb-4"
-        >
-          {t('hero.title')}
-        </m.h1>
-        <m.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="text-lg text-slate-500 mb-8"
-        >
-          {t('hero.subtitle')}
-        </m.p>
+        <h1 className="font-display font-black text-4xl md:text-6xl text-secondary mb-4 tracking-tight">
+          <span>{isEn ? 'Frequently Asked ' : 'Häufig gestellte '}</span>
+          <GradientText
+            colors={['#147a7a', '#2563eb', '#147a7a']}
+            animationSpeed={8}
+            className="inline-block"
+          >
+            {isEn ? 'Questions' : 'Fragen'}
+          </GradientText>
+        </h1>
+        <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">{t('hero.subtitle')}</p>
 
         <m.div
           initial={{ opacity: 0, scale: 0.95 }}
