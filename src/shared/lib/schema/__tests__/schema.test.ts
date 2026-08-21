@@ -16,17 +16,16 @@ describe('JSON-LD Schema Generators', () => {
     const org = getOrganizationSchema() as unknown as Record<string, unknown>;
     expect(org['@type']).toBe('Organization');
     expect(org['@id']).toBe(ORGANIZATION_ID);
+    expect(org['name']).toBe('Coday');
+    expect(org['url']).toBe('https://www.codayweb.de');
+    expect(org['logo']).toBe('https://www.codayweb.de/images/brand/coday-logo-footer.webp');
+    expect(org['contactPoint']).toBeDefined();
+    expect(org['address']).toBeDefined();
     expect(org['vatID']).toBe('DE459754827');
     expect(org['taxID']).toBe('039 874 00784');
 
-    const aggregateRating = org['aggregateRating'] as Record<string, unknown>;
-    expect(aggregateRating).toBeDefined();
-    expect(aggregateRating['@type']).toBe('AggregateRating');
-    expect(aggregateRating['ratingValue']).toBe(5);
-    expect(aggregateRating['reviewCount']).toBe(4);
-
-    const reviews = org['review'] as unknown[];
-    expect(reviews).toHaveLength(4);
+    expect(org['aggregateRating']).toBeUndefined();
+    expect(org['review']).toBeUndefined();
 
     const person = getUmutSchema() as unknown as Record<string, unknown>;
     expect(person['@type']).toBe('Person');

@@ -1,10 +1,5 @@
 import type { Metadata } from 'next';
-import {
-  getLocalBusinessSchema,
-  getProfessionalServiceSchema,
-  getOrganizationSchema,
-  getWebSiteSchema,
-} from '@/lib/schema';
+import { getOrganizationSchema, getWebSiteSchema } from '@/lib/schema';
 import { generatePageMetadata } from '@/lib/metadata';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -74,8 +69,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   const t = await getTranslations('home');
   const _locale = locale || 'de';
-  const serviceSchema = getProfessionalServiceSchema(_locale);
-  const localSchema = getLocalBusinessSchema(_locale);
   const orgSchema = getOrganizationSchema(_locale);
   const websiteSchema = getWebSiteSchema(_locale);
 
@@ -87,7 +80,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@graph': [orgSchema, serviceSchema, localSchema, websiteSchema],
+            '@graph': [orgSchema, websiteSchema],
           }),
         }}
       />

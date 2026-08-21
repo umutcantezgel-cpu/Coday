@@ -1,4 +1,4 @@
-import { BASE_URL, ORG_ID, FOUNDER_ID, getReviewsSchema } from '@/lib/schema';
+import { BASE_URL, ORG_ID, FOUNDER_ID } from '@/lib/schema';
 
 export interface CountyData {
   slug: string;
@@ -961,6 +961,7 @@ export const CITIES_HIERARCHY: Record<string, CityDataHierarchy> = {
  * Tier 1: State Master Hub Schema (/standorte/hessen)
  */
 export function getHessenMasterSchema(locale: string = 'de') {
+  const stateUrl = `${BASE_URL}/${locale}/standorte/hessen`;
   const isEn = locale === 'en';
 
   return {
@@ -968,10 +969,10 @@ export function getHessenMasterSchema(locale: string = 'de') {
     '@graph': [
       {
         '@type': 'AdministrativeArea',
-        '@id': `${HESSEN_STATE.url}#state-hub`,
+        '@id': `${stateUrl}#state-hub`,
         name: 'Hessen',
         sameAs: HESSEN_STATE.wikidataId,
-        url: HESSEN_STATE.url,
+        url: stateUrl,
         containsPlace: Object.values(COUNTIES_REGIONS).map((c) => ({
           '@type': 'AdministrativeArea',
           '@id': `${BASE_URL}/${locale}/regionen/${c.slug}#region`,
@@ -982,11 +983,11 @@ export function getHessenMasterSchema(locale: string = 'de') {
       },
       {
         '@type': ['LocalBusiness', 'ProfessionalService'],
-        '@id': `${HESSEN_STATE.url}#business`,
+        '@id': `${stateUrl}#business`,
         name: isEn
           ? 'Coday – High-End Web Design & Web Development Hesse'
           : 'Coday – High-End Webdesign & Next.js Webentwicklung Hessen',
-        url: HESSEN_STATE.url,
+        url: stateUrl,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
         telephone: '+49-176-41195301',
@@ -994,7 +995,6 @@ export function getHessenMasterSchema(locale: string = 'de') {
         priceRange: '€€€€',
         parentOrganization: { '@id': ORG_ID },
         founder: { '@id': FOUNDER_ID },
-        ...getReviewsSchema(locale),
         address: {
           '@type': 'PostalAddress',
           streetAddress: 'HQ Wetzlar / Regionalnetzwerk Hessen',
@@ -1033,6 +1033,7 @@ export function getCountyHierarchySchema(countySlug: string, locale: string = 'd
   if (!county) return null;
 
   const countyUrl = `${BASE_URL}/${locale}/regionen/${county.slug}`;
+  const stateUrl = `${BASE_URL}/${locale}/standorte/hessen`;
   const isEn = locale === 'en';
 
   return {
@@ -1046,7 +1047,7 @@ export function getCountyHierarchySchema(countySlug: string, locale: string = 'd
         url: countyUrl,
         containedInPlace: {
           '@type': 'AdministrativeArea',
-          '@id': `${HESSEN_STATE.url}#state-hub`,
+          '@id': `${stateUrl}#state-hub`,
           name: 'Hessen',
           sameAs: HESSEN_STATE.wikidataId,
         },
@@ -1069,7 +1070,6 @@ export function getCountyHierarchySchema(countySlug: string, locale: string = 'd
         priceRange: '€€€',
         parentOrganization: { '@id': ORG_ID },
         founder: { '@id': FOUNDER_ID },
-        ...getReviewsSchema(locale),
         address: {
           '@type': 'PostalAddress',
           streetAddress: `HQ Wetzlar / Regionalnetzwerk ${county.name}`,
@@ -1102,6 +1102,7 @@ export function getCityHierarchySchema(citySlug: string, locale: string = 'de') 
   if (!city) return null;
 
   const cityUrl = `${BASE_URL}/${locale}/${city.slug}`;
+  const stateUrl = `${BASE_URL}/${locale}/standorte/hessen`;
   const parentCounty = COUNTIES_REGIONS[city.countySlug];
   const isEn = locale === 'en';
 
@@ -1123,7 +1124,7 @@ export function getCityHierarchySchema(citySlug: string, locale: string = 'de') 
             }
           : {
               '@type': 'AdministrativeArea',
-              '@id': `${HESSEN_STATE.url}#state-hub`,
+              '@id': `${stateUrl}#state-hub`,
               name: 'Hessen',
               sameAs: HESSEN_STATE.wikidataId,
             },
@@ -1146,7 +1147,6 @@ export function getCityHierarchySchema(citySlug: string, locale: string = 'de') 
         priceRange: '€€€',
         parentOrganization: { '@id': ORG_ID },
         founder: { '@id': FOUNDER_ID },
-        ...getReviewsSchema(locale),
         address: {
           '@type': 'PostalAddress',
           streetAddress: city.street,

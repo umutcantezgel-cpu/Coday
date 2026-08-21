@@ -5,7 +5,6 @@ import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { Cube, ShieldCheck, At } from '@phosphor-icons/react/dist/ssr';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
@@ -27,18 +26,6 @@ const Immobilien: React.FC = () => {
 
   return (
     <div className="bg-background-light min-h-dvh">
-      <SeoHead
-        title={`${t('immobilien-makler.title')} | Coday Real Estate`}
-        description={t('immobilien-makler.hero.subheadline')}
-        pageType="service"
-        schemaData={{
-          service: {
-            name: `${t('immobilien-makler.title')}`,
-            description: t('immobilien-makler.hero.subheadline'),
-            serviceType: 'Real Estate Software Solutions',
-          },
-        }}
-      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-4 overflow-hidden">
         <div className="absolute inset-0 z-0">

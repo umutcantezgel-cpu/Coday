@@ -13,7 +13,6 @@ import { baseButtonStyles, buttonVariants, buttonSizes } from '@/shared/ui/Butto
 import RotatingText from '@/shared/ui/RotatingText';
 import { MagicBento, BentoCard } from '@/shared/ui/MagicBento';
 import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
-import { SeoHead } from '@/shared/ui/SeoHead';
 
 import GlareHover from '@/shared/ui/GlareHover';
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
@@ -53,25 +52,6 @@ export const ServicesOverview = async () => {
 
   return (
     <div className="bg-surface-base">
-      <SeoHead
-        title={t('meta.title', { fallback: 'Unsere Leistungen in Wetzlar | Coday' })}
-        description={t('meta.description', {
-          fallback:
-            'High-End Webentwicklung, Design & Strategie aus Wetzlar, Hessen für Ihren digitalen Erfolg.',
-        })}
-        pageType="service"
-        schemaData={{
-          service: {
-            name: t('hero.title', { fallback: 'Webentwicklung & Design Wetzlar' }),
-            description: t('meta.description', {
-              fallback:
-                'High-End Webentwicklung, Design & Strategie aus Wetzlar, Hessen für Ihren digitalen Erfolg.',
-            }),
-            serviceType: 'Web Design and Development',
-          },
-        }}
-      />
-
       {/* Header with Hero Image */}
       <section className="pt-12 pb-8 md:pt-24 md:pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">

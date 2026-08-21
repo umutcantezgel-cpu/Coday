@@ -25,7 +25,6 @@ const iconMap: Record<string, React.ElementType> = {
   widgets: SquaresFour,
   rocket: RocketLaunch,
 };
-import { SeoHead } from '@/shared/ui/SeoHead';
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 
 export function WebDesignClient() {
@@ -68,18 +67,6 @@ export function WebDesignClient() {
 
   return (
     <div className="bg-surface-base pt-24 pb-16">
-      <SeoHead
-        title={t('web_design_page.meta.title')}
-        description={t('web_design_page.meta.description')}
-        pageType="service"
-        schemaData={{
-          service: {
-            name: 'Web Design',
-            description: t('web_design_page.meta.description'),
-            serviceType: 'Web Design',
-          },
-        }}
-      />
       {/* Hero Section */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-20 text-center lg:text-start">
         <div className="grid lg:grid-cols-2 gap-12 items-center">

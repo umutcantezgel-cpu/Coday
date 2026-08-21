@@ -9,30 +9,13 @@ import SpeedSimulator from '@/features/performance/SpeedSimulator';
 import LostRevenueCalc from '@/features/performance/LostRevenueCalc';
 import CoreWebVitalsChart from '@/features/performance/CoreWebVitalsChart';
 
-import { SeoHead } from '@/shared/ui/SeoHead';
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 
 export function PerformanceClient() {
   const t = useTranslations('services');
 
-  const performanceSchema = {
-    service: {
-      name: 'Web Performance Optimierung',
-      serviceType: 'Web Development',
-      description: t('performance_page.meta.description'),
-      provider: {
-        name: 'Coday',
-      },
-    },
-  };
-
   return (
     <div className="bg-surface-base min-h-dvh">
-      <SeoHead
-        title={t('performance_page.meta.title')}
-        description={t('performance_page.meta.description')}
-        schemaData={performanceSchema}
-      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-4 overflow-hidden">
         <div className="max-w-7xl mx-auto text-center relative z-10">

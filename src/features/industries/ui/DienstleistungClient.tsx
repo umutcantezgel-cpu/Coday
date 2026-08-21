@@ -5,7 +5,6 @@ import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { Funnel, PaperPlaneRight, ChartLineUp } from '@phosphor-icons/react/dist/ssr';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';
 import ServiceFunnelVisualizer from '@/features/industries/services/ServiceFunnelVisualizer';
@@ -24,18 +23,6 @@ const Dienstleistung: React.FC = () => {
 
   return (
     <div className="bg-background-light min-h-dvh">
-      <SeoHead
-        title="Dienstleistungen skalieren & automatisieren | Coday"
-        description={t('unternehmensberatung.hero.subheadline')}
-        pageType="service"
-        schemaData={{
-          service: {
-            name: `${t('unternehmensberatung.hero.headline')}`,
-            description: t('unternehmensberatung.hero.subheadline'),
-            serviceType: 'Service Automation Software',
-          },
-        }}
-      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-4 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

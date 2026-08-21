@@ -5,12 +5,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import BlurText from '@/shared/ui/BlurText';
 import { TestimonialBlock } from '@/shared/ui/TestimonialBlock';
 import { FadeInUp } from '@/shared/ui/MotionWrappers';
-import {
-  GOOGLE_REVIEWS,
-  PROVENEXPERT_REVIEWS,
-  REVIEWS_SUMMARY,
-  REVIEW_PROFILES,
-} from '@/shared/data/reviews';
+import { GOOGLE_REVIEWS, PROVENEXPERT_REVIEWS, REVIEW_PROFILES } from '@/shared/data/reviews';
 
 type ReviewPlatformFilter = 'all' | 'google' | 'provenexpert';
 
@@ -29,42 +24,8 @@ export const TestimonialsSection: React.FC = () => {
         ? PROVENEXPERT_REVIEWS
         : allReviews;
 
-  const reviewsSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    '@id': 'https://www.codayweb.de/#organization',
-    name: 'Coday',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: REVIEWS_SUMMARY.ratingValue.toString(),
-      reviewCount: REVIEWS_SUMMARY.reviewCount.toString(),
-      bestRating: REVIEWS_SUMMARY.bestRating.toString(),
-      worstRating: REVIEWS_SUMMARY.worstRating.toString(),
-    },
-    review: allReviews.map((review) => ({
-      '@type': 'Review',
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: review.rating.toString(),
-        bestRating: '5',
-        worstRating: '1',
-      },
-      author: {
-        '@type': 'Person',
-        name: review.authorName,
-      },
-      datePublished: review.datePublished,
-      reviewBody: review.quote.de,
-    })),
-  };
-
   return (
     <section className="py-[var(--space-section)] bg-surface-light relative overflow-hidden">
-      <script
-        id="testimonials-aggregated-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsSchema) }}
-      />
       <div className="absolute top-0 start-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

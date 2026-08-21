@@ -10,7 +10,6 @@ import { Speedometer } from '@/features/enterprise/Speedometer';
 import { EdgeNetworkMap } from '@/features/enterprise/EdgeNetworkMap';
 import { ROICalculator } from '@/features/enterprise/ROICalculator';
 import { ScrollContextCTA } from '@/features/enterprise/ScrollContextCTA';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 import { ProblemSolventMatrix } from '@/features/consulting/ProblemSolventMatrix';
 import { MethodologyGraph } from '@/features/consulting/MethodologyGraph';
@@ -27,25 +26,8 @@ export function EnterpriseWebClient() {
 
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
-  const enterpriseWebSchema = {
-    service: {
-      name: 'Enterprise Webentwicklung',
-      serviceType: 'Web Development',
-      description: t('enterprise_web_page.meta.description'),
-      provider: {
-        name: 'Coday',
-      },
-    },
-  };
-
   return (
     <div ref={containerRef} className="bg-surface-base min-h-dvh overflow-hidden">
-      <SeoHead
-        title={t('enterprise_web_page.meta.title')}
-        description={t('enterprise_web_page.meta.description')}
-        schemaData={enterpriseWebSchema}
-      />
-
       {/* HERO SECTION: The Singularity */}
       <section className="relative h-dvh flex items-center justify-center overflow-hidden">
         {/* Abstract Background - "The Grid" */}

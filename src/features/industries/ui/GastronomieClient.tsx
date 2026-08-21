@@ -8,7 +8,6 @@ import { IMAGES } from '@/shared/config/images';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { QrCode, Moped, Confetti } from '@phosphor-icons/react/dist/ssr';
 import BlurText from '@/shared/ui/BlurText';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import GradientText from '@/shared/ui/GradientText';
 import TableBookingRoiVisualizer from '@/features/industries/gastronomie/TableBookingRoiVisualizer';
 import MenuEngineeringDemo from '@/features/industries/gastronomie/MenuEngineeringDemo';
@@ -26,18 +25,6 @@ const Gastronomie: React.FC = () => {
 
   return (
     <div className="bg-background-light min-h-dvh">
-      <SeoHead
-        title="Digitale Lösungen für Gastronomie & Restaurants | Coday"
-        description={t('gastronomie-hotellerie.hero.subheadline')}
-        pageType="service"
-        schemaData={{
-          service: {
-            name: `${t('gastronomie-hotellerie.hero.headline')}`,
-            description: t('gastronomie-hotellerie.hero.subheadline'),
-            serviceType: 'Gastronomy Software Solutions',
-          },
-        }}
-      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-4 overflow-hidden">
         {/* Background Image */}

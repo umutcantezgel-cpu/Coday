@@ -4,7 +4,6 @@ import React from 'react';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import BlurText from '@/shared/ui/BlurText';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import GradientText from '@/shared/ui/GradientText';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { IMAGES } from '@/shared/config/images';
@@ -19,18 +18,6 @@ const Retail: React.FC = () => {
 
   return (
     <div className="bg-background-light min-h-dvh">
-      <SeoHead
-        title={`${t('ecommerce-retail.hero.headline')} | Coday Retail`}
-        description={t('ecommerce-retail.hero.subheadline')}
-        pageType="service"
-        schemaData={{
-          service: {
-            name: t('ecommerce-retail.hero.headline'),
-            description: t('ecommerce-retail.hero.subheadline'),
-            serviceType: 'Retail Software Solutions',
-          },
-        }}
-      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-4 overflow-hidden">
         {/* Background Image */}

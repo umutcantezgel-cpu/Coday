@@ -7,29 +7,13 @@ import GradientText from '@/shared/ui/GradientText';
 import RevenueUpliftSimulator from '@/features/ecommerce/RevenueUpliftSimulator';
 import HeadlessVsShopifyGrid from '@/features/ecommerce/HeadlessVsShopifyGrid';
 import ConversionFunnelMap from '@/features/ecommerce/ConversionFunnelMap';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 
 export function EcommerceDevelopmentClient() {
   const t = useTranslations('services');
-  const ecommerceSchema = {
-    service: {
-      name: 'E-Commerce Entwicklung',
-      serviceType: 'Web Development',
-      description: t('ecommerce_page.meta.description'),
-      provider: {
-        name: 'Coday',
-      },
-    },
-  };
 
   return (
     <div className="bg-surface-base min-h-dvh">
-      <SeoHead
-        title={t('ecommerce_page.meta.title')}
-        description={t('ecommerce_page.meta.description')}
-        schemaData={ecommerceSchema}
-      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-4 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

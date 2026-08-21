@@ -3,7 +3,6 @@
 import React from 'react';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
@@ -21,18 +20,6 @@ const Gesundheit: React.FC = () => {
 
   return (
     <div className="bg-background-light min-h-dvh">
-      <SeoHead
-        title="Software für das Gesundheitswesen & E-Health | Coday"
-        description={t('aerzte-gesundheit.hero.subheadline')}
-        pageType="service"
-        schemaData={{
-          service: {
-            name: `${t('aerzte-gesundheit.hero.headline')}`,
-            description: t('aerzte-gesundheit.hero.subheadline'),
-            serviceType: 'Healthcare Software Development',
-          },
-        }}
-      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-4 overflow-hidden">
         {/* Background Image */}

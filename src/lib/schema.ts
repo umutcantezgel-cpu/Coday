@@ -38,7 +38,6 @@ export function getOrganizationSchema(locale: string = 'de') {
   return {
     '@type': ['Organization', 'LocalBusiness', 'ProfessionalService'],
     '@id': ORG_ID,
-    ...getReviewsSchema(locale),
     name: 'Coday',
     legalName: 'Umutcan Emre Tezgel',
     alternateName: ['Coday Webentwicklung', 'Coday Web Agency'],
@@ -182,7 +181,6 @@ export function getProfessionalServiceSchema(locale: string = 'de') {
     provider: {
       '@id': ORG_ID,
     },
-    ...getReviewsSchema(locale),
     name: 'Coday Web Agency',
     legalName: 'Umutcan Emre Tezgel',
     description:
@@ -286,7 +284,6 @@ export function getLocalBusinessSchema(locale: string = 'de') {
     parentOrganization: {
       '@id': ORG_ID,
     },
-    ...getReviewsSchema(locale),
     name: locale === 'en' ? 'Coday - Web Design Wetzlar' : 'Coday - Webdesign Wetzlar',
     description:
       locale === 'en'

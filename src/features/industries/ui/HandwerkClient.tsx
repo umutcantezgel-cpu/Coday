@@ -5,7 +5,6 @@ import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { CheckCircle } from '@phosphor-icons/react/dist/ssr';
 import { useTranslations } from 'next-intl';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
@@ -23,18 +22,6 @@ const Handwerk: React.FC = () => {
 
   return (
     <div className="bg-background-light min-h-dvh">
-      <SeoHead
-        title={`${t('handwerk-bau.hero.title_1')} ${t('handwerk-bau.hero.title_2')} | Coday`}
-        description={t('handwerk-bau.hero.description')}
-        pageType="service"
-        schemaData={{
-          service: {
-            name: `${t('handwerk-bau.hero.title_1')} ${t('handwerk-bau.hero.title_2')}`,
-            description: t('handwerk-bau.hero.description'),
-            serviceType: 'Craftsman Software Solutions',
-          },
-        }}
-      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-4 overflow-hidden">
         {/* Background Image */}

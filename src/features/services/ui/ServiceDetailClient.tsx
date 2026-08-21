@@ -43,7 +43,6 @@ import {
 } from '@phosphor-icons/react/dist/ssr';
 import LogoLoop from '@/shared/ui/LogoLoop';
 import { clientLogos } from '@/shared/data/clientLogos';
-import { SeoHead } from '@/shared/ui/SeoHead';
 
 const iconMap: Record<string, React.ElementType> = {
   lightning: Lightning,
@@ -147,27 +146,8 @@ export function ServiceDetailClient() {
     ? (t.raw(service.faqsKey) as { question: string; answer: string }[])
     : [];
 
-  const schemaData = {
-    service: {
-      name: t(service.titleKey),
-      description: t(service.descriptionKey),
-      serviceType:
-        category === 'web-development'
-          ? 'Web Development'
-          : category === 'web-design'
-            ? 'Web Design'
-            : 'Professional Service',
-    },
-    ...(faqs.length > 0 && {
-      faq: {
-        questions: faqs,
-      },
-    }),
-  };
-
   return (
     <main className="bg-surface-base pt-24 pb-0">
-      <SeoHead schemaData={schemaData} pageType="service" />
       {/* Breadcrumb */}
       <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <ol className="flex items-center text-sm text-gray-500">

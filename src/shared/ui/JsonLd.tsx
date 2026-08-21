@@ -481,19 +481,6 @@ export const JsonLd: React.FC<JsonLdProps> = ({
   pageUrl = BASE_URL,
 }) => {
   const orgSchema: Record<string, unknown> = { ...ORGANIZATION_SCHEMA };
-  if (data?.aggregateRating) {
-    orgSchema.aggregateRating = {
-      '@type': 'AggregateRating',
-      ratingValue: data.aggregateRating.ratingValue.toString(),
-      reviewCount: data.aggregateRating.reviewCount.toString(),
-      ...(data.aggregateRating.bestRating && {
-        bestRating: data.aggregateRating.bestRating.toString(),
-      }),
-      ...(data.aggregateRating.worstRating && {
-        worstRating: data.aggregateRating.worstRating.toString(),
-      }),
-    };
-  }
 
   const graph: Record<string, unknown>[] = [orgSchema, WEBSITE_SCHEMA];
 

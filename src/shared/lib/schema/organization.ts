@@ -1,5 +1,4 @@
 import { Organization, Person } from 'schema-dts';
-import { GOOGLE_REVIEWS, REVIEWS_SUMMARY } from '@/shared/data/reviews';
 
 export const ORGANIZATION_ID = 'https://www.codayweb.de/#organization';
 export const FOUNDER_ID = 'https://www.codayweb.de/#founder';
@@ -12,35 +11,14 @@ export function getOrganizationSchema(): Organization {
     name: 'Coday',
     url: 'https://www.codayweb.de',
     logo: 'https://www.codayweb.de/images/brand/coday-logo-footer.webp',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: REVIEWS_SUMMARY.ratingValue,
-      reviewCount: REVIEWS_SUMMARY.reviewCount,
-      bestRating: REVIEWS_SUMMARY.bestRating,
-      worstRating: REVIEWS_SUMMARY.worstRating,
-    },
-    review: GOOGLE_REVIEWS.map((review) => ({
-      '@type': 'Review',
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: review.rating,
-        bestRating: 5,
-        worstRating: 1,
-      },
-      author: {
-        '@type': 'Person',
-        name: review.authorName,
-      },
-      datePublished: review.datePublished,
-      reviewBody: review.quote.de,
-    })),
     sameAs: [
       'https://www.provenexpert.com/de-de/coday-webagentur/',
       'https://maps.app.goo.gl/9SagecgXw7Vf5csH7',
-      'https://www.linkedin.com/in/umutcan-tezgel',
-      'https://twitter.com/codayweb',
-      'https://www.instagram.com/codayweb/',
-      'https://www.facebook.com/profile.php?id=61588758264018',
+      'https://www.linkedin.com/company/coday',
+      'https://www.linkedin.com/in/umutcan-emre-tezgel-156382218/',
+      'https://github.com/coday',
+      'https://www.instagram.com/codayweb',
+      'https://www.youtube.com/@coday',
     ],
     contactPoint: {
       '@type': 'ContactPoint',
@@ -71,8 +49,9 @@ export function getUmutSchema(): Person {
     url: 'https://www.codayweb.de/de/about',
     jobTitle: 'Founder & Web Developer',
     sameAs: [
-      'https://www.linkedin.com/in/umutcan-tezgel',
-      'https://www.facebook.com/profile.php?id=61588758264018',
+      'https://www.linkedin.com/in/umutcan-emre-tezgel-156382218/',
+      'https://github.com/umurey',
+      'https://www.openpr.de/news/coday',
     ],
     worksFor: {
       '@id': ORGANIZATION_ID,
