@@ -57,7 +57,7 @@ export async function generateMetadata({
         'Next.js Development Giessen',
         'Coday Web Giessen Hub',
       ],
-      path: '/en/standorte/giessen',
+      path: '/en/webdesign-giessen',
       type: 'money',
     });
   }
@@ -72,7 +72,7 @@ export async function generateMetadata({
       'Next.js Agentur Gießen',
       'Coday Standort Gießen',
     ],
-    path: '/de/standorte/giessen',
+    path: '/de/webdesign-giessen',
     type: 'money',
   });
 }

@@ -11,7 +11,6 @@ import {
   SealCheck,
   Percent,
 } from '@phosphor-icons/react/dist/ssr';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import GradientText from '@/shared/ui/GradientText';
 import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
 
@@ -88,15 +87,6 @@ export default async function Packages() {
 
   return (
     <div className="min-h-[100dvh] bg-[#fafafa] text-slate-900 selection:bg-amber-500/20 selection:text-amber-900">
-      <SeoHead
-        title="Webdesign Preise & Maßgeschneiderte Angebote | Coday Webagentur"
-        description="Individuelle Festpreise für High-End Webdesign & Next.js Entwicklung. Signifikante Kosteneffizienz durch direkte Inhaber-Realisierung, 100/100 PageSpeed & 100% Quellcode-Eigentum."
-        breadcrumbs={[
-          { name: 'Home', url: 'https://codayweb.de' },
-          { name: 'Preise', url: 'https://codayweb.de/pricing' },
-        ]}
-      />
-
       <StepInitializer />
 
       {/* Hero Section */}

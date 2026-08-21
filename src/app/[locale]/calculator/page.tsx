@@ -9,6 +9,7 @@ import {
   BASE_URL,
 } from '@/lib/schema';
 import ClientComponent from '@/features/calculator/ui/CalculatorClient';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
 export const dynamic = 'force-static';
 
@@ -50,8 +51,6 @@ export async function generateMetadata({
     type: 'money',
   });
 }
-
-import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
 export default async function Page(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;

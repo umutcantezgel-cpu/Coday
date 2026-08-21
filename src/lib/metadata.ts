@@ -60,6 +60,16 @@ export function generateAlternates(path: string): Metadata['alternates'] {
     };
   }
 
+  if (isDeOnly) {
+    return {
+      canonical: `${BASE_URL}${dePath}`,
+      languages: {
+        de: `${BASE_URL}${dePath}`,
+        'x-default': `${BASE_URL}${dePath}`,
+      },
+    };
+  }
+
   const languages: Record<string, string> = {
     de: `${BASE_URL}${dePath}`,
     en: `${BASE_URL}${enPath}`,
