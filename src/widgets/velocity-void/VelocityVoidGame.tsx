@@ -1,49 +1,75 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable react-hooks/refs */
-/* eslint-disable react-hooks/set-state-in-effect */
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
 import { m, AnimatePresence } from 'motion/react';
+import {
+  Crosshair,
+  Lightning,
+  Rocket,
+  Heart,
+  Sparkle,
+  Magnet,
+  ShieldCheck,
+  Flame,
+  Trophy,
+  Coins,
+  ArrowClockwise,
+  ShoppingBag,
+  X,
+  Play,
+} from '@phosphor-icons/react/dist/ssr';
 
 // --- CONFIGURATION ---
 const CONFIG = {
   SHIP_SPEED: 7,
   BULLET_SPEED: 22,
   ENEMY_BULLET_SPEED: 5,
-  BASE_METEOR_SPEED: 0.3, // Super slow
-  BASE_BOT_SPEED: 0.3, // Super slow
+  BASE_METEOR_SPEED: 0.3,
+  BASE_BOT_SPEED: 0.3,
   PIXEL_SIZE: 5,
   PARTICLE_COUNT: 25,
 };
 
-// --- PALETTE ---
+// --- ARCHITECTURAL CYBER COSMOS LIGHT PALETTE ---
 const PALETTE = {
-  bg: '#161311',
-  star: '#4A3728',
-  player: '#F5E6D3',
-  playerEye: '#00f0ff',
-  thruster: '#ff2a6d',
-  playerLaser: '#D4AF37',
-  botPrimary: '#8C6239',
-  botHunter: '#4A1C16',
-  botJuggernaut: '#3A2718',
-  botSniper: '#2D1B36',
-  botStealth: '#1B2A2F',
-  bossPrimary: '#111111',
-  bossSecondary: '#333333',
+  bg: '#FAFAFA',
+  grid: 'rgba(37, 99, 235, 0.05)',
+  star: '#94A3B8',
+  starGlow: '#CBD5E1',
 
-  botSecondary: '#D4AF37',
-  botEye: '#ff2a6d',
-  enemyLaser: '#ff2a6d',
-  meteorPrimary: '#5C4033',
-  meteorSecondary: '#3E2723',
-  meteorGold: '#D4AF37',
-  itemWeapon: '#00f0ff',
-  itemShield: '#D4AF37',
-  itemHeart: '#ff2a6d',
-  explosion1: '#D4AF37',
-  explosion2: '#ff2a6d',
-  uiText: '#F5E6D3',
+  // Player Cyber Ship (Coday Blue Core & Sky Blue Sensor)
+  player: '#2563EB',
+  playerHull: '#0F172A',
+  playerEye: '#38BDF8',
+  thruster: '#3B82F6',
+  playerLaser: '#2563EB',
+
+  // Hostile Enemy Bots (Slate/Anthrazit with Crimson Scanner)
+  botPrimary: '#334155',
+  botHunter: '#1E293B',
+  botJuggernaut: '#0F172A',
+  botSniper: '#475569',
+  botStealth: '#64748B',
+  bossPrimary: '#0F172A',
+  bossSecondary: '#1E293B',
+
+  botSecondary: '#D97706',
+  botEye: '#E11D48',
+  enemyLaser: '#E11D48',
+
+  // Obstacles & Pickups
+  meteorPrimary: '#94A3B8',
+  meteorSecondary: '#64748B',
+  meteorGold: '#D97706',
+  itemWeapon: '#2563EB',
+  itemShield: '#10B981',
+  itemHeart: '#E11D48',
+
+  // Visual Kinetic Particle Feedback
+  explosion1: '#2563EB',
+  explosion2: '#D97706',
+  uiText: '#0F172A',
+  uiBorder: '#E2E8F0',
 };
 
 // --- SPRITES ---
@@ -135,17 +161,16 @@ const drawSprite = (
         else if (char === 'H') ctx.fillStyle = PALETTE.botHunter;
         else if (char === 'J') ctx.fillStyle = PALETTE.botJuggernaut;
         else if (char === 'G') ctx.fillStyle = PALETTE.botSecondary;
-        else if (char === 'R')
-          ctx.fillStyle = PALETTE.botEye; // Also used for Hearts
+        else if (char === 'R') ctx.fillStyle = PALETTE.botEye;
         else if (char === 'M') ctx.fillStyle = PALETTE.meteorPrimary;
         else if (char === 'D') ctx.fillStyle = PALETTE.meteorSecondary;
         else if (char === 'C') ctx.fillStyle = PALETTE.itemWeapon;
         else if (char === 'A')
-          ctx.fillStyle = '#B0B0B0'; // Armor
+          ctx.fillStyle = '#64748B'; // Armor
         else if (char === 'P')
-          ctx.fillStyle = '#00ff00'; // Regen
+          ctx.fillStyle = '#10B981'; // Regen
         else if (char === 'S')
-          ctx.fillStyle = '#ffaa00'; // Speed Thruster
+          ctx.fillStyle = '#2563EB'; // Speed
         else if (char === 'V') ctx.fillStyle = PALETTE.botSniper;
         else if (char === 'K') ctx.fillStyle = PALETTE.botStealth;
         else if (char === 'X') ctx.fillStyle = PALETTE.bossPrimary;
@@ -236,7 +261,6 @@ interface Particle extends Entity {
   isCross?: boolean;
 }
 
-// RPG Upgrades
 type GameState = 'START' | 'PLAYING' | 'GAME_OVER' | 'LEVEL_UP';
 
 type UpgradeId =
@@ -254,75 +278,79 @@ interface Upgrade {
   id: UpgradeId;
   name: string;
   desc: string;
-  icon: string;
+  icon: React.ElementType;
   maxLevel: number;
 }
 
 const UPGRADES: Record<UpgradeId, Upgrade> = {
   twin_link: {
     id: 'twin_link',
-    name: 'Zusatz-Pistole',
-    desc: 'Fügt einen weiteren Laserstrahl hinzu.',
-    icon: '🔫',
+    name: 'Dual-Laser Matrix',
+    desc: 'Fügt einen zusätzlichen Coday-Laserstrahl hinzu.',
+    icon: Crosshair,
     maxLevel: 5,
   },
   fire_rate: {
     id: 'fire_rate',
-    name: 'Schnellfeuer',
-    desc: 'Erhöht die Feuerrate um 20%.',
-    icon: '⚡',
+    name: 'Highspeed Taktung',
+    desc: 'Erhöht die Feuerrate um 20% für maximale DPS.',
+    icon: Lightning,
     maxLevel: 5,
   },
   homing_missiles: {
     id: 'homing_missiles',
-    name: 'Suchraketen',
-    desc: 'Feuert automatisch Raketen auf nahe Gegner.',
-    icon: '🚀',
+    name: 'Autonome Drohnen',
+    desc: 'Feuert automatisch Zielsuch-Geschosse auf nahe Bots.',
+    icon: Rocket,
     maxLevel: 5,
   },
   max_hp: {
     id: 'max_hp',
-    name: 'Extra Herz',
-    desc: 'Erhöht die maximale Lebensenergie um 1.',
-    icon: '❤️',
+    name: 'Rumpf-Verstärkung',
+    desc: 'Erhöht die maximale Integrität um +1 Herz.',
+    icon: Heart,
     maxLevel: 10,
   },
   regen: {
     id: 'regen',
-    name: 'Regeneration',
-    desc: 'Heilt 1 Herz alle paar Sekunden.',
-    icon: '⚕️',
+    name: 'Auto-Reparatur',
+    desc: 'Regeneriert Hüllen-Integrität in Intervallen.',
+    icon: Sparkle,
     maxLevel: 3,
   },
   magnet: {
     id: 'magnet',
-    name: 'XP-Magnet',
-    desc: 'Zieht XP-Orbs in einem größeren Radius an.',
-    icon: '🧲',
+    name: 'Daten-Magnet',
+    desc: 'Zieht XP- und Performance-Orbs aus größerer Distanz an.',
+    icon: Magnet,
     maxLevel: 5,
   },
   shield: {
     id: 'shield',
-    name: 'Energie-Schild',
-    desc: 'Erzeugt ein Schild, das Treffer abfängt.',
-    icon: '🛡️',
+    name: 'Edge Deflektor',
+    desc: 'Projiziert einen regenerativen Schutzschild.',
+    icon: ShieldCheck,
     maxLevel: 3,
   },
   plasma_arc: {
     id: 'plasma_arc',
-    name: 'Plasma Flammen',
-    desc: 'Ein extrem starker Feuerstrahl vor dem Schiff.',
-    icon: '🔥',
+    name: 'Plasma-Konverter',
+    desc: 'Konzentrierter Energiestrahl im Frontalbereich.',
+    icon: Flame,
     maxLevel: 3,
   },
   chain_lightning: {
     id: 'chain_lightning',
-    name: 'Kettenblitz',
-    desc: 'Blitze springen von Gegner zu Gegner.',
-    icon: '⚡',
+    name: 'Ketten-Impuls',
+    desc: 'Spannungsbögen springen zwischen gegnerischen Bots über.',
+    icon: Lightning,
     maxLevel: 3,
   },
 };
+
+interface UpgradeChoice extends Upgrade {
+  currentLevel: number;
+}
 
 export default function VelocityVoidGame() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -334,20 +362,40 @@ export default function VelocityVoidGame() {
   const [gameState, setGameState] = useState<GameState>('START');
   const gameStateRef = useRef<GameState>('START');
   const [currentScore, setCurrentScore] = useState(0);
-  const [metaCoins, setMetaCoins] = useState(0);
-  const metaCoinsRef = useRef(0);
+  const [metaCoins, setMetaCoins] = useState(() => {
+    if (typeof window === 'undefined') return 0;
+    try {
+      const saved = localStorage.getItem('velocityVoidCoins');
+      return saved ? parseInt(saved, 10) : 0;
+    } catch (_e) {
+      return 0;
+    }
+  });
+  const metaCoinsRef = useRef(metaCoins);
   const currentEventRef = useRef('');
 
   // Meta Shop State
   const [isShopOpen, setIsShopOpen] = useState(false);
-  const [metaUpgrades, setMetaUpgrades] = useState({
-    start_hp: 0,
-    start_shield: 0,
-    coin_multiplier: 0,
+  const [metaUpgrades, setMetaUpgrades] = useState(() => {
+    if (typeof window === 'undefined') return { start_hp: 0, start_shield: 0, coin_multiplier: 0 };
+    try {
+      const saved = localStorage.getItem('velocityVoidMeta');
+      return saved ? JSON.parse(saved) : { start_hp: 0, start_shield: 0, coin_multiplier: 0 };
+    } catch (_e) {
+      return { start_hp: 0, start_shield: 0, coin_multiplier: 0 };
+    }
   });
-  const metaUpgradesRef = useRef({ start_hp: 0, start_shield: 0, coin_multiplier: 0 });
-  const [highScore, setHighScore] = useState(0);
-  const highScoreRef = useRef(0);
+  const metaUpgradesRef = useRef(metaUpgrades);
+  const [highScore, setHighScore] = useState(() => {
+    if (typeof window === 'undefined') return 0;
+    try {
+      const saved = localStorage.getItem('velocityVoidHighScore');
+      return saved ? parseInt(saved, 10) : 0;
+    } catch (_e) {
+      return 0;
+    }
+  });
+  const highScoreRef = useRef(highScore);
 
   // HUD States
   const [hudHp, setHudHp] = useState(3);
@@ -355,7 +403,7 @@ export default function VelocityVoidGame() {
   const [hudXp, setHudXp] = useState(0);
   const [hudMaxXp, setHudMaxXp] = useState(10);
   const [hudLevel, setHudLevel] = useState(1);
-  const [upgradeChoices, setUpgradeChoices] = useState<Upgrade[]>([]);
+  const [upgradeChoices, setUpgradeChoices] = useState<UpgradeChoice[]>([]);
 
   // Input
   const keys = useRef<{ [key: string]: boolean }>({});
@@ -372,7 +420,6 @@ export default function VelocityVoidGame() {
     lightningCooldown: 0,
     regenTimer: 0,
 
-    // Stats
     hp: 3,
     maxHp: 3,
     xp: 0,
@@ -383,7 +430,6 @@ export default function VelocityVoidGame() {
     shieldHp: 0,
     shieldRegenTimer: 0,
 
-    // Upgrade Levels
     upgrades: {
       twin_link: 0,
       fire_rate: 0,
@@ -406,32 +452,24 @@ export default function VelocityVoidGame() {
   const stars = useRef<{ x: number; y: number; speed: number; size: number; opacity: number }[]>(
     []
   );
-  const planets = useRef<{ x: number; y: number; radius: number; color: string; speed: number }[]>(
-    []
-  );
   const screenFlash = useRef({ alpha: 0, color: '#fff' });
   const screenShake = useRef(0);
-
-  useEffect(() => {
-    const saved = localStorage.getItem('velocityVoidHighScore');
-    if (saved) {
-      const parsed = parseInt(saved, 10);
-      setHighScore(parsed);
-      highScoreRef.current = parsed;
-    }
-  }, []);
 
   const saveHighScore = (score: number) => {
     if (score > highScoreRef.current) {
       setHighScore(score);
       highScoreRef.current = score;
-      localStorage.setItem('velocityVoidHighScore', Math.floor(score).toString());
+      try {
+        localStorage.setItem('velocityVoidHighScore', Math.floor(score).toString());
+      } catch (_e) {
+        // Safe storage access
+      }
     }
   };
 
   const triggerScreenFlash = (color: string) => {
-    screenFlash.current = { alpha: 1, color };
-    screenShake.current = 15;
+    screenFlash.current = { alpha: 0.6, color };
+    screenShake.current = 10;
   };
 
   const createExplosion = (
@@ -443,7 +481,7 @@ export default function VelocityVoidGame() {
   ) => {
     for (let i = 0; i < count; i++) {
       const angle = Math.random() * Math.PI * 2;
-      const speed = Math.random() * 8;
+      const speed = Math.random() * 7;
       particles.current.push({
         x,
         y,
@@ -454,23 +492,39 @@ export default function VelocityVoidGame() {
         vx: Math.cos(angle) * speed,
         vy: Math.sin(angle) * speed,
         life: 0,
-        maxLife: Math.random() * 30 + 10,
+        maxLife: Math.random() * 26 + 10,
         sizeMultiplier: 1.0,
       });
     }
   };
 
+  const triggerLevelUp = () => {
+    gameStateRef.current = 'LEVEL_UP';
+    setGameState('LEVEL_UP');
+
+    const available: UpgradeChoice[] = Object.values(UPGRADES)
+      .filter((u) => player.current.upgrades[u.id] < u.maxLevel)
+      .map((u) => ({
+        ...u,
+        currentLevel: player.current.upgrades[u.id],
+      }));
+    const shuffled = available.sort(() => 0.5 - Math.random());
+    setUpgradeChoices(shuffled.slice(0, 3));
+
+    triggerScreenFlash(PALETTE.player);
+  };
+
   const initGame = (canvas: HTMLCanvasElement) => {
     scoreRef.current = 0;
     frameRef.current = 0;
-    // Don't auto play, start handles it
-    // setGameState('PLAYING');
-    // gameStateRef.current = 'PLAYING';
     setCurrentScore(0);
     bullets.current = [];
     enemies.current = [];
     items.current = [];
     particles.current = [];
+
+    const startingHp = 3 + metaUpgradesRef.current.start_hp;
+    const startingShield = metaUpgradesRef.current.start_shield;
 
     player.current = {
       x: canvas.width / 2 - (PLAYER_SPRITE_L1[0].length * CONFIG.PIXEL_SIZE) / 2,
@@ -483,13 +537,13 @@ export default function VelocityVoidGame() {
       lightningCooldown: 0,
       regenTimer: 0,
       markedForDeletion: false,
-      hp: 3,
-      maxHp: 3,
+      hp: startingHp,
+      maxHp: startingHp,
       xp: 0,
       maxXp: 10,
       level: 1,
       hitFlashTimer: 0,
-      shieldHp: 0,
+      shieldHp: startingShield,
       shieldRegenTimer: 0,
       upgrades: {
         twin_link: 0,
@@ -500,56 +554,23 @@ export default function VelocityVoidGame() {
         max_hp: 0,
         regen: 0,
         magnet: 0,
-        shield: 0,
+        shield: startingShield,
       },
     };
 
-    setHudHp(3);
-    setHudMaxHp(3);
+    setHudHp(startingHp);
+    setHudMaxHp(startingHp);
     setHudXp(0);
     setHudMaxXp(10);
     setHudLevel(1);
 
-    stars.current = Array.from({ length: 80 }).map(() => ({
+    stars.current = Array.from({ length: 60 }).map(() => ({
       x: retroSnap(Math.random() * canvas.width),
       y: retroSnap(Math.random() * canvas.height),
-      speed: (Math.floor(Math.random() * 3) + 1) * 0.3 + Math.random() * 0.2,
+      speed: (Math.floor(Math.random() * 3) + 1) * 0.35,
       size: Math.max(CONFIG.PIXEL_SIZE, CONFIG.PIXEL_SIZE * (Math.random() > 0.8 ? 2 : 1)),
-      opacity: Math.random() * 0.5 + 0.1,
+      opacity: Math.random() * 0.4 + 0.2,
     }));
-
-    planets.current = [
-      {
-        x: retroSnap(canvas.width * 0.2),
-        y: -200,
-        radius: retroSnap(100),
-        color: '#2A1F1A',
-        speed: 0.1,
-      },
-      {
-        x: retroSnap(canvas.width * 0.8),
-        y: canvas.height * 0.5,
-        radius: retroSnap(40),
-        color: '#3A2A20',
-        speed: 0.2,
-      },
-    ];
-  };
-
-  // --- LEVEL UP LOGIC ---
-  const triggerLevelUp = () => {
-    gameStateRef.current = 'LEVEL_UP';
-    setGameState('LEVEL_UP');
-
-    // Pick 3 random available upgrades
-    const available = Object.values(UPGRADES).filter(
-      (u) => player.current.upgrades[u.id] < u.maxLevel
-    );
-    // Shuffle and pick 3
-    const shuffled = available.sort(() => 0.5 - Math.random());
-    setUpgradeChoices(shuffled.slice(0, 3));
-
-    triggerScreenFlash(PALETTE.playerEye);
   };
 
   const applyUpgrade = (id: UpgradeId) => {
@@ -557,17 +578,16 @@ export default function VelocityVoidGame() {
 
     if (id === 'max_hp') {
       player.current.maxHp++;
-      player.current.hp++; // Heal 1 on max hp up
+      player.current.hp++;
       setHudMaxHp(player.current.maxHp);
       setHudHp(player.current.hp);
     }
     if (id === 'shield') {
-      player.current.shieldHp = player.current.upgrades.shield; // refill to new max
+      player.current.shieldHp = player.current.upgrades.shield;
     }
 
-    // Carry over XP, increase max XP exponentially
     player.current.level++;
-    player.current.xp = 0; // Or keep overflow: player.current.xp - player.current.maxXp
+    player.current.xp = 0;
     player.current.maxXp = Math.floor(player.current.maxXp * 1.5) + 10;
 
     setHudLevel(player.current.level);
@@ -607,6 +627,7 @@ export default function VelocityVoidGame() {
     window.addEventListener('keydown', handleKeyDown);
     window.addEventListener('keyup', handleKeyUp);
 
+    // Smooth Touch Dragging for Mobile
     let touchStartX = 0,
       touchStartY = 0,
       pStartX = 0,
@@ -626,11 +647,11 @@ export default function VelocityVoidGame() {
       const dy = e.touches[0].clientY - touchStartY;
       player.current.x = Math.max(
         10,
-        Math.min(canvas.width - player.current.width - 10, pStartX + dx * 1.5)
+        Math.min(canvas.width - player.current.width - 10, pStartX + dx * 1.3)
       );
       player.current.y = Math.max(
         10,
-        Math.min(canvas.height - player.current.height - 10, pStartY + dy * 1.5)
+        Math.min(canvas.height - player.current.height - 10, pStartY + dy * 1.3)
       );
     };
     canvas.addEventListener('touchstart', handleTouchStart, { passive: false });
@@ -643,19 +664,19 @@ export default function VelocityVoidGame() {
       setCurrentScore(scoreRef.current);
       saveHighScore(scoreRef.current);
       const p = player.current;
-      createExplosion(p.x + p.width / 2, p.y + p.height / 2, PALETTE.playerLaser, '#fff', 80);
-      triggerScreenFlash('#ff0000');
+      createExplosion(p.x + p.width / 2, p.y + p.height / 2, PALETTE.playerLaser, '#2563EB', 70);
+      triggerScreenFlash('#E11D48');
     };
 
     const handlePlayerHit = () => {
       if (player.current.shieldHp > 0) {
         player.current.shieldHp--;
-        player.current.shieldRegenTimer = 0; // reset regen
-        triggerScreenFlash('#00f0ff'); // cyan flash for shield hit
+        player.current.shieldRegenTimer = 0;
+        triggerScreenFlash('#10B981');
       } else {
         player.current.hp--;
         setHudHp(player.current.hp);
-        triggerScreenFlash('#ff0000');
+        triggerScreenFlash('#E11D48');
       }
       player.current.hitFlashTimer = 5;
 
@@ -677,10 +698,8 @@ export default function VelocityVoidGame() {
     };
 
     let animationId: number;
-    let lastTime = 0;
 
-    const loop = (timestamp: number) => {
-      // Delta time could be used, but keeping frame-based for simplicity
+    const loop = () => {
       const isPlaying = gameStateRef.current === 'PLAYING';
 
       let shakeX = 0,
@@ -695,36 +714,28 @@ export default function VelocityVoidGame() {
       ctx.save();
       ctx.translate(shakeX, shakeY);
 
-      // Background
-      // Biome Logic
-      const p = player.current;
-      const sector = Math.floor(p.level / 5) + 1;
-      let bgColor = PALETTE.bg;
-      if (sector === 2)
-        bgColor = '#2a0a0a'; // Crimson Nebula
-      else if (sector === 3)
-        bgColor = '#051a05'; // Alien Ruins
-      else if (sector >= 4) bgColor = '#0a0a2a'; // Cosmic Anomaly
-
-      ctx.fillStyle = bgColor;
+      // Clean Light Stage Background
+      ctx.fillStyle = PALETTE.bg;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // We still draw background movement even if LEVEL_UP paused for cool effect
+      // Subtle CAD Blueprint Floor Grid
+      const gridSize = 48;
+      ctx.strokeStyle = PALETTE.grid;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      for (let x = 0; x < canvas.width; x += gridSize) {
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, canvas.height);
+      }
+      for (let y = 0; y < canvas.height; y += gridSize) {
+        ctx.moveTo(0, y);
+        ctx.lineTo(canvas.width, y);
+      }
+      ctx.stroke();
+
       const speedMultiplier = isPlaying ? Math.min(2.0, 1 + frameRef.current / 40000) : 0.1;
 
-      // Planets & Stars
-      planets.current.forEach((pl) => {
-        pl.y += pl.speed * speedMultiplier;
-        if (pl.y - pl.radius > canvas.height) {
-          pl.y = -pl.radius - 50;
-          pl.x = retroSnap(Math.random() * canvas.width);
-        }
-        ctx.beginPath();
-        ctx.arc(retroSnap(pl.x), retroSnap(pl.y), pl.radius, 0, Math.PI * 2);
-        ctx.fillStyle = pl.color;
-        ctx.fill();
-      });
-
+      // Slate Data Stars
       stars.current.forEach((star) => {
         star.y += star.speed * speedMultiplier;
         if (star.y > canvas.height) {
@@ -741,48 +752,32 @@ export default function VelocityVoidGame() {
         frameRef.current++;
         if (frameRef.current % 30 === 0) scoreRef.current += 1;
 
+        const p = player.current;
+
         // Shield Regen
         if (p.upgrades.shield > 0 && p.shieldHp < p.upgrades.shield) {
           p.shieldRegenTimer++;
           if (p.shieldRegenTimer > 600) {
-            // 10 seconds without hit to regen 1 shield HP
             p.shieldHp++;
             p.shieldRegenTimer = 0;
-            createExplosion(p.x + p.width / 2, p.y + p.height / 2, '#00f0ff', '#fff', 15);
+            createExplosion(p.x + p.width / 2, p.y + p.height / 2, '#10B981', '#2563EB', 12);
           }
         }
-        // RPG Regen
+
+        // Auto Repair Regen
         if (p.upgrades.regen > 0) {
           p.regenTimer++;
-          // Regen 1 HP every (15 / regenLevel) seconds (assuming 60fps -> 900 frames)
           const regenFrames = Math.max(300, 900 - p.upgrades.regen * 150);
           if (p.regenTimer >= regenFrames) {
             p.regenTimer = 0;
             if (p.hp < p.maxHp) {
               p.hp++;
               setHudHp(p.hp);
-              // Healing animation with green crosses
-              for (let i = 0; i < 8; i++) {
-                particles.current.push({
-                  x: p.x + p.width / 2 + (Math.random() - 0.5) * 40,
-                  y: p.y + p.height / 2 + (Math.random() - 0.5) * 40,
-                  width: CONFIG.PIXEL_SIZE * 3,
-                  height: CONFIG.PIXEL_SIZE * 3,
-                  color: '#0f0',
-                  markedForDeletion: false,
-                  vx: 0,
-                  vy: -1 - Math.random() * 1.5,
-                  life: 0,
-                  maxLife: 40 + Math.random() * 20,
-                  sizeMultiplier: 1,
-                  isCross: true,
-                });
-              }
             }
           }
         }
 
-        // Move Player
+        // Move Player (Keyboard Desktop)
         if (keys.current['ArrowLeft'] || keys.current['KeyA']) p.x -= CONFIG.SHIP_SPEED;
         if (keys.current['ArrowRight'] || keys.current['KeyD']) p.x += CONFIG.SHIP_SPEED;
         if (keys.current['ArrowUp'] || keys.current['KeyW']) p.y -= CONFIG.SHIP_SPEED;
@@ -791,43 +786,39 @@ export default function VelocityVoidGame() {
         p.x = Math.max(10, Math.min(canvas.width - p.width - 10, p.x));
         p.y = Math.max(10, Math.min(canvas.height - p.height - 10, p.y));
 
-        // Exhaust
-        if (frameRef.current % 4 === 0) {
+        // Thruster Particle Exhaust
+        if (frameRef.current % 3 === 0) {
           particles.current.push({
-            x: p.x + p.width / 2 - CONFIG.PIXEL_SIZE / 2 + (Math.random() - 0.5) * 10,
+            x: p.x + p.width / 2 - CONFIG.PIXEL_SIZE / 2 + (Math.random() - 0.5) * 8,
             y: p.y + p.height,
             width: CONFIG.PIXEL_SIZE,
             height: CONFIG.PIXEL_SIZE,
-            color: PALETTE.playerLaser,
+            color: PALETTE.thruster,
             markedForDeletion: false,
-            vx: Math.random() - 0.5,
-            vy: Math.random() * 2 + 1,
+            vx: (Math.random() - 0.5) * 0.8,
+            vy: Math.random() * 2 + 1.5,
             life: 0,
-            maxLife: 8,
+            maxLife: 9,
             sizeMultiplier: 1,
           });
         }
 
-        // Auto-Shooting
+        // Auto-Shooting Lasers
         if (p.cooldown > 0) p.cooldown--;
         if (p.cooldown <= 0) {
-          // RPG Fire Rate
-          let fireRate = 20 - p.upgrades.fire_rate * 2.5;
+          let fireRate = 18 - p.upgrades.fire_rate * 2.2;
           if (fireRate < 5) fireRate = 5;
 
-          // RPG Twin Link (Multi-shot)
           const lasers = 1 + p.upgrades.twin_link;
           const spread = 8;
 
           for (let i = 0; i < lasers; i++) {
-            // Calculate X offset so they are centered
             const offset = (i - (lasers - 1) / 2) * spread;
-            // Calculate Vx spread slightly
-            const vxOffset = (i - (lasers - 1) / 2) * 0.5;
+            const vxOffset = (i - (lasers - 1) / 2) * 0.4;
 
             bullets.current.push({
               x: p.x + p.width / 2 - CONFIG.PIXEL_SIZE / 2 + offset,
-              y: p.y - 10,
+              y: p.y - 8,
               width: CONFIG.PIXEL_SIZE,
               height: CONFIG.PIXEL_SIZE * 3,
               color: PALETTE.playerLaser,
@@ -840,7 +831,7 @@ export default function VelocityVoidGame() {
           p.cooldown = fireRate;
         }
 
-        // Auto Homing Missiles
+        // Homing Missiles
         if (p.upgrades.homing_missiles > 0) {
           p.homingCooldown--;
           if (p.homingCooldown <= 0) {
@@ -849,829 +840,342 @@ export default function VelocityVoidGame() {
               bullets.current.push({
                 x: p.x + p.width / 2 - CONFIG.PIXEL_SIZE,
                 y: p.y,
-                width: CONFIG.PIXEL_SIZE * 2,
-                height: CONFIG.PIXEL_SIZE * 4,
-                color: '#00f0ff',
+                width: CONFIG.PIXEL_SIZE * 1.5,
+                height: CONFIG.PIXEL_SIZE * 2,
+                color: '#E11D48',
                 markedForDeletion: false,
-                vx: (Math.random() - 0.5) * 6,
+                vx: (Math.random() - 0.5) * 4,
                 vy: -8,
                 isEnemy: false,
                 isHoming: true,
               });
             }
-            p.homingCooldown = 120; // Every 2 seconds
+            p.homingCooldown = 65;
           }
         }
 
-        // Plasma Arc
-        if (p.upgrades.plasma_arc > 0) {
-          if (p.plasmaCooldown > 0) p.plasmaCooldown--;
-          if (p.plasmaCooldown <= 0) {
-            bullets.current.push({
-              x: p.x + p.width / 2 - (CONFIG.PIXEL_SIZE * 10) / 2,
-              y: p.y - 20,
-              width: CONFIG.PIXEL_SIZE * 10,
-              height: CONFIG.PIXEL_SIZE * 3,
-              color: '#ffaa00',
+        // Enemy Spawner Logic
+        const spawnInterval = Math.max(35, 95 - Math.floor(frameRef.current / 400));
+        if (frameRef.current % spawnInterval === 0) {
+          const rand = Math.random();
+          const sector = Math.floor(p.level / 5) + 1;
+
+          if (rand < 0.35) {
+            const isGold = Math.random() < 0.15;
+            const gSize = 5;
+            enemies.current.push({
+              x: Math.random() * (canvas.width - gSize * CONFIG.PIXEL_SIZE - 20) + 10,
+              y: -50,
+              width: gSize * CONFIG.PIXEL_SIZE,
+              height: gSize * CONFIG.PIXEL_SIZE,
+              vx: (Math.random() - 0.5) * 0.4,
+              vy: CONFIG.BASE_METEOR_SPEED + Math.random() * 0.3,
+              hp: isGold ? 4 : 2,
+              maxHp: isGold ? 4 : 2,
+              type: isGold ? 'meteor_gold' : 'meteor',
+              sprite: generateMeteorSprite(gSize, isGold),
+              gridSize: gSize,
               markedForDeletion: false,
+            });
+          } else if (rand < 0.65) {
+            enemies.current.push({
+              x: Math.random() * (canvas.width - 60) + 20,
+              y: -40,
+              width: CLAUDE_SCOUT[0].length * CONFIG.PIXEL_SIZE,
+              height: CLAUDE_SCOUT.length * CONFIG.PIXEL_SIZE,
+              vx: (Math.random() - 0.5) * 1.2,
+              vy: CONFIG.BASE_BOT_SPEED + 0.4,
+              hp: 3,
+              maxHp: 3,
+              type: 'scout',
+              sprite: CLAUDE_SCOUT,
+              markedForDeletion: false,
+              shootCooldown: Math.floor(Math.random() * 70) + 60,
+            });
+          } else if (rand < 0.85) {
+            enemies.current.push({
+              x: Math.random() * (canvas.width - 60) + 20,
+              y: -40,
+              width: CLAUDE_HUNTER[0].length * CONFIG.PIXEL_SIZE,
+              height: CLAUDE_HUNTER.length * CONFIG.PIXEL_SIZE,
               vx: 0,
-              vy: -CONFIG.BULLET_SPEED * 0.8,
-              isEnemy: false,
-              isPlasma: true,
-            });
-            p.plasmaCooldown = Math.max(30, 90 - p.upgrades.plasma_arc * 20);
-          }
-        }
-
-        // Chain Lightning (Blitz)
-        if (p.upgrades.chain_lightning > 0) {
-          if (p.lightningCooldown > 0) p.lightningCooldown--;
-          if (p.lightningCooldown <= 0) {
-            bullets.current.push({
-              x: p.x + p.width / 2 - CONFIG.PIXEL_SIZE / 2,
-              y: p.y - 10,
-              width: CONFIG.PIXEL_SIZE,
-              height: CONFIG.PIXEL_SIZE * 4,
-              color: '#ffffff',
+              vy: CONFIG.BASE_BOT_SPEED + 0.2,
+              hp: 5,
+              maxHp: 5,
+              type: 'hunter',
+              sprite: CLAUDE_HUNTER,
               markedForDeletion: false,
-              vx: (Math.random() - 0.5) * 4,
-              vy: -CONFIG.BULLET_SPEED * 1.5,
-              isEnemy: false,
-              isLightning: true,
-              lightningJumps: p.upgrades.chain_lightning * 2,
+              shootCooldown: 80,
             });
-            p.lightningCooldown = Math.max(20, 60 - p.upgrades.chain_lightning * 10);
-          }
-        }
-
-        // Spawning System
-        // Boss Logic
-        const isBossLevel = p.level >= 10;
-        const bossActive = enemies.current.some((e) => e.type === 'boss');
-        const activeBots = enemies.current.filter((e) => !e.type.includes('meteor')).length;
-        const hardCap = Math.min(6, 3 + Math.floor(p.level / 3));
-
-        if (isBossLevel && !bossActive && p.level === 10) {
-          // Spawn Boss!
-          const bWidth = MOTHERSHIP_BOSS[0].length * CONFIG.PIXEL_SIZE;
-          const bHeight = MOTHERSHIP_BOSS.length * CONFIG.PIXEL_SIZE;
-          enemies.current.push({
-            type: 'boss',
-            x: canvas.width / 2 - bWidth / 2,
-            y: -bHeight,
-            width: bWidth,
-            height: bHeight,
-            markedForDeletion: false,
-            vx: 1 * speedMultiplier,
-            vy: 0.5 * speedMultiplier,
-            hp: 1500,
-            maxHp: 1500,
-            sprite: MOTHERSHIP_BOSS,
-            shootCooldown: 100,
-            bossSpawnCooldown: 300,
-            aiState: 'sweep',
-            aiTimer: 0,
-          });
-        }
-
-        // Slower base spawns
-        const botRate = Math.max(400, 800 - p.level * 15);
-        if (frameRef.current % botRate === 0 && !bossActive && activeBots < hardCap) {
-          let type: 'scout' | 'hunter' | 'juggernaut' | 'stealth' | 'sniper' = 'scout';
-          let r = Math.random();
-          if (p.level >= 5) {
-            if (r < 0.15) type = 'juggernaut';
-            else if (r < 0.3) type = 'sniper';
-            else if (r < 0.45) type = 'stealth';
-            else if (r < 0.7) type = 'hunter';
-          } else if (p.level >= 3) {
-            if (r < 0.3) type = 'stealth';
-            else if (r < 0.6) type = 'hunter';
-          }
-
-          let spr = CLAUDE_SCOUT;
-          let hp = 4 + Math.floor(p.level * 0.5);
-          let botVx = CONFIG.BASE_BOT_SPEED * speedMultiplier;
-          let yPos = Math.random() * (canvas.height * 0.2) + 80;
-
-          if (type === 'hunter') {
-            spr = CLAUDE_HUNTER;
-            hp = 8 + p.level;
-            botVx = (CONFIG.BASE_BOT_SPEED + 0.5) * speedMultiplier;
-          } else if (type === 'juggernaut') {
-            spr = CLAUDE_JUGGERNAUT;
-            hp = 25 + p.level * 3;
-            botVx = 0.3 * speedMultiplier;
-          } else if (type === 'stealth') {
-            spr = CLAUDE_STEALTH;
-            hp = 2 + Math.floor(p.level * 0.3);
-            botVx = 2.0 * speedMultiplier;
-          } else if (type === 'sniper') {
-            spr = CLAUDE_SNIPER;
-            hp = 10 + p.level;
-            botVx = 0.5 * speedMultiplier;
-            yPos = 40; // Stays at top
-          }
-
-          const eWidth = spr[0].length * CONFIG.PIXEL_SIZE;
-          const eHeight = spr.length * CONFIG.PIXEL_SIZE;
-
-          enemies.current.push({
-            type,
-            x: Math.random() > 0.5 ? -eWidth : canvas.width,
-            y: yPos,
-            width: eWidth,
-            height: eHeight,
-            markedForDeletion: false,
-            vx: (Math.random() > 0.5 ? 1 : -1) * botVx,
-            vy: 0,
-            hp,
-            maxHp: hp,
-            sprite: spr,
-            shootCooldown: type === 'sniper' ? 180 : Math.random() * 60 + 30,
-            aiState: 'idle',
-            aiTimer: Math.random() * 30 + 30,
-            targetX: 0,
-          });
-        }
-
-        const meteorRate =
-          currentEventRef.current === 'METEOR_STORM' ? 30 : Math.max(500, 800 - p.level * 15);
-        if (frameRef.current % meteorRate === 0 && !bossActive) {
-          const gridSizes = [7, 9, 13];
-          const gridSize = gridSizes[Math.floor(Math.random() * gridSizes.length)];
-          const eWidth = gridSize * CONFIG.PIXEL_SIZE;
-          const eHeight = gridSize * CONFIG.PIXEL_SIZE;
-          enemies.current.push({
-            type: 'meteor',
-            x: Math.random() * (canvas.width - eWidth),
-            y: -eHeight,
-            width: eWidth,
-            height: eHeight,
-            markedForDeletion: false,
-            vx: (Math.random() - 0.5) * 1 * speedMultiplier,
-            vy: (CONFIG.BASE_METEOR_SPEED + Math.random() * 1.5) * speedMultiplier,
-            hp: 3 + Math.floor(p.level / 2),
-            maxHp: 3 + Math.floor(p.level / 2),
-            sprite: generateMeteorSprite(gridSize, false),
-            gridSize: gridSize,
-          });
-        }
-
-        // Occasional Heart drops
-        if (frameRef.current % 1800 === 0 && Math.random() > 0.5 && p.hp < p.maxHp) {
-          items.current.push({
-            type: 'heart',
-            x: Math.random() * canvas.width,
-            y: -50,
-            width: ITEM_HEART[0].length * CONFIG.PIXEL_SIZE,
-            height: ITEM_HEART.length * CONFIG.PIXEL_SIZE,
-            markedForDeletion: false,
-            vy: 1 * speedMultiplier,
-            sprite: ITEM_HEART,
-          });
-        }
-
-        // Process Enemies
-        enemies.current.forEach((e) => {
-          if (e.type !== 'meteor' && e.type !== 'meteor_gold') {
-            e.aiTimer = (e.aiTimer || 0) - 1;
-            if (e.type === 'boss') {
-              if (e.y < 40) {
-                e.y += e.vy;
-              } else {
-                e.y = 40;
-                e.x += e.vx;
-                if (e.x <= 0 || e.x + e.width >= canvas.width) e.vx *= -1;
-              }
-
-              if (e.bossSpawnCooldown !== undefined) {
-                e.bossSpawnCooldown--;
-                if (e.bossSpawnCooldown <= 0) {
-                  // Spawn minions
-                  const minionSpr = CLAUDE_SCOUT;
-                  enemies.current.push({
-                    type: 'scout',
-                    x: e.x + e.width / 2,
-                    y: e.y + e.height,
-                    width: minionSpr[0].length * CONFIG.PIXEL_SIZE,
-                    height: minionSpr.length * CONFIG.PIXEL_SIZE,
-                    markedForDeletion: false,
-                    vx: (Math.random() - 0.5) * 2,
-                    vy: 1,
-                    hp: 5,
-                    maxHp: 5,
-                    sprite: minionSpr,
-                    aiState: 'idle',
-                    aiTimer: 30,
-                  });
-                  e.bossSpawnCooldown = 300;
-                }
-              }
-            }
-
-            if (e.type === 'juggernaut' && e.hp < e.maxHp * 0.4 && e.aiState !== 'enraged') {
-              e.aiState = 'enraged';
-              e.vx = e.x < p.x ? 1.5 * speedMultiplier : -1.5 * speedMultiplier;
-              e.sprite = CLAUDE_JUGGERNAUT.map((row) => row.replace(/J/g, 'R'));
-            }
-
-            if (e.aiState === 'enraged') {
-              if (e.x + e.width / 2 < p.x + p.width / 2) e.x += 1.5 * speedMultiplier;
-              else e.x -= 1.5 * speedMultiplier;
-            }
-
-            // Nerfed evasion
-            if (e.type === 'scout' && e.aiState !== 'evade') {
-              bullets.current.forEach((b) => {
-                if (!b.isEnemy) {
-                  const dist = Math.hypot(b.x - (e.x + e.width / 2), b.y - (e.y + e.height / 2));
-                  if (dist < 80 && Math.random() > 0.95) {
-                    // 5% chance
-                    e.aiState = 'evade';
-                    e.aiTimer = 15;
-                    e.vx = (e.x > b.x ? 1 : -1) * 2 * speedMultiplier;
-                  }
-                }
-              });
-            }
-
-            if (e.aiTimer <= 0) {
-              if (e.aiState === 'evade') {
-                e.aiState = 'idle';
-                e.aiTimer = Math.random() * 60 + 30;
-                e.vx = (Math.random() > 0.5 ? 1 : -1) * CONFIG.BASE_BOT_SPEED * speedMultiplier;
-              } else if (e.aiState === 'idle') {
-                e.aiState = 'strafe';
-                e.aiTimer = Math.random() * 40 + 20;
-              } else if (e.aiState === 'strafe') {
-                e.aiState = 'idle';
-                e.aiTimer = Math.random() * 60 + 30;
-                if (e.type !== 'hunter') {
-                  if (Math.random() > 0.5) e.vx *= -1;
-                }
-              }
-            }
-
-            if (
-              e.type === 'scout' ||
-              e.type === 'stealth' ||
-              e.type === 'sniper' ||
-              (e.type === 'juggernaut' && e.aiState !== 'enraged')
-            ) {
-              if (e.aiState !== 'idle') {
-                e.x += e.vx;
-                if (e.x <= 0 || e.x + e.width >= canvas.width) {
-                  e.vx *= -1;
-                  e.x = Math.max(0, Math.min(canvas.width - e.width, e.x));
-                }
-              }
-            } else if (e.type === 'hunter') {
-              const targetX = p.x;
-              const diffX = targetX - e.x;
-              if (Math.abs(diffX) > 20) {
-                e.x += Math.sign(diffX) * 1.5 * speedMultiplier;
-              }
-            }
-
-            // Enemy Shooting
-            if (e.shootCooldown !== undefined) {
-              e.shootCooldown--;
-              if (e.shootCooldown <= 0) {
-                if (e.type === 'juggernaut') {
-                  for (let i = -1; i <= 1; i++) {
-                    bullets.current.push({
-                      x: e.x + e.width / 2 - CONFIG.PIXEL_SIZE / 2,
-                      y: e.y + e.height,
-                      width: CONFIG.PIXEL_SIZE,
-                      height: CONFIG.PIXEL_SIZE * 3,
-                      color: PALETTE.enemyLaser,
-                      markedForDeletion: false,
-                      vx: i * 1.5,
-                      vy: CONFIG.ENEMY_BULLET_SPEED * speedMultiplier,
-                      isEnemy: true,
-                    });
-                  }
-                  e.shootCooldown = e.aiState === 'enraged' ? 60 : 100;
-                } else if (e.type === 'boss') {
-                  for (let i = -2; i <= 2; i++) {
-                    bullets.current.push({
-                      x: e.x + e.width / 2 - CONFIG.PIXEL_SIZE / 2,
-                      y: e.y + e.height,
-                      width: CONFIG.PIXEL_SIZE * 2,
-                      height: CONFIG.PIXEL_SIZE * 4,
-                      color: PALETTE.bossSecondary,
-                      markedForDeletion: false,
-                      vx: i * 2,
-                      vy: CONFIG.ENEMY_BULLET_SPEED * 1.2 * speedMultiplier,
-                      isEnemy: true,
-                    });
-                  }
-                  e.shootCooldown = 150;
-                } else if (e.type === 'sniper') {
-                  bullets.current.push({
-                    x: e.x + e.width / 2 - CONFIG.PIXEL_SIZE / 2,
-                    y: e.y + e.height,
-                    width: CONFIG.PIXEL_SIZE,
-                    height: CONFIG.PIXEL_SIZE * 6,
-                    color: '#ff00ff',
-                    markedForDeletion: false,
-                    vx: 0,
-                    vy: CONFIG.ENEMY_BULLET_SPEED * 3 * speedMultiplier,
-                    isEnemy: true,
-                  });
-                  e.shootCooldown = 200;
-                } else if (e.type === 'stealth') {
-                  // Shoots rarely
-                  if (Math.random() > 0.5) {
-                    bullets.current.push({
-                      x: e.x + e.width / 2,
-                      y: e.y + e.height,
-                      width: CONFIG.PIXEL_SIZE,
-                      height: CONFIG.PIXEL_SIZE * 2,
-                      color: PALETTE.enemyLaser,
-                      markedForDeletion: false,
-                      vx: 0,
-                      vy: CONFIG.ENEMY_BULLET_SPEED * speedMultiplier,
-                      isEnemy: true,
-                    });
-                  }
-                  e.shootCooldown = 120;
-                } else if (e.type === 'hunter') {
-                  bullets.current.push({
-                    x: e.x + e.width / 2 - CONFIG.PIXEL_SIZE / 2,
-                    y: e.y + e.height,
-                    width: CONFIG.PIXEL_SIZE,
-                    height: CONFIG.PIXEL_SIZE * 3,
-                    color: PALETTE.enemyLaser,
-                    markedForDeletion: false,
-                    vx: 0,
-                    vy: CONFIG.ENEMY_BULLET_SPEED * 1.5 * speedMultiplier,
-                    isEnemy: true,
-                  });
-                  e.shootCooldown = 80;
-                } else {
-                  bullets.current.push({
-                    x: e.x + e.width / 2 - CONFIG.PIXEL_SIZE / 2,
-                    y: e.y + e.height,
-                    width: CONFIG.PIXEL_SIZE,
-                    height: CONFIG.PIXEL_SIZE * 3,
-                    color: PALETTE.enemyLaser,
-                    markedForDeletion: false,
-                    vx: 0,
-                    vy: CONFIG.ENEMY_BULLET_SPEED * speedMultiplier,
-                    isEnemy: true,
-                  });
-                  e.shootCooldown = 120;
-                }
-              }
-            }
-          } else {
-            e.x += e.vx;
-            e.y += e.vy;
-          }
-
-          if (e.y > canvas.height + 100) e.markedForDeletion = true;
-
-          if (checkCollision(p, e, 0.3)) {
-            handlePlayerHit();
-            e.markedForDeletion = true;
-            createExplosion(
-              e.x + e.width / 2,
-              e.y + e.height / 2,
-              PALETTE.explosion1,
-              PALETTE.explosion2,
-              40
-            );
-          }
-        });
-
-        // Process Items & Magnet
-        const magnetRadius = 80 + p.upgrades.magnet * 50;
-        items.current.forEach((i) => {
-          // Magnet pull for XP
-          if (i.type === 'xp') {
-            const dist = Math.hypot(
-              p.x + p.width / 2 - (i.x + i.width / 2),
-              p.y + p.height / 2 - (i.y + i.height / 2)
-            );
-            if (dist < magnetRadius) {
-              // Pull towards player
-              i.x += (p.x + p.width / 2 - (i.x + i.width / 2)) * 0.1;
-              i.y += (p.y + p.height / 2 - (i.y + i.height / 2)) * 0.1;
-            } else {
-              i.y += i.vy;
-            }
-          } else {
-            i.y += i.vy;
-          }
-
-          if (i.y > canvas.height + 50) i.markedForDeletion = true;
-
-          if (checkCollision(p, i, 0.1)) {
-            i.markedForDeletion = true;
-            if (i.type === 'xp') {
-              p.xp += i.xpValue || 10;
-              if (p.xp >= p.maxXp) {
-                triggerLevelUp();
-              }
-              setHudXp(p.xp);
-              scoreRef.current += 10;
-            } else if (i.type === 'heart') {
-              if (p.hp < p.maxHp) {
-                p.hp++;
-                setHudHp(p.hp);
-              }
-              scoreRef.current += 50;
-            }
-            createExplosion(
-              i.x,
-              i.y,
-              i.type === 'xp' ? PALETTE.itemWeapon : PALETTE.itemHeart,
-              '#fff',
-              20
-            );
-          }
-        });
-
-        // Process Bullets
-        bullets.current.forEach((b) => {
-          // Weapon logics
-          if (
-            b.isLightning &&
-            !b.isEnemy &&
-            b.lightningTarget &&
-            !b.lightningTarget.markedForDeletion
-          ) {
-            const angle = Math.atan2(b.lightningTarget.y - b.y, b.lightningTarget.x - b.x);
-            b.vx = Math.cos(angle) * 15;
-            b.vy = Math.sin(angle) * 15;
-            particles.current.push({
-              x: b.x,
-              y: b.y,
-              width: CONFIG.PIXEL_SIZE,
-              height: CONFIG.PIXEL_SIZE,
-              color: '#fff',
+          } else if (sector >= 2) {
+            enemies.current.push({
+              x: Math.random() * (canvas.width - 80) + 30,
+              y: -60,
+              width: CLAUDE_JUGGERNAUT[0].length * CONFIG.PIXEL_SIZE,
+              height: CLAUDE_JUGGERNAUT.length * CONFIG.PIXEL_SIZE,
+              vx: (Math.random() - 0.5) * 0.3,
+              vy: CONFIG.BASE_BOT_SPEED * 0.8,
+              hp: 12,
+              maxHp: 12,
+              type: 'juggernaut',
+              sprite: CLAUDE_JUGGERNAUT,
               markedForDeletion: false,
-              vx: 0,
-              vy: 0,
-              life: 0,
-              maxLife: 5,
-              sizeMultiplier: 1,
+              shootCooldown: 90,
             });
-          } else if (b.isHoming && !b.isEnemy) {
-            let closest: Enemy | null = null;
-            let minDist = 300;
+          }
+        }
+      }
+
+      // Update & Draw Bullets
+      bullets.current.forEach((b) => {
+        if (isPlaying) {
+          if (b.isHoming) {
+            let closestEnemy: Enemy | null = null;
+            let minDist = 500;
             enemies.current.forEach((e) => {
-              const dist = Math.hypot(e.x + e.width / 2 - b.x, e.y + e.height / 2 - b.y);
-              if (dist < minDist) {
-                minDist = dist;
-                closest = e;
+              const d = Math.hypot(e.x - b.x, e.y - b.y);
+              if (d < minDist) {
+                minDist = d;
+                closestEnemy = e;
               }
             });
-            if (closest) {
-              // Steer bullet
-              const angle = Math.atan2((closest as Enemy).y - b.y, (closest as Enemy).x - b.x);
-              b.vx = Math.cos(angle) * 8;
-              b.vy = Math.sin(angle) * 8;
+            if (closestEnemy) {
+              const angle = Math.atan2(
+                (closestEnemy as Enemy).y - b.y,
+                (closestEnemy as Enemy).x - b.x
+              );
+              b.vx += Math.cos(angle) * 0.8;
+              b.vy += Math.sin(angle) * 0.8;
+              const spd = Math.hypot(b.vx, b.vy);
+              if (spd > 12) {
+                b.vx = (b.vx / spd) * 12;
+                b.vy = (b.vy / spd) * 12;
+              }
             }
           }
 
           b.x += b.vx;
           b.y += b.vy;
-          if (b.y < -50 || b.y > canvas.height + 50 || b.x < -50 || b.x > canvas.width + 50)
+
+          if (b.y < -50 || b.y > canvas.height + 50 || b.x < -50 || b.x > canvas.width + 50) {
             b.markedForDeletion = true;
-
-          if (b.isHoming && !b.markedForDeletion && Math.random() > 0.5) {
-            particles.current.push({
-              x: b.x + b.width / 2,
-              y: b.y + b.height,
-              width: CONFIG.PIXEL_SIZE,
-              height: CONFIG.PIXEL_SIZE,
-              color: '#ffaa00',
-              markedForDeletion: false,
-              vx: Math.random() - 0.5,
-              vy: Math.random() * 2,
-              life: 0,
-              maxLife: 10,
-              sizeMultiplier: 1,
-            });
           }
+        }
 
-          if (!b.isEnemy) {
-            enemies.current.forEach((e) => {
-              if (b.markedForDeletion || e.markedForDeletion) return;
-              if (checkCollision(b, e, 0.1)) {
-                if (!b.isPlasma) b.markedForDeletion = true;
-                if (b.isLightning && b.lightningJumps && b.lightningJumps > 0) {
-                  b.markedForDeletion = false;
-                  b.lightningJumps--;
-                  let closest = null;
-                  let minDist = 200;
-                  enemies.current.forEach((otherE) => {
-                    if (otherE !== e) {
-                      const dist = Math.hypot(otherE.x - b.x, otherE.y - b.y);
-                      if (dist < minDist) {
-                        minDist = dist;
-                        closest = otherE;
-                      }
-                    }
-                  });
-                  b.lightningTarget = closest;
-                }
-                let dmg = 1;
-                if (b.isHoming) dmg = 2;
-                if (b.isPlasma) dmg = 3;
-                if (b.isLightning) dmg = 1;
-                e.hp -= dmg;
-                e.hitFlashTimer = 3;
+        ctx.fillStyle = b.color;
+        ctx.fillRect(retroSnap(b.x), retroSnap(b.y), b.width, b.height);
+      });
 
-                if (e.hp <= 0) {
-                  e.markedForDeletion = true;
-                  const c1 = e.type.includes('meteor') ? PALETTE.meteorPrimary : PALETTE.botPrimary;
-                  const c2 = e.type === 'meteor_gold' ? PALETTE.meteorGold : PALETTE.explosion2;
-                  createExplosion(e.x + e.width / 2, e.y + e.height / 2, c1, c2, 30);
+      // Update & Draw Enemies
+      enemies.current.forEach((e) => {
+        if (isPlaying) {
+          e.x += e.vx;
+          e.y += e.vy;
 
-                  let dropXp = 5;
-                  if (Math.random() < 0.2 || e.type === 'boss') {
-                    const multiplier = 1 + metaUpgradesRef.current.coin_multiplier;
-                    const coins = (e.type === 'boss' ? 50 : 1) * multiplier;
-                    metaCoinsRef.current += coins;
-                    setMetaCoins(metaCoinsRef.current);
-                    localStorage.setItem('velocityVoidCoins', metaCoinsRef.current.toString());
-                  }
-                  if (e.type === 'boss') dropXp = 500;
-                  else if (e.type === 'juggernaut') dropXp = 30;
-                  else if (e.type === 'sniper') dropXp = 20;
-                  else if (e.type === 'hunter') dropXp = 10;
-                  else if (e.type === 'stealth' || e.type === 'scout') dropXp = 5;
-
-                  if (e.type === 'boss') {
-                    // Drop lots of hearts!
-                    for (let i = 0; i < 5; i++) {
-                      items.current.push({
-                        type: 'heart',
-                        x: e.x + Math.random() * e.width,
-                        y: e.y + Math.random() * e.height,
-                        width: ITEM_HEART[0].length * CONFIG.PIXEL_SIZE,
-                        height: ITEM_HEART.length * CONFIG.PIXEL_SIZE,
-                        markedForDeletion: false,
-                        vy: 1 * speedMultiplier,
-                        sprite: ITEM_HEART,
-                      });
-                    }
-                  }
-
-                  if (dropXp > 0) {
-                    items.current.push({
-                      type: 'xp',
-                      x: e.x + e.width / 2,
-                      y: e.y + e.height / 2,
-                      width: 3 * CONFIG.PIXEL_SIZE,
-                      height: 3 * CONFIG.PIXEL_SIZE,
-                      markedForDeletion: false,
-                      vy: 1 * speedMultiplier,
-                      sprite: ITEM_XP,
-                      xpValue: dropXp,
-                    });
-                  }
-                } else {
-                  createExplosion(b.x, b.y, '#fff', PALETTE.explosion1, 10);
-                }
-              }
-            });
-          } else {
-            if (checkCollision(b, p, 0.3)) {
-              b.markedForDeletion = true;
-              handlePlayerHit();
+          if (e.shootCooldown !== undefined) {
+            e.shootCooldown--;
+            if (e.shootCooldown <= 0) {
+              bullets.current.push({
+                x: e.x + e.width / 2 - CONFIG.PIXEL_SIZE / 2,
+                y: e.y + e.height,
+                width: CONFIG.PIXEL_SIZE,
+                height: CONFIG.PIXEL_SIZE * 2.5,
+                color: PALETTE.enemyLaser,
+                markedForDeletion: false,
+                vx: 0,
+                vy: CONFIG.ENEMY_BULLET_SPEED,
+                isEnemy: true,
+              });
+              e.shootCooldown = Math.floor(Math.random() * 80) + 70;
             }
           }
+
+          if (e.y > canvas.height + 50) e.markedForDeletion = true;
+
+          // Enemy-Player Collision
+          if (checkCollision(e, player.current)) {
+            e.markedForDeletion = true;
+            handlePlayerHit();
+            createExplosion(e.x + e.width / 2, e.y + e.height / 2, PALETTE.botPrimary, '#E11D48');
+          }
+        }
+
+        drawSprite(ctx, e.sprite, e.x, e.y, CONFIG.PIXEL_SIZE);
+      });
+
+      // Bullet-Enemy Collisions
+      bullets.current
+        .filter((b) => !b.isEnemy)
+        .forEach((b) => {
+          enemies.current.forEach((e) => {
+            if (checkCollision(b, e)) {
+              b.markedForDeletion = true;
+              e.hp -= 1;
+              createExplosion(b.x, b.y, PALETTE.playerLaser, '#FFFFFF', 4);
+
+              if (e.hp <= 0) {
+                e.markedForDeletion = true;
+                scoreRef.current += e.maxHp * 15;
+                createExplosion(
+                  e.x + e.width / 2,
+                  e.y + e.height / 2,
+                  PALETTE.botSecondary,
+                  PALETTE.explosion1,
+                  18
+                );
+
+                // Spawn XP item
+                items.current.push({
+                  x: e.x + e.width / 2,
+                  y: e.y + e.height / 2,
+                  width: ITEM_XP[0].length * CONFIG.PIXEL_SIZE,
+                  height: ITEM_XP.length * CONFIG.PIXEL_SIZE,
+                  markedForDeletion: false,
+                  type: 'xp',
+                  vy: 0.8,
+                  sprite: ITEM_XP,
+                  xpValue: e.maxHp,
+                });
+              }
+            }
+          });
         });
 
-        // Process Particles
-        particles.current.forEach((part) => {
+      // Update & Draw Items (Magnet Pull Logic)
+      items.current.forEach((it) => {
+        if (isPlaying) {
+          const p = player.current;
+          const magRange = 70 + p.upgrades.magnet * 35;
+          const dist = Math.hypot(p.x + p.width / 2 - it.x, p.y + p.height / 2 - it.y);
+
+          if (dist < magRange) {
+            const angle = Math.atan2(p.y + p.height / 2 - it.y, p.x + p.width / 2 - it.x);
+            it.x += Math.cos(angle) * 6;
+            it.y += Math.sin(angle) * 6;
+          } else {
+            it.y += it.vy;
+          }
+
+          if (it.y > canvas.height + 40) it.markedForDeletion = true;
+
+          // Pickup Collision
+          if (checkCollision(it, player.current)) {
+            it.markedForDeletion = true;
+            if (it.type === 'xp') {
+              p.xp += it.xpValue || 1;
+              setHudXp(p.xp);
+              if (p.xp >= p.maxXp) {
+                triggerLevelUp();
+              }
+            }
+          }
+        }
+
+        drawSprite(ctx, it.sprite, it.x, it.y, CONFIG.PIXEL_SIZE);
+      });
+
+      // Update & Draw Particles
+      particles.current.forEach((part) => {
+        if (isPlaying) {
           part.x += part.vx;
           part.y += part.vy;
           part.life++;
           if (part.life >= part.maxLife) part.markedForDeletion = true;
-        });
-
-        // Clean up
-        bullets.current = bullets.current.filter((b) => !b.markedForDeletion);
-        enemies.current = enemies.current.filter((e) => !e.markedForDeletion);
-        items.current = items.current.filter((i) => !i.markedForDeletion);
-        particles.current = particles.current.filter((p) => !p.markedForDeletion);
-      } // end if isPlaying
-
-      // Draw Enemies, Items, Bullets, Particles
-      enemies.current.forEach((e) => {
-        if (e.type.includes('meteor')) {
-          ctx.shadowBlur = 10;
-          ctx.shadowColor = PALETTE.meteorPrimary;
-        } else {
-          ctx.shadowBlur = 15;
-          ctx.shadowColor = PALETTE.botEye;
         }
-        let overrideColor = undefined;
-        if (e.hitFlashTimer && e.hitFlashTimer > 0) {
-          overrideColor = '#ffffff';
-          if (isPlaying) e.hitFlashTimer--;
-        }
-        drawSprite(ctx, e.sprite, e.x, e.y, CONFIG.PIXEL_SIZE, 1, overrideColor);
-        ctx.shadowBlur = 0;
-      });
 
-      items.current.forEach((i) => {
-        const glowColor = i.type === 'heart' ? PALETTE.itemHeart : PALETTE.itemWeapon;
-        ctx.shadowBlur = 20;
-        ctx.shadowColor = glowColor;
-        drawSprite(ctx, i.sprite, i.x, i.y, CONFIG.PIXEL_SIZE);
-        ctx.shadowBlur = 0;
-      });
-
-      bullets.current.forEach((b) => {
-        ctx.fillStyle = b.color;
-        ctx.shadowBlur = b.isLightning ? 15 : 10;
-        ctx.shadowColor = b.color;
-        if (b.isLightning) {
-          ctx.beginPath();
-          ctx.moveTo(b.x, b.y + b.height);
-          ctx.lineTo(b.x + (Math.random() - 0.5) * 20, b.y + b.height / 2);
-          ctx.lineTo(b.x, b.y);
-          ctx.strokeStyle = b.color;
-          ctx.lineWidth = 4;
-          ctx.stroke();
-        } else {
-          ctx.fillRect(retroSnap(b.x), retroSnap(b.y), b.width, b.height);
-        }
-        ctx.shadowBlur = 0;
-      });
-
-      particles.current.forEach((part) => {
+        const alpha = Math.max(0, 1 - part.life / part.maxLife);
         ctx.fillStyle = part.color;
-        ctx.globalAlpha = Math.max(0, 1 - part.life / part.maxLife);
-        const scale = 1 - part.life / part.maxLife;
-        const w = Math.max(1, retroSnap(part.width * scale));
-        const h = Math.max(1, retroSnap(part.height * scale));
-
-        if (part.isCross) {
-          ctx.fillRect(retroSnap(part.x) + w / 2 - w / 6, retroSnap(part.y), w / 3, h);
-          ctx.fillRect(retroSnap(part.x), retroSnap(part.y) + h / 2 - h / 6, w, h / 3);
-        } else {
-          ctx.fillRect(retroSnap(part.x), retroSnap(part.y), w, h);
-        }
+        ctx.globalAlpha = alpha;
+        ctx.fillRect(retroSnap(part.x), retroSnap(part.y), part.width, part.height);
       });
       ctx.globalAlpha = 1.0;
 
-      // Draw Player
+      // Draw Player Ship (Coday Blue)
       if (gameStateRef.current !== 'GAME_OVER') {
-        // Draw Magnet Aura
-        if (p.upgrades.magnet > 0) {
+        const p = player.current;
+        const currentSprite = getPlayerSprite(p.upgrades);
+        drawSprite(ctx, currentSprite, p.x, p.y, CONFIG.PIXEL_SIZE);
+
+        // Draw Shield Aura if Active
+        if (p.shieldHp > 0) {
+          ctx.strokeStyle = '#10B981';
+          ctx.lineWidth = 2;
           ctx.beginPath();
           ctx.arc(
             p.x + p.width / 2,
             p.y + p.height / 2,
-            80 + p.upgrades.magnet * 50,
+            Math.max(p.width, p.height) * 0.8,
             0,
             Math.PI * 2
           );
-          ctx.fillStyle = 'rgba(0, 240, 255, 0.05)';
-          ctx.fill();
-        }
-
-        // Draw Energy Shield
-        if (p.upgrades.shield > 0 && p.shieldHp > 0) {
-          ctx.beginPath();
-          ctx.arc(p.x + p.width / 2, p.y + p.height / 2, p.width * 0.9, 0, Math.PI * 2);
-          ctx.lineWidth = 3;
-          const alpha = 0.3 + (p.shieldHp / p.upgrades.shield) * 0.5;
-          ctx.strokeStyle = `rgba(0, 240, 255, ${alpha})`;
-          ctx.setLineDash([10, 5]);
           ctx.stroke();
-          ctx.setLineDash([]);
-          // Draw inner glow
-          ctx.fillStyle = `rgba(0, 240, 255, ${alpha * 0.1})`;
-          ctx.fill();
         }
-
-        ctx.shadowBlur = 15;
-        ctx.shadowColor = PALETTE.playerLaser;
-        let pFlash = undefined;
-        if (p.hitFlashTimer && p.hitFlashTimer > 0) {
-          pFlash = '#ffffff';
-          if (isPlaying) p.hitFlashTimer--;
-        }
-        drawSprite(ctx, getPlayerSprite(p.upgrades), p.x, p.y, CONFIG.PIXEL_SIZE, 1, pFlash);
-        ctx.shadowBlur = 0;
       }
 
-      // Flash
+      // Cleanup Marked Entities
+      bullets.current = bullets.current.filter((b) => !b.markedForDeletion);
+      enemies.current = enemies.current.filter((e) => !e.markedForDeletion);
+      items.current = items.current.filter((i) => !i.markedForDeletion);
+      particles.current = particles.current.filter((p) => !p.markedForDeletion);
+
+      // Screen Flash
       if (screenFlash.current.alpha > 0) {
         ctx.fillStyle = screenFlash.current.color;
         ctx.globalAlpha = screenFlash.current.alpha;
-        ctx.fillRect(-50, -50, canvas.width + 100, canvas.height + 100);
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.globalAlpha = 1.0;
-        if (isPlaying) screenFlash.current.alpha -= 0.05;
+        screenFlash.current.alpha *= 0.85;
+        if (screenFlash.current.alpha < 0.05) screenFlash.current.alpha = 0;
       }
 
       ctx.restore();
 
-      // Draw HUD Background
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.6)';
-      ctx.fillRect(10, 10, 220, 240);
-      ctx.strokeStyle = '#333';
-      ctx.lineWidth = 2;
-      ctx.strokeRect(10, 10, 220, 240);
-
-      // Draw HUD Text
-      ctx.fillStyle = PALETTE.uiText;
-      ctx.font = 'bold 20px monospace';
-      ctx.textAlign = 'left';
-      ctx.fillText(`SCORE: ${Math.floor(scoreRef.current)}`, 20, 40);
-      ctx.fillText(`LVL: ${p.level}`, 20, 70);
-
-      // XP Bar
-      const xpBarWidth = 150;
-      const xpBarHeight = 10;
-      ctx.fillStyle = 'rgba(0, 240, 255, 0.2)';
-      ctx.fillRect(20, 85, xpBarWidth, xpBarHeight);
-      ctx.fillStyle = PALETTE.itemWeapon;
-      ctx.fillRect(20, 85, (p.xp / Math.max(1, p.maxXp)) * xpBarWidth, xpBarHeight);
-
-      // Boss Health Bar
-      const activeBoss = enemies.current.find((e) => e.type === 'boss');
-      if (activeBoss) {
-        const barW = 500;
-        const barH = 20;
-        const barX = canvas.width / 2 - barW / 2;
-        const barY = 30;
-
-        ctx.lineWidth = 4;
-        ctx.strokeStyle = '#ff0000';
-        ctx.strokeRect(barX - 2, barY - 2, barW + 4, barH + 4);
-
-        ctx.fillStyle = 'rgba(255, 0, 0, 0.2)';
-        ctx.fillRect(barX, barY, barW, barH);
-
-        ctx.fillStyle = '#ff0000';
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = '#ff0000';
-        ctx.fillRect(barX, barY, (Math.max(0, activeBoss.hp) / activeBoss.maxHp) * barW, barH);
-        ctx.shadowBlur = 0;
-
-        ctx.fillStyle = '#fff';
-        ctx.textAlign = 'center';
-        ctx.font = 'bold 24px monospace';
-        ctx.fillText('WARNING: MOTHERSHIP', canvas.width / 2, 20);
-        ctx.textAlign = 'left';
-      }
-      ctx.textAlign = 'left';
-
-      // Hearts
-      ctx.fillStyle = PALETTE.itemHeart;
-      ctx.font = 'bold 16px monospace';
-      ctx.fillText(`HP: ${p.hp}/${p.maxHp}`, 20, 115);
-      for (let i = 0; i < p.maxHp; i++) {
-        const sprite = i < p.hp ? ITEM_HEART : ITEM_HEART_EMPTY;
-        drawSprite(ctx, sprite, 20 + i * 35, 125, 4);
-      }
-
-      // Shield UI
-      if (p.upgrades.shield > 0) {
-        ctx.fillStyle = '#00f0ff';
-        ctx.fillText(`SHIELD: ${p.shieldHp}/${p.upgrades.shield}`, 20, 165);
-        for (let i = 0; i < p.upgrades.shield; i++) {
-          ctx.globalAlpha = i < p.shieldHp ? 1.0 : 0.3;
-          drawSprite(ctx, ITEM_SHIELD_ICON, 20 + i * 35, 175, 4, 1, '#00f0ff');
+      // Draw Light Canvas HUD Overlay
+      if (isPlaying) {
+        // Hull Hearts
+        for (let i = 0; i < hudMaxHp; i++) {
+          const isFilled = i < hudHp;
+          drawSprite(
+            ctx,
+            isFilled ? ITEM_HEART : ITEM_HEART_EMPTY,
+            20 + i * 28,
+            20,
+            CONFIG.PIXEL_SIZE * 0.8
+          );
         }
-        ctx.globalAlpha = 1.0;
-      }
 
-      if (currentEventRef.current === 'METEOR_STORM') {
-        ctx.fillStyle = '#ff5500';
-        ctx.textAlign = 'center';
-        ctx.font = 'bold 30px monospace';
-        ctx.fillText('WARNING: METEOR STORM', canvas.width / 2, 80);
+        // Shield Icons
+        for (let i = 0; i < player.current.shieldHp; i++) {
+          drawSprite(ctx, ITEM_SHIELD_ICON, 20 + (hudMaxHp + i) * 28, 20, CONFIG.PIXEL_SIZE * 0.8);
+        }
+
+        // XP Progress Bar
+        const barWidth = 160;
+        const barHeight = 8;
+        const fillWidth = Math.min(barWidth, (hudXp / hudMaxXp) * barWidth);
+        ctx.fillStyle = '#E2E8F0';
+        ctx.fillRect(20, 52, barWidth, barHeight);
+        ctx.fillStyle = PALETTE.player;
+        ctx.fillRect(20, 52, fillWidth, barHeight);
+
+        ctx.fillStyle = PALETTE.uiText;
+        ctx.font = 'bold 12px monospace';
+        ctx.fillText(`LVL ${hudLevel}`, 190, 60);
+
+        // Score & High Score
+        ctx.textAlign = 'right';
+        ctx.font = 'bold 16px monospace';
+        ctx.fillStyle = PALETTE.uiText;
+        ctx.fillText(`SCORE: ${Math.floor(scoreRef.current)}`, canvas.width - 20, 36);
+        ctx.font = '12px monospace';
+        ctx.fillStyle = '#64748B';
+        ctx.fillText(
+          `BEST: ${Math.max(highScoreRef.current, Math.floor(scoreRef.current))}`,
+          canvas.width - 20,
+          56
+        );
         ctx.textAlign = 'left';
       }
-
-      ctx.fillStyle = PALETTE.itemWeapon;
-      ctx.font = 'bold 20px monospace';
-      ctx.fillText(`COINS: ${metaCoinsRef.current}`, 20, 220);
-
-      const sectorStr = `SECTOR ${Math.floor(p.level / 5) + 1}`;
-      ctx.fillStyle = '#ffffff';
-      ctx.textAlign = 'right';
-      ctx.fillText(sectorStr, canvas.width - 20, 70);
-      ctx.textAlign = 'left';
-
-      ctx.textAlign = 'right';
-      ctx.fillStyle = PALETTE.uiText;
-      ctx.fillText(
-        `HI-SCORE: ${Math.max(highScoreRef.current, Math.floor(scoreRef.current))}`,
-        canvas.width - 20,
-        40
-      );
 
       animationId = requestAnimationFrame(loop);
     };
@@ -1689,80 +1193,154 @@ export default function VelocityVoidGame() {
   }, []);
 
   return (
-    <div className="w-full h-full relative overflow-hidden" style={{ backgroundColor: PALETTE.bg }}>
+    <div className="w-full h-full relative overflow-hidden bg-[#FAFAFA] select-none touch-none">
       <canvas ref={canvasRef} className="block w-full h-full touch-none" />
 
+      {/* START SCREEN MODAL (Light Theme Glass) */}
       {gameState === 'START' && (
-        <div
-          className="absolute inset-0 flex flex-col items-center justify-center z-30"
-          style={{ backgroundColor: 'rgba(22, 19, 17, 0.95)' }}
-        >
-          <h1 className="text-6xl font-black tracking-widest mb-4 text-center font-mono text-cyan-400 drop-shadow-[0_0_20px_rgba(0,240,255,0.8)]">
-            VELOCITY VOID
-          </h1>
-          <p className="text-xl font-mono mb-8 text-center text-gray-300">
-            Coday Coins: <span className="text-yellow-400">{metaCoinsRef.current}</span>
-          </p>
+        <div className="absolute inset-0 flex flex-col items-center justify-center z-30 p-4 bg-white/80 backdrop-blur-md">
+          <m.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-white border border-slate-200/90 shadow-2xl rounded-3xl p-6 sm:p-10 max-w-lg w-full text-center"
+          >
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider mb-3">
+              <Crosshair className="w-3.5 h-3.5" />
+              <span>Coday Space Defense</span>
+            </span>
 
-          <div className="flex gap-4 mb-12">
-            <button
-              onClick={() => {
-                gameStateRef.current = 'PLAYING';
-                setGameState('PLAYING');
-              }}
-              className="px-10 py-4 border-2 bg-cyan-900/40 hover:bg-cyan-800 transition-all font-mono tracking-widest uppercase text-xl"
-              style={{
-                borderColor: PALETTE.playerEye,
-                color: PALETTE.playerEye,
-                boxShadow: `4px 4px 0px ${PALETTE.playerEye}`,
-              }}
-            >
-              LAUNCH MISSION
-            </button>
-          </div>
+            <h1 className="text-4xl sm:text-5xl font-black font-display tracking-tight text-slate-900 mb-2">
+              VELOCITY <span className="text-blue-600">VOID</span>
+            </h1>
 
-          <div className="border border-gray-700 p-6 max-w-2xl text-center text-gray-400 font-mono text-sm">
-            <h3 className="text-lg text-white mb-2">ROGUE-LITE SHOP</h3>
-            <button
-              onClick={() => setIsShopOpen(true)}
-              className="mt-4 px-6 py-2 border border-yellow-400 text-yellow-400 hover:bg-yellow-400/20 transition-all uppercase tracking-widest"
-            >
-              OPEN SHOP
-            </button>
-          </div>
+            <p className="text-xs sm:text-sm text-slate-600 mb-6 max-w-sm mx-auto">
+              Steuere das Coday-Schiff mit WASD / Pfeiltasten oder per Touch. Vernichte feindliche
+              Bots und meistere die Sektoren.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
+              <button
+                onClick={() => {
+                  gameStateRef.current = 'PLAYING';
+                  setGameState('PLAYING');
+                }}
+                className="w-full sm:w-auto px-8 py-3.5 bg-blue-600 hover:bg-blue-500 text-white rounded-2xl font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2"
+              >
+                <Play className="w-4 h-4" />
+                <span>MISSION STARTEN</span>
+              </button>
+
+              <button
+                onClick={() => setIsShopOpen(true)}
+                className="w-full sm:w-auto px-6 py-3.5 bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-800 rounded-2xl font-bold text-sm shadow-2xs transition-all flex items-center justify-center gap-2"
+              >
+                <ShoppingBag className="w-4 h-4 text-amber-600" />
+                <span>ARMORY</span>
+              </button>
+            </div>
+
+            <div className="text-[11px] text-slate-500 border-t border-slate-100 pt-3 flex items-center justify-center gap-4">
+              <span>
+                Steuerung: <strong>WASD / Touch</strong>
+              </span>
+              <span>•</span>
+              <span>
+                Highscore: <strong>{highScore} Pkt</strong>
+              </span>
+            </div>
+          </m.div>
         </div>
       )}
 
-      {/* SHOP MODAL */}
+      {/* LEVEL UP MODAL (Pure Phosphor Vector Upgrades) */}
+      <AnimatePresence>
+        {gameState === 'LEVEL_UP' && (
+          <m.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute inset-0 flex items-center justify-center z-50 p-4 bg-slate-900/20 backdrop-blur-md"
+          >
+            <div className="bg-white border border-slate-200/90 shadow-2xl rounded-3xl p-6 sm:p-8 max-w-xl w-full text-slate-900">
+              <div className="text-center mb-6">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full">
+                  Level {hudLevel} Erreicht
+                </span>
+                <h2 className="text-2xl font-bold font-display text-slate-900 mt-2">
+                  System-Upgrade wählen
+                </h2>
+              </div>
+
+              <div className="space-y-3">
+                {upgradeChoices.map((upg) => {
+                  const Icon = upg.icon;
+                  const currentLvl = upg.currentLevel;
+
+                  return (
+                    <button
+                      key={upg.id}
+                      onClick={() => applyUpgrade(upg.id)}
+                      className="w-full p-4 rounded-2xl bg-slate-50 hover:bg-blue-50/80 border border-slate-200 hover:border-blue-300 shadow-2xs hover:shadow-sm transition-all text-left flex items-center gap-3.5 group cursor-pointer"
+                    >
+                      <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-blue-600 group-hover:scale-105 transition-transform shadow-2xs">
+                        <Icon className="w-5 h-5" />
+                      </div>
+
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between">
+                          <h4 className="text-sm font-bold text-slate-900 group-hover:text-blue-700">
+                            {upg.name}
+                          </h4>
+                          <span className="text-[11px] font-semibold text-slate-500">
+                            Stufe {currentLvl + 1}/{upg.maxLevel}
+                          </span>
+                        </div>
+                        <p className="text-xs text-slate-600 truncate mt-0.5">{upg.desc}</p>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </m.div>
+        )}
+      </AnimatePresence>
+
+      {/* ARMORY META SHOP MODAL */}
       <AnimatePresence>
         {isShopOpen && (
           <m.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            className="absolute inset-0 flex items-center justify-center z-50 p-4"
-            style={{ backgroundColor: 'rgba(0, 0, 0, 0.9)' }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            className="absolute inset-0 flex items-center justify-center z-50 p-4 bg-slate-900/20 backdrop-blur-md"
           >
-            <div className="border border-cyan-500 bg-gray-900 p-8 max-w-2xl w-full text-white font-mono relative">
+            <div className="bg-white border border-slate-200 shadow-2xl rounded-3xl p-6 sm:p-8 max-w-lg w-full text-slate-900 relative">
               <button
                 onClick={() => setIsShopOpen(false)}
-                className="absolute top-4 right-4 text-gray-500 hover:text-white"
+                className="absolute top-4 right-4 p-2 rounded-xl text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition-colors"
+                aria-label="Shop schließen"
               >
-                ✕
+                <X className="w-5 h-5" />
               </button>
-              <h2 className="text-3xl text-cyan-400 mb-6 text-center tracking-widest">ARMORY</h2>
-              <div className="flex justify-between items-center mb-8 border-b border-gray-700 pb-4">
-                <span>AVAILABLE FUNDS:</span>
-                <span className="text-yellow-400 text-2xl">{metaCoins} COINS</span>
+
+              <div className="text-center mb-6">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-800 text-xs font-bold">
+                  <Coins className="w-3.5 h-3.5 text-amber-600" />
+                  <span>{metaCoins} Coday Coins</span>
+                </span>
+                <h2 className="text-2xl font-bold font-display text-slate-900 mt-2">
+                  Coday Armory
+                </h2>
               </div>
 
-              <div className="space-y-4">
-                <div className="flex justify-between items-center bg-gray-800 p-4 border border-gray-700">
+              <div className="space-y-3">
+                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-between">
                   <div>
-                    <div className="text-xl text-green-400">HULL REINFORCEMENT</div>
-                    <div className="text-sm text-gray-400">
-                      +1 Max HP permanently. Current: +{metaUpgrades.start_hp}
-                    </div>
+                    <h4 className="text-sm font-bold text-slate-900">Rumpfverstärkung</h4>
+                    <p className="text-xs text-slate-600">
+                      +1 Basis-HP dauerhaft (Aktuell: +{metaUpgrades.start_hp})
+                    </p>
                   </div>
                   <button
                     onClick={() => {
@@ -1774,31 +1352,33 @@ export default function VelocityVoidGame() {
                         metaCoinsRef.current = newCoins;
                         setMetaUpgrades(newUps);
                         metaUpgradesRef.current = newUps;
-                        localStorage.setItem('velocityVoidCoins', newCoins.toString());
-                        localStorage.setItem('velocityVoidMeta', JSON.stringify(newUps));
+                        try {
+                          localStorage.setItem('velocityVoidCoins', newCoins.toString());
+                          localStorage.setItem('velocityVoidMeta', JSON.stringify(newUps));
+                        } catch (_e) {
+                          // Safe storage error handling
+                        }
                       }
                     }}
                     disabled={
                       metaCoins < 50 + metaUpgrades.start_hp * 50 || metaUpgrades.start_hp >= 5
                     }
-                    className="px-4 py-2 bg-green-900/50 border border-green-500 hover:bg-green-800 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-3.5 py-2 bg-blue-600 hover:bg-blue-500 disabled:bg-slate-200 disabled:text-slate-400 text-white rounded-xl font-bold text-xs shadow-2xs transition-all"
                   >
-                    {metaUpgrades.start_hp >= 5
-                      ? 'MAX'
-                      : `BUY (${50 + metaUpgrades.start_hp * 50})`}
+                    {metaUpgrades.start_hp >= 5 ? 'MAX' : `${50 + metaUpgrades.start_hp * 50} C`}
                   </button>
                 </div>
 
-                <div className="flex justify-between items-center bg-gray-800 p-4 border border-gray-700">
+                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-between">
                   <div>
-                    <div className="text-xl text-cyan-400">DEFLECTOR MATRIX</div>
-                    <div className="text-sm text-gray-400">
-                      +1 Starting Shield permanently. Current: +{metaUpgrades.start_shield}
-                    </div>
+                    <h4 className="text-sm font-bold text-slate-900">Deflektor-Matrix</h4>
+                    <p className="text-xs text-slate-600">
+                      +1 Start-Schild dauerhaft (Aktuell: +{metaUpgrades.start_shield})
+                    </p>
                   </div>
                   <button
                     onClick={() => {
-                      const cost = 100 + metaUpgrades.start_shield * 100;
+                      const cost = 75 + metaUpgrades.start_shield * 75;
                       if (metaCoins >= cost && metaUpgrades.start_shield < 3) {
                         const newCoins = metaCoins - cost;
                         const newUps = {
@@ -1809,55 +1389,23 @@ export default function VelocityVoidGame() {
                         metaCoinsRef.current = newCoins;
                         setMetaUpgrades(newUps);
                         metaUpgradesRef.current = newUps;
-                        localStorage.setItem('velocityVoidCoins', newCoins.toString());
-                        localStorage.setItem('velocityVoidMeta', JSON.stringify(newUps));
+                        try {
+                          localStorage.setItem('velocityVoidCoins', newCoins.toString());
+                          localStorage.setItem('velocityVoidMeta', JSON.stringify(newUps));
+                        } catch (_e) {
+                          // Safe storage error handling
+                        }
                       }
                     }}
                     disabled={
-                      metaCoins < 100 + metaUpgrades.start_shield * 100 ||
+                      metaCoins < 75 + metaUpgrades.start_shield * 75 ||
                       metaUpgrades.start_shield >= 3
                     }
-                    className="px-4 py-2 bg-cyan-900/50 border border-cyan-500 hover:bg-cyan-800 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-3.5 py-2 bg-blue-600 hover:bg-blue-500 disabled:bg-slate-200 disabled:text-slate-400 text-white rounded-xl font-bold text-xs shadow-2xs transition-all"
                   >
                     {metaUpgrades.start_shield >= 3
                       ? 'MAX'
-                      : `BUY (${100 + metaUpgrades.start_shield * 100})`}
-                  </button>
-                </div>
-
-                <div className="flex justify-between items-center bg-gray-800 p-4 border border-gray-700">
-                  <div>
-                    <div className="text-xl text-yellow-400">COIN MAGNET</div>
-                    <div className="text-sm text-gray-400">
-                      +100% Coin Drop Value. Current: +{metaUpgrades.coin_multiplier * 100}%
-                    </div>
-                  </div>
-                  <button
-                    onClick={() => {
-                      const cost = 200 + metaUpgrades.coin_multiplier * 200;
-                      if (metaCoins >= cost && metaUpgrades.coin_multiplier < 5) {
-                        const newCoins = metaCoins - cost;
-                        const newUps = {
-                          ...metaUpgrades,
-                          coin_multiplier: metaUpgrades.coin_multiplier + 1,
-                        };
-                        setMetaCoins(newCoins);
-                        metaCoinsRef.current = newCoins;
-                        setMetaUpgrades(newUps);
-                        metaUpgradesRef.current = newUps;
-                        localStorage.setItem('velocityVoidCoins', newCoins.toString());
-                        localStorage.setItem('velocityVoidMeta', JSON.stringify(newUps));
-                      }
-                    }}
-                    disabled={
-                      metaCoins < 200 + metaUpgrades.coin_multiplier * 200 ||
-                      metaUpgrades.coin_multiplier >= 5
-                    }
-                    className="px-4 py-2 bg-yellow-900/50 border border-yellow-500 hover:bg-yellow-800 disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {metaUpgrades.coin_multiplier >= 5
-                      ? 'MAX'
-                      : `BUY (${200 + metaUpgrades.coin_multiplier * 200})`}
+                      : `${75 + metaUpgrades.start_shield * 75} C`}
                   </button>
                 </div>
               </div>
@@ -1866,81 +1414,47 @@ export default function VelocityVoidGame() {
         )}
       </AnimatePresence>
 
+      {/* GAME OVER MODAL */}
       <AnimatePresence>
-        {gameState === 'LEVEL_UP' && (
+        {gameState === 'GAME_OVER' && (
           <m.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.1 }}
-            className="absolute inset-0 flex flex-col items-center justify-center z-20 backdrop-blur-sm"
-            style={{ backgroundColor: 'rgba(22, 19, 17, 0.7)' }}
+            className="absolute inset-0 flex items-center justify-center z-50 p-4 bg-slate-900/20 backdrop-blur-md"
           >
-            <h2 className="text-5xl font-black tracking-widest mb-8 text-center font-mono text-cyan-400 drop-shadow-[0_0_15px_rgba(0,240,255,0.8)]">
-              LEVEL UP!
-            </h2>
-            <div className="flex flex-col md:flex-row gap-6 w-full max-w-4xl px-4">
-              {upgradeChoices.map((u, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => applyUpgrade(u.id)}
-                  className="flex-1 flex flex-col items-center justify-center p-6 border-2 bg-black/50 hover:bg-cyan-900/40 transition-all group"
-                  style={{ borderColor: PALETTE.playerLaser }}
-                >
-                  <span className="text-4xl mb-4 group-hover:scale-125 transition-transform">
-                    {u.icon}
-                  </span>
-                  <h3 className="text-xl font-bold font-mono text-white mb-2 text-center">
-                    {u.name}
-                  </h3>
-                  <p className="text-sm text-gray-300 font-mono text-center mb-4">{u.desc}</p>
-                  <div className="text-xs text-cyan-400 font-mono">
-                    LVL {player.current.upgrades[u.id]} / {u.maxLevel}
-                  </div>
-                </button>
-              ))}
+            <div className="bg-white border border-slate-200 shadow-2xl rounded-3xl p-6 sm:p-8 max-w-md w-full text-center text-slate-900">
+              <div className="w-14 h-14 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 mx-auto mb-4 shadow-sm">
+                <Trophy className="w-7 h-7" />
+              </div>
+
+              <h2 className="text-2xl font-bold font-display text-slate-900 mb-1">
+                Mission Beendet
+              </h2>
+
+              <p className="text-xs text-slate-600 mb-6">
+                Ergebnis:{' '}
+                <strong className="text-slate-900">{Math.floor(currentScore)} Punkte</strong> •
+                Highscore: <strong className="text-slate-900">{highScore} Punkte</strong>
+              </p>
+
+              <button
+                onClick={() => {
+                  const canvas = canvasRef.current;
+                  if (canvas) {
+                    initGame(canvas);
+                    gameStateRef.current = 'PLAYING';
+                    setGameState('PLAYING');
+                  }
+                }}
+                className="w-full py-3.5 bg-blue-600 hover:bg-blue-500 text-white rounded-2xl font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2"
+              >
+                <ArrowClockwise className="w-4 h-4" />
+                <span>NOCHMAL SPIELEN</span>
+              </button>
             </div>
           </m.div>
         )}
       </AnimatePresence>
-
-      {gameState === 'GAME_OVER' && (
-        <div
-          className="absolute inset-0 flex flex-col items-center justify-center z-10"
-          style={{ backgroundColor: 'rgba(22, 19, 17, 0.85)' }}
-        >
-          <h2
-            className="text-4xl md:text-6xl font-black tracking-widest mb-4 text-center font-mono"
-            style={{ color: PALETTE.botEye, textShadow: `0 0 20px ${PALETTE.botEye}` }}
-          >
-            SYSTEM FAILURE
-          </h2>
-          <p className="text-xl font-mono mb-2 text-center" style={{ color: PALETTE.playerLaser }}>
-            SCORE: {Math.floor(currentScore)}
-          </p>
-          <p className="text-lg font-mono mb-12 text-center" style={{ color: PALETTE.uiText }}>
-            BEST: {Math.max(highScore, Math.floor(currentScore))}
-          </p>
-          <button
-            onClick={() => window.location.reload()}
-            className="px-8 py-3 border-2 transition-all font-mono tracking-widest uppercase text-sm rounded-none"
-            style={{
-              borderColor: PALETTE.botEye,
-              color: PALETTE.botEye,
-              boxShadow: `4px 4px 0px ${PALETTE.botEye}`,
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = PALETTE.botEye;
-              e.currentTarget.style.color = '#fff';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'transparent';
-              e.currentTarget.style.color = PALETTE.botEye;
-            }}
-          >
-            REBOOT SYSTEM
-          </button>
-        </div>
-      )}
     </div>
   );
 }

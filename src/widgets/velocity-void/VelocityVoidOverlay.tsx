@@ -3,13 +3,14 @@
 import dynamic from 'next/dynamic';
 import React from 'react';
 import { m, AnimatePresence } from 'motion/react';
+import { X } from '@phosphor-icons/react/dist/ssr';
 
 // Lazy load the game engine so it doesn't affect main bundle size (FCP/LCP)
 const VelocityVoidGame = dynamic(() => import('./VelocityVoidGame'), {
   ssr: false,
   loading: () => (
-    <div className="flex-1 flex items-center justify-center text-white font-mono animate-pulse">
-      BOOTING VELOCITY VOID...
+    <div className="flex-1 flex items-center justify-center text-slate-900 font-mono animate-pulse text-sm font-bold">
+      INITIALISIERE VELOCITY VOID...
     </div>
   ),
 });
@@ -24,17 +25,19 @@ export const VelocityVoidOverlay: React.FC<Props> = ({ isActive, onClose }) => {
     <AnimatePresence>
       {isActive && (
         <m.div
-          initial={{ opacity: 0, filter: 'brightness(2)' }}
-          animate={{ opacity: 1, filter: 'brightness(1)' }}
-          exit={{ opacity: 0, filter: 'brightness(0)' }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="fixed inset-0 z-[99999] bg-black/90 backdrop-blur-xl flex flex-col pointer-events-auto"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3, ease: 'easeOut' }}
+          className="fixed inset-0 z-[99999] bg-white/95 backdrop-blur-2xl flex flex-col pointer-events-auto w-[100dvw] h-[100dvh] overflow-hidden select-none touch-none overscroll-none"
         >
           <button
             onClick={onClose}
-            className="absolute top-6 right-6 z-[100000] bg-white/5 hover:bg-white/15 text-white rounded-lg p-2 px-6 font-mono text-xs tracking-widest border border-white/20 transition-all shadow-lg hover:shadow-white/10"
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 z-[100000] bg-white/90 hover:bg-slate-100 text-slate-800 rounded-xl p-2.5 px-4 font-mono text-xs font-bold tracking-wider border border-slate-200 shadow-md hover:shadow-lg transition-all flex items-center gap-2"
+            aria-label="Spiel beenden"
           >
-            [ ABORT MISSION ]
+            <X className="w-4 h-4 text-slate-600" />
+            <span>BEENDEN</span>
           </button>
           <div className="flex-1 w-full h-full relative">
             <VelocityVoidGame />
@@ -44,3 +47,5 @@ export const VelocityVoidOverlay: React.FC<Props> = ({ isActive, onClose }) => {
     </AnimatePresence>
   );
 };
+
+export default VelocityVoidOverlay;
