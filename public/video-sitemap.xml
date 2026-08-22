@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://www.codayweb.de/de/knowledge/academy?video=5-questions</loc>
+    <video:video>
+      <video:thumbnail_loc>https://www.codayweb.de/images/marketing/seo-audit-analyse-optimierung-google-ranking.webp</video:thumbnail_loc>
+      <video:title><![CDATA[5 Fragen an Ihre Web-Agentur – Der Praxis-Leitfaden für Unternehmer]]></video:title>
+      <video:description><![CDATA[Worauf müssen Unternehmer aus Wetzlar und Mittelhessen achten, bevor sie eine Webagentur beauftragen? In dieser Video-Masterclass erfahren Sie die 5 kritischen Fragen zu Quellcode-Eigentum, Next.js Performance, No-Lock-in und messbarem ROI.]]></video:description>
+      <video:content_loc>https://www.codayweb.de/videos/academy/5_Fragen_an_Ihre_Web-Agentur.mp4</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.codayweb.de/de/knowledge/academy?video=5-questions</video:player_loc>
+      <video:duration>765</video:duration>
+      <video:publication_date>2025-01-15T09:00:00+01:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>no</video:live>
+      <video:tag><![CDATA[Webdesign Wetzlar]]></video:tag>
+      <video:tag><![CDATA[Web-Agentur Auswahl]]></video:tag>
+      <video:tag><![CDATA[ROI Webdesign]]></video:tag>
+      <video:tag><![CDATA[Mittelhessen Digital]]></video:tag>
+      <video:tag><![CDATA[Next.js Agentur]]></video:tag>
+      <video:uploader info="https://www.codayweb.de/de/about">Coday Webagentur Wetzlar</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/knowledge/academy?video=visitors-customers</loc>
+    <video:video>
+      <video:thumbnail_loc>https://www.codayweb.de/images/services/website-builder-drag-drop-baukasten-elemente-webdesign.webp</video:thumbnail_loc>
+      <video:title><![CDATA[Aus Besuchern werden Kunden – Psychologische Conversion-Optimierung]]></video:title>
+      <video:description><![CDATA[Traffic alleine reicht nicht: Erfahren Sie, wie Sie Ihre Website durch psychologische Nutzerführung, klare Call-to-Actions und optimierte Ladezeiten in eine planbare Neukundenmaschine für Ihr Unternehmen verwandeln.]]></video:description>
+      <video:content_loc>https://www.codayweb.de/videos/academy/Aus_Besuchern_werden_Kunden.mp4</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.codayweb.de/de/knowledge/academy?video=visitors-customers</video:player_loc>
+      <video:duration>1100</video:duration>
+      <video:publication_date>2025-01-20T10:00:00+01:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>no</video:live>
+      <video:tag><![CDATA[Conversion Optimierung]]></video:tag>
+      <video:tag><![CDATA[Webdesign Wetzlar]]></video:tag>
+      <video:tag><![CDATA[Kundenakquise]]></video:tag>
+      <video:tag><![CDATA[UX Design Mittelhessen]]></video:tag>
+      <video:tag><![CDATA[Lead Generierung]]></video:tag>
+      <video:uploader info="https://www.codayweb.de/de/about">Coday Webagentur Wetzlar</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/knowledge/academy?video=seo-strategy</loc>
+    <video:video>
+      <video:thumbnail_loc>https://www.codayweb.de/images/marketing/omnichannel-marketing-hub-seo-social-content-strategie-vernetzt.webp</video:thumbnail_loc>
+      <video:title><![CDATA[Die Ultimative SEO-Strategie – Google-Dominanz für Mittelhessen & B2B]]></video:title>
+      <video:description><![CDATA[Schritt-für-Schritt Anleitung für Top-Rankings bei Google: Technisches SEO, Core Web Vitals 100/100, semantische Topic-Silos und lokale SEO-Dominanz in Wetzlar, Gießen und ganz Hessen.]]></video:description>
+      <video:content_loc>https://www.codayweb.de/videos/academy/Die_Ultimative_SEO_Strategie.mp4</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.codayweb.de/de/knowledge/academy?video=seo-strategy</video:player_loc>
+      <video:duration>850</video:duration>
+      <video:publication_date>2025-01-25T11:00:00+01:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>no</video:live>
+      <video:tag><![CDATA[SEO Strategie]]></video:tag>
+      <video:tag><![CDATA[Google Ranking Wetzlar]]></video:tag>
+      <video:tag><![CDATA[Technisches SEO]]></video:tag>
+      <video:tag><![CDATA[Suchmaschinenoptimierung Hessen]]></video:tag>
+      <video:tag><![CDATA[Core Web Vitals]]></video:tag>
+      <video:uploader info="https://www.codayweb.de/de/about">Coday Webagentur Wetzlar</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/knowledge/academy?video=google-reviews</loc>
+    <video:video>
+      <video:thumbnail_loc>https://www.codayweb.de/images/industries/handwerker-tablet.webp</video:thumbnail_loc>
+      <video:title><![CDATA[Google Bewertungen Meistern – Vertrauen & Lokale Sichtbarkeit aufbauen]]></video:title>
+      <video:description><![CDATA[Wie lokale Dienstleister, Handwerker und Praxen aus Wetzlar und Umgebung kontinuierlich echte 5-Sterne-Bewertungen auf Google aufbauen, professionell auf Feedback reagieren und ihren Trust-Score maximieren.]]></video:description>
+      <video:content_loc>https://www.codayweb.de/videos/academy/GOOGLE-BEWERTUNGEN_MEISTERN.mp4</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.codayweb.de/de/knowledge/academy?video=google-reviews</video:player_loc>
+      <video:duration>570</video:duration>
+      <video:publication_date>2025-02-01T09:30:00+01:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>no</video:live>
+      <video:tag><![CDATA[Google Bewertungen]]></video:tag>
+      <video:tag><![CDATA[Lokale SEO Wetzlar]]></video:tag>
+      <video:tag><![CDATA[Reputation Management]]></video:tag>
+      <video:tag><![CDATA[Social Proof Handwerk]]></video:tag>
+      <video:tag><![CDATA[Google Business Profile]]></video:tag>
+      <video:uploader info="https://www.codayweb.de/de/about">Coday Webagentur Wetzlar</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/knowledge/academy?video=traffic-generation</loc>
+    <video:video>
+      <video:thumbnail_loc>https://www.codayweb.de/images/marketing/social-media-marketing-influencer-likes-shares-viral.webp</video:thumbnail_loc>
+      <video:title><![CDATA[So kommen Besucher auf deine Seite – Nachhaltige Traffic-Kanäle 2026]]></video:title>
+      <video:description><![CDATA[Organischer Suchtraffic, Social Media Synergien und GEO (Generative Engine Optimization): Die effektivsten Strategien, um qualifizierte Interessenten und Neukunden auf Ihre Unternehmenswebsite zu lenken.]]></video:description>
+      <video:content_loc>https://www.codayweb.de/videos/academy/SO_KOMMEN_BESUCHER_AUF_DEINE_SEITE.mp4</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.codayweb.de/de/knowledge/academy?video=traffic-generation</video:player_loc>
+      <video:duration>975</video:duration>
+      <video:publication_date>2025-02-05T14:00:00+01:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>no</video:live>
+      <video:tag><![CDATA[Traffic Generierung]]></video:tag>
+      <video:tag><![CDATA[Online Marketing Wetzlar]]></video:tag>
+      <video:tag><![CDATA[GEO Optimierung]]></video:tag>
+      <video:tag><![CDATA[B2B Leadgenerierung]]></video:tag>
+      <video:tag><![CDATA[Besucherströme]]></video:tag>
+      <video:uploader info="https://www.codayweb.de/de/about">Coday Webagentur Wetzlar</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/knowledge/academy?video=website-cost</loc>
+    <video:video>
+      <video:thumbnail_loc>https://www.codayweb.de/images/marketing/email-marketing-kampagne-newsletter-zielgruppe-versand.webp</video:thumbnail_loc>
+      <video:title><![CDATA[Was kostet eine Website wirklich? – Preisfallen & Budget-Kalkulation]]></video:title>
+      <video:description><![CDATA[Transparente Aufschlüsselung moderner Webentwicklung: Von der Basis-Website bis zur Enterprise-Plattform. Vermeiden Sie versteckte Abo-Fallen, WordPress-Wartungskosten und Fehlinvestitionen.]]></video:description>
+      <video:content_loc>https://www.codayweb.de/videos/academy/WAS_KOSTET_EINE_WEBSITE_WIRKLICH_.mp4</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.codayweb.de/de/knowledge/academy?video=website-cost</video:player_loc>
+      <video:duration>660</video:duration>
+      <video:publication_date>2025-02-10T11:00:00+01:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>no</video:live>
+      <video:tag><![CDATA[Website Kosten]]></video:tag>
+      <video:tag><![CDATA[Webdesign Preise Wetzlar]]></video:tag>
+      <video:tag><![CDATA[Webentwicklung Budget]]></video:tag>
+      <video:tag><![CDATA[Festpreis Webagentur]]></video:tag>
+      <video:tag><![CDATA[Next.js Investition]]></video:tag>
+      <video:uploader info="https://www.codayweb.de/de/about">Coday Webagentur Wetzlar</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/knowledge/academy?video=website-check</loc>
+    <video:video>
+      <video:thumbnail_loc>https://www.codayweb.de/images/hero/business-meeting-besprechung-team-konferenz.webp</video:thumbnail_loc>
+      <video:title><![CDATA[Website: Magnet oder Schreck? – Der 7-Punkte-Audit für Ihren Auftritt]]></video:title>
+      <video:description><![CDATA[Schreckt Ihre aktuelle Internetseite Kunden ab oder zieht sie Anfragen magnetisch an? Der praxisnahe 7-Punkte-Check für Ladezeiten unter 0,3s, Mobile-UX, Design-Wirkung und DSGVO-Sicherheit.]]></video:description>
+      <video:content_loc>https://www.codayweb.de/videos/academy/Website__Magnet_oder_Schreck_.mp4</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.codayweb.de/de/knowledge/academy?video=website-check</video:player_loc>
+      <video:duration>525</video:duration>
+      <video:publication_date>2025-02-15T15:00:00+01:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>no</video:live>
+      <video:tag><![CDATA[Website Audit]]></video:tag>
+      <video:tag><![CDATA[Webdesign Analyse Wetzlar]]></video:tag>
+      <video:tag><![CDATA[Performance Test]]></video:tag>
+      <video:tag><![CDATA[PageSpeed Wetzlar]]></video:tag>
+      <video:tag><![CDATA[DSGVO Sicherheit]]></video:tag>
+      <video:uploader info="https://www.codayweb.de/de/about">Coday Webagentur Wetzlar</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/knowledge/academy?video=5-questions</loc>
+    <video:video>
+      <video:thumbnail_loc>https://www.codayweb.de/images/marketing/seo-audit-analyse-optimierung-google-ranking.webp</video:thumbnail_loc>
+      <video:title><![CDATA[5 Questions to Ask Your Web Agency – Practical Guide for Founders]]></video:title>
+      <video:description><![CDATA[What should business owners look out for before hiring a web agency? Learn the 5 critical questions covering source code ownership, Next.js performance, contract terms, and measurable digital ROI.]]></video:description>
+      <video:content_loc>https://www.codayweb.de/videos/academy/5_Fragen_an_Ihre_Web-Agentur.mp4</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.codayweb.de/en/knowledge/academy?video=5-questions</video:player_loc>
+      <video:duration>765</video:duration>
+      <video:publication_date>2025-01-15T09:00:00+01:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>no</video:live>
+      <video:tag><![CDATA[Webdesign Wetzlar]]></video:tag>
+      <video:tag><![CDATA[Web-Agentur Auswahl]]></video:tag>
+      <video:tag><![CDATA[ROI Webdesign]]></video:tag>
+      <video:tag><![CDATA[Mittelhessen Digital]]></video:tag>
+      <video:tag><![CDATA[Next.js Agentur]]></video:tag>
+      <video:uploader info="https://www.codayweb.de/en/about">Coday Webagentur Wetzlar</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/knowledge/academy?video=visitors-customers</loc>
+    <video:video>
+      <video:thumbnail_loc>https://www.codayweb.de/images/services/website-builder-drag-drop-baukasten-elemente-webdesign.webp</video:thumbnail_loc>
+      <video:title><![CDATA[Turning Visitors into Customers – High-Impact Conversion Optimization]]></video:title>
+      <video:description><![CDATA[Traffic is only half the battle: Discover how to transform your website into a predictable customer generation engine using psychological UX, clear CTAs, and instant load speeds.]]></video:description>
+      <video:content_loc>https://www.codayweb.de/videos/academy/Aus_Besuchern_werden_Kunden.mp4</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.codayweb.de/en/knowledge/academy?video=visitors-customers</video:player_loc>
+      <video:duration>1100</video:duration>
+      <video:publication_date>2025-01-20T10:00:00+01:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>no</video:live>
+      <video:tag><![CDATA[Conversion Optimierung]]></video:tag>
+      <video:tag><![CDATA[Webdesign Wetzlar]]></video:tag>
+      <video:tag><![CDATA[Kundenakquise]]></video:tag>
+      <video:tag><![CDATA[UX Design Mittelhessen]]></video:tag>
+      <video:tag><![CDATA[Lead Generierung]]></video:tag>
+      <video:uploader info="https://www.codayweb.de/en/about">Coday Webagentur Wetzlar</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/knowledge/academy?video=seo-strategy</loc>
+    <video:video>
+      <video:thumbnail_loc>https://www.codayweb.de/images/marketing/omnichannel-marketing-hub-seo-social-content-strategie-vernetzt.webp</video:thumbnail_loc>
+      <video:title><![CDATA[The Ultimate SEO Strategy – Dominate Google Rankings for B2B]]></video:title>
+      <video:description><![CDATA[Step-by-step masterclass for top Google search rankings: Technical SEO, Core Web Vitals 100/100, semantic topic silos, and local SEO dominance across Germany and Europe.]]></video:description>
+      <video:content_loc>https://www.codayweb.de/videos/academy/Die_Ultimative_SEO_Strategie.mp4</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.codayweb.de/en/knowledge/academy?video=seo-strategy</video:player_loc>
+      <video:duration>850</video:duration>
+      <video:publication_date>2025-01-25T11:00:00+01:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>no</video:live>
+      <video:tag><![CDATA[SEO Strategie]]></video:tag>
+      <video:tag><![CDATA[Google Ranking Wetzlar]]></video:tag>
+      <video:tag><![CDATA[Technisches SEO]]></video:tag>
+      <video:tag><![CDATA[Suchmaschinenoptimierung Hessen]]></video:tag>
+      <video:tag><![CDATA[Core Web Vitals]]></video:tag>
+      <video:uploader info="https://www.codayweb.de/en/about">Coday Webagentur Wetzlar</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/knowledge/academy?video=google-reviews</loc>
+    <video:video>
+      <video:thumbnail_loc>https://www.codayweb.de/images/industries/handwerker-tablet.webp</video:thumbnail_loc>
+      <video:title><![CDATA[Mastering Google Reviews – Build Trust & Dominate Local Search]]></video:title>
+      <video:description><![CDATA[How local businesses and service providers build authentic 5-star reviews on Google, handle feedback professionally, and maximize local search visibility and trust.]]></video:description>
+      <video:content_loc>https://www.codayweb.de/videos/academy/GOOGLE-BEWERTUNGEN_MEISTERN.mp4</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.codayweb.de/en/knowledge/academy?video=google-reviews</video:player_loc>
+      <video:duration>570</video:duration>
+      <video:publication_date>2025-02-01T09:30:00+01:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>no</video:live>
+      <video:tag><![CDATA[Google Bewertungen]]></video:tag>
+      <video:tag><![CDATA[Lokale SEO Wetzlar]]></video:tag>
+      <video:tag><![CDATA[Reputation Management]]></video:tag>
+      <video:tag><![CDATA[Social Proof Handwerk]]></video:tag>
+      <video:tag><![CDATA[Google Business Profile]]></video:tag>
+      <video:uploader info="https://www.codayweb.de/en/about">Coday Webagentur Wetzlar</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/knowledge/academy?video=traffic-generation</loc>
+    <video:video>
+      <video:thumbnail_loc>https://www.codayweb.de/images/marketing/social-media-marketing-influencer-likes-shares-viral.webp</video:thumbnail_loc>
+      <video:title><![CDATA[How to Drive Quality Traffic to Your Website – Growth Channels 2026]]></video:title>
+      <video:description><![CDATA[Organic search traffic, social media synergy, and Generative Engine Optimization (GEO): The most effective playbooks for attracting qualified B2B leads to your website.]]></video:description>
+      <video:content_loc>https://www.codayweb.de/videos/academy/SO_KOMMEN_BESUCHER_AUF_DEINE_SEITE.mp4</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.codayweb.de/en/knowledge/academy?video=traffic-generation</video:player_loc>
+      <video:duration>975</video:duration>
+      <video:publication_date>2025-02-05T14:00:00+01:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>no</video:live>
+      <video:tag><![CDATA[Traffic Generierung]]></video:tag>
+      <video:tag><![CDATA[Online Marketing Wetzlar]]></video:tag>
+      <video:tag><![CDATA[GEO Optimierung]]></video:tag>
+      <video:tag><![CDATA[B2B Leadgenerierung]]></video:tag>
+      <video:tag><![CDATA[Besucherströme]]></video:tag>
+      <video:uploader info="https://www.codayweb.de/en/about">Coday Webagentur Wetzlar</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/knowledge/academy?video=website-cost</loc>
+    <video:video>
+      <video:thumbnail_loc>https://www.codayweb.de/images/marketing/email-marketing-kampagne-newsletter-zielgruppe-versand.webp</video:thumbnail_loc>
+      <video:title><![CDATA[What Does a Website Really Cost? – Budgeting & Hidden Cost Traps]]></video:title>
+      <video:description><![CDATA[Transparent breakdown of modern web engineering costs: From compact business sites to enterprise platforms. Avoid hidden subscription traps, plugin bloat, and wrong investments.]]></video:description>
+      <video:content_loc>https://www.codayweb.de/videos/academy/WAS_KOSTET_EINE_WEBSITE_WIRKLICH_.mp4</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.codayweb.de/en/knowledge/academy?video=website-cost</video:player_loc>
+      <video:duration>660</video:duration>
+      <video:publication_date>2025-02-10T11:00:00+01:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>no</video:live>
+      <video:tag><![CDATA[Website Kosten]]></video:tag>
+      <video:tag><![CDATA[Webdesign Preise Wetzlar]]></video:tag>
+      <video:tag><![CDATA[Webentwicklung Budget]]></video:tag>
+      <video:tag><![CDATA[Festpreis Webagentur]]></video:tag>
+      <video:tag><![CDATA[Next.js Investition]]></video:tag>
+      <video:uploader info="https://www.codayweb.de/en/about">Coday Webagentur Wetzlar</video:uploader>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/knowledge/academy?video=website-check</loc>
+    <video:video>
+      <video:thumbnail_loc>https://www.codayweb.de/images/hero/business-meeting-besprechung-team-konferenz.webp</video:thumbnail_loc>
+      <video:title><![CDATA[Website: Magnet or Repellent? – The 7-Point Web Audit Checklist]]></video:title>
+      <video:description><![CDATA[Is your current website repelling potential clients or attracting high-value leads? The definitive 7-point audit for page speed, mobile UX, design authority, and legal compliance.]]></video:description>
+      <video:content_loc>https://www.codayweb.de/videos/academy/Website__Magnet_oder_Schreck_.mp4</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.codayweb.de/en/knowledge/academy?video=website-check</video:player_loc>
+      <video:duration>525</video:duration>
+      <video:publication_date>2025-02-15T15:00:00+01:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>no</video:live>
+      <video:tag><![CDATA[Website Audit]]></video:tag>
+      <video:tag><![CDATA[Webdesign Analyse Wetzlar]]></video:tag>
+      <video:tag><![CDATA[Performance Test]]></video:tag>
+      <video:tag><![CDATA[PageSpeed Wetzlar]]></video:tag>
+      <video:tag><![CDATA[DSGVO Sicherheit]]></video:tag>
+      <video:uploader info="https://www.codayweb.de/en/about">Coday Webagentur Wetzlar</video:uploader>
+    </video:video>
+  </url>
+</urlset>
