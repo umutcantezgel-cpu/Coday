@@ -75,4 +75,18 @@ describe('StrobiAvatar Component', () => {
     buttonAvatar.click();
     expect(clicked).toBe(true);
   });
+
+  it('renders with emotional aura, speech cadence, and breathing enabled', () => {
+    render(
+      <StrobiAvatar
+        state="celebrate"
+        auraColor="#10B981"
+        isSpeaking={true}
+        enableBreathing={true}
+        enableTracking={true}
+      />
+    );
+    const avatar = screen.getByRole('img', { name: /Strobi KI Avatar/i });
+    expect(avatar).toBeDefined();
+  });
 });

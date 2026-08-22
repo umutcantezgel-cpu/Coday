@@ -95,6 +95,12 @@ export interface StrobiAvatarProps {
   bodyColor?: string;
   /** Custom eye color (hex, e.g. #111316, #ffffff) */
   eyeColor?: string;
+  /** Emotional glow aura (e.g. #10B981 for success, #3B82F6 for tech) */
+  auraColor?: string | null;
+  /** Enable vocalization speech cadence pulses */
+  isSpeaking?: boolean;
+  /** Enable organic idle breathing float */
+  enableBreathing?: boolean;
   /** Enable interactive cursor tracking (head and gaze follow mouse) */
   enableTracking?: boolean;
   /** Interactive hover reaction (e.g. wakes up on hover) */

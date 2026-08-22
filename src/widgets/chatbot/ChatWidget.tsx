@@ -4,6 +4,7 @@ import { m, AnimatePresence } from 'motion/react';
 import { X, Minus, PaperPlaneRight, CircleNotch } from '@phosphor-icons/react/dist/ssr';
 import { useChatStore } from '@/widgets/chatbot/lib/chatStore';
 import { StrobiAvatar } from '@/entities/avatar';
+import { useStrobiAudio } from '@/entities/avatar/lib/useStrobiAudio';
 import { Input } from '@/shared/ui/Input';
 import { Button } from '@/shared/ui/Button';
 
@@ -12,6 +13,8 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
     isOpen,
     isMinimized,
     avatarState,
+    auraColor,
+    isSpeaking,
     messages,
     isTyping,
     toggleChat,
@@ -20,14 +23,26 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
     sendMessage,
   } = useChatStore();
 
+  const { playPop, playChime, playCelebrate } = useStrobiAudio();
   const [inputValue, setInputValue] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const typingTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Auto-scroll to bottom
+  // Auto-scroll to bottom and play arrival sound
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages]);
+    if (messages.length > 0) {
+      const last = messages[messages.length - 1];
+      if (last.role === 'assistant') {
+        if (avatarState === 'celebrate') {
+          playCelebrate();
+        } else {
+          playChime();
+        }
+      }
+    }
+  }, [messages, avatarState, playCelebrate, playChime]);
 
   // Focus input when opening
   useEffect(() => {
@@ -36,10 +51,32 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
     }
   }, [isOpen, isMinimized]);
 
+  // Handle typing velocity & hesitation detection
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value;
+    setInputValue(val);
+
+    if (typingTimerRef.current) {
+      clearTimeout(typingTimerRef.current);
+    }
+
+    if (!isTyping) {
+      setAvatarState('listening');
+      // If user pauses typing for > 900ms, switch to attentive gaze
+      typingTimerRef.current = setTimeout(() => {
+        const current = useChatStore.getState();
+        if (!current.isTyping && current.avatarState === 'listening') {
+          setAvatarState('small-attentive' as any);
+        }
+      }, 950);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!inputValue.trim() || isTyping) return;
 
+    playPop();
     const message = inputValue.trim();
     setInputValue('');
     await sendMessage(message);
@@ -54,13 +91,17 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
-            onClick={toggleChat}
+            onClick={() => {
+              playPop();
+              toggleChat();
+            }}
             className="fixed right-4 md:right-6 z-[9999] w-16 h-16 rounded-full bg-slate-950/90 border border-blue-500/40 text-white shadow-2xl hover:shadow-blue-500/30 hover:border-blue-400 transition-[transform,box-shadow,border-color] motion-reduce:duration-[0.01ms] flex items-center justify-center group bottom-[90px] md:bottom-6 opacity-100 isolation-auto backdrop-blur-md"
             aria-label="Chat mit Strobi KI-Avatar öffnen"
           >
             <StrobiAvatar
               state={isMinimized ? 'happy' : 'idle'}
               dimension={52}
+              auraColor={auraColor}
               enableTracking={true}
               interactive={true}
             />
@@ -101,6 +142,8 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
                   <StrobiAvatar
                     state={avatarState}
                     dimension={42}
+                    auraColor={auraColor}
+                    isSpeaking={isSpeaking}
                     enableTracking={true}
                     interactive={false}
                   />
@@ -118,14 +161,20 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
               </div>
               <div className="flex items-center gap-1">
                 <button
-                  onClick={minimizeChat}
+                  onClick={() => {
+                    playPop();
+                    minimizeChat();
+                  }}
                   className="p-1.5 rounded-lg hover:bg-white/10 transition-colors text-slate-300 hover:text-white"
                   aria-label="Chat minimieren"
                 >
                   <Minus className="w-4 h-4" aria-hidden="true" />
                 </button>
                 <button
-                  onClick={toggleChat}
+                  onClick={() => {
+                    playPop();
+                    toggleChat();
+                  }}
                   className="p-1.5 rounded-lg hover:bg-white/10 transition-colors text-slate-300 hover:text-white"
                   aria-label="Chat schließen"
                 >
@@ -223,7 +272,7 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
                       setAvatarState('idle');
                     }
                   }}
-                  onChange={(e) => setInputValue(e.target.value)}
+                  onChange={handleInputChange}
                   placeholder="Frage an Strobi stellen..."
                   aria-label="Nachricht eingeben"
                   disabled={isTyping}

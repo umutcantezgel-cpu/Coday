@@ -26,6 +26,9 @@ export const StrobiAvatar: React.FC<StrobiAvatarProps> = ({
   dimension,
   bodyColor = STROBI_DEFAULT_COLORS.body,
   eyeColor = STROBI_DEFAULT_COLORS.eyes,
+  auraColor = null,
+  isSpeaking = false,
+  enableBreathing = true,
   enableTracking = true,
   interactive = true,
   className = '',
@@ -41,6 +44,12 @@ export const StrobiAvatar: React.FC<StrobiAvatarProps> = ({
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const [isBlinking, setIsBlinking] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+
+  // Micro-saccade offset (simulates living eye micro-adjustments)
+  const [saccadeOffset, setSaccadeOffset] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+
+  // Speech cadence height modulator
+  const [speechPulse, setSpeechPulse] = useState(1);
 
   // Pointer tracking state (pitch/yaw offset in degrees)
   const [trackingOffset, setTrackingOffset] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
@@ -104,6 +113,52 @@ export const StrobiAvatar: React.FC<StrobiAvatarProps> = ({
     };
   }, [currentAnimation, shouldReduceMotion]);
 
+  // Micro-saccades generator (organic living eye movement)
+  useEffect(() => {
+    if (shouldReduceMotion || activeState === 'sleeping') return;
+
+    let saccadeTimeout: NodeJS.Timeout;
+    let resetTimeout: NodeJS.Timeout;
+
+    const scheduleSaccade = () => {
+      const delay = Math.random() * 2000 + 1500; // Every 1.5s - 3.5s
+
+      saccadeTimeout = setTimeout(() => {
+        const angle = Math.random() * Math.PI * 2;
+        const dist = Math.random() * 1.6 + 0.5; // 0.5px to 2.1px
+        setSaccadeOffset({
+          x: Math.cos(angle) * dist,
+          y: Math.sin(angle) * dist,
+        });
+
+        resetTimeout = setTimeout(() => {
+          setSaccadeOffset({ x: 0, y: 0 });
+          scheduleSaccade();
+        }, 320);
+      }, delay);
+    };
+
+    scheduleSaccade();
+
+    return () => {
+      clearTimeout(saccadeTimeout);
+      clearTimeout(resetTimeout);
+    };
+  }, [activeState, shouldReduceMotion]);
+
+  // Speech cadence modulation loop
+  useEffect(() => {
+    if (!isSpeaking || shouldReduceMotion) return;
+
+    const interval = setInterval(() => {
+      setSpeechPulse((prev) => (prev > 1.05 ? 0.9 : 1.15));
+    }, 140);
+
+    return () => clearInterval(interval);
+  }, [isSpeaking, shouldReduceMotion]);
+
+  const effectiveSpeechPulse = isSpeaking ? speechPulse : 1;
+
   // Mouse / pointer tracking handler
   const handlePointerMove = useCallback(
     (e: MouseEvent) => {
@@ -151,17 +206,17 @@ export const StrobiAvatar: React.FC<StrobiAvatarProps> = ({
   const leftEye = pose.eyes.left;
   const rightEye = pose.eyes.right;
 
-  // Blinking overrides eye height to a slit
-  const leftEyeHeight = isBlinking ? 2.5 : leftEye.height;
-  const rightEyeHeight = isBlinking ? 2.5 : rightEye.height;
+  // Blinking overrides eye height to a slit; speech cadence scales height
+  const leftEyeHeight = isBlinking ? 2.5 : leftEye.height * effectiveSpeechPulse;
+  const rightEyeHeight = isBlinking ? 2.5 : rightEye.height * effectiveSpeechPulse;
 
-  // Left Eye position
-  const leftEyeX = centerX - eyeSpacing / 2 + (leftEye.x || 0);
-  const leftEyeY = centerY + (leftEye.y || 0);
+  // Left Eye position with micro-saccades
+  const leftEyeX = centerX - eyeSpacing / 2 + (leftEye.x || 0) + saccadeOffset.x;
+  const leftEyeY = centerY + (leftEye.y || 0) + saccadeOffset.y;
 
-  // Right Eye position
-  const rightEyeX = centerX + eyeSpacing / 2 + (rightEye.x || 0);
-  const rightEyeY = centerY + (rightEye.y || 0);
+  // Right Eye position with micro-saccades
+  const rightEyeX = centerX + eyeSpacing / 2 + (rightEye.x || 0) + saccadeOffset.x;
+  const rightEyeY = centerY + (rightEye.y || 0) + saccadeOffset.y;
 
   return (
     <div
@@ -182,6 +237,14 @@ export const StrobiAvatar: React.FC<StrobiAvatarProps> = ({
         perspective: 600,
       }}
     >
+      {/* Contextual Emotional Aura Glow */}
+      {auraColor && (
+        <div
+          className="absolute inset-0 rounded-full blur-xl opacity-60 animate-pulse pointer-events-none transition-all duration-700"
+          style={{ backgroundColor: auraColor }}
+        />
+      )}
+
       {/* Dynamic Ambient Dropshadow under Sphere */}
       <div
         className="absolute -bottom-1 w-[70%] h-[14%] bg-black/25 rounded-full blur-[3px] transition-transform duration-300 pointer-events-none"
@@ -190,7 +253,7 @@ export const StrobiAvatar: React.FC<StrobiAvatarProps> = ({
         }}
       />
 
-      {/* 3D Head Wrapper */}
+      {/* 3D Head Wrapper with Organic Breathing Float */}
       <m.div
         className="relative w-full h-full"
         animate={
@@ -200,13 +263,14 @@ export const StrobiAvatar: React.FC<StrobiAvatarProps> = ({
                 rotateX: headPitch,
                 rotateY: headYaw,
                 rotateZ: headRoll,
+                y: enableBreathing && activeState === 'idle' ? [0, -3, 0] : 0,
               }
         }
         transition={{
-          type: 'spring',
-          stiffness: 180,
-          damping: 24,
-          mass: 0.8,
+          rotateX: { type: 'spring', stiffness: 180, damping: 24, mass: 0.8 },
+          rotateY: { type: 'spring', stiffness: 180, damping: 24, mass: 0.8 },
+          rotateZ: { type: 'spring', stiffness: 180, damping: 24, mass: 0.8 },
+          y: { duration: 3.4, repeat: Infinity, ease: 'easeInOut' },
         }}
         style={{
           transformStyle: 'preserve-3d',
@@ -259,7 +323,7 @@ export const StrobiAvatar: React.FC<StrobiAvatarProps> = ({
             fill="url(#strobiGlint)"
           />
 
-          {/* Interactive Eyes Group */}
+          {/* Interactive Eyes Group with Saccades & Speech Pulses */}
           <g className="transition-transform duration-300 ease-out">
             {/* Left Eye */}
             <g transform={`translate(${leftEyeX}, ${leftEyeY}) rotate(${leftEye.angle || 0})`}>

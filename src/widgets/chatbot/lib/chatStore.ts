@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { ChatMessage } from '@/features/analyzer/model/types';
 import type { StrobiAnimationState } from '@/entities/avatar/model/types';
+import { analyzeEmotionContext } from '@/entities/avatar/model/emotionEngine';
 import { generateChatResponse, getGreetingMessage } from '@/widgets/chatbot/lib/chatService';
 
 interface ChatState {
@@ -11,6 +12,8 @@ interface ChatState {
 
   // Strobi Avatar State
   avatarState: StrobiAnimationState;
+  auraColor: string | null;
+  isSpeaking: boolean;
 
   // Messages
   messages: ChatMessage[];
@@ -22,7 +25,7 @@ interface ChatState {
   // Actions
   toggleChat: () => void;
   minimizeChat: () => void;
-  setAvatarState: (state: StrobiAnimationState) => void;
+  setAvatarState: (state: StrobiAnimationState, aura?: string | null) => void;
   sendMessage: (content: string) => Promise<void>;
   resetChat: () => void;
 }
@@ -37,13 +40,15 @@ export const useChatStore = create<ChatState>()(
       isOpen: false,
       isMinimized: false,
       avatarState: 'idle',
+      auraColor: null,
+      isSpeaking: false,
       messages: [],
       isTyping: false,
       sessionId: generateSessionId(),
 
       // Actions
-      setAvatarState: (state: StrobiAnimationState) => {
-        set({ avatarState: state });
+      setAvatarState: (state: StrobiAnimationState, aura: string | null = null) => {
+        set({ avatarState: state, auraColor: aura });
       },
 
       toggleChat: () => {
@@ -54,6 +59,8 @@ export const useChatStore = create<ChatState>()(
           isOpen: nextIsOpen,
           isMinimized: false,
           avatarState: nextIsOpen ? 'happy' : 'idle',
+          auraColor: nextIsOpen ? '#60A5FA' : null,
+          isSpeaking: false,
         });
 
         // Add greeting on first open
@@ -69,11 +76,14 @@ export const useChatStore = create<ChatState>()(
       },
 
       minimizeChat: () => {
-        set({ isMinimized: true, avatarState: 'idle' });
+        set({ isMinimized: true, avatarState: 'idle', auraColor: null, isSpeaking: false });
       },
 
       sendMessage: async (content: string) => {
         const { messages } = get();
+
+        // 1. Analyze initial intent from user text
+        const initialAnalysis = analyzeEmotionContext(content);
 
         // Add user message
         const userMessage: ChatMessage = {
@@ -86,21 +96,17 @@ export const useChatStore = create<ChatState>()(
         set({
           messages: [...messages, userMessage],
           isTyping: true,
-          avatarState: 'thinking',
+          avatarState: initialAnalysis.initialState,
+          auraColor: initialAnalysis.auraColor,
+          isSpeaking: false,
         });
 
         try {
           // Get AI response
           const response = await generateChatResponse([...messages, userMessage]);
 
-          // Check if response contains celebration trigger (e.g. booking or contact)
-          const isCelebratory =
-            content.toLowerCase().includes('gebucht') ||
-            content.toLowerCase().includes('termin') ||
-            response.text.toLowerCase().includes('freue mich') ||
-            response.text.toLowerCase().includes('glückwunsch');
-
-          const nextAvatarState: StrobiAnimationState = isCelebratory ? 'celebrate' : 'happy';
+          // 2. Full contextual emotion analysis with assistant response
+          const finalAnalysis = analyzeEmotionContext(content, response.text);
 
           // Add assistant message
           const assistantMessage: ChatMessage = {
@@ -113,8 +119,23 @@ export const useChatStore = create<ChatState>()(
           set((state) => ({
             messages: [...state.messages, assistantMessage],
             isTyping: false,
-            avatarState: nextAvatarState,
+            avatarState: finalAnalysis.responseState,
+            auraColor: finalAnalysis.auraColor,
+            isSpeaking: true,
           }));
+
+          // Speech cadence turns off after 2.4s, then smoothly settles
+          setTimeout(() => {
+            set({ isSpeaking: false });
+          }, 2400);
+
+          // Natural emotion decay back to idle after 6 seconds of inactivity
+          setTimeout(() => {
+            const current = get();
+            if (!current.isTyping && current.isOpen) {
+              set({ avatarState: 'idle', auraColor: null });
+            }
+          }, 6500);
         } catch (error) {
           console.error('[Chat] Error:', error);
 
@@ -131,6 +152,8 @@ export const useChatStore = create<ChatState>()(
             messages: [...state.messages, errorMessage],
             isTyping: false,
             avatarState: 'confused',
+            auraColor: null,
+            isSpeaking: false,
           }));
         }
       },
@@ -139,6 +162,8 @@ export const useChatStore = create<ChatState>()(
         set({
           messages: [],
           avatarState: 'idle',
+          auraColor: null,
+          isSpeaking: false,
           sessionId: generateSessionId(),
         });
       },
