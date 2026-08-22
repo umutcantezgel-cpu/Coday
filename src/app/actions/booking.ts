@@ -1,11 +1,19 @@
 'use server';
 
 import { Resend } from 'resend';
+import { headers } from 'next/headers';
+import { createRateLimiter } from '@/shared/lib/rate-limiter';
 import {
   generateAgencyBookingEmailHtml,
   generateCustomerBookingEmailHtml,
   BookingEmailData,
 } from '@/shared/lib/email/bookingTemplates';
+
+// Max 5 booking attempts per 10 minutes per IP
+const bookingRateLimiter = createRateLimiter({
+  max: 5,
+  windowMs: 10 * 60 * 1000,
+});
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const EMAIL_FROM_BOOKING = process.env.EMAIL_FROM || 'Coday Booking <leads@codayweb.de>';
@@ -23,6 +31,20 @@ export interface BookingPayload {
 
 export async function bookAppointment(payload: BookingPayload) {
   try {
+    // 0. Rate limiting by client IP
+    const headerList = await headers();
+    const forwardedFor = headerList.get('x-forwarded-for');
+    const clientIp = forwardedFor
+      ? forwardedFor.split(',')[0].trim()
+      : headerList.get('x-real-ip') || '127.0.0.1';
+
+    if (bookingRateLimiter.isRateLimited(clientIp)) {
+      return {
+        error:
+          'Zu viele Buchungsanfragen. Bitte warten Sie einige Minuten, bevor Sie es erneut versuchen.',
+      };
+    }
+
     const { name, email, phone, date, time_slot, service_type, notes } = payload;
 
     if (!name || !email || !date || !time_slot) {

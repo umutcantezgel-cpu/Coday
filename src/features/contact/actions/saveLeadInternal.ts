@@ -1,11 +1,19 @@
 'use server';
 
 import { Resend } from 'resend';
+import { headers } from 'next/headers';
+import { createRateLimiter } from '@/shared/lib/rate-limiter';
 import {
   generateAgencyLeadEmailHtml,
   generateCustomerConfirmationEmailHtml,
   LeadEmailData,
 } from '@/shared/lib/email/leadTemplates';
+
+// Max 5 lead submissions per 10 minutes per IP
+const leadRateLimiter = createRateLimiter({
+  max: 5,
+  windowMs: 10 * 60 * 1000,
+});
 
 export interface LeadSubmissionPayload {
   name: string;
@@ -23,6 +31,21 @@ export interface LeadSubmissionPayload {
 
 export async function saveLeadInternalAction(data: LeadSubmissionPayload) {
   try {
+    // 0. Rate limiting by client IP
+    const headerList = await headers();
+    const forwardedFor = headerList.get('x-forwarded-for');
+    const clientIp = forwardedFor
+      ? forwardedFor.split(',')[0].trim()
+      : headerList.get('x-real-ip') || '127.0.0.1';
+
+    if (leadRateLimiter.isRateLimited(clientIp)) {
+      return {
+        success: false,
+        error:
+          'Zu viele Anfragen. Bitte warten Sie einige Minuten, bevor Sie eine weitere Nachricht senden.',
+      };
+    }
+
     // Load the API key from Vercel environment variables
     const resendApiKey = process.env.RESEND_API_KEY;
 
