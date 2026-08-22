@@ -15,7 +15,7 @@ describe('usePettingPhysics Hook', () => {
     const { result } = renderHook(() => usePettingPhysics());
 
     act(() => {
-      // Stroke 1
+      // Stroke 1 (initial anchor)
       result.current.handlePointerMove({
         clientX: 100,
         clientY: 100,
@@ -23,10 +23,26 @@ describe('usePettingPhysics Hook', () => {
     });
 
     act(() => {
-      // Stroke 2 (rapid scrub)
+      // Stroke 2
       result.current.handlePointerMove({
-        clientX: 140,
-        clientY: 110,
+        clientX: 130,
+        clientY: 105,
+      } as React.PointerEvent<HTMLDivElement>);
+    });
+
+    act(() => {
+      // Stroke 3
+      result.current.handlePointerMove({
+        clientX: 100,
+        clientY: 100,
+      } as React.PointerEvent<HTMLDivElement>);
+    });
+
+    act(() => {
+      // Stroke 4 (triggers 3rd count threshold)
+      result.current.handlePointerMove({
+        clientX: 130,
+        clientY: 105,
       } as React.PointerEvent<HTMLDivElement>);
     });
 

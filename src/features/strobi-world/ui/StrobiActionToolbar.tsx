@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { useStrobiWorldStore } from '../model/strobiWorldStore';
-import { useMiiAudio } from '../lib/useMiiAudio';
 import type {
   StrobiScaleMode,
   StrobiRoomTheme,
@@ -18,11 +17,13 @@ import {
   Star,
   Eyeglasses,
   Headphones,
-  MoonStars,
-  Sun,
-  Tree,
-  Lightning,
+  Desktop,
+  Cube,
+  SunDim,
+  TreeEvergreen,
   Sparkle,
+  Crown,
+  BoundingBox,
 } from '@phosphor-icons/react/dist/ssr';
 
 export const StrobiActionToolbar: React.FC<{
@@ -41,80 +42,75 @@ export const StrobiActionToolbar: React.FC<{
     setAvatarState,
   } = useStrobiWorldStore();
 
-  const { playPop, playBoing, playCelebrate } = useMiiAudio();
-
-  const SCALE_OPTIONS: { mode: StrobiScaleMode; label: string; icon: string }[] = [
-    { mode: 'mini', label: 'Mini', icon: '🐣' },
-    { mode: 'companion', label: 'Medium', icon: '🤖' },
-    { mode: 'giant', label: 'Giant', icon: '👑' },
-    { mode: 'boss', label: 'Titan Boss', icon: '🪐' },
+  const SCALE_OPTIONS: { mode: StrobiScaleMode; label: string; icon: React.ElementType }[] = [
+    { mode: 'mini', label: 'Mini', icon: Sparkle },
+    { mode: 'companion', label: 'Medium', icon: Cube },
+    { mode: 'giant', label: 'Giant', icon: Crown },
+    { mode: 'boss', label: 'Titan', icon: BoundingBox },
   ];
 
   const THEMES: { theme: StrobiRoomTheme; label: string; icon: React.ElementType }[] = [
-    { theme: 'cyber-lab', label: 'Cyber Lab', icon: MoonStars },
-    { theme: 'neon-grid', label: 'Neon Grid', icon: Lightning },
-    { theme: 'sunset-lounge', label: 'Sunset Lounge', icon: Sun },
-    { theme: 'nature-studio', label: 'Nature', icon: Tree },
+    { theme: 'performance-studio', label: 'Studio Blue', icon: Desktop },
+    { theme: 'minimalist-slate', label: 'Minimalist', icon: Cube },
+    { theme: 'warm-daylight', label: 'Daylight', icon: SunDim },
+    { theme: 'nature-lab', label: 'Nature Lab', icon: TreeEvergreen },
   ];
 
   const ITEMS: { item: StrobiWorldItem; label: string; icon: React.ElementType }[] = [
     { item: 'coffee', label: 'Espresso', icon: Coffee },
     { item: 'laptop', label: 'Next.js 15', icon: Laptop },
     { item: 'star', label: '100/100 CWV', icon: Star },
-    { item: 'glasses', label: 'Boss Brille', icon: Eyeglasses },
-    { item: 'headphones', label: 'Headphones', icon: Headphones },
+    { item: 'glasses', label: 'Brille', icon: Eyeglasses },
+    { item: 'headphones', label: 'Kopfhörer', icon: Headphones },
   ];
 
   const handleScaleSelect = (mode: StrobiScaleMode) => {
-    playBoing();
     setScaleMode(mode);
     if (mode === 'boss') {
-      setAvatarState('excited', '#F59E0B');
+      setAvatarState('excited', '#2563EB');
       setSpeech({
         id: 'boss_scale',
-        text: 'TITAN BOSS MODE AKTIVIERT! Jetzt beherrsche ich den gesamten Bildschirm! 🪐💥',
+        text: 'Titan-Modus aktiviert: Maximale Skalierung bei gestochen scharfen Vektoren.',
         type: 'shout',
       });
     } else if (mode === 'giant') {
-      setAvatarState('proud', '#3B82F6');
+      setAvatarState('proud', '#2563EB');
       setSpeech({
         id: 'giant_scale',
-        text: 'Schau mal, wie groß und detailreich ich jetzt bin! Jedes Vektordetail bleibt gestochen scharf! 👑',
+        text: 'Großformat aktiviert: Volle Detailtiefe und optimierte Proportionen.',
         type: 'talk',
       });
     } else if (mode === 'mini') {
       setAvatarState('playful');
       setSpeech({
         id: 'mini_scale',
-        text: 'Piep! Als Taschen-Avatar passe ich überall hin! 🐣',
+        text: 'Kompaktformat aktiviert.',
         type: 'talk',
       });
     }
   };
 
   const handleItemToggle = (item: StrobiWorldItem) => {
-    playPop();
     toggleItem(item);
     if (item === 'star') {
-      playCelebrate();
       setAvatarState('celebrate', '#10B981');
       setSpeech({
         id: 'star_equip',
-        text: '100/100 Core Web Vitals Stern angelegt! Sub-0,3s Ladezeit garantiert! ⭐⚡',
+        text: '100/100 Core Web Vitals Stern angelegt: Sub-0,3s Ladezeit garantiert.',
         type: 'shout',
       });
     } else if (item === 'coffee') {
-      setAvatarState('excited', '#F59E0B');
+      setAvatarState('excited', '#D97706');
       setSpeech({
         id: 'coffee_equip',
-        text: 'Frischer Espresso eingeschenkt! Meine Rechenleistung läuft auf 120 FPS! ☕🔥',
+        text: 'Frischer Espresso aktiv. Leistungsbereitschaft auf Höchststufe.',
         type: 'talk',
       });
     } else if (item === 'laptop') {
-      setAvatarState('working', '#3B82F6');
+      setAvatarState('working', '#2563EB');
       setSpeech({
         id: 'laptop_equip',
-        text: 'Next.js 15 & React 19 Engine hochgefahren. Code läuft fehlerfrei! 💻',
+        text: 'Next.js 15 & React 19 Engine hochgefahren. Code läuft fehlerfrei.',
         type: 'talk',
       });
     }
@@ -122,131 +118,130 @@ export const StrobiActionToolbar: React.FC<{
 
   return (
     <div className="w-full max-w-4xl mx-auto z-30 space-y-3">
-      <div className="p-3 md:p-4 rounded-3xl bg-slate-900/90 border border-slate-800/90 shadow-2xl backdrop-blur-xl flex flex-wrap items-center justify-between gap-4">
-        {/* Left: Interaction Tool Mode */}
-        <div className="flex items-center gap-1.5 bg-slate-950/80 p-1.5 rounded-2xl border border-slate-800">
+      {/* Primary Tool Controls in Elevated Light Glass Card */}
+      <div className="p-3 md:p-4 rounded-3xl bg-white/95 border border-slate-200/90 shadow-lg shadow-slate-900/5 backdrop-blur-xl flex flex-wrap items-center justify-between gap-4">
+        {/* Left: Interaction Mode Segmented Switcher */}
+        <div className="flex items-center gap-1.5 bg-slate-100/80 p-1.5 rounded-2xl border border-slate-200/60">
           <button
             onClick={() => {
-              playPop();
               setInteractionMode('pet');
-              setAvatarState('happy', '#EC4899');
+              setAvatarState('happy', '#F43F5E');
               setSpeech({
                 id: 'pet_mode',
-                text: 'Kraul-Modus aktiv! Bewege deinen Cursor über meinen Kopf, um Herzen zu sammeln! 💖',
+                text: 'Kraul-Modus aktiv: Bewege den Cursor über meinen Kopf, um Zuneigung zu steigern.',
                 type: 'talk',
               });
             }}
             className={`px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all ${
               interactionMode === 'pet'
-                ? 'bg-pink-600 text-white shadow-lg shadow-pink-600/30'
-                : 'text-slate-300 hover:text-white hover:bg-white/5'
+                ? 'bg-rose-500 text-white shadow-sm'
+                : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
             }`}
           >
-            <HandWaving className="w-4 h-4" />
+            <HandWaving className="w-3.5 h-3.5" />
             <span>Kraulen</span>
           </button>
 
           <button
             onClick={() => {
-              playPop();
               setInteractionMode('toss');
-              setAvatarState('playful', '#3B82F6');
+              setAvatarState('playful', '#2563EB');
               setSpeech({
                 id: 'toss_mode',
-                text: 'Schleuder-Modus! Pack mich mit der Maus und wirf mich durch den Raum! 🚀',
+                text: 'Greif- & Bewegungsmodus aktiv: Ziehe mich mit der Maus oder dem Finger über das Feld.',
                 type: 'talk',
               });
             }}
             className={`px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all ${
               interactionMode === 'toss'
-                ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30'
-                : 'text-slate-300 hover:text-white hover:bg-white/5'
+                ? 'bg-blue-600 text-white shadow-sm'
+                : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
             }`}
           >
-            <ArrowsOutCardinal className="w-4 h-4" />
-            <span>Schleudern</span>
+            <ArrowsOutCardinal className="w-3.5 h-3.5" />
+            <span>Bewegen</span>
           </button>
 
           <button
-            onClick={() => {
-              playPop();
-              onStartMiniGame();
-            }}
-            className="px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white shadow-lg shadow-emerald-600/20 transition-all active:scale-95"
+            onClick={onStartMiniGame}
+            className="px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-500 text-white shadow-sm transition-all"
           >
-            <GameController className="w-4 h-4" />
+            <GameController className="w-3.5 h-3.5" />
             <span>Minispiel</span>
           </button>
         </div>
 
-        {/* Center: Scale Modes (Größe anpassen) */}
-        <div className="flex items-center gap-1 bg-slate-950/80 p-1.5 rounded-2xl border border-slate-800">
-          <span className="text-[11px] font-bold text-slate-400 px-2 uppercase tracking-wider">
-            Größe:
-          </span>
-          {SCALE_OPTIONS.map((opt) => (
+        {/* Center: Scale Switcher */}
+        <div className="flex items-center gap-1 bg-slate-100/80 p-1.5 rounded-2xl border border-slate-200/60">
+          {SCALE_OPTIONS.map(({ mode, label, icon: Icon }) => (
             <button
-              key={opt.mode}
-              onClick={() => handleScaleSelect(opt.mode)}
-              className={`px-2.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1 transition-all ${
-                scaleMode === opt.mode
-                  ? 'bg-blue-600 text-white shadow-md shadow-blue-600/30 scale-105'
-                  : 'text-slate-400 hover:text-slate-200 hover:bg-white/5'
+              key={mode}
+              onClick={() => handleScaleSelect(mode)}
+              className={`px-2.5 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1 transition-all ${
+                scaleMode === mode
+                  ? 'bg-slate-900 text-white shadow-sm'
+                  : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
               }`}
             >
-              <span>{opt.icon}</span>
-              <span className="hidden sm:inline">{opt.label}</span>
+              <Icon className="w-3.5 h-3.5" />
+              <span>{label}</span>
             </button>
           ))}
         </div>
 
-        {/* Right: Room Themes & Items */}
-        <div className="flex items-center gap-2">
-          {/* Room Themes */}
-          <div className="flex items-center gap-1 bg-slate-950/80 p-1.5 rounded-2xl border border-slate-800">
-            {THEMES.map((th) => {
-              const IconComp = th.icon;
-              return (
-                <button
-                  key={th.theme}
-                  onClick={() => {
-                    playPop();
-                    setRoomTheme(th.theme);
-                  }}
-                  title={th.label}
-                  className={`p-1.5 rounded-xl transition-all ${
-                    roomTheme === th.theme
-                      ? 'bg-blue-600 text-white shadow-md'
-                      : 'text-slate-400 hover:text-white hover:bg-white/5'
-                  }`}
-                >
-                  <IconComp className="w-4 h-4" />
-                </button>
-              );
-            })}
-          </div>
+        {/* Right: Studio Room Theme Switcher */}
+        <div className="flex items-center gap-1 bg-slate-100/80 p-1.5 rounded-2xl border border-slate-200/60">
+          {THEMES.map(({ theme, label, icon: Icon }) => (
+            <button
+              key={theme}
+              onClick={() => {
+                setRoomTheme(theme);
+                setSpeech({
+                  id: `theme_${theme}`,
+                  text: `Raumatmosphäre ${label} geladen.`,
+                  type: 'talk',
+                });
+              }}
+              title={label}
+              className={`p-2 rounded-xl text-xs transition-all ${
+                roomTheme === theme
+                  ? 'bg-slate-900 text-white shadow-sm'
+                  : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+              }`}
+            >
+              <Icon className="w-4 h-4" />
+            </button>
+          ))}
+        </div>
+      </div>
 
-          {/* Items Drawer */}
-          <div className="flex items-center gap-1 bg-slate-950/80 p-1.5 rounded-2xl border border-slate-800">
-            {ITEMS.map((it) => {
-              const IconComp = it.icon;
-              const isEquipped = equippedItems.includes(it.item);
-              return (
-                <button
-                  key={it.item}
-                  onClick={() => handleItemToggle(it.item)}
-                  title={it.label}
-                  className={`p-1.5 rounded-xl transition-all ${
-                    isEquipped
-                      ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40 shadow-sm'
-                      : 'text-slate-400 hover:text-white hover:bg-white/5 border border-transparent'
-                  }`}
-                >
-                  <IconComp className="w-4 h-4" />
-                </button>
-              );
-            })}
-          </div>
+      {/* Equipment / Item Bar in Light Glass */}
+      <div className="p-2.5 px-4 rounded-2xl bg-white/95 border border-slate-200/90 shadow-md shadow-slate-900/5 flex flex-wrap items-center justify-between gap-3 text-xs">
+        <span className="font-bold text-slate-700 uppercase tracking-wider text-[11px] flex items-center gap-1.5">
+          <Sparkle className="w-3.5 h-3.5 text-blue-600" />
+          <span>Ausrüstung & Tools:</span>
+        </span>
+
+        <div className="flex flex-wrap items-center gap-2">
+          {ITEMS.map(({ item, label, icon: Icon }) => {
+            const isEquipped = equippedItems.includes(item);
+            return (
+              <button
+                key={item}
+                onClick={() => handleItemToggle(item)}
+                className={`px-3 py-1.5 rounded-xl font-semibold flex items-center gap-1.5 border transition-all ${
+                  isEquipped
+                    ? 'bg-blue-50 border-blue-300 text-blue-700 shadow-xs font-bold'
+                    : 'bg-slate-50 hover:bg-slate-100 border-slate-200 text-slate-600 hover:text-slate-900'
+                }`}
+              >
+                <Icon
+                  className={`w-3.5 h-3.5 ${isEquipped ? 'text-blue-600' : 'text-slate-500'}`}
+                />
+                <span>{label}</span>
+              </button>
+            );
+          })}
         </div>
       </div>
     </div>

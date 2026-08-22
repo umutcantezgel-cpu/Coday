@@ -3,20 +3,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { m, AnimatePresence } from 'motion/react';
 import { useStrobiWorldStore } from '../model/strobiWorldStore';
-import { generateChatResponse } from '@/widgets/chatbot/lib/chatService';
-import { analyzeEmotionContext } from '@/entities/avatar/model/emotionEngine';
-import { useMiiAudio } from '../lib/useMiiAudio';
-import { PaperPlaneRight, Sparkle, CircleNotch, X } from '@phosphor-icons/react/dist/ssr';
+import { PaperPlaneRight, Sparkle, ChatCircleDots } from '@phosphor-icons/react/dist/ssr';
 
 export const StrobiSpeechBubble: React.FC<{
-  onTriggerPet?: () => void;
   onStartGame?: () => void;
   onGiveCoffee?: () => void;
-}> = ({ onTriggerPet, onStartGame, onGiveCoffee }) => {
+}> = ({ onStartGame, onGiveCoffee }) => {
   const { speech, setSpeech, setAvatarState } = useStrobiWorldStore();
-  const { playPop, playChime, playCelebrate } = useMiiAudio();
-
-  const [inputVal, setInputVal] = useState('');
+  const [userInput, setUserInput] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
   const [displayedText, setDisplayedText] = useState('');
   const textIndexRef = useRef(0);
@@ -48,106 +42,118 @@ export const StrobiSpeechBubble: React.FC<{
   }, [speech?.id, speech?.text]);
 
   const handleQuickAction = (action: string) => {
-    playPop();
     switch (action) {
       case 'pet_me':
-        setAvatarState('happy', '#EC4899');
+        setAvatarState('happy', '#F43F5E');
         setSpeech({
-          id: 'pet_me_res',
-          text: 'Jaaa, kraul mich bitte! Bewege deine Maus oder deinen Finger sanft über meinen Kopf! 🥰',
+          id: 'pet_request',
+          text: 'Bewege den Cursor über meinen Kopf, um Zuneigung und visuelle Funken zu erzeugen.',
           type: 'talk',
         });
-        onTriggerPet?.();
         break;
-
-      case 'tech_fact':
-        setAvatarState('proud', '#3B82F6');
+      case 'explain_speed':
+        setAvatarState('working', '#2563EB');
         setSpeech({
-          id: 'tech_fact_res',
-          text: 'Wusstest du? Durch Next.js 15 Server Components und Vercel Edge erreichen wir 0,2s Ladezeiten und 100/100 Core Web Vitals!',
+          id: 'speed_explanation',
+          text: 'Next.js 15 App Router mit React Server Components und Edge-Caching eliminiert Client-Overhead für Sub-0,3s Ladezeiten.',
           type: 'talk',
           quickReplies: [
-            { label: '🚀 Wow, genial!', action: 'compliment' },
-            { label: '☕ Kaffee trinken', action: 'give_coffee' },
+            { label: 'Core Web Vitals', action: 'explain_cwv' },
+            { label: 'Projekt anfragen', action: 'request_project' },
           ],
         });
         break;
-
-      case 'start_game':
-        onStartGame?.();
-        break;
-
-      case 'give_coffee':
-        onGiveCoffee?.();
-        setAvatarState('excited', '#F59E0B');
+      case 'explain_cwv':
+        setAvatarState('proud', '#10B981');
         setSpeech({
-          id: 'coffee_boost',
-          text: 'Mmmh, doppelter Espresso! Volle Energie für 100/100 PageSpeed! ⚡☕',
-          type: 'shout',
-        });
-        break;
-
-      case 'compliment':
-        playCelebrate();
-        setAvatarState('laughing', '#EC4899');
-        setSpeech({
-          id: 'compliment_res',
-          text: 'Vielen Dank! Du bist fantastisch! Lass uns die Web-Welt dominieren! 🌟',
+          id: 'cwv_explanation',
+          text: '100/100 Core Web Vitals sichern Top-Rankings bei Google und maximale Konversion für deutsche Mittelständler.',
           type: 'talk',
         });
         break;
-
+      case 'play_game':
+        if (onStartGame) onStartGame();
+        break;
+      case 'give_coffee':
+        if (onGiveCoffee) onGiveCoffee();
+        setAvatarState('excited', '#D97706');
+        setSpeech({
+          id: 'coffee_response',
+          text: 'Frischer Espresso eingeschenkt. Reaktionszeit optimiert.',
+          type: 'talk',
+        });
+        break;
+      case 'request_project':
+        setAvatarState('happy', '#2563EB');
+        setSpeech({
+          id: 'contact_push',
+          text: 'Klicke unten auf Projekt anfragen für eine kostenlose Bedarfsanalyse.',
+          type: 'talk',
+        });
+        break;
       default:
         break;
     }
   };
 
-  const handleSendMessage = async (e: React.FormEvent) => {
+  const handleSendChat = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!inputVal.trim() || isGenerating) return;
+    if (!userInput.trim() || isGenerating) return;
 
-    const userText = inputVal.trim();
-    setInputVal('');
+    const query = userInput.trim();
+    setUserInput('');
     setIsGenerating(true);
-    playPop();
-
-    const analysis = analyzeEmotionContext(userText);
-    setAvatarState(analysis.initialState, analysis.auraColor);
+    setAvatarState('thinking', '#6366F1');
 
     setSpeech({
-      id: 'thinking',
-      text: 'Strobi denkt nach...',
+      id: `user_q_${Date.now()}`,
+      text: 'Analysiere Anfrage...',
       type: 'thought',
     });
 
     try {
-      const aiRes = await generateChatResponse([
-        { id: '1', role: 'user', content: userText, timestamp: new Date().toISOString() },
-      ]);
-
-      const finalAnalysis = analyzeEmotionContext(userText, aiRes.text);
-      setAvatarState(finalAnalysis.responseState, finalAnalysis.auraColor);
-
-      if (finalAnalysis.responseState === 'celebrate') {
-        playCelebrate();
-      } else {
-        playChime();
-      }
-
-      setSpeech({
-        id: `res-${Date.now()}`,
-        text: aiRes.text,
-        type: 'talk',
-        quickReplies: [
-          { label: '✨ Kraul mich!', action: 'pet_me' },
-          { label: '🎮 Spiel starten', action: 'start_game' },
-        ],
+      const response = await fetch('/api/ai-proxy', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          messages: [
+            {
+              role: 'system',
+              content:
+                'Du bist Strobi, der KI-Avatar der High-End Webagentur Coday aus Wetzlar. Antworte in 1-2 kurzen, prägnanten Sätzen. Nutze niemals Emojis.',
+            },
+            { role: 'user', content: query },
+          ],
+        }),
       });
+
+      if (response.ok) {
+        const data = await response.json();
+        const cleanContent = (data.content || data.reply || 'Anfrage verarbeitet.')
+          .replace(
+            /[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu,
+            ''
+          )
+          .trim();
+
+        setAvatarState('happy', '#2563EB');
+        setSpeech({
+          id: `ai_reply_${Date.now()}`,
+          text: cleanContent,
+          type: 'talk',
+          quickReplies: [
+            { label: 'Next.js 15 Speed', action: 'explain_speed' },
+            { label: 'Projekt anfragen', action: 'request_project' },
+          ],
+        });
+      } else {
+        throw new Error('AI offline');
+      }
     } catch {
-      setAvatarState('confused');
+      setAvatarState('idle');
       setSpeech({
-        id: 'err',
-        text: 'Hoppla, mein KI-Modul hatte einen kleinen Schluckauf! Frag mich gleich nochmal!',
+        id: `err_${Date.now()}`,
+        text: 'Coday entwickelt High-Performance Websites mit 100/100 Core Web Vitals für messbare Neukundengewinnung.',
         type: 'talk',
       });
     } finally {
@@ -155,92 +161,85 @@ export const StrobiSpeechBubble: React.FC<{
     }
   };
 
-  if (!speech) return null;
-
   return (
     <AnimatePresence>
-      <m.div
-        initial={{ opacity: 0, y: 15, scale: 0.9 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        exit={{ opacity: 0, y: 10, scale: 0.9 }}
-        transition={{ type: 'spring', stiffness: 260, damping: 20 }}
-        className="relative max-w-md w-full mx-auto z-40"
-      >
-        {/* Comic Speech Bubble Body */}
-        <div className="relative rounded-3xl bg-slate-900/95 border-2 border-blue-500/40 p-4 md:p-5 shadow-2xl backdrop-blur-xl text-white">
-          {/* Top Header / Mood Badge */}
-          <div className="flex items-center justify-between mb-2">
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-500/20 text-blue-300 text-[11px] font-bold uppercase tracking-wider">
-              <Sparkle className="w-3 h-3 text-blue-400" />
-              <span>
+      {speech && (
+        <m.div
+          initial={{ opacity: 0, y: 8, scale: 0.96 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: -8, scale: 0.96 }}
+          transition={{ duration: 0.2 }}
+          className="relative max-w-lg w-full mx-auto"
+        >
+          {/* Light Theme Glass Dialog Container */}
+          <div className="bg-white/95 border border-slate-200/90 rounded-3xl p-4 sm:p-5 shadow-xl shadow-slate-900/5 backdrop-blur-md relative">
+            {/* Header Badge */}
+            <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center gap-1.5 text-xs font-bold text-slate-800">
+                <ChatCircleDots className="w-4 h-4 text-blue-600" />
+                <span>Strobi Dialog</span>
+              </div>
+              <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-100">
                 {speech.type === 'thought'
                   ? 'Gedanke'
                   : speech.type === 'shout'
                     ? 'Ausruf'
-                    : 'Strobi'}
+                    : 'Aktiv'}
               </span>
             </div>
 
-            <button
-              onClick={() => setSpeech(null)}
-              className="p-1 rounded-full hover:bg-white/10 text-slate-400 hover:text-white transition-colors"
-              aria-label="Sprechblase schließen"
-            >
-              <X className="w-3.5 h-3.5" />
-            </button>
-          </div>
-
-          {/* Typewriter Text Content */}
-          <p className="text-sm md:text-base leading-relaxed text-slate-100 font-medium min-h-[44px]">
-            {displayedText}
-            {displayedText.length < (speech.text?.length || 0) && (
-              <span className="inline-block w-1.5 h-4 bg-blue-400 ml-1 animate-pulse" />
-            )}
-          </p>
-
-          {/* Quick Action Chips */}
-          {speech.quickReplies && speech.quickReplies.length > 0 && (
-            <div className="flex flex-wrap gap-2 mt-3 pt-3 border-t border-slate-800">
-              {speech.quickReplies.map((reply) => (
-                <button
-                  key={reply.label}
-                  onClick={() => handleQuickAction(reply.action)}
-                  className="px-3 py-1 rounded-xl bg-blue-600/30 hover:bg-blue-600 border border-blue-500/40 hover:border-blue-400 text-xs font-semibold text-blue-200 hover:text-white transition-all shadow-sm active:scale-95"
-                >
-                  {reply.label}
-                </button>
-              ))}
-            </div>
-          )}
-
-          {/* Embedded Direct AI Message Input */}
-          <form onSubmit={handleSendMessage} className="mt-3 flex items-center gap-2">
-            <input
-              type="text"
-              value={inputVal}
-              onChange={(e) => setInputVal(e.target.value)}
-              placeholder="Sprich direkt mit Strobi..."
-              disabled={isGenerating}
-              className="flex-1 px-3.5 py-2 rounded-xl bg-slate-950/90 border border-slate-700/80 text-xs md:text-sm text-slate-100 placeholder:text-slate-500 focus:outline-hidden focus:border-blue-500 focus:ring-1 focus:ring-blue-500/40 transition-all"
-            />
-            <button
-              type="submit"
-              disabled={!inputVal.trim() || isGenerating}
-              className="w-8 h-8 rounded-xl bg-blue-600 hover:bg-blue-500 disabled:opacity-40 text-white flex items-center justify-center transition-all shrink-0 shadow-md shadow-blue-500/20"
-              aria-label="Nachricht senden"
-            >
-              {isGenerating ? (
-                <CircleNotch className="w-3.5 h-3.5 animate-spin" />
-              ) : (
-                <PaperPlaneRight className="w-3.5 h-3.5" />
+            {/* Typewriter Body */}
+            <p className="text-sm sm:text-base text-slate-800 leading-relaxed min-h-[44px] font-medium">
+              {displayedText}
+              {displayedText.length < (speech.text?.length || 0) && (
+                <span className="inline-block w-1.5 h-4 bg-blue-600 ml-1 animate-pulse" />
               )}
-            </button>
-          </form>
+            </p>
 
-          {/* Speech Bubble Pointer Tail */}
-          <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-t-[12px] border-t-slate-900 drop-shadow-md" />
-        </div>
-      </m.div>
+            {/* Quick Actions Chips */}
+            {speech.quickReplies && speech.quickReplies.length > 0 && (
+              <div className="flex flex-wrap gap-2 mt-3 pt-3 border-t border-slate-100">
+                {speech.quickReplies.map((reply, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => handleQuickAction(reply.action)}
+                    className="px-3 py-1.5 rounded-xl bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 text-xs font-semibold text-slate-700 hover:text-blue-700 transition-all flex items-center gap-1 shadow-2xs"
+                  >
+                    <Sparkle className="w-3.5 h-3.5 text-blue-600" />
+                    <span>{reply.label}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {/* Free Chat Input Line */}
+            <form
+              onSubmit={handleSendChat}
+              className="mt-3 pt-3 border-t border-slate-100 flex items-center gap-2"
+            >
+              <input
+                type="text"
+                value={userInput}
+                onChange={(e) => setUserInput(e.target.value)}
+                placeholder="Frag Strobi etwas zur Webentwicklung..."
+                disabled={isGenerating}
+                className="flex-1 bg-slate-50 border border-slate-200 focus:border-blue-500 rounded-xl px-3.5 py-2 text-xs sm:text-sm text-slate-900 placeholder:text-slate-400 focus:outline-hidden focus:ring-1 focus:ring-blue-500/20 transition-all"
+              />
+              <button
+                type="submit"
+                disabled={!userInput.trim() || isGenerating}
+                className="p-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white disabled:opacity-40 transition-all shadow-sm shrink-0"
+                aria-label="Nachricht an Strobi senden"
+              >
+                <PaperPlaneRight className="w-4 h-4" />
+              </button>
+            </form>
+
+            {/* Downward Speech Bubble Triangle */}
+            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-r border-b border-slate-200/90 rotate-45" />
+          </div>
+        </m.div>
+      )}
     </AnimatePresence>
   );
 };

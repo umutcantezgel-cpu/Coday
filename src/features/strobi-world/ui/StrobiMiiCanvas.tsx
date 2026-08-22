@@ -9,7 +9,7 @@ import { usePettingPhysics } from '../lib/usePettingPhysics';
 import { StrobiSpeechBubble } from './StrobiSpeechBubble';
 import { StrobiParticleOverlay } from './StrobiParticleOverlay';
 import { StrobiMiniGame } from './StrobiMiniGame';
-import { Coffee, Laptop, Star, Sparkle, Heart } from '@phosphor-icons/react/dist/ssr';
+import { Coffee, Laptop, Star } from '@phosphor-icons/react/dist/ssr';
 
 export const StrobiMiiCanvas: React.FC<{
   className?: string;
@@ -28,8 +28,6 @@ export const StrobiMiiCanvas: React.FC<{
     isMiniGameActive,
     startMiniGame,
     stopMiniGame,
-    setSpeech,
-    setAvatarState,
   } = useStrobiWorldStore();
 
   // Resize observer for physics boundaries
@@ -48,7 +46,7 @@ export const StrobiMiiCanvas: React.FC<{
     return () => window.removeEventListener('resize', updateSize);
   }, []);
 
-  const { physics, handleDragStart, handleDragMove, handleDragEnd, resetPosition } = useMiiPhysics(
+  const { physics, handleDragStart, handleDragMove, handleDragEnd } = useMiiPhysics(
     dimensions.width,
     dimensions.height
   );
@@ -97,44 +95,48 @@ export const StrobiMiiCanvas: React.FC<{
     }
   };
 
-  // Background Theme Gradients
+  // 4 Architectural Studio Light Theme Styles
   const THEME_STYLES = {
-    'cyber-lab': {
-      bg: 'bg-radial from-slate-900 via-slate-950 to-[#050811]',
-      gridColor: 'rgba(59, 130, 246, 0.15)',
+    'performance-studio': {
+      bg: 'bg-gradient-to-b from-blue-50/40 via-white to-slate-100/70',
+      gridColor: 'rgba(37, 99, 235, 0.08)',
       glowColor: '#3B82F6',
     },
-    'neon-grid': {
-      bg: 'bg-radial from-indigo-950 via-slate-950 to-[#04060c]',
-      gridColor: 'rgba(139, 92, 246, 0.2)',
-      glowColor: '#8B5CF6',
+    'minimalist-slate': {
+      bg: 'bg-gradient-to-b from-slate-50 via-white to-slate-100/90',
+      gridColor: 'rgba(100, 116, 139, 0.08)',
+      glowColor: '#64748B',
     },
-    'sunset-lounge': {
-      bg: 'bg-radial from-amber-950/40 via-slate-950 to-[#0c0805]',
-      gridColor: 'rgba(245, 158, 11, 0.15)',
-      glowColor: '#F59E0B',
+    'warm-daylight': {
+      bg: 'bg-gradient-to-b from-amber-50/40 via-white to-orange-50/40',
+      gridColor: 'rgba(217, 119, 6, 0.08)',
+      glowColor: '#D97706',
     },
-    'nature-studio': {
-      bg: 'bg-radial from-emerald-950/40 via-slate-950 to-[#040c08]',
-      gridColor: 'rgba(16, 185, 129, 0.15)',
+    'nature-lab': {
+      bg: 'bg-gradient-to-b from-emerald-50/40 via-white to-teal-50/40',
+      gridColor: 'rgba(16, 185, 129, 0.08)',
       glowColor: '#10B981',
     },
-  }[roomTheme];
+  }[roomTheme] || {
+    bg: 'bg-gradient-to-b from-blue-50/40 via-white to-slate-100/70',
+    gridColor: 'rgba(37, 99, 235, 0.08)',
+    glowColor: '#3B82F6',
+  };
 
   return (
     <div
       ref={containerRef}
-      className={`relative w-full h-[580px] md:h-[680px] rounded-3xl overflow-hidden border border-slate-800 shadow-2xl flex flex-col items-center justify-between p-6 select-none ${THEME_STYLES.bg} ${className}`}
+      className={`relative w-full h-[580px] md:h-[660px] rounded-3xl overflow-hidden border border-slate-200/90 shadow-xl shadow-slate-900/5 flex flex-col items-center justify-between p-6 select-none ${THEME_STYLES.bg} ${className}`}
     >
-      {/* Floating Particles Overlay */}
+      {/* Pure Vector Particles Overlay */}
       <StrobiParticleOverlay particles={particles} />
 
       {/* Arcade Mini-Game Canvas Overlay */}
       {isMiniGameActive && <StrobiMiniGame onClose={stopMiniGame} />}
 
-      {/* Dynamic Floor Grid in 3D Perspective */}
+      {/* Fine CAD Floor Grid in Perspective */}
       <div
-        className="absolute inset-x-0 bottom-0 h-64 pointer-events-none opacity-60"
+        className="absolute inset-x-0 bottom-0 h-64 pointer-events-none opacity-80"
         style={{
           perspective: 600,
         }}
@@ -143,15 +145,15 @@ export const StrobiMiiCanvas: React.FC<{
           className="w-full h-full transform rotate-x-60 origin-bottom"
           style={{
             backgroundImage: `linear-gradient(to right, ${THEME_STYLES.gridColor} 1px, transparent 1px), linear-gradient(to bottom, ${THEME_STYLES.gridColor} 1px, transparent 1px)`,
-            backgroundSize: '48px 48px',
-            maskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%)',
+            backgroundSize: '40px 40px',
+            maskImage: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 85%)',
           }}
         />
       </div>
 
-      {/* Center Ambient Light Dome */}
+      {/* Soft Ambient Light Dome */}
       <div
-        className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl opacity-20 pointer-events-none transition-all duration-700"
+        className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl opacity-15 pointer-events-none transition-all duration-700"
         style={{ backgroundColor: auraColor || THEME_STYLES.glowColor }}
       />
 
@@ -167,16 +169,31 @@ export const StrobiMiiCanvas: React.FC<{
         />
       </div>
 
-      {/* Central Interactive Strobi Mii Avatar Stage */}
+      {/* Central Interactive Strobi Mii Avatar Stage (Strictly Upright) */}
       <div className="relative flex-1 w-full flex items-center justify-center z-20">
+        {/* Dynamic Ambient Occlusion Drop Shadow on Floor */}
+        <div
+          className="absolute bottom-16 left-1/2 transform -translate-x-1/2 rounded-full transition-all duration-200 pointer-events-none"
+          style={{
+            width: currentScale * 0.75,
+            height: currentScale * 0.16,
+            backgroundColor: 'rgba(15, 23, 42, 0.18)',
+            filter: physics.isDragging ? 'blur(10px)' : 'blur(4px)',
+            opacity: physics.isDragging ? 0.3 : 0.65,
+            transform: `translate(-50%, ${physics.y * 0.2}px) scale(${
+              physics.isDragging ? 1.2 : 1
+            })`,
+          }}
+        />
+
         <m.div
           animate={{
             x: physics.x,
             y: physics.y,
-            rotate: physics.rotation,
+            rotate: 0, // Strictly stabilized upright: no tilting/skewing bug
           }}
           transition={
-            physics.isDragging ? { duration: 0 } : { type: 'spring', stiffness: 280, damping: 22 }
+            physics.isDragging ? { duration: 0 } : { type: 'spring', stiffness: 260, damping: 24 }
           }
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
@@ -191,7 +208,7 @@ export const StrobiMiiCanvas: React.FC<{
             height: currentScale,
           }}
         >
-          {/* Main Strobi 3D Avatar */}
+          {/* Main Strobi 3D Avatar (Upright & Ausgebaut) */}
           <StrobiAvatar
             state={avatarState}
             dimension={currentScale}
@@ -208,9 +225,9 @@ export const StrobiMiiCanvas: React.FC<{
             <m.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
-              className="absolute -bottom-2 -left-6 bg-slate-900/90 border border-amber-500/40 p-2 rounded-2xl shadow-xl flex items-center gap-1 text-amber-400 text-xs font-bold"
+              className="absolute -bottom-2 -left-6 bg-white/95 border border-amber-300/80 p-2 rounded-2xl shadow-lg flex items-center gap-1 text-amber-700 text-xs font-bold"
             >
-              <Coffee className="w-4 h-4 text-amber-400 animate-bounce" />
+              <Coffee className="w-4 h-4 text-amber-600 animate-bounce" />
               <span className="hidden sm:inline">Espresso</span>
             </m.div>
           )}
@@ -220,9 +237,9 @@ export const StrobiMiiCanvas: React.FC<{
             <m.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
-              className="absolute -bottom-2 -right-6 bg-slate-900/90 border border-blue-500/40 p-2 rounded-2xl shadow-xl flex items-center gap-1 text-blue-400 text-xs font-bold"
+              className="absolute -bottom-2 -right-6 bg-white/95 border border-blue-300/80 p-2 rounded-2xl shadow-lg flex items-center gap-1 text-blue-700 text-xs font-bold"
             >
-              <Laptop className="w-4 h-4 text-blue-400" />
+              <Laptop className="w-4 h-4 text-blue-600" />
               <span className="hidden sm:inline">Next.js 15</span>
             </m.div>
           )}
@@ -230,25 +247,16 @@ export const StrobiMiiCanvas: React.FC<{
           {/* Accessory: 100/100 CWV Star */}
           {equippedItems.includes('star') && (
             <m.div
-              initial={{ scale: 0, y: 10 }}
-              animate={{ scale: 1, y: 0 }}
-              className="absolute -top-6 right-2 bg-slate-900/90 border border-emerald-500/40 p-1.5 rounded-full shadow-xl flex items-center justify-center text-emerald-400"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              className="absolute -top-4 -right-4 bg-white/95 border border-emerald-300/80 p-2 rounded-2xl shadow-lg flex items-center gap-1 text-emerald-700 text-xs font-bold"
             >
-              <Star className="w-4 h-4 text-emerald-400 animate-spin" />
+              <Star className="w-4 h-4 text-emerald-600 fill-emerald-500" />
+              <span className="hidden sm:inline">100/100</span>
             </m.div>
           )}
         </m.div>
       </div>
-
-      {/* Reset Position pill (visible if Strobi was tossed far) */}
-      {(Math.abs(physics.x) > 120 || Math.abs(physics.y) > 120) && (
-        <button
-          onClick={resetPosition}
-          className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-30 px-4 py-1.5 rounded-full bg-slate-900/90 border border-slate-700 text-xs font-semibold text-slate-300 hover:text-white transition-all shadow-md"
-        >
-          🎯 Strobi zurückholen
-        </button>
-      )}
     </div>
   );
 };

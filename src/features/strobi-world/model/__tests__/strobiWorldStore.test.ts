@@ -5,21 +5,19 @@ describe('Strobi World Store', () => {
   beforeEach(() => {
     useStrobiWorldStore.setState({
       scaleMode: 'companion',
-      roomTheme: 'cyber-lab',
+      roomTheme: 'performance-studio',
       interactionMode: 'free',
       equippedItems: ['coffee'],
       affection: 20,
       loveLevel: 1,
       comboCount: 0,
       avatarState: 'idle',
-      auraColor: null,
+      auraColor: '#2563EB',
       isSpeaking: false,
       speech: null,
       isMiniGameActive: false,
       gameScore: 0,
       gameHighScore: 0,
-      gameTimeLeft: 45,
-      activeOrbs: [],
     });
   });
 
@@ -36,14 +34,13 @@ describe('Strobi World Store', () => {
   it('accumulates affection and handles level-ups when reaching 100%', () => {
     const { addAffection } = useStrobiWorldStore.getState();
 
-    const res1 = addAffection(50);
-    expect(res1.leveledUp).toBe(false);
+    addAffection(50);
     expect(useStrobiWorldStore.getState().affection).toBe(70);
 
-    const res2 = addAffection(40);
-    expect(res2.leveledUp).toBe(true);
-    expect(res2.newLevel).toBe(2);
-    expect(useStrobiWorldStore.getState().affection).toBe(0);
+    addAffection(40);
+    expect(useStrobiWorldStore.getState().loveLevel).toBe(2);
+    expect(useStrobiWorldStore.getState().affection).toBe(10);
+    expect(useStrobiWorldStore.getState().avatarState).toBe('celebrate');
   });
 
   it('toggles equipped world items properly', () => {
@@ -58,29 +55,15 @@ describe('Strobi World Store', () => {
   });
 
   it('handles mini-game lifecycle and score tracking', () => {
-    const { startMiniGame, spawnOrb, collectOrb, stopMiniGame } = useStrobiWorldStore.getState();
+    const { startMiniGame, stopMiniGame } = useStrobiWorldStore.getState();
 
     startMiniGame();
     expect(useStrobiWorldStore.getState().isMiniGameActive).toBe(true);
     expect(useStrobiWorldStore.getState().avatarState).toBe('excited');
 
-    spawnOrb({
-      id: 'orb-1',
-      x: 100,
-      y: 100,
-      type: 'lcp',
-      points: 100,
-      label: 'LCP 0.2s',
-      color: '#10B981',
-      speed: 2,
-    });
-
-    const pts = collectOrb('orb-1');
-    expect(pts).toBe(100);
-    expect(useStrobiWorldStore.getState().gameScore).toBe(100);
-
-    stopMiniGame();
+    stopMiniGame(200);
     expect(useStrobiWorldStore.getState().isMiniGameActive).toBe(false);
-    expect(useStrobiWorldStore.getState().gameHighScore).toBe(100);
+    expect(useStrobiWorldStore.getState().gameScore).toBe(200);
+    expect(useStrobiWorldStore.getState().gameHighScore).toBe(200);
   });
 });

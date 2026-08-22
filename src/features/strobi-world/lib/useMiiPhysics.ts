@@ -2,7 +2,6 @@
 
 import { useState, useRef, useCallback, useEffect } from 'react';
 import { useStrobiWorldStore } from '../model/strobiWorldStore';
-import { useMiiAudio } from './useMiiAudio';
 
 export interface MiiPhysicsState {
   x: number;
@@ -14,6 +13,10 @@ export interface MiiPhysicsState {
   isAirborne: boolean;
 }
 
+/**
+ * Stabilized Upright Physics Engine for Strobi Mii World
+ * Guarantees zero rotation/tilt bug, natural elevation dynamics, and smooth return.
+ */
 export function useMiiPhysics(stageWidth = 800, stageHeight = 600) {
   const [physics, setPhysics] = useState<MiiPhysicsState>({
     x: 0,
@@ -31,88 +34,119 @@ export function useMiiPhysics(stageWidth = 800, stageHeight = 600) {
     stateRef.current = physics;
   }, [physics]);
 
-  const dragHistoryRef = useRef<{ x: number; y: number; time: number }[]>([]);
   const animFrameRef = useRef<number | null>(null);
-
   const { setAvatarState } = useStrobiWorldStore();
-  const { playBoing, playTossWhoosh } = useMiiAudio();
 
   // Start dragging
   const handleDragStart = useCallback(
-    (clientX: number, clientY: number) => {
+    (_clientX: number, _clientY: number) => {
+      if (animFrameRef.current) {
+        cancelAnimationFrame(animFrameRef.current);
+        animFrameRef.current = null;
+      }
+
       setPhysics((prev) => ({
         ...prev,
         isDragging: true,
         isAirborne: false,
         vx: 0,
         vy: 0,
+        rotation: 0,
       }));
-      dragHistoryRef.current = [{ x: clientX, y: clientY, time: Date.now() }];
-      setAvatarState('surprised', '#60A5FA');
+      setAvatarState('surprised', '#3B82F6');
     },
     [setAvatarState]
   );
 
   // Dragging update
   const handleDragMove = useCallback(
-    (clientX: number, clientY: number, deltaX: number, deltaY: number) => {
+    (_clientX: number, _clientY: number, deltaX: number, deltaY: number) => {
       if (!stateRef.current.isDragging) return;
 
-      const now = Date.now();
-      dragHistoryRef.current.push({ x: clientX, y: clientY, time: now });
-      if (dragHistoryRef.current.length > 5) {
-        dragHistoryRef.current.shift();
-      }
+      const maxX = stageWidth / 2 - 80;
+      const maxY = stageHeight / 2 - 80;
 
       setPhysics((prev) => ({
         ...prev,
-        x: prev.x + deltaX,
-        y: prev.y + deltaY,
-        rotation: Math.max(-25, Math.min(25, deltaX * 1.5)),
+        x: Math.max(-maxX, Math.min(maxX, prev.x + deltaX)),
+        y: Math.max(-maxY, Math.min(maxY, prev.y + deltaY)),
+        rotation: 0, // Strictly stabilized upright
       }));
     },
-    []
+    [stageWidth, stageHeight]
   );
 
-  // Release and toss
+  // Drag release & smooth elastic return
   const handleDragEnd = useCallback(() => {
-    if (!stateRef.current.isDragging) return;
-
-    const history = dragHistoryRef.current;
-    let tossVx = 0;
-    let tossVy = 0;
-
-    if (history.length >= 2) {
-      const oldest = history[0];
-      const newest = history[history.length - 1];
-      const dt = newest.time - oldest.time || 16;
-      tossVx = ((newest.x - oldest.x) / dt) * 18;
-      tossVy = ((newest.y - oldest.y) / dt) * 18;
-    }
-
-    // Clamp max velocity
-    tossVx = Math.max(-28, Math.min(28, tossVx));
-    tossVy = Math.max(-28, Math.min(28, tossVy));
-
-    const isHighSpeed = Math.abs(tossVx) > 6 || Math.abs(tossVy) > 6;
-    if (isHighSpeed) {
-      playTossWhoosh();
-      setAvatarState('excited', '#3B82F6');
-    } else {
-      setAvatarState('happy');
-    }
-
     setPhysics((prev) => ({
       ...prev,
       isDragging: false,
       isAirborne: true,
-      vx: tossVx,
-      vy: tossVy,
+      rotation: 0,
     }));
-  }, [playTossWhoosh, setAvatarState]);
 
-  // Reset to stage center
+    setAvatarState('happy', '#2563EB');
+
+    // Smooth return animation towards center (0, 0)
+    const startTime = performance.now();
+    const startX = stateRef.current.x;
+    const startY = stateRef.current.y;
+    const duration = 650; // ms
+
+    const easeOutElastic = (t: number) => {
+      const p = 0.35;
+      return Math.pow(2, -10 * t) * Math.sin(((t - p / 4) * (2 * Math.PI)) / p) + 1;
+    };
+
+    const animateReturn = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(1, elapsed / duration);
+
+      if (progress < 1) {
+        const ease = easeOutElastic(progress);
+        const currentX = startX * (1 - ease);
+        const currentY = startY * (1 - ease);
+
+        setPhysics((prev) => ({
+          ...prev,
+          x: currentX,
+          y: currentY,
+          rotation: 0,
+        }));
+
+        animFrameRef.current = requestAnimationFrame(animateReturn);
+      } else {
+        setPhysics((prev) => ({
+          ...prev,
+          x: 0,
+          y: 0,
+          vx: 0,
+          vy: 0,
+          rotation: 0,
+          isDragging: false,
+          isAirborne: false,
+        }));
+        animFrameRef.current = null;
+      }
+    };
+
+    animFrameRef.current = requestAnimationFrame(animateReturn);
+  }, [setAvatarState]);
+
+  // Clean up animation on unmount
+  useEffect(() => {
+    return () => {
+      if (animFrameRef.current) {
+        cancelAnimationFrame(animFrameRef.current);
+      }
+    };
+  }, []);
+
   const resetPosition = useCallback(() => {
+    if (animFrameRef.current) {
+      cancelAnimationFrame(animFrameRef.current);
+      animFrameRef.current = null;
+    }
     setPhysics({
       x: 0,
       y: 0,
@@ -122,95 +156,7 @@ export function useMiiPhysics(stageWidth = 800, stageHeight = 600) {
       isDragging: false,
       isAirborne: false,
     });
-    setAvatarState('happy');
-  }, [setAvatarState]);
-
-  // Main physics loop (Gravity + Elastic Bouncing)
-  useEffect(() => {
-    const gravity = 0.55;
-    const airResistance = 0.985;
-    const floorBounce = 0.62;
-    const wallBounce = 0.72;
-
-    const halfW = stageWidth / 2 - 80;
-    const maxY = stageHeight / 2 - 100;
-    const minY = -(stageHeight / 2) + 80;
-
-    const step = () => {
-      const cur = stateRef.current;
-
-      if (!cur.isDragging && (cur.isAirborne || Math.abs(cur.vx) > 0.1 || Math.abs(cur.vy) > 0.1)) {
-        let nextX = cur.x + cur.vx;
-        let nextY = cur.y + cur.vy;
-        let nextVx = cur.vx * airResistance;
-        let nextVy = (cur.vy + gravity) * airResistance;
-        let nextRot = cur.rotation * 0.94;
-        let bounceOccurred = false;
-
-        // Floor bounce
-        if (nextY >= maxY) {
-          nextY = maxY;
-          nextVy = -cur.vy * floorBounce;
-          bounceOccurred = Math.abs(cur.vy) > 2.5;
-
-          // If velocity is low enough on floor, settle
-          if (Math.abs(nextVy) < 0.8 && Math.abs(nextVx) < 0.8) {
-            nextVy = 0;
-            nextVx = 0;
-            setPhysics((prev) => ({
-              ...prev,
-              x: nextX,
-              y: maxY,
-              vx: 0,
-              vy: 0,
-              rotation: 0,
-              isAirborne: false,
-            }));
-            return;
-          }
-        }
-
-        // Ceiling bounce
-        if (nextY <= minY) {
-          nextY = minY;
-          nextVy = -cur.vy * 0.5;
-          bounceOccurred = true;
-        }
-
-        // Left / Right wall bounce
-        if (nextX >= halfW) {
-          nextX = halfW;
-          nextVx = -cur.vx * wallBounce;
-          bounceOccurred = true;
-        } else if (nextX <= -halfW) {
-          nextX = -halfW;
-          nextVx = -cur.vx * wallBounce;
-          bounceOccurred = true;
-        }
-
-        if (bounceOccurred) {
-          playBoing();
-        }
-
-        setPhysics({
-          x: nextX,
-          y: nextY,
-          vx: nextVx,
-          vy: nextVy,
-          rotation: nextRot,
-          isDragging: false,
-          isAirborne: true,
-        });
-      }
-
-      animFrameRef.current = requestAnimationFrame(step);
-    };
-
-    animFrameRef.current = requestAnimationFrame(step);
-    return () => {
-      if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current);
-    };
-  }, [playBoing, stageHeight, stageWidth]);
+  }, []);
 
   return {
     physics,

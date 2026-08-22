@@ -1,12 +1,16 @@
 /**
- * Strobi Mii World Type Definitions
+ * Strobi Mii World Type Definitions (Light Agency Theme & Zero Emojis)
  */
 
 import type { StrobiAnimationState } from '@/entities/avatar/model/types';
 
 export type StrobiScaleMode = 'mini' | 'companion' | 'giant' | 'boss';
 
-export type StrobiRoomTheme = 'cyber-lab' | 'neon-grid' | 'sunset-lounge' | 'nature-studio';
+export type StrobiRoomTheme =
+  | 'performance-studio'
+  | 'minimalist-slate'
+  | 'warm-daylight'
+  | 'nature-lab';
 
 export type StrobiInteractionMode = 'free' | 'pet' | 'toss' | 'game';
 
@@ -38,7 +42,7 @@ export interface StrobiPhysicsPosition {
   y: number;
   vx: number;
   vy: number;
-  isGrounded: boolean;
+  isAirborne: boolean;
   isDragging: boolean;
   scale: number;
   rotation: number;

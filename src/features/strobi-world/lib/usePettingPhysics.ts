@@ -2,41 +2,47 @@
 
 import { useState, useRef, useCallback, useEffect } from 'react';
 import { useStrobiWorldStore } from '../model/strobiWorldStore';
-import { useMiiAudio } from './useMiiAudio';
 import type { StrobiParticle } from '../model/types';
 
+/**
+ * Petting & Scrubbing Physics Engine (Vector Particle Emitter)
+ */
 export function usePettingPhysics() {
-  const [isPetting, setIsPetting] = useState(false);
   const [particles, setParticles] = useState<StrobiParticle[]>([]);
+  const [isPetting, setIsPetting] = useState(false);
 
   const lastPosRef = useRef<{ x: number; y: number; time: number } | null>(null);
   const petStrokeCountRef = useRef(0);
-  const lastSoundTimeRef = useRef(0);
+  const { addAffection, setAvatarState } = useStrobiWorldStore();
 
-  const { addAffection, setAvatarState, setSpeech } = useStrobiWorldStore();
-  const { playPetPurr, playGiggle, playLevelUp } = useMiiAudio();
+  const spawnParticles = useCallback((originX: number, originY: number, count = 4) => {
+    const particleTypes: ('sparkle' | 'star' | 'heart')[] = ['sparkle', 'star', 'heart'];
+    const colors = ['#2563EB', '#D97706', '#F43F5E', '#10B981', '#6366F1'];
 
-  const spawnParticle = useCallback((x: number, y: number) => {
-    const types: ('heart' | 'star' | 'sparkle')[] = ['heart', 'star', 'sparkle'];
-    const colors = ['#EC4899', '#F43F5E', '#F59E0B', '#10B981', '#38BDF8'];
+    const newParticles: StrobiParticle[] = Array.from({ length: count }).map(() => {
+      const type = particleTypes[Math.floor(Math.random() * particleTypes.length)];
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      const angle = (Math.random() * Math.PI) / 2 + Math.PI / 4; // Upward spray
+      const speed = Math.random() * 3 + 2;
 
-    const newParticle: StrobiParticle = {
-      id: `p-${Date.now()}-${Math.random().toString(36).substr(2, 6)}`,
-      x: x + (Math.random() * 40 - 20),
-      y: y + (Math.random() * 20 - 10),
-      type: types[Math.floor(Math.random() * types.length)],
-      color: colors[Math.floor(Math.random() * colors.length)],
-      vx: (Math.random() - 0.5) * 4,
-      vy: -(Math.random() * 3 + 2.5),
-      scale: Math.random() * 0.6 + 0.8,
-      opacity: 1,
-      rotation: Math.random() * 360,
-    };
+      return {
+        id: `p_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+        x: originX + (Math.random() * 40 - 20),
+        y: originY + (Math.random() * 20 - 10),
+        type,
+        color,
+        vx: Math.cos(angle) * speed * (Math.random() > 0.5 ? 1 : -1),
+        vy: -Math.sin(angle) * speed,
+        scale: Math.random() * 0.5 + 0.75,
+        opacity: 1,
+        rotation: Math.random() * 360,
+      };
+    });
 
-    setParticles((prev) => [...prev.slice(-24), newParticle]);
+    setParticles((prev) => [...prev, ...newParticles].slice(-40));
   }, []);
 
-  // Particle physics animation loop
+  // Update particles frame
   useEffect(() => {
     if (particles.length === 0) return;
 
@@ -47,9 +53,10 @@ export function usePettingPhysics() {
             ...p,
             x: p.x + p.vx,
             y: p.y + p.vy,
+            vy: p.vy + 0.08, // Subtle gravity
             opacity: p.opacity - 0.04,
             scale: p.scale * 0.98,
-            rotation: p.rotation + 4,
+            rotation: p.rotation + 3,
           }))
           .filter((p) => p.opacity > 0.05)
       );
@@ -82,7 +89,7 @@ export function usePettingPhysics() {
       const dt = Math.max(1, currentPos.time - lastPosRef.current.time);
       const distance = Math.sqrt(dx * dx + dy * dy);
 
-      // Detect smooth rhythmic rubbing motions
+      // Detect smooth rubbing motions
       if (distance > 8) {
         const speed = distance / dt;
 
@@ -90,35 +97,9 @@ export function usePettingPhysics() {
           setIsPetting(true);
           petStrokeCountRef.current += 1;
 
-          // Spawn particle every 3 strokes
           if (petStrokeCountRef.current % 3 === 0) {
-            spawnParticle(e.clientX, e.clientY);
-          }
-
-          // Sound throttle (every 220ms)
-          if (now - lastSoundTimeRef.current > 220) {
-            lastSoundTimeRef.current = now;
-            if (petStrokeCountRef.current > 18) {
-              playGiggle();
-            } else {
-              playPetPurr();
-            }
-          }
-
-          // Add affection points
-          const { leveledUp, newLevel } = addAffection(1.5);
-
-          if (leveledUp) {
-            playLevelUp();
-            setAvatarState('celebrate', '#F59E0B');
-            setSpeech({
-              id: 'level_up',
-              text: `Freundschafts-Level ${newLevel} erreicht! Du bist mein Lieblings-Mensch! 💖`,
-              type: 'shout',
-            });
-          } else if (petStrokeCountRef.current > 20) {
-            setAvatarState('laughing', '#EC4899');
-          } else if (petStrokeCountRef.current > 6) {
+            spawnParticles(e.clientX, e.clientY, 3);
+            addAffection(4);
             setAvatarState('happy', '#F43F5E');
           }
         }
@@ -126,14 +107,15 @@ export function usePettingPhysics() {
 
       lastPosRef.current = currentPos;
     },
-    [addAffection, playGiggle, playLevelUp, playPetPurr, setAvatarState, setSpeech, spawnParticle]
+    [addAffection, setAvatarState, spawnParticles]
   );
 
   return {
-    isPetting,
     particles,
+    isPetting,
     handlePointerEnter,
     handlePointerLeave,
     handlePointerMove,
+    spawnParticles,
   };
 }

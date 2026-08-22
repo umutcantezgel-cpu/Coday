@@ -1,14 +1,15 @@
+'use client';
+
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import type { StrobiAnimationState } from '@/entities/avatar/model/types';
 import type {
   StrobiScaleMode,
   StrobiRoomTheme,
   StrobiInteractionMode,
   StrobiWorldItem,
   StrobiSpeechState,
-  SpeedOrb,
 } from './types';
-import type { StrobiAnimationState } from '@/entities/avatar/model/types';
 
 export const SCALE_DIMENSIONS: Record<StrobiScaleMode, number> = {
   mini: 140,
@@ -17,218 +18,170 @@ export const SCALE_DIMENSIONS: Record<StrobiScaleMode, number> = {
   boss: 540,
 };
 
-interface StrobiWorldState {
+interface StrobiWorldStoreState {
   // Appearance & Stage
   scaleMode: StrobiScaleMode;
   roomTheme: StrobiRoomTheme;
   interactionMode: StrobiInteractionMode;
   equippedItems: StrobiWorldItem[];
 
-  // Affection & Mood
-  affection: number;
-  loveLevel: number;
-  comboCount: number;
+  // Emotional Kinetics
   avatarState: StrobiAnimationState;
-  auraColor: string | null;
+  auraColor: string;
   isSpeaking: boolean;
-
-  // Dialogue / Speech Bubble
   speech: StrobiSpeechState | null;
 
-  // Sound Settings
-  soundMuted: boolean;
+  // Affection & Progression
+  affection: number; // 0 to 100
+  loveLevel: number;
+  comboCount: number;
 
   // Mini-Game
   isMiniGameActive: boolean;
   gameScore: number;
   gameHighScore: number;
-  gameTimeLeft: number;
-  activeOrbs: SpeedOrb[];
 
   // Actions
   setScaleMode: (mode: StrobiScaleMode) => void;
   setRoomTheme: (theme: StrobiRoomTheme) => void;
   setInteractionMode: (mode: StrobiInteractionMode) => void;
   toggleItem: (item: StrobiWorldItem) => void;
-  addAffection: (delta: number) => { leveledUp: boolean; newLevel: number };
-  resetAffection: () => void;
+  setAvatarState: (state: StrobiAnimationState, aura?: string) => void;
   setSpeech: (speech: StrobiSpeechState | null) => void;
-  setAvatarState: (state: StrobiAnimationState, aura?: string | null) => void;
-  toggleSound: () => void;
-
-  // Mini-Game Actions
+  addAffection: (amount: number) => void;
   startMiniGame: () => void;
-  stopMiniGame: () => void;
-  tickMiniGame: () => void;
-  spawnOrb: (orb: SpeedOrb) => void;
-  collectOrb: (orbId: string) => number;
+  stopMiniGame: (finalScore?: number) => void;
+  resetWorld: () => void;
 }
 
-export const useStrobiWorldStore = create<StrobiWorldState>()(
+const INITIAL_SPEECH: StrobiSpeechState = {
+  id: 'welcome',
+  text: 'Willkommen im Performance Studio! Ich bin Strobi, dein digitaler Begleiter. Wie kann ich dein Webprojekt beschleunigen?',
+  type: 'talk',
+  quickReplies: [
+    { label: 'Kraul mich', action: 'pet_me' },
+    { label: 'Next.js 15 Speed', action: 'explain_speed' },
+    { label: 'Arcade Spiel', action: 'play_game' },
+    { label: 'Espresso', action: 'give_coffee' },
+  ],
+};
+
+export const useStrobiWorldStore = create<StrobiWorldStoreState>()(
   persist(
     (set, get) => ({
-      // Defaults
       scaleMode: 'companion',
-      roomTheme: 'cyber-lab',
+      roomTheme: 'performance-studio',
       interactionMode: 'free',
-      equippedItems: ['coffee'],
+      equippedItems: [],
+
+      avatarState: 'idle',
+      auraColor: '#2563EB',
+      isSpeaking: false,
+      speech: INITIAL_SPEECH,
 
       affection: 20,
       loveLevel: 1,
       comboCount: 0,
-      avatarState: 'idle',
-      auraColor: null,
-      isSpeaking: false,
-
-      speech: {
-        id: 'welcome',
-        text: 'Willkommen in meiner Strobi Mii World! Klicke, kraule oder vergrößere mich!',
-        type: 'talk',
-        quickReplies: [
-          { label: '✨ Streichel mich!', action: 'pet_me' },
-          { label: '⚡ Next.js 15 Speed!', action: 'tech_fact' },
-          { label: '🎮 Spiel starten', action: 'start_game' },
-          { label: '☕ Kaffee geben', action: 'give_coffee' },
-        ],
-      },
-
-      soundMuted: false,
 
       isMiniGameActive: false,
       gameScore: 0,
       gameHighScore: 0,
-      gameTimeLeft: 45,
-      activeOrbs: [],
 
-      // Actions
-      setScaleMode: (mode) => {
-        set({ scaleMode: mode });
-      },
+      setScaleMode: (mode) => set({ scaleMode: mode }),
+      setRoomTheme: (theme) => set({ roomTheme: theme }),
+      setInteractionMode: (mode) => set({ interactionMode: mode }),
 
-      setRoomTheme: (theme) => {
-        set({ roomTheme: theme });
-      },
+      toggleItem: (item) =>
+        set((state) => ({
+          equippedItems: state.equippedItems.includes(item)
+            ? state.equippedItems.filter((i) => i !== item)
+            : [...state.equippedItems, item],
+        })),
 
-      setInteractionMode: (mode) => {
-        set({ interactionMode: mode });
-      },
+      setAvatarState: (avatarState, aura) =>
+        set((state) => ({
+          avatarState,
+          auraColor: aura || state.auraColor,
+        })),
 
-      toggleItem: (item) => {
-        const current = get().equippedItems;
-        const exists = current.includes(item);
-        const next = exists ? current.filter((i) => i !== item) : [...current, item];
-        set({ equippedItems: next });
-      },
+      setSpeech: (speech) =>
+        set({
+          speech,
+          isSpeaking: !!speech,
+        }),
 
-      addAffection: (delta) => {
+      addAffection: (amount) => {
         const { affection, loveLevel, comboCount } = get();
-        const nextAffection = Math.min(100, affection + delta);
-        const nextCombo = comboCount + 1;
-        let leveledUp = false;
-        let newLevel = loveLevel;
+        const nextAffection = affection + amount;
 
         if (nextAffection >= 100) {
-          leveledUp = true;
-          newLevel = loveLevel + 1;
+          set({
+            affection: nextAffection % 100,
+            loveLevel: loveLevel + 1,
+            comboCount: comboCount + 1,
+            avatarState: 'celebrate',
+            auraColor: '#10B981',
+            speech: {
+              id: `level_up_${loveLevel + 1}`,
+              text: `Freundschafts-Level ${loveLevel + 1} erreicht! Unser digitaler Workflow erreicht maximale Synergie.`,
+              type: 'shout',
+            },
+          });
+        } else {
+          set({
+            affection: nextAffection,
+            comboCount: comboCount + 1,
+          });
         }
-
-        set({
-          affection: leveledUp ? 0 : nextAffection,
-          loveLevel: newLevel,
-          comboCount: nextCombo,
-        });
-
-        return { leveledUp, newLevel };
       },
 
-      resetAffection: () => {
-        set({ affection: 0, comboCount: 0 });
-      },
-
-      setSpeech: (speech) => {
-        set({ speech, isSpeaking: !!speech });
-      },
-
-      setAvatarState: (avatarState, auraColor = null) => {
-        set({ avatarState, auraColor });
-      },
-
-      toggleSound: () => {
-        set((state) => ({ soundMuted: !state.soundMuted }));
-      },
-
-      startMiniGame: () => {
+      startMiniGame: () =>
         set({
           isMiniGameActive: true,
+          interactionMode: 'game',
           gameScore: 0,
-          gameTimeLeft: 45,
-          activeOrbs: [],
           avatarState: 'excited',
-          auraColor: '#10B981',
           speech: {
             id: 'game_start',
-            text: 'Fange so viele 100/100 Core Web Vitals Orbs wie möglich vor Ablauf der Zeit!',
-            type: 'shout',
-          },
-        });
-      },
-
-      stopMiniGame: () => {
-        const { gameScore, gameHighScore } = get();
-        const nextHigh = Math.max(gameScore, gameHighScore);
-        set({
-          isMiniGameActive: false,
-          gameHighScore: nextHigh,
-          avatarState: 'celebrate',
-          auraColor: '#F59E0B',
-          speech: {
-            id: 'game_over',
-            text: `Runde beendet! Dein Highscore: ${nextHigh} Performance-Punkte! 🎉`,
+            text: 'Arcade-Modus aktiv: Fange die fallenden Performance-Orbs und meistere die Core Web Vitals!',
             type: 'talk',
-            quickReplies: [
-              { label: '🔄 Nochmal spielen', action: 'start_game' },
-              { label: '💖 Kraul mich zur Belohnung', action: 'pet_me' },
-            ],
           },
-        });
-      },
+        }),
 
-      tickMiniGame: () => {
-        const { gameTimeLeft, isMiniGameActive } = get();
-        if (!isMiniGameActive) return;
+      stopMiniGame: (finalScore = 0) =>
+        set((state) => ({
+          isMiniGameActive: false,
+          interactionMode: 'free',
+          gameScore: finalScore,
+          gameHighScore: Math.max(state.gameHighScore, finalScore),
+          avatarState: finalScore > 150 ? 'celebrate' : 'happy',
+          speech: {
+            id: 'game_end',
+            text:
+              finalScore > 0
+                ? `Runde beendet! Dein Ergebnis: ${finalScore} Performance-Punkte. Highscore: ${Math.max(state.gameHighScore, finalScore)} Punkte.`
+                : 'Spiel beendet.',
+            type: 'talk',
+          },
+        })),
 
-        if (gameTimeLeft <= 1) {
-          get().stopMiniGame();
-        } else {
-          set({ gameTimeLeft: gameTimeLeft - 1 });
-        }
-      },
-
-      spawnOrb: (orb) => {
-        set((state) => ({ activeOrbs: [...state.activeOrbs.slice(-12), orb] }));
-      },
-
-      collectOrb: (orbId) => {
-        const { activeOrbs, gameScore } = get();
-        const orb = activeOrbs.find((o) => o.id === orbId);
-        if (!orb) return 0;
-
-        const points = orb.points;
+      resetWorld: () =>
         set({
-          gameScore: Math.max(0, gameScore + points),
-          activeOrbs: activeOrbs.filter((o) => o.id !== orbId),
-          avatarState: points > 0 ? 'happy' : 'confused',
-        });
-
-        return points;
-      },
+          scaleMode: 'companion',
+          roomTheme: 'performance-studio',
+          interactionMode: 'free',
+          equippedItems: [],
+          avatarState: 'idle',
+          auraColor: '#2563EB',
+          speech: INITIAL_SPEECH,
+        }),
     }),
     {
-      name: 'coday_strobi_world_v1',
+      name: 'coday_strobi_world_v2',
       partialize: (state) => ({
-        gameHighScore: state.gameHighScore,
         loveLevel: state.loveLevel,
-        soundMuted: state.soundMuted,
+        affection: state.affection,
+        gameHighScore: state.gameHighScore,
         equippedItems: state.equippedItems,
       }),
     }
