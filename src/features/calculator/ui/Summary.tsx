@@ -1,20 +1,13 @@
 import React, { useMemo } from 'react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import {
-  CheckCircle,
-  ArrowRight,
-  Gauge,
-  ShieldCheck,
-  Sparkle,
-} from '@phosphor-icons/react/dist/ssr';
+import { CheckCircle, ArrowRight, ShieldCheck, Sparkle } from '@phosphor-icons/react/dist/ssr';
 import { useCalculatorStore } from '@/features/calculator/model/store';
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { Link as NavLink } from '@/i18n/navigation';
 import { modules } from '@/shared/data/modules';
 
 export const CalculatorSummary: React.FC = () => {
   const t = useTranslations('calculator');
-  const locale = useLocale();
   const selectedModuleIds = useCalculatorStore((state) => state.selectedModuleIds);
   const getPackageName = useCalculatorStore((state) => state.getPackageName);
 

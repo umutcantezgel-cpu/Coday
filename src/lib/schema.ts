@@ -422,67 +422,32 @@ export function getDynamicLocationSchema(location: {
 
 export function getPricingSchema(locale: string = 'de') {
   return {
-    '@type': 'Product',
-    '@id': `${BASE_URL}/${locale}/pricing#product`,
-    name: locale === 'en' ? 'Coday Web Design Packages' : 'Coday Webdesign Pakete',
+    '@type': 'Service',
+    '@id': `${BASE_URL}/${locale}/pricing#service`,
+    name:
+      locale === 'en'
+        ? 'Coday Web Design & Next.js Development Packages'
+        : 'Coday Webdesign & Next.js Entwicklung Pakete',
     description:
       locale === 'en'
-        ? 'Transparent fixed-price packages for professional web design. From one-pagers starting at €499 to enterprise solutions.'
-        : 'Transparente Festpreis-Pakete für professionelles Webdesign. Vom Onepager ab 499 € bis zur Enterprise-Lösung.',
-    brand: { '@id': ORG_ID },
-    offers: [
-      {
-        '@type': 'Offer',
-        name: 'Onepager',
-        description: 'Perfekt als digitale Visitenkarte — 1 Seite, responsive, SEO-Basis',
-        priceCurrency: 'EUR',
-        price: '499',
-        priceValidUntil: '2027-12-31',
-        availability: 'https://schema.org/InStock',
-        url: `${BASE_URL}/de/pricing`,
-      },
-      {
-        '@type': 'Offer',
-        name: 'Starter',
-        description: 'Professionelle Website mit 3–5 Seiten, Basis-SEO, 30 Tage Support',
-        priceCurrency: 'EUR',
-        price: '1490',
-        priceValidUntil: '2027-12-31',
-        availability: 'https://schema.org/InStock',
-        url: `${BASE_URL}/de/pricing`,
-      },
-      {
-        '@type': 'Offer',
-        name: 'Professional',
-        description: 'Bestseller: 7–10 Seiten, CMS, erweitertes SEO, Blog, 5 Änderungsrunden',
-        priceCurrency: 'EUR',
-        price: '2990',
-        priceValidUntil: '2027-12-31',
-        availability: 'https://schema.org/InStock',
-        url: `${BASE_URL}/de/pricing`,
-      },
-      {
-        '@type': 'Offer',
-        name: 'Enterprise',
-        description: 'Bis zu 30 Seiten, Custom Development, Online-Shop optional, Premium SEO',
-        priceCurrency: 'EUR',
-        price: '5990',
-        priceValidUntil: '2027-12-31',
-        availability: 'https://schema.org/InStock',
-        url: `${BASE_URL}/de/pricing`,
-      },
-      {
-        '@type': 'Offer',
-        name: 'Ultimate Domination',
-        description:
-          'Agentur-Partner-Paket: Unbegrenzte Seiten, Custom Logic, Lifetime Priority Support',
-        priceCurrency: 'EUR',
-        price: '12999',
-        priceValidUntil: '2027-12-31',
-        availability: 'https://schema.org/InStock',
-        url: `${BASE_URL}/de/pricing`,
-      },
-    ],
+        ? 'Modular web design and Next.js development packages for businesses and SMEs. Tailored proposals on request.'
+        : 'Modulare Webdesign- und Next.js Entwicklungspakete für Unternehmen und Mittelstand. Individuelle Angebote auf Anfrage.',
+    provider: { '@id': ORG_ID },
+    areaServed: {
+      '@type': 'AdministrativeArea',
+      name: 'Hessen',
+    },
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'EUR',
+      description:
+        locale === 'en'
+          ? 'Bespoke fixed-price proposal following a free consultation'
+          : 'Individuelles Festpreisangebot nach kostenloser Bedarfsanalyse',
+      availability: 'https://schema.org/InStock',
+      url: `${BASE_URL}/${locale}/pricing`,
+    },
   };
 }
 

@@ -9,7 +9,6 @@ import { Icon } from '@/shared/ui/Icon';
 import { saveLeadInternalAction } from '@/features/contact/actions/saveLeadInternal';
 import { useTranslations, useLocale } from 'next-intl';
 import { useCalculatorStore } from '@/features/calculator/model/store';
-import { formatCurrency } from '@/shared/utils/formatters';
 import BookingCalendar from '@/features/booking/ui/BookingCalendar';
 import { trackEvent } from '@/shared/lib/analytics/tracking';
 
@@ -37,8 +36,6 @@ export const ApplicationWizard: React.FC = () => {
   const getPackageName = useCalculatorStore((state) => state.getPackageName);
   const getSummaryText = useCalculatorStore((state) => state.getSummaryText);
   const getSelectedModules = useCalculatorStore((state) => state.getSelectedModules);
-  const getTotalOneTime = useCalculatorStore((state) => state.getTotalOneTime);
-  const getTotalMonthly = useCalculatorStore((state) => state.getTotalMonthly);
   const setPackageAndAddons = useCalculatorStore((state) => state.setPackageAndAddons);
 
   // Sync with URL parameters if present
@@ -128,8 +125,6 @@ export const ApplicationWizard: React.FC = () => {
     setError(null);
 
     try {
-      // Temporarily removed honeypot check to fix aggressive browser autofill blocking the owner
-
       let fullMessage = `Lead from simplified form.\n\nNachricht: ${data.message || '-'}\nTelefon: ${data.phone || '-'}`;
       if (hasPackage) {
         fullMessage = `${getSummaryText()}\n\nNachricht: ${data.message || '-'}\nTelefon: ${data.phone || '-'}`;
@@ -148,24 +143,23 @@ export const ApplicationWizard: React.FC = () => {
 
       if (!result.success) throw new Error(result.error || 'Unknown error');
 
-      trackEvent('form_submit', { event_category: 'lead_form' });
-
       setSuccess(true);
-    } catch (err: any) {
+      trackEvent('form_submit', {
+        destination: hasPackage ? getPackageName() || 'package' : 'direct',
+      });
+    } catch (err: unknown) {
       console.error('Wizard submission error:', err);
-      setError(`Fehler: ${err.message || 'Unknown error'}`);
+      setError(err instanceof Error ? err.message : t('wizard.error_generic'));
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  // Package Summary
+  // Package Summary without price leakage
   const renderPackageSummary = () => {
     if (!hasPackage) return null;
     const packageName = getPackageName();
     const selectedModules = getSelectedModules();
-    const totalOneTime = getTotalOneTime();
-    const totalMonthly = getTotalMonthly();
 
     return (
       <m.div
@@ -205,9 +199,8 @@ export const ApplicationWizard: React.FC = () => {
                   </span>
                 )}
               </div>
-              <span className="text-slate-900 font-bold text-xs whitespace-nowrap">
-                {formatCurrency(mod.priceInCents / 100, 'EUR', locale)}
-                {mod.priceType === 'monthly' && '/mo'}
+              <span className="text-amber-800 font-bold text-xs bg-amber-100/70 px-2 py-0.5 rounded-full whitespace-nowrap">
+                {mod.category === 'basis' ? 'Basispaket' : 'Zusatzmodul'}
               </span>
             </div>
           ))}
@@ -216,21 +209,16 @@ export const ApplicationWizard: React.FC = () => {
         <div className="pt-3 border-t border-amber-200/60 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
           <div>
             <span className="text-[11px] text-slate-500 uppercase tracking-wider block font-semibold">
-              Kalkulierter Richtwert (Festpreis nach Erstberatung)
+              Kalkulation: Individuelles Festpreisangebot
             </span>
             <span className="text-[11px] text-slate-400">
-              100% verbindlicher Festpreis ohne versteckte Kosten
+              100% verbindliches Angebot nach kostenloser Erstberatung ohne versteckte Kosten
             </span>
           </div>
           <div className="text-left sm:text-right">
-            <span className="text-lg sm:text-xl font-black text-slate-900 font-display">
-              ab {formatCurrency(totalOneTime / 100, 'EUR', locale)}
+            <span className="text-base sm:text-lg font-black text-amber-900 font-display">
+              Auf Anfrage
             </span>
-            {totalMonthly > 0 && (
-              <span className="text-xs text-slate-600 font-semibold ml-1.5">
-                + {formatCurrency(totalMonthly / 100, 'EUR', locale)}/mo
-              </span>
-            )}
           </div>
         </div>
       </m.div>

@@ -1,10 +1,9 @@
 'use client';
 import React, { useState } from 'react';
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { Module } from '@/shared/data/modules';
 import { Icon } from '@/shared/ui/Icon';
 import { AnimatePresence, m } from 'motion/react';
-import { formatCurrency } from '@/shared/utils/formatters';
 
 interface ModuleCardProps {
   module: Module;
@@ -24,7 +23,6 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
   isRecommended = false,
 }) => {
   const t = useTranslations('calculator');
-  const locale = useLocale();
   const [showDetails, setShowDetails] = useState(false);
 
   const handleToggleDetails = (e: React.MouseEvent) => {

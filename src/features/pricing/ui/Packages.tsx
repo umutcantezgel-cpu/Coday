@@ -29,7 +29,7 @@ export default async function Packages() {
       title: isEn ? 'Direct Founder Collaboration' : 'Direkter Gründerkontakt',
       subtitle: isEn ? 'Fast & Agile Delivery' : 'Kurze Wege & Schnelligkeit',
       desc: isEn
-        ? 'Work directly with the founder and lead engineer who builds your project. No middle management or long approval loops — just clear communication, rapid iterations, and bespoke results.'
+        ? 'Work directly with the founder and lead engineer who builds your project. No middle management or long approval loops, just clear communication, rapid iterations, and bespoke results.'
         : 'Bei Coday sprechen Sie von Tag eins an direkt mit dem Gründer und Lead-Entwickler, der Ihr Projekt realisiert. Keine Reibungsverluste über mehrstufige Zwischeninstanzen, sondern schnelle Abstimmungen, handwerklicher Fokus und maßgeschneiderte Ergebnisse.',
     },
     {
@@ -56,8 +56,8 @@ export default async function Packages() {
         ? 'How are project prices calculated without fixed package fees?'
         : 'Wie setzen sich die Preise zusammen, wenn keine festen Pauschalen angegeben sind?',
       answer: isEn
-        ? 'Every company has unique requirements. In our free initial consultation, we analyze your current digital presence, define the exact feature scope, and provide a transparent, binding fixed-price quote. You only pay for what brings measurable value to your business.'
-        : 'Jedes Unternehmen hat individuelle Anforderungen und Ziele. In einer kostenlosen Erstberatung analysieren wir Ihren Bedarf, wählen gemeinsam die benötigten Module aus und erstellen ein verbindliches Festpreisangebot ab 1.490 Euro. Sie zahlen ausschließlich für Features, die messbaren Mehrwert stiften — ohne versteckte Kosten oder Überraschungen.',
+        ? 'Every company has unique requirements. In our free initial consultation, we analyze your current digital presence, define the exact feature scope, and provide a transparent, binding fixed-price quote on request. You only pay for what brings measurable value to your business.'
+        : 'Jedes Unternehmen hat individuelle Anforderungen und Ziele. In einer kostenlosen Erstberatung analysieren wir Ihren Bedarf, wählen gemeinsam die benötigten Module aus und erstellen ein verbindliches Festpreisangebot auf Anfrage nach Bedarfsanalyse. Sie zahlen ausschließlich für Features, die messbaren Mehrwert stiften, ganz ohne versteckte Kosten oder Überraschungen.',
     },
     {
       question: isEn
@@ -80,8 +80,8 @@ export default async function Packages() {
         ? 'What hosting costs should I expect?'
         : 'Welche Hosting-Kosten kommen monatlich auf mich zu?',
       answer: isEn
-        ? 'Thanks to modern static compilation on Vercel and Edge CDNs, most client websites run globally with enterprise security for 0 € to approx. 20 €/month.'
-        : 'Dank moderner statischer Vorkompilierung auf Vercel laufen die meisten Websites auf weltweiten Edge-Netzwerken für 0 € bis ca. 20 €/Monat bei höchster Ausfallsicherheit.',
+        ? 'Thanks to modern static compilation on Vercel and Edge CDNs, Next.js client websites run globally with maximum uptime and security, requiring no mandatory maintenance contracts.'
+        : 'Dank moderner statischer Vorkompilierung auf Vercel laufen Next.js Websites auf weltweiten Edge-Netzwerken extrem kosteneffizient bei höchster Ausfallsicherheit, ganz ohne zwingende monatliche Wartungsverträge.',
     },
   ];
 
@@ -294,7 +294,7 @@ export default async function Packages() {
                 <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs font-bold text-slate-700">
-                      Google PageSpeed Insights — Mobile & Desktop
+                      Google PageSpeed Insights Mobile & Desktop
                     </span>
                     <span className="text-xs font-bold text-emerald-600">100 / 100 Perfekt</span>
                   </div>
@@ -387,7 +387,17 @@ export default async function Packages() {
                   <th scope="row" className="p-5 font-semibold text-slate-900">
                     Headless CMS (Sanity)
                   </th>
-                  <td className="p-5 text-center text-slate-400">—</td>
+                  <td className="p-5 text-center text-slate-600">Optional zubuchbar</td>
+                  <td className="p-5 text-center font-bold text-amber-900 bg-amber-50/40 border-x border-amber-200/60">
+                    Optional zubuchbar
+                  </td>
+                  <td className="p-5 text-center text-slate-600">Optional zubuchbar</td>
+                </tr>
+                <tr>
+                  <th scope="row" className="p-5 font-semibold text-slate-900">
+                    60s Mobile-Recruiting Funnel
+                  </th>
+                  <td className="p-5 text-center text-slate-600">Optional zubuchbar</td>
                   <td className="p-5 text-center font-bold text-amber-900 bg-amber-50/40 border-x border-amber-200/60">
                     ✓ Inklusive
                   </td>
@@ -395,13 +405,13 @@ export default async function Packages() {
                 </tr>
                 <tr>
                   <th scope="row" className="p-5 font-semibold text-slate-900">
-                    60s Mobile-Recruiting Funnel
+                    Wartung & Support
                   </th>
-                  <td className="p-5 text-center text-slate-400">—</td>
+                  <td className="p-5 text-center text-slate-600">Freiwillig zubuchbar</td>
                   <td className="p-5 text-center font-bold text-amber-900 bg-amber-50/40 border-x border-amber-200/60">
-                    ✓ Inklusive
+                    Freiwillig zubuchbar
                   </td>
-                  <td className="p-5 text-center text-amber-700 font-medium">✓ Inklusive</td>
+                  <td className="p-5 text-center text-slate-600">Freiwillig zubuchbar</td>
                 </tr>
                 <tr>
                   <th scope="row" className="p-5 font-semibold text-slate-900">
@@ -444,8 +454,8 @@ export default async function Packages() {
           </h2>
           <p className="text-lg text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
             {isEn
-              ? 'Request your free website audit or personal strategy consultation with Umutcan Emre Tezgel — non-binding, transparent, and risk-free.'
-              : 'Fordern Sie jetzt Ihr kostenloses Website-Audit oder ein persönliches Strategiegespräch mit Umutcan Emre Tezgel an — unverbindlich, transparent und ohne Risiko.'}
+              ? 'Request your free website audit or personal strategy consultation with Umutcan Emre Tezgel: non-binding, transparent, and risk-free.'
+              : 'Fordern Sie jetzt Ihr kostenloses Website-Audit oder ein persönliches Strategiegespräch mit Umutcan Emre Tezgel an: unverbindlich, transparent und ohne Risiko.'}
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <NavLink

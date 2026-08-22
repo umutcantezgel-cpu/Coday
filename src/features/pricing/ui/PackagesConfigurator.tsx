@@ -22,13 +22,11 @@ import {
 } from '@phosphor-icons/react/dist/ssr';
 import { useCalculatorStore } from '@/features/calculator/model/store';
 import { modules } from '@/shared/data/modules';
-import { formatCurrency } from '@/shared/utils/formatters';
 
 interface PackageConfig {
   id: string;
   name: string;
   tagline: string;
-  basePriceInCents: number;
   priceTag: string;
   subPrice: string;
   popular: boolean;
@@ -57,7 +55,7 @@ export const PackagesConfigurator: React.FC = () => {
         addons.push(id);
       }
     });
-    return addons.length > 0 ? addons : ['func-cms', 'seo-tech'];
+    return addons.length > 0 ? addons : ['seo-tech'];
   });
 
   const packages: PackageConfig[] = useMemo(
@@ -68,10 +66,9 @@ export const PackagesConfigurator: React.FC = () => {
         tagline: isEn
           ? 'Perfect for craftsmen & local service providers seeking online dominance.'
           : 'Perfekt für Handwerker & lokale Dienstleister für planbare Neukunden.',
-        basePriceInCents: 149000,
-        priceTag: isEn ? 'ab 1.490 €' : 'ab 1.490 €',
+        priceTag: isEn ? 'On Request' : 'Auf Anfrage',
         subPrice: isEn
-          ? 'Transparent fixed price after consultation'
+          ? 'Bespoke fixed-price quote after consultation'
           : 'Transparenter Festpreis nach Bedarfsanalyse',
         popular: false,
         deliveryDays: 14,
@@ -94,7 +91,9 @@ export const PackagesConfigurator: React.FC = () => {
           isEn ? 'Vercel Edge Hosting Deployment' : 'Vercel Edge Hosting Deployment',
         ],
         notIncluded: [
-          isEn ? 'Headless CMS for self-editing' : 'Headless CMS Redaktionssystem',
+          isEn
+            ? 'Sanity v3 Headless CMS (optional add-on)'
+            : 'Sanity v3 Headless CMS (optional zubuchbar)',
           isEn ? '60-Second Mobile Recruiting Funnel' : '60-Sekunden Mobile-Recruiting Funnel',
           isEn ? 'Multi-Language Architecture (i18n)' : 'Mehrsprachigkeit & globale i18n',
         ],
@@ -105,8 +104,7 @@ export const PackagesConfigurator: React.FC = () => {
         tagline: isEn
           ? 'The gold standard for mid-market leaders, B2B companies & industry.'
           : 'Der Maßstab für anspruchsvollen Mittelstand, Industrie & B2B.',
-        basePriceInCents: 299000,
-        priceTag: isEn ? 'ab 2.990 €' : 'ab 2.990 €',
+        priceTag: isEn ? 'On Request' : 'Auf Anfrage',
         subPrice: isEn
           ? 'Most popular choice for growing businesses'
           : 'Beliebteste Wahl für anspruchsvolle Unternehmen',
@@ -118,12 +116,6 @@ export const PackagesConfigurator: React.FC = () => {
             ? 'Bespoke Next.js 15 Enterprise Architecture (up to 12 pages)'
             : 'Maßgeschneiderte Next.js 15 B2B-Plattform (bis 12 Unterseiten)',
           isEn
-            ? 'Sanity v3 Headless CMS (Manage content independently)'
-            : 'Sanity v3 Headless CMS (Inhalte selbst verwalten)',
-          isEn
-            ? '60-Second Mobile Express-Recruiting Funnel'
-            : '60-Sekunden Express-Mitarbeitergewinnung',
-          isEn
             ? '100/100 Core Web Vitals & Sub-0.3s Load Time'
             : '100/100 Core Web Vitals & Sub-0,3s Ladezeit',
           isEn
@@ -133,10 +125,16 @@ export const PackagesConfigurator: React.FC = () => {
             ? 'Micro-Animations & Dynamic Bento Grid Layouts'
             : 'Micro-Animations & maßgeschneidertes Bento-UI',
           isEn
+            ? '60-Second Mobile Express Recruiting Funnel'
+            : '60-Sekunden Express-Mitarbeitergewinnung',
+          isEn
             ? 'Direct Line to Lead Architect Umutcan Emre Tezgel'
             : 'Direkter Draht zum Lead-Architekten Umutcan Emre Tezgel',
         ],
         notIncluded: [
+          isEn
+            ? 'Sanity v3 Headless CMS (optional add-on)'
+            : 'Sanity v3 Headless CMS (optional zubuchbar)',
           isEn ? 'Full E-Commerce Shop Checkout' : 'Vollständiger Online-Shop Checkout',
           isEn ? 'Custom CRM / ERP Deep-Sync' : 'Tiefgreifende ERP-/CRM-Schnittstellen',
         ],
@@ -147,8 +145,7 @@ export const PackagesConfigurator: React.FC = () => {
         tagline: isEn
           ? 'High-performance web apps, client portals & headless shops.'
           : 'Web-Applikationen, Kundenportale & Headless Online-Shops.',
-        basePriceInCents: 599000,
-        priceTag: isEn ? 'ab 5.990 €' : 'ab 5.990 €',
+        priceTag: isEn ? 'On Request' : 'Auf Anfrage',
         subPrice: isEn ? 'Bespoke scope & integration' : 'Individueller Projektumfang nach Maß',
         popular: false,
         deliveryDays: 30,
@@ -172,36 +169,38 @@ export const PackagesConfigurator: React.FC = () => {
             ? 'Continuous Deployment & SLA Priority Support'
             : 'CI/CD Pipelines & bevorzugter Priority-Support',
         ],
-        notIncluded: [],
+        notIncluded: [
+          isEn
+            ? 'Sanity v3 Headless CMS (optional add-on)'
+            : 'Sanity v3 Headless CMS (optional zubuchbar)',
+        ],
       },
     ],
     [isEn]
   );
 
-  // Available Add-ons with clear, honest descriptions and transparent pricing
+  // Available Add-ons with clear descriptions (Headless CMS optional zubuchbar, Wartung freiwillig)
   const availableAddons = useMemo(
     () => [
       {
         id: 'func-cms',
         name: isEn ? 'Sanity v3 Headless CMS' : 'Sanity v3 Headless CMS',
         desc: isEn
-          ? 'Intuitive headless CMS to update text, media, and blog articles anytime without code.'
-          : 'Modernes Headless CMS: Texte, Bilder und Blog-Inhalte jederzeit selbstständig und intuitiv pflegen.',
-        priceInCents: 36900,
-        priceType: 'one-time' as const,
+          ? 'Intuitive headless CMS: update text, media, and blog content anytime independently without code.'
+          : 'Optionales Headless CMS: Texte, Bilder und Blog-Inhalte jederzeit selbstständig und intuitiv pflegen.',
         icon: Article,
         recommended: true,
+        typeLabel: isEn ? 'Optional Add-on' : 'Optional zubuchbar',
       },
       {
         id: 'seo-tech',
         name: isEn ? 'Technical SEO & Schema Sprint' : 'Technisches SEO & Schema.org Sprint',
         desc: isEn
           ? 'Knowledge-Graph integration, rich snippets markup, and full Google search console indexing.'
-          : 'Vollständige Knowledge-Graph-Strukturierung, Rich Snippets & strukturierte Google-Daten für maximale Auffindbarkeit.',
-        priceInCents: 21900,
-        priceType: 'one-time' as const,
+          : 'Vollständige Knowledge-Graph-Strukturierung, Rich Snippets und strukturierte Google-Daten für maximale Auffindbarkeit.',
         icon: MagnifyingGlass,
         recommended: true,
+        typeLabel: isEn ? 'Optional Add-on' : 'Optional zubuchbar',
       },
       {
         id: 'func-auth',
@@ -209,9 +208,8 @@ export const PackagesConfigurator: React.FC = () => {
         desc: isEn
           ? 'Smartphone-optimized application funnel to generate qualified job applications with ease.'
           : 'Mobile-optimierter Kurzbewerbungs-Funnel zur schnellen und gezielten Gewinnung von Fachkräften.',
-        priceInCents: 44900,
-        priceType: 'one-time' as const,
         icon: UserPlus,
+        typeLabel: isEn ? 'Optional Add-on' : 'Optional zubuchbar',
       },
       {
         id: 'design-ui',
@@ -221,9 +219,8 @@ export const PackagesConfigurator: React.FC = () => {
         desc: isEn
           ? 'Bespoke component system, custom typography tokens, and responsive mockups in Figma.'
           : 'Maßgeschneiderte Design-Tokens, Typografie-System und interaktive Komponenten-Bibliothek in Figma.',
-        priceInCents: 29900,
-        priceType: 'one-time' as const,
         icon: Palette,
+        typeLabel: isEn ? 'Optional Add-on' : 'Optional zubuchbar',
       },
       {
         id: 'tech-i18n',
@@ -231,9 +228,8 @@ export const PackagesConfigurator: React.FC = () => {
         desc: isEn
           ? 'Clean multi-language structure (German + English) with SEO-friendly localized routing.'
           : 'Zweisprachige Architektur (Deutsch + Englisch) mit sauberer lokalisierter URL-Struktur und hreflang-Tags.',
-        priceInCents: 26900,
-        priceType: 'one-time' as const,
         icon: Globe,
+        typeLabel: isEn ? 'Optional Add-on' : 'Optional zubuchbar',
       },
       {
         id: 'seo-speed',
@@ -241,29 +237,30 @@ export const PackagesConfigurator: React.FC = () => {
         desc: isEn
           ? 'Extreme Core Web Vitals optimization for instant 100/100 PageSpeed scores across devices.'
           : 'Extremes Core Web Vitals Feintuning für blitzschnelle Ladezeiten unter 0,3s und maximale Google PageSpeed Scores.',
-        priceInCents: 26900,
-        priceType: 'one-time' as const,
         icon: Lightning,
+        typeLabel: isEn ? 'Optional Add-on' : 'Optional zubuchbar',
       },
       {
         id: 'support-basic',
-        name: isEn ? 'Hosting & Maintenance Care' : 'Hosting-, Wartungs- & Sicherheits-Paket',
+        name: isEn
+          ? 'Hosting & Security Care (Voluntary)'
+          : 'Hosting- & Sicherheitsbetreuung (Freiwillig)',
         desc: isEn
-          ? 'High-speed edge hosting, regular framework updates, SSL certificates, and daily backups.'
-          : 'High-Speed Edge-Hosting, Sicherheits-Updates, SSL-Verschlüsselung und tägliche automatisierte Backups.',
-        priceInCents: 1900,
-        priceType: 'monthly' as const,
+          ? 'Voluntary care: High-speed edge hosting, framework updates, SSL certificates, and daily backups. (Next.js requires no mandatory maintenance).'
+          : 'Freiwillige Betreuung: High-Speed Edge-Hosting, Sicherheits-Updates, SSL und Backups. (Next.js benötigt keine Pflichtwartung).',
         icon: CloudCheck,
+        typeLabel: isEn ? 'Voluntary Add-on' : 'Freiwillig zubuchbar',
       },
       {
         id: 'support-pro',
-        name: isEn ? '24/7 SLA Priority Developer Support' : '24/7 SLA Priority Entwickler-Support',
+        name: isEn
+          ? '24/7 SLA Priority Support (Voluntary)'
+          : '24/7 SLA Priority Entwickler-Support (Freiwillig)',
         desc: isEn
-          ? 'Direct developer line, guaranteed fast response times, emergency hotline, and continuous feature evolution.'
-          : 'Direkter Draht zum Lead-Entwickler, garantierte Reaktionszeiten und laufende Weiterentwicklung.',
-        priceInCents: 9900,
-        priceType: 'monthly' as const,
+          ? 'Voluntary priority support: Direct developer line, guaranteed response times, and ongoing feature evolution.'
+          : 'Freiwilliger Priority-Support: Direkter Draht zum Lead-Entwickler, garantierte Reaktionszeiten und laufende Weiterentwicklung.',
         icon: Headset,
+        typeLabel: isEn ? 'Voluntary Add-on' : 'Freiwillig zubuchbar',
       },
     ],
     [isEn]
@@ -275,44 +272,28 @@ export const PackagesConfigurator: React.FC = () => {
 
   const toggleAddon = (addonId: string) => {
     setSelectedAddonIds((prev) => {
-      if (prev.includes(addonId)) {
-        return prev.filter((id) => id !== addonId);
-      } else {
-        return [...prev, addonId];
-      }
+      const updated = prev.includes(addonId)
+        ? prev.filter((id) => id !== addonId)
+        : [...prev, addonId];
+      setPackageAndAddons(selectedPkgId, updated);
+      return updated;
     });
   };
 
-  // Calculate totals
-  const totalOneTime = useMemo(() => {
-    let total = selectedPackage.basePriceInCents;
-    selectedAddonIds.forEach((id) => {
-      const addon = availableAddons.find((a) => a.id === id);
-      if (addon && addon.priceType === 'one-time') {
-        total += addon.priceInCents;
-      }
-    });
-    return total;
-  }, [selectedPackage, selectedAddonIds, availableAddons]);
-
-  const totalMonthly = useMemo(() => {
-    let total = 0;
-    selectedAddonIds.forEach((id) => {
-      const addon = availableAddons.find((a) => a.id === id);
-      if (addon && addon.priceType === 'monthly') {
-        total += addon.priceInCents;
-      }
-    });
-    return total;
-  }, [selectedAddonIds, availableAddons]);
+  const handleSelectPackage = (packageId: string) => {
+    setSelectedPkgId(packageId);
+    setPackageAndAddons(packageId, selectedAddonIds);
+    const addonsElement = document.getElementById('addons');
+    if (addonsElement) {
+      addonsElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   const handleRequestPackage = (packageIdToUse?: string) => {
     const pkgId = packageIdToUse || selectedPkgId;
-    // Sync with Zustand store
     setPackageAndAddons(pkgId, selectedAddonIds);
     setStep('contact');
 
-    // Build URL with query params
     const addonsParam = selectedAddonIds.length > 0 ? `&addons=${selectedAddonIds.join(',')}` : '';
     router.push(`/contact?package=${pkgId}${addonsParam}`);
   };
@@ -343,7 +324,7 @@ export const PackagesConfigurator: React.FC = () => {
               return (
                 <div
                   key={pkg.id}
-                  onClick={() => setSelectedPkgId(pkg.id)}
+                  onClick={() => handleSelectPackage(pkg.id)}
                   className={`relative rounded-3xl p-8 flex flex-col justify-between border cursor-pointer transition-all duration-300 ${
                     isSelected
                       ? 'bg-white border-amber-500 shadow-2xl shadow-amber-500/15 ring-2 ring-amber-500 lg:-translate-y-2'
@@ -352,7 +333,7 @@ export const PackagesConfigurator: React.FC = () => {
                         : 'bg-white border-slate-200/90 hover:border-slate-300 shadow-sm hover:shadow-md'
                   }`}
                 >
-                  {/* Badge: whitespace-nowrap guaranteed on single line */}
+                  {/* Badge */}
                   {pkg.badge && (
                     <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap">
                       <span className="inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-500 to-amber-600 text-white text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-md whitespace-nowrap">
@@ -411,7 +392,7 @@ export const PackagesConfigurator: React.FC = () => {
                       {pkg.notIncluded.map((feature, idx) => (
                         <li key={`ni-${idx}`} className="flex items-start gap-3 text-slate-400">
                           <MinusCircle className="w-5 h-5 text-slate-400 shrink-0 mt-0.5" />
-                          <span className="line-through">{feature}</span>
+                          <span>{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -422,8 +403,7 @@ export const PackagesConfigurator: React.FC = () => {
                       type="button"
                       onClick={(e) => {
                         e.stopPropagation();
-                        setSelectedPkgId(pkg.id);
-                        handleRequestPackage(pkg.id);
+                        handleSelectPackage(pkg.id);
                       }}
                       className={`group active:scale-[0.98] w-full py-4 px-6 rounded-full font-bold text-sm uppercase tracking-wider transition-all duration-200 flex items-center justify-between gap-2 focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none ${
                         isSelected
@@ -436,11 +416,11 @@ export const PackagesConfigurator: React.FC = () => {
                       <span className="flex-1 text-center">
                         {isSelected
                           ? isEn
-                            ? 'Request This Package ➔'
-                            : 'Paket jetzt anfragen ➔'
+                            ? 'Selected (Customize Below ↓)'
+                            : 'Paket gewählt (Add-ons anpassen ↓)'
                           : isEn
-                            ? 'Select Package'
-                            : 'Dieses Paket wählen'}
+                            ? 'Select Package & Add-ons ➔'
+                            : 'Dieses Paket wählen & anpassen ➔'}
                       </span>
                       <ArrowRight
                         weight="bold"
@@ -530,18 +510,19 @@ export const PackagesConfigurator: React.FC = () => {
                   </div>
 
                   <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                    <span className="text-xs text-slate-500 font-medium">
-                      {addon.priceType === 'monthly'
+                    <span className="text-xs text-slate-500 font-medium">{addon.typeLabel}</span>
+                    <span
+                      className={`font-display font-bold text-xs px-2.5 py-1 rounded-md transition-colors ${
+                        isChecked ? 'bg-amber-100 text-amber-900' : 'bg-slate-100 text-slate-600'
+                      }`}
+                    >
+                      {isChecked
                         ? isEn
-                          ? 'Monthly'
-                          : 'Monatlich'
+                          ? 'Selected'
+                          : 'Ausgewählt'
                         : isEn
-                          ? 'One-time'
-                          : 'Einmalig'}
-                    </span>
-                    <span className="font-display font-bold text-sm text-slate-900">
-                      +{formatCurrency(addon.priceInCents / 100, 'EUR', locale)}
-                      {addon.priceType === 'monthly' && '/mo'}
+                          ? '+ Add'
+                          : '+ Hinzufügen'}
                     </span>
                   </div>
                 </div>
@@ -575,23 +556,21 @@ export const PackagesConfigurator: React.FC = () => {
                 </p>
                 <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
                   {isEn
-                    ? 'Transparent estimate based on your selection. Binding fixed-price proposal provided after a free consultation.'
-                    : 'Transparenter Richtwert auf Basis Ihrer Modulauswahl. Das verbindliche Festpreisangebot erhalten Sie nach einer kostenlosen Erstberatung.'}
+                    ? 'Tailored scope based on your modular selection. Binding fixed-price proposal provided after a free consultation.'
+                    : 'Transparente Bedarfsanalyse auf Basis Ihrer Modulauswahl. Das verbindliche Festpreisangebot erhalten Sie nach einer kostenlosen Erstberatung.'}
                 </p>
               </div>
 
               <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center justify-end gap-4">
                 <div className="text-center sm:text-right lg:text-center xl:text-right">
                   <div className="text-xs text-slate-400 uppercase tracking-wider">
-                    {isEn ? 'Estimated Investment' : 'Kalkulierter Richtwert'}
+                    {isEn ? 'Project Calculation' : 'Projekt-Kalkulation'}
                   </div>
                   <div className="text-2xl sm:text-3xl font-display font-black text-amber-400">
-                    ab {formatCurrency(totalOneTime / 100, 'EUR', locale)}
-                    {totalMonthly > 0 && (
-                      <span className="text-sm font-normal text-slate-300 ml-1.5">
-                        + {formatCurrency(totalMonthly / 100, 'EUR', locale)}/mo
-                      </span>
-                    )}
+                    {isEn ? 'Quote on Request' : 'Angebot auf Anfrage'}
+                  </div>
+                  <div className="text-xs text-slate-400">
+                    {isEn ? 'Binding fixed price' : 'Verbindlicher Festpreis'}
                   </div>
                 </div>
 
@@ -600,7 +579,9 @@ export const PackagesConfigurator: React.FC = () => {
                   onClick={() => handleRequestPackage()}
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-amber-400 text-slate-950 font-bold rounded-full hover:bg-amber-300 transition-all duration-200 shadow-lg hover:scale-[1.02] text-sm uppercase tracking-wider"
                 >
-                  <span>{isEn ? 'Inquire in Contact Form' : 'Im Kontaktformular anfragen'}</span>
+                  <span>
+                    {isEn ? 'Inquire in Contact Form' : 'Konfiguration unverbindlich anfragen'}
+                  </span>
                   <ArrowRight weight="bold" className="w-4 h-4" />
                 </button>
               </div>

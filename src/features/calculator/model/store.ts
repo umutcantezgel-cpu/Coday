@@ -189,21 +189,16 @@ export const useCalculatorStore = create<CalculatorState>()(
 
       getSummaryText: () => {
         const selectedMods = get().getSelectedModules();
-        const totalOneTime = get().getTotalOneTime();
-        const totalMonthly = get().getTotalMonthly();
         const packageName = get().getPackageName();
 
         let text = '';
         if (packageName) {
-          text += `Paket: ${packageName}\n`;
+          text += `Gewähltes Paket: ${packageName}\n`;
         }
         if (selectedMods.length > 0) {
-          text += `Module: ${selectedMods.map((m) => m.name).join(', ')}\n`;
+          text += `Ausgewählte Module / Add-ons: ${selectedMods.map((m) => m.name).join(', ')}\n`;
         }
-        text += `Einmalig: ${formatCurrency(totalOneTime / 100, 'EUR')}`;
-        if (totalMonthly > 0) {
-          text += ` | Monatlich: ${formatCurrency(totalMonthly / 100, 'EUR')}`;
-        }
+        text += `Kalkulation: Individuelles Angebot auf Anfrage`;
         return text;
       },
     }),

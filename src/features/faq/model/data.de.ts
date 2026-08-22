@@ -13,7 +13,7 @@ export const faqItems: FAQItem[] = [
     id: 'cost-website',
     question: 'Was kostet eine Firmenwebseite in Wetzlar?',
     answer:
-      'Wir arbeiten mit transparenten Festpreisen. Eine moderne Firmenwebseite beginnt bei uns ab **939€** einmalig (zzgl. 49€ monatlich für Pflege und Hosting). Für umfangreichere Webseiten mit mehr Funktionen bieten wir das Professional-Paket für **1.619€** an.',
+      'Wir kalkulieren Webprojekte individuell auf Basis Ihres tatsächlichen Anforderungsprofils und erstellen nach einer kostenlosen Bedarfsanalyse ein verbindliches Festpreisangebot auf Anfrage. Sie zahlen ausschließlich für Module und Funktionen, die echten geschäftlichen Mehrwert bringen.',
     category: 'pricing',
     relatedServices: ['web-development', 'web-design'],
   },
@@ -21,7 +21,7 @@ export const faqItems: FAQItem[] = [
     id: 'wordpress',
     question: 'Verwenden Sie WordPress oder Baukästen?',
     answer:
-      '**Nein.** Baukästen und Systeme wie WordPress sind oft langsam und anfällig für Hackerangriffe. Wir programmieren Ihre Webseite individuell. Das garantiert blitzschnelle Ladezeiten und höchste Sicherheit für Ihr Unternehmen.',
+      '**Nein.** Baukästen und Systeme wie WordPress sind oft langsam und anfällig für Hackerangriffe. Wir programmieren Ihre Webseite individuell mit modernen Frameworks wie Next.js. Das garantiert blitzschnelle Ladezeiten und höchste Sicherheit für Ihr Unternehmen.',
     category: 'tech',
     relatedServices: ['web-development'],
   },
@@ -37,7 +37,7 @@ export const faqItems: FAQItem[] = [
     id: 'maintenance',
     question: 'Wer kümmert sich nach Fertigstellung um die Seite?',
     answer:
-      'Wir lassen Sie nicht alleine. In unseren Paketen ist die technische Wartung, regelmäßige Sicherheitsupdates und das Hosting bereits enthalten. Wir stellen sicher, dass Ihre Webseite immer reibungslos funktioniert.',
+      'Dank unserer modernen Next.js 15 Architektur entfallen die fehleranfälligen Pflichtwartungen herkömmlicher CMS-Systeme wie WordPress. Eine fortlaufende Betreuung, Sicherheits-Checks und Hosting-Unterstützung sind bei uns 100% freiwillig zubuchbar.',
     category: 'services',
     relatedServices: ['web-development', 'app-development'],
   },

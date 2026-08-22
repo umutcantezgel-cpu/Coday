@@ -13,7 +13,7 @@ export const faqItems: FAQItem[] = [
     id: 'cost-website',
     question: 'How much does a website cost?',
     answer:
-      'Our pricing is transparent and fair. Our specific packages start at a one-time setup of **€939** plus **€49** monthly (Starter). Our popular Professional package is **€1,619** setup + **€99**/month. For complex Enterprise solutions, packages start at **€2,219** setup.',
+      'We calculate web projects individually based on your specific requirements and provide a binding fixed-price quote on request following a free consultation. You only pay for features and modules that generate tangible business value.',
     category: 'pricing',
     relatedServices: ['web-development', 'web-design'],
   },
@@ -21,7 +21,7 @@ export const faqItems: FAQItem[] = [
     id: 'wordpress',
     question: 'Do you work with WordPress?',
     answer:
-      '**No.** We believe WordPress is a security risk and performance bottleneck for modern businesses. We build with React (React Router v7 / Next.js) and Headless CMS (Sanity/Strapi) to ensure 100/100 performance scores and military-grade security.',
+      '**No.** We believe WordPress is a security risk and performance bottleneck for modern businesses. We build with modern React and Next.js architectures to ensure 100/100 performance scores and robust security.',
     category: 'tech',
     relatedServices: ['web-development'],
   },
@@ -37,7 +37,7 @@ export const faqItems: FAQItem[] = [
     id: 'maintenance',
     question: 'Do you offer maintenance?',
     answer:
-      "Yes. Digital products need care. We offer 'Growth Retainers' that include not just updates and security patches, but continuous optimization (CRO), A/B testing, and feature additions.",
+      'Thanks to our modern Next.js 15 architecture, websites require no mandatory maintenance contracts. Ongoing technical care, performance audits, and SLA support are 100% voluntary add-ons.',
     category: 'services',
     relatedServices: ['web-development', 'app-development'],
   },

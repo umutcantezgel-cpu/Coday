@@ -9,11 +9,11 @@
     },
     "rows": {
       "cms": {
-        "ent": "✓",
+        "ent": "Optional",
         "label": "CMS",
-        "pro": "✓",
-        "starter": " ",
-        "onepager": " "
+        "pro": "Optional",
+        "starter": "Optional",
+        "onepager": "Optional"
       },
       "custom": {
         "ent": "✓",
@@ -51,11 +51,11 @@
         "onepager": "Basic"
       },
       "support": {
-        "ent": "Optional",
+        "ent": "Voluntary",
         "label": "Support/Maint.",
-        "pro": "Optional",
-        "starter": "30 Days",
-        "onepager": "14 Days"
+        "pro": "Voluntary",
+        "starter": "Voluntary",
+        "onepager": "Voluntary"
       }
     },
     "title": "Package Comparison"
@@ -74,10 +74,10 @@
   "features": {
     "ultimate": [
       "Unlimited Pages & Layouts",
-      "Optional: Headless E-Commerce Setup (extra charge)",
+      "Optional: Headless E-Commerce Setup",
       "Complex Custom Logic & Dashboards",
       "Premium Local SEO Dominance",
-      "Optional: Custom iOS & Android App (extra charge)",
+      "Optional: Custom iOS & Android App",
       "Lifetime priority support",
       "Dedicated Project Manager",
       "VIP SLA & Performance Guarantee"
@@ -95,7 +95,6 @@
     ],
     "professional": [
       "7-10 Subpages",
-      "Content Management (Self-editable)",
       "Advanced SEO",
       "Speed Optimization",
       "Blog Section",
@@ -165,9 +164,9 @@
   },
   "page": {
     "headline": "Three Packages. <0>Zero Surprises.</0>",
-    "subheadline": "Three Packages. Zero Surprises. Choose the package that fits your goals. All prices are Fixed, no hidden costs.",
+    "subheadline": "Three Packages. Zero Surprises. Choose the package that fits your goals. All proposals on request with no hidden costs.",
     "title": "Web Design Pricing & SEO Costs | Packages - Coday",
-    "description": "Transparent web design pricing and SEO Packages. I offer a 100% Fixed price guarantee for high-end web development with no hidden costs."
+    "description": "Transparent web design quotes and SEO packages. We offer fixed price proposals for high-end web development with no hidden costs."
   },
   "custom": {
     "title": "Bigger Project?",
@@ -197,7 +196,7 @@
     "description": "Sustainable growth and continuous optimization after go-live.",
     "basic": {
       "name": "Basic",
-      "price": "250",
+      "price": "On Request",
       "features": [
         "Monthly Analytics Review",
         "2h Support Time",
@@ -207,7 +206,7 @@
     },
     "growth": {
       "name": "Growth",
-      "price": "500",
+      "price": "On Request",
       "features": [
         "Everything in Basic",
         "2 Content Updates per month",
@@ -217,7 +216,7 @@
     },
     "partnership": {
       "name": "Partnership",
-      "price": "1,000",
+      "price": "On Request",
       "features": [
         "Everything in Growth",
         "Priority Support (24h SLA)",
@@ -227,7 +226,7 @@
     }
   },
   "value_prop": {
-    "title": "Why Next.js? Why from 499€?",
+    "title": "Why Next.js? Why Coday?",
     "description": "Your website is no longer just a simple business card, it is your strongest, fully automated sales representative. An investment in performance is an investment in measurable revenue.",
     "points": [
       {

@@ -280,8 +280,8 @@ export default function AngebotHandwerker() {
                   <div className="border-t border-slate-200 pt-6">
                     <p className="text-slate-600 font-semibold mb-2">
                       {isEn
-                        ? 'ROI Check (Flagship Package €3,699):'
-                        : 'ROI-Check (Flaggschiff-Paket 3.699 €):'}
+                        ? 'ROI Check (Flagship Web Solution):'
+                        : 'ROI-Check (Flaggschiff-Lösung):'}
                     </p>
                     <p className="text-navy text-lg">
                       {isEn ? (
@@ -554,20 +554,20 @@ export default function AngebotHandwerker() {
               </h2>
               <p className="text-xl text-slate-600 mb-10 leading-relaxed">
                 {isEn
-                  ? "No hidden costs. No lock-in contracts. When the house is built, it needs maintenance so it doesn't decay. You take care of the job site, I take care of the server."
-                  : 'Keine versteckten Kosten. Keine starren Mindestvertragslaufzeiten. Wenn das Haus steht, muss es gepflegt werden, damit es nicht verfällt. Ihr kümmert euch um die Baustelle, ich um den Server.'}
+                  ? 'No hidden costs. No lock-in contracts. Next.js websites require no mandatory ongoing maintenance. Voluntary ongoing care is available on request.'
+                  : 'Keine versteckten Kosten. Keine starren Mindestvertragslaufzeiten. Next.js Websites benötigen keine Pflichtwartungsverträge. Freiwillige Betreuung bieten wir transparent auf Wunsch.'}
               </p>
               <div className="bg-slate-50 border border-slate-200 p-8 rounded-2xl border-l-4 border-l-teal-500 mb-8">
-                <div className="font-mono text-5xl font-black text-navy mb-2">
-                  {isEn ? '€89' : '89 €'}{' '}
-                  <span className="text-xl text-slate-400 font-sans uppercase">
-                    {isEn ? '/ Month' : '/ Monat'}
+                <div className="font-mono text-3xl font-black text-navy mb-2">
+                  {isEn ? 'Voluntary Care' : 'Freiwillige Betreuung'}{' '}
+                  <span className="text-base text-slate-400 font-sans uppercase">
+                    {isEn ? '(On Request)' : '(Auf Wunsch)'}
                   </span>
                 </div>
                 <div className="text-sm text-slate-500 font-bold uppercase tracking-widest">
                   {isEn
-                    ? 'Fixed Rate (Hosting, Maintenance, Updates)'
-                    : 'Feste Pauschale (Hosting, Wartung, Updates)'}
+                    ? 'Optional Rate (Hosting, Content Updates, Backups)'
+                    : 'Optionale Betreuung (Hosting, Content-Pflege, Backups)'}
                 </div>
               </div>
               <p className="text-lg font-bold text-navy">
@@ -608,7 +608,7 @@ export default function AngebotHandwerker() {
                   : 'Wer aus unserer WhatsApp-Gruppe eine Seite bucht, bekommt nach 6 Monaten ein Performance- & Strategie-Audit kostenlos.'}
               </p>
               <div className="font-mono text-gold text-xl font-bold">
-                {isEn ? 'VALUE: €450 (For you: €0)' : 'WERT: 450 € (Für euch: 0 €)'}
+                {isEn ? 'FREE AUDIT INCLUDED' : 'KOSTENLOSES AUDIT INKLUSIVE'}
               </div>
             </div>
 

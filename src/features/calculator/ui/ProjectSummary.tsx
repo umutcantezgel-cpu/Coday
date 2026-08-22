@@ -2,22 +2,13 @@ import React from 'react';
 import { Icon } from '@/shared/ui/Icon';
 import { useCalculatorStore } from '@/features/calculator/model/store';
 import { modules } from '@/shared/data/modules';
-import { useLocale } from 'next-intl';
-import { formatCurrency } from '@/shared/utils/formatters';
 
 export const ProjectSummary: React.FC = () => {
-  const locale = useLocale();
   const selectedModuleIds = useCalculatorStore((state) => state.selectedModuleIds);
   const selectedPackageId = useCalculatorStore((state) => state.selectedPackageId);
+  const getPackageName = useCalculatorStore((state) => state.getPackageName);
 
-  // Helper to get modules
   const selectedModules = modules.filter((m) => selectedModuleIds.has(m.id));
-  const totalOneTime = selectedModules
-    .filter((m) => m.priceType === 'one-time')
-    .reduce((acc, m) => acc + m.priceInCents, 0);
-  const totalMonthly = selectedModules
-    .filter((m) => m.priceType === 'monthly')
-    .reduce((acc, m) => acc + m.priceInCents, 0);
 
   if (selectedModules.length === 0) return null;
 
@@ -30,19 +21,22 @@ export const ProjectSummary: React.FC = () => {
 
       {selectedPackageId && (
         <div className="mb-4 pb-4 border-b border-gray-50">
-          <span className="text-xs text-gray-400 uppercase font-bold">Basis-Paket</span>
+          <span className="text-xs text-gray-400 uppercase font-bold">Gewähltes Paket</span>
           <div className="font-display font-bold text-lg text-primary capitalize">
-            {selectedPackageId}
+            {getPackageName() || selectedPackageId}
           </div>
         </div>
       )}
 
       <div className="space-y-2 mb-6 max-h-40 overflow-y-auto custom-scrollbar pr-2">
         {selectedModules.map((m) => (
-          <div key={m.id} className="flex justify-between text-sm">
+          <div
+            key={m.id}
+            className="flex justify-between items-center text-sm py-1 border-b border-slate-50"
+          >
             <span className="text-gray-600">{m.name}</span>
-            <span className="font-medium">
-              {formatCurrency(m.priceInCents / 100, 'EUR', locale)}
+            <span className="text-xs text-amber-700 font-bold bg-amber-50 px-2 py-0.5 rounded">
+              {m.category === 'basis' ? 'Basispaket' : 'Zusatzmodul'}
             </span>
           </div>
         ))}
@@ -50,17 +44,14 @@ export const ProjectSummary: React.FC = () => {
 
       <div className="pt-4 border-t border-gray-100 bg-gray-50/50 -mx-6 -mb-6 p-6 rounded-b-2xl">
         <div className="flex justify-between items-center mb-1">
-          <span className="text-gray-500 text-sm">Einmalig ca.</span>
-          <span className="font-bold text-gray-900 text-lg">
-            {formatCurrency(totalOneTime / 100, 'EUR', locale)}
+          <span className="text-gray-500 text-xs uppercase tracking-wider font-semibold">
+            Projekt-Kalkulation
           </span>
+          <span className="font-bold text-gray-900 text-sm sm:text-base">Angebot auf Anfrage</span>
         </div>
-        <div className="flex justify-between items-center">
-          <span className="text-gray-500 text-sm">Monatlich ca.</span>
-          <span className="font-bold text-gray-700">
-            {formatCurrency(totalMonthly / 100, 'EUR', locale)}
-          </span>
-        </div>
+        <p className="text-[11px] text-slate-400 mt-1">
+          Verbindlicher Festpreis nach kostenloser Bedarfsanalyse.
+        </p>
       </div>
     </div>
   );

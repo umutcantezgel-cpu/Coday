@@ -9,11 +9,11 @@
     },
     "rows": {
       "cms": {
-        "ent": "✓",
+        "ent": "Optional",
         "label": "CMS",
-        "pro": "✓",
-        "starter": " ",
-        "onepager": " "
+        "pro": "Optional",
+        "starter": "Optional",
+        "onepager": "Optional"
       },
       "custom": {
         "ent": "✓",
@@ -51,11 +51,11 @@
         "onepager": "Basis"
       },
       "support": {
-        "ent": "Optional",
+        "ent": "Freiwillig",
         "label": "Support/Wartung",
-        "pro": "Optional",
-        "starter": "30 Tage",
-        "onepager": "14 Tage"
+        "pro": "Freiwillig",
+        "starter": "Freiwillig",
+        "onepager": "Freiwillig"
       }
     },
     "title": "Paket-Vergleich"
@@ -74,10 +74,10 @@
   "features": {
     "ultimate": [
       "Unbegrenzte Seiten & Layouts",
-      "Optional: Headless E-Commerce Setup (gegen Aufpreis)",
+      "Optional: Headless E-Commerce Setup",
       "Komplexe Custom Logic & Dashboards",
       "Premium Local SEO Sichtbarkeit",
-      "Optional: Eigene iOS & Android App (gegen Aufpreis)",
+      "Optional: Eigene iOS & Android App",
       "Lifetime Priority Support",
       "Dedicated Project Manager",
       "VIP SLA & Performance-Garantie"
@@ -95,7 +95,6 @@
     ],
     "professional": [
       "7-10 Unterseiten",
-      "Inhaltsverwaltung (selbst bearbeitbar)",
       "Erweiterte Suchmaschinenoptimierung",
       "Geschwindigkeitsoptimierung",
       "Blog-Bereich",
@@ -164,10 +163,10 @@
     }
   },
   "page": {
-    "headline": "Transparente Preise für <0>messbaren Erfolg</0>.",
-    "subheadline": "Transparente Preise für messbaren Erfolg: Wählen Sie das Paket, das zu Ihren Zielen passt. Alle Preise sind Festpreise, keine versteckten Kosten.",
-    "title": "Webdesign Preise & SEO Kosten | Pakete - Coday",
-    "description": "Transparente Webdesign Preise und SEO Pakete. Wir bieten 100% Festpreisgarantie für High-End Webentwicklung ohne versteckte Kosten. Jetzt anfragen!"
+    "headline": "Transparente Angebote für <0>messbaren Erfolg</0>.",
+    "subheadline": "Transparente Angebote für messbaren Erfolg: Wählen Sie das Paket, das zu Ihren Zielen passt. Alle Angebote auf Anfrage, verbindlich und ohne versteckte Kosten.",
+    "title": "Webdesign Preise & Angebote | Pakete - Coday",
+    "description": "Transparente Webdesign Angebote und SEO Pakete. Wir bieten 100% Festpreisgarantie für High-End Webentwicklung ohne versteckte Kosten. Jetzt anfragen!"
   },
   "custom": {
     "title": "Größeres Projekt?",
@@ -197,7 +196,7 @@
     "description": "Nachhaltiges Wachstum und kontinuierliche Optimierung nach dem Go-Live.",
     "basic": {
       "name": "Basic",
-      "price": "250",
+      "price": "Auf Anfrage",
       "features": [
         "Monatliches Analytics-Review",
         "2h Support-Time",
@@ -207,7 +206,7 @@
     },
     "growth": {
       "name": "Growth",
-      "price": "500",
+      "price": "Auf Anfrage",
       "features": [
         "Alles aus Basic",
         "2 Content-Updates pro Monat",
@@ -217,7 +216,7 @@
     },
     "partnership": {
       "name": "Partnership",
-      "price": "1.000",
+      "price": "Auf Anfrage",
       "features": [
         "Alles aus Growth",
         "Priority-Support (24h SLA)",
@@ -227,7 +226,7 @@
     }
   },
   "value_prop": {
-    "title": "Warum Next.js? Warum ab 499€?",
+    "title": "Warum Next.js? Warum Coday?",
     "description": "Ihre Website ist kein simples Aushängeschild mehr, sie ist Ihr stärkster, vollautomatisierter Vertriebsmitarbeiter. Eine Investition in Performance ist eine Investition in messbaren Umsatz.",
     "points": [
       {

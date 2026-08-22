@@ -30,7 +30,7 @@ export async function generateMetadata({
         'Coday Web Pricing',
       ],
       path: '/en/pricing',
-      type: 'money',
+      type: 'default',
     });
   }
   return generatePageMetadata({
@@ -45,7 +45,7 @@ export async function generateMetadata({
       'Coday Web Preise',
     ],
     path: '/de/pricing',
-    type: 'money',
+    type: 'default',
   });
 }
 
@@ -68,7 +68,7 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
         name: 'Wie setzen sich die Preise zusammen, wenn keine festen Pauschalen angegeben sind?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Jedes Unternehmen hat individuelle Anforderungen und Ziele. In einer kostenlosen Erstberatung analysieren wir Ihren Bedarf, wählen gemeinsam die benötigten Module aus und erstellen ein verbindliches Festpreisangebot ab 1.490 Euro. Sie zahlen ausschließlich für Features, die messbaren Mehrwert stiften.',
+          text: 'Jedes Unternehmen hat individuelle Anforderungen und Ziele. In einer kostenlosen Erstberatung analysieren wir Ihren Bedarf, wählen gemeinsam die benötigten Module aus und erstellen ein verbindliches Festpreisangebot auf Anfrage. Sie zahlen ausschließlich für Features, die messbaren Mehrwert stiften.',
         },
       },
       {
