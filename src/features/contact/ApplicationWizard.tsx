@@ -36,6 +36,7 @@ export const ApplicationWizard: React.FC = () => {
   const getPackageName = useCalculatorStore((state) => state.getPackageName);
   const getSummaryText = useCalculatorStore((state) => state.getSummaryText);
   const getSelectedModules = useCalculatorStore((state) => state.getSelectedModules);
+  const getStructuredLeadData = useCalculatorStore((state) => state.getStructuredLeadData);
   const setPackageAndAddons = useCalculatorStore((state) => state.setPackageAndAddons);
 
   // Sync with URL parameters if present
@@ -125,20 +126,21 @@ export const ApplicationWizard: React.FC = () => {
     setError(null);
 
     try {
-      let fullMessage = `Lead from simplified form.\n\nNachricht: ${data.message || '-'}\nTelefon: ${data.phone || '-'}`;
-      if (hasPackage) {
-        fullMessage = `${getSummaryText()}\n\nNachricht: ${data.message || '-'}\nTelefon: ${data.phone || '-'}`;
-      }
-
-      const dbMessage = `${fullMessage}\n\nProject: ${data.project || getPackageName() || 'N/A'}\nSource: ${hasPackage ? 'Package Flow' : 'Simplified Contact'}`;
+      const structuredData = getStructuredLeadData();
+      const packageDisplayName = hasPackage
+        ? structuredData.packageName || getPackageName() || 'Individuelles Paket'
+        : undefined;
 
       const result = await saveLeadInternalAction({
         name: data.name,
         email: data.email,
         phone: data.phone,
-        message: dbMessage,
-        project: data.project || getPackageName() || undefined,
-        source: hasPackage ? 'calculator' : 'contact',
+        message: data.message || '',
+        project: data.project || packageDisplayName || undefined,
+        packageName: packageDisplayName,
+        packageId: hasPackage ? structuredData.packageId : undefined,
+        addons: hasPackage ? structuredData.addons : undefined,
+        source: hasPackage ? 'Package & Add-ons Configurator' : 'Direct Contact Form',
       });
 
       if (!result.success) throw new Error(result.error || 'Unknown error');

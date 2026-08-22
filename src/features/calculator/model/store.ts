@@ -20,6 +20,11 @@ interface CalculatorState {
   getSelectedModules: () => Module[];
   getPackageName: () => string | null;
   getSummaryText: () => string;
+  getStructuredLeadData: () => {
+    packageId: string;
+    packageName: string;
+    addons: Array<{ id: string; name: string; category?: string }>;
+  };
 }
 
 export const useCalculatorStore = create<CalculatorState>()(
@@ -204,6 +209,22 @@ export const useCalculatorStore = create<CalculatorState>()(
         }
         text += `Kalkulation: Individuelles Angebot auf Anfrage`;
         return text;
+      },
+
+      getStructuredLeadData: () => {
+        const { selectedPackageId, selectedModuleIds } = get();
+        const packageName = get().getPackageName();
+        const allModules = modules.filter((m) => selectedModuleIds.has(m.id));
+        const basisModule = allModules.find((m) => m.category === 'basis');
+        const addons = allModules
+          .filter((m) => m.category !== 'basis')
+          .map((m) => ({ id: m.id, name: m.name, category: m.category }));
+
+        return {
+          packageId: selectedPackageId || basisModule?.id || 'individual',
+          packageName: packageName || basisModule?.name || 'Individuelles Projekt',
+          addons,
+        };
       },
     }),
     {

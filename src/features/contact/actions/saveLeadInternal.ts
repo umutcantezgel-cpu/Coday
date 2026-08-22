@@ -1,8 +1,13 @@
 'use server';
 
 import { Resend } from 'resend';
+import {
+  generateAgencyLeadEmailHtml,
+  generateCustomerConfirmationEmailHtml,
+  LeadEmailData,
+} from '@/shared/lib/email/leadTemplates';
 
-export async function saveLeadInternalAction(data: {
+export interface LeadSubmissionPayload {
   name: string;
   email: string;
   company?: string;
@@ -10,7 +15,13 @@ export async function saveLeadInternalAction(data: {
   message?: string;
   project?: string;
   source?: string;
-}) {
+  packageId?: string;
+  packageName?: string;
+  addons?: Array<{ id: string; name: string; category?: string }>;
+  deliveryDays?: number;
+}
+
+export async function saveLeadInternalAction(data: LeadSubmissionPayload) {
   try {
     // Load the API key from Vercel environment variables
     const resendApiKey = process.env.RESEND_API_KEY;
@@ -32,29 +43,29 @@ export async function saveLeadInternalAction(data: {
     let emailStatus = 'skipped';
     let adminEmailResult: any = null;
 
+    const emailPayload: LeadEmailData = {
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
+      company: data.company,
+      message: data.message,
+      project: data.project,
+      packageName: data.packageName || data.project,
+      addons: data.addons,
+      deliveryDays: data.deliveryDays,
+      source: data.source,
+    };
+
+    // 1. Send Agency Lead Notification Email
     try {
+      const agencySubject = `⚡ Neue Anfrage: ${data.name || 'Unbekannt'} (${data.packageName || data.project || 'Projekt'})`;
+      const agencyHtml = generateAgencyLeadEmailHtml(emailPayload);
+
       const adminRes = await resend.emails.send({
         from: EMAIL_FROM,
         to: [ADMIN_EMAIL],
-        subject: `Neue Anfrage: ${data.name || 'Unbekannt'} (${data.project || 'Allgemein'})`,
-        html: `
-          <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 32px; background: #eff6ff; border-radius: 16px; border: 1px solid #bfdbfe;">
-            <h2 style="color: #1e40af; margin-bottom: 16px;">📩 Neue Kontaktanfrage</h2>
-            <table style="width: 100%; border-collapse: collapse;">
-              <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">Name</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;">${data.name || '—'}</td></tr>
-              <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">E-Mail</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;"><a href="mailto:${data.email}" style="color: #2563eb;">${data.email}</a></td></tr>
-              <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">Telefon</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;">${data.phone || '—'}</td></tr>
-              <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">Firma</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;">${data.company || '—'}</td></tr>
-              <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">Projekt/Quelle</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;">${data.project || data.source || '—'}</td></tr>
-            </table>
-            <div style="margin-top: 24px; padding: 16px; background: white; border-radius: 12px;">
-              <h3 style="color: #374151; margin: 0 0 8px;">Nachricht:</h3>
-              <p style="white-space: pre-wrap; color: #374151; margin: 0;">${data.message || '—'}</p>
-            </div>
-            <hr style="border: none; border-top: 1px solid #bfdbfe; margin: 24px 0;" />
-            <p style="color: #6b7280; font-size: 13px;">Automatisch generiert von Coday Contact System (No DB)</p>
-          </div>
-        `,
+        subject: agencySubject,
+        html: agencyHtml,
         replyTo: data.email,
       });
 
@@ -69,30 +80,16 @@ export async function saveLeadInternalAction(data: {
         adminErr
       );
       try {
-        // Fallback: If the domain verification ever drops, fallback to onboarding@resend.dev
+        // Fallback: If custom domain verification ever drops, fallback to onboarding@resend.dev
         const fallbackResend = new Resend(process.env.RESEND_API_KEY);
+        const agencySubject = `⚡ Neue Anfrage (Fallback): ${data.name || 'Unbekannt'} (${data.packageName || data.project || 'Projekt'})`;
+        const agencyHtml = generateAgencyLeadEmailHtml(emailPayload);
+
         const fallbackRes = await fallbackResend.emails.send({
           from: 'Coday Contact <onboarding@resend.dev>',
           to: [ADMIN_EMAIL],
-          subject: `Neue Anfrage: ${data.name || 'Unbekannt'} (${data.project || 'Allgemein'})`,
-          html: `
-            <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 32px; background: #eff6ff; border-radius: 16px; border: 1px solid #bfdbfe;">
-              <h2 style="color: #1e40af; margin-bottom: 16px;">📩 Neue Kontaktanfrage (Fallback Sender)</h2>
-              <table style="width: 100%; border-collapse: collapse;">
-                <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">Name</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;">${data.name || '—'}</td></tr>
-                <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">E-Mail</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;"><a href="mailto:${data.email}" style="color: #2563eb;">${data.email}</a></td></tr>
-                <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">Telefon</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;">${data.phone || '—'}</td></tr>
-                <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">Firma</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;">${data.company || '—'}</td></tr>
-                <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">Projekt/Quelle</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;">${data.project || data.source || '—'}</td></tr>
-              </table>
-              <div style="margin-top: 24px; padding: 16px; background: white; border-radius: 12px;">
-                <h3 style="color: #374151; margin: 0 0 8px;">Nachricht:</h3>
-                <p style="white-space: pre-wrap; color: #374151; margin: 0;">${data.message || '—'}</p>
-              </div>
-              <hr style="border: none; border-top: 1px solid #bfdbfe; margin: 24px 0;" />
-              <p style="color: #6b7280; font-size: 13px;">Automatisch generiert von Coday Contact System (No DB)</p>
-            </div>
-          `,
+          subject: agencySubject,
+          html: agencyHtml,
           replyTo: data.email,
         });
 
@@ -108,28 +105,16 @@ export async function saveLeadInternalAction(data: {
       }
     }
 
-    // Customer Confirmation Email
+    // 2. Send Customer Confirmation Autoresponder Email
     try {
+      const customerSubject = 'Vielen Dank für Ihre Anfrage bei Coday! 🚀';
+      const customerHtml = generateCustomerConfirmationEmailHtml(emailPayload);
+
       const customerRes = await resend.emails.send({
         from: EMAIL_FROM,
         to: [data.email],
-        subject: 'Danke für deine Anfrage bei Coday! 🚀',
-        html: `
-          <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 520px; margin: 0 auto; padding: 32px; background: #f9fafb; border-radius: 16px;">
-            <h2 style="color: #111827; margin-bottom: 8px;">Anfrage erfolgreich gesendet ✅</h2>
-            <p style="color: #374151; font-size: 16px; line-height: 1.5;">Hallo ${data.name || 'Zukünftiger Partner'},</p>
-            <p style="color: #374151; font-size: 16px; line-height: 1.5;">vielen Dank für deine Nachricht! Wir haben deine Anfrage erhalten und werden uns schnellstmöglich bei dir melden.</p>
-            
-            <div style="background: white; padding: 20px; border-radius: 12px; margin: 24px 0; border: 1px solid #e5e7eb;">
-              <h3 style="margin-top: 0; font-size: 14px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em;">Deine Nachricht:</h3>
-              <p style="color: #111827; font-style: italic; margin: 0;">"${data.message || '—'}"</p>
-            </div>
-
-            <p style="color: #374151; font-size: 16px; line-height: 1.5;">Viele Grüße,<br/>Dein Coday Team</p>
-            <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 24px 0;" />
-            <p style="color: #9ca3af; font-size: 13px;">Coday Agency · codayweb.de</p>
-          </div>
-        `,
+        subject: customerSubject,
+        html: customerHtml,
       });
 
       if (customerRes.error) {
