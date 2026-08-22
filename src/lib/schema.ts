@@ -1,4 +1,3 @@
-import { GOOGLE_REVIEWS, REVIEWS_SUMMARY } from '@/shared/data/reviews';
 import { academyData } from '@/shared/data/academy';
 
 export const BASE_URL = 'https://www.codayweb.de';
@@ -7,33 +6,6 @@ export const FOUNDER_ID = `${BASE_URL}/#founder`;
 export const WEBSITE_ID = `${BASE_URL}/#website`;
 export const LOCAL_BUSINESS_ID = `${BASE_URL}/#local-business`;
 export const PROFESSIONAL_SERVICE_ID = `${BASE_URL}/#professional-service`;
-
-export function getReviewsSchema(locale: string = 'de') {
-  return {
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: REVIEWS_SUMMARY.ratingValue.toString(),
-      reviewCount: REVIEWS_SUMMARY.reviewCount.toString(),
-      bestRating: REVIEWS_SUMMARY.bestRating.toString(),
-      worstRating: REVIEWS_SUMMARY.worstRating.toString(),
-    },
-    review: GOOGLE_REVIEWS.map((review) => ({
-      '@type': 'Review',
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: review.rating.toString(),
-        bestRating: '5',
-        worstRating: '1',
-      },
-      author: {
-        '@type': 'Person',
-        name: review.authorName,
-      },
-      datePublished: review.datePublished,
-      reviewBody: locale === 'en' ? review.quote.en : review.quote.de,
-    })),
-  };
-}
 
 export function getOrganizationSchema(locale: string = 'de') {
   return {
