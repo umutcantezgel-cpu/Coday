@@ -23,7 +23,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-primary-700 focus:text-white focus:rounded-lg focus:outline-2 focus:outline-offset-2 focus:outline-primary-500"
       >
-        {t('skipLink', { defaultValue: 'Skip to main content' })}
+        {t('skipLink')}
       </a>
       <MobileReadyNav />
       <RouteAnnouncer />
