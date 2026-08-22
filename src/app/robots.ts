@@ -59,7 +59,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: BLOCKED_PATHS,
       },
     ],
-    sitemap: 'https://www.codayweb.de/sitemap.xml',
+    sitemap: ['https://www.codayweb.de/sitemap.xml', 'https://www.codayweb.de/video-sitemap.xml'],
     host: 'https://www.codayweb.de',
   };
 }

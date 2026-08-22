@@ -1,7 +1,13 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import {
+  BASE_URL,
+  getOrganizationSchema,
+  getBreadcrumbSchema,
+  getAcademyCollectionSchema,
+  getAcademyVideoSchemas,
+} from '@/lib/schema';
 import ClientComponent from '@/features/knowledge/ui/AcademyClient';
 
 export const dynamic = 'force-static';
@@ -14,14 +20,15 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Academy | Knowledge for Central Hesse',
+      title: 'Web Design Academy & Video Masterclasses | Coday Wetzlar',
       description:
-        'Learn web design basics at Coday Academy Wetzlar. Courses and tutorials for entrepreneurs and freelancers in Hesse. Start building your skills today.',
+        'Watch high-impact video tutorials on Next.js web development, local SEO, conversion rate optimization, and website pricing by Coday Web Agency Wetzlar.',
       keywords: [
         'Web Design Academy',
-        'Web Design Training Wetzlar',
+        'Web Design Videos Wetzlar',
         'Web Development Course Hesse',
-        'SEO Workshop Central Hesse',
+        'SEO Video Masterclass Central Hesse',
+        'Website Cost Guide Wetzlar',
         'Coday Academy',
       ],
       path: '/en/knowledge/academy',
@@ -29,14 +36,16 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Academy | Wissen für Mittelhessen',
+    title: 'Webdesign Academy & Video-Masterclasses | Coday Wetzlar',
     description:
-      'Lernen Sie Webdesign Grundlagen in der Coday Academy Wetzlar. Kurse und Tutorials für Unternehmer und Selbstständige in Hessen. Jetzt Wissen aufbauen.',
+      'Praxisnahe Video-Masterclasses zu modernem Next.js Webdesign, lokaler SEO-Dominanz, Conversion-Optimierung und Website-Kalkulation von der Coday Webagentur Wetzlar.',
     keywords: [
       'Webdesign Academy',
-      'Webdesign lernen Wetzlar',
-      'Webentwicklung Kurs Hessen',
-      'SEO Schulung Mittelhessen',
+      'Webdesign Videos Wetzlar',
+      'Webentwicklung Videos Mittelhessen',
+      'SEO Masterclass Wetzlar',
+      'Website Kosten Video',
+      'Google Bewertungen Guide',
       'Coday Academy',
     ],
     path: '/de/knowledge/academy',
@@ -57,22 +66,12 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     { name: 'Academy', url: `/${_locale}/knowledge/academy` },
   ]);
 
+  const collectionSchema = getAcademyCollectionSchema(_locale);
+  const videoSchemas = getAcademyVideoSchemas(_locale);
+
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@graph': [
-      getOrganizationSchema(_locale),
-      breadcrumbs,
-      {
-        '@type': 'CollectionPage',
-        '@id': `${BASE_URL}/${_locale}/knowledge/academy#collection`,
-        name: isEn ? 'Coday Web Design Academy' : 'Coday Webdesign Academy',
-        url: `${BASE_URL}/${_locale}/knowledge/academy`,
-        description: isEn
-          ? 'Learn web design basics at Coday Academy Wetzlar. Courses and tutorials for entrepreneurs and freelancers in Hesse.'
-          : 'Lernen Sie Webdesign Grundlagen in der Coday Academy Wetzlar. Kurse und Tutorials für Unternehmer und Selbstständige in Hessen.',
-        inLanguage: _locale,
-      },
-    ],
+    '@graph': [getOrganizationSchema(_locale), breadcrumbs, collectionSchema, ...videoSchemas],
   };
 
   return (
@@ -82,46 +81,28 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <ClientComponent />
-      {/* SEO */}
+      {/* SEO Section for Video Masterclasses & Local Authority Wetzlar */}
       <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
-        <h2 className="text-3xl font-display font-bold mb-6">
-          Erfolgreiches Webdesign lernen in Mittelhessen
+        <h2 className="text-3xl font-display font-bold mb-6 text-slate-900">
+          {isEn
+            ? 'Web Design & SEO Video Masterclasses – Digital Knowledge for Central Hesse'
+            : 'Webdesign & SEO Video-Masterclasses – Digitales Praxiswissen für Wetzlar & Mittelhessen'}
         </h2>
-        <div className="space-y-4 text-base leading-relaxed">
+        <div className="space-y-4 text-base leading-relaxed text-slate-600">
           <p>
-            In der heutigen digitalen Welt ist eine professionelle Webpräsenz entscheidender denn
-            je. Unsere Webdesign Academy in Wetzlar und ganz Mittelhessen bietet maßgeschneiderte
-            Schulungen und Kurse für Unternehmer, Selbstständige und Marketing-Teams an, die ihre
-            Online-Sichtbarkeit nachhaltig verbessern möchten. Dabei legen wir großen Wert auf
-            praxisnahes Wissen, das Sie direkt umsetzen können. Ein gutes Webdesign ist nicht nur
-            optisch ansprechend, sondern erfüllt auch wichtige funktionale Zwecke: Es leitet den
-            Nutzer intuitiv, lädt schnell und ist für Suchmaschinen optimiert.
+            {isEn
+              ? 'In today’s hyper-competitive digital landscape, having an authoritative web presence is crucial. The Coday Academy provides free, actionable video masterclasses for business leaders, craftsmen, law firms, and medical practices across Wetzlar, Gießen, Marburg, and greater Hesse who want to maximize their digital visibility and customer acquisition.'
+              : 'In der heutigen digitalen Welt ist eine professionelle Webpräsenz entscheidender denn je. Die Coday Webdesign Academy in Wetzlar bietet maßgeschneiderte Video-Masterclasses und praxisnahe Tutorials für Unternehmer, Handwerker, Kanzleien und Dienstleister in ganz Mittelhessen, die ihre Online-Sichtbarkeit und Neukundengewinnung planbar ausbauen möchten.'}
           </p>
           <p>
-            In unseren Kursen lernen Sie, wie Sie moderne Content-Management-Systeme effektiv
-            nutzen, warum Responsive Design heute absoluter Standard ist und wie Sie durch gezielte
-            Conversion-Optimierung mehr Kunden gewinnen. Wir zeigen Ihnen, welche Rolle Farben,
-            Typografie und Layout-Strukturen spielen und wie diese Elemente die Wahrnehmung Ihrer
-            Marke beeinflussen. Darüber hinaus gehen wir tief auf das Thema Suchmaschinenoptimierung
-            (SEO) ein. Sie erfahren, wie Google und Co. Websites bewerten, welche On-Page- und
-            Off-Page-Faktoren wirklich wichtig sind und wie Sie wertvollen Content erstellen, der
-            sowohl Ihren Nutzern als auch den Suchmaschinen gefällt.
+            {isEn
+              ? 'Our video modules cover critical topics: selecting the right web design partner without vendor lock-in, understanding the real cost of high-performance Next.js websites, mastering Google reviews, and implementing technical SEO architectures with 100/100 Core Web Vitals to systematically outrank competitors.'
+              : 'In unseren Video-Schulungen lernen Sie unter anderem: Welche 5 Fragen Sie jeder Webagentur vor der Auftragsvergabe stellen müssen, was eine zukunftssichere Website wirklich kostet, wie Sie Google-Bewertungen meistern und wie Sie durch psychologische Conversion-Optimierung aus Website-Besuchern zahlende Kunden gewinnen.'}
           </p>
           <p>
-            Ein weiterer Schwerpunkt liegt auf der Web-Performance. Ladezeiten sind ein kritischer
-            Faktor für den Erfolg einer Website, und wir bringen Ihnen bei, wie Sie Bilder
-            komprimieren, Caching-Strategien anwenden und den Code Ihrer Seite so verschlanken, dass
-            Ihre Nutzer nicht warten müssen. Zudem behandeln wir rechtliche Aspekte wie die
-            Datenschutz-Grundverordnung (DSGVO), damit Sie nicht nur erfolgreiche, sondern auch
-            rechtssichere Websites betreiben können. Egal, ob Sie Anfänger sind oder bereits erste
-            Erfahrungen gesammelt haben, unsere Academy holt Sie genau dort ab, wo Sie stehen.
-          </p>
-          <p>
-            Mit realen Projektbeispielen, interaktiven Workshops und persönlicher Betreuung sorgen
-            wir dafür, dass Sie das nötige Rüstzeug erhalten, um im digitalen Raum erfolgreich zu
-            sein. Melden Sie sich noch heute an und investieren Sie in das Wissen, das Ihr
-            Unternehmen voranbringt und Ihnen einen klaren Wettbewerbsvorteil in Ihrer Branche
-            verschafft.
+            {isEn
+              ? 'All video lessons are hosted locally with sub-second delivery to ensure zero latency and full privacy compliance (GDPR). Start exploring the masterclasses above to take your digital strategy to the next level.'
+              : 'Alle Masterclasses werden direkt über unsere blitzschnelle High-Speed Edge-Infrastruktur ausgeliefert – vollkommen ohne Tracking-Cookies von Drittanbietern und 100% DSGVO-konform. Nutzen Sie dieses Wissen, um fundierte Entscheidungen für Ihre digitale Zukunft zu treffen.'}
           </p>
         </div>
       </section>

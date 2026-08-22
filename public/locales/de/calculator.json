@@ -47,14 +47,19 @@
       "name": "Ultimate Hub"
     },
     "basis-business": {
-      "description": "Mehrseitige Unternehmens-Präsenz (CMS)",
-      "learn_more": "Die klassische Unternehmenswebseite mit mehreren Unterseiten (Über uns, Leistungen, Kontakt). Perfekt, um Ihr Unternehmen, Ihre Dienstleistungen und Ihr Team ausführlich vorzustellen und Vertrauen aufzubauen.",
-      "name": "Corporate Website"
+      "description": "Mehrseitige Unternehmens-Präsenz (B2B)",
+      "learn_more": "Der Standard für anspruchsvollen B2B-Mittelstand, Industrie & Kanzleien. Bis zu 12 Seiten, Sub-0,3s Ladezeit und 60-Sekunden Recruiting-Funnel.",
+      "name": "Business (Mittel)"
+    },
+    "basis-corporate": {
+      "description": "Umfassende Unternehmensplattform (bis 30 Seiten)",
+      "learn_more": "Digitale Flaggschiff-Präsenz mit holistischen SEO-Topic-Clustern, interaktiven Conversion-Pfaden und Vorbereitung für globale Mehrsprachigkeit.",
+      "name": "Pro Corporate (Groß)"
     },
     "basis-enterprise": {
-      "description": "Komplexe Web-App mit Custom Logic",
-      "learn_more": "Für komplexe Anforderungen: Wir entwickeln individuelle Softwarelösungen mit Benutzer-Logins, Datenbanken und speziellen Funktionen, die exakt auf Ihre Geschäftsprozesse zugeschnitten sind.",
-      "name": "Web Application"
+      "description": "Skalierbare Multi-Region Enterprise Plattform",
+      "learn_more": "Für Großkunden, Konzerne und bundesweite/internationale Rollouts. Höchste Sicherheits- und Compliance-Standards (WAF, DDoS, DSGVO) und dediziertes VIP-SLA.",
+      "name": "Enterprise Platform (Extrem groß)"
     },
     "basis-professional": {
       "description": "Erweiterte Unternehmens-Präsenz (CMS)",

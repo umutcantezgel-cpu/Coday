@@ -321,7 +321,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...sitemapEntries('/branchen/retail', { changeFrequency: 'monthly', priority: 0.6 }),
 
     // === Knowledge ===
+    ...sitemapEntries('/knowledge/academy', { changeFrequency: 'weekly', priority: 0.85 }),
     ...sitemapEntries('/knowledge/blog', { changeFrequency: 'weekly', priority: 0.7 }),
+    ...sitemapEntries('/knowledge/wiki', { changeFrequency: 'monthly', priority: 0.7 }),
+    ...sitemapEntries('/knowledge/whitepapers', { changeFrequency: 'monthly', priority: 0.7 }),
+    ...sitemapEntries('/knowledge/newsletter', { changeFrequency: 'monthly', priority: 0.6 }),
     ...sitemapEntries('/knowledge/faq', { changeFrequency: 'monthly', priority: 0.6 }),
 
     // === Career ===

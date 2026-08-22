@@ -22,6 +22,38 @@ describe('Sitemap Technical SEO Validation', () => {
     expect(urls).toContain('https://www.codayweb.de/de/landingpages/nextjsmigration');
     expect(urls).toContain('https://www.codayweb.de/de/standorte/hessen');
     expect(urls).toContain('https://www.codayweb.de/de/webdesign-agentur-wetzlar');
+    expect(urls).toContain('https://www.codayweb.de/de/knowledge/academy');
+    expect(urls).toContain('https://www.codayweb.de/en/knowledge/academy');
+  });
+
+  it('should generate valid Google Video Sitemap XML with all academy videos', async () => {
+    const { GET } = await import('@/app/video-sitemap.xml/route');
+    const response = await GET();
+    expect(response.status).toBe(200);
+    expect(response.headers.get('Content-Type')).toContain('application/xml');
+
+    const xml = await response.text();
+    expect(xml).toContain('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"');
+    expect(xml).toContain('xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"');
+    expect(xml).toContain(
+      'https://www.codayweb.de/videos/academy/5_Fragen_an_Ihre_Web-Agentur.mp4'
+    );
+    expect(xml).toContain('https://www.codayweb.de/videos/academy/Aus_Besuchern_werden_Kunden.mp4');
+    expect(xml).toContain(
+      'https://www.codayweb.de/videos/academy/Die_Ultimative_SEO_Strategie.mp4'
+    );
+    expect(xml).toContain('https://www.codayweb.de/videos/academy/GOOGLE-BEWERTUNGEN_MEISTERN.mp4');
+    expect(xml).toContain(
+      'https://www.codayweb.de/videos/academy/SO_KOMMEN_BESUCHER_AUF_DEINE_SEITE.mp4'
+    );
+    expect(xml).toContain(
+      'https://www.codayweb.de/videos/academy/WAS_KOSTET_EINE_WEBSITE_WIRKLICH_.mp4'
+    );
+    expect(xml).toContain(
+      'https://www.codayweb.de/videos/academy/Website__Magnet_oder_Schreck_.mp4'
+    );
+    expect(xml).toContain('<video:duration>765</video:duration>');
+    expect(xml).toContain('<video:tag><![CDATA[Webdesign Wetzlar]]></video:tag>');
   });
 
   it('should not cross-reference invalid foreign slugs for blog posts in alternates', async () => {

@@ -47,14 +47,19 @@
       "name": "Ultimate Hub"
     },
     "basis-business": {
-      "description": "Multi-page Corporate Presence (CMS)",
-      "learn_more": "The classic corporate website with multiple subpages (About Us, Services, Contact). Perfect for presenting your company, services, and team in detail to build trust.",
-      "name": "Corporate website"
+      "description": "Multi-page B2B Corporate Platform",
+      "learn_more": "The gold standard for mid-market leaders, B2B companies & industry. Up to 12 pages, sub-0.3s load speed, and 60-second recruiting funnel.",
+      "name": "Business (Standard)"
+    },
+    "basis-corporate": {
+      "description": "Comprehensive Corporate Platform (up to 30 pages)",
+      "learn_more": "Digital flagship presence with holistic SEO topic clusters, multi-step conversion paths, and global multi-language architecture (i18n).",
+      "name": "Pro Corporate (Large)"
     },
     "basis-enterprise": {
-      "description": "Complex Web App with Custom Logic",
-      "learn_more": "For complex requirements: We develop individual software solutions with user logins, databases, and special functions tailored exactly to your business processes.",
-      "name": "Web application"
+      "description": "Scalable Multi-Region Enterprise Platform",
+      "learn_more": "For large enterprises, corporations, and nationwide/international rollouts. Maximum security & compliance (WAF, DDoS, GDPR) with dedicated VIP SLA.",
+      "name": "Enterprise Platform (Extremely Large)"
     },
     "basis-professional": {
       "description": "Advanced Corporate Presence (CMS)",

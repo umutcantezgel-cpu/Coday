@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
+import { useSearchParams } from 'next/navigation';
 import { Link } from '@/i18n/navigation';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { createPortal } from 'react-dom';
@@ -14,19 +15,41 @@ import {
   FilePdf,
   Question,
   Clock,
+  ArrowRight,
   Sparkle,
+  CheckCircle,
 } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
 import GradientText from '@/shared/ui/GradientText';
 import { academyData, Course } from '@/shared/data/academy';
 
-const Academy: React.FC = () => {
+function AcademyContent() {
   const t = useTranslations('knowledge');
   const locale = useLocale();
   const isEn = locale === 'en';
-  const [selectedVideo, setSelectedVideo] = useState<Course | null>(null);
+  const searchParams = useSearchParams();
+  const [activeModalVideo, setActiveModalVideo] = useState<Course | null>(null);
+  const [dismissedSlug, setDismissedSlug] = useState<string | null>(null);
   const currentLang = locale as 'de' | 'en';
+
+  const querySlug = searchParams?.get('video');
+  const selectedVideo =
+    activeModalVideo ??
+    (querySlug && querySlug !== dismissedSlug
+      ? (academyData.find((c) => c.slug === querySlug) ?? null)
+      : null);
+
+  const handleOpenVideo = (course: Course) => {
+    setActiveModalVideo(course);
+  };
+
+  const handleCloseVideo = () => {
+    setActiveModalVideo(null);
+    if (querySlug) {
+      setDismissedSlug(querySlug);
+    }
+  };
 
   const knowledgeNav = [
     { label: isEn ? 'Tech Wiki' : 'Tech-Wiki', href: '/knowledge/wiki', icon: BookBookmark },
@@ -78,8 +101,13 @@ const Academy: React.FC = () => {
 
         {/* Header Section */}
         <div className="text-left space-y-4 mb-12">
-          <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-wider">
-            {isEn ? 'Video Masterclasses & Tutorials' : 'Video-Masterclasses & Tutorials'}
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-wider">
+            <Sparkle className="w-3.5 h-3.5" weight="fill" />
+            <span>
+              {isEn
+                ? 'Video Masterclasses & Tutorials'
+                : 'Video-Masterclasses & Praxiswissen Wetzlar'}
+            </span>
           </span>
           <h1 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl text-secondary tracking-tight">
             <span>{isEn ? 'Coday ' : 'Coday '}</span>
@@ -92,18 +120,20 @@ const Academy: React.FC = () => {
             </GradientText>
           </h1>
           <p className="text-base sm:text-lg text-slate-600 max-w-3xl leading-relaxed">
-            {t('academy.subtitle')}
+            {isEn
+              ? 'Actionable video masterclasses on high-performance Next.js web development, local SEO dominance, conversion optimization, and project budgeting for businesses in Central Hesse.'
+              : 'Praxisnahe Video-Masterclasses zu modernem Next.js Webdesign, lokaler SEO-Dominanz in Wetzlar & Hessen, Conversion-Optimierung und transparenter Projektkalkulation.'}
           </p>
         </div>
 
         {/* Courses Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {academyData.map((course) => (
-            <button
+            <article
               key={course.id}
+              id={course.slug}
               className="group cursor-pointer text-left bg-white rounded-3xl border border-slate-200 p-5 hover:shadow-xl hover:border-primary/40 transition-all duration-300 flex flex-col justify-between"
-              onClick={() => setSelectedVideo(course)}
-              aria-label={`${course.content[currentLang].title} – ${course.content[currentLang].tag}`}
+              onClick={() => handleOpenVideo(course)}
             >
               <div>
                 <div className="relative aspect-video rounded-2xl bg-slate-900 mb-5 overflow-hidden shadow-sm group-hover:shadow-md transition-all">
@@ -131,60 +161,144 @@ const Academy: React.FC = () => {
                     <span className="px-2 py-0.5 rounded-md bg-slate-900/80 backdrop-blur-xs">
                       Masterclass
                     </span>
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-slate-900/80 backdrop-blur-xs">
+                      <Clock className="w-3 h-3 text-amber-400" />
+                      {course.content[currentLang].duration} Min
+                    </span>
                   </div>
                 </div>
 
-                <div className="space-y-2">
-                  <span className="inline-block px-2.5 py-0.5 rounded-md bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider">
-                    {course.content[currentLang].tag}
-                  </span>
+                <div className="space-y-2.5">
+                  <div className="flex items-center gap-2">
+                    <span className="inline-block px-2.5 py-0.5 rounded-md bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider">
+                      {course.content[currentLang].tag}
+                    </span>
+                  </div>
                   <h2 className="text-lg font-bold text-slate-900 group-hover:text-primary transition-colors leading-snug">
                     {course.content[currentLang].title}
                   </h2>
+                  <p className="text-xs sm:text-sm text-slate-600 line-clamp-3 leading-relaxed">
+                    {course.content[currentLang].description}
+                  </p>
                 </div>
               </div>
 
-              <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-primary">
-                <span>{isEn ? 'Watch session' : 'Video ansehen'}</span>
-                <OptimizedIcon icon={Play} className="w-3.5 h-3.5" weight="fill" />
+              <div className="pt-4 mt-5 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-primary">
+                <span className="group-hover:underline">
+                  {isEn
+                    ? 'Watch session (~' + course.content[currentLang].duration + ')'
+                    : 'Video ansehen (~' + course.content[currentLang].duration + ' Min)'}
+                </span>
+                <OptimizedIcon
+                  icon={Play}
+                  className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform"
+                  weight="fill"
+                />
               </div>
-            </button>
+            </article>
           ))}
         </div>
+
+        {/* Local Consultation CTA Section */}
+        <section className="mt-20 p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 text-white relative overflow-hidden shadow-2xl">
+          <div className="relative z-10 max-w-3xl">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider mb-4 border border-amber-500/30">
+              <Sparkle className="w-3.5 h-3.5 text-amber-400" />
+              <span>
+                {isEn ? 'Central Hesse Web Architecture' : 'Webdesign Wetzlar & Mittelhessen'}
+              </span>
+            </span>
+            <h2 className="font-display font-black text-2xl sm:text-4xl tracking-tight mb-4">
+              {isEn
+                ? 'Ready to Implement These Strategies in Your Web Project?'
+                : 'Bereit, diese Strategien für Ihr Unternehmen umzusetzen?'}
+            </h2>
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-8">
+              {isEn
+                ? 'Whether you are relaunching an outdated website or scaling your digital authority in Hesse: Let’s discuss your project in a free, 15-minute consultation.'
+                : 'Ob Website-Relaunch, Ladezeiten-Optimierung unter 0,3s oder lokale Google-Dominanz in Wetzlar, Gießen und ganz Hessen: Lassen Sie uns in einem unverbindlichen 15-Minuten Strategiegespräch die ideale Lösung analysieren.'}
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-primary-700 hover:bg-primary-800 text-white font-bold text-sm uppercase tracking-wider shadow-lg transition-all"
+              >
+                <span>{isEn ? 'Request Free Audit' : 'Kostenloses Video-Audit anfragen'}</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/pricing"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold text-sm uppercase tracking-wider transition-all border border-white/20"
+              >
+                <span>{isEn ? 'View 4 Service Tiers' : 'Zu den 4 Leistungspaketen'}</span>
+              </Link>
+            </div>
+          </div>
+        </section>
       </div>
 
       {/* Video Modal */}
       {selectedVideo &&
         createPortal(
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/90 backdrop-blur-md p-4 animate-in fade-in duration-300"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/90 backdrop-blur-md p-4 sm:p-6 animate-in fade-in duration-300"
             role="dialog"
             aria-modal="true"
             aria-label={selectedVideo.content[currentLang].title}
             onKeyDown={(e) => {
-              if (e.key === 'Escape') setSelectedVideo(null);
+              if (e.key === 'Escape') handleCloseVideo();
             }}
           >
-            <div className="relative w-full max-w-5xl aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/10">
-              <button
-                onClick={() => setSelectedVideo(null)}
-                className="absolute top-4 right-4 z-10 p-2.5 rounded-full bg-black/60 text-white hover:bg-white/20 transition-all shadow-md"
-                aria-label={t('academy.close_video')}
-              >
-                <X size={20} />
-              </button>
-              <video
-                src={selectedVideo.videoSrc}
-                controls
-                autoPlay
-                className="w-full h-full object-contain"
-              />
+            <div className="relative w-full max-w-5xl bg-slate-900 rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/10 flex flex-col">
+              <div className="relative aspect-video w-full bg-black">
+                <button
+                  onClick={handleCloseVideo}
+                  className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-black/70 text-white hover:bg-white/20 transition-all shadow-md focus:outline-hidden"
+                  aria-label={isEn ? 'Close video' : 'Video schließen'}
+                >
+                  <X size={20} />
+                </button>
+                <video
+                  src={selectedVideo.videoSrc}
+                  controls
+                  autoPlay
+                  preload="metadata"
+                  playsInline
+                  className="w-full h-full object-contain"
+                >
+                  <track kind="captions" />
+                  Your browser does not support HTML5 video playback.
+                </video>
+              </div>
+
+              <div className="p-6 bg-slate-900 text-white border-t border-white/10">
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+                  <span className="px-2.5 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider">
+                    {selectedVideo.content[currentLang].tag}
+                  </span>
+                  <span className="text-xs text-slate-400 font-medium">
+                    Dauer: ~{selectedVideo.content[currentLang].duration} Min • 100% Lokal gehostet
+                  </span>
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold font-display text-white mb-2">
+                  {selectedVideo.content[currentLang].title}
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  {selectedVideo.content[currentLang].description}
+                </p>
+              </div>
             </div>
           </div>,
           document.body
         )}
     </main>
   );
-};
+}
 
-export default Academy;
+export default function Academy() {
+  return (
+    <Suspense fallback={<div className="min-h-dvh bg-background-light" />}>
+      <AcademyContent />
+    </Suspense>
+  );
+}

@@ -1,4 +1,5 @@
 import { GOOGLE_REVIEWS, REVIEWS_SUMMARY } from '@/shared/data/reviews';
+import { academyData } from '@/shared/data/academy';
 
 export const BASE_URL = 'https://www.codayweb.de';
 export const ORG_ID = `${BASE_URL}/#organization`;
@@ -702,5 +703,72 @@ export function getIndustrySchema(industry: {
       { '@type': 'AdministrativeArea', name: 'Mittelhessen' },
       { '@type': 'AdministrativeArea', name: 'Hessen' },
     ],
+  };
+}
+
+export function getAcademyVideoSchemas(locale: string = 'de') {
+  const lang = locale === 'en' ? 'en' : 'de';
+  return academyData.map((course) => ({
+    '@type': 'VideoObject',
+    '@id': `${BASE_URL}/${locale}/knowledge/academy#${course.slug}`,
+    name: course.content[lang].title,
+    description: course.content[lang].description,
+    thumbnailUrl: [`${BASE_URL}${course.image}`],
+    uploadDate: course.uploadDate,
+    duration: course.isoDuration,
+    contentUrl: `${BASE_URL}${course.videoSrc}`,
+    embedUrl: `${BASE_URL}/${locale}/knowledge/academy?video=${course.slug}`,
+    inLanguage: locale,
+    isFamilyFriendly: true,
+    keywords: course.tags.join(', '),
+    publisher: {
+      '@id': ORG_ID,
+    },
+    author: {
+      '@type': 'Person',
+      name: 'Umutcan Emre Tezgel',
+      jobTitle: 'Lead Web Architect & Founder',
+      url: `${BASE_URL}/${locale}/about`,
+    },
+    locationCreated: {
+      '@type': 'Place',
+      name: 'Wetzlar, Hessen, Deutschland',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Wetzlar',
+        addressRegion: 'Hessen',
+        postalCode: '35578',
+        addressCountry: 'DE',
+      },
+    },
+  }));
+}
+
+export function getAcademyCollectionSchema(locale: string = 'de') {
+  const isEn = locale === 'en';
+  const videoSchemas = getAcademyVideoSchemas(locale);
+
+  return {
+    '@type': 'CollectionPage',
+    '@id': `${BASE_URL}/${locale}/knowledge/academy#collection`,
+    name: isEn
+      ? 'Coday Web Design Academy & Video Masterclasses'
+      : 'Coday Webdesign Academy & Video-Masterclasses Wetzlar',
+    url: `${BASE_URL}/${locale}/knowledge/academy`,
+    description: isEn
+      ? 'Comprehensive video masterclasses and tutorials on web design, local SEO, conversion rate optimization, and modern Next.js development for businesses in Central Hesse.'
+      : 'Umfassende Video-Masterclasses und Tutorials zu Webdesign, lokaler SEO, Conversion-Optimierung und modernster Next.js Entwicklung für Unternehmen in Wetzlar und Mittelhessen.',
+    inLanguage: locale,
+    isPartOf: { '@id': `${BASE_URL}/#website` },
+    about: { '@id': ORG_ID },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: videoSchemas.length,
+      itemListElement: videoSchemas.map((video, idx) => ({
+        '@type': 'ListItem',
+        position: idx + 1,
+        item: video,
+      })),
+    },
   };
 }
