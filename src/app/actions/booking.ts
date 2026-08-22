@@ -55,6 +55,7 @@ export async function bookAppointment(payload: BookingPayload) {
         to: [email],
         subject: `Terminbestätigung: ${date} um ${time_slot} Uhr · Coday`,
         html: generateCustomerBookingEmailHtml(bookingData),
+        replyTo: ADMIN_EMAIL,
       });
     } catch (customerEmailErr) {
       console.warn(
@@ -69,6 +70,7 @@ export async function bookAppointment(payload: BookingPayload) {
       to: [ADMIN_EMAIL],
       subject: `📅 Neuer Beratungstermin: ${name} — ${date} um ${time_slot} Uhr`,
       html: generateAgencyBookingEmailHtml(bookingData),
+      replyTo: email,
     });
 
     if (adminEmailResult.error) {

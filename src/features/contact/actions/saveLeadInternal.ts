@@ -115,6 +115,7 @@ export async function saveLeadInternalAction(data: LeadSubmissionPayload) {
         to: [data.email],
         subject: customerSubject,
         html: customerHtml,
+        replyTo: ADMIN_EMAIL,
       });
 
       if (customerRes.error) {

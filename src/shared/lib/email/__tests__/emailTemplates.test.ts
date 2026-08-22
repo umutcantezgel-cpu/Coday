@@ -104,4 +104,35 @@ describe('Email Templates Module', () => {
       expect(customerHtml).toContain('Umutcan Emre Tezgel');
     });
   });
+
+  describe('Strict No-Price Policy Validation', () => {
+    it('guarantees that no currency symbols or hardcoded price amounts are leaked in emails', () => {
+      const leadPayload = {
+        name: 'Thomas Meier',
+        email: 'meier@b2b-hessen.de',
+        packageName: 'Business (Mittel)',
+        addons: [
+          { id: 'func-cms', name: 'Sanity v3 Headless CMS', category: 'feature' },
+          { id: 'commerce-headless', name: 'E-Commerce Storefront', category: 'commerce' },
+        ],
+        message: 'Bitte um Angebot.',
+      };
+
+      const agencyHtml = generateAgencyLeadEmailHtml(leadPayload);
+      const customerHtml = generateCustomerConfirmationEmailHtml(leadPayload);
+
+      // Assert that currency signs and hardcoded prices are NOT present
+      expect(agencyHtml).not.toContain('€');
+      expect(agencyHtml).not.toContain('EUR');
+      expect(agencyHtml).not.toContain('2500');
+      expect(agencyHtml).not.toContain('5000');
+      expect(agencyHtml).not.toContain('10000');
+
+      expect(customerHtml).not.toContain('€');
+      expect(customerHtml).not.toContain('EUR');
+      expect(customerHtml).not.toContain('2500');
+      expect(customerHtml).not.toContain('5000');
+      expect(customerHtml).not.toContain('10000');
+    });
+  });
 });
