@@ -191,6 +191,10 @@ export const Footer: React.FC = () => {
                   href: '/calculator',
                   label: t('nav.resources.calculator', { defaultValue: 'Preis-Rechner' }),
                 },
+                {
+                  href: '/strobi',
+                  label: 'Strobi Mii World',
+                },
               ].map((link, idx) => (
                 <li key={idx}>
                   <Link
