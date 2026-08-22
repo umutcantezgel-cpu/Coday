@@ -8,7 +8,6 @@
       <video:title><![CDATA[5 Fragen an Ihre Web-Agentur – Der Praxis-Leitfaden für Unternehmer]]></video:title>
       <video:description><![CDATA[Worauf müssen Unternehmer aus Wetzlar und Mittelhessen achten, bevor sie eine Webagentur beauftragen? In dieser Video-Masterclass erfahren Sie die 5 kritischen Fragen zu Quellcode-Eigentum, Next.js Performance, No-Lock-in und messbarem ROI.]]></video:description>
       <video:content_loc>https://www.codayweb.de/videos/academy/5_Fragen_an_Ihre_Web-Agentur.mp4</video:content_loc>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.codayweb.de/de/knowledge/academy?video=5-questions</video:player_loc>
       <video:duration>765</video:duration>
       <video:publication_date>2025-01-15T09:00:00+01:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
@@ -29,7 +28,6 @@
       <video:title><![CDATA[Aus Besuchern werden Kunden – Psychologische Conversion-Optimierung]]></video:title>
       <video:description><![CDATA[Traffic alleine reicht nicht: Erfahren Sie, wie Sie Ihre Website durch psychologische Nutzerführung, klare Call-to-Actions und optimierte Ladezeiten in eine planbare Neukundenmaschine für Ihr Unternehmen verwandeln.]]></video:description>
       <video:content_loc>https://www.codayweb.de/videos/academy/Aus_Besuchern_werden_Kunden.mp4</video:content_loc>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.codayweb.de/de/knowledge/academy?video=visitors-customers</video:player_loc>
       <video:duration>1100</video:duration>
       <video:publication_date>2025-01-20T10:00:00+01:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
@@ -50,7 +48,6 @@
       <video:title><![CDATA[Die Ultimative SEO-Strategie – Google-Dominanz für Mittelhessen & B2B]]></video:title>
       <video:description><![CDATA[Schritt-für-Schritt Anleitung für Top-Rankings bei Google: Technisches SEO, Core Web Vitals 100/100, semantische Topic-Silos und lokale SEO-Dominanz in Wetzlar, Gießen und ganz Hessen.]]></video:description>
       <video:content_loc>https://www.codayweb.de/videos/academy/Die_Ultimative_SEO_Strategie.mp4</video:content_loc>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.codayweb.de/de/knowledge/academy?video=seo-strategy</video:player_loc>
       <video:duration>850</video:duration>
       <video:publication_date>2025-01-25T11:00:00+01:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
@@ -71,7 +68,6 @@
       <video:title><![CDATA[Google Bewertungen Meistern – Vertrauen & Lokale Sichtbarkeit aufbauen]]></video:title>
       <video:description><![CDATA[Wie lokale Dienstleister, Handwerker und Praxen aus Wetzlar und Umgebung kontinuierlich echte 5-Sterne-Bewertungen auf Google aufbauen, professionell auf Feedback reagieren und ihren Trust-Score maximieren.]]></video:description>
       <video:content_loc>https://www.codayweb.de/videos/academy/GOOGLE-BEWERTUNGEN_MEISTERN.mp4</video:content_loc>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.codayweb.de/de/knowledge/academy?video=google-reviews</video:player_loc>
       <video:duration>570</video:duration>
       <video:publication_date>2025-02-01T09:30:00+01:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
@@ -92,7 +88,6 @@
       <video:title><![CDATA[So kommen Besucher auf deine Seite – Nachhaltige Traffic-Kanäle 2026]]></video:title>
       <video:description><![CDATA[Organischer Suchtraffic, Social Media Synergien und GEO (Generative Engine Optimization): Die effektivsten Strategien, um qualifizierte Interessenten und Neukunden auf Ihre Unternehmenswebsite zu lenken.]]></video:description>
       <video:content_loc>https://www.codayweb.de/videos/academy/SO_KOMMEN_BESUCHER_AUF_DEINE_SEITE.mp4</video:content_loc>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.codayweb.de/de/knowledge/academy?video=traffic-generation</video:player_loc>
       <video:duration>975</video:duration>
       <video:publication_date>2025-02-05T14:00:00+01:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
@@ -113,7 +108,6 @@
       <video:title><![CDATA[Was kostet eine Website wirklich? – Preisfallen & Budget-Kalkulation]]></video:title>
       <video:description><![CDATA[Transparente Aufschlüsselung moderner Webentwicklung: Von der Basis-Website bis zur Enterprise-Plattform. Vermeiden Sie versteckte Abo-Fallen, WordPress-Wartungskosten und Fehlinvestitionen.]]></video:description>
       <video:content_loc>https://www.codayweb.de/videos/academy/WAS_KOSTET_EINE_WEBSITE_WIRKLICH_.mp4</video:content_loc>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.codayweb.de/de/knowledge/academy?video=website-cost</video:player_loc>
       <video:duration>660</video:duration>
       <video:publication_date>2025-02-10T11:00:00+01:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
@@ -134,7 +128,6 @@
       <video:title><![CDATA[Website: Magnet oder Schreck? – Der 7-Punkte-Audit für Ihren Auftritt]]></video:title>
       <video:description><![CDATA[Schreckt Ihre aktuelle Internetseite Kunden ab oder zieht sie Anfragen magnetisch an? Der praxisnahe 7-Punkte-Check für Ladezeiten unter 0,3s, Mobile-UX, Design-Wirkung und DSGVO-Sicherheit.]]></video:description>
       <video:content_loc>https://www.codayweb.de/videos/academy/Website__Magnet_oder_Schreck_.mp4</video:content_loc>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.codayweb.de/de/knowledge/academy?video=website-check</video:player_loc>
       <video:duration>525</video:duration>
       <video:publication_date>2025-02-15T15:00:00+01:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
@@ -155,7 +148,6 @@
       <video:title><![CDATA[5 Questions to Ask Your Web Agency – Practical Guide for Founders]]></video:title>
       <video:description><![CDATA[What should business owners look out for before hiring a web agency? Learn the 5 critical questions covering source code ownership, Next.js performance, contract terms, and measurable digital ROI.]]></video:description>
       <video:content_loc>https://www.codayweb.de/videos/academy/5_Fragen_an_Ihre_Web-Agentur.mp4</video:content_loc>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.codayweb.de/en/knowledge/academy?video=5-questions</video:player_loc>
       <video:duration>765</video:duration>
       <video:publication_date>2025-01-15T09:00:00+01:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
@@ -176,7 +168,6 @@
       <video:title><![CDATA[Turning Visitors into Customers – High-Impact Conversion Optimization]]></video:title>
       <video:description><![CDATA[Traffic is only half the battle: Discover how to transform your website into a predictable customer generation engine using psychological UX, clear CTAs, and instant load speeds.]]></video:description>
       <video:content_loc>https://www.codayweb.de/videos/academy/Aus_Besuchern_werden_Kunden.mp4</video:content_loc>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.codayweb.de/en/knowledge/academy?video=visitors-customers</video:player_loc>
       <video:duration>1100</video:duration>
       <video:publication_date>2025-01-20T10:00:00+01:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
@@ -197,7 +188,6 @@
       <video:title><![CDATA[The Ultimate SEO Strategy – Dominate Google Rankings for B2B]]></video:title>
       <video:description><![CDATA[Step-by-step masterclass for top Google search rankings: Technical SEO, Core Web Vitals 100/100, semantic topic silos, and local SEO dominance across Germany and Europe.]]></video:description>
       <video:content_loc>https://www.codayweb.de/videos/academy/Die_Ultimative_SEO_Strategie.mp4</video:content_loc>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.codayweb.de/en/knowledge/academy?video=seo-strategy</video:player_loc>
       <video:duration>850</video:duration>
       <video:publication_date>2025-01-25T11:00:00+01:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
@@ -215,10 +205,9 @@
     <loc>https://www.codayweb.de/en/knowledge/academy?video=google-reviews</loc>
     <video:video>
       <video:thumbnail_loc>https://www.codayweb.de/images/industries/handwerker-tablet.webp</video:thumbnail_loc>
-      <video:title><![CDATA[Mastering Google Reviews – Build Trust & Dominate Local Search]]></video:title>
-      <video:description><![CDATA[How local businesses and service providers build authentic 5-star reviews on Google, handle feedback professionally, and maximize local search visibility and trust.]]></video:description>
+      <video:title><![CDATA[Mastering Google Reviews – Build Trust & Dominant Local Authority]]></video:title>
+      <video:description><![CDATA[How regional service providers, craft businesses, and medical practices build authentic 5-star Google ratings, handle customer feedback, and maximize search trust scores.]]></video:description>
       <video:content_loc>https://www.codayweb.de/videos/academy/GOOGLE-BEWERTUNGEN_MEISTERN.mp4</video:content_loc>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.codayweb.de/en/knowledge/academy?video=google-reviews</video:player_loc>
       <video:duration>570</video:duration>
       <video:publication_date>2025-02-01T09:30:00+01:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
@@ -236,10 +225,9 @@
     <loc>https://www.codayweb.de/en/knowledge/academy?video=traffic-generation</loc>
     <video:video>
       <video:thumbnail_loc>https://www.codayweb.de/images/marketing/social-media-marketing-influencer-likes-shares-viral.webp</video:thumbnail_loc>
-      <video:title><![CDATA[How to Drive Quality Traffic to Your Website – Growth Channels 2026]]></video:title>
-      <video:description><![CDATA[Organic search traffic, social media synergy, and Generative Engine Optimization (GEO): The most effective playbooks for attracting qualified B2B leads to your website.]]></video:description>
+      <video:title><![CDATA[Driving Traffic to Your Website – High-Yield Sustainable Channels 2026]]></video:title>
+      <video:description><![CDATA[Organic search traffic, social synergies, and GEO (Generative Engine Optimization): The most effective methodologies for attracting high-intent B2B inquiries to your digital presence.]]></video:description>
       <video:content_loc>https://www.codayweb.de/videos/academy/SO_KOMMEN_BESUCHER_AUF_DEINE_SEITE.mp4</video:content_loc>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.codayweb.de/en/knowledge/academy?video=traffic-generation</video:player_loc>
       <video:duration>975</video:duration>
       <video:publication_date>2025-02-05T14:00:00+01:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
@@ -257,10 +245,9 @@
     <loc>https://www.codayweb.de/en/knowledge/academy?video=website-cost</loc>
     <video:video>
       <video:thumbnail_loc>https://www.codayweb.de/images/marketing/email-marketing-kampagne-newsletter-zielgruppe-versand.webp</video:thumbnail_loc>
-      <video:title><![CDATA[What Does a Website Really Cost? – Budgeting & Hidden Cost Traps]]></video:title>
-      <video:description><![CDATA[Transparent breakdown of modern web engineering costs: From compact business sites to enterprise platforms. Avoid hidden subscription traps, plugin bloat, and wrong investments.]]></video:description>
+      <video:title><![CDATA[What Does a Website Truly Cost? – Pricing Traps & Budget Planning]]></video:title>
+      <video:description><![CDATA[Transparent cost breakdown for modern web development: From single landing pages to scalable enterprise platforms. Avoid hidden subscription traps and legacy CMS maintenance costs.]]></video:description>
       <video:content_loc>https://www.codayweb.de/videos/academy/WAS_KOSTET_EINE_WEBSITE_WIRKLICH_.mp4</video:content_loc>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.codayweb.de/en/knowledge/academy?video=website-cost</video:player_loc>
       <video:duration>660</video:duration>
       <video:publication_date>2025-02-10T11:00:00+01:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
@@ -278,10 +265,9 @@
     <loc>https://www.codayweb.de/en/knowledge/academy?video=website-check</loc>
     <video:video>
       <video:thumbnail_loc>https://www.codayweb.de/images/hero/business-meeting-besprechung-team-konferenz.webp</video:thumbnail_loc>
-      <video:title><![CDATA[Website: Magnet or Repellent? – The 7-Point Web Audit Checklist]]></video:title>
-      <video:description><![CDATA[Is your current website repelling potential clients or attracting high-value leads? The definitive 7-point audit for page speed, mobile UX, design authority, and legal compliance.]]></video:description>
+      <video:title><![CDATA[Website: Magnet or Deterrent? – The 7-Point Audit for High Conversions]]></video:title>
+      <video:description><![CDATA[Is your digital storefront repelling prospects or driving conversions? The comprehensive 7-point audit for sub-0.3s speeds, mobile usability, brand credibility, and GDPR compliance.]]></video:description>
       <video:content_loc>https://www.codayweb.de/videos/academy/Website__Magnet_oder_Schreck_.mp4</video:content_loc>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.codayweb.de/en/knowledge/academy?video=website-check</video:player_loc>
       <video:duration>525</video:duration>
       <video:publication_date>2025-02-15T15:00:00+01:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>

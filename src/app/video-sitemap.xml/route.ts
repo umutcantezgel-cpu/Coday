@@ -27,7 +27,6 @@ export async function GET() {
       <video:title><![CDATA[${title}]]></video:title>
       <video:description><![CDATA[${description}]]></video:description>
       <video:content_loc>${contentUrl}</video:content_loc>
-      <video:player_loc allow_embed="yes" autoplay="ap=1">${pageUrl}</video:player_loc>
       <video:duration>${course.durationInSeconds}</video:duration>
       <video:publication_date>${course.uploadDate}</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
