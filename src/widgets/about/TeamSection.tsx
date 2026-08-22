@@ -128,34 +128,6 @@ export const TeamSection: React.FC = () => {
           </div>
         </m.div>
       </div>
-
-      {/* Structured Data: Person */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Person',
-            name: 'Umutcan Emre Tezgel',
-            jobTitle: isEn ? 'Founder & Developer' : 'Gründer & Entwickler',
-            description: isEn
-              ? 'Full-stack developer and founder of Coday, a solo web agency from Wetzlar.'
-              : 'Full-Stack-Entwickler und Gründer von Coday, einer Solo-Webagentur aus Wetzlar.',
-            url: isEn ? 'https://www.codayweb.de/en/about' : 'https://www.codayweb.de/about',
-            worksFor: {
-              '@type': 'Organization',
-              name: 'Coday',
-              url: 'https://www.codayweb.de',
-            },
-            address: {
-              '@type': 'PostalAddress',
-              addressLocality: 'Wetzlar',
-              addressRegion: 'Hessen',
-              addressCountry: 'DE',
-            },
-          }),
-        }}
-      />
     </section>
   );
 };

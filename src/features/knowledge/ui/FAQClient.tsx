@@ -18,7 +18,6 @@ import {
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
 import GradientText from '@/shared/ui/GradientText';
-import { JsonLd } from '@/shared/ui/JsonLd';
 import { getFAQs, getFAQCategories } from '@/features/faq/model';
 import TroubleshooterWizard from '@/features/faq/ui/TroubleshooterWizard';
 
@@ -67,18 +66,6 @@ const FAQ = () => {
 
   return (
     <main className="min-h-dvh bg-background-light pt-4 pb-20 md:pt-6 md:pb-28">
-      <JsonLd
-        pageType="faq"
-        data={{
-          faq: {
-            questions: faqs.map((f) => ({
-              question: f.question,
-              answer: f.answer,
-            })),
-          },
-        }}
-      />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumbs */}
         <div className="mb-6 flex justify-start">

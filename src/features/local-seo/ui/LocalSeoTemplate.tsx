@@ -11,7 +11,6 @@ import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';
 import { LocalSplitHero } from './LocalSplitHero';
-import { LocalSchemaBuilder } from './LocalSchemaBuilder';
 
 interface LocalSeoContent {
   target: string;
@@ -58,8 +57,6 @@ export const LocalSeoTemplate: React.FC<LocalSeoTemplateProps> = ({ content, cit
 
   return (
     <div className="bg-background-light min-h-dvh">
-      {cityData && <LocalSchemaBuilder city={cityData} />}
-
       {/* Split Hero Section with Above-the-Fold Contact Form */}
       <LocalSplitHero
         badgeText={content.hero.headline}
