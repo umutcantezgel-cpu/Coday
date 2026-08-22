@@ -23,12 +23,15 @@ import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
 import GradientText from '@/shared/ui/GradientText';
 import { academyData, Course } from '@/shared/data/academy';
+import { StrobiInteractiveStage } from '@/entities/avatar';
+import { useChatStore } from '@/widgets/chatbot/lib/chatStore';
 
 function AcademyContent() {
   const t = useTranslations('knowledge');
   const locale = useLocale();
   const isEn = locale === 'en';
   const searchParams = useSearchParams();
+  const { toggleChat } = useChatStore();
   const [activeModalVideo, setActiveModalVideo] = useState<Course | null>(null);
   const [dismissedSlug, setDismissedSlug] = useState<string | null>(null);
   const currentLang = locale as 'de' | 'en';
@@ -199,8 +202,13 @@ function AcademyContent() {
           ))}
         </div>
 
+        {/* Strobi AI Avatar Interactive Stage */}
+        <section className="mt-16">
+          <StrobiInteractiveStage onOpenChat={toggleChat} />
+        </section>
+
         {/* Local Consultation CTA Section */}
-        <section className="mt-20 p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 text-white relative overflow-hidden shadow-2xl">
+        <section className="mt-16 p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 text-white relative overflow-hidden shadow-2xl">
           <div className="relative z-10 max-w-3xl">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider mb-4 border border-amber-500/30">
               <Sparkle className="w-3.5 h-3.5 text-amber-400" />

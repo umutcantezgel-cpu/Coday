@@ -162,17 +162,17 @@ Antworte jetzt als Berater auf die letzte Nachricht. Halte die Antwort kurz und 
 }
 
 /**
- * Generate a Codi greeting message
+ * Generate a Strobi greeting message
  */
 export function getGreetingMessage(): string {
   const hour = new Date().getHours();
 
   if (hour < 12) {
-    return 'Guten Morgen. Ich bin Codi, Ihr digitaler Assistent bei Coday. Wie kann ich Ihnen heute behilflich sein?';
+    return 'Guten Morgen! Ich bin Strobi, Ihr KI-Avatar und digitaler Begleiter bei Coday. Wie kann ich Ihnen heute bei Ihrem Web-Projekt helfen?';
   } else if (hour < 18) {
-    return 'Guten Tag. Ich bin Codi, Ihr digitaler Assistent bei Coday. Wie kann ich Ihnen weiterhelfen?';
+    return 'Guten Tag! Ich bin Strobi, Ihr KI-Avatar bei Coday. Haben Sie Fragen zu Webentwicklung, Headless CMS oder SEO?';
   } else {
-    return 'Guten Abend. Ich bin Codi, Ihr digitaler Assistent bei Coday. Haben Sie Fragen zu unseren Dienstleistungen?';
+    return 'Guten Abend! Ich bin Strobi, Ihr digitaler Assistent bei Coday. Wie kann ich Sie bei Ihrer nächsten Website unterstützen?';
   }
 }
 

@@ -11,6 +11,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { useCalculatorStore } from '@/features/calculator/model/store';
 import BookingCalendar from '@/features/booking/ui/BookingCalendar';
 import { trackEvent } from '@/shared/lib/analytics/tracking';
+import { StrobiAvatar } from '@/entities/avatar';
 
 type WizardFormData = {
   project?: string;
@@ -238,6 +239,9 @@ export const ApplicationWizard: React.FC = () => {
           transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
           className="bg-white rounded-3xl p-6 md:p-12 text-center shadow-xl border border-gray-100"
         >
+          <div className="flex justify-center mb-4">
+            <StrobiAvatar state="celebrate" dimension={84} enableTracking={true} />
+          </div>
           <h2 className="text-2xl font-bold text-gray-900 mb-2">
             {t('wizard.success.booking_title')}
           </h2>

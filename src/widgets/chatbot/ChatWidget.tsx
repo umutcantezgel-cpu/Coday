@@ -1,14 +1,24 @@
 'use client';
 import React, { useRef, useEffect, useState } from 'react';
 import { m, AnimatePresence } from 'motion/react';
-import { ChatCircle, X, Minus, PaperPlaneRight, CircleNotch } from '@phosphor-icons/react/dist/ssr';
+import { X, Minus, PaperPlaneRight, CircleNotch } from '@phosphor-icons/react/dist/ssr';
 import { useChatStore } from '@/widgets/chatbot/lib/chatStore';
+import { StrobiAvatar } from '@/entities/avatar';
 import { Input } from '@/shared/ui/Input';
 import { Button } from '@/shared/ui/Button';
 
 export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = false }) => {
-  const { isOpen, isMinimized, messages, isTyping, toggleChat, minimizeChat, sendMessage } =
-    useChatStore();
+  const {
+    isOpen,
+    isMinimized,
+    avatarState,
+    messages,
+    isTyping,
+    toggleChat,
+    minimizeChat,
+    setAvatarState,
+    sendMessage,
+  } = useChatStore();
 
   const [inputValue, setInputValue] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -37,7 +47,7 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
 
   return (
     <>
-      {/* Chat Button */}
+      {/* Strobi Floating Button */}
       <AnimatePresence>
         {(!isOpen || isMinimized) && !hideTrigger && (
           <m.button
@@ -45,18 +55,20 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
             onClick={toggleChat}
-            className="fixed right-4 md:right-6 z-[9999] w-14 h-14 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white shadow-2xl hover:shadow-purple-500/25 transition-[transform,box-shadow] motion-reduce:duration-[0.01ms] flex items-center justify-center group bottom-[90px] md:bottom-6 opacity-100 isolation-auto"
-            aria-label="Chat öffnen"
+            className="fixed right-4 md:right-6 z-[9999] w-16 h-16 rounded-full bg-slate-950/90 border border-blue-500/40 text-white shadow-2xl hover:shadow-blue-500/30 hover:border-blue-400 transition-[transform,box-shadow,border-color] motion-reduce:duration-[0.01ms] flex items-center justify-center group bottom-[90px] md:bottom-6 opacity-100 isolation-auto backdrop-blur-md"
+            aria-label="Chat mit Strobi KI-Avatar öffnen"
           >
-            <ChatCircle
-              className="w-6 h-6 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms] relative z-10"
-              aria-hidden="true"
+            <StrobiAvatar
+              state={isMinimized ? 'happy' : 'idle'}
+              dimension={52}
+              enableTracking={true}
+              interactive={true}
             />
 
             {/* Notification Badge */}
             {messages.length > 0 && isMinimized && (
               <span
-                className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full text-xs font-bold flex items-center justify-center z-20 shadow-sm"
+                className="absolute -top-1 -right-1 w-5 h-5 bg-blue-600 rounded-full text-xs font-bold flex items-center justify-center z-20 shadow-sm border-2 border-slate-950"
                 aria-live="polite"
                 aria-label={`${messages.length} ungelesene Nachrichten`}
               >
@@ -64,8 +76,8 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
               </span>
             )}
 
-            {/* Pulse Animation */}
-            <span className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 animate-ping opacity-40 motion-reduce:animate-none -z-10" />
+            {/* Pulse Glow */}
+            <span className="absolute inset-0 rounded-full bg-blue-500/20 animate-ping opacity-50 motion-reduce:animate-none -z-10" />
           </m.button>
         )}
       </AnimatePresence>
@@ -78,32 +90,43 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="fixed right-4 md:right-6 z-[9999] w-[calc(100vw-2rem)] md:w-96 h-[500px] max-h-[calc(100dvh-7rem)] bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] border border-gray-200 flex flex-col overflow-hidden bottom-[90px] md:bottom-6 opacity-100"
+            className="fixed right-4 md:right-6 z-[9999] w-[calc(100vw-2rem)] md:w-96 h-[520px] max-h-[calc(100dvh-7rem)] bg-slate-950 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-slate-800 flex flex-col overflow-hidden bottom-[90px] md:bottom-6 opacity-100 backdrop-blur-xl"
             role="dialog"
-            aria-label="Chat mit Codi KI-Assistent"
+            aria-label="Chat mit Strobi KI-Avatar"
           >
-            {/* Header */}
-            <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 px-4 py-3 flex items-center justify-between">
+            {/* Header with Living Strobi Avatar */}
+            <div className="bg-gradient-to-r from-blue-900/80 via-indigo-950 to-slate-900 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                  <span className="text-lg font-bold text-white">C</span>
+                <div className="relative">
+                  <StrobiAvatar
+                    state={avatarState}
+                    dimension={42}
+                    enableTracking={true}
+                    interactive={false}
+                  />
+                  <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-slate-900" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-white">Codi</h3>
-                  <p className="text-xs text-blue-100">KI-Assistent</p>
+                  <div className="flex items-center gap-1.5">
+                    <h3 className="font-bold text-white text-sm">Strobi</h3>
+                    <span className="px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300 text-[10px] font-semibold">
+                      KI-Avatar
+                    </span>
+                  </div>
+                  <p className="text-xs text-slate-400">Digitaler Performance-Architekt</p>
                 </div>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1">
                 <button
                   onClick={minimizeChat}
-                  className="p-1.5 rounded-full hover:bg-white/20 transition-colors motion-reduce:duration-[0.01ms] text-white"
+                  className="p-1.5 rounded-lg hover:bg-white/10 transition-colors text-slate-300 hover:text-white"
                   aria-label="Chat minimieren"
                 >
                   <Minus className="w-4 h-4" aria-hidden="true" />
                 </button>
                 <button
                   onClick={toggleChat}
-                  className="p-1.5 rounded-full hover:bg-white/20 transition-colors motion-reduce:duration-[0.01ms] text-white"
+                  className="p-1.5 rounded-lg hover:bg-white/10 transition-colors text-slate-300 hover:text-white"
                   aria-label="Chat schließen"
                 >
                   <X className="w-4 h-4" aria-hidden="true" />
@@ -112,16 +135,15 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
             </div>
 
             {/* AI Disclaimer Banner */}
-            <div className="bg-amber-50 border-b border-amber-100 px-3 py-2">
-              <p className="text-xs text-amber-700 text-center">
-                <span className="font-medium">Hinweis:</span> KI-generiert. Keine
-                rechtliche/medizinische Beratung.
+            <div className="bg-slate-900/80 border-b border-slate-800/80 px-3 py-1.5">
+              <p className="text-[11px] text-slate-400 text-center">
+                ⚡ Bereit für Ihre Fragen zu Next.js, Headless CMS, SEO & Festpreisen.
               </p>
             </div>
 
             {/* Messages */}
             <div
-              className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50"
+              className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-950/90 text-slate-100"
               role="log"
               aria-live="polite"
               aria-label="Chat-Nachrichten"
@@ -134,16 +156,16 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
                   className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
                   <div
-                    className={`max-w-[80%] px-4 py-2.5 rounded-2xl ${
+                    className={`max-w-[85%] px-4 py-2.5 rounded-2xl ${
                       message.role === 'user'
-                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-br-md'
-                        : 'bg-white text-gray-800 border border-gray-100 shadow-sm rounded-bl-md'
+                        ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-br-sm shadow-md'
+                        : 'bg-slate-900/90 text-slate-200 border border-slate-800 shadow-sm rounded-bl-sm'
                     }`}
                   >
                     <p className="text-sm leading-relaxed">{message.content}</p>
                     {message.role === 'assistant' && (
-                      <p className="text-[10px] text-gray-400 mt-1 flex items-center gap-1">
-                        <span>KI-generiert</span>
+                      <p className="text-[10px] text-slate-400 mt-1 flex items-center gap-1">
+                        <span>Strobi KI</span>
                       </p>
                     )}
                   </div>
@@ -157,20 +179,23 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
                   animate={{ opacity: 1 }}
                   className="flex justify-start"
                   role="status"
-                  aria-label="Codi tippt..."
+                  aria-label="Strobi überlegt..."
                 >
-                  <div className="bg-white px-4 py-3 rounded-2xl rounded-bl-md border border-gray-100 shadow-sm">
-                    <div className="flex gap-1">
+                  <div className="bg-slate-900 px-4 py-3 rounded-2xl rounded-bl-sm border border-slate-800 shadow-sm">
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-xs text-blue-400 font-medium mr-1">
+                        Strobi überlegt
+                      </span>
                       <span
-                        className="w-2 h-2 bg-gray-400 rounded-full animate-bounce motion-reduce:animate-none"
+                        className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce motion-reduce:animate-none"
                         style={{ animationDelay: '0ms' }}
                       />
                       <span
-                        className="w-2 h-2 bg-gray-400 rounded-full animate-bounce motion-reduce:animate-none"
+                        className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce motion-reduce:animate-none"
                         style={{ animationDelay: '150ms' }}
                       />
                       <span
-                        className="w-2 h-2 bg-gray-400 rounded-full animate-bounce motion-reduce:animate-none"
+                        className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce motion-reduce:animate-none"
                         style={{ animationDelay: '300ms' }}
                       />
                     </div>
@@ -182,25 +207,35 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
             </div>
 
             {/* Input */}
-            <form onSubmit={handleSubmit} className="p-3 bg-white border-t border-gray-100">
+            <form onSubmit={handleSubmit} className="p-3 bg-slate-900/95 border-t border-slate-800">
               <div className="flex items-center gap-2">
                 <Input
                   ref={inputRef}
                   type="text"
                   value={inputValue}
+                  onFocus={() => {
+                    if (avatarState !== 'thinking') {
+                      setAvatarState('listening');
+                    }
+                  }}
+                  onBlur={() => {
+                    if (avatarState === 'listening') {
+                      setAvatarState('idle');
+                    }
+                  }}
                   onChange={(e) => setInputValue(e.target.value)}
-                  placeholder="Schreiben Sie eine Nachricht..."
+                  placeholder="Frage an Strobi stellen..."
                   aria-label="Nachricht eingeben"
                   disabled={isTyping}
                   wrapperClassName="flex-1 space-y-0"
-                  className="px-4 py-2.5 bg-gray-100 rounded-full border-0 focus:ring-2 focus:ring-purple-500/50 shadow-none"
+                  className="px-4 py-2.5 bg-slate-950 text-slate-100 rounded-xl border border-slate-800 focus:border-blue-500 focus:ring-1 focus:ring-blue-500/50 shadow-none placeholder:text-slate-500"
                 />
                 <Button
                   type="submit"
                   disabled={!inputValue.trim() || isTyping}
                   size="icon"
                   aria-label="Nachricht senden"
-                  className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-none hover:shadow-lg p-0 flex items-center justify-center shrink-0"
+                  className="w-10 h-10 rounded-xl bg-blue-600 hover:bg-blue-500 text-white shadow-none hover:shadow-lg p-0 flex items-center justify-center shrink-0 border border-blue-500/50"
                 >
                   {isTyping ? (
                     <CircleNotch className="w-4 h-4 animate-spin motion-reduce:animate-none" />

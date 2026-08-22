@@ -5,6 +5,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { m, AnimatePresence } from 'motion/react';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { bookAppointment } from '@/app/actions/booking';
+import { StrobiAvatar } from '@/entities/avatar';
 
 interface BookingCalendarProps {
   className?: string;
@@ -104,8 +105,8 @@ const BookingCalendar = ({
           animate={{ scale: 1, opacity: 1 }}
           className="flex flex-col items-center gap-4"
         >
-          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-3xl">
-            ✅
+          <div className="flex justify-center mb-1">
+            <StrobiAvatar state="celebrate" dimension={80} enableTracking={true} />
           </div>
           <h2 className="text-2xl font-bold text-gray-900">{t('calendar.success.title')}</h2>
           <p className="text-gray-700">
