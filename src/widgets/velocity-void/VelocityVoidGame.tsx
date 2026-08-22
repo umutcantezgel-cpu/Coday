@@ -37,14 +37,14 @@ const PALETTE = {
   star: '#94A3B8',
   starGlow: '#CBD5E1',
 
-  // Player Cyber Ship (Coday Blue Core & Sky Blue Sensor)
+  // Player Cyber Vessel (Coday Blue & Sky Blue Sensors)
   player: '#2563EB',
   playerHull: '#0F172A',
   playerEye: '#38BDF8',
   thruster: '#3B82F6',
   playerLaser: '#2563EB',
 
-  // Hostile Enemy Bots (Slate/Anthrazit with Crimson Scanner)
+  // Hostile Enemy Bots (Slate/Anthrazit with Crimson Sensor)
   botPrimary: '#334155',
   botHunter: '#1E293B',
   botJuggernaut: '#0F172A',
@@ -57,7 +57,7 @@ const PALETTE = {
   botEye: '#E11D48',
   enemyLaser: '#E11D48',
 
-  // Obstacles & Pickups
+  // Obstacles & Items
   meteorPrimary: '#94A3B8',
   meteorSecondary: '#64748B',
   meteorGold: '#D97706',
@@ -65,11 +65,10 @@ const PALETTE = {
   itemShield: '#10B981',
   itemHeart: '#E11D48',
 
-  // Visual Kinetic Particle Feedback
+  // Feedback Sparks
   explosion1: '#2563EB',
   explosion2: '#D97706',
   uiText: '#0F172A',
-  uiBorder: '#E2E8F0',
 };
 
 // --- SPRITES ---
@@ -105,7 +104,6 @@ const MOTHERSHIP_BOSS = [
 ];
 
 const ITEM_XP = [' C ', 'CCC', ' C '];
-
 const ITEM_HEART_EMPTY = [' VV VV ', 'V  V  V', 'V     V', ' V   V ', '  V V  ', '   V   '];
 const ITEM_SHIELD_ICON = ['SSSSS', 'S   S', 'S   S', ' S S ', '  S  '];
 const ITEM_HEART = [' R R ', 'RRRRR', ' RRR ', '  R  '];
@@ -282,6 +280,10 @@ interface Upgrade {
   maxLevel: number;
 }
 
+interface UpgradeChoice extends Upgrade {
+  currentLevel: number;
+}
+
 const UPGRADES: Record<UpgradeId, Upgrade> = {
   twin_link: {
     id: 'twin_link',
@@ -347,10 +349,6 @@ const UPGRADES: Record<UpgradeId, Upgrade> = {
     maxLevel: 3,
   },
 };
-
-interface UpgradeChoice extends Upgrade {
-  currentLevel: number;
-}
 
 export default function VelocityVoidGame() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -452,6 +450,9 @@ export default function VelocityVoidGame() {
   const stars = useRef<{ x: number; y: number; speed: number; size: number; opacity: number }[]>(
     []
   );
+  const planets = useRef<{ x: number; y: number; radius: number; color: string; speed: number }[]>(
+    []
+  );
   const screenFlash = useRef({ alpha: 0, color: '#fff' });
   const screenShake = useRef(0);
 
@@ -481,7 +482,7 @@ export default function VelocityVoidGame() {
   ) => {
     for (let i = 0; i < count; i++) {
       const angle = Math.random() * Math.PI * 2;
-      const speed = Math.random() * 7;
+      const speed = Math.random() * 8;
       particles.current.push({
         x,
         y,
@@ -492,26 +493,10 @@ export default function VelocityVoidGame() {
         vx: Math.cos(angle) * speed,
         vy: Math.sin(angle) * speed,
         life: 0,
-        maxLife: Math.random() * 26 + 10,
+        maxLife: Math.random() * 30 + 10,
         sizeMultiplier: 1.0,
       });
     }
-  };
-
-  const triggerLevelUp = () => {
-    gameStateRef.current = 'LEVEL_UP';
-    setGameState('LEVEL_UP');
-
-    const available: UpgradeChoice[] = Object.values(UPGRADES)
-      .filter((u) => player.current.upgrades[u.id] < u.maxLevel)
-      .map((u) => ({
-        ...u,
-        currentLevel: player.current.upgrades[u.id],
-      }));
-    const shuffled = available.sort(() => 0.5 - Math.random());
-    setUpgradeChoices(shuffled.slice(0, 3));
-
-    triggerScreenFlash(PALETTE.player);
   };
 
   const initGame = (canvas: HTMLCanvasElement) => {
@@ -564,13 +549,46 @@ export default function VelocityVoidGame() {
     setHudMaxXp(10);
     setHudLevel(1);
 
-    stars.current = Array.from({ length: 60 }).map(() => ({
+    stars.current = Array.from({ length: 80 }).map(() => ({
       x: retroSnap(Math.random() * canvas.width),
       y: retroSnap(Math.random() * canvas.height),
-      speed: (Math.floor(Math.random() * 3) + 1) * 0.35,
+      speed: (Math.floor(Math.random() * 3) + 1) * 0.35 + Math.random() * 0.2,
       size: Math.max(CONFIG.PIXEL_SIZE, CONFIG.PIXEL_SIZE * (Math.random() > 0.8 ? 2 : 1)),
-      opacity: Math.random() * 0.4 + 0.2,
+      opacity: Math.random() * 0.5 + 0.1,
     }));
+
+    planets.current = [
+      {
+        x: retroSnap(canvas.width * 0.2),
+        y: -200,
+        radius: retroSnap(90),
+        color: '#E2E8F0',
+        speed: 0.1,
+      },
+      {
+        x: retroSnap(canvas.width * 0.8),
+        y: canvas.height * 0.5,
+        radius: retroSnap(45),
+        color: '#CBD5E1',
+        speed: 0.18,
+      },
+    ];
+  };
+
+  const triggerLevelUp = () => {
+    gameStateRef.current = 'LEVEL_UP';
+    setGameState('LEVEL_UP');
+
+    const available: UpgradeChoice[] = Object.values(UPGRADES)
+      .filter((u) => player.current.upgrades[u.id] < u.maxLevel)
+      .map((u) => ({
+        ...u,
+        currentLevel: player.current.upgrades[u.id],
+      }));
+    const shuffled = available.sort(() => 0.5 - Math.random());
+    setUpgradeChoices(shuffled.slice(0, 3));
+
+    triggerScreenFlash(PALETTE.player);
   };
 
   const applyUpgrade = (id: UpgradeId) => {
@@ -664,7 +682,7 @@ export default function VelocityVoidGame() {
       setCurrentScore(scoreRef.current);
       saveHighScore(scoreRef.current);
       const p = player.current;
-      createExplosion(p.x + p.width / 2, p.y + p.height / 2, PALETTE.playerLaser, '#2563EB', 70);
+      createExplosion(p.x + p.width / 2, p.y + p.height / 2, PALETTE.playerLaser, '#2563EB', 80);
       triggerScreenFlash('#E11D48');
     };
 
@@ -735,6 +753,19 @@ export default function VelocityVoidGame() {
 
       const speedMultiplier = isPlaying ? Math.min(2.0, 1 + frameRef.current / 40000) : 0.1;
 
+      // Parallax Planets & Stars
+      planets.current.forEach((pl) => {
+        pl.y += pl.speed * speedMultiplier;
+        if (pl.y - pl.radius > canvas.height) {
+          pl.y = -pl.radius - 50;
+          pl.x = retroSnap(Math.random() * canvas.width);
+        }
+        ctx.beginPath();
+        ctx.arc(retroSnap(pl.x), retroSnap(pl.y), pl.radius, 0, Math.PI * 2);
+        ctx.fillStyle = pl.color;
+        ctx.fill();
+      });
+
       // Slate Data Stars
       stars.current.forEach((star) => {
         star.y += star.speed * speedMultiplier;
@@ -760,7 +791,7 @@ export default function VelocityVoidGame() {
           if (p.shieldRegenTimer > 600) {
             p.shieldHp++;
             p.shieldRegenTimer = 0;
-            createExplosion(p.x + p.width / 2, p.y + p.height / 2, '#10B981', '#2563EB', 12);
+            createExplosion(p.x + p.width / 2, p.y + p.height / 2, '#10B981', '#2563EB', 15);
           }
         }
 
@@ -806,7 +837,7 @@ export default function VelocityVoidGame() {
         // Auto-Shooting Lasers
         if (p.cooldown > 0) p.cooldown--;
         if (p.cooldown <= 0) {
-          let fireRate = 18 - p.upgrades.fire_rate * 2.2;
+          let fireRate = 20 - p.upgrades.fire_rate * 2.5;
           if (fireRate < 5) fireRate = 5;
 
           const lasers = 1 + p.upgrades.twin_link;
@@ -814,11 +845,11 @@ export default function VelocityVoidGame() {
 
           for (let i = 0; i < lasers; i++) {
             const offset = (i - (lasers - 1) / 2) * spread;
-            const vxOffset = (i - (lasers - 1) / 2) * 0.4;
+            const vxOffset = (i - (lasers - 1) / 2) * 0.5;
 
             bullets.current.push({
               x: p.x + p.width / 2 - CONFIG.PIXEL_SIZE / 2 + offset,
-              y: p.y - 8,
+              y: p.y - 10,
               width: CONFIG.PIXEL_SIZE,
               height: CONFIG.PIXEL_SIZE * 3,
               color: PALETTE.playerLaser,
@@ -831,7 +862,7 @@ export default function VelocityVoidGame() {
           p.cooldown = fireRate;
         }
 
-        // Homing Missiles
+        // Auto Homing Missiles
         if (p.upgrades.homing_missiles > 0) {
           p.homingCooldown--;
           if (p.homingCooldown <= 0) {
@@ -840,340 +871,742 @@ export default function VelocityVoidGame() {
               bullets.current.push({
                 x: p.x + p.width / 2 - CONFIG.PIXEL_SIZE,
                 y: p.y,
-                width: CONFIG.PIXEL_SIZE * 1.5,
-                height: CONFIG.PIXEL_SIZE * 2,
-                color: '#E11D48',
+                width: CONFIG.PIXEL_SIZE * 2,
+                height: CONFIG.PIXEL_SIZE * 4,
+                color: '#2563EB',
                 markedForDeletion: false,
-                vx: (Math.random() - 0.5) * 4,
+                vx: (Math.random() - 0.5) * 6,
                 vy: -8,
                 isEnemy: false,
                 isHoming: true,
               });
             }
-            p.homingCooldown = 65;
+            p.homingCooldown = 120;
           }
         }
 
-        // Enemy Spawner Logic
-        const spawnInterval = Math.max(35, 95 - Math.floor(frameRef.current / 400));
-        if (frameRef.current % spawnInterval === 0) {
-          const rand = Math.random();
-          const sector = Math.floor(p.level / 5) + 1;
-
-          if (rand < 0.35) {
-            const isGold = Math.random() < 0.15;
-            const gSize = 5;
-            enemies.current.push({
-              x: Math.random() * (canvas.width - gSize * CONFIG.PIXEL_SIZE - 20) + 10,
-              y: -50,
-              width: gSize * CONFIG.PIXEL_SIZE,
-              height: gSize * CONFIG.PIXEL_SIZE,
-              vx: (Math.random() - 0.5) * 0.4,
-              vy: CONFIG.BASE_METEOR_SPEED + Math.random() * 0.3,
-              hp: isGold ? 4 : 2,
-              maxHp: isGold ? 4 : 2,
-              type: isGold ? 'meteor_gold' : 'meteor',
-              sprite: generateMeteorSprite(gSize, isGold),
-              gridSize: gSize,
+        // Plasma Arc
+        if (p.upgrades.plasma_arc > 0) {
+          if (p.plasmaCooldown > 0) p.plasmaCooldown--;
+          if (p.plasmaCooldown <= 0) {
+            bullets.current.push({
+              x: p.x + p.width / 2 - (CONFIG.PIXEL_SIZE * 10) / 2,
+              y: p.y - 20,
+              width: CONFIG.PIXEL_SIZE * 10,
+              height: CONFIG.PIXEL_SIZE * 3,
+              color: '#D97706',
               markedForDeletion: false,
-            });
-          } else if (rand < 0.65) {
-            enemies.current.push({
-              x: Math.random() * (canvas.width - 60) + 20,
-              y: -40,
-              width: CLAUDE_SCOUT[0].length * CONFIG.PIXEL_SIZE,
-              height: CLAUDE_SCOUT.length * CONFIG.PIXEL_SIZE,
-              vx: (Math.random() - 0.5) * 1.2,
-              vy: CONFIG.BASE_BOT_SPEED + 0.4,
-              hp: 3,
-              maxHp: 3,
-              type: 'scout',
-              sprite: CLAUDE_SCOUT,
-              markedForDeletion: false,
-              shootCooldown: Math.floor(Math.random() * 70) + 60,
-            });
-          } else if (rand < 0.85) {
-            enemies.current.push({
-              x: Math.random() * (canvas.width - 60) + 20,
-              y: -40,
-              width: CLAUDE_HUNTER[0].length * CONFIG.PIXEL_SIZE,
-              height: CLAUDE_HUNTER.length * CONFIG.PIXEL_SIZE,
               vx: 0,
-              vy: CONFIG.BASE_BOT_SPEED + 0.2,
-              hp: 5,
-              maxHp: 5,
-              type: 'hunter',
-              sprite: CLAUDE_HUNTER,
-              markedForDeletion: false,
-              shootCooldown: 80,
+              vy: -CONFIG.BULLET_SPEED * 0.8,
+              isEnemy: false,
+              isPlasma: true,
             });
-          } else if (sector >= 2) {
-            enemies.current.push({
-              x: Math.random() * (canvas.width - 80) + 30,
-              y: -60,
-              width: CLAUDE_JUGGERNAUT[0].length * CONFIG.PIXEL_SIZE,
-              height: CLAUDE_JUGGERNAUT.length * CONFIG.PIXEL_SIZE,
-              vx: (Math.random() - 0.5) * 0.3,
-              vy: CONFIG.BASE_BOT_SPEED * 0.8,
-              hp: 12,
-              maxHp: 12,
-              type: 'juggernaut',
-              sprite: CLAUDE_JUGGERNAUT,
-              markedForDeletion: false,
-              shootCooldown: 90,
-            });
+            p.plasmaCooldown = Math.max(30, 90 - p.upgrades.plasma_arc * 20);
           }
         }
-      }
 
-      // Update & Draw Bullets
-      bullets.current.forEach((b) => {
-        if (isPlaying) {
-          if (b.isHoming) {
-            let closestEnemy: Enemy | null = null;
-            let minDist = 500;
+        // Chain Lightning (Blitz)
+        if (p.upgrades.chain_lightning > 0) {
+          if (p.lightningCooldown > 0) p.lightningCooldown--;
+          if (p.lightningCooldown <= 0) {
+            bullets.current.push({
+              x: p.x + p.width / 2 - CONFIG.PIXEL_SIZE / 2,
+              y: p.y - 10,
+              width: CONFIG.PIXEL_SIZE,
+              height: CONFIG.PIXEL_SIZE * 4,
+              color: '#2563EB',
+              markedForDeletion: false,
+              vx: (Math.random() - 0.5) * 4,
+              vy: -CONFIG.BULLET_SPEED * 1.5,
+              isEnemy: false,
+              isLightning: true,
+              lightningJumps: p.upgrades.chain_lightning * 2,
+            });
+            p.lightningCooldown = Math.max(20, 60 - p.upgrades.chain_lightning * 10);
+          }
+        }
+
+        // Advanced Spawning Engine with Boss and Bot AI
+        const isBossLevel = p.level >= 10;
+        const bossActive = enemies.current.some((e) => e.type === 'boss');
+        const activeBots = enemies.current.filter((e) => !e.type.includes('meteor')).length;
+        const hardCap = Math.min(6, 3 + Math.floor(p.level / 3));
+
+        if (isBossLevel && !bossActive && p.level === 10) {
+          const bWidth = MOTHERSHIP_BOSS[0].length * CONFIG.PIXEL_SIZE;
+          const bHeight = MOTHERSHIP_BOSS.length * CONFIG.PIXEL_SIZE;
+          enemies.current.push({
+            type: 'boss',
+            x: canvas.width / 2 - bWidth / 2,
+            y: -bHeight,
+            width: bWidth,
+            height: bHeight,
+            markedForDeletion: false,
+            vx: 1 * speedMultiplier,
+            vy: 0.5 * speedMultiplier,
+            hp: 1500,
+            maxHp: 1500,
+            sprite: MOTHERSHIP_BOSS,
+            shootCooldown: 100,
+            bossSpawnCooldown: 300,
+            aiState: 'sweep',
+            aiTimer: 0,
+          });
+        }
+
+        const botRate = Math.max(400, 800 - p.level * 15);
+        if (frameRef.current % botRate === 0 && !bossActive && activeBots < hardCap) {
+          let type: 'scout' | 'hunter' | 'juggernaut' | 'stealth' | 'sniper' = 'scout';
+          const r = Math.random();
+          if (p.level >= 5) {
+            if (r < 0.15) type = 'juggernaut';
+            else if (r < 0.3) type = 'sniper';
+            else if (r < 0.45) type = 'stealth';
+            else if (r < 0.7) type = 'hunter';
+          } else if (p.level >= 3) {
+            if (r < 0.3) type = 'stealth';
+            else if (r < 0.6) type = 'hunter';
+          }
+
+          let spr = CLAUDE_SCOUT;
+          let hp = 4 + Math.floor(p.level * 0.5);
+          let botVx = CONFIG.BASE_BOT_SPEED * speedMultiplier;
+          const yPos = Math.random() * (canvas.height * 0.2) + 80;
+
+          if (type === 'hunter') {
+            spr = CLAUDE_HUNTER;
+            hp = 8 + p.level;
+            botVx = (CONFIG.BASE_BOT_SPEED + 0.5) * speedMultiplier;
+          } else if (type === 'juggernaut') {
+            spr = CLAUDE_JUGGERNAUT;
+            hp = 25 + p.level * 3;
+            botVx = 0.3 * speedMultiplier;
+          } else if (type === 'stealth') {
+            spr = CLAUDE_STEALTH;
+            hp = 2 + Math.floor(p.level * 0.3);
+            botVx = 2.0 * speedMultiplier;
+          } else if (type === 'sniper') {
+            spr = CLAUDE_SNIPER;
+            hp = 10 + p.level;
+            botVx = 0.5 * speedMultiplier;
+          }
+
+          const eWidth = spr[0].length * CONFIG.PIXEL_SIZE;
+          const eHeight = spr.length * CONFIG.PIXEL_SIZE;
+
+          enemies.current.push({
+            type,
+            x: Math.random() > 0.5 ? -eWidth : canvas.width,
+            y: yPos,
+            width: eWidth,
+            height: eHeight,
+            markedForDeletion: false,
+            vx: (Math.random() > 0.5 ? 1 : -1) * botVx,
+            vy: 0,
+            hp,
+            maxHp: hp,
+            sprite: spr,
+            shootCooldown: type === 'sniper' ? 180 : Math.random() * 60 + 30,
+            aiState: 'idle',
+            aiTimer: Math.random() * 30 + 30,
+            targetX: 0,
+          });
+        }
+
+        const meteorRate =
+          currentEventRef.current === 'METEOR_STORM' ? 30 : Math.max(500, 800 - p.level * 15);
+        if (frameRef.current % meteorRate === 0 && !bossActive) {
+          const gridSizes = [7, 9, 13];
+          const gridSize = gridSizes[Math.floor(Math.random() * gridSizes.length)];
+          const eWidth = gridSize * CONFIG.PIXEL_SIZE;
+          const eHeight = gridSize * CONFIG.PIXEL_SIZE;
+          enemies.current.push({
+            type: 'meteor',
+            x: Math.random() * (canvas.width - eWidth),
+            y: -eHeight,
+            width: eWidth,
+            height: eHeight,
+            markedForDeletion: false,
+            vx: (Math.random() - 0.5) * 1 * speedMultiplier,
+            vy: (CONFIG.BASE_METEOR_SPEED + Math.random() * 1.5) * speedMultiplier,
+            hp: 3 + Math.floor(p.level / 2),
+            maxHp: 3 + Math.floor(p.level / 2),
+            sprite: generateMeteorSprite(gridSize, false),
+            gridSize: gridSize,
+          });
+        }
+
+        if (frameRef.current % 1800 === 0 && Math.random() > 0.5 && p.hp < p.maxHp) {
+          items.current.push({
+            type: 'heart',
+            x: Math.random() * canvas.width,
+            y: -50,
+            width: ITEM_HEART[0].length * CONFIG.PIXEL_SIZE,
+            height: ITEM_HEART.length * CONFIG.PIXEL_SIZE,
+            markedForDeletion: false,
+            vy: 1 * speedMultiplier,
+            sprite: ITEM_HEART,
+          });
+        }
+
+        // Enemy AI State Processing
+        enemies.current.forEach((e) => {
+          if (e.type !== 'meteor' && e.type !== 'meteor_gold') {
+            e.aiTimer = (e.aiTimer || 0) - 1;
+            if (e.type === 'boss') {
+              if (e.y < 40) {
+                e.y += e.vy;
+              } else {
+                e.y = 40;
+                e.x += e.vx;
+                if (e.x <= 0 || e.x + e.width >= canvas.width) e.vx *= -1;
+              }
+
+              if (e.bossSpawnCooldown !== undefined) {
+                e.bossSpawnCooldown--;
+                if (e.bossSpawnCooldown <= 0) {
+                  const minionSpr = CLAUDE_SCOUT;
+                  enemies.current.push({
+                    type: 'scout',
+                    x: e.x + e.width / 2,
+                    y: e.y + e.height,
+                    width: minionSpr[0].length * CONFIG.PIXEL_SIZE,
+                    height: minionSpr.length * CONFIG.PIXEL_SIZE,
+                    markedForDeletion: false,
+                    vx: (Math.random() - 0.5) * 2,
+                    vy: 1,
+                    hp: 5,
+                    maxHp: 5,
+                    sprite: minionSpr,
+                    aiState: 'idle',
+                    aiTimer: 30,
+                  });
+                  e.bossSpawnCooldown = 300;
+                }
+              }
+            }
+
+            if (e.type === 'juggernaut' && e.hp < e.maxHp * 0.4 && e.aiState !== 'enraged') {
+              e.aiState = 'enraged';
+              e.vx = e.x < p.x ? 1.5 * speedMultiplier : -1.5 * speedMultiplier;
+              e.sprite = CLAUDE_JUGGERNAUT.map((row) => row.replace(/J/g, 'R'));
+            }
+
+            if (e.aiState === 'enraged') {
+              if (e.x + e.width / 2 < p.x + p.width / 2) e.x += 1.5 * speedMultiplier;
+              else e.x -= 1.5 * speedMultiplier;
+            }
+
+            if (e.type === 'scout' && e.aiState !== 'evade') {
+              bullets.current.forEach((b) => {
+                if (!b.isEnemy) {
+                  const dist = Math.hypot(b.x - (e.x + e.width / 2), b.y - (e.y + e.height / 2));
+                  if (dist < 80 && Math.random() > 0.95) {
+                    e.aiState = 'evade';
+                    e.aiTimer = 15;
+                    e.vx = (e.x > b.x ? 1 : -1) * 2 * speedMultiplier;
+                  }
+                }
+              });
+            }
+
+            if (e.aiTimer <= 0) {
+              if (e.aiState === 'evade') {
+                e.aiState = 'idle';
+                e.aiTimer = Math.random() * 60 + 30;
+                e.vx = (Math.random() > 0.5 ? 1 : -1) * CONFIG.BASE_BOT_SPEED * speedMultiplier;
+              } else if (e.aiState === 'idle') {
+                e.aiState = 'strafe';
+                e.aiTimer = Math.random() * 40 + 20;
+              } else if (e.aiState === 'strafe') {
+                e.aiState = 'idle';
+                e.aiTimer = Math.random() * 60 + 30;
+                if (e.type !== 'hunter') {
+                  if (Math.random() > 0.5) e.vx *= -1;
+                }
+              }
+            }
+
+            if (
+              e.type === 'scout' ||
+              e.type === 'stealth' ||
+              e.type === 'sniper' ||
+              (e.type === 'juggernaut' && e.aiState !== 'enraged')
+            ) {
+              if (e.aiState !== 'idle') {
+                e.x += e.vx;
+                if (e.x <= 0 || e.x + e.width >= canvas.width) {
+                  e.vx *= -1;
+                  e.x = Math.max(0, Math.min(canvas.width - e.width, e.x));
+                }
+              }
+            } else if (e.type === 'hunter') {
+              const targetX = p.x;
+              const diffX = targetX - e.x;
+              if (Math.abs(diffX) > 20) {
+                e.x += Math.sign(diffX) * 1.5 * speedMultiplier;
+              }
+            }
+
+            // Enemy Shooting Mechanics
+            if (e.shootCooldown !== undefined) {
+              e.shootCooldown--;
+              if (e.shootCooldown <= 0) {
+                if (e.type === 'juggernaut') {
+                  for (let i = -1; i <= 1; i++) {
+                    bullets.current.push({
+                      x: e.x + e.width / 2 - CONFIG.PIXEL_SIZE / 2,
+                      y: e.y + e.height,
+                      width: CONFIG.PIXEL_SIZE,
+                      height: CONFIG.PIXEL_SIZE * 3,
+                      color: PALETTE.enemyLaser,
+                      markedForDeletion: false,
+                      vx: i * 1.5,
+                      vy: CONFIG.ENEMY_BULLET_SPEED * speedMultiplier,
+                      isEnemy: true,
+                    });
+                  }
+                  e.shootCooldown = e.aiState === 'enraged' ? 60 : 100;
+                } else if (e.type === 'boss') {
+                  for (let i = -2; i <= 2; i++) {
+                    bullets.current.push({
+                      x: e.x + e.width / 2 - CONFIG.PIXEL_SIZE / 2,
+                      y: e.y + e.height,
+                      width: CONFIG.PIXEL_SIZE * 2,
+                      height: CONFIG.PIXEL_SIZE * 4,
+                      color: '#E11D48',
+                      markedForDeletion: false,
+                      vx: i * 2,
+                      vy: CONFIG.ENEMY_BULLET_SPEED * 1.2 * speedMultiplier,
+                      isEnemy: true,
+                    });
+                  }
+                  e.shootCooldown = 150;
+                } else if (e.type === 'sniper') {
+                  bullets.current.push({
+                    x: e.x + e.width / 2 - CONFIG.PIXEL_SIZE / 2,
+                    y: e.y + e.height,
+                    width: CONFIG.PIXEL_SIZE,
+                    height: CONFIG.PIXEL_SIZE * 6,
+                    color: '#E11D48',
+                    markedForDeletion: false,
+                    vx: 0,
+                    vy: CONFIG.ENEMY_BULLET_SPEED * 3 * speedMultiplier,
+                    isEnemy: true,
+                  });
+                  e.shootCooldown = 200;
+                } else if (e.type === 'hunter') {
+                  bullets.current.push({
+                    x: e.x + e.width / 2 - CONFIG.PIXEL_SIZE / 2,
+                    y: e.y + e.height,
+                    width: CONFIG.PIXEL_SIZE,
+                    height: CONFIG.PIXEL_SIZE * 3,
+                    color: PALETTE.enemyLaser,
+                    markedForDeletion: false,
+                    vx: 0,
+                    vy: CONFIG.ENEMY_BULLET_SPEED * 1.5 * speedMultiplier,
+                    isEnemy: true,
+                  });
+                  e.shootCooldown = 80;
+                } else {
+                  bullets.current.push({
+                    x: e.x + e.width / 2 - CONFIG.PIXEL_SIZE / 2,
+                    y: e.y + e.height,
+                    width: CONFIG.PIXEL_SIZE,
+                    height: CONFIG.PIXEL_SIZE * 3,
+                    color: PALETTE.enemyLaser,
+                    markedForDeletion: false,
+                    vx: 0,
+                    vy: CONFIG.ENEMY_BULLET_SPEED * speedMultiplier,
+                    isEnemy: true,
+                  });
+                  e.shootCooldown = 120;
+                }
+              }
+            }
+          } else {
+            e.x += e.vx;
+            e.y += e.vy;
+          }
+
+          if (e.y > canvas.height + 100) e.markedForDeletion = true;
+
+          if (checkCollision(p, e, 0.3)) {
+            handlePlayerHit();
+            e.markedForDeletion = true;
+            createExplosion(
+              e.x + e.width / 2,
+              e.y + e.height / 2,
+              PALETTE.botPrimary,
+              '#E11D48',
+              40
+            );
+          }
+        });
+
+        // Magnet & Pickups Processing
+        const magnetRadius = 80 + p.upgrades.magnet * 50;
+        items.current.forEach((i) => {
+          if (i.type === 'xp') {
+            const dist = Math.hypot(
+              p.x + p.width / 2 - (i.x + i.width / 2),
+              p.y + p.height / 2 - (i.y + i.height / 2)
+            );
+            if (dist < magnetRadius) {
+              i.x += (p.x + p.width / 2 - (i.x + i.width / 2)) * 0.1;
+              i.y += (p.y + p.height / 2 - (i.y + i.height / 2)) * 0.1;
+            } else {
+              i.y += i.vy;
+            }
+          } else {
+            i.y += i.vy;
+          }
+
+          if (i.y > canvas.height + 50) i.markedForDeletion = true;
+
+          if (checkCollision(p, i, 0.1)) {
+            i.markedForDeletion = true;
+            if (i.type === 'xp') {
+              p.xp += i.xpValue || 10;
+              if (p.xp >= p.maxXp) {
+                triggerLevelUp();
+              }
+              setHudXp(p.xp);
+              scoreRef.current += 10;
+            } else if (i.type === 'heart') {
+              if (p.hp < p.maxHp) {
+                p.hp++;
+                setHudHp(p.hp);
+              }
+              scoreRef.current += 50;
+            }
+            createExplosion(
+              i.x,
+              i.y,
+              i.type === 'xp' ? PALETTE.itemWeapon : PALETTE.itemHeart,
+              '#2563EB',
+              15
+            );
+          }
+        });
+
+        // Bullets Processing
+        bullets.current.forEach((b) => {
+          if (
+            b.isLightning &&
+            !b.isEnemy &&
+            b.lightningTarget &&
+            !b.lightningTarget.markedForDeletion
+          ) {
+            const angle = Math.atan2(b.lightningTarget.y - b.y, b.lightningTarget.x - b.x);
+            b.vx = Math.cos(angle) * 15;
+            b.vy = Math.sin(angle) * 15;
+          } else if (b.isHoming && !b.isEnemy) {
+            let closest: Enemy | null = null;
+            let minDist = 300;
             enemies.current.forEach((e) => {
-              const d = Math.hypot(e.x - b.x, e.y - b.y);
-              if (d < minDist) {
-                minDist = d;
-                closestEnemy = e;
+              const dist = Math.hypot(e.x + e.width / 2 - b.x, e.y + e.height / 2 - b.y);
+              if (dist < minDist) {
+                minDist = dist;
+                closest = e;
               }
             });
-            if (closestEnemy) {
-              const angle = Math.atan2(
-                (closestEnemy as Enemy).y - b.y,
-                (closestEnemy as Enemy).x - b.x
-              );
-              b.vx += Math.cos(angle) * 0.8;
-              b.vy += Math.sin(angle) * 0.8;
-              const spd = Math.hypot(b.vx, b.vy);
-              if (spd > 12) {
-                b.vx = (b.vx / spd) * 12;
-                b.vy = (b.vy / spd) * 12;
-              }
+            if (closest) {
+              const angle = Math.atan2((closest as Enemy).y - b.y, (closest as Enemy).x - b.x);
+              b.vx = Math.cos(angle) * 8;
+              b.vy = Math.sin(angle) * 8;
             }
           }
 
           b.x += b.vx;
           b.y += b.vy;
-
           if (b.y < -50 || b.y > canvas.height + 50 || b.x < -50 || b.x > canvas.width + 50) {
             b.markedForDeletion = true;
           }
-        }
 
-        ctx.fillStyle = b.color;
-        ctx.fillRect(retroSnap(b.x), retroSnap(b.y), b.width, b.height);
-      });
+          if (!b.isEnemy) {
+            enemies.current.forEach((e) => {
+              if (b.markedForDeletion || e.markedForDeletion) return;
+              if (checkCollision(b, e, 0.1)) {
+                if (!b.isPlasma) b.markedForDeletion = true;
+                if (b.isLightning && b.lightningJumps && b.lightningJumps > 0) {
+                  b.markedForDeletion = false;
+                  b.lightningJumps--;
+                  let closest = null;
+                  let minDist = 200;
+                  enemies.current.forEach((otherE) => {
+                    if (otherE !== e) {
+                      const dist = Math.hypot(otherE.x - b.x, otherE.y - b.y);
+                      if (dist < minDist) {
+                        minDist = dist;
+                        closest = otherE;
+                      }
+                    }
+                  });
+                  b.lightningTarget = closest;
+                }
+                const dmg = b.isHoming ? 2 : b.isPlasma ? 3 : 1;
+                e.hp -= dmg;
+                e.hitFlashTimer = 3;
 
-      // Update & Draw Enemies
-      enemies.current.forEach((e) => {
-        if (isPlaying) {
-          e.x += e.vx;
-          e.y += e.vy;
+                if (e.hp <= 0) {
+                  e.markedForDeletion = true;
+                  const c1 = e.type.includes('meteor') ? PALETTE.meteorPrimary : PALETTE.botPrimary;
+                  const c2 = e.type === 'meteor_gold' ? PALETTE.meteorGold : PALETTE.explosion2;
+                  createExplosion(e.x + e.width / 2, e.y + e.height / 2, c1, c2, 30);
 
-          if (e.shootCooldown !== undefined) {
-            e.shootCooldown--;
-            if (e.shootCooldown <= 0) {
-              bullets.current.push({
-                x: e.x + e.width / 2 - CONFIG.PIXEL_SIZE / 2,
-                y: e.y + e.height,
-                width: CONFIG.PIXEL_SIZE,
-                height: CONFIG.PIXEL_SIZE * 2.5,
-                color: PALETTE.enemyLaser,
-                markedForDeletion: false,
-                vx: 0,
-                vy: CONFIG.ENEMY_BULLET_SPEED,
-                isEnemy: true,
-              });
-              e.shootCooldown = Math.floor(Math.random() * 80) + 70;
-            }
-          }
+                  let dropXp = 5;
+                  if (Math.random() < 0.2 || e.type === 'boss') {
+                    const multiplier = 1 + metaUpgradesRef.current.coin_multiplier;
+                    const coins = (e.type === 'boss' ? 50 : 1) * multiplier;
+                    metaCoinsRef.current += coins;
+                    setMetaCoins(metaCoinsRef.current);
+                    try {
+                      localStorage.setItem('velocityVoidCoins', metaCoinsRef.current.toString());
+                    } catch (_e) {
+                      // Safe storage error handling
+                    }
+                  }
+                  if (e.type === 'boss') dropXp = 500;
+                  else if (e.type === 'juggernaut') dropXp = 30;
+                  else if (e.type === 'sniper') dropXp = 20;
+                  else if (e.type === 'hunter') dropXp = 10;
+                  else if (e.type === 'stealth' || e.type === 'scout') dropXp = 5;
 
-          if (e.y > canvas.height + 50) e.markedForDeletion = true;
+                  if (e.type === 'boss') {
+                    for (let i = 0; i < 5; i++) {
+                      items.current.push({
+                        type: 'heart',
+                        x: e.x + Math.random() * e.width,
+                        y: e.y + Math.random() * e.height,
+                        width: ITEM_HEART[0].length * CONFIG.PIXEL_SIZE,
+                        height: ITEM_HEART.length * CONFIG.PIXEL_SIZE,
+                        markedForDeletion: false,
+                        vy: 1 * speedMultiplier,
+                        sprite: ITEM_HEART,
+                      });
+                    }
+                  }
 
-          // Enemy-Player Collision
-          if (checkCollision(e, player.current)) {
-            e.markedForDeletion = true;
-            handlePlayerHit();
-            createExplosion(e.x + e.width / 2, e.y + e.height / 2, PALETTE.botPrimary, '#E11D48');
-          }
-        }
-
-        drawSprite(ctx, e.sprite, e.x, e.y, CONFIG.PIXEL_SIZE);
-      });
-
-      // Bullet-Enemy Collisions
-      bullets.current
-        .filter((b) => !b.isEnemy)
-        .forEach((b) => {
-          enemies.current.forEach((e) => {
-            if (checkCollision(b, e)) {
-              b.markedForDeletion = true;
-              e.hp -= 1;
-              createExplosion(b.x, b.y, PALETTE.playerLaser, '#FFFFFF', 4);
-
-              if (e.hp <= 0) {
-                e.markedForDeletion = true;
-                scoreRef.current += e.maxHp * 15;
-                createExplosion(
-                  e.x + e.width / 2,
-                  e.y + e.height / 2,
-                  PALETTE.botSecondary,
-                  PALETTE.explosion1,
-                  18
-                );
-
-                // Spawn XP item
-                items.current.push({
-                  x: e.x + e.width / 2,
-                  y: e.y + e.height / 2,
-                  width: ITEM_XP[0].length * CONFIG.PIXEL_SIZE,
-                  height: ITEM_XP.length * CONFIG.PIXEL_SIZE,
-                  markedForDeletion: false,
-                  type: 'xp',
-                  vy: 0.8,
-                  sprite: ITEM_XP,
-                  xpValue: e.maxHp,
-                });
+                  if (dropXp > 0) {
+                    items.current.push({
+                      type: 'xp',
+                      x: e.x + e.width / 2,
+                      y: e.y + e.height / 2,
+                      width: 3 * CONFIG.PIXEL_SIZE,
+                      height: 3 * CONFIG.PIXEL_SIZE,
+                      markedForDeletion: false,
+                      vy: 1 * speedMultiplier,
+                      sprite: ITEM_XP,
+                      xpValue: dropXp,
+                    });
+                  }
+                } else {
+                  createExplosion(b.x, b.y, '#2563EB', PALETTE.explosion1, 10);
+                }
               }
+            });
+          } else {
+            if (checkCollision(b, p, 0.3)) {
+              b.markedForDeletion = true;
+              handlePlayerHit();
             }
-          });
+          }
         });
 
-      // Update & Draw Items (Magnet Pull Logic)
-      items.current.forEach((it) => {
-        if (isPlaying) {
-          const p = player.current;
-          const magRange = 70 + p.upgrades.magnet * 35;
-          const dist = Math.hypot(p.x + p.width / 2 - it.x, p.y + p.height / 2 - it.y);
-
-          if (dist < magRange) {
-            const angle = Math.atan2(p.y + p.height / 2 - it.y, p.x + p.width / 2 - it.x);
-            it.x += Math.cos(angle) * 6;
-            it.y += Math.sin(angle) * 6;
-          } else {
-            it.y += it.vy;
-          }
-
-          if (it.y > canvas.height + 40) it.markedForDeletion = true;
-
-          // Pickup Collision
-          if (checkCollision(it, player.current)) {
-            it.markedForDeletion = true;
-            if (it.type === 'xp') {
-              p.xp += it.xpValue || 1;
-              setHudXp(p.xp);
-              if (p.xp >= p.maxXp) {
-                triggerLevelUp();
-              }
-            }
-          }
-        }
-
-        drawSprite(ctx, it.sprite, it.x, it.y, CONFIG.PIXEL_SIZE);
-      });
-
-      // Update & Draw Particles
-      particles.current.forEach((part) => {
-        if (isPlaying) {
+        // Particles Processing
+        particles.current.forEach((part) => {
           part.x += part.vx;
           part.y += part.vy;
           part.life++;
           if (part.life >= part.maxLife) part.markedForDeletion = true;
-        }
+        });
 
-        const alpha = Math.max(0, 1 - part.life / part.maxLife);
+        bullets.current = bullets.current.filter((b) => !b.markedForDeletion);
+        enemies.current = enemies.current.filter((e) => !e.markedForDeletion);
+        items.current = items.current.filter((i) => !i.markedForDeletion);
+        particles.current = particles.current.filter((p) => !p.markedForDeletion);
+      }
+
+      // Draw Enemies
+      enemies.current.forEach((e) => {
+        let overrideColor = undefined;
+        if (e.hitFlashTimer && e.hitFlashTimer > 0) {
+          overrideColor = '#ffffff';
+          if (isPlaying) e.hitFlashTimer--;
+        }
+        drawSprite(ctx, e.sprite, e.x, e.y, CONFIG.PIXEL_SIZE, 1, overrideColor);
+      });
+
+      // Draw Items
+      items.current.forEach((i) => {
+        drawSprite(ctx, i.sprite, i.x, i.y, CONFIG.PIXEL_SIZE);
+      });
+
+      // Draw Bullets
+      bullets.current.forEach((b) => {
+        ctx.fillStyle = b.color;
+        if (b.isLightning) {
+          ctx.beginPath();
+          ctx.moveTo(b.x, b.y + b.height);
+          ctx.lineTo(b.x + (Math.random() - 0.5) * 20, b.y + b.height / 2);
+          ctx.lineTo(b.x, b.y);
+          ctx.strokeStyle = b.color;
+          ctx.lineWidth = 3;
+          ctx.stroke();
+        } else {
+          ctx.fillRect(retroSnap(b.x), retroSnap(b.y), b.width, b.height);
+        }
+      });
+
+      // Draw Particles
+      particles.current.forEach((part) => {
         ctx.fillStyle = part.color;
-        ctx.globalAlpha = alpha;
-        ctx.fillRect(retroSnap(part.x), retroSnap(part.y), part.width, part.height);
+        ctx.globalAlpha = Math.max(0, 1 - part.life / part.maxLife);
+        const scale = 1 - part.life / part.maxLife;
+        const w = Math.max(1, retroSnap(part.width * scale));
+        const h = Math.max(1, retroSnap(part.height * scale));
+
+        if (part.isCross) {
+          ctx.fillRect(retroSnap(part.x) + w / 2 - w / 6, retroSnap(part.y), w / 3, h);
+          ctx.fillRect(retroSnap(part.x), retroSnap(part.y) + h / 2 - h / 6, w, h / 3);
+        } else {
+          ctx.fillRect(retroSnap(part.x), retroSnap(part.y), w, h);
+        }
       });
       ctx.globalAlpha = 1.0;
 
-      // Draw Player Ship (Coday Blue)
+      // Draw Player
       if (gameStateRef.current !== 'GAME_OVER') {
         const p = player.current;
-        const currentSprite = getPlayerSprite(p.upgrades);
-        drawSprite(ctx, currentSprite, p.x, p.y, CONFIG.PIXEL_SIZE);
 
-        // Draw Shield Aura if Active
-        if (p.shieldHp > 0) {
-          ctx.strokeStyle = '#10B981';
-          ctx.lineWidth = 2;
+        // Magnet Aura
+        if (p.upgrades.magnet > 0) {
           ctx.beginPath();
           ctx.arc(
             p.x + p.width / 2,
             p.y + p.height / 2,
-            Math.max(p.width, p.height) * 0.8,
+            80 + p.upgrades.magnet * 50,
             0,
             Math.PI * 2
           );
-          ctx.stroke();
+          ctx.fillStyle = 'rgba(37, 99, 235, 0.04)';
+          ctx.fill();
         }
-      }
 
-      // Cleanup Marked Entities
-      bullets.current = bullets.current.filter((b) => !b.markedForDeletion);
-      enemies.current = enemies.current.filter((e) => !e.markedForDeletion);
-      items.current = items.current.filter((i) => !i.markedForDeletion);
-      particles.current = particles.current.filter((p) => !p.markedForDeletion);
+        // Energy Shield
+        if (p.upgrades.shield > 0 && p.shieldHp > 0) {
+          ctx.beginPath();
+          ctx.arc(p.x + p.width / 2, p.y + p.height / 2, p.width * 0.9, 0, Math.PI * 2);
+          ctx.lineWidth = 2.5;
+          const alpha = 0.3 + (p.shieldHp / p.upgrades.shield) * 0.5;
+          ctx.strokeStyle = `rgba(16, 185, 129, ${alpha})`;
+          ctx.setLineDash([8, 4]);
+          ctx.stroke();
+          ctx.setLineDash([]);
+        }
+
+        let pFlash = undefined;
+        if (p.hitFlashTimer && p.hitFlashTimer > 0) {
+          pFlash = '#ffffff';
+          if (isPlaying) p.hitFlashTimer--;
+        }
+        drawSprite(ctx, getPlayerSprite(p.upgrades), p.x, p.y, CONFIG.PIXEL_SIZE, 1, pFlash);
+      }
 
       // Screen Flash
       if (screenFlash.current.alpha > 0) {
         ctx.fillStyle = screenFlash.current.color;
         ctx.globalAlpha = screenFlash.current.alpha;
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillRect(-50, -50, canvas.width + 100, canvas.height + 100);
         ctx.globalAlpha = 1.0;
-        screenFlash.current.alpha *= 0.85;
-        if (screenFlash.current.alpha < 0.05) screenFlash.current.alpha = 0;
+        if (isPlaying) screenFlash.current.alpha -= 0.05;
       }
 
       ctx.restore();
 
-      // Draw Light Canvas HUD Overlay
+      // Light Glass HUD Rendering
       if (isPlaying) {
-        // Hull Hearts
-        for (let i = 0; i < hudMaxHp; i++) {
-          const isFilled = i < hudHp;
-          drawSprite(
-            ctx,
-            isFilled ? ITEM_HEART : ITEM_HEART_EMPTY,
-            20 + i * 28,
-            20,
-            CONFIG.PIXEL_SIZE * 0.8
-          );
+        const p = player.current;
+
+        // Boss Health Bar on Top
+        const activeBoss = enemies.current.find((e) => e.type === 'boss');
+        if (activeBoss) {
+          const barW = Math.min(500, canvas.width - 40);
+          const barH = 16;
+          const barX = canvas.width / 2 - barW / 2;
+          const barY = 32;
+
+          ctx.fillStyle = '#FEE2E2';
+          ctx.fillRect(barX, barY, barW, barH);
+          ctx.fillStyle = '#E11D48';
+          ctx.fillRect(barX, barY, (Math.max(0, activeBoss.hp) / activeBoss.maxHp) * barW, barH);
+          ctx.strokeStyle = '#E11D48';
+          ctx.lineWidth = 2;
+          ctx.strokeRect(barX, barY, barW, barH);
+
+          ctx.fillStyle = '#E11D48';
+          ctx.textAlign = 'center';
+          ctx.font = 'bold 13px monospace';
+          ctx.fillText('WARNUNG: MOTHERSHIP TITAN', canvas.width / 2, 24);
+          ctx.textAlign = 'left';
         }
 
-        // Shield Icons
-        for (let i = 0; i < player.current.shieldHp; i++) {
-          drawSprite(ctx, ITEM_SHIELD_ICON, 20 + (hudMaxHp + i) * 28, 20, CONFIG.PIXEL_SIZE * 0.8);
-        }
+        // HUD Container
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+        ctx.fillRect(16, 16, 210, 165);
+        ctx.strokeStyle = '#E2E8F0';
+        ctx.lineWidth = 1.5;
+        ctx.strokeRect(16, 16, 210, 165);
 
-        // XP Progress Bar
-        const barWidth = 160;
-        const barHeight = 8;
-        const fillWidth = Math.min(barWidth, (hudXp / hudMaxXp) * barWidth);
-        ctx.fillStyle = '#E2E8F0';
-        ctx.fillRect(20, 52, barWidth, barHeight);
-        ctx.fillStyle = PALETTE.player;
-        ctx.fillRect(20, 52, fillWidth, barHeight);
-
+        // Score & Level
         ctx.fillStyle = PALETTE.uiText;
-        ctx.font = 'bold 12px monospace';
-        ctx.fillText(`LVL ${hudLevel}`, 190, 60);
-
-        // Score & High Score
-        ctx.textAlign = 'right';
-        ctx.font = 'bold 16px monospace';
-        ctx.fillStyle = PALETTE.uiText;
-        ctx.fillText(`SCORE: ${Math.floor(scoreRef.current)}`, canvas.width - 20, 36);
+        ctx.font = 'bold 15px monospace';
+        ctx.textAlign = 'left';
+        ctx.fillText(`SCORE: ${Math.floor(scoreRef.current)}`, 26, 40);
         ctx.font = '12px monospace';
-        ctx.fillStyle = '#64748B';
+        ctx.fillText(`SEKTOR ${Math.floor(p.level / 5) + 1} • LVL ${p.level}`, 26, 60);
+
+        // XP Bar
+        const xpBarWidth = 190;
+        const xpBarHeight = 7;
+        ctx.fillStyle = '#E2E8F0';
+        ctx.fillRect(26, 70, xpBarWidth, xpBarHeight);
+        ctx.fillStyle = PALETTE.player;
+        ctx.fillRect(26, 70, (p.xp / Math.max(1, p.maxXp)) * xpBarWidth, xpBarHeight);
+
+        // Hearts HP
+        ctx.fillStyle = PALETTE.itemHeart;
+        ctx.font = 'bold 12px monospace';
+        ctx.fillText(`HP: ${p.hp}/${p.maxHp}`, 26, 98);
+        for (let i = 0; i < p.maxHp; i++) {
+          const sprite = i < p.hp ? ITEM_HEART : ITEM_HEART_EMPTY;
+          drawSprite(ctx, sprite, 26 + i * 26, 105, 3.5);
+        }
+
+        // Shields
+        if (p.upgrades.shield > 0) {
+          ctx.fillStyle = '#10B981';
+          ctx.fillText(`SCHILD: ${p.shieldHp}/${p.upgrades.shield}`, 26, 142);
+          for (let i = 0; i < p.upgrades.shield; i++) {
+            ctx.globalAlpha = i < p.shieldHp ? 1.0 : 0.3;
+            drawSprite(ctx, ITEM_SHIELD_ICON, 26 + i * 26, 148, 3.5, 1, '#10B981');
+          }
+          ctx.globalAlpha = 1.0;
+        }
+
+        // Highscore top right
+        ctx.textAlign = 'right';
+        ctx.font = 'bold 14px monospace';
+        ctx.fillStyle = PALETTE.uiText;
         ctx.fillText(
-          `BEST: ${Math.max(highScoreRef.current, Math.floor(scoreRef.current))}`,
+          `HI-SCORE: ${Math.max(highScoreRef.current, Math.floor(scoreRef.current))}`,
           canvas.width - 20,
-          56
+          36
         );
+        ctx.font = '12px monospace';
+        ctx.fillStyle = '#D97706';
+        ctx.fillText(`COINS: ${metaCoinsRef.current}`, canvas.width - 20, 56);
         ctx.textAlign = 'left';
       }
 
@@ -1196,7 +1629,7 @@ export default function VelocityVoidGame() {
     <div className="w-full h-full relative overflow-hidden bg-[#FAFAFA] select-none touch-none">
       <canvas ref={canvasRef} className="block w-full h-full touch-none" />
 
-      {/* START SCREEN MODAL (Light Theme Glass) */}
+      {/* START SCREEN MODAL */}
       {gameState === 'START' && (
         <div className="absolute inset-0 flex flex-col items-center justify-center z-30 p-4 bg-white/80 backdrop-blur-md">
           <m.div
@@ -1252,7 +1685,7 @@ export default function VelocityVoidGame() {
         </div>
       )}
 
-      {/* LEVEL UP MODAL (Pure Phosphor Vector Upgrades) */}
+      {/* LEVEL UP MODAL */}
       <AnimatePresence>
         {gameState === 'LEVEL_UP' && (
           <m.div
@@ -1378,7 +1811,7 @@ export default function VelocityVoidGame() {
                   </div>
                   <button
                     onClick={() => {
-                      const cost = 75 + metaUpgrades.start_shield * 75;
+                      const cost = 100 + metaUpgrades.start_shield * 100;
                       if (metaCoins >= cost && metaUpgrades.start_shield < 3) {
                         const newCoins = metaCoins - cost;
                         const newUps = {
@@ -1398,14 +1831,54 @@ export default function VelocityVoidGame() {
                       }
                     }}
                     disabled={
-                      metaCoins < 75 + metaUpgrades.start_shield * 75 ||
+                      metaCoins < 100 + metaUpgrades.start_shield * 100 ||
                       metaUpgrades.start_shield >= 3
                     }
                     className="px-3.5 py-2 bg-blue-600 hover:bg-blue-500 disabled:bg-slate-200 disabled:text-slate-400 text-white rounded-xl font-bold text-xs shadow-2xs transition-all"
                   >
                     {metaUpgrades.start_shield >= 3
                       ? 'MAX'
-                      : `${75 + metaUpgrades.start_shield * 75} C`}
+                      : `${100 + metaUpgrades.start_shield * 100} C`}
+                  </button>
+                </div>
+
+                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+                  <div>
+                    <h4 className="text-sm font-bold text-slate-900">Coin-Multiplikator</h4>
+                    <p className="text-xs text-slate-600">
+                      +100% Münzen-Wert dauerhaft (Aktuell: +{metaUpgrades.coin_multiplier * 100}%)
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => {
+                      const cost = 200 + metaUpgrades.coin_multiplier * 200;
+                      if (metaCoins >= cost && metaUpgrades.coin_multiplier < 5) {
+                        const newCoins = metaCoins - cost;
+                        const newUps = {
+                          ...metaUpgrades,
+                          coin_multiplier: metaUpgrades.coin_multiplier + 1,
+                        };
+                        setMetaCoins(newCoins);
+                        metaCoinsRef.current = newCoins;
+                        setMetaUpgrades(newUps);
+                        metaUpgradesRef.current = newUps;
+                        try {
+                          localStorage.setItem('velocityVoidCoins', newCoins.toString());
+                          localStorage.setItem('velocityVoidMeta', JSON.stringify(newUps));
+                        } catch (_e) {
+                          // Safe storage error handling
+                        }
+                      }
+                    }}
+                    disabled={
+                      metaCoins < 200 + metaUpgrades.coin_multiplier * 200 ||
+                      metaUpgrades.coin_multiplier >= 5
+                    }
+                    className="px-3.5 py-2 bg-blue-600 hover:bg-blue-500 disabled:bg-slate-200 disabled:text-slate-400 text-white rounded-xl font-bold text-xs shadow-2xs transition-all"
+                  >
+                    {metaUpgrades.coin_multiplier >= 5
+                      ? 'MAX'
+                      : `${200 + metaUpgrades.coin_multiplier * 200} C`}
                   </button>
                 </div>
               </div>
