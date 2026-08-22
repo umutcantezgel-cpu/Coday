@@ -1,61 +1,54 @@
 {
   "comparison": {
     "headers": {
-      "feature": "Funktion",
-      "onepager": "Onepager",
-      "starter": "Starter",
-      "professional": "Professional",
-      "enterprise": "Enterprise"
+      "feature": "Leistungsumfang",
+      "starter": "Starter (Klein)",
+      "business": "Business (Mittel)",
+      "corporate": "Pro Corporate (Groß)",
+      "enterprise": "Enterprise (Extrem groß)"
     },
     "rows": {
       "cms": {
         "ent": "Optional",
-        "label": "CMS",
-        "pro": "Optional",
-        "starter": "Optional",
-        "onepager": "Optional"
+        "label": "Headless CMS (Sanity)",
+        "corporate": "Optional",
+        "business": "Optional",
+        "starter": "Optional"
       },
       "custom": {
-        "ent": "✓",
-        "label": "Custom Development",
-        "pro": " ",
-        "starter": " ",
-        "onepager": " "
+        "ent": "Optional",
+        "label": "Custom Apps / Portale (Add-on)",
+        "corporate": "Optional",
+        "business": "Optional",
+        "starter": "Optional"
       },
       "ecommerce": {
-        "ent": "✓",
-        "label": "E-Commerce",
-        "pro": " ",
-        "starter": " ",
-        "onepager": " "
+        "ent": "Optional",
+        "label": "E-Commerce Shop (Add-on)",
+        "corporate": "Optional",
+        "business": "Optional",
+        "starter": "Optional"
       },
       "pages": {
-        "ent": "Bis zu 30",
-        "label": "Seiten",
-        "pro": "7-10",
-        "starter": "3-5",
-        "onepager": "1"
-      },
-      "revisions": {
-        "ent": "Unbegrenzt",
-        "label": "Revisionen",
-        "pro": "5",
-        "starter": "3",
-        "onepager": "1"
+        "ent": "Riesige Plattformen",
+        "label": "Seitenumfang",
+        "corporate": "Bis 30",
+        "business": "Bis 12",
+        "starter": "1-5"
       },
       "seo": {
-        "ent": "Premium",
-        "label": "SEO",
-        "pro": "Erweitert",
-        "starter": "Basis",
-        "onepager": "Basis"
+        "ent": "Multi-Region",
+        "label": "SEO-Architektur",
+        "corporate": "Holistisch",
+        "business": "Topic-Silos",
+        "starter": "Lokal"
       },
       "support": {
         "ent": "Freiwillig",
-        "label": "Support/Wartung",
-        "pro": "Freiwillig",
-        "starter": "Freiwillig",
-        "onepager": "Freiwillig"
+        "label": "Wartung & Support",
+        "corporate": "Freiwillig",
+        "business": "Freiwillig",
+        "starter": "Freiwillig"
       }
     },
     "title": "Paket-Vergleich"
@@ -72,55 +65,37 @@
     "title": "Noch unsicher?"
   },
   "features": {
-    "ultimate": [
-      "Unbegrenzte Seiten & Layouts",
-      "Optional: Headless E-Commerce Setup",
-      "Komplexe Custom Logic & Dashboards",
-      "Premium Local SEO Sichtbarkeit",
-      "Optional: Eigene iOS & Android App",
-      "Lifetime Priority Support",
-      "Dedicated Project Manager",
-      "VIP SLA & Performance-Garantie"
-    ],
     "enterprise": [
-      "Bis zu 30 Seiten",
-      "Maßgeschneiderte Web-Anwendung",
-      "Online-Shop Anbindung (Optional)",
-      "Schnittstellen-Entwicklung",
-      "Premium Suchmaschinen- und Werbemaßnahmen",
-      "A/B-Test Einrichtung",
-      "Persönlicher Ansprechpartner",
-      "Verfügbarkeits-Garantie (Optional)",
-      "Rund-um-die-Uhr Unterstützung (Optional)"
+      "Skalierbare Multi-Region Edge-Architektur & Plattform-Logik",
+      "Konzipiert für riesige Nutzerzahlen & extreme Reichweiten",
+      "Komplexe individuelle Software-Architektur & Schnittstellen",
+      "Höchste Sicherheits- & Compliance-Standards (WAF, DDoS, DSGVO)",
+      "Dediziertes VIP-SLA & garantierte Entwickler-Reaktionszeiten",
+      "Direkte Inhaber-Architektur mit Umutcan Emre Tezgel"
     ],
-    "professional": [
-      "7-10 Unterseiten",
-      "Erweiterte Suchmaschinenoptimierung",
-      "Geschwindigkeitsoptimierung",
-      "Blog-Bereich",
-      "Kontaktformulare",
-      "5 Änderungsrunden",
-      "Webspace inklusive",
-      "Unterstützung optional buchbar"
+    "corporate": [
+      "Umfangreiche Next.js 15 Corporate-Plattform (bis 30 Seiten)",
+      "Holistische SEO Topic-Cluster & Rich Schema Dominanz",
+      "Mehrstufige Conversion-Pfade (Rechner, Funnels & Filter)",
+      "Vorbereitung für globale Mehrsprachigkeit (i18n)",
+      "Maßgeschneidertes Designsystem & Component Tokens",
+      "Persönliche Conversion-Rate- & Strategie-Begleitung"
+    ],
+    "business": [
+      "Maßgeschneiderte Next.js 15 B2B-Plattform (bis 12 Unterseiten)",
+      "100/100 Core Web Vitals & Sub-0,3s Ladezeit",
+      "Technisches SEO, Topic-Silos & Rich Snippets",
+      "Micro-Animations & maßgeschneidertes Bento-UI",
+      "60-Sekunden Express-Mitarbeitergewinnung",
+      "Direkter Draht zum Lead-Architekten Umutcan Emre Tezgel"
     ],
     "starter": [
-      "3-5 Unterseiten",
-      "Professionelle Startseite",
-      "Für alle Geräte optimiert",
-      "Basis-Suchmaschinenoptimierung",
-      "Sicherheitszertifikat",
-      "3 Änderungsrunden",
-      "Besucheranalyse eingerichtet",
-      "30 Tage Unterstützung"
-    ],
-    "onepager": [
-      "1 Onepager Startseite",
-      "Modernes, psychologisches Design",
-      "Mobilgeräte-Optimierung",
-      "Basis-SEO",
-      "Kontaktformular",
-      "1 Änderungsrunde",
-      "14 Tage Support"
+      "Maßgeschneiderte Next.js 15 Website (1–5 Unterseiten)",
+      "100/100 Google Core Web Vitals & Sub-0,3s Ladezeit",
+      "Mobile-First Design & DSGVO-Kontaktfunnel",
+      "Lokale SEO-Optimierung & Google Maps Ausrichtung",
+      "100% Quellcode- & Design-Eigentum (Kein Abo)",
+      "Vercel Edge Hosting Deployment"
     ]
   },
   "labels": {
@@ -129,37 +104,50 @@
     "delivery": "Lieferung in ~{days} Tagen"
   },
   "not_included": {
-    "professional": ["Online-Shop Funktionen", "Individuelle App-Entwicklung"],
-    "starter": ["Inhaltsverwaltung", "Online-Shop", "Individuelle Funktionen"],
-    "onepager": ["Unterseiten", "Inhaltsverwaltung (CMS)", "Blog"]
+    "enterprise": [
+      "Headless CMS (optional zubuchbar)",
+      "E-Commerce Shop (optional zubuchbar)",
+      "Custom Apps (optional zubuchbar)"
+    ],
+    "corporate": [
+      "Headless CMS (optional zubuchbar)",
+      "E-Commerce Shop (optional zubuchbar)",
+      "Custom Apps (optional zubuchbar)"
+    ],
+    "business": [
+      "Headless CMS (optional zubuchbar)",
+      "E-Commerce Shop (optional zubuchbar)",
+      "Custom Apps (optional zubuchbar)"
+    ],
+    "starter": [
+      "Headless CMS (optional zubuchbar)",
+      "E-Commerce Shop (optional zubuchbar)",
+      "Custom Apps (optional zubuchbar)"
+    ]
   },
   "packages": {
-    "ultimate": {
-      "cta": "Ultimate wählen",
-      "name": "Ultimate Domination",
-      "tagline": "Der unfaire Wettbewerbsvorteil",
-      "badge": "Agentur Partner"
-    },
     "enterprise": {
-      "cta": "Großunternehmen anfragen",
-      "name": "Profi-Lösung",
-      "tagline": "Volle Leistung"
+      "badge": "Großkunden & Plattformen",
+      "cta": "Enterprise anfragen",
+      "name": "Enterprise Platform (Extrem groß)",
+      "tagline": "Für Großkunden, Konzerne & bundesweite / internationale Rollouts"
     },
-    "professional": {
-      "badge": "Beliebteste Wahl",
-      "cta": "Professionell wählen",
-      "name": "Professionell",
-      "tagline": "Unser Bestseller"
+    "corporate": {
+      "badge": "Umfassende Präsenz",
+      "cta": "Corporate wählen",
+      "name": "Pro Corporate (Groß)",
+      "tagline": "Umfassende Unternehmensplattform mit maximaler Markenstärke"
+    },
+    "business": {
+      "badge": "Bestseller Mittelstand",
+      "cta": "Business wählen",
+      "name": "Business (Mittel)",
+      "tagline": "Der Maßstab für anspruchsvollen B2B-Mittelstand & Kanzleien"
     },
     "starter": {
-      "cta": "Einsteiger wählen",
-      "name": "Einsteiger",
-      "tagline": "Perfekt für den Start"
-    },
-    "onepager": {
-      "name": "Onepager",
-      "tagline": "Perfekt als Visitenkarte",
-      "cta": "Onepager wählen"
+      "cta": "Starter wählen",
+      "name": "Starter (Klein)",
+      "tagline": "Kompakte High-Speed Webpräsenz für lokale Dienstleister & Handwerk"
     }
   },
   "page": {

@@ -62,10 +62,10 @@ export const PackagesConfigurator: React.FC = () => {
     () => [
       {
         id: 'starter',
-        name: isEn ? 'Starter / Local Authority' : 'Starter / Local Authority',
+        name: isEn ? 'Starter (Compact)' : 'Starter (Klein)',
         tagline: isEn
-          ? 'Perfect for craftsmen & local service providers seeking online dominance.'
-          : 'Perfekt für Handwerker & lokale Dienstleister für planbare Neukunden.',
+          ? 'Compact high-speed website for local service providers, craftsmen & practices.'
+          : 'Kompakte High-Speed Webpräsenz für lokale Dienstleister, Handwerker & Praxen.',
         priceTag: isEn ? 'On Request' : 'Auf Anfrage',
         subPrice: isEn
           ? 'Bespoke fixed-price quote after consultation'
@@ -74,8 +74,8 @@ export const PackagesConfigurator: React.FC = () => {
         deliveryDays: 14,
         features: [
           isEn
-            ? 'Custom Next.js 15 Website (up to 5 pages)'
-            : 'Maßgeschneiderte Next.js 15 Website (bis 5 Unterseiten)',
+            ? 'Custom Next.js 15 Website (1–5 pages)'
+            : 'Maßgeschneiderte Next.js 15 Website (1–5 Unterseiten)',
           isEn
             ? '100/100 Google Core Web Vitals & Sub-0.3s Speed'
             : '100/100 Google Core Web Vitals & Sub-0,3s Ladezeit',
@@ -94,26 +94,30 @@ export const PackagesConfigurator: React.FC = () => {
           isEn
             ? 'Sanity v3 Headless CMS (optional add-on)'
             : 'Sanity v3 Headless CMS (optional zubuchbar)',
-          isEn ? '60-Second Mobile Recruiting Funnel' : '60-Sekunden Mobile-Recruiting Funnel',
-          isEn ? 'Multi-Language Architecture (i18n)' : 'Mehrsprachigkeit & globale i18n',
+          isEn
+            ? 'E-Commerce Online Shop (optional add-on)'
+            : 'E-Commerce Shop (optional zubuchbar)',
+          isEn
+            ? 'Custom Web App / Portal (optional add-on)'
+            : 'Custom App / Portal (optional zubuchbar)',
         ],
       },
       {
         id: 'business',
-        name: isEn ? 'Business Enterprise / B2B' : 'Business Enterprise / B2B',
+        name: isEn ? 'Business (Standard)' : 'Business (Mittel)',
         tagline: isEn
-          ? 'The gold standard for mid-market leaders, B2B companies & industry.'
-          : 'Der Maßstab für anspruchsvollen Mittelstand, Industrie & B2B.',
+          ? 'The benchmark for ambitious SMEs, B2B companies, industry & law firms.'
+          : 'Der Maßstab für anspruchsvollen B2B-Mittelstand, Industrie & Kanzleien.',
         priceTag: isEn ? 'On Request' : 'Auf Anfrage',
         subPrice: isEn
-          ? 'Most popular choice for growing businesses'
+          ? 'Most popular choice for mid-market businesses'
           : 'Beliebteste Wahl für anspruchsvolle Unternehmen',
         popular: true,
-        badge: isEn ? 'Empfehlung für Mittelstand' : 'Empfehlung für Mittelstand',
+        badge: isEn ? 'Bestseller Mid-Market' : 'Bestseller Mittelstand',
         deliveryDays: 21,
         features: [
           isEn
-            ? 'Bespoke Next.js 15 Enterprise Architecture (up to 12 pages)'
+            ? 'Bespoke Next.js 15 B2B Platform (up to 12 pages)'
             : 'Maßgeschneiderte Next.js 15 B2B-Plattform (bis 12 Unterseiten)',
           isEn
             ? '100/100 Core Web Vitals & Sub-0.3s Load Time'
@@ -135,51 +139,109 @@ export const PackagesConfigurator: React.FC = () => {
           isEn
             ? 'Sanity v3 Headless CMS (optional add-on)'
             : 'Sanity v3 Headless CMS (optional zubuchbar)',
-          isEn ? 'Full E-Commerce Shop Checkout' : 'Vollständiger Online-Shop Checkout',
-          isEn ? 'Custom CRM / ERP Deep-Sync' : 'Tiefgreifende ERP-/CRM-Schnittstellen',
+          isEn
+            ? 'E-Commerce Online Shop (optional add-on)'
+            : 'E-Commerce Shop (optional zubuchbar)',
+          isEn
+            ? 'Custom Web App / Portal (optional add-on)'
+            : 'Custom App / Portal (optional zubuchbar)',
         ],
       },
       {
-        id: 'custom-app',
-        name: isEn ? 'Custom App & E-Commerce' : 'Custom App & E-Commerce',
+        id: 'corporate',
+        name: isEn ? 'Pro Corporate (Large)' : 'Pro Corporate (Groß)',
         tagline: isEn
-          ? 'High-performance web apps, client portals & headless shops.'
-          : 'Web-Applikationen, Kundenportale & Headless Online-Shops.',
+          ? 'Comprehensive corporate platform with maximum conversion & brand authority.'
+          : 'Umfassende Unternehmensplattform mit maximaler Konversions- & Markenstärke.',
         priceTag: isEn ? 'On Request' : 'Auf Anfrage',
-        subPrice: isEn ? 'Bespoke scope & integration' : 'Individueller Projektumfang nach Maß',
+        subPrice: isEn
+          ? 'Extensive digital flagship presence'
+          : 'Umfangreicher digitaler Flaggschiff-Auftritt',
         popular: false,
+        badge: isEn ? 'Full Corporate Scope' : 'Umfassende Präsenz',
         deliveryDays: 30,
         features: [
           isEn
-            ? 'Full-Stack Next.js 15 & React 19 Web Application'
-            : 'Full-Stack Next.js 15 & React 19 Web-Applikation',
+            ? 'Extensive Next.js 15 Corporate Platform (up to 30 pages)'
+            : 'Umfangreiche Next.js 15 Corporate-Plattform (bis 30 Seiten)',
           isEn
-            ? 'Headless E-Commerce (Shopify / Stripe) or Client Portal'
-            : 'Headless E-Commerce (Stripe/Shopify) oder B2B-Portal',
+            ? 'Holistic Topic Clusters & Rich Schema Domination'
+            : 'Holistische SEO Topic-Cluster & Rich Schema Dominanz',
           isEn
-            ? 'Deep API Integrations (ERP, Supabase Auth, CRM-Sync)'
-            : 'API-Schnittstellen (ERP, Supabase Auth, CRM-Sync)',
+            ? 'Multi-Step Conversion Funnels, Calculators & Quiz Tools'
+            : 'Mehrstufige Conversion-Pfade (Rechner, Funnels & Filter)',
           isEn
-            ? 'Multi-Language Architecture (German + English)'
-            : 'Lückenlose Mehrsprachigkeit (next-intl)',
+            ? 'Global Multi-Language Architecture (i18n ready)'
+            : 'Vorbereitung für globale Mehrsprachigkeit (i18n)',
           isEn
-            ? 'Instant Search & Dynamic B2B Catalog Filters'
-            : 'Instant-Suche & dynamische B2B-Katalogfilter',
+            ? 'Tailored Motion Design & Custom Token Library'
+            : 'Maßgeschneidertes Designsystem & Component Tokens',
           isEn
-            ? 'Continuous Deployment & SLA Priority Support'
-            : 'CI/CD Pipelines & bevorzugter Priority-Support',
+            ? 'Strategic CRO & Executive Technical Guidance'
+            : 'Persönliche Conversion-Rate- & Strategie-Begleitung',
         ],
         notIncluded: [
           isEn
             ? 'Sanity v3 Headless CMS (optional add-on)'
             : 'Sanity v3 Headless CMS (optional zubuchbar)',
+          isEn
+            ? 'E-Commerce Online Shop (optional add-on)'
+            : 'E-Commerce Shop (optional zubuchbar)',
+          isEn
+            ? 'Custom Web App / Portal (optional add-on)'
+            : 'Custom App / Portal (optional zubuchbar)',
+        ],
+      },
+      {
+        id: 'enterprise',
+        name: isEn ? 'Enterprise Platform (Extremely Large)' : 'Enterprise Platform (Extrem groß)',
+        tagline: isEn
+          ? 'For large enterprises, corporations & nationwide or global multi-region rollouts.'
+          : 'Für Großkunden, Konzerne & riesige Plattformen mit bundesweitem oder internationalem Rollout.',
+        priceTag: isEn ? 'On Request' : 'Auf Anfrage',
+        subPrice: isEn
+          ? 'Enterprise platform engineering on demand'
+          : 'Individuelle Großplattform nach Maßgabe',
+        popular: false,
+        badge: isEn ? 'Enterprise Rollout' : 'Großkunden & Plattformen',
+        deliveryDays: 45,
+        features: [
+          isEn
+            ? 'Scalable Multi-Region Edge Infrastructure & Platform Logic'
+            : 'Skalierbare Multi-Region Edge-Architektur & Hochleistungs-Infrastruktur',
+          isEn
+            ? 'Engineered for Massive User Traffic & Nationwide/Global Rollout'
+            : 'Konzipiert für riesige Nutzerzahlen & extreme bundesweite / weltweite Reichweite',
+          isEn
+            ? 'Custom Enterprise Architecture & System Integrations (ERP/CRM)'
+            : 'Komplexe individuelle Software-Architektur & Enterprise Schnittstellen',
+          isEn
+            ? 'Maximum Security & Compliance (Edge WAF, DDoS, ISO/GDPR)'
+            : 'Höchste Sicherheits-, Datenschutz- & Compliance-Standards (WAF, DDoS, DSGVO)',
+          isEn
+            ? 'Dedicated VIP SLA & Guaranteed Developer Response Times'
+            : 'Dediziertes VIP-SLA & garantierte Reaktionszeiten',
+          isEn
+            ? 'Direct Lead Architect Engagement with Umutcan Emre Tezgel'
+            : 'Direkte Inhaber-Architektur & langfristige strategische Begleitung',
+        ],
+        notIncluded: [
+          isEn
+            ? 'Sanity v3 Headless CMS (optional add-on)'
+            : 'Sanity v3 Headless CMS (optional zubuchbar)',
+          isEn
+            ? 'E-Commerce Online Shop (optional add-on)'
+            : 'E-Commerce Shop (optional zubuchbar)',
+          isEn
+            ? 'Custom Web App / Portal (optional add-on)'
+            : 'Custom App / Portal (optional zubuchbar)',
         ],
       },
     ],
     [isEn]
   );
 
-  // Available Add-ons with clear descriptions (Headless CMS optional zubuchbar, Wartung freiwillig)
+  // Available Add-ons with clear descriptions (Headless CMS optional zubuchbar, Wartung freiwillig, E-Commerce & Apps separate Add-ons)
   const availableAddons = useMemo(
     () => [
       {
@@ -193,6 +255,24 @@ export const PackagesConfigurator: React.FC = () => {
         typeLabel: isEn ? 'Optional Add-on' : 'Optional zubuchbar',
       },
       {
+        id: 'commerce-headless',
+        name: isEn ? 'Headless E-Commerce & Shop' : 'Headless E-Commerce & Online-Shop',
+        desc: isEn
+          ? 'Fast headless shop integration (Shopify / Stripe / Medusa) with seamless checkout and sub-second cart speeds.'
+          : 'Leistungsstarkes Headless-Shop-System (Shopify, Stripe, Medusa) mit blitzschnellem Checkout und Warenkorb.',
+        icon: Article,
+        typeLabel: isEn ? 'Optional Add-on' : 'Optional zubuchbar',
+      },
+      {
+        id: 'func-auth',
+        name: isEn ? 'Custom Web App & Client Portal' : 'Custom Web-App & Kundenportal',
+        desc: isEn
+          ? 'Secure client portal with authentication (Supabase/Auth), custom user dashboards, and role-based permissions.'
+          : 'Geschütztes Kundenportal mit Login-Bereich, individuellem Dashboard, Rollenrechten und Datenbank-Anbindung.',
+        icon: UserPlus,
+        typeLabel: isEn ? 'Optional Add-on' : 'Optional zubuchbar',
+      },
+      {
         id: 'seo-tech',
         name: isEn ? 'Technical SEO & Schema Sprint' : 'Technisches SEO & Schema.org Sprint',
         desc: isEn
@@ -200,15 +280,6 @@ export const PackagesConfigurator: React.FC = () => {
           : 'Vollständige Knowledge-Graph-Strukturierung, Rich Snippets und strukturierte Google-Daten für maximale Auffindbarkeit.',
         icon: MagnifyingGlass,
         recommended: true,
-        typeLabel: isEn ? 'Optional Add-on' : 'Optional zubuchbar',
-      },
-      {
-        id: 'func-auth',
-        name: isEn ? '60-Sec Express Recruiting Funnel' : '60-Sekunden Express-Recruiting Funnel',
-        desc: isEn
-          ? 'Smartphone-optimized application funnel to generate qualified job applications with ease.'
-          : 'Mobile-optimierter Kurzbewerbungs-Funnel zur schnellen und gezielten Gewinnung von Fachkräften.',
-        icon: UserPlus,
         typeLabel: isEn ? 'Optional Add-on' : 'Optional zubuchbar',
       },
       {
@@ -232,11 +303,11 @@ export const PackagesConfigurator: React.FC = () => {
         typeLabel: isEn ? 'Optional Add-on' : 'Optional zubuchbar',
       },
       {
-        id: 'seo-speed',
-        name: isEn ? 'Performance Max (<0.3s Tuning)' : 'Performance Max & Sub-0,3s Tuning',
+        id: 'tech-pwa',
+        name: isEn ? 'Mobile App & PWA Experience' : 'Mobile App & Progressive Web App (PWA)',
         desc: isEn
-          ? 'Extreme Core Web Vitals optimization for instant 100/100 PageSpeed scores across devices.'
-          : 'Extremes Core Web Vitals Feintuning für blitzschnelle Ladezeiten unter 0,3s und maximale Google PageSpeed Scores.',
+          ? 'Installable app experience with offline capabilities, push notifications, and native app feeling.'
+          : 'Installierbare Web-Applikation auf Smartphone-Homescreens mit Offline-Modus und nativem App-Gefühl.',
         icon: Lightning,
         typeLabel: isEn ? 'Optional Add-on' : 'Optional zubuchbar',
       },
@@ -300,24 +371,24 @@ export const PackagesConfigurator: React.FC = () => {
 
   return (
     <div>
-      {/* 3 Main Flexible Service Packages */}
+      {/* 4 Main Flexible Service Packages */}
       <section className="py-16 px-4 w-full relative" id="packages-selection">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
-              {isEn ? 'MODULAR SERVICE TIERS' : 'MODULARE LEISTUNGSPAKETE'}
+              {isEn ? 'MODULAR SERVICE TIERS (4 PACKAGES)' : '4 MODULARE LEISTUNGSPAKETE'}
             </span>
             <h2 className="font-display font-bold text-3xl sm:text-4xl text-slate-900 mt-2 mb-4">
               {isEn ? 'Choose Your Target Scope' : 'Wählen Sie Ihren gewünschten Projektumfang'}
             </h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
               {isEn
-                ? 'Select your base package and customize it with optional add-ons below. You receive a transparent, binding fixed price.'
-                : 'Wählen Sie Ihr Basispaket aus und ergänzen Sie es flexibel mit praxiserprobten Zusatzmodulen. Sie erhalten ein transparentes, verbindliches Festpreisangebot.'}
+                ? 'Select your core package (from compact to enterprise platform) and enhance it with modular add-ons below. Tailored fixed-price proposal on request.'
+                : 'Wählen Sie Ihr Basispaket (von klein bis zur riesigen Enterprise-Plattform) und ergänzen Sie es flexibel mit praxiserprobten Zusatzmodulen. Verbindliches Festpreisangebot auf Anfrage.'}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
             {packages.map((pkg) => {
               const isSelected = selectedPkgId === pkg.id;
 

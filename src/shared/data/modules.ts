@@ -23,50 +23,43 @@ export interface Module {
 }
 
 export const modules: Module[] = [
-  // Basis
-  {
-    id: 'basis-onepager',
-    category: 'basis',
-    name: 'Onepager',
-    description: '1 Onepager Startseite',
-    priceInCents: 49900,
-    priceType: 'one-time',
-    icon: 'article',
-  },
+  // Basis-Pakete (4 Tiers)
   {
     id: 'basis-starter',
     category: 'basis',
-    name: 'Starter Website',
-    description: 'Professionelle Startseite (3-5 Seiten)',
-    priceInCents: 149000,
+    name: 'Starter (Klein)',
+    description: 'Kompakte Webpräsenz (1–5 Seiten), Sub-0,3s Ladezeit & DSGVO-Funnel',
+    priceInCents: 0,
     priceType: 'one-time',
     icon: 'rocket_launch',
   },
   {
-    id: 'basis-professional',
+    id: 'basis-business',
     category: 'basis',
-    name: 'Professional',
-    description: '7-10 Unterseiten & CMS',
-    priceInCents: 299000,
+    name: 'Business (Mittel)',
+    description: 'B2B-Website (bis 12 Seiten), SEO-Silos, Recruiting-Funnel & Bento-UI',
+    priceInCents: 0,
     priceType: 'one-time',
     icon: 'business',
     isPopular: true,
   },
   {
-    id: 'basis-enterprise',
+    id: 'basis-corporate',
     category: 'basis',
-    name: 'Enterprise',
-    description: 'Bis zu 30 Seiten & Custom Logic',
-    priceInCents: 599000,
+    name: 'Pro Corporate (Groß)',
+    description:
+      'Umfangreiche Corporate-Plattform (bis 30 Seiten), Multi-Language (i18n) & Lead-Architektur',
+    priceInCents: 0,
     priceType: 'one-time',
     icon: 'domain',
   },
   {
-    id: 'basis-ultimate',
+    id: 'basis-enterprise',
     category: 'basis',
-    name: 'Ultimate Domination',
-    description: 'Unbegrenzte Seiten, Custom App & Premium SEO',
-    priceInCents: 1299900,
+    name: 'Enterprise Platform (Extrem groß)',
+    description:
+      'Für Großkunden & riesige Plattformen mit landesweitem oder internationalem Rollout',
+    priceInCents: 0,
     priceType: 'one-time',
     icon: 'workspace_premium',
   },

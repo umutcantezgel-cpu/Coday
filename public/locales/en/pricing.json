@@ -1,61 +1,54 @@
 {
   "comparison": {
     "headers": {
-      "feature": "Feature",
-      "onepager": "Onepager",
-      "starter": "Starter",
-      "professional": "Professional",
-      "enterprise": "Enterprise"
+      "feature": "Feature / Scope",
+      "starter": "Starter (Compact)",
+      "business": "Business (Standard)",
+      "corporate": "Pro Corporate (Large)",
+      "enterprise": "Enterprise Platform"
     },
     "rows": {
       "cms": {
         "ent": "Optional",
-        "label": "CMS",
-        "pro": "Optional",
-        "starter": "Optional",
-        "onepager": "Optional"
+        "label": "Headless CMS (Sanity)",
+        "corporate": "Optional",
+        "business": "Optional",
+        "starter": "Optional"
       },
       "custom": {
-        "ent": "✓",
-        "label": "Custom Dev",
-        "pro": " ",
-        "starter": " ",
-        "onepager": " "
+        "ent": "Optional",
+        "label": "Custom Apps / Portals (Add-on)",
+        "corporate": "Optional",
+        "business": "Optional",
+        "starter": "Optional"
       },
       "ecommerce": {
-        "ent": "✓",
-        "label": "E-commerce",
-        "pro": " ",
-        "starter": " ",
-        "onepager": " "
+        "ent": "Optional",
+        "label": "E-Commerce Shop (Add-on)",
+        "corporate": "Optional",
+        "business": "Optional",
+        "starter": "Optional"
       },
       "pages": {
-        "ent": "Up to 30",
-        "label": "Pages",
-        "pro": "7-10",
-        "starter": "3-5",
-        "onepager": "1"
-      },
-      "revisions": {
-        "ent": "Unlimited",
-        "label": "Revisions",
-        "pro": "5",
-        "starter": "3",
-        "onepager": "1"
+        "ent": "Massive Platforms",
+        "label": "Page Scope",
+        "corporate": "Up to 30",
+        "business": "Up to 12",
+        "starter": "1-5"
       },
       "seo": {
-        "ent": "Premium",
-        "label": "SEO",
-        "pro": "Advanced",
-        "starter": "Basic",
-        "onepager": "Basic"
+        "ent": "Multi-Region",
+        "label": "SEO Architecture",
+        "corporate": "Holistic",
+        "business": "Topic Silos",
+        "starter": "Local"
       },
       "support": {
         "ent": "Voluntary",
-        "label": "Support/Maint.",
-        "pro": "Voluntary",
-        "starter": "Voluntary",
-        "onepager": "Voluntary"
+        "label": "Maintenance & Support",
+        "corporate": "Voluntary",
+        "business": "Voluntary",
+        "starter": "Voluntary"
       }
     },
     "title": "Package Comparison"
@@ -72,55 +65,37 @@
     "title": "Still unsure?"
   },
   "features": {
-    "ultimate": [
-      "Unlimited Pages & Layouts",
-      "Optional: Headless E-Commerce Setup",
-      "Complex Custom Logic & Dashboards",
-      "Premium Local SEO Dominance",
-      "Optional: Custom iOS & Android App",
-      "Lifetime priority support",
-      "Dedicated Project Manager",
-      "VIP SLA & Performance Guarantee"
-    ],
     "enterprise": [
-      "Up to 30 Pages",
-      "Custom Web Application",
-      "Online Shop Integration (Optional)",
-      "API Development",
-      "Premium SEO & Ads",
-      "A/B Testing Setup",
-      "Dedicated Manager",
-      "Uptime Guarantee (Optional)",
-      "24/7 Support (Optional)"
+      "Scalable multi-region edge architecture & platform logic",
+      "Engineered for massive user traffic & nationwide/global rollouts",
+      "Complex custom software architecture & enterprise integrations",
+      "Maximum security & compliance (WAF, DDoS, ISO/GDPR)",
+      "Dedicated VIP SLA & guaranteed developer response times",
+      "Direct lead architect collaboration with Umutcan Emre Tezgel"
     ],
-    "professional": [
-      "7-10 Subpages",
-      "Advanced SEO",
-      "Speed Optimization",
-      "Blog Section",
-      "Contact Forms",
-      "5 Revision Rounds",
-      "Webspace Included",
-      "Support Optional"
+    "corporate": [
+      "Extensive Next.js 15 corporate platform (up to 30 pages)",
+      "Holistic SEO topic clusters & rich schema dominance",
+      "Multi-step conversion funnels (calculators, funnels & filters)",
+      "Multi-language architecture (i18n ready)",
+      "Bespoke design system & component tokens",
+      "Personal conversion rate & strategic guidance"
+    ],
+    "business": [
+      "Bespoke Next.js 15 B2B platform (up to 12 pages)",
+      "100/100 Core Web Vitals & sub-0.3s load time",
+      "Technical SEO, topic silos & rich snippets",
+      "Micro-animations & custom bento grid UI",
+      "60-second mobile express recruiting funnel",
+      "Direct line to lead architect Umutcan Emre Tezgel"
     ],
     "starter": [
-      "3-5 Subpages",
-      "Professional Homepage",
-      "Optimized for all devices",
-      "Basic SEO",
-      "Security Certificate",
-      "3 Revision Rounds",
-      "Visitor Analytics Setup",
-      "30 Days Support"
-    ],
-    "onepager": [
-      "1 Onepager Homepage",
-      "Modern, psychological design",
-      "Mobile Optimization",
-      "Basic SEO",
-      "Contact Form",
-      "1 Revision Round",
-      "14 Days Support"
+      "Custom Next.js 15 website (1–5 pages)",
+      "100/100 Google Core Web Vitals & sub-0.3s speed",
+      "Mobile-first design & GDPR-compliant contact funnel",
+      "Local SEO optimization & Google Maps alignment",
+      "100% source code & design ownership (no subscription)",
+      "Vercel Edge hosting deployment"
     ]
   },
   "labels": {
@@ -129,37 +104,50 @@
     "delivery": "~{days} days delivery"
   },
   "not_included": {
-    "professional": ["Online Shop Functions", "Custom App Development"],
-    "starter": ["Content Management", "Online Shop", "Custom Functions"],
-    "onepager": ["Subpages", "Content Management (CMS)", "Blog"]
+    "enterprise": [
+      "Headless CMS (optional add-on)",
+      "E-Commerce Shop (optional add-on)",
+      "Custom Apps (optional add-on)"
+    ],
+    "corporate": [
+      "Headless CMS (optional add-on)",
+      "E-Commerce Shop (optional add-on)",
+      "Custom Apps (optional add-on)"
+    ],
+    "business": [
+      "Headless CMS (optional add-on)",
+      "E-Commerce Shop (optional add-on)",
+      "Custom Apps (optional add-on)"
+    ],
+    "starter": [
+      "Headless CMS (optional add-on)",
+      "E-Commerce Shop (optional add-on)",
+      "Custom Apps (optional add-on)"
+    ]
   },
   "packages": {
-    "ultimate": {
-      "cta": "Choose Ultimate",
-      "name": "Ultimate Domination",
-      "tagline": "The unfair competitive advantage",
-      "badge": "Agency Partner"
-    },
     "enterprise": {
+      "badge": "Enterprise & Platforms",
       "cta": "Request Enterprise",
-      "name": "Enterprise",
-      "tagline": "Full Power"
+      "name": "Enterprise Platform (Extremely Large)",
+      "tagline": "For large enterprises, corporations & global multi-region rollouts"
     },
-    "professional": {
-      "badge": "Most Popular",
-      "cta": "Choose Professional",
-      "name": "Professional",
-      "tagline": "Our Bestseller"
+    "corporate": {
+      "badge": "Full Corporate Scope",
+      "cta": "Choose Corporate",
+      "name": "Pro Corporate (Large)",
+      "tagline": "Comprehensive corporate platform with maximum conversion & brand authority"
+    },
+    "business": {
+      "badge": "Bestseller Mid-Market",
+      "cta": "Choose Business",
+      "name": "Business (Standard)",
+      "tagline": "The benchmark for ambitious SMEs, B2B companies & law firms"
     },
     "starter": {
       "cta": "Choose Starter",
-      "name": "Starter",
-      "tagline": "Perfect for starting out"
-    },
-    "onepager": {
-      "name": "One pager",
-      "tagline": "Perfect as a digital business card",
-      "cta": "Choose Onepager"
+      "name": "Starter (Compact)",
+      "tagline": "Compact high-speed website for local service providers & trades"
     }
   },
   "page": {

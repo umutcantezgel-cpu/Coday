@@ -142,14 +142,16 @@ const Calculator: React.FC = () => {
                             module={module}
                             isSelected={selectedModuleIds.has(module.id)}
                             isIncluded={
-                              (selectedPackageId === 'starter' &&
-                                ['basis-starter'].includes(module.id)) ||
-                              (selectedPackageId === 'professional' &&
-                                ['basis-business'].includes(module.id)) ||
+                              (selectedPackageId === 'starter' && module.id === 'basis-starter') ||
+                              ((selectedPackageId === 'business' ||
+                                selectedPackageId === 'professional') &&
+                                module.id === 'basis-business') ||
+                              ((selectedPackageId === 'corporate' ||
+                                selectedPackageId === 'pro-corporate' ||
+                                selectedPackageId === 'scale') &&
+                                module.id === 'basis-corporate') ||
                               (selectedPackageId === 'enterprise' &&
-                                ['basis-enterprise', 'commerce-headless', 'func-auth'].includes(
-                                  module.id
-                                ))
+                                module.id === 'basis-enterprise')
                             }
                             onToggle={() => toggleModule(module.id)}
                             disabled={
@@ -158,7 +160,8 @@ const Calculator: React.FC = () => {
                             }
                             isRecommended={
                               module.isRecommended ||
-                              (selectedPackageId === 'professional' && module.id === 'func-cms')
+                              (['business', 'professional'].includes(selectedPackageId || '') &&
+                                module.id === 'func-cms')
                             }
                           />
                         ))}

@@ -43,27 +43,28 @@ export const useCalculatorStore = create<CalculatorState>()(
           });
         }
 
-        // Map Packages exactly 1:1 to their base module
+        // Map Packages exactly 1:1 to their base module (4 Tiers)
         switch (packageId) {
-          case 'onepager':
-            newSet.add('basis-onepager');
-            break;
           case 'starter':
+          case 'onepager':
             newSet.add('basis-starter');
             break;
-          case 'professional':
           case 'business':
-            newSet.add('basis-professional');
+          case 'professional':
+            newSet.add('basis-business');
+            break;
+          case 'corporate':
+          case 'pro-corporate':
+          case 'scale':
+            newSet.add('basis-corporate');
             break;
           case 'enterprise':
+          case 'ultimate':
           case 'custom-app':
             newSet.add('basis-enterprise');
             break;
-          case 'ultimate':
-            newSet.add('basis-ultimate');
-            break;
           default:
-            newSet.add('basis-starter');
+            newSet.add('basis-business');
         }
 
         set({
@@ -75,27 +76,28 @@ export const useCalculatorStore = create<CalculatorState>()(
       setPackageAndAddons: (packageId, addonIds = []) => {
         const newSet = new Set<string>();
 
-        // Add base package
+        // Add base package (4 Tiers)
         switch (packageId) {
-          case 'onepager':
-            newSet.add('basis-onepager');
-            break;
           case 'starter':
+          case 'onepager':
             newSet.add('basis-starter');
             break;
-          case 'professional':
           case 'business':
-            newSet.add('basis-professional');
+          case 'professional':
+            newSet.add('basis-business');
+            break;
+          case 'corporate':
+          case 'pro-corporate':
+          case 'scale':
+            newSet.add('basis-corporate');
             break;
           case 'enterprise':
+          case 'ultimate':
           case 'custom-app':
             newSet.add('basis-enterprise');
             break;
-          case 'ultimate':
-            newSet.add('basis-ultimate');
-            break;
           default:
-            newSet.add('basis-starter');
+            newSet.add('basis-business');
         }
 
         // Add verified add-on modules
@@ -176,13 +178,15 @@ export const useCalculatorStore = create<CalculatorState>()(
         const { selectedPackageId } = get();
         if (!selectedPackageId) return null;
         const names: Record<string, string> = {
-          onepager: 'Onepager / Landingpage',
-          starter: 'Starter / Local Authority',
-          business: 'Business Enterprise / B2B',
-          professional: 'Business Enterprise / B2B',
-          'custom-app': 'Custom App & E-Commerce',
-          enterprise: 'Custom App & E-Commerce',
-          ultimate: 'Ultimate Domination',
+          starter: 'Starter (Klein)',
+          onepager: 'Starter (Klein)',
+          business: 'Business (Mittel)',
+          professional: 'Business (Mittel)',
+          corporate: 'Pro Corporate (Groß)',
+          'pro-corporate': 'Pro Corporate (Groß)',
+          scale: 'Pro Corporate (Groß)',
+          enterprise: 'Enterprise Platform (Extrem groß)',
+          ultimate: 'Enterprise Platform (Extrem groß)',
         };
         return names[selectedPackageId] || null;
       },

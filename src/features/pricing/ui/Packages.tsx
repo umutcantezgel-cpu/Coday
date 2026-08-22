@@ -332,96 +332,208 @@ export default async function Packages() {
           </div>
 
           <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-md">
-            <table className="w-full text-left border-collapse">
+            <table className="w-full text-left border-collapse min-w-[700px]">
               <thead>
                 <tr className="border-b border-slate-200 bg-slate-50/90">
-                  <th scope="col" className="p-5 text-xs font-bold text-slate-500 uppercase">
-                    Feature
-                  </th>
-                  <th scope="col" className="p-5 text-center text-sm font-bold text-slate-700">
-                    Starter
+                  <th scope="col" className="p-4 sm:p-5 text-xs font-bold text-slate-500 uppercase">
+                    {isEn ? 'Feature / Scope' : 'Leistungsumfang'}
                   </th>
                   <th
                     scope="col"
-                    className="p-5 text-center text-sm font-bold text-amber-900 bg-amber-50/80 border-x border-amber-200/60"
+                    className="p-4 sm:p-5 text-center text-sm font-bold text-slate-700"
                   >
-                    Business Enterprise
+                    {isEn ? 'Starter (Compact)' : 'Starter (Klein)'}
                   </th>
-                  <th scope="col" className="p-5 text-center text-sm font-bold text-slate-700">
-                    Custom App & Shop
+                  <th
+                    scope="col"
+                    className="p-4 sm:p-5 text-center text-sm font-bold text-amber-900 bg-amber-50/80 border-x border-amber-200/60"
+                  >
+                    {isEn ? 'Business (Standard)' : 'Business (Mittel)'}
+                  </th>
+                  <th
+                    scope="col"
+                    className="p-4 sm:p-5 text-center text-sm font-bold text-slate-700"
+                  >
+                    {isEn ? 'Pro Corporate (Large)' : 'Pro Corporate (Groß)'}
+                  </th>
+                  <th
+                    scope="col"
+                    className="p-4 sm:p-5 text-center text-sm font-bold text-slate-900 bg-slate-100/70 border-l border-slate-200"
+                  >
+                    {isEn ? 'Enterprise Platform' : 'Enterprise (Extrem groß)'}
                   </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100 text-sm">
                 <tr>
-                  <th scope="row" className="p-5 font-semibold text-slate-900">
-                    Kosten & Angebot
+                  <th scope="row" className="p-4 sm:p-5 font-semibold text-slate-900">
+                    {isEn ? 'Pricing & Proposal' : 'Kosten & Angebot'}
                   </th>
-                  <td className="p-5 text-center text-primary-700 font-semibold">Auf Anfrage</td>
-                  <td className="p-5 text-center font-bold text-amber-900 bg-amber-50/40 border-x border-amber-200/60">
-                    Auf Anfrage
+                  <td className="p-4 sm:p-5 text-center text-primary-700 font-semibold">
+                    {isEn ? 'On Request' : 'Auf Anfrage'}
                   </td>
-                  <td className="p-5 text-center text-primary-700 font-semibold">Auf Anfrage</td>
+                  <td className="p-4 sm:p-5 text-center font-bold text-amber-900 bg-amber-50/40 border-x border-amber-200/60">
+                    {isEn ? 'On Request' : 'Auf Anfrage'}
+                  </td>
+                  <td className="p-4 sm:p-5 text-center text-primary-700 font-semibold">
+                    {isEn ? 'On Request' : 'Auf Anfrage'}
+                  </td>
+                  <td className="p-4 sm:p-5 text-center font-bold text-slate-900 bg-slate-50/60 border-l border-slate-200">
+                    {isEn ? 'On Request' : 'Auf Anfrage'}
+                  </td>
                 </tr>
                 <tr>
-                  <th scope="row" className="p-5 font-semibold text-slate-900">
-                    Seitenanzahl
+                  <th scope="row" className="p-4 sm:p-5 font-semibold text-slate-900">
+                    {isEn ? 'Target Scope & Pages' : 'Seitenumfang'}
                   </th>
-                  <td className="p-5 text-center text-slate-600">Bis 5 Seiten</td>
-                  <td className="p-5 text-center font-bold text-slate-900 bg-amber-50/40 border-x border-amber-200/60">
-                    Bis 12 Seiten
+                  <td className="p-4 sm:p-5 text-center text-slate-600">
+                    {isEn ? '1–5 Pages' : '1–5 Seiten'}
                   </td>
-                  <td className="p-5 text-center text-slate-600">Unbegrenzt</td>
+                  <td className="p-4 sm:p-5 text-center font-bold text-slate-900 bg-amber-50/40 border-x border-amber-200/60">
+                    {isEn ? 'Up to 12 Pages' : 'Bis 12 Seiten'}
+                  </td>
+                  <td className="p-4 sm:p-5 text-center text-slate-600">
+                    {isEn ? 'Up to 30 Pages' : 'Bis 30 Seiten'}
+                  </td>
+                  <td className="p-4 sm:p-5 text-center font-bold text-slate-900 bg-slate-50/60 border-l border-slate-200">
+                    {isEn ? 'Massive Platforms' : 'Riesige Plattformen'}
+                  </td>
                 </tr>
                 <tr>
-                  <th scope="row" className="p-5 font-semibold text-slate-900">
-                    Core Web Vitals 100/100
+                  <th scope="row" className="p-4 sm:p-5 font-semibold text-slate-900">
+                    {isEn ? '100/100 Core Web Vitals' : 'Core Web Vitals 100/100'}
                   </th>
-                  <td className="p-5 text-center text-amber-700 font-medium">✓ Inklusive</td>
-                  <td className="p-5 text-center font-bold text-amber-900 bg-amber-50/40 border-x border-amber-200/60">
-                    ✓ Inklusive
+                  <td className="p-4 sm:p-5 text-center text-amber-700 font-medium">
+                    {isEn ? '✓ Included' : '✓ Inklusive'}
                   </td>
-                  <td className="p-5 text-center text-amber-700 font-medium">✓ Inklusive</td>
+                  <td className="p-4 sm:p-5 text-center font-bold text-amber-900 bg-amber-50/40 border-x border-amber-200/60">
+                    {isEn ? '✓ Included' : '✓ Inklusive'}
+                  </td>
+                  <td className="p-4 sm:p-5 text-center text-amber-700 font-medium">
+                    {isEn ? '✓ Included' : '✓ Inklusive'}
+                  </td>
+                  <td className="p-4 sm:p-5 text-center font-bold text-emerald-700 bg-slate-50/60 border-l border-slate-200">
+                    {isEn ? '✓ Included' : '✓ Inklusive'}
+                  </td>
                 </tr>
                 <tr>
-                  <th scope="row" className="p-5 font-semibold text-slate-900">
-                    Headless CMS (Sanity)
+                  <th scope="row" className="p-4 sm:p-5 font-semibold text-slate-900">
+                    {isEn ? 'Recruiting & Lead Funnel' : '60s Recruiting-Funnel'}
                   </th>
-                  <td className="p-5 text-center text-slate-600">Optional zubuchbar</td>
-                  <td className="p-5 text-center font-bold text-amber-900 bg-amber-50/40 border-x border-amber-200/60">
-                    Optional zubuchbar
+                  <td className="p-4 sm:p-5 text-center text-slate-500">
+                    {isEn ? 'Optional Add-on' : 'Optional zubuchbar'}
                   </td>
-                  <td className="p-5 text-center text-slate-600">Optional zubuchbar</td>
+                  <td className="p-4 sm:p-5 text-center font-bold text-amber-900 bg-amber-50/40 border-x border-amber-200/60">
+                    {isEn ? '✓ Included' : '✓ Inklusive'}
+                  </td>
+                  <td className="p-4 sm:p-5 text-center text-amber-700 font-medium">
+                    {isEn ? '✓ Included' : '✓ Inklusive'}
+                  </td>
+                  <td className="p-4 sm:p-5 text-center font-bold text-slate-900 bg-slate-50/60 border-l border-slate-200">
+                    {isEn ? '✓ Included' : '✓ Inklusive'}
+                  </td>
                 </tr>
                 <tr>
-                  <th scope="row" className="p-5 font-semibold text-slate-900">
-                    60s Mobile-Recruiting Funnel
+                  <th scope="row" className="p-4 sm:p-5 font-semibold text-slate-900">
+                    {isEn ? 'Multi-Language (i18n)' : 'Mehrsprachigkeit (i18n)'}
                   </th>
-                  <td className="p-5 text-center text-slate-600">Optional zubuchbar</td>
-                  <td className="p-5 text-center font-bold text-amber-900 bg-amber-50/40 border-x border-amber-200/60">
-                    ✓ Inklusive
+                  <td className="p-4 sm:p-5 text-center text-slate-500">
+                    {isEn ? 'Optional Add-on' : 'Optional zubuchbar'}
                   </td>
-                  <td className="p-5 text-center text-amber-700 font-medium">✓ Inklusive</td>
+                  <td className="p-4 sm:p-5 text-center text-slate-500 bg-amber-50/40 border-x border-amber-200/60">
+                    {isEn ? 'Optional Add-on' : 'Optional zubuchbar'}
+                  </td>
+                  <td className="p-4 sm:p-5 text-center text-amber-700 font-medium">
+                    {isEn ? '✓ Included' : '✓ Inklusive'}
+                  </td>
+                  <td className="p-4 sm:p-5 text-center font-bold text-slate-900 bg-slate-50/60 border-l border-slate-200">
+                    {isEn ? '✓ Multi-Region' : '✓ Multi-Region'}
+                  </td>
                 </tr>
                 <tr>
-                  <th scope="row" className="p-5 font-semibold text-slate-900">
-                    Wartung & Support
+                  <th scope="row" className="p-4 sm:p-5 font-semibold text-slate-900">
+                    {isEn ? 'Headless CMS (Sanity)' : 'Headless CMS (Sanity)'}
                   </th>
-                  <td className="p-5 text-center text-slate-600">Freiwillig zubuchbar</td>
-                  <td className="p-5 text-center font-bold text-amber-900 bg-amber-50/40 border-x border-amber-200/60">
-                    Freiwillig zubuchbar
+                  <td className="p-4 sm:p-5 text-center text-slate-500">
+                    {isEn ? 'Optional Add-on' : 'Optional zubuchbar'}
                   </td>
-                  <td className="p-5 text-center text-slate-600">Freiwillig zubuchbar</td>
+                  <td className="p-4 sm:p-5 text-center font-semibold text-amber-800 bg-amber-50/40 border-x border-amber-200/60">
+                    {isEn ? 'Optional Add-on' : 'Optional zubuchbar'}
+                  </td>
+                  <td className="p-4 sm:p-5 text-center text-slate-500">
+                    {isEn ? 'Optional Add-on' : 'Optional zubuchbar'}
+                  </td>
+                  <td className="p-4 sm:p-5 text-center text-slate-600 bg-slate-50/60 border-l border-slate-200">
+                    {isEn ? 'Optional Add-on' : 'Optional zubuchbar'}
+                  </td>
                 </tr>
                 <tr>
-                  <th scope="row" className="p-5 font-semibold text-slate-900">
-                    Quellcode-Eigentum & Hosting-Freiheit
+                  <th scope="row" className="p-4 sm:p-5 font-semibold text-slate-900">
+                    {isEn ? 'E-Commerce & Online Shop' : 'E-Commerce & Shop (Add-on)'}
                   </th>
-                  <td className="p-5 text-center text-slate-700">100% Ihr Eigentum</td>
-                  <td className="p-5 text-center font-bold text-slate-900 bg-amber-50/40 border-x border-amber-200/60">
-                    100% Ihr Eigentum
+                  <td className="p-4 sm:p-5 text-center text-slate-500">
+                    {isEn ? 'Optional Add-on' : 'Optional zubuchbar'}
                   </td>
-                  <td className="p-5 text-center text-slate-700">100% Ihr Eigentum</td>
+                  <td className="p-4 sm:p-5 text-center text-slate-500 bg-amber-50/40 border-x border-amber-200/60">
+                    {isEn ? 'Optional Add-on' : 'Optional zubuchbar'}
+                  </td>
+                  <td className="p-4 sm:p-5 text-center text-slate-500">
+                    {isEn ? 'Optional Add-on' : 'Optional zubuchbar'}
+                  </td>
+                  <td className="p-4 sm:p-5 text-center text-slate-600 bg-slate-50/60 border-l border-slate-200">
+                    {isEn ? 'Optional Add-on' : 'Optional zubuchbar'}
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" className="p-4 sm:p-5 font-semibold text-slate-900">
+                    {isEn ? 'Custom Web Apps & Portals' : 'Custom App / Portal (Add-on)'}
+                  </th>
+                  <td className="p-4 sm:p-5 text-center text-slate-500">
+                    {isEn ? 'Optional Add-on' : 'Optional zubuchbar'}
+                  </td>
+                  <td className="p-4 sm:p-5 text-center text-slate-500 bg-amber-50/40 border-x border-amber-200/60">
+                    {isEn ? 'Optional Add-on' : 'Optional zubuchbar'}
+                  </td>
+                  <td className="p-4 sm:p-5 text-center text-slate-500">
+                    {isEn ? 'Optional Add-on' : 'Optional zubuchbar'}
+                  </td>
+                  <td className="p-4 sm:p-5 text-center text-slate-600 bg-slate-50/60 border-l border-slate-200">
+                    {isEn ? 'Optional Add-on' : 'Optional zubuchbar'}
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" className="p-4 sm:p-5 font-semibold text-slate-900">
+                    {isEn ? 'Maintenance & Support' : 'Wartung & Support'}
+                  </th>
+                  <td className="p-4 sm:p-5 text-center text-slate-500">
+                    {isEn ? 'Voluntary' : 'Freiwillig zubuchbar'}
+                  </td>
+                  <td className="p-4 sm:p-5 text-center font-semibold text-amber-800 bg-amber-50/40 border-x border-amber-200/60">
+                    {isEn ? 'Voluntary' : 'Freiwillig zubuchbar'}
+                  </td>
+                  <td className="p-4 sm:p-5 text-center text-slate-500">
+                    {isEn ? 'Voluntary' : 'Freiwillig zubuchbar'}
+                  </td>
+                  <td className="p-4 sm:p-5 text-center text-slate-600 bg-slate-50/60 border-l border-slate-200">
+                    {isEn ? 'Voluntary' : 'Freiwillig zubuchbar'}
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" className="p-4 sm:p-5 font-semibold text-slate-900">
+                    {isEn ? 'Source Code & Ownership' : 'Quellcode-Eigentum'}
+                  </th>
+                  <td className="p-4 sm:p-5 text-center text-slate-700">
+                    {isEn ? '100% Ownership' : '100% Ihr Eigentum'}
+                  </td>
+                  <td className="p-4 sm:p-5 text-center font-bold text-slate-900 bg-amber-50/40 border-x border-amber-200/60">
+                    {isEn ? '100% Ownership' : '100% Ihr Eigentum'}
+                  </td>
+                  <td className="p-4 sm:p-5 text-center text-slate-700">
+                    {isEn ? '100% Ownership' : '100% Ihr Eigentum'}
+                  </td>
+                  <td className="p-4 sm:p-5 text-center font-bold text-slate-900 bg-slate-50/60 border-l border-slate-200">
+                    {isEn ? '100% Ownership' : '100% Ihr Eigentum'}
+                  </td>
                 </tr>
               </tbody>
             </table>
