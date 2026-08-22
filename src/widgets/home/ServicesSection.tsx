@@ -46,17 +46,17 @@ export const ServicesSection: React.FC = () => {
             duration={0.5}
             className="text-primary font-bold uppercase tracking-[0.2em] text-sm mb-5 inline-block"
           >
-            {t('services.label', { defaultValue: 'Unsere Leistungen' })}
+            {t('services.label')}
           </FadeInUp>
           <h2 className="font-display font-black text-4xl sm:text-5xl md:text-6xl text-secondary mb-8 leading-[1.1]">
             <BlurText
-              text={t('services.title_prefix', { defaultValue: 'Wir bieten' })}
+              text={t('services.title_prefix')}
               delay={80}
               animateBy="words"
               className="inline"
             />{' '}
             <span className="text-primary block sm:inline mt-2 sm:mt-0">
-              {t('services.title_suffix', { defaultValue: 'Premium Services.' })}
+              {t('services.title_suffix')}
             </span>
           </h2>
         </div>

@@ -79,5 +79,13 @@ export default getRequestConfig(async ({ requestLocale }) => {
   return {
     locale,
     messages,
+    onError(error) {
+      if (process.env.NODE_ENV !== 'production') {
+        console.warn(`[next-intl] ${error.code}: ${error.message}`);
+      }
+    },
+    getMessageFallback({ key, namespace }) {
+      return `${namespace ? `${namespace}.` : ''}${key}`;
+    },
   };
 });

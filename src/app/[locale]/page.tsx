@@ -4,8 +4,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { TrustBar } from '@/shared/ui/TrustBar';
 import { HeroSection } from '@/widgets/home/HeroSection';
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
+import { setRequestLocale } from 'next-intl/server';
 import React from 'react';
 
 import { ScrollReveal } from '@/shared/ui/animations/ScrollReveal';
@@ -65,15 +64,13 @@ export async function generateMetadata({
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const messages = await getMessages();
 
-  const t = await getTranslations('home');
   const _locale = locale || 'de';
   const orgSchema = getOrganizationSchema(_locale);
   const websiteSchema = getWebSiteSchema(_locale);
 
   return (
-    <NextIntlClientProvider messages={messages}>
+    <>
       <script
         id="schema-local-service"
         type="application/ld+json"
@@ -120,6 +117,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </ScrollReveal>
 
       <SeoContentSection />
-    </NextIntlClientProvider>
+    </>
   );
 }

@@ -92,7 +92,7 @@ export const Footer: React.FC = () => {
           <div className="absolute top-1/2 left-0 w-1/4 h-px bg-gradient-to-r from-transparent to-slate-300" />
           <div className="absolute top-1/2 right-0 w-1/4 h-px bg-gradient-to-l from-transparent to-slate-300" />
           <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-slate-700 mb-8 bg-slate-50 inline-block px-4 relative z-10 left-1/2 -translate-x-1/2">
-            {t('logobar.title', { defaultValue: 'Vertrauen schenken uns' })}
+            {t('logobar.title')}
           </p>
           <LogoLoop logos={clientLogos} speed={30} logoHeight={24} gap={64} />
         </div>
@@ -123,9 +123,7 @@ export const Footer: React.FC = () => {
                 <div className="relative flex items-center justify-center">
                   <Image
                     src="/images/brand/coday-logo-footer.png"
-                    alt={t('footer.logo_alt', {
-                      defaultValue: 'Coday Web: Webdesign Agentur Wetzlar & Webentwicklung',
-                    })}
+                    alt={t('footer.logo_alt')}
                     width={220}
                     height={68}
                     className="h-10 sm:h-12 w-auto object-contain brightness-0 contrast-200 group-hover:opacity-85 transition-all duration-300"
@@ -150,46 +148,44 @@ export const Footer: React.FC = () => {
               </div>
               <div>
                 <div className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-0.5 group-hover:text-primary-700 transition-colors">
-                  {t('footer.trust.title', { defaultValue: 'Coday Web' })}
+                  {t('footer.trust.title')}
                 </div>
                 <div className="text-[10px] text-primary-700 font-semibold tracking-wide">
-                  {t('footer.trust.desc', { defaultValue: 'Webdesign Agentur Wetzlar' })}
+                  {t('footer.trust.desc')}
                 </div>
               </div>
             </div>
           </div>
 
           {/* Col 2: Company / Unternehmen Navigation */}
-          <nav aria-label={t('nav.company.label', { defaultValue: 'Unternehmen' })}>
+          <nav aria-label={t('nav.company.label')}>
             <h3 className="text-xs font-bold text-slate-900 uppercase tracking-[0.15em] mb-6 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-primary-600"></span>
-              {t('nav.company.label', { defaultValue: 'Unternehmen' })}
+              {t('nav.company.label')}
             </h3>
             <ul className="space-y-3">
               {[
-                { href: '/', label: t('nav.main.home', { defaultValue: 'Startseite' }) },
-                { href: '/about', label: t('nav.company.about', { defaultValue: 'Über uns' }) },
-                { href: '/work', label: t('nav.main.work', { defaultValue: 'Portfolio' }) },
-                { href: '/process', label: t('nav.main.process', { defaultValue: 'Prozess' }) },
-                { href: '/pricing', label: t('nav.main.pricing', { defaultValue: 'Preise' }) },
-                { href: '/career', label: t('nav.company.career', { defaultValue: 'Karriere' }) },
+                { href: '/', label: t('nav.main.home') },
+                { href: '/about', label: t('nav.company.about') },
+                { href: '/work', label: t('nav.main.work') },
+                { href: '/process', label: t('nav.main.process') },
+                { href: '/pricing', label: t('nav.main.pricing') },
+                { href: '/career', label: t('nav.company.career') },
                 {
                   href: '/career/jobs',
-                  label: t('nav.career.jobs.label', { defaultValue: 'Offene Stellen' }),
+                  label: t('nav.career.jobs.label'),
                 },
                 {
                   href: '/career/culture',
-                  label: t('nav.career.culture.label', { defaultValue: 'Teamkultur' }),
+                  label: t('nav.career.culture.label'),
                 },
                 {
                   href: '/career/benefits',
-                  label: t('nav.career.benefits.label', {
-                    defaultValue: 'Benefits & Arbeitsmodell',
-                  }),
+                  label: t('nav.career.benefits.label'),
                 },
                 {
                   href: '/calculator',
-                  label: t('nav.resources.calculator', { defaultValue: 'Preis-Rechner' }),
+                  label: t('nav.resources.calculator'),
                 },
                 {
                   href: '/strobi',
@@ -213,34 +209,32 @@ export const Footer: React.FC = () => {
           </nav>
 
           {/* Col 3: Services */}
-          <nav aria-label={t('footer.sections.services', { defaultValue: 'Services' })}>
+          <nav aria-label={t('footer.sections.services')}>
             <h3 className="text-xs font-bold text-slate-900 uppercase tracking-[0.15em] mb-6 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-amber-600"></span>
-              {t('footer.sections.services', { defaultValue: 'Services' })}
+              {t('footer.sections.services')}
             </h3>
             <ul className="space-y-3.5">
               {[
                 {
                   href: '/services/web-development',
-                  label: t('nav.services.web_development.label', {
-                    defaultValue: 'Webentwicklung',
-                  }),
+                  label: t('nav.services.web_development.label'),
                 },
                 {
                   href: '/services/design/ui-ux',
-                  label: t('nav.services.ui_ux.label', { defaultValue: 'UI/UX Design' }),
+                  label: t('nav.services.ui_ux.label'),
                 },
                 {
                   href: '/services/seo',
-                  label: t('nav.services.seo.label', { defaultValue: 'SEO Optimierung' }),
+                  label: t('nav.services.seo.label'),
                 },
                 {
                   href: '/services/ecommerce-development',
-                  label: t('nav.services.ecommerce.label', { defaultValue: 'E-Commerce' }),
+                  label: t('nav.services.ecommerce.label'),
                 },
                 {
                   href: '/services/development/api-integration',
-                  label: t('nav.services.api.label', { defaultValue: 'API-Integrationen' }),
+                  label: t('nav.services.api.label'),
                 },
               ].map((link, idx) => (
                 <li key={idx}>
@@ -260,38 +254,36 @@ export const Footer: React.FC = () => {
           </nav>
 
           {/* Col 4: Branchen */}
-          <nav aria-label={t('nav.industries.label', { defaultValue: 'Branchen' })}>
+          <nav aria-label={t('nav.industries.label')}>
             <h3 className="text-xs font-bold text-slate-900 uppercase tracking-[0.15em] mb-6 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-teal-600"></span>
-              {t('nav.industries.label', { defaultValue: 'Branchen' })}
+              {t('nav.industries.label')}
             </h3>
             <ul className="space-y-3.5">
               {[
                 {
                   href: '/branchen/aerzte-gesundheit',
-                  label: t('nav.industries.healthcare.title', { defaultValue: 'Gesundheitswesen' }),
+                  label: t('nav.industries.healthcare.title'),
                 },
                 {
                   href: '/branchen/anwaelte-kanzleien',
-                  label: t('nav.industries.other.lawyers', { defaultValue: 'Kanzleien & Anwälte' }),
+                  label: t('nav.industries.other.lawyers'),
                 },
                 {
                   href: '/branchen/handwerk-bau',
-                  label: t('nav.industries.crafts.title', { defaultValue: 'Handwerk & Bau' }),
+                  label: t('nav.industries.crafts.title'),
                 },
                 {
                   href: '/branchen/automobil',
-                  label: t('nav.industries.automotive.title', { defaultValue: 'Automobil & KFZ' }),
+                  label: t('nav.industries.automotive.title'),
                 },
                 {
                   href: '/branchen/gastronomie',
-                  label: t('nav.industries.other.gastronomy', { defaultValue: 'Gastronomie' }),
+                  label: t('nav.industries.other.gastronomy'),
                 },
                 {
                   href: '/branchen',
-                  label: t('nav.industries.other.overview', {
-                    defaultValue: 'Alle Branchen ansehen',
-                  }),
+                  label: t('nav.industries.other.overview'),
                 },
               ].map((link, idx) => (
                 <li key={idx}>
@@ -314,7 +306,7 @@ export const Footer: React.FC = () => {
           <div>
             <h3 className="text-xs font-bold text-slate-900 uppercase tracking-[0.15em] mb-6 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-slate-800"></span>
-              {t('footer.sections.contact', { defaultValue: 'Kontakt' })}
+              {t('footer.sections.contact')}
             </h3>
             <ul className="space-y-4 text-sm text-slate-600">
               <li>
@@ -406,13 +398,13 @@ export const Footer: React.FC = () => {
           </div>
 
           <nav
-            aria-label={t('footer.legalInfo', { defaultValue: 'Rechtliche Informationen' })}
+            aria-label={t('footer.legalInfo')}
             className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs font-medium text-slate-700"
           >
             {[
               { href: '/uebersicht', label: 'Sitemap' },
-              { href: '/garantie', label: t('nav.main.garantie', { defaultValue: 'Garantie' }) },
-              { href: '/presse', label: t('nav.main.presse', { defaultValue: 'Presse' }) },
+              { href: '/garantie', label: t('nav.main.garantie') },
+              { href: '/presse', label: t('nav.main.presse') },
               { href: '/legal/agb', label: t('nav.legal.agb') },
               { href: '/legal/datenschutz', label: t('nav.legal.privacy') },
               { href: '/legal/impressum', label: t('nav.legal.imprint') },

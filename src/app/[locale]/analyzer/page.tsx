@@ -84,7 +84,7 @@ export default async function AnalyzerPage(props: { params: Promise<{ locale: st
     '@graph': [getOrganizationSchema(_locale), breadcrumbs, webApp],
   };
   return (
-    <NextIntlClientProvider messages={messages}>
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -223,6 +223,6 @@ export default async function AnalyzerPage(props: { params: Promise<{ locale: st
           </section>
         </div>
       </div>
-    </NextIntlClientProvider>
+    </>
   );
 }

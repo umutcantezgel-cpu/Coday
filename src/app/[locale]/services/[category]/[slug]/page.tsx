@@ -111,9 +111,7 @@ export default async function ServiceDetailPage({
           }),
         }}
       />
-      <NextIntlClientProvider messages={messages}>
-        <ServiceDetailClient />
-      </NextIntlClientProvider>
+      <ServiceDetailClient />
     </>
   );
 }
