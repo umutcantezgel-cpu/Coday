@@ -1,0 +1,56 @@
+/**
+ * Strobi Mii World Type Definitions
+ */
+
+import type { StrobiAnimationState } from '@/entities/avatar/model/types';
+
+export type StrobiScaleMode = 'mini' | 'companion' | 'giant' | 'boss';
+
+export type StrobiRoomTheme = 'cyber-lab' | 'neon-grid' | 'sunset-lounge' | 'nature-studio';
+
+export type StrobiInteractionMode = 'free' | 'pet' | 'toss' | 'game';
+
+export type StrobiWorldItem = 'coffee' | 'laptop' | 'star' | 'glasses' | 'headphones';
+
+export interface StrobiSpeechState {
+  id: string;
+  text: string;
+  type: 'talk' | 'thought' | 'shout' | 'quiz';
+  quickReplies?: { label: string; action: string }[];
+  durationMs?: number;
+}
+
+export interface StrobiParticle {
+  id: string;
+  x: number;
+  y: number;
+  type: 'heart' | 'star' | 'sparkle' | 'confetti';
+  color: string;
+  vx: number;
+  vy: number;
+  scale: number;
+  opacity: number;
+  rotation: number;
+}
+
+export interface StrobiPhysicsPosition {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  isGrounded: boolean;
+  isDragging: boolean;
+  scale: number;
+  rotation: number;
+}
+
+export interface SpeedOrb {
+  id: string;
+  x: number;
+  y: number;
+  type: 'lcp' | 'ttfb' | 'cls' | 'seo' | 'bug';
+  points: number;
+  label: string;
+  color: string;
+  speed: number;
+}

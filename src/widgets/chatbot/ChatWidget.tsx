@@ -1,7 +1,14 @@
 'use client';
 import React, { useRef, useEffect, useState } from 'react';
 import { m, AnimatePresence } from 'motion/react';
-import { X, Minus, PaperPlaneRight, CircleNotch } from '@phosphor-icons/react/dist/ssr';
+import {
+  X,
+  Minus,
+  PaperPlaneRight,
+  CircleNotch,
+  GameController,
+} from '@phosphor-icons/react/dist/ssr';
+import { Link } from '@/i18n/navigation';
 import { useChatStore } from '@/widgets/chatbot/lib/chatStore';
 import { StrobiAvatar } from '@/entities/avatar';
 import { useStrobiAudio } from '@/entities/avatar/lib/useStrobiAudio';
@@ -160,6 +167,18 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
                 </div>
               </div>
               <div className="flex items-center gap-1">
+                <Link
+                  href="/strobi"
+                  onClick={() => {
+                    playPop();
+                    minimizeChat();
+                  }}
+                  className="p-1.5 rounded-lg hover:bg-white/10 transition-colors text-slate-300 hover:text-white"
+                  title="Strobi Mii World im Vollbild öffnen"
+                  aria-label="Strobi Mii World öffnen"
+                >
+                  <GameController className="w-4 h-4 text-blue-400" aria-hidden="true" />
+                </Link>
                 <button
                   onClick={() => {
                     playPop();
