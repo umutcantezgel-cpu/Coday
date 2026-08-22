@@ -420,7 +420,7 @@ export const Footer: React.FC = () => {
               </Link>
             ))}
             <span className="text-slate-700 font-medium ml-2">
-              {t('footer.rights', { year: new Date().getFullYear() })}
+              © {new Date().getFullYear()} {t('footer.rights')}
             </span>
           </nav>
         </div>
