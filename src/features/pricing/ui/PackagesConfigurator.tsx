@@ -388,8 +388,9 @@ export const PackagesConfigurator: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
-            {packages.map((pkg) => {
+          {/* Top 3 Core Packages: Klein, Mittel, Groß */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch mb-8">
+            {packages.slice(0, 3).map((pkg) => {
               const isSelected = selectedPkgId === pkg.id;
 
               return (
@@ -503,6 +504,135 @@ export const PackagesConfigurator: React.FC = () => {
               );
             })}
           </div>
+
+          {/* 4th Tier: Enterprise Platform (Horizontal Banner Card) */}
+          {packages[3] &&
+            (() => {
+              const pkg = packages[3];
+              const isSelected = selectedPkgId === pkg.id;
+
+              return (
+                <div
+                  onClick={() => handleSelectPackage(pkg.id)}
+                  className={`relative rounded-3xl p-8 sm:p-10 lg:p-12 border cursor-pointer transition-all duration-300 ${
+                    isSelected
+                      ? 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 text-white border-amber-500 shadow-2xl shadow-amber-500/20 ring-2 ring-amber-500'
+                      : 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 text-white border-slate-700/80 hover:border-amber-500/50 shadow-xl hover:shadow-2xl'
+                  }`}
+                >
+                  {/* Badge top */}
+                  <div className="absolute -top-3.5 left-8 z-20 whitespace-nowrap">
+                    <span className="inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-500 to-amber-600 text-white text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-md">
+                      <Sparkle className="w-3.5 h-3.5 text-white" />
+                      <span>
+                        {pkg.badge || (isEn ? 'Enterprise Platform' : 'Großkunden & Plattformen')}
+                      </span>
+                    </span>
+                  </div>
+
+                  {/* Selected Indicator Pill */}
+                  {isSelected && (
+                    <div className="absolute top-6 right-6 z-10">
+                      <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-bold shadow-xs">
+                        <Check weight="bold" className="w-3.5 h-3.5 text-emerald-400" />
+                        <span>{isEn ? 'Selected' : 'Ausgewählt'}</span>
+                      </span>
+                    </div>
+                  )}
+
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                    {/* Left Column: Scope, Title, Price, CTA */}
+                    <div className="lg:col-span-5 space-y-6">
+                      <div>
+                        <div className="inline-block px-3 py-1 rounded-md bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider mb-3 border border-amber-500/30">
+                          {isEn
+                            ? 'Tier 4 • Enterprise Platform'
+                            : 'Paket 4 • Enterprise Platform (Extrem groß)'}
+                        </div>
+                        <h3 className="font-display font-black text-2xl sm:text-3xl text-white mb-2">
+                          {pkg.name}
+                        </h3>
+                        <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                          {pkg.tagline}
+                        </p>
+                      </div>
+
+                      <div className="pt-4 border-t border-slate-700/80 flex flex-wrap items-baseline gap-4">
+                        <div>
+                          <div className="font-display font-black text-3xl sm:text-4xl text-amber-400">
+                            {pkg.priceTag}
+                          </div>
+                          <p className="text-xs text-slate-400 mt-0.5">{pkg.subPrice}</p>
+                        </div>
+                        <div className="inline-flex items-center gap-1.5 text-xs text-slate-300 bg-slate-800/80 px-3.5 py-2 rounded-full border border-slate-700">
+                          <Clock className="w-4 h-4 text-amber-400" />
+                          <span>
+                            {isEn
+                              ? `Delivery: ~${pkg.deliveryDays} Business Days`
+                              : `Lieferzeit: ~${pkg.deliveryDays} Werktage`}
+                          </span>
+                        </div>
+                      </div>
+
+                      <div>
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleSelectPackage(pkg.id);
+                          }}
+                          className={`w-full sm:w-auto py-4 px-8 rounded-full font-bold text-sm uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-3 shadow-lg ${
+                            isSelected
+                              ? 'bg-amber-500 text-slate-950 hover:bg-amber-400 shadow-amber-500/25'
+                              : 'bg-primary-700 text-white hover:bg-primary-800 shadow-primary-700/20'
+                          }`}
+                        >
+                          <span>
+                            {isSelected
+                              ? isEn
+                                ? 'Selected (Customize Below ↓)'
+                                : 'Paket gewählt (Add-ons anpassen ↓)'
+                              : isEn
+                                ? 'Select Enterprise Package ➔'
+                                : 'Enterprise Paket wählen & anpassen ➔'}
+                          </span>
+                          <ArrowRight weight="bold" className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Right Column: 2-Column Features Grid + Add-ons Notice */}
+                    <div className="lg:col-span-7 bg-slate-800/60 rounded-2xl p-6 sm:p-8 border border-slate-700/60 backdrop-blur-sm">
+                      <h4 className="text-xs font-bold text-amber-400 uppercase tracking-wider mb-4">
+                        {isEn
+                          ? 'Enterprise Platform Scope & Inclusions'
+                          : 'Enterprise Leistungsumfang & Inklusivleistungen'}
+                      </h4>
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-sm text-slate-200 mb-6">
+                        {pkg.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-start gap-2.5">
+                            <CheckCircle
+                              weight="fill"
+                              className="w-5 h-5 text-amber-400 shrink-0 mt-0.5"
+                            />
+                            <span className="text-xs sm:text-sm leading-snug">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-700/80 text-xs text-slate-300 flex items-center gap-3">
+                        <Sparkle className="w-5 h-5 text-amber-400 shrink-0" weight="fill" />
+                        <span>
+                          {isEn
+                            ? 'E-Commerce Online Shops and Custom Web Apps are modular add-ons that can be freely combined below.'
+                            : 'E-Commerce Online-Shops und Custom Web-Apps sind modulare Add-ons, die Sie unten flexibel dazubuchen können.'}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })()}
         </div>
       </section>
 
