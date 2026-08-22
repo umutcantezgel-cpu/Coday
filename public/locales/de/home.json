@@ -155,10 +155,12 @@
     "title": "Vertrauen schenken uns lokale Unternehmen"
   },
   "portfolio_teaser": {
+    "overline": "Ausgewählte Arbeiten",
     "eyebrow": "Ausgewählte Arbeiten",
+    "title": "Echte Projekte mit messbarem Erfolg.",
     "title_prefix": "Echte Projekte mit",
     "title_suffix": "messbarem Erfolg.",
-    "subtitle": "Keine Fließband Templates. Nur handgefertigte Websites von Coday Web, die messbar mehr Neukunden bringen.",
+    "subtitle": "Keine Fließband-Templates. Nur handgefertigte Websites von Coday Web, die messbar mehr Neukunden bringen.",
     "cta": "Alle Referenzen ansehen"
   },
   "techStack": {

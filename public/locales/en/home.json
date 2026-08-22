@@ -156,7 +156,10 @@
   },
   "portfolio_teaser": {
     "overline": "Real Web Design Projects",
+    "eyebrow": "Real Web Design Projects",
     "title": "Successful Web Design Case Studies from Wetzlar.",
+    "title_prefix": "Real Web Design Projects with",
+    "title_suffix": "measurable success.",
     "subtitle": "No assembly line templates. Only handcrafted websites by Coday Web that measurably bring in more clients.",
     "cta": "View all case studies"
   },
