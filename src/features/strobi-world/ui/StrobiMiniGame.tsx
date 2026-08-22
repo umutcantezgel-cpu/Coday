@@ -3,24 +3,101 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { m, AnimatePresence } from 'motion/react';
 import { useStrobiWorldStore } from '../model/strobiWorldStore';
-import type { SpeedOrb } from '../model/types';
+import type { SpeedOrb, SpeedOrbType } from '../model/types';
 import {
   Trophy,
   Timer,
   Lightning,
   Bug,
+  Robot,
+  ShieldCheck,
+  Star,
   X,
   Sparkle,
   ArrowClockwise,
 } from '@phosphor-icons/react/dist/ssr';
 
-const ORB_TYPES: Omit<SpeedOrb, 'id' | 'x' | 'y' | 'speed'>[] = [
-  { type: 'lcp', points: 10, label: 'LCP < 0.2s', color: '#2563EB' },
-  { type: 'ttfb', points: 15, label: 'TTFB 15ms', color: '#10B981' },
-  { type: 'cls', points: 10, label: 'CLS 0.00', color: '#D97706' },
-  { type: 'seo', points: 25, label: '100 SEO', color: '#6366F1' },
-  { type: 'bug', points: -20, label: 'JS Bug', color: '#EF4444' },
+interface TargetConfig {
+  type: SpeedOrbType;
+  points: number;
+  label: string;
+  color: string;
+  bgLight: string;
+  borderLight: string;
+  textColor: string;
+  icon: React.ElementType;
+}
+
+const TARGET_CONFIGS: TargetConfig[] = [
+  {
+    type: 'lcp',
+    points: 10,
+    label: 'LCP < 0.2s',
+    color: '#2563EB',
+    bgLight: '#EFF6FF',
+    borderLight: '#BFDBFE',
+    textColor: '#1E40AF',
+    icon: Lightning,
+  },
+  {
+    type: 'ttfb',
+    points: 15,
+    label: 'TTFB 15ms',
+    color: '#10B981',
+    bgLight: '#ECFDF5',
+    borderLight: '#A7F3D0',
+    textColor: '#065F46',
+    icon: Sparkle,
+  },
+  {
+    type: 'shield',
+    points: 20,
+    label: 'Edge Shield',
+    color: '#6366F1',
+    bgLight: '#EEF2FF',
+    borderLight: '#C7D2FE',
+    textColor: '#3730A3',
+    icon: ShieldCheck,
+  },
+  {
+    type: 'star',
+    points: 25,
+    label: '100/100 CWV',
+    color: '#D97706',
+    bgLight: '#FFFBEB',
+    borderLight: '#FDE68A',
+    textColor: '#92400E',
+    icon: Star,
+  },
+  {
+    type: 'bot',
+    points: -15,
+    label: 'Legacy Bot',
+    color: '#E11D48',
+    bgLight: '#FFF1F2',
+    borderLight: '#FECDD3',
+    textColor: '#9F1239',
+    icon: Robot,
+  },
+  {
+    type: 'bug',
+    points: -20,
+    label: 'JS Bug',
+    color: '#DC2626',
+    bgLight: '#FEF2F2',
+    borderLight: '#FCA5A5',
+    textColor: '#991B1B',
+    icon: Bug,
+  },
 ];
+
+interface HitFeedback {
+  id: string;
+  x: number;
+  y: number;
+  points: number;
+  color: string;
+}
 
 export const StrobiMiniGame: React.FC<{
   onClose: () => void;
@@ -32,33 +109,43 @@ export const StrobiMiniGame: React.FC<{
   const [isGameOver, setIsGameOver] = useState(false);
   const [orbs, setOrbs] = useState<SpeedOrb[]>([]);
   const [combo, setCombo] = useState(1);
+  const [hitFeedbacks, setHitFeedbacks] = useState<HitFeedback[]>([]);
 
   const containerRef = useRef<HTMLDivElement>(null);
   const orbSpawnTimerRef = useRef<NodeJS.Timeout | null>(null);
   const gameTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const hitCounterRef = useRef(0);
+  const orbCounterRef = useRef(0);
 
   const spawnOrb = useCallback(() => {
     if (!containerRef.current) return;
-    const width = containerRef.current.clientWidth - 80;
-    const randomType =
-      Math.random() < 0.2
-        ? ORB_TYPES[4] // 20% Bug
-        : ORB_TYPES[Math.floor(Math.random() * 4)];
+    const boundsWidth = containerRef.current.clientWidth - 110;
+    const isHostile = Math.random() < 0.28; // 28% chance for Bot / Bug
 
+    const selectedConfig = isHostile
+      ? Math.random() > 0.5
+        ? TARGET_CONFIGS[4] // Legacy Bot
+        : TARGET_CONFIGS[5] // JS Bug
+      : TARGET_CONFIGS[Math.floor(Math.random() * 4)];
+
+    orbCounterRef.current += 1;
     const newOrb: SpeedOrb = {
-      id: `orb_${Date.now()}_${Math.random()}`,
-      x: Math.random() * width + 40,
+      id: `orb_${orbCounterRef.current}`,
+      x: Math.max(20, Math.random() * boundsWidth + 10),
       y: 0,
-      speed: Math.random() * 1.5 + 2.0,
-      ...randomType,
+      speed: Math.random() * 1.4 + 1.8,
+      type: selectedConfig.type,
+      points: selectedConfig.points,
+      label: selectedConfig.label,
+      color: selectedConfig.color,
     };
 
-    setOrbs((prev) => [...prev.slice(-15), newOrb]);
+    setOrbs((prev) => [...prev.slice(-14), newOrb]);
   }, []);
 
-  // Main game loop (time & orb spawner)
+  // Main game timer
   useEffect(() => {
-    orbSpawnTimerRef.current = setInterval(spawnOrb, 900);
+    orbSpawnTimerRef.current = setInterval(spawnOrb, 850);
 
     gameTimerRef.current = setInterval(() => {
       setTimeLeft((prev) => {
@@ -78,33 +165,60 @@ export const StrobiMiniGame: React.FC<{
     };
   }, [spawnOrb]);
 
-  // Orb movement loop
+  // Orb movement loop (responsive dynamic bottom bound)
   useEffect(() => {
     if (isGameOver) return;
 
     const moveInterval = setInterval(() => {
+      if (!containerRef.current) return;
+      const maxY = containerRef.current.clientHeight - 80;
+
       setOrbs((prev) =>
-        prev.map((orb) => ({ ...orb, y: orb.y + orb.speed })).filter((orb) => orb.y < 520)
+        prev.map((orb) => ({ ...orb, y: orb.y + orb.speed })).filter((orb) => orb.y < maxY)
       );
     }, 24);
 
     return () => clearInterval(moveInterval);
   }, [isGameOver]);
 
-  const handleCatchOrb = (orb: SpeedOrb) => {
+  const handleCatchOrb = (orb: SpeedOrb, e: React.MouseEvent | React.TouchEvent) => {
     if (isGameOver) return;
 
-    if (orb.type === 'bug') {
+    const isHostile = orb.type === 'bug' || orb.type === 'bot';
+    const rect = containerRef.current?.getBoundingClientRect();
+    const clientX = 'touches' in e ? e.touches[0]?.clientX || 0 : (e as React.MouseEvent).clientX;
+    const clientY = 'touches' in e ? e.touches[0]?.clientY || 0 : (e as React.MouseEvent).clientY;
+
+    const localX = rect ? clientX - rect.left : orb.x;
+    const localY = rect ? clientY - rect.top : orb.y;
+
+    if (isHostile) {
       setScore((s) => Math.max(0, s + orb.points));
       setCombo(1);
     } else {
       const addedPoints = orb.points * combo;
       setScore((s) => s + addedPoints);
-      setCombo((c) => Math.min(4, c + 1));
+      setCombo((c) => Math.min(5, c + 1));
       addAffection(2);
     }
 
+    // Spawn floating hit score
+    hitCounterRef.current += 1;
+    const newFeedback: HitFeedback = {
+      id: `hit_${orb.id}_${hitCounterRef.current}`,
+      x: localX,
+      y: localY,
+      points: isHostile ? orb.points : orb.points * combo,
+      color: isHostile ? '#DC2626' : '#2563EB',
+    };
+
+    setHitFeedbacks((prev) => [...prev.slice(-6), newFeedback]);
     setOrbs((prev) => prev.filter((o) => o.id !== orb.id));
+
+    // Clear feedback after 700ms
+    setTimeout(() => {
+      setHitFeedbacks((prev) => prev.filter((f) => f.id !== newFeedback.id));
+    }, 700);
   };
 
   const handleFinish = () => {
@@ -117,30 +231,36 @@ export const StrobiMiniGame: React.FC<{
     setTimeLeft(45);
     setCombo(1);
     setOrbs([]);
+    setHitFeedbacks([]);
     setIsGameOver(false);
   };
+
+  const getConfig = (type: SpeedOrbType) =>
+    TARGET_CONFIGS.find((c) => c.type === type) || TARGET_CONFIGS[0];
 
   return (
     <div
       ref={containerRef}
-      className="absolute inset-0 z-50 bg-white/95 backdrop-blur-md rounded-3xl p-6 flex flex-col justify-between overflow-hidden border border-slate-200"
+      className="fixed inset-0 z-50 md:absolute md:inset-0 bg-white/98 md:bg-white/95 backdrop-blur-xl md:rounded-3xl p-4 sm:p-6 flex flex-col justify-between overflow-hidden border border-slate-200 shadow-2xl h-[100dvh] md:h-full touch-none select-none overscroll-none"
     >
-      {/* Top HUD */}
-      <div className="flex items-center justify-between z-10 border-b border-slate-200/80 pb-4">
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-50 border border-blue-200 text-blue-800 text-xs font-bold shadow-2xs">
+      {/* Top HUD Header (Safe Area Padded) */}
+      <div className="flex items-center justify-between z-10 border-b border-slate-200/90 pb-3 pt-safe">
+        {/* Score & Combo Multiplier */}
+        <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-50 border border-blue-200 text-blue-900 text-xs font-bold shadow-2xs">
             <Lightning className="w-4 h-4 text-blue-600" />
             <span>Score: {score}</span>
           </div>
 
           {combo > 1 && (
-            <div className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold animate-pulse shadow-2xs">
+            <div className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-50 border border-amber-200 text-amber-900 text-xs font-bold animate-pulse shadow-2xs">
               <span>{combo}x Multiplikator</span>
             </div>
           )}
         </div>
 
-        <div className="flex items-center gap-3">
+        {/* Timer & Exit Button */}
+        <div className="flex items-center gap-2.5">
           <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 border border-slate-200 text-slate-800 text-xs font-bold">
             <Timer className="w-4 h-4 text-slate-600" />
             <span>{timeLeft}s</span>
@@ -148,7 +268,7 @@ export const StrobiMiniGame: React.FC<{
 
           <button
             onClick={handleFinish}
-            className="p-1.5 rounded-xl hover:bg-slate-100 text-slate-600 hover:text-slate-900 border border-slate-200 transition-colors"
+            className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900 border border-slate-200 transition-colors shadow-2xs"
             aria-label="Minispiel beenden"
           >
             <X className="w-4 h-4" />
@@ -156,40 +276,63 @@ export const StrobiMiniGame: React.FC<{
         </div>
       </div>
 
-      {/* Falling Speed Orbs Area */}
+      {/* Target Arena (Targets Fall Responsively Within Viewport) */}
       <div className="relative flex-1 w-full overflow-hidden">
         <AnimatePresence>
-          {orbs.map((orb) => (
-            <m.button
-              key={orb.id}
-              onClick={() => handleCatchOrb(orb)}
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0, opacity: 0 }}
-              className="absolute transform -translate-x-1/2 cursor-pointer p-2.5 rounded-2xl shadow-lg border backdrop-blur-md flex items-center gap-1.5 text-xs font-bold select-none transition-transform hover:scale-110 active:scale-95"
+          {orbs.map((orb) => {
+            const config = getConfig(orb.type);
+            const Icon = config.icon;
+
+            return (
+              <m.button
+                key={orb.id}
+                onClick={(e) => handleCatchOrb(orb, e)}
+                onTouchStart={(e) => handleCatchOrb(orb, e)}
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0, opacity: 0 }}
+                className="absolute transform -translate-x-1/2 cursor-pointer p-2.5 sm:p-3 rounded-2xl shadow-md border backdrop-blur-md flex items-center gap-1.5 text-xs font-bold select-none transition-transform hover:scale-110 active:scale-95"
+                style={{
+                  left: orb.x,
+                  top: orb.y,
+                  backgroundColor: config.bgLight,
+                  borderColor: config.borderLight,
+                  color: config.textColor,
+                }}
+              >
+                <Icon className="w-4 h-4 shrink-0" style={{ color: config.color }} />
+                <span className="truncate max-w-[110px]">{config.label}</span>
+                <span className="text-[10px] opacity-80 shrink-0">
+                  ({config.points > 0 ? `+${config.points}` : config.points})
+                </span>
+              </m.button>
+            );
+          })}
+        </AnimatePresence>
+
+        {/* Floating Hit Score Numbers */}
+        <AnimatePresence>
+          {hitFeedbacks.map((hit) => (
+            <m.div
+              key={hit.id}
+              initial={{ opacity: 1, y: 0, scale: 0.8 }}
+              animate={{ opacity: 0, y: -35, scale: 1.2 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+              className="absolute pointer-events-none font-extrabold text-sm sm:text-base z-30"
               style={{
-                left: orb.x,
-                top: orb.y,
-                backgroundColor: orb.type === 'bug' ? '#FEF2F2' : '#EFF6FF',
-                borderColor: orb.type === 'bug' ? '#FCA5A5' : '#BFDBFE',
-                color: orb.type === 'bug' ? '#991B1B' : '#1E40AF',
+                left: hit.x,
+                top: hit.y,
+                color: hit.color,
               }}
             >
-              {orb.type === 'bug' ? (
-                <Bug className="w-4 h-4 text-rose-600" />
-              ) : (
-                <Sparkle className="w-4 h-4 text-blue-600" />
-              )}
-              <span>{orb.label}</span>
-              <span className="text-[10px] opacity-80">
-                ({orb.points > 0 ? `+${orb.points}` : orb.points})
-              </span>
-            </m.button>
+              {hit.points > 0 ? `+${hit.points}` : hit.points}
+            </m.div>
           ))}
         </AnimatePresence>
       </div>
 
-      {/* Game Over Modal in Light Glass */}
+      {/* Game Over Modal in Pure Light Glass */}
       {isGameOver && (
         <m.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -205,7 +348,7 @@ export const StrobiMiniGame: React.FC<{
           </h3>
           <p className="text-sm text-slate-600 max-w-sm mb-6">
             Du hast <strong className="text-slate-900">{score} Performance-Punkte</strong> erzielt.
-            Dein Highscore:{' '}
+            Highscore:{' '}
             <strong className="text-slate-900">{Math.max(gameHighScore, score)} Punkte</strong>.
           </p>
 
@@ -227,9 +370,10 @@ export const StrobiMiniGame: React.FC<{
         </m.div>
       )}
 
-      {/* Bottom Hint */}
-      <div className="text-center text-[11px] text-slate-500 border-t border-slate-100 pt-3">
-        Klicke oder tippe auf die fallenden Badges. Weiche roten Bugs aus, um deine Combo zu halten.
+      {/* Bottom Safe Area Hint Bar */}
+      <div className="text-center text-[11px] text-slate-500 border-t border-slate-100 pt-2 pb-safe">
+        Tippe oder klicke auf Speed-Badges. Weiche roten Legacy-Bots & Bugs aus, um die Combo zu
+        halten.
       </div>
     </div>
   );

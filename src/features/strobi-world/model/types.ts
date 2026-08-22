@@ -48,11 +48,13 @@ export interface StrobiPhysicsPosition {
   rotation: number;
 }
 
+export type SpeedOrbType = 'lcp' | 'ttfb' | 'cls' | 'seo' | 'bug' | 'bot' | 'shield' | 'star';
+
 export interface SpeedOrb {
   id: string;
   x: number;
   y: number;
-  type: 'lcp' | 'ttfb' | 'cls' | 'seo' | 'bug';
+  type: SpeedOrbType;
   points: number;
   label: string;
   color: string;
