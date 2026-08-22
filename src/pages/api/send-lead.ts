@@ -1,4 +1,12 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { createRateLimiter } from '@/shared/lib/rate-limiter';
+import { generateAgencyLeadEmailHtml } from '@/shared/lib/email/leadTemplates';
+
+// Max 5 lead submissions per 10 minutes per IP
+const leadApiLimiter = createRateLimiter({
+  max: 5,
+  windowMs: 10 * 60 * 1000,
+});
 
 // Vercel Serverless Function for sending lead notification emails via Resend
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -13,9 +21,24 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
+  // Rate limiting by client IP
+  const clientIP =
+    (req.headers['x-forwarded-for'] as string)?.split(',')[0] ||
+    req.socket?.remoteAddress ||
+    'unknown';
+
+  if (leadApiLimiter.isRateLimited(clientIP)) {
+    return res.status(429).json({
+      success: false,
+      error: 'Zu viele Anfragen. Bitte warten Sie einige Minuten vor der nächsten Anfrage.',
+    });
+  }
+
   try {
     const data = req.body;
     const RESEND_API_KEY = process.env.RESEND_API_KEY;
+    const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'umut@codayweb.de';
+    const EMAIL_FROM = process.env.EMAIL_FROM || 'Coday Leads <leads@codayweb.de>';
 
     if (!RESEND_API_KEY) {
       console.warn('RESEND_API_KEY missing - skipping email send.');
@@ -25,6 +48,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       });
     }
 
+    const emailHtml = generateAgencyLeadEmailHtml({
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
+      company: data.company,
+      message: data.message,
+      project: data.project || data.projectType || 'Projektanfrage',
+      source: data.source || 'API Endpoint',
+    });
+
     const emailRes = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
@@ -32,23 +65,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Coday Leads <onboarding@resend.dev>',
-        to: ['umut@codayweb.de'],
-        subject: `Neue Anfrage: ${data.name} - ${data.project || data.projectType || 'Allgemein'}`,
-        html: `
-          <h2>Neue Anfrage über codayweb.de</h2>
-          <table style="border-collapse: collapse; width: 100%;">
-            <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Name</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${data.name || '-'}</td></tr>
-            <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Email</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${data.email || '-'}</td></tr>
-            <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Telefon</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${data.phone || '-'}</td></tr>
-            <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Firma</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${data.company || '-'}</td></tr>
-            <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Projektart</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${data.project || '-'}</td></tr>
-            <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Budget</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${data.budget || '-'}</td></tr>
-            <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Zeitplan</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${data.timeline || '-'}</td></tr>
-            <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Nachricht</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${data.message || '-'}</td></tr>
-            <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Quelle</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${data.source || '-'}</td></tr>
-          </table>
-        `,
+        from: EMAIL_FROM,
+        to: [ADMIN_EMAIL],
+        subject: `⚡ Neue Anfrage: ${data.name || 'Unbekannt'} (${data.project || data.projectType || 'Allgemein'})`,
+        html: emailHtml,
+        reply_to: data.email,
       }),
     });
 

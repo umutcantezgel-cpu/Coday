@@ -1,10 +1,27 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { createRateLimiter } from '@/shared/lib/rate-limiter';
 
 const PERPLEXITY_API_KEY = process.env.PERPLEXITY_API_KEY;
+
+// Max 10 requests per minute per IP
+const perplexityLimiter = createRateLimiter({
+  max: 10,
+  windowMs: 60_000,
+});
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  // Rate limiting
+  const clientIP =
+    (req.headers['x-forwarded-for'] as string)?.split(',')[0] ||
+    req.socket?.remoteAddress ||
+    'unknown';
+
+  if (perplexityLimiter.isRateLimited(clientIP)) {
+    return res.status(429).json({ error: 'Too many requests. Please try again later.' });
   }
 
   if (!PERPLEXITY_API_KEY) {

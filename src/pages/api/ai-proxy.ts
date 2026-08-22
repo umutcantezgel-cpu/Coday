@@ -1,4 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { createRateLimiter } from '@/shared/lib/rate-limiter';
 
 const GEMINI_KEYS = (process.env.GEMINI_API_KEYS || process.env.GEMINI_API_KEY || '')
   .split(',')
@@ -14,34 +15,24 @@ function getRandomKey(keys: string[]) {
   return keys[Math.floor(Math.random() * keys.length)];
 }
 
-// Simple in-memory rate limiter
-const rateLimit = new Map<string, { count: number; resetAt: number }>();
-const RATE_LIMIT_MAX = 10; // 10 requests per minute
-const RATE_LIMIT_WINDOW = 60_000; // 1 minute
-
-function isRateLimited(ip: string): boolean {
-  const now = Date.now();
-  const entry = rateLimit.get(ip);
-  if (!entry || now > entry.resetAt) {
-    rateLimit.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW });
-    return false;
-  }
-  entry.count++;
-  return entry.count > RATE_LIMIT_MAX;
-}
+// Shared sliding-window rate limiter: 10 requests per minute
+const aiProxyLimiter = createRateLimiter({
+  max: 10,
+  windowMs: 60_000,
+});
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  // Rate limiting: Simple IP-based check
+  // Rate limiting: IP-based check
   const clientIP =
     (req.headers['x-forwarded-for'] as string)?.split(',')[0] ||
     req.socket?.remoteAddress ||
     'unknown';
 
-  if (isRateLimited(clientIP)) {
+  if (aiProxyLimiter.isRateLimited(clientIP)) {
     return res.status(429).json({ error: 'Too many requests. Please try again later.' });
   }
 
