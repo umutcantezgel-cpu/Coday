@@ -28,18 +28,16 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Wetzlar | Web Agency & Web Development | Coday Web',
+      title: 'Web Design Wetzlar | Web Development Wetzlar | Coday Web',
       description:
-        'Coday is your web design agency in Wetzlar: High-performance & high-conversion websites for measurable customer acquisition. Fixed prices and personal support.',
+        'Coday is your web design agency in Wetzlar and Central Hesse. Fast, modern websites at a fixed price with personal support. Get your free consultation.',
       keywords: [
         'Web Design Wetzlar',
-        'Web Design Agency Wetzlar',
-        'Web Design Coday',
         'Web Development Wetzlar',
-        'Coday Web',
         'Web Agency Hesse',
-        'High Performance Web Design',
-        'High Conversion Web Design',
+        'Website Creation Wetzlar',
+        'Coday Web',
+        'Next.js Web Development',
         'Local SEO Central Hesse',
       ],
       path: '/en',
@@ -47,19 +45,16 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Wetzlar | Webdesign Agentur & Webentwicklung | Coday Web',
+    title: 'Webdesign Wetzlar | Webentwicklung Wetzlar | Coday Web',
     description:
-      'Coday ist Ihre Webdesign Agentur in Wetzlar: High-Performance & High-Conversion Websites für messbar mehr Kundenanfragen. Feste Preise & persönliche Betreuung.',
+      'Coday ist Ihre Webdesign Agentur in Wetzlar und Mittelhessen. Schnelle, moderne Webseiten zum Festpreis mit persönlicher Betreuung. Jetzt beraten lassen.',
     keywords: [
       'Webdesign Wetzlar',
-      'Webdesign Agentur Wetzlar',
-      'Webdesign Coday',
       'Webentwicklung Wetzlar',
-      'Coday Web',
       'Webagentur Wetzlar',
-      'High Performance Webdesign',
-      'High Conversion Webdesign',
-      'Website erstellen lassen Wetzlar',
+      'Website erstellen Wetzlar',
+      'Coday Web',
+      'Next.js Webdesign',
       'Lokale SEO Mittelhessen',
     ],
     path: '/de',
