@@ -18,6 +18,7 @@ import {
   X,
   Play,
 } from '@phosphor-icons/react/dist/ssr';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
 // --- CONFIGURATION ---
 const CONFIG = {
@@ -350,7 +351,12 @@ const UPGRADES: Record<UpgradeId, Upgrade> = {
   },
 };
 
-export default function VelocityVoidGame() {
+export interface VelocityVoidGameProps {
+  onClose?: () => void;
+}
+
+export default function VelocityVoidGame({ onClose }: VelocityVoidGameProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   // Core game states
@@ -398,6 +404,9 @@ export default function VelocityVoidGame() {
   // HUD States
   const [hudHp, setHudHp] = useState(3);
   const [hudMaxHp, setHudMaxHp] = useState(3);
+  const [hudShield, setHudShield] = useState(0);
+  const [hudMaxShield, setHudMaxShield] = useState(0);
+  const [bossInfo, setBossInfo] = useState<{ hp: number; maxHp: number } | null>(null);
   const [hudXp, setHudXp] = useState(0);
   const [hudMaxXp, setHudMaxXp] = useState(10);
   const [hudLevel, setHudLevel] = useState(1);
@@ -545,6 +554,9 @@ export default function VelocityVoidGame() {
 
     setHudHp(startingHp);
     setHudMaxHp(startingHp);
+    setHudShield(startingShield);
+    setHudMaxShield(startingShield);
+    setBossInfo(null);
     setHudXp(0);
     setHudMaxXp(10);
     setHudLevel(1);
@@ -602,6 +614,8 @@ export default function VelocityVoidGame() {
     }
     if (id === 'shield') {
       player.current.shieldHp = player.current.upgrades.shield;
+      setHudShield(player.current.shieldHp);
+      setHudMaxShield(player.current.upgrades.shield);
     }
 
     player.current.level++;
@@ -624,12 +638,20 @@ export default function VelocityVoidGame() {
     ctx.imageSmoothingEnabled = false;
 
     const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      const container = containerRef.current;
+      if (!container || !canvas) return;
+      canvas.width = container.clientWidth;
+      canvas.height = container.clientHeight;
       ctx.imageSmoothingEnabled = false;
       if (gameStateRef.current !== 'GAME_OVER') {
-        player.current.x = Math.min(player.current.x, canvas.width - player.current.width);
-        player.current.y = Math.min(player.current.y, canvas.height - player.current.height);
+        player.current.x = Math.max(
+          10,
+          Math.min(player.current.x, canvas.width - player.current.width - 10)
+        );
+        player.current.y = Math.max(
+          10,
+          Math.min(player.current.y, canvas.height - player.current.height - 10)
+        );
       }
     };
     window.addEventListener('resize', handleResize);
@@ -690,6 +712,7 @@ export default function VelocityVoidGame() {
       if (player.current.shieldHp > 0) {
         player.current.shieldHp--;
         player.current.shieldRegenTimer = 0;
+        setHudShield(player.current.shieldHp);
         triggerScreenFlash('#10B981');
       } else {
         player.current.hp--;
@@ -790,6 +813,7 @@ export default function VelocityVoidGame() {
           p.shieldRegenTimer++;
           if (p.shieldRegenTimer > 600) {
             p.shieldHp++;
+            setHudShield(p.shieldHp);
             p.shieldRegenTimer = 0;
             createExplosion(p.x + p.width / 2, p.y + p.height / 2, '#10B981', '#2563EB', 15);
           }
@@ -971,7 +995,7 @@ export default function VelocityVoidGame() {
           let spr = CLAUDE_SCOUT;
           let hp = 4 + Math.floor(p.level * 0.5);
           let botVx = CONFIG.BASE_BOT_SPEED * speedMultiplier;
-          const yPos = Math.random() * (canvas.height * 0.2) + 80;
+          const yPos = Math.random() * Math.min(180, canvas.height * 0.25) + 20;
 
           if (type === 'hunter') {
             spr = CLAUDE_HUNTER;
@@ -1054,10 +1078,10 @@ export default function VelocityVoidGame() {
           if (e.type !== 'meteor' && e.type !== 'meteor_gold') {
             e.aiTimer = (e.aiTimer || 0) - 1;
             if (e.type === 'boss') {
-              if (e.y < 40) {
+              if (e.y < 25) {
                 e.y += e.vy;
               } else {
-                e.y = 40;
+                e.y = 25;
                 e.x += e.vx;
                 if (e.x <= 0 || e.x + e.width >= canvas.width) e.vx *= -1;
               }
@@ -1525,89 +1549,19 @@ export default function VelocityVoidGame() {
 
       ctx.restore();
 
-      // Light Glass HUD Rendering
       if (isPlaying) {
-        const p = player.current;
+        if (frameRef.current % 10 === 0) {
+          setCurrentScore(Math.floor(scoreRef.current));
+        }
 
-        // Boss Health Bar on Top
         const activeBoss = enemies.current.find((e) => e.type === 'boss');
         if (activeBoss) {
-          const barW = Math.min(500, canvas.width - 40);
-          const barH = 16;
-          const barX = canvas.width / 2 - barW / 2;
-          const barY = 32;
-
-          ctx.fillStyle = '#FEE2E2';
-          ctx.fillRect(barX, barY, barW, barH);
-          ctx.fillStyle = '#E11D48';
-          ctx.fillRect(barX, barY, (Math.max(0, activeBoss.hp) / activeBoss.maxHp) * barW, barH);
-          ctx.strokeStyle = '#E11D48';
-          ctx.lineWidth = 2;
-          ctx.strokeRect(barX, barY, barW, barH);
-
-          ctx.fillStyle = '#E11D48';
-          ctx.textAlign = 'center';
-          ctx.font = 'bold 13px monospace';
-          ctx.fillText('WARNUNG: MOTHERSHIP TITAN', canvas.width / 2, 24);
-          ctx.textAlign = 'left';
-        }
-
-        // HUD Container
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
-        ctx.fillRect(16, 16, 210, 165);
-        ctx.strokeStyle = '#E2E8F0';
-        ctx.lineWidth = 1.5;
-        ctx.strokeRect(16, 16, 210, 165);
-
-        // Score & Level
-        ctx.fillStyle = PALETTE.uiText;
-        ctx.font = 'bold 15px monospace';
-        ctx.textAlign = 'left';
-        ctx.fillText(`SCORE: ${Math.floor(scoreRef.current)}`, 26, 40);
-        ctx.font = '12px monospace';
-        ctx.fillText(`SEKTOR ${Math.floor(p.level / 5) + 1} • LVL ${p.level}`, 26, 60);
-
-        // XP Bar
-        const xpBarWidth = 190;
-        const xpBarHeight = 7;
-        ctx.fillStyle = '#E2E8F0';
-        ctx.fillRect(26, 70, xpBarWidth, xpBarHeight);
-        ctx.fillStyle = PALETTE.player;
-        ctx.fillRect(26, 70, (p.xp / Math.max(1, p.maxXp)) * xpBarWidth, xpBarHeight);
-
-        // Hearts HP
-        ctx.fillStyle = PALETTE.itemHeart;
-        ctx.font = 'bold 12px monospace';
-        ctx.fillText(`HP: ${p.hp}/${p.maxHp}`, 26, 98);
-        for (let i = 0; i < p.maxHp; i++) {
-          const sprite = i < p.hp ? ITEM_HEART : ITEM_HEART_EMPTY;
-          drawSprite(ctx, sprite, 26 + i * 26, 105, 3.5);
-        }
-
-        // Shields
-        if (p.upgrades.shield > 0) {
-          ctx.fillStyle = '#10B981';
-          ctx.fillText(`SCHILD: ${p.shieldHp}/${p.upgrades.shield}`, 26, 142);
-          for (let i = 0; i < p.upgrades.shield; i++) {
-            ctx.globalAlpha = i < p.shieldHp ? 1.0 : 0.3;
-            drawSprite(ctx, ITEM_SHIELD_ICON, 26 + i * 26, 148, 3.5, 1, '#10B981');
+          if (frameRef.current % 10 === 0) {
+            setBossInfo({ hp: activeBoss.hp, maxHp: activeBoss.maxHp });
           }
-          ctx.globalAlpha = 1.0;
+        } else if (bossInfo !== null && frameRef.current % 30 === 0) {
+          setBossInfo(null);
         }
-
-        // Highscore top right
-        ctx.textAlign = 'right';
-        ctx.font = 'bold 14px monospace';
-        ctx.fillStyle = PALETTE.uiText;
-        ctx.fillText(
-          `HI-SCORE: ${Math.max(highScoreRef.current, Math.floor(scoreRef.current))}`,
-          canvas.width - 20,
-          36
-        );
-        ctx.font = '12px monospace';
-        ctx.fillStyle = '#D97706';
-        ctx.fillText(`COINS: ${metaCoinsRef.current}`, canvas.width - 20, 56);
-        ctx.textAlign = 'left';
       }
 
       animationId = requestAnimationFrame(loop);
@@ -1626,8 +1580,108 @@ export default function VelocityVoidGame() {
   }, []);
 
   return (
-    <div className="w-full h-full relative overflow-hidden bg-[#FAFAFA] select-none touch-none">
-      <canvas ref={canvasRef} className="block w-full h-full touch-none" />
+    <div className="w-full h-full flex flex-col relative overflow-hidden bg-[#FAFAFA] select-none touch-none">
+      {/* UNIFIED TOP HUD BAR */}
+      <header className="w-full bg-white/95 backdrop-blur-md border-b border-slate-200/90 px-3 sm:px-6 py-2 sm:py-2.5 flex items-center justify-between gap-2 sm:gap-4 shrink-0 z-40 relative shadow-2xs">
+        {/* Left: Vessel Vitals (Sector, LVL, HP, Shield, XP) */}
+        <div className="flex items-center gap-2 sm:gap-4 min-w-0">
+          <div className="flex flex-col gap-0.5">
+            <div className="flex items-center gap-1.5">
+              <span className="text-[10px] sm:text-xs font-bold font-mono px-2 py-0.5 rounded-md bg-blue-50 text-blue-700 border border-blue-200/80 whitespace-nowrap">
+                SEKTOR {Math.floor(hudLevel / 5) + 1} • LVL {hudLevel}
+              </span>
+            </div>
+
+            {/* XP Mini Bar */}
+            <div className="w-20 sm:w-28 h-1.5 bg-slate-200 rounded-full overflow-hidden mt-1">
+              <div
+                className="h-full bg-blue-600 rounded-full transition-all duration-200"
+                style={{ width: `${Math.min(100, (hudXp / Math.max(1, hudMaxXp)) * 100)}%` }}
+              />
+            </div>
+          </div>
+
+          {/* Hearts & Shields */}
+          <div className="flex items-center gap-1 sm:gap-1.5">
+            {Array.from({ length: Math.min(8, hudMaxHp) }).map((_, i) => (
+              <OptimizedIcon
+                key={`hp-${i}`}
+                icon={Heart}
+                weight={i < hudHp ? 'fill' : 'regular'}
+                className={`w-4 h-4 sm:w-4.5 sm:h-4.5 ${i < hudHp ? 'text-rose-600' : 'text-slate-300'}`}
+              />
+            ))}
+            {hudMaxShield > 0 && (
+              <div className="flex items-center gap-1 ml-1 pl-1 border-l border-slate-200">
+                {Array.from({ length: Math.min(4, hudMaxShield) }).map((_, i) => (
+                  <OptimizedIcon
+                    key={`shield-${i}`}
+                    icon={ShieldCheck}
+                    weight={i < hudShield ? 'fill' : 'regular'}
+                    className={`w-4 h-4 sm:w-4.5 sm:h-4.5 ${i < hudShield ? 'text-emerald-500' : 'text-slate-300'}`}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Center: Live Score & Boss Warning Bar */}
+        <div className="flex flex-col items-center justify-center min-w-0 flex-1 max-w-xs sm:max-w-md mx-2">
+          <div className="text-center font-mono font-bold text-xs sm:text-base text-slate-900 tracking-wider">
+            SCORE: {currentScore.toLocaleString()}
+          </div>
+          {bossInfo && (
+            <div className="w-full mt-1 animate-pulse">
+              <div className="flex items-center justify-between text-[10px] font-bold text-rose-600 uppercase font-mono mb-0.5">
+                <span>TITAN BOSS</span>
+                <span>
+                  {Math.max(0, bossInfo.hp)} / {bossInfo.maxHp}
+                </span>
+              </div>
+              <div className="w-full h-2 bg-rose-100 rounded-full overflow-hidden border border-rose-300">
+                <div
+                  className="h-full bg-rose-600 transition-all duration-100"
+                  style={{ width: `${Math.max(0, (bossInfo.hp / bossInfo.maxHp) * 100)}%` }}
+                />
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Right: Coins, Hi-Score & Exit Button */}
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          <div className="hidden sm:flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-50 text-amber-800 text-xs font-bold border border-amber-200/60 font-mono">
+            <OptimizedIcon icon={Coins} className="w-3.5 h-3.5 text-amber-600" />
+            <span>{metaCoins}</span>
+          </div>
+
+          <div className="hidden md:flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-bold font-mono">
+            <OptimizedIcon icon={Trophy} className="w-3.5 h-3.5 text-amber-500" />
+            <span>{Math.max(highScore, currentScore)}</span>
+          </div>
+
+          {onClose && (
+            <button
+              type="button"
+              onClick={onClose}
+              className="p-1.5 sm:px-3 sm:py-1.5 rounded-xl bg-slate-100 hover:bg-rose-50 text-slate-700 hover:text-rose-700 border border-slate-200 hover:border-rose-300 font-mono text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer shadow-2xs"
+              aria-label="Spiel beenden"
+            >
+              <OptimizedIcon icon={X} className="w-4 h-4" />
+              <span className="hidden xs:inline">BEENDEN</span>
+            </button>
+          )}
+        </div>
+      </header>
+
+      {/* CANVAS ARENA: Dedicated playfield strictly below the header */}
+      <div
+        ref={containerRef}
+        className="flex-1 w-full h-full relative overflow-hidden bg-[#FAFAFA]"
+      >
+        <canvas ref={canvasRef} className="block w-full h-full touch-none" />
+      </div>
 
       {/* START SCREEN MODAL */}
       {gameState === 'START' && (
