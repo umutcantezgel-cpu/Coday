@@ -1,118 +1,179 @@
 'use client';
+
 import React, { useState, useEffect, useCallback } from 'react';
-import { Cookie } from '@phosphor-icons/react/dist/ssr';
+import { ShieldCheck, Cookie, CaretDown, CaretUp, Sliders } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { Link } from '@/i18n/navigation';
-import { useCookieStore } from '@/shared/lib/cookieStore';
+import { useConsentStore } from '@/shared/lib/consent/consentStore';
+import { CODAY_STORAGE_INVENTORY } from '@/shared/lib/consent/storageGate';
 import CookieSettingsModal from '@/widgets/cookie/CookieSettingsModal';
+import { useFocusTrap } from '@/shared/hooks/useFocusTrap';
+import { useLocale } from 'next-intl';
 
 export const CookieConsentBanner: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [showSettings, setShowSettings] = useState(false);
-  const { hasConsented, acceptAll, rejectAll } = useCookieStore();
+  const [showDetails, setShowDetails] = useState(false);
+  const locale = useLocale();
+  const isEn = locale === 'en';
 
-  const handleRejectAll = useCallback(() => {
-    rejectAll();
+  const { hasConsented, showSettings, acceptAll, rejectAll, openSettings, closeSettings } =
+    useConsentStore();
+
+  const handleReject = useCallback(() => {
+    rejectAll('banner');
     setIsVisible(false);
   }, [rejectAll]);
 
-  const handleKeyDown = useCallback(
-    (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isVisible) {
-        handleRejectAll();
-      }
-    },
-    [isVisible, handleRejectAll]
-  );
+  const handleAccept = useCallback(() => {
+    acceptAll('banner');
+    setIsVisible(false);
+  }, [acceptAll]);
+
+  const bannerRef = useFocusTrap(isVisible && !showSettings, handleReject);
 
   useEffect(() => {
-    // Check store state instead of raw localStorage for consistency
     if (!hasConsented) {
-      const timer = setTimeout(() => setIsVisible(true), 2500); // Delay by 2.5s to avoid LCP blocking
+      // Delay slightly to prevent LCP layout thrashing
+      const timer = setTimeout(() => setIsVisible(true), 2200);
       return () => clearTimeout(timer);
-    } else if (isVisible) {
-      setTimeout(() => setIsVisible(false), 0);
     }
-  }, [hasConsented, isVisible]);
+  }, [hasConsented]);
 
-  useEffect(() => {
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [handleKeyDown]);
+  const shouldRenderBanner = isVisible && !hasConsented;
 
-  const handleAcceptAll = () => {
-    acceptAll();
-    setIsVisible(false);
-  };
-
-  const handleSaveSettings = () => {
-    // Settings modal handles saving, we just close the banner relies on store state update
-    setIsVisible(false);
-    setShowSettings(false);
-  };
-
-  if (!isVisible && !showSettings) return null;
+  if (!shouldRenderBanner && !showSettings) return null;
 
   return (
     <>
-      <div
-        role="alertdialog"
-        aria-labelledby="cookie-banner-title"
-        aria-describedby="cookie-banner-desc"
-        className={`fixed bottom-4 left-4 right-4 z-[100] max-w-4xl mx-auto transition motion-reduce:duration-[0.01ms] duration-500 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0 pointer-events-none'}`}
-      >
-        <div className="bg-white/95 backdrop-blur-xl border border-white/20 shadow-2xl rounded-2xl p-6 md:p-8 flex flex-col lg:flex-row gap-6 items-center lg:items-start text-center lg:text-left ring-1 ring-black/5">
-          <div className="p-3 bg-primary/10 rounded-xl text-primary shrink-0" aria-hidden="true">
-            <OptimizedIcon icon={Cookie} className="w-8 h-8" />
-          </div>
-          <div className="flex-1 space-y-4">
-            <div>
-              <h3 id="cookie-banner-title" className="text-lg font-bold text-gray-900 mb-2">
-                Privatsphäre-Einstellungen
-              </h3>
-              <p id="cookie-banner-desc" className="text-sm text-gray-600 leading-relaxed">
-                Wir verwenden Cookies und ähnliche Technologien, um Ihr Erlebnis zu verbessern,
-                Leistung zu messen und personalisierte Inhalte anzuzeigen. Einige sind essenziell,
-                andere helfen uns, diese Website und Ihre Erfahrung zu verbessern.
-              </p>
+      {shouldRenderBanner && (
+        <div
+          ref={bannerRef}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="consent-banner-title"
+          aria-describedby="consent-banner-desc"
+          className="fixed bottom-4 left-4 right-4 z-[100] max-w-4xl mx-auto transition motion-reduce:duration-[0.01ms] duration-500 transform translate-y-0 opacity-100"
+        >
+          <div className="bg-white/95 backdrop-blur-xl border border-slate-200/90 shadow-2xl rounded-2xl p-6 sm:p-7 flex flex-col gap-5 text-slate-900 ring-1 ring-black/5">
+            {/* Header / Intro */}
+            <div className="flex flex-col sm:flex-row gap-4 items-start">
+              <div
+                className="p-3 bg-primary-50 text-primary-700 rounded-xl shrink-0 border border-primary-100/80"
+                aria-hidden="true"
+              >
+                <OptimizedIcon icon={ShieldCheck} className="w-7 h-7 text-primary-700" />
+              </div>
+              <div className="flex-1 space-y-2">
+                <div className="flex items-center justify-between gap-4">
+                  <h2
+                    id="consent-banner-title"
+                    className="text-lg font-bold text-slate-900 tracking-tight"
+                  >
+                    {isEn
+                      ? 'Privacy & Data Storage Settings'
+                      : 'Privatsphäre & Speichereinstellungen'}
+                  </h2>
+                  <span className="text-[11px] font-semibold tracking-wider uppercase px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/80">
+                    {isEn ? 'GDPR / TDDDG compliant' : 'DSGVO / TDDDG konform'}
+                  </span>
+                </div>
+                <p id="consent-banner-desc" className="text-sm text-slate-600 leading-relaxed">
+                  {isEn
+                    ? 'We use strictly local storage technologies (LocalStorage / SessionStorage) to guarantee fast loading speeds (< 300ms) and save your interface preferences. No persistent marketing cookies or third-country data transfers are used without your explicit consent.'
+                    : 'Wir setzen ausschließlich lokale Speichertechnologien (LocalStorage / SessionStorage) ein, um Ihnen blitzschnelle Ladezeiten (< 300ms) und Komfortfunktionen wie den Strobi-Assistenten zu ermöglichen. Es erfolgt kein Drittlandtransfer ohne Ihre ausdrückliche Einwilligung.'}
+                </p>
+                <div className="flex items-center gap-4 pt-1 text-xs text-slate-500">
+                  <Link
+                    href="/legal/datenschutz"
+                    className="hover:text-primary-600 underline underline-offset-2 transition-colors"
+                  >
+                    {isEn ? 'Privacy Policy' : 'Datenschutzerklärung'}
+                  </Link>
+                  <Link
+                    href="/legal/impressum"
+                    className="hover:text-primary-600 underline underline-offset-2 transition-colors"
+                  >
+                    {isEn ? 'Legal Notice' : 'Impressum'}
+                  </Link>
+                  <button
+                    type="button"
+                    onClick={() => setShowDetails(!showDetails)}
+                    className="inline-flex items-center gap-1 text-primary-700 hover:text-primary-800 font-medium ml-auto"
+                    aria-expanded={showDetails}
+                  >
+                    <span>{isEn ? 'View Storage Details' : 'Speicherdetails ansehen'}</span>
+                    <OptimizedIcon
+                      icon={showDetails ? CaretUp : CaretDown}
+                      className="w-3.5 h-3.5"
+                    />
+                  </button>
+                </div>
+              </div>
             </div>
-            <div className="flex gap-4 text-xs text-gray-500 justify-center lg:justify-start">
-              <Link href="/legal/datenschutz" className="hover:text-primary underline">
-                Datenschutzerklärung
-              </Link>
-              <Link href="/legal/impressum" className="hover:text-primary underline">
-                Impressum
-              </Link>
+
+            {/* Expandable Disclosure Table */}
+            {showDetails && (
+              <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 text-xs text-slate-700 space-y-2.5 max-h-48 overflow-y-auto">
+                <p className="font-semibold text-slate-900 mb-1">
+                  {isEn
+                    ? 'Active Local Storage Keys on Coday:'
+                    : 'Verwendete lokale Speicherschlüssel bei Coday:'}
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {CODAY_STORAGE_INVENTORY.map((item) => (
+                    <div
+                      key={item.key}
+                      className="bg-white p-2.5 rounded-lg border border-slate-200 shadow-xs"
+                    >
+                      <div className="flex items-center justify-between mb-1">
+                        <code className="font-mono text-primary-700 font-bold text-[11px]">
+                          {item.key}
+                        </code>
+                        <span className="text-[10px] font-medium text-slate-500">
+                          {item.duration}
+                        </span>
+                      </div>
+                      <p className="text-slate-600 leading-snug">
+                        {isEn ? item.purposeEn : item.purposeDe}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Action Buttons: Strict EDSA Anti-Dark-Pattern (Identical size & prominence) */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-end gap-3 pt-2 border-t border-slate-100">
+              <button
+                type="button"
+                onClick={openSettings}
+                className="px-4 py-2.5 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 border border-slate-200/80"
+              >
+                <OptimizedIcon icon={Sliders} className="w-4 h-4 text-slate-600" />
+                <span>{isEn ? 'Custom Settings' : 'Einstellungen anpassen'}</span>
+              </button>
+              <button
+                type="button"
+                onClick={handleReject}
+                className="px-5 py-2.5 text-xs font-bold text-slate-800 bg-white hover:bg-slate-50 border border-slate-300 rounded-xl transition-all duration-200 shadow-xs hover:border-slate-400 text-center"
+              >
+                {isEn ? 'Only Essential Storage' : 'Nur Essenzielle zulassen'}
+              </button>
+              <button
+                type="button"
+                onClick={handleAccept}
+                className="px-5 py-2.5 text-xs font-bold text-white bg-slate-900 hover:bg-black rounded-xl transition-all duration-200 shadow-sm hover:shadow text-center"
+              >
+                {isEn ? 'Accept All & Continue' : 'Alle akzeptieren'}
+              </button>
             </div>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto shrink-0">
-            <button
-              onClick={handleAcceptAll}
-              className="px-6 py-2.5 bg-gray-900 text-white font-bold rounded-xl hover:bg-black transition-colors motion-reduce:duration-[0.01ms] shadow-lg hover:shadow-xl hover:-translate-y-0.5 whitespace-nowrap"
-            >
-              Alle akzeptieren
-            </button>
-            <button
-              onClick={handleRejectAll}
-              className="px-6 py-2.5 bg-gray-900 text-white font-bold rounded-xl hover:bg-black transition-colors motion-reduce:duration-[0.01ms] shadow-lg hover:shadow-xl hover:-translate-y-0.5 whitespace-nowrap"
-            >
-              Ablehnen
-            </button>
-            <button
-              onClick={() => setShowSettings(true)}
-              className="px-6 py-2.5 bg-white border border-gray-200 text-gray-700 font-bold rounded-xl hover:bg-gray-50 transition-colors motion-reduce:duration-[0.01ms] whitespace-nowrap"
-            >
-              Einstellungen
-            </button>
           </div>
         </div>
-      </div>
+      )}
 
-      <CookieSettingsModal
-        isOpen={showSettings}
-        onClose={() => setShowSettings(false)}
-        onSave={handleSaveSettings}
-      />
+      {showSettings && (
+        <CookieSettingsModal isOpen={showSettings} onClose={closeSettings} onSave={closeSettings} />
+      )}
     </>
   );
 };

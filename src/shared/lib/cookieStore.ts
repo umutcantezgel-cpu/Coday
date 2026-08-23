@@ -1,104 +1,73 @@
-import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+'use client';
 
-export type CookieCategory = 'necessary' | 'functional' | 'analytics' | 'marketing';
+import {
+  useConsentStore,
+  type ConsentCategories,
+  type ConsentCategory,
+} from './consent/consentStore';
 
-interface CookiePreferences {
-  necessary: boolean; // Always true, cannot be disabled
+export type CookieCategory = ConsentCategory;
+
+export interface CookiePreferences {
+  necessary: boolean;
   functional: boolean;
   analytics: boolean;
   marketing: boolean;
 }
 
-interface CookieConsentState {
-  hasConsented: boolean;
-  consentTimestamp: string | null;
-  preferences: CookiePreferences;
-  showBanner: boolean;
-  showSettings: boolean;
+/**
+ * Backward compatibility adapter bridging useConsentStore to legacy useCookieStore hooks.
+ */
+export function useCookieStore() {
+  const store = useConsentStore();
 
-  // Actions
-  acceptAll: () => void;
-  rejectAll: () => void;
-  savePreferences: (prefs: Partial<CookiePreferences>) => void;
-  openSettings: () => void;
-  closeSettings: () => void;
-  resetConsent: () => void;
+  return {
+    hasConsented: store.hasConsented,
+    consentTimestamp: store.timestamp,
+    preferences: store.categories as CookiePreferences,
+    showBanner: store.showBanner,
+    showSettings: store.showSettings,
+
+    acceptAll: () => store.acceptAll('banner'),
+    rejectAll: () => store.rejectAll('banner'),
+    savePreferences: (prefs: Partial<CookiePreferences>) =>
+      store.saveCustom(
+        {
+          functional: prefs.functional,
+          analytics: prefs.analytics,
+          marketing: prefs.marketing,
+        },
+        'settings_modal'
+      ),
+    openSettings: () => store.openSettings(),
+    closeSettings: () => store.closeSettings(),
+    resetConsent: () => store.resetConsent(),
+  };
 }
 
-const defaultPreferences: CookiePreferences = {
-  necessary: true,
-  functional: false,
-  analytics: false,
-  marketing: false,
+useCookieStore.getState = () => {
+  const store = useConsentStore.getState();
+  return {
+    hasConsented: store.hasConsented,
+    consentTimestamp: store.timestamp,
+    preferences: store.categories as CookiePreferences,
+    showBanner: store.showBanner,
+    showSettings: store.showSettings,
+    acceptAll: () => store.acceptAll('banner'),
+    rejectAll: () => store.rejectAll('banner'),
+    savePreferences: (prefs: Partial<CookiePreferences>) =>
+      store.saveCustom(
+        {
+          functional: prefs.functional,
+          analytics: prefs.analytics,
+          marketing: prefs.marketing,
+        },
+        'settings_modal'
+      ),
+    openSettings: () => store.openSettings(),
+    closeSettings: () => store.closeSettings(),
+    resetConsent: () => store.resetConsent(),
+  };
 };
-
-export const useCookieStore = create<CookieConsentState>()(
-  persist(
-    (set) => ({
-      hasConsented: false,
-      consentTimestamp: null,
-      preferences: defaultPreferences,
-      showBanner: true,
-      showSettings: false,
-
-      acceptAll: () =>
-        set({
-          hasConsented: true,
-          consentTimestamp: new Date().toISOString(),
-          preferences: {
-            necessary: true,
-            functional: true,
-            analytics: true,
-            marketing: true,
-          },
-          showBanner: false,
-          showSettings: false,
-        }),
-
-      rejectAll: () =>
-        set({
-          hasConsented: true,
-          consentTimestamp: new Date().toISOString(),
-          preferences: {
-            necessary: true, // Always required
-            functional: false,
-            analytics: false,
-            marketing: false,
-          },
-          showBanner: false,
-          showSettings: false,
-        }),
-
-      savePreferences: (prefs) =>
-        set((state) => ({
-          hasConsented: true,
-          consentTimestamp: new Date().toISOString(),
-          preferences: {
-            ...state.preferences,
-            ...prefs,
-            necessary: true, // Always required
-          },
-          showBanner: false,
-          showSettings: false,
-        })),
-
-      openSettings: () => set({ showSettings: true }),
-      closeSettings: () => set({ showSettings: false }),
-
-      resetConsent: () =>
-        set({
-          hasConsented: false,
-          consentTimestamp: null,
-          preferences: defaultPreferences,
-          showBanner: true,
-          showSettings: false,
-        }),
-    }),
-    {
-      name: 'coday-cookie-consent',
-    }
-  )
-);
 
 export default useCookieStore;

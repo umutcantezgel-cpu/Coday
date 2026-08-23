@@ -154,6 +154,17 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
               </>
             )}
           </p>
+
+          <h2 className="text-xl font-semibold text-secondary-900 mt-8">
+            {isEn
+              ? 'Consumer Dispute Resolution'
+              : 'Verbraucherstreitbeilegung / Universalschlichtungsstelle'}
+          </h2>
+          <p>
+            {isEn
+              ? 'We are neither willing nor obligated to participate in dispute resolution proceedings before a consumer arbitration board.'
+              : 'Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.'}
+          </p>
         </section>
       </div>
     </>
