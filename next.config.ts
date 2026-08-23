@@ -39,7 +39,7 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      // Webagentur -> Webdesign Landing Pages
+      // Specific City & Location Redirects
       {
         source: '/webagentur-wetzlar',
         destination: '/webdesign-agentur-wetzlar',
@@ -50,6 +50,69 @@ const nextConfig: NextConfig = {
         destination: '/:locale/webdesign-agentur-wetzlar',
         permanent: true,
       },
+      {
+        source: '/webagentur-braunfels',
+        destination: '/webdesign-agentur-wetzlar',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/webagentur-braunfels',
+        destination: '/:locale/webdesign-agentur-wetzlar',
+        permanent: true,
+      },
+      {
+        source: '/webdesign-braunfels',
+        destination: '/webdesign-agentur-wetzlar',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/webdesign-braunfels',
+        destination: '/:locale/webdesign-agentur-wetzlar',
+        permanent: true,
+      },
+      // Archived / Legacy Case Studies -> /work
+      {
+        source: '/work/red-chillies',
+        destination: '/work',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/work/red-chillies',
+        destination: '/:locale/work',
+        permanent: true,
+      },
+      {
+        source: '/work/roof-template-3',
+        destination: '/work',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/work/roof-template-3',
+        destination: '/:locale/work',
+        permanent: true,
+      },
+      {
+        source: '/work/akan-dienstleistungen',
+        destination: '/work',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/work/akan-dienstleistungen',
+        destination: '/:locale/work',
+        permanent: true,
+      },
+      // Blog Article Slug Localizations / 404 Prevention
+      {
+        source: '/en/knowledge/blog/email-marketing-automation',
+        destination: '/en/knowledge/blog',
+        permanent: true,
+      },
+      {
+        source: '/en/knowledge/blog/warum-wordpress-tot-ist',
+        destination: '/en/knowledge/blog/why-wordpress-is-dying',
+        permanent: true,
+      },
+      // Generic Webagentur -> Webdesign Landing Pages
       {
         source: '/webagentur-:city',
         destination: '/webdesign-:city',
@@ -313,24 +376,13 @@ const nextConfig: NextConfig = {
       },
       // Legacy specific industries redirects
       {
-        source: '/services/industries/gesundheit',
-        destination: '/branchen/gesundheitswesen',
+        source: '/services/industries/ecommerce-retail',
+        destination: '/branchen/retail',
         permanent: true,
       },
       {
-        source: '/:locale(de|en)/services/industries/gesundheit',
-        destination: '/:locale/branchen/gesundheitswesen',
-        permanent: true,
-      },
-      // /industries/ → /branchen/ redirects
-      {
-        source: '/services/industries/:path*',
-        destination: '/branchen/:path*',
-        permanent: true,
-      },
-      {
-        source: '/:locale(de|en)/services/industries/:path*',
-        destination: '/:locale/branchen/:path*',
+        source: '/:locale(de|en)/services/industries/ecommerce-retail',
+        destination: '/:locale/branchen/retail',
         permanent: true,
       },
       {
@@ -341,6 +393,27 @@ const nextConfig: NextConfig = {
       {
         source: '/:locale(de|en)/services/industries/handwerk-bau',
         destination: '/:locale/branchen/handwerker',
+        permanent: true,
+      },
+      {
+        source: '/services/industries/gesundheit',
+        destination: '/branchen/gesundheitswesen',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/industries/gesundheit',
+        destination: '/:locale/branchen/gesundheitswesen',
+        permanent: true,
+      },
+      // /industries/ → /branchen/ generic redirects
+      {
+        source: '/services/industries/:path*',
+        destination: '/branchen/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/industries/:path*',
+        destination: '/:locale/branchen/:path*',
         permanent: true,
       },
       {
