@@ -5,7 +5,7 @@ import { ShieldCheck, Cookie, CaretDown, CaretUp, Sliders } from '@phosphor-icon
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { Link } from '@/i18n/navigation';
 import { useConsentStore } from '@/shared/lib/consent/consentStore';
-import { CODAY_STORAGE_INVENTORY } from '@/shared/lib/consent/storageGate';
+import { CODAY_STORAGE_INVENTORY } from '@/shared/lib/consent/storageInventory';
 import CookieSettingsModal from '@/widgets/cookie/CookieSettingsModal';
 import { useFocusTrap } from '@/shared/hooks/useFocusTrap';
 import { useLocale } from 'next-intl';

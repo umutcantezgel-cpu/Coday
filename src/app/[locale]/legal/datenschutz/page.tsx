@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
-import { CODAY_STORAGE_INVENTORY } from '@/shared/lib/consent/storageGate';
+import { CODAY_STORAGE_INVENTORY } from '@/shared/lib/consent/storageInventory';
 
 export const dynamic = 'force-static';
 

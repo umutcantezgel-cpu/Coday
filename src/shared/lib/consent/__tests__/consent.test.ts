@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { useConsentStore, CONSENT_POLICY_VERSION, CONSENT_STORAGE_KEY } from '../consentStore';
-import { storageGate, CODAY_STORAGE_INVENTORY } from '../storageGate';
+import { storageGate } from '../storageGate';
+import { CODAY_STORAGE_INVENTORY } from '../storageInventory';
 
 describe('GDPR & TDDDG Consent Architecture', () => {
   beforeEach(() => {
