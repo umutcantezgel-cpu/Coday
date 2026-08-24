@@ -548,6 +548,47 @@ const nextConfig: NextConfig = {
         destination: '/:locale/services/web-design',
         permanent: true,
       },
+      // --- Legacy blog post redirects ---
+      {
+        source: '/knowledge/blog/omni-channel-mix',
+        destination: '/knowledge/blog',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/knowledge/blog/omni-channel-mix',
+        destination: '/:locale/knowledge/blog',
+        permanent: true,
+      },
+      {
+        source: '/knowledge/blog/email-marketing-automation',
+        destination: '/knowledge/blog',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/knowledge/blog/email-marketing-automation',
+        destination: '/:locale/knowledge/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/omni-channel-mix',
+        destination: '/knowledge/blog',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/blog/omni-channel-mix',
+        destination: '/:locale/knowledge/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/email-marketing-automation',
+        destination: '/knowledge/blog',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/blog/email-marketing-automation',
+        destination: '/:locale/knowledge/blog',
+        permanent: true,
+      },
       // --- Legacy /ai/ programmatically generated landing pages (301 redirects) ---
       {
         source: '/sitemap-ai-triples.xml',
