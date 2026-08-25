@@ -70,6 +70,26 @@ const nextConfig: NextConfig = {
         destination: '/:locale/webdesign-agentur-wetzlar',
         permanent: true,
       },
+      {
+        source: '/webagentur-solms',
+        destination: '/webdesign-agentur-wetzlar',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/webagentur-solms',
+        destination: '/:locale/webdesign-agentur-wetzlar',
+        permanent: true,
+      },
+      {
+        source: '/webdesign-solms',
+        destination: '/webdesign-agentur-wetzlar',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/webdesign-solms',
+        destination: '/:locale/webdesign-agentur-wetzlar',
+        permanent: true,
+      },
       // Archived / Legacy Case Studies -> /work
       {
         source: '/work/red-chillies',
@@ -82,22 +102,72 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/work/roof-template-3',
-        destination: '/work',
-        permanent: true,
-      },
-      {
-        source: '/:locale(de|en)/work/roof-template-3',
-        destination: '/:locale/work',
-        permanent: true,
-      },
-      {
         source: '/work/akan-dienstleistungen',
         destination: '/work',
         permanent: true,
       },
       {
         source: '/:locale(de|en)/work/akan-dienstleistungen',
+        destination: '/:locale/work',
+        permanent: true,
+      },
+      {
+        source: '/work/prestige-estates',
+        destination: '/work',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/work/prestige-estates',
+        destination: '/:locale/work',
+        permanent: true,
+      },
+      {
+        source: '/work/red-flames',
+        destination: '/work',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/work/red-flames',
+        destination: '/:locale/work',
+        permanent: true,
+      },
+      {
+        source: '/work/fitflow',
+        destination: '/work',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/work/fitflow',
+        destination: '/:locale/work',
+        permanent: true,
+      },
+      {
+        source: '/work/hotel-zur-post',
+        destination: '/work',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/work/hotel-zur-post',
+        destination: '/:locale/work',
+        permanent: true,
+      },
+      {
+        source: '/work/roof-template-:id(\\d+)',
+        destination: '/work',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/work/roof-template-:id(\\d+)',
+        destination: '/:locale/work',
+        permanent: true,
+      },
+      {
+        source: '/work/roof-template-3',
+        destination: '/work',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/work/roof-template-3',
         destination: '/:locale/work',
         permanent: true,
       },
@@ -638,6 +708,119 @@ const nextConfig: NextConfig = {
       {
         source: '/ai/:path*',
         destination: '/services/generative-engine-optimization',
+        permanent: true,
+      },
+      // --- Legal & Service Aliases ---
+      {
+        source: '/legal/imprint',
+        destination: '/legal/impressum',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/legal/imprint',
+        destination: '/:locale/legal/impressum',
+        permanent: true,
+      },
+      {
+        source: '/legal/privacy',
+        destination: '/legal/datenschutz',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/legal/privacy',
+        destination: '/:locale/legal/datenschutz',
+        permanent: true,
+      },
+      {
+        source: '/legal/terms',
+        destination: '/legal/agb',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/legal/terms',
+        destination: '/:locale/legal/agb',
+        permanent: true,
+      },
+      {
+        source: '/services/social',
+        destination: '/services/seo',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/social',
+        destination: '/:locale/services/seo',
+        permanent: true,
+      },
+      // --- Industry & Category Catch-Alls ---
+      {
+        source: '/branchen/gesundheit',
+        destination: '/branchen/gesundheitswesen',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/branchen/gesundheit',
+        destination: '/:locale/branchen/gesundheitswesen',
+        permanent: true,
+      },
+      {
+        source: '/branchen/automobil/:slug',
+        destination: '/branchen/automobil',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/branchen/automobil/:slug',
+        destination: '/:locale/branchen/automobil',
+        permanent: true,
+      },
+      {
+        source: '/industries/:path*',
+        destination: '/branchen/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/industries/:path*',
+        destination: '/:locale/branchen/:path*',
+        permanent: true,
+      },
+      // --- Standalone Non-Locale Cleanups & Typos ---
+      {
+        source: '/Monat',
+        destination: '/pricing',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/Monat',
+        destination: '/:locale/pricing',
+        permanent: true,
+      },
+      {
+        source: '/standorte/hessen',
+        destination: '/de/standorte/hessen',
+        permanent: true,
+      },
+      {
+        source: '/calculator',
+        destination: '/de/calculator',
+        permanent: true,
+      },
+      {
+        source: '/pricing',
+        destination: '/de/pricing',
+        permanent: true,
+      },
+      {
+        source: '/analyzer',
+        destination: '/de/calculator',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/analyzer',
+        destination: '/:locale/calculator',
+        permanent: true,
+      },
+      {
+        source: '/contact',
+        destination: '/de/contact',
         permanent: true,
       },
     ];
