@@ -22,6 +22,9 @@ describe('Sitemap Technical SEO Validation', () => {
     expect(urls).toContain('https://www.codayweb.de/de/landingpages/nextjsmigration');
     expect(urls).toContain('https://www.codayweb.de/de/standorte/hessen');
     expect(urls).toContain('https://www.codayweb.de/de/webdesign-agentur-wetzlar');
+    expect(urls).toContain('https://www.codayweb.de/de/webdesign-weilburg');
+    expect(urls).toContain('https://www.codayweb.de/de/webdesign-loehnberg');
+    expect(urls).toContain('https://www.codayweb.de/en/webdesign-loehnberg');
     expect(urls).toContain('https://www.codayweb.de/de/knowledge/academy');
     expect(urls).toContain('https://www.codayweb.de/en/knowledge/academy');
   });
