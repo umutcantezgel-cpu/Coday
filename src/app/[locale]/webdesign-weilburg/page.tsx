@@ -409,9 +409,15 @@ export default async function WebdesignWeilburgPage({
               <strong>Schloss Weilburg</strong>, dem historischen Schiffstunnel und einer lebendigen
               Tourismus- und Hotellerie-Branche. Gleichzeitig bilden die Gewerbeparks{' '}
               <strong>Kubach</strong> und <strong>Guntersau</strong>
-              sowie die direkten Nachbargemeinden <strong>Löhnberg</strong>,{' '}
-              <strong>Weinbach</strong> und <strong>Merenberg</strong> ein leistungsstarkes Zentrum
-              für Bauunternehmen, Handwerksmeister und modernen Mittelstand.
+              sowie die direkten Nachbargemeinden{' '}
+              <Link
+                href="/webdesign-loehnberg"
+                className="font-semibold text-amber-800 hover:text-amber-900 underline decoration-amber-400 underline-offset-4"
+              >
+                Löhnberg
+              </Link>
+              , <strong>Weinbach</strong> und <strong>Merenberg</strong> ein leistungsstarkes
+              Zentrum für Bauunternehmen, Handwerksmeister und modernen Mittelstand.
             </p>
           </div>
 
@@ -421,9 +427,15 @@ export default async function WebdesignWeilburgPage({
             </h3>
             <p className="text-slate-700 leading-relaxed text-base">
               Über die vierspurig ausgebaute <strong>Bundesstraße B49</strong> ist unser Wetzlarer
-              Büro in weniger als 15 Fahrminuten direkt bei Ihnen vor Ort in Weilburg oder Löhnberg.
-              Wir bieten Ihnen den unschätzbaren Vorteil einer direkten, persönlichen Betreuung vor
-              Ort.
+              Büro in weniger als 15 Fahrminuten direkt bei Ihnen vor Ort in Weilburg oder{' '}
+              <Link
+                href="/webdesign-loehnberg"
+                className="font-semibold text-amber-800 hover:text-amber-900 underline decoration-amber-400 underline-offset-4"
+              >
+                Löhnberg
+              </Link>
+              . Wir bieten Ihnen den unschätzbaren Vorteil einer direkten, persönlichen Betreuung
+              vor Ort.
             </p>
           </div>
 

@@ -149,9 +149,9 @@ export default async function LandkreisLimburgWeilburgPage({
     },
     {
       name: 'Löhnberg',
-      link: '/webdesign-weilburg',
-      highlight: false,
-      note: 'Maschinenbau & Lahntal-Achse',
+      link: '/webdesign-loehnberg',
+      highlight: true,
+      note: 'B49-Achse, Niedershausen, Selters & Gewerbe Voitshain',
     },
     {
       name: 'Merenberg',

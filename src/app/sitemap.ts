@@ -205,6 +205,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...sitemapEntries('/webdesign-herborn', { changeFrequency: 'monthly', priority: 0.9 }),
     ...sitemapEntries('/webdesign-limburg', { changeFrequency: 'monthly', priority: 0.9 }),
     ...sitemapEntries('/webdesign-weilburg', { changeFrequency: 'monthly', priority: 0.9 }),
+    ...sitemapEntries('/webdesign-loehnberg', { changeFrequency: 'monthly', priority: 0.9 }),
     ...sitemapEntries('/webdesign-dillenburg', { changeFrequency: 'monthly', priority: 0.9 }),
     ...sitemapEntries('/webdesign-friedberg', { changeFrequency: 'monthly', priority: 0.9 }),
     ...sitemapEntries('/webdesign-frankfurt', { changeFrequency: 'monthly', priority: 0.95 }),
