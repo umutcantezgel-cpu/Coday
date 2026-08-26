@@ -11,7 +11,7 @@ import { LocalSplitHero } from '@/features/local-seo/ui/LocalSplitHero';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
-import { LazyQuickContactForm } from '@/widgets/home/LazyQuickContactForm';
+import { LocalBottomContactSection } from '@/features/local-seo/ui/LocalBottomContactSection';
 import {
   ArrowRight,
   ShieldCheck,
@@ -680,28 +680,49 @@ export default async function WebdesignLoehnbergPage({
       </section>
 
       {/* 8. EMBEDDED LEAD CAPTURE & CONTACT FORM */}
-      <section className="py-20 sm:py-24 bg-neutral-50/80 border-t border-slate-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-amber-800 font-semibold tracking-wider uppercase text-xs sm:text-sm">
-              Kontakt & Beratung
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4 tracking-tight text-balance leading-tight">
-              Jetzt kostenlose Standort-Analyse für Löhnberg anfordern
-            </h2>
-            <p className="text-slate-600 text-base">
-              Erfahren Sie in 20 Minuten, wie Ihr Betrieb in Löhnberg und dem Lahntal auf Platz 1
-              bei Google gelangt und planbar neue Kunden gewinnt.
-            </p>
-          </div>
-
-          <div className="rounded-3xl p-2 bg-neutral-100/90 border border-neutral-200/90 shadow-md">
-            <div className="rounded-2xl bg-white p-6 sm:p-10 border border-neutral-100">
-              <LazyQuickContactForm />
-            </div>
-          </div>
-        </div>
-      </section>
+      <LocalBottomContactSection
+        cityName="Löhnberg"
+        sourceTag="local_bottom_loehnberg"
+        badgeText={
+          isEn
+            ? 'DIRECT CONSULTATION · LÖHNBERG & LAHN VALLEY'
+            : 'PERSÖNLICHE BERATUNG · LÖHNBERG & LAHNTAL'
+        }
+        heading={
+          isEn
+            ? 'Request Free Project Analysis for Löhnberg'
+            : 'Jetzt kostenlose Standort-Analyse für Löhnberg anfordern'
+        }
+        subheading={
+          isEn
+            ? 'Discover in 20 minutes how your business in Löhnberg (35792), Niedershausen, Obershausen, or Selters can reach #1 on Google and win profitable inquiries.'
+            : 'Erfahren Sie in 20 Minuten, wie Ihr Betrieb in Löhnberg (35792), Niedershausen, Obershausen oder Selters auf Platz 1 bei Google gelangt und planbar neue Kunden gewinnt.'
+        }
+        districts={[
+          {
+            name: 'Löhnberg-Kernort (Gewerbe / B49)',
+            label: isEn ? 'Löhnberg Core (Commercial / B49)' : 'Löhnberg-Kernort (Gewerbe / B49)',
+          },
+          {
+            name: 'Handwerk & Bau (Niedershausen)',
+            label: isEn
+              ? 'Crafts & Construction (Niedershausen)'
+              : 'Handwerk & Bau (Niedershausen)',
+          },
+          {
+            name: 'Mittelstand & Service (Obershausen)',
+            label: isEn ? 'SME & Service (Obershausen)' : 'Mittelstand & Service (Obershausen)',
+          },
+          {
+            name: 'Tourismus & Gastronomie (Selters)',
+            label: isEn ? 'Tourism & Hospitality (Selters)' : 'Tourismus & Gastronomie (Selters)',
+          },
+          {
+            name: 'Praxis / Kanzlei / Beratung',
+            label: isEn ? 'Practice / Law Firm / Consulting' : 'Praxis / Kanzlei / Beratung',
+          },
+        ]}
+      />
 
       {/* 9. REGIONAL SILO & NEIGHBOR LINKS */}
       <section className="py-16 bg-white border-t border-slate-200 text-sm text-slate-600">
