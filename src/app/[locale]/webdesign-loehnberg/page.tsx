@@ -14,7 +14,6 @@ import { TrustBar } from '@/shared/ui/TrustBar';
 import { LazyQuickContactForm } from '@/widgets/home/LazyQuickContactForm';
 import {
   ArrowRight,
-  Lightning,
   ShieldCheck,
   Buildings,
   Check,
@@ -22,7 +21,6 @@ import {
   CheckCircle,
   Wrench,
   TreeEvergreen,
-  MapPin,
   Target,
   CaretRight,
   Drop,
@@ -155,7 +153,7 @@ export default async function WebdesignLoehnbergPage({
   };
 
   return (
-    <div className="relative w-full bg-white text-slate-900 selection:bg-amber-100 selection:text-amber-900">
+    <div className="relative w-full min-h-screen bg-[#fafafa] text-slate-900 selection:bg-amber-500/20 selection:text-amber-900 overflow-x-hidden">
       {/* Structured Data */}
       <script
         id="schema-loehnberg-pyramid"
@@ -210,7 +208,7 @@ export default async function WebdesignLoehnbergPage({
                     <Sparkle className="w-3.5 h-3.5 text-amber-600" />
                     Regionale Themenführerschaft im Lahntal
                   </div>
-                  <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                  <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight text-balance">
                     Die B49-Wirtschaftsachse:{' '}
                     <span className="text-amber-800">Weilburg, Löhnberg & Limburg</span>
                   </h2>
@@ -315,7 +313,7 @@ export default async function WebdesignLoehnbergPage({
             <span className="text-amber-800 font-semibold tracking-wider uppercase text-xs sm:text-sm">
               Lokale Abdeckung
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4 tracking-tight text-balance leading-tight">
               Digitale Lösungen für alle 4 Ortsteile der Gemeinde Löhnberg
             </h2>
             <p className="text-slate-600 text-base leading-relaxed">
@@ -326,7 +324,7 @@ export default async function WebdesignLoehnbergPage({
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Ortsteil 1: Löhnberg-Kernort */}
-            <div className="rounded-2xl bg-white p-6 border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-400 transition-all flex flex-col justify-between group">
+            <div className="rounded-2xl bg-white p-6 border border-slate-200/80 shadow-xs hover:shadow-md hover:border-amber-400/80 hover:-translate-y-0.5 active:scale-[0.99] transition-[transform,box-shadow,border-color] duration-200 ease-out flex flex-col justify-between group cursor-pointer">
               <div>
                 <div className="w-12 h-12 rounded-xl bg-amber-50 text-amber-800 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
                   <Buildings className="w-6 h-6" />
@@ -345,7 +343,7 @@ export default async function WebdesignLoehnbergPage({
             </div>
 
             {/* Ortsteil 2: Niedershausen */}
-            <div className="rounded-2xl bg-white p-6 border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-400 transition-all flex flex-col justify-between group">
+            <div className="rounded-2xl bg-white p-6 border border-slate-200/80 shadow-xs hover:shadow-md hover:border-amber-400/80 hover:-translate-y-0.5 active:scale-[0.99] transition-[transform,box-shadow,border-color] duration-200 ease-out flex flex-col justify-between group cursor-pointer">
               <div>
                 <div className="w-12 h-12 rounded-xl bg-amber-50 text-amber-800 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
                   <Wrench className="w-6 h-6" />
@@ -364,7 +362,7 @@ export default async function WebdesignLoehnbergPage({
             </div>
 
             {/* Ortsteil 3: Obershausen */}
-            <div className="rounded-2xl bg-white p-6 border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-400 transition-all flex flex-col justify-between group">
+            <div className="rounded-2xl bg-white p-6 border border-slate-200/80 shadow-xs hover:shadow-md hover:border-amber-400/80 hover:-translate-y-0.5 active:scale-[0.99] transition-[transform,box-shadow,border-color] duration-200 ease-out flex flex-col justify-between group cursor-pointer">
               <div>
                 <div className="w-12 h-12 rounded-xl bg-amber-50 text-amber-800 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
                   <Factory className="w-6 h-6" />
@@ -382,7 +380,7 @@ export default async function WebdesignLoehnbergPage({
             </div>
 
             {/* Ortsteil 4: Selters */}
-            <div className="rounded-2xl bg-white p-6 border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-400 transition-all flex flex-col justify-between group">
+            <div className="rounded-2xl bg-white p-6 border border-slate-200/80 shadow-xs hover:shadow-md hover:border-amber-400/80 hover:-translate-y-0.5 active:scale-[0.99] transition-[transform,box-shadow,border-color] duration-200 ease-out flex flex-col justify-between group cursor-pointer">
               <div>
                 <div className="w-12 h-12 rounded-xl bg-amber-50 text-amber-800 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
                   <Drop className="w-6 h-6" />
@@ -409,7 +407,7 @@ export default async function WebdesignLoehnbergPage({
             <span className="text-amber-800 font-semibold tracking-wider uppercase text-xs sm:text-sm">
               Branchen-Expertise
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4 tracking-tight text-balance leading-tight">
               Maßgeschneiderte Webentwicklung für Löhnberger Schlüsselbranchen
             </h2>
             <p className="text-slate-600 text-base leading-relaxed">
@@ -420,7 +418,7 @@ export default async function WebdesignLoehnbergPage({
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Säule 1: Handwerk & Bau */}
-            <div className="p-8 rounded-2xl bg-slate-50/90 border border-slate-200/80 shadow-sm hover:border-amber-400 hover:shadow-md transition-all group">
+            <div className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:border-amber-400/80 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.99] transition-[transform,box-shadow,border-color] duration-200 ease-out group">
               <Wrench className="w-10 h-10 text-amber-700 mb-5 group-hover:scale-105 transition-transform" />
               <h3 className="text-xl font-bold text-slate-900 mb-3">
                 1. Handwerk, Bau & Sanitärtechnik
@@ -443,7 +441,7 @@ export default async function WebdesignLoehnbergPage({
             </div>
 
             {/* Säule 2: B2B-Fertigung & Industrie */}
-            <div className="p-8 rounded-2xl bg-slate-50/90 border border-slate-200/80 shadow-sm hover:border-amber-400 hover:shadow-md transition-all group">
+            <div className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:border-amber-400/80 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.99] transition-[transform,box-shadow,border-color] duration-200 ease-out group">
               <Factory className="w-10 h-10 text-amber-700 mb-5 group-hover:scale-105 transition-transform" />
               <h3 className="text-xl font-bold text-slate-900 mb-3">
                 2. B2B-Industrie, Metalltechnik & Zulieferer
@@ -466,7 +464,7 @@ export default async function WebdesignLoehnbergPage({
             </div>
 
             {/* Säule 3: Lahntal-Tourismus & Gastronomie */}
-            <div className="p-8 rounded-2xl bg-slate-50/90 border border-slate-200/80 shadow-sm hover:border-amber-400 hover:shadow-md transition-all group">
+            <div className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:border-amber-400/80 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.99] transition-[transform,box-shadow,border-color] duration-200 ease-out group">
               <TreeEvergreen className="w-10 h-10 text-amber-700 mb-5 group-hover:scale-105 transition-transform" />
               <h3 className="text-xl font-bold text-slate-900 mb-3">
                 3. Tourismus, Gastronomie & Selters-Quellen
@@ -489,7 +487,7 @@ export default async function WebdesignLoehnbergPage({
             </div>
 
             {/* Säule 4: Praxen & Kanzleien */}
-            <div className="p-8 rounded-2xl bg-slate-50/90 border border-slate-200/80 shadow-sm hover:border-amber-400 hover:shadow-md transition-all group">
+            <div className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:border-amber-400/80 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.99] transition-[transform,box-shadow,border-color] duration-200 ease-out group">
               <ShieldCheck className="w-10 h-10 text-amber-700 mb-5 group-hover:scale-105 transition-transform" />
               <h3 className="text-xl font-bold text-slate-900 mb-3">
                 4. Praxen, Kanzleien & Dienstleister
@@ -521,7 +519,7 @@ export default async function WebdesignLoehnbergPage({
             <span className="text-amber-800 font-semibold tracking-wider uppercase text-xs sm:text-sm">
               Technischer Vorsprung
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4 tracking-tight text-balance leading-tight">
               Warum moderne Next.js 15 Webentwicklung jede WordPress-Seite schlägt
             </h2>
             <p className="text-slate-600 text-base leading-relaxed">
@@ -530,76 +528,78 @@ export default async function WebdesignLoehnbergPage({
             </p>
           </div>
 
-          <div className="overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-sm">
-            <div className="grid grid-cols-12 bg-slate-100/80 p-4 sm:p-6 font-bold text-xs sm:text-sm text-slate-900 border-b border-slate-200">
-              <div className="col-span-5 sm:col-span-4">Leistungsmerkmal</div>
-              <div className="col-span-4 sm:col-span-4 text-amber-900 font-extrabold">
-                Coday (Next.js 15 App Router)
-              </div>
-              <div className="col-span-3 sm:col-span-4 text-slate-500">
-                Klassische WordPress-Agentur
-              </div>
-            </div>
-
-            <div className="divide-y divide-slate-100 text-xs sm:text-sm">
-              <div className="grid grid-cols-12 p-4 sm:p-6 items-center">
-                <div className="col-span-5 sm:col-span-4 font-semibold text-slate-800">
-                  Ladezeit (LCP Mobile)
-                </div>
-                <div className="col-span-4 sm:col-span-4 font-bold text-emerald-700 flex items-center gap-1.5">
-                  <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
-                  Sub-0,3 Sekunden
-                </div>
-                <div className="col-span-3 sm:col-span-4 text-slate-500">2,5 – 4,8 Sekunden</div>
-              </div>
-
-              <div className="grid grid-cols-12 p-4 sm:p-6 items-center bg-slate-50/50">
-                <div className="col-span-5 sm:col-span-4 font-semibold text-slate-800">
-                  Sicherheit & Hacks
-                </div>
-                <div className="col-span-4 sm:col-span-4 font-bold text-emerald-700 flex items-center gap-1.5">
-                  <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
-                  100% wartungsfrei, 0 Plugins
+          <div className="overflow-x-auto">
+            <div className="min-w-[640px] rounded-2xl bg-white border border-slate-200 shadow-sm overflow-hidden">
+              <div className="grid grid-cols-12 bg-slate-100/80 p-4 sm:p-6 font-bold text-xs sm:text-sm text-slate-900 border-b border-slate-200">
+                <div className="col-span-5 sm:col-span-4">Leistungsmerkmal</div>
+                <div className="col-span-4 sm:col-span-4 text-amber-900 font-extrabold">
+                  Coday (Next.js 15 App Router)
                 </div>
                 <div className="col-span-3 sm:col-span-4 text-slate-500">
-                  Regelmäßige Plugin-Lücken
+                  Klassische WordPress-Agentur
                 </div>
               </div>
 
-              <div className="grid grid-cols-12 p-4 sm:p-6 items-center">
-                <div className="col-span-5 sm:col-span-4 font-semibold text-slate-800">
-                  Quellcode-Eigentum
+              <div className="divide-y divide-slate-100 text-xs sm:text-sm">
+                <div className="grid grid-cols-12 p-4 sm:p-6 items-center hover:bg-amber-50/30 transition-colors duration-150">
+                  <div className="col-span-5 sm:col-span-4 font-semibold text-slate-800">
+                    Ladezeit (LCP Mobile)
+                  </div>
+                  <div className="col-span-4 sm:col-span-4 font-bold text-emerald-700 flex items-center gap-1.5">
+                    <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
+                    Sub-0,3 Sekunden
+                  </div>
+                  <div className="col-span-3 sm:col-span-4 text-slate-500">2,5 – 4,8 Sekunden</div>
                 </div>
-                <div className="col-span-4 sm:col-span-4 font-bold text-emerald-700 flex items-center gap-1.5">
-                  <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
-                  100% Ihres Eigentums
-                </div>
-                <div className="col-span-3 sm:col-span-4 text-slate-500">
-                  Abhängigkeit von Agentur-Themes
-                </div>
-              </div>
 
-              <div className="grid grid-cols-12 p-4 sm:p-6 items-center bg-slate-50/50">
-                <div className="col-span-5 sm:col-span-4 font-semibold text-slate-800">
-                  Google PageSpeed Score
+                <div className="grid grid-cols-12 p-4 sm:p-6 items-center bg-slate-50/50 hover:bg-amber-50/30 transition-colors duration-150">
+                  <div className="col-span-5 sm:col-span-4 font-semibold text-slate-800">
+                    Sicherheit & Hacks
+                  </div>
+                  <div className="col-span-4 sm:col-span-4 font-bold text-emerald-700 flex items-center gap-1.5">
+                    <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
+                    100% wartungsfrei, 0 Plugins
+                  </div>
+                  <div className="col-span-3 sm:col-span-4 text-slate-500">
+                    Regelmäßige Plugin-Lücken
+                  </div>
                 </div>
-                <div className="col-span-4 sm:col-span-4 font-bold text-emerald-700 flex items-center gap-1.5">
-                  <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
-                  100 / 100 garantiert
-                </div>
-                <div className="col-span-3 sm:col-span-4 text-slate-500">Meist 40 – 65 / 100</div>
-              </div>
 
-              <div className="grid grid-cols-12 p-4 sm:p-6 items-center">
-                <div className="col-span-5 sm:col-span-4 font-semibold text-slate-800">
-                  Laufende Kosten
+                <div className="grid grid-cols-12 p-4 sm:p-6 items-center hover:bg-amber-50/30 transition-colors duration-150">
+                  <div className="col-span-5 sm:col-span-4 font-semibold text-slate-800">
+                    Quellcode-Eigentum
+                  </div>
+                  <div className="col-span-4 sm:col-span-4 font-bold text-emerald-700 flex items-center gap-1.5">
+                    <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
+                    100% Ihres Eigentums
+                  </div>
+                  <div className="col-span-3 sm:col-span-4 text-slate-500">
+                    Abhängigkeit von Agentur-Themes
+                  </div>
                 </div>
-                <div className="col-span-4 sm:col-span-4 font-bold text-emerald-700 flex items-center gap-1.5">
-                  <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />0 €
-                  Pflicht-Wartungsabos
+
+                <div className="grid grid-cols-12 p-4 sm:p-6 items-center bg-slate-50/50 hover:bg-amber-50/30 transition-colors duration-150">
+                  <div className="col-span-5 sm:col-span-4 font-semibold text-slate-800">
+                    Google PageSpeed Score
+                  </div>
+                  <div className="col-span-4 sm:col-span-4 font-bold text-emerald-700 flex items-center gap-1.5">
+                    <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
+                    100 / 100 garantiert
+                  </div>
+                  <div className="col-span-3 sm:col-span-4 text-slate-500">Meist 40 – 65 / 100</div>
                 </div>
-                <div className="col-span-3 sm:col-span-4 text-slate-500">
-                  150 € – 400 € / Monat Abo
+
+                <div className="grid grid-cols-12 p-4 sm:p-6 items-center hover:bg-amber-50/30 transition-colors duration-150">
+                  <div className="col-span-5 sm:col-span-4 font-semibold text-slate-800">
+                    Laufende Kosten
+                  </div>
+                  <div className="col-span-4 sm:col-span-4 font-bold text-emerald-700 flex items-center gap-1.5">
+                    <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />0 €
+                    Pflicht-Wartungsabos
+                  </div>
+                  <div className="col-span-3 sm:col-span-4 text-slate-500">
+                    150 € – 400 € / Monat Abo
+                  </div>
                 </div>
               </div>
             </div>
@@ -614,7 +614,7 @@ export default async function WebdesignLoehnbergPage({
             <span className="text-amber-800 font-semibold tracking-wider uppercase text-xs sm:text-sm">
               Häufige Fragen
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4 tracking-tight text-balance leading-tight">
               Fragen & Antworten zu Webdesign in Löhnberg
             </h2>
             <p className="text-slate-600 text-base">
@@ -623,7 +623,7 @@ export default async function WebdesignLoehnbergPage({
           </div>
 
           <div className="space-y-5">
-            <div className="p-6 rounded-2xl bg-slate-50/90 border border-slate-200/80 shadow-sm">
+            <div className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:border-slate-300 hover:shadow-sm transition-[border-color,box-shadow] duration-200 ease-out">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
                 Was kostet eine neue Website für Unternehmen in Löhnberg?
               </h3>
@@ -634,7 +634,7 @@ export default async function WebdesignLoehnbergPage({
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-slate-50/90 border border-slate-200/80 shadow-sm">
+            <div className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:border-slate-300 hover:shadow-sm transition-[border-color,box-shadow] duration-200 ease-out">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
                 Wie schnell ist eine neue Next.js Homepage in Löhnberg online?
               </h3>
@@ -644,7 +644,7 @@ export default async function WebdesignLoehnbergPage({
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-slate-50/90 border border-slate-200/80 shadow-sm">
+            <div className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:border-slate-300 hover:shadow-sm transition-[border-color,box-shadow] duration-200 ease-out">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
                 Kommen Sie für Termine direkt nach Löhnberg, Niedershausen oder Selters?
               </h3>
@@ -655,7 +655,7 @@ export default async function WebdesignLoehnbergPage({
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-slate-50/90 border border-slate-200/80 shadow-sm">
+            <div className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:border-slate-300 hover:shadow-sm transition-[border-color,box-shadow] duration-200 ease-out">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
                 Wie hilft Coday bei der Mitarbeiter- und Azubigewinnung in Löhnberg?
               </h3>
@@ -666,7 +666,7 @@ export default async function WebdesignLoehnbergPage({
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-slate-50/90 border border-slate-200/80 shadow-sm">
+            <div className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:border-slate-300 hover:shadow-sm transition-[border-color,box-shadow] duration-200 ease-out">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
                 Wer betreut mein Projekt in Löhnberg persönlich?
               </h3>
@@ -686,7 +686,7 @@ export default async function WebdesignLoehnbergPage({
             <span className="text-amber-800 font-semibold tracking-wider uppercase text-xs sm:text-sm">
               Kontakt & Beratung
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4 tracking-tight text-balance leading-tight">
               Jetzt kostenlose Standort-Analyse für Löhnberg anfordern
             </h2>
             <p className="text-slate-600 text-base">
