@@ -55,7 +55,7 @@ function AcademyContent() {
   };
 
   const knowledgeNav = [
-    { label: isEn ? 'Tech Wiki' : 'Tech-Wiki', href: '/knowledge/wiki', icon: BookBookmark },
+    { label: isEn ? 'Tech Wiki' : 'Tech-Wiki', href: '/knowledge/wikihub', icon: BookBookmark },
     {
       label: isEn ? 'Newsletter' : 'Newsletter',
       href: '/knowledge/newsletter',

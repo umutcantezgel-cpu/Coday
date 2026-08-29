@@ -53,7 +53,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
 
   const breadcrumbs = getBreadcrumbSchema([
     { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: 'Knowledge', url: `/${_locale}/knowledge` },
+    { name: 'Knowledge', url: `/${_locale}/knowledge/blog` },
     { name: 'Blog', url: `/${_locale}/knowledge/blog` },
   ]);
 

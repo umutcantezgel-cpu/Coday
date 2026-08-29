@@ -26,7 +26,7 @@ export default function WikiHub() {
   const [activeCategory, setActiveCategory] = useState<string>('All');
 
   const knowledgeNav = [
-    { label: isEn ? 'Tech Wiki' : 'Tech-Wiki', href: '/knowledge/wiki', icon: BookBookmark },
+    { label: isEn ? 'Tech Wiki' : 'Tech-Wiki', href: '/knowledge/wikihub', icon: BookBookmark },
     {
       label: isEn ? 'Newsletter' : 'Newsletter',
       href: '/knowledge/newsletter',
@@ -62,7 +62,7 @@ export default function WikiHub() {
         <nav aria-label="Knowledge Navigation" className="flex justify-center mb-10">
           <div className="inline-flex p-1.5 bg-white/80 backdrop-blur-md rounded-2xl border border-slate-200/80 shadow-xs gap-1 sm:gap-2 overflow-x-auto max-w-full">
             {knowledgeNav.map((tab) => {
-              const isActive = tab.href === '/knowledge/wiki';
+              const isActive = tab.href === '/knowledge/wikihub';
               const Icon = tab.icon;
               return (
                 <Link

@@ -1,6 +1,6 @@
-import { generatePageMetadata, generateAlternates } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
+import { redirect, notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { getBlogPost, getBlogPosts } from '@/features/blog/model/data';
 import { routing } from '@/i18n/routing';
@@ -17,7 +17,7 @@ interface PageProps {
 }
 
 export const dynamic = 'force-static';
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 export async function generateStaticParams() {
   const params: Array<{ locale: string; slug: string }> = [];
@@ -38,6 +38,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const post = getBlogPost(slug, locale);
 
   if (!post) {
+    const otherLocale = locale === 'en' ? 'de' : 'en';
+    const otherLangPost = getBlogPost(slug, otherLocale);
+    if (otherLangPost) {
+      const matchInCurrent = getBlogPosts(locale).find(
+        (p) => String(p.id) === String(otherLangPost.id)
+      );
+      const targetSlug = matchInCurrent ? matchInCurrent.slug : otherLangPost.slug;
+      const targetLocale = matchInCurrent ? locale : otherLocale;
+      return {
+        title: 'Redirecting...',
+        alternates: {
+          canonical: `${BASE_URL}/${targetLocale}/knowledge/blog/${targetSlug}`,
+        },
+      };
+    }
     return {
       title: 'Blog Post Not Found | Coday',
       description: 'The requested blog post could not be found.',
@@ -45,7 +60,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const t = await getTranslations({ locale, namespace: 'blog' });
-  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.codayweb.de';
+
+  const otherLocale = locale === 'en' ? 'de' : 'en';
+  const otherPost = getBlogPosts(otherLocale).find((p) => String(p.id) === String(post.id));
+  const deSlug = locale === 'de' ? slug : otherPost ? otherPost.slug : slug;
+  const enSlug = locale === 'en' ? slug : otherPost ? otherPost.slug : slug;
+
+  const languages: Record<string, string> = {
+    de: `${BASE_URL}/de/knowledge/blog/${deSlug}`,
+    ...(otherPost || locale === 'en' ? { en: `${BASE_URL}/en/knowledge/blog/${enSlug}` } : {}),
+    'x-default': `${BASE_URL}/de/knowledge/blog/${deSlug}`,
+  };
 
   return {
     title: (() => {
@@ -63,15 +88,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
           'Anti-AI Manifest: Kein KI-Webdesign',
         'Omni-Channel Blueprint: Maximale Präsenz ohne Budget-Verschwendung':
           'Der perfekte Omni-Channel Mix',
-        'Social Media Secrets 2026: Organische Reichweite ist tot?': 'Social Media Secrets 2026',
-        'Warum WordPress im Jahr 2026 tot ist (und warum Agenturen es Ihnen trotzdem verkaufen)':
-          'Warum WordPress 2026 tot ist',
-        'Neuro-Design: Wie Sie das Unterbewusstsein Ihrer Kunden hacken':
+        'Social Media Secrets: Was Agenturen Ihnen verschweigen': 'Social Media Secrets 2026',
+        'High-Converting E-Mail Automation: Vom Lead zum treuen Kunden':
+          'E-Mail Marketing Automation',
+        'Corporate Video: Warum 90% aller Imagefilme Geldverschwendung sind':
+          'Video Content Excellence',
+        'Headless CMS: Warum WordPress für moderne Unternehmen ein Risiko ist':
+          'Warum WordPress tot ist',
+        'Neuro-Design: Die Psychologie hinter 10x höheren Conversion-Rates':
           'Neuro-Design im Webdesign',
-        "Die KI-Revolution: Warum 2026 das Jahr der 'Voice-First' Strategie ist":
+        'KI & Voice Search: Wie Sie Ihr Unternehmen 2026 unübersehbar machen':
           'Voice-First Strategie 2026',
-        'Das Anti-AI Manifest: Warum menschliches Design 2026 gewinnt 🛑':
-          'Anti-AI Manifest: Menschliches Design',
         'Solo-Studio vs. Großagentur: Das passende Modell für Ihr Webprojekt finden':
           'Solo-Studio vs. Großagentur im Vergleich',
         'Digitale Souveränität: Warum der US Cloud Act eine Zeitbombe ist':
@@ -156,7 +183,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: post.title,
       description: post.excerpt,
     },
-    alternates: generateAlternates(`/${locale}/knowledge/blog/${slug}`),
+    alternates: {
+      canonical: `${BASE_URL}/${locale}/knowledge/blog/${slug}`,
+      languages,
+    },
   };
 }
 
@@ -164,12 +194,28 @@ export default async function BlogPostPage({ params }: PageProps) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
-  const post = getBlogPost(slug, locale);
+  let post = getBlogPost(slug, locale);
+
+  if (!post) {
+    const otherLocale = locale === 'en' ? 'de' : 'en';
+    const otherLangPost = getBlogPost(slug, otherLocale);
+    if (otherLangPost) {
+      const matchInCurrent = getBlogPosts(locale).find(
+        (p) => String(p.id) === String(otherLangPost.id)
+      );
+      if (matchInCurrent) {
+        redirect(`/${locale}/knowledge/blog/${matchInCurrent.slug}`);
+      } else {
+        redirect(`/${otherLocale}/knowledge/blog/${otherLangPost.slug}`);
+      }
+    }
+    notFound();
+  }
 
   const breadcrumbs = post
     ? getBreadcrumbSchema([
         { name: locale === 'en' ? 'Home' : 'Startseite', url: `/${locale}` },
-        { name: 'Knowledge', url: `/${locale}/knowledge` },
+        { name: 'Knowledge', url: `/${locale}/knowledge/blog` },
         { name: 'Blog', url: `/${locale}/knowledge/blog` },
         { name: post.title, url: `/${locale}/knowledge/blog/${slug}` },
       ])

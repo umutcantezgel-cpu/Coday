@@ -3,6 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from '@/i18n/navigation';
 import { useLocale } from 'next-intl';
+import { getMatchingBlogPost } from '@/features/blog/model/data';
 
 export const LanguageSwitcher: React.FC = () => {
   const locale = useLocale();
@@ -12,11 +13,29 @@ export const LanguageSwitcher: React.FC = () => {
   const localPathsRegex =
     /^\/(landingpages|webdesign-agentur-wetzlar|angebot-handwerker|branchen\/[^/]+\/[^/]+)(\/.*)?$/;
   const isLocalPath = localPathsRegex.test(cleanPath) || cleanPath.startsWith('/branchen');
+  const isBlogPath = cleanPath.startsWith('/knowledge/blog/');
+
+  let blogDeLink = `/de${cleanPath === '/' ? '' : cleanPath}`;
+  let blogEnLink = `/en${cleanPath === '/' ? '' : cleanPath}`;
+
+  if (isBlogPath) {
+    const blogSlug = cleanPath.replace('/knowledge/blog/', '').replace(/\/$/, '');
+    if (blogSlug) {
+      const matchEn = getMatchingBlogPost(blogSlug, 'de', 'en');
+      const matchDe = getMatchingBlogPost(blogSlug, 'en', 'de');
+      blogEnLink = matchEn ? `/en/knowledge/blog/${matchEn.slug}` : '/en/knowledge/blog';
+      blogDeLink = matchDe ? `/de/knowledge/blog/${matchDe.slug}` : '/de/knowledge/blog';
+    }
+  }
 
   // For German-only landing pages, the English switcher just goes to the English homepage
   // to avoid hitting the 301 redirect back to German
-  const deLink = `/de${cleanPath === '/' ? '' : cleanPath}`;
-  const enLink = isLocalPath ? '/en' : `/en${cleanPath === '/' ? '' : cleanPath}`;
+  const deLink = isBlogPath ? blogDeLink : `/de${cleanPath === '/' ? '' : cleanPath}`;
+  const enLink = isBlogPath
+    ? blogEnLink
+    : isLocalPath
+      ? '/en'
+      : `/en${cleanPath === '/' ? '' : cleanPath}`;
 
   return (
     <div className="flex items-center p-1 rounded-full bg-slate-100/80 backdrop-blur-md border border-slate-200 shadow-inner">

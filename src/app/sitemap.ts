@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { getBlogPosts } from '@/features/blog/model/data';
+import { wikiEntities } from '@/features/knowledge/model/entities';
 
 const BASE_URL = 'https://www.codayweb.de';
 
@@ -324,7 +325,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // === Knowledge ===
     ...sitemapEntries('/knowledge/academy', { changeFrequency: 'weekly', priority: 0.85 }),
     ...sitemapEntries('/knowledge/blog', { changeFrequency: 'weekly', priority: 0.7 }),
-    ...sitemapEntries('/knowledge/wiki', { changeFrequency: 'monthly', priority: 0.7 }),
+    ...sitemapEntries('/knowledge/wikihub', { changeFrequency: 'monthly', priority: 0.7 }),
     ...sitemapEntries('/knowledge/whitepapers', { changeFrequency: 'monthly', priority: 0.7 }),
     ...sitemapEntries('/knowledge/newsletter', { changeFrequency: 'monthly', priority: 0.6 }),
     ...sitemapEntries('/knowledge/faq', { changeFrequency: 'monthly', priority: 0.6 }),
@@ -393,36 +394,54 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   });
 
-  const localPostsDe = getBlogPosts('de');
-  const localBlogRoutesDe: MetadataRoute.Sitemap = localPostsDe.map((post) => ({
-    url: `${BASE_URL}/de/knowledge/blog/${post.slug}`,
-    lastModified: BUILD_DATE,
-    changeFrequency: 'weekly',
-    priority: 0.7,
-    alternates: {
-      languages: {
-        de: `${BASE_URL}/de/knowledge/blog/${post.slug}`,
-        'x-default': `${BASE_URL}/de/knowledge/blog/${post.slug}`,
-      },
-    },
-  }));
+  const wikiRoutes: MetadataRoute.Sitemap = wikiEntities.flatMap((entity) =>
+    sitemapEntries(`/knowledge/wiki/${entity.slug}`, {
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    })
+  );
 
+  const localPostsDe = getBlogPosts('de');
   const localPostsEn = getBlogPosts('en');
-  const localBlogRoutesEn: MetadataRoute.Sitemap = localPostsEn.map((post) => ({
-    url: `${BASE_URL}/en/knowledge/blog/${post.slug}`,
-    lastModified: BUILD_DATE,
-    changeFrequency: 'weekly',
-    priority: 0.7,
-    alternates: {
-      languages: {
-        en: `${BASE_URL}/en/knowledge/blog/${post.slug}`,
+
+  const localBlogRoutesDe: MetadataRoute.Sitemap = localPostsDe.map((post) => {
+    const otherPost = localPostsEn.find((p) => String(p.id) === String(post.id));
+    return {
+      url: `${BASE_URL}/de/knowledge/blog/${post.slug}`,
+      lastModified: BUILD_DATE,
+      changeFrequency: 'weekly',
+      priority: 0.7,
+      alternates: {
+        languages: {
+          de: `${BASE_URL}/de/knowledge/blog/${post.slug}`,
+          ...(otherPost ? { en: `${BASE_URL}/en/knowledge/blog/${otherPost.slug}` } : {}),
+          'x-default': `${BASE_URL}/de/knowledge/blog/${post.slug}`,
+        },
       },
-    },
-  }));
+    };
+  });
+
+  const localBlogRoutesEn: MetadataRoute.Sitemap = localPostsEn.map((post) => {
+    const otherPost = localPostsDe.find((p) => String(p.id) === String(post.id));
+    return {
+      url: `${BASE_URL}/en/knowledge/blog/${post.slug}`,
+      lastModified: BUILD_DATE,
+      changeFrequency: 'weekly',
+      priority: 0.7,
+      alternates: {
+        languages: {
+          en: `${BASE_URL}/en/knowledge/blog/${post.slug}`,
+          ...(otherPost ? { de: `${BASE_URL}/de/knowledge/blog/${otherPost.slug}` } : {}),
+          'x-default': `${BASE_URL}/de/knowledge/blog/${otherPost ? otherPost.slug : post.slug}`,
+        },
+      },
+    };
+  });
 
   const allRoutes = [
     ...rawStaticRoutes,
     ...dynamicRoutes,
+    ...wikiRoutes,
     ...localBlogRoutesDe,
     ...localBlogRoutesEn,
   ];

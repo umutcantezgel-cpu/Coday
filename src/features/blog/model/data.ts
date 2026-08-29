@@ -13,3 +13,20 @@ export const getBlogPost = (slug: string, locale: string = 'de'): BlogPost | und
   const posts = getBlogPosts(locale);
   return posts.find((post) => post.slug === slug);
 };
+
+export const getMatchingBlogPost = (
+  slug: string,
+  currentLocale: string = 'de',
+  targetLocale: string = 'en'
+): BlogPost | undefined => {
+  const currentPost = getBlogPost(slug, currentLocale);
+  if (!currentPost) {
+    const targetPost = getBlogPost(slug, targetLocale);
+    if (targetPost) {
+      return getBlogPosts(currentLocale).find((p) => String(p.id) === String(targetPost.id));
+    }
+    return undefined;
+  }
+  const otherPosts = getBlogPosts(targetLocale);
+  return otherPosts.find((p) => String(p.id) === String(currentPost.id));
+};

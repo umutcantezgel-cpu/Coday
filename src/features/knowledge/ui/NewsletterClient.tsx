@@ -34,7 +34,7 @@ const Newsletter: React.FC = () => {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   const knowledgeNav = [
-    { label: isEn ? 'Tech Wiki' : 'Tech-Wiki', href: '/knowledge/wiki', icon: BookBookmark },
+    { label: isEn ? 'Tech Wiki' : 'Tech-Wiki', href: '/knowledge/wikihub', icon: BookBookmark },
     {
       label: isEn ? 'Newsletter' : 'Newsletter',
       href: '/knowledge/newsletter',

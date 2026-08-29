@@ -54,7 +54,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const faqs = getFAQs(_locale);
   const breadcrumbs = getBreadcrumbSchema([
     { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: 'Knowledge', url: `/${_locale}/knowledge` },
+    { name: 'Knowledge', url: `/${_locale}/knowledge/blog` },
     { name: 'FAQ', url: `/${_locale}/knowledge/faq` },
   ]);
 
