@@ -69,12 +69,15 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     { name: _locale === 'en' ? 'Calculator' : 'Kostenrechner', url: `/${_locale}/calculator` },
   ]);
 
-  const webApp = getWebApplicationSchema({
-    name: _locale === 'en' ? 'Coday Web Project Cost Calculator' : 'Coday Website Kostenrechner',
-    description: pageDescription,
-    url: `${BASE_URL}/${_locale}/calculator`,
-    applicationCategory: 'BusinessApplication',
-  });
+  const webApp = getWebApplicationSchema(
+    {
+      name: _locale === 'en' ? 'Coday Web Project Cost Calculator' : 'Coday Website Kostenrechner',
+      description: pageDescription,
+      url: `${BASE_URL}/${_locale}/calculator`,
+      applicationCategory: 'BusinessApplication',
+    },
+    _locale
+  );
 
   const cleanTitle = pageTitle.replace(' | Coday', '');
 

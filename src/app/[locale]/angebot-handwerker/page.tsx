@@ -2,7 +2,12 @@ import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import ClientComponent from '@/features/landing/ui/AngebotHandwerkerClient';
-import { getOrganizationSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
+import {
+  getOrganizationSchema,
+  getBreadcrumbSchema,
+  getReviewsSchema,
+  BASE_URL,
+} from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -57,22 +62,30 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     },
   ]);
 
-  const handwerkerOffer = {
-    '@type': 'Offer',
-    '@id': `${BASE_URL}/${_locale}/angebot-handwerker#offer`,
+  const handwerkerProduct = {
+    '@type': 'Product',
+    '@id': `${BASE_URL}/${_locale}/angebot-handwerker#product`,
     name: isEn ? 'Web Design Package for Craftsmen' : 'Webdesign Komplettpaket für Handwerker',
     description: isEn
       ? 'Custom high-conversion website for craftsmen in Wetzlar and Central Hesse with 100/100 PageSpeed.'
       : 'Maßgeschneiderte, verkaufsstarke Website für Handwerksbetriebe in Wetzlar und Mittelhessen mit 100/100 PageSpeed.',
-    priceCurrency: 'EUR',
-    price: '1990',
-    availability: 'https://schema.org/InStock',
-    seller: { '@id': `${BASE_URL}/#organization` },
+    image: `${BASE_URL}/images/og-image.jpg`,
+    brand: { '@id': `${BASE_URL}/#organization` },
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'EUR',
+      price: '1990',
+      priceValidUntil: '2027-12-31',
+      availability: 'https://schema.org/InStock',
+      url: `${BASE_URL}/${_locale}/angebot-handwerker`,
+      seller: { '@id': `${BASE_URL}/#organization` },
+    },
+    ...getReviewsSchema(_locale),
   };
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@graph': [getOrganizationSchema(_locale), breadcrumbs, handwerkerOffer],
+    '@graph': [getOrganizationSchema(_locale), breadcrumbs, handwerkerProduct],
   };
 
   return (

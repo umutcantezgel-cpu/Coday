@@ -315,7 +315,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-4 text-sm text-slate-600">
               <li>
                 <a
-                  href="mailto:kontakt@codayweb.de"
+                  href="mailto:umut@codayweb.de"
                   className="hover:text-primary-700 transition-colors duration-200 flex items-center gap-3 group font-medium"
                 >
                   <div className="w-8 h-8 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center group-hover:bg-primary-50 group-hover:text-primary-700 transition-colors">
@@ -324,7 +324,7 @@ export const Footer: React.FC = () => {
                       className="w-4 h-4 text-slate-600 group-hover:text-primary-700 transition-colors"
                     />
                   </div>
-                  kontakt@codayweb.de
+                  umut@codayweb.de
                 </a>
               </li>
               <li>

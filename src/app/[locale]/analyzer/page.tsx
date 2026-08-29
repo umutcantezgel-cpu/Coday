@@ -69,15 +69,18 @@ export default async function AnalyzerPage(props: { params: Promise<{ locale: st
     { name: _locale === 'en' ? 'Analyzer' : 'Website Analyzer', url: `/${_locale}/analyzer` },
   ]);
 
-  const webApp = getWebApplicationSchema({
-    name:
-      _locale === 'en'
-        ? 'Coday Free Website Analyzer & SEO Audit'
-        : 'Coday Kostenloser Website Analyzer',
-    description: pageDescription,
-    url: `${BASE_URL}/${_locale}/analyzer`,
-    applicationCategory: 'DeveloperApplication',
-  });
+  const webApp = getWebApplicationSchema(
+    {
+      name:
+        _locale === 'en'
+          ? 'Coday Free Website Analyzer & SEO Audit'
+          : 'Coday Kostenloser Website Analyzer',
+      description: pageDescription,
+      url: `${BASE_URL}/${_locale}/analyzer`,
+      applicationCategory: 'DeveloperApplication',
+    },
+    _locale
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',

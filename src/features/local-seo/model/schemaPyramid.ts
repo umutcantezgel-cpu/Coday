@@ -1,4 +1,4 @@
-import { BASE_URL, ORG_ID, FOUNDER_ID } from '@/lib/schema';
+import { BASE_URL, ORG_ID, FOUNDER_ID, getReviewsSchema } from '@/lib/schema';
 
 export interface CountyData {
   slug: string;
@@ -1019,7 +1019,7 @@ export function getHessenMasterSchema(locale: string = 'de') {
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
         telephone: '+49-176-41195301',
-        email: 'kontakt@codayweb.de',
+        email: 'umut@codayweb.de',
         priceRange: '€€€€',
         parentOrganization: { '@id': ORG_ID },
         founder: { '@id': FOUNDER_ID },
@@ -1094,7 +1094,7 @@ export function getCountyHierarchySchema(countySlug: string, locale: string = 'd
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
         telephone: '+49-176-41195301',
-        email: 'kontakt@codayweb.de',
+        email: 'umut@codayweb.de',
         priceRange: '€€€',
         parentOrganization: { '@id': ORG_ID },
         founder: { '@id': FOUNDER_ID },
@@ -1171,10 +1171,11 @@ export function getCityHierarchySchema(citySlug: string, locale: string = 'de') 
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
         telephone: '+49-176-41195301',
-        email: 'kontakt@codayweb.de',
+        email: 'umut@codayweb.de',
         priceRange: '€€€',
         parentOrganization: { '@id': ORG_ID },
         founder: { '@id': FOUNDER_ID },
+        ...getReviewsSchema(locale),
         address: {
           '@type': 'PostalAddress',
           streetAddress: city.street,
@@ -1220,6 +1221,28 @@ export function getCityHierarchySchema(citySlug: string, locale: string = 'de') 
             },
           })),
         },
+      },
+      {
+        '@type': 'Product',
+        '@id': `${cityUrl}#webdesign-package`,
+        name: isEn
+          ? `Coday Web Design & Web Development ${city.cityName}`
+          : `Coday Webdesign & Webentwicklung ${city.cityName}`,
+        description: isEn
+          ? `High-Performance & High-Conversion Websites for businesses and crafts in ${city.cityName}. 100/100 PageSpeed, modern Next.js architecture and personal support.`
+          : `High-Performance & High-Conversion Websites für Unternehmen und Handwerk in ${city.cityName}. 100/100 PageSpeed, modernste Next.js Architektur und persönliche Betreuung.`,
+        image: `${BASE_URL}/images/og-image.jpg`,
+        brand: { '@id': ORG_ID },
+        offers: {
+          '@type': 'Offer',
+          price: '2000',
+          priceCurrency: 'EUR',
+          priceValidUntil: '2027-12-31',
+          availability: 'https://schema.org/InStock',
+          url: cityUrl,
+          seller: { '@id': ORG_ID },
+        },
+        ...getReviewsSchema(locale),
       },
     ],
   };

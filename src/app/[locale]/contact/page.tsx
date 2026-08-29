@@ -72,7 +72,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           name: 'Coday Webagentur',
           url: BASE_URL,
           telephone: '+49-176-41195301',
-          email: 'kontakt@codayweb.de',
+          email: 'umut@codayweb.de',
           address: {
             '@type': 'PostalAddress',
             streetAddress: 'Lessingstraße 4',

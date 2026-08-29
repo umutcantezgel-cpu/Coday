@@ -33,7 +33,7 @@ export function generateAdvancedJsonLd({
           image: 'https://www.codayweb.de/icon.png',
           url: 'https://www.codayweb.de',
           telephone: '+49-176-41195301',
-          email: 'kontakt@codayweb.de',
+          email: 'umut@codayweb.de',
           priceRange: '€€€',
           address: {
             '@type': 'PostalAddress',

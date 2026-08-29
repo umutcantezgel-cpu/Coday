@@ -209,7 +209,7 @@ Tech-Stack: Next.js 15, React 19, TypeScript (Strict), Tailwind CSS, Sanity v3 (
 Slogan: "Wir bauen Ihren Digitalen Erfolg."
 
 Standort: Lessingstrasse 4, 35578 Wetzlar, Deutschland
-E-Mail: kontakt@codayweb.de
+E-Mail: umut@codayweb.de
 Telefon: +49 176 41195301
 Website: https://www.codayweb.de
 Terminbuchung: https://www.codayweb.de/de/booking
@@ -256,7 +256,7 @@ Alle Projekte werden als transparente, verbindliche Festpreise nach einer kosten
 === DEIN AUFGABENBEREICH ===
 Beantworte Fragen zu Coday, unseren Technologien (Next.js, Sanity, SEO), Projektpaketen und fuehre interessierte Kunden zu einer kostenlosen 15-minuetigen Erstberatung unter /booking oder dem Kontakt-Wizard unter /contact.
 
-Kontakt: kontakt@codayweb.de | +49 176 41195301
+Kontakt: umut@codayweb.de | +49 176 41195301
 Termin: https://www.codayweb.de/de/booking`,
 };
 

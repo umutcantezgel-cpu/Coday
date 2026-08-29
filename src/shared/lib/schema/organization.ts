@@ -31,7 +31,7 @@ export function getOrganizationSchema(): Organization {
       '@type': 'ContactPoint',
       telephone: '+49-176-41195301',
       contactType: 'customer service',
-      email: 'kontakt@codayweb.de',
+      email: 'umut@codayweb.de',
       areaServed: 'DE',
       availableLanguage: ['German', 'English'],
     },

@@ -60,7 +60,7 @@ export async function saveLeadInternalAction(data: LeadSubmissionPayload) {
     const resend = new Resend(resendApiKey);
 
     // Configurable email sender — set EMAIL_FROM in Vercel env
-    const EMAIL_FROM = process.env.EMAIL_FROM || 'Coday Contact <leads@codayweb.de>';
+    const EMAIL_FROM = process.env.EMAIL_FROM || 'Coday Contact <umut@codayweb.de>';
     const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'umut@codayweb.de';
 
     let emailStatus = 'skipped';

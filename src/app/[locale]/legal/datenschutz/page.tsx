@@ -102,7 +102,7 @@ export default async function DatenschutzPage({ params }: { params: Promise<{ lo
               <br />
               Deutschland
               <br />
-              E-Mail: kontakt@codayweb.de
+              E-Mail: umut@codayweb.de
               <br />
               Telefon: +49 176 41195301
             </p>

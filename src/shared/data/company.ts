@@ -13,7 +13,7 @@ export const companyInfo: CompanyInfo = {
   zip: '35578',
   country: 'Deutschland',
   phone: '+49 176 41195301',
-  email: 'kontakt@codayweb.de',
+  email: 'umut@codayweb.de',
   vatId: 'DE459754827',
   taxId: '039 874 00784',
   foundedYear: 2026,

@@ -163,11 +163,11 @@ export const LocalBottomContactSection: React.FC<LocalBottomContactSectionProps>
                       <span>+49 (0) 176 41195301</span>
                     </a>
                     <a
-                      href="mailto:kontakt@codayweb.de"
+                      href="mailto:umut@codayweb.de"
                       className="inline-flex items-center gap-2 text-slate-700 hover:text-slate-900 hover:underline decoration-slate-300 underline-offset-4 transition-colors"
                     >
                       <Envelope className="w-4 h-4 text-slate-500 shrink-0" />
-                      <span>kontakt@codayweb.de</span>
+                      <span>umut@codayweb.de</span>
                     </a>
                   </div>
                   <div className="flex items-center gap-2 text-xs text-slate-500 pt-1 border-t border-slate-200/60">

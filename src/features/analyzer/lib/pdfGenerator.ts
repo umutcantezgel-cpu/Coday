@@ -226,7 +226,7 @@ export function generatePdfReport(result: AnalysisResult, t: TranslationFunction
   <div class="cta">
     <h3>${t('pdf.consultation_title')}</h3>
     <p>${t('pdf.consultation_text')}</p>
-    <p style="margin-top: 10px;"><strong>kontakt@codayweb.de</strong></p>
+    <p style="margin-top: 10px;"><strong>umut@codayweb.de</strong></p>
   </div>
   
   <div class="footer">

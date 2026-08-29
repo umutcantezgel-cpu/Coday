@@ -74,7 +74,7 @@ export async function submitLeadAction(prevState: unknown, formData: FormData) {
     // 5. Send Email via Resend
     if (resend) {
       const { data, error: emailError } = await resend.emails.send({
-        from: 'Coday Leads <leads@codayweb.de>',
+        from: 'Coday Leads <umut@codayweb.de>',
         to: ['umut@codayweb.de'],
         subject: `New Lead: ${parsedData.name} (Score: ${score})`,
         text: `

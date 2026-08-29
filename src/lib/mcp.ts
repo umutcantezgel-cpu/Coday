@@ -117,7 +117,7 @@ mcpServer.tool(
                 '50km radius around Wetzlar (Gießen, Marburg, Lahn-Dill-Kreis) + DACH remote',
               contact: {
                 phone: '+49-176-41195301',
-                email: 'info@codayweb.de',
+                email: 'umut@codayweb.de',
                 website: 'https://www.codayweb.de',
                 booking_url: 'https://www.codayweb.de/de/booking',
               },

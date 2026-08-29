@@ -16,7 +16,7 @@ const bookingRateLimiter = createRateLimiter({
 });
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const EMAIL_FROM_BOOKING = process.env.EMAIL_FROM || 'Coday Booking <leads@codayweb.de>';
+const EMAIL_FROM_BOOKING = process.env.EMAIL_FROM || 'Coday Booking <umut@codayweb.de>';
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'umut@codayweb.de';
 
 export interface BookingPayload {

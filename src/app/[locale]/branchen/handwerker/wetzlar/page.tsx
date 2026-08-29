@@ -108,7 +108,7 @@ export default async function HandwerkerWetzlarPage({
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
         telephone: '+49-176-41195301',
-        email: 'kontakt@codayweb.de',
+        email: 'umut@codayweb.de',
         priceRange: '€€€€',
         address: {
           '@type': 'PostalAddress',

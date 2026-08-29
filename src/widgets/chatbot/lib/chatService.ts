@@ -76,7 +76,7 @@ export function getHumanSupportResponse(): {
 
 Sie haben folgende Kontaktmoeglichkeiten:
 
-E-Mail: kontakt@codayweb.de
+E-Mail: umut@codayweb.de
 Telefon: +49 176 41195301 (Mo-Fr 9-18 Uhr)
 Termin buchen: Kostenlose 20-Minuten-Beratung
 
@@ -156,7 +156,7 @@ Antworte jetzt als Berater auf die letzte Nachricht. Halte die Antwort kurz und 
   } catch (error) {
     console.error('[ChatService] Error:', error);
     return {
-      text: 'Entschuldigen Sie, es ist ein technischer Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt unter kontakt@codayweb.de',
+      text: 'Entschuldigen Sie, es ist ein technischer Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt unter umut@codayweb.de',
     };
   }
 }

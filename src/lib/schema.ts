@@ -1,4 +1,5 @@
 import { academyData } from '@/shared/data/academy';
+import { GOOGLE_REVIEWS, REVIEWS_SUMMARY } from '@/shared/data/reviews';
 
 export const BASE_URL = 'https://www.codayweb.de';
 export const ORG_ID = `${BASE_URL}/#organization`;
@@ -7,10 +8,68 @@ export const WEBSITE_ID = `${BASE_URL}/#website`;
 export const LOCAL_BUSINESS_ID = `${BASE_URL}/#local-business`;
 export const PROFESSIONAL_SERVICE_ID = `${BASE_URL}/#professional-service`;
 
+export function getReviewsSchema(locale: string = 'de') {
+  return {
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: REVIEWS_SUMMARY.ratingValue.toString(),
+      reviewCount: REVIEWS_SUMMARY.reviewCount.toString(),
+      bestRating: REVIEWS_SUMMARY.bestRating.toString(),
+      worstRating: REVIEWS_SUMMARY.worstRating.toString(),
+    },
+    review: GOOGLE_REVIEWS.map((review) => ({
+      '@type': 'Review',
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: review.rating.toString(),
+        bestRating: '5',
+        worstRating: '1',
+      },
+      author: {
+        '@type': 'Person',
+        name: review.authorName,
+      },
+      datePublished: review.datePublished,
+      reviewBody: locale === 'en' ? review.quote.en : review.quote.de,
+    })),
+  };
+}
+
+export function getMainProductOfferSchema(locale: string = 'de') {
+  const isEn = locale === 'en';
+  return {
+    '@type': 'Product',
+    '@id': `${BASE_URL}/#webdesign-package`,
+    name: isEn
+      ? 'Coday Web Design & Web Development Wetzlar'
+      : 'Coday Webdesign & Webentwicklung Wetzlar',
+    description: isEn
+      ? 'High-Performance & High-Conversion Websites for businesses and crafts in Wetzlar, Giessen and Hesse. 100/100 PageSpeed, modern Next.js architecture and personal support.'
+      : 'High-Performance & High-Conversion Websites für Unternehmen und Handwerk in Wetzlar, Gießen und Hessen. 100/100 PageSpeed, modernste Next.js Architektur und persönliche Betreuung.',
+    image: `${BASE_URL}/images/og-image.jpg`,
+    brand: {
+      '@id': ORG_ID,
+    },
+    offers: {
+      '@type': 'Offer',
+      price: '2000',
+      priceCurrency: 'EUR',
+      priceValidUntil: '2027-12-31',
+      availability: 'https://schema.org/InStock',
+      url: `${BASE_URL}/${locale}`,
+      seller: {
+        '@id': ORG_ID,
+      },
+    },
+    ...getReviewsSchema(locale),
+  };
+}
+
 export function getOrganizationSchema(locale: string = 'de') {
   return {
     '@type': ['Organization', 'LocalBusiness', 'ProfessionalService'],
     '@id': ORG_ID,
+    ...getReviewsSchema(locale),
     name: 'Coday',
     legalName: 'Umutcan Emre Tezgel',
     alternateName: [
@@ -30,7 +89,7 @@ export function getOrganizationSchema(locale: string = 'de') {
       locale === 'en'
         ? 'High-Performance & High-Conversion Websites from Wetzlar.'
         : 'High-Performance & High-Conversion Websites aus Wetzlar.',
-    email: 'kontakt@codayweb.de',
+    email: 'umut@codayweb.de',
     telephone: '+49-176-41195301',
     vatID: 'DE459754827',
     taxID: '039 874 00784',
@@ -263,6 +322,7 @@ export function getLocalBusinessSchema(locale: string = 'de') {
     parentOrganization: {
       '@id': ORG_ID,
     },
+    ...getReviewsSchema(locale),
     name: locale === 'en' ? 'Coday - Web Design Wetzlar' : 'Coday - Webdesign Wetzlar',
     description:
       locale === 'en'
@@ -395,25 +455,28 @@ export function getDynamicLocationSchema(location: {
 
 export function getPricingSchema(locale: string = 'de') {
   return {
-    '@type': 'Service',
-    '@id': `${BASE_URL}/${locale}/pricing#service`,
+    '@type': ['Service', 'Product'],
+    '@id': `${BASE_URL}/${locale}/pricing#pricing-product`,
     name:
       locale === 'en'
         ? 'Coday Web Design & Next.js Development Packages'
         : 'Coday Webdesign & Next.js Entwicklung Pakete',
     description:
       locale === 'en'
-        ? 'Modular web design and Next.js development packages for businesses and SMEs. Tailored proposals on request.'
-        : 'Modulare Webdesign- und Next.js Entwicklungspakete für Unternehmen und Mittelstand. Individuelle Angebote auf Anfrage.',
+        ? 'Modular web design and Next.js development packages for businesses and SMEs. Fixed price proposals on request with 5.0 Google rating.'
+        : 'Modulare Webdesign- und Next.js Entwicklungspakete für Unternehmen und Mittelstand. Individuelle Festpreis-Angebote auf Anfrage mit 5.0 Google Bewertung.',
+    brand: { '@id': ORG_ID },
     provider: { '@id': ORG_ID },
+    image: `${BASE_URL}/images/og-image.jpg`,
     areaServed: {
       '@type': 'AdministrativeArea',
       name: 'Hessen',
     },
     offers: {
       '@type': 'Offer',
-      price: '0',
+      price: '2000',
       priceCurrency: 'EUR',
+      priceValidUntil: '2027-12-31',
       description:
         locale === 'en'
           ? 'Bespoke fixed-price proposal following a free consultation'
@@ -421,6 +484,7 @@ export function getPricingSchema(locale: string = 'de') {
       availability: 'https://schema.org/InStock',
       url: `${BASE_URL}/${locale}/pricing`,
     },
+    ...getReviewsSchema(locale),
   };
 }
 
@@ -600,12 +664,15 @@ export function getContactSchema(locale: string = 'de') {
   };
 }
 
-export function getWebApplicationSchema(app: {
-  name: string;
-  description: string;
-  url: string;
-  applicationCategory?: string;
-}) {
+export function getWebApplicationSchema(
+  app: {
+    name: string;
+    description: string;
+    url: string;
+    applicationCategory?: string;
+  },
+  locale: string = 'de'
+) {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
@@ -622,6 +689,7 @@ export function getWebApplicationSchema(app: {
       priceCurrency: 'EUR',
     },
     provider: { '@id': ORG_ID },
+    ...getReviewsSchema(locale),
   };
 }
 
@@ -733,6 +801,7 @@ export function getAcademyCollectionSchema(locale: string = 'de') {
     inLanguage: locale,
     isPartOf: { '@id': `${BASE_URL}/#website` },
     about: { '@id': ORG_ID },
+    ...getReviewsSchema(locale),
     mainEntity: {
       '@type': 'ItemList',
       numberOfItems: videoSchemas.length,

@@ -91,7 +91,7 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
           <p>
             Telefon: +49 176 41195301
             <br />
-            E-Mail: kontakt@codayweb.de
+            E-Mail: umut@codayweb.de
           </p>
 
           <h2 className="text-xl font-semibold text-secondary-900 mt-8">
