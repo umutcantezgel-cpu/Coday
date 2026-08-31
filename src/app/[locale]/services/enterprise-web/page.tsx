@@ -109,14 +109,14 @@ export default async function EnterpriseWebPage({
               <p>
                 Enterprise web development demands a fundamentally different approach than building
                 a standard business website. At Coday in Wetzlar, we design and develop scalable,
-                secure web applications that meet the complex requirements of larger organisations,
-                growing mid-market companies, and ambitious start-ups that need enterprise-grade
-                infrastructure from the outset. Our solutions encompass customer-facing portals,
-                internal management dashboards, multi-tenant SaaS platforms, and complex data-driven
-                applications – all built on a modern stack of Next.js, React, and TypeScript. We
-                understand that enterprise projects involve multiple stakeholders, strict compliance
-                requirements, and long-term maintenance horizons, and we structure every engagement
-                accordingly.
+                secure web applications and Web-Apps that meet the complex requirements of larger
+                organisations, growing mid-market companies, and ambitious start-ups that need
+                enterprise-grade infrastructure from the outset. Our solutions encompass
+                customer-facing portals, internal management dashboards, multi-tenant SaaS
+                platforms, and complex data-driven Web-Apps – all built on a modern stack of
+                Next.js, React, and TypeScript. We understand that enterprise projects involve
+                multiple stakeholders, strict compliance requirements, and long-term maintenance
+                horizons, and we structure every engagement accordingly.
               </p>
               <p>
                 Scalability is at the core of our enterprise web development methodology. We
@@ -168,15 +168,15 @@ export default async function EnterpriseWebPage({
               <p>
                 Enterprise Webentwicklung erfordert einen grundlegend anderen Ansatz als die
                 Erstellung einer Standard-Unternehmenswebsite. Bei Coday in Wetzlar konzipieren und
-                entwickeln wir skalierbare, sichere Webanwendungen, die den komplexen Anforderungen
-                größerer Organisationen, wachsender Mittelständler und ambitionierter Start-ups
-                gerecht werden, die von Beginn an eine Enterprise-taugliche Infrastruktur benötigen.
-                Unsere Lösungen umfassen kundenorientierte Portale, interne Management-Dashboards,
-                mandantenfähige SaaS-Plattformen und komplexe datengetriebene Anwendungen – alle
-                aufgebaut auf einem modernen Stack aus Next.js, React und TypeScript. Wir verstehen,
-                dass Enterprise-Projekte mehrere Stakeholder, strenge Compliance-Anforderungen und
-                langfristige Wartungshorizonte beinhalten, und strukturieren jedes Engagement
-                entsprechend.
+                entwickeln wir skalierbare, sichere Webanwendungen und Web-Apps, die den komplexen
+                Anforderungen größerer Organisationen, wachsender Mittelständler und ambitionierter
+                Start-ups gerecht werden, die von Beginn an eine Enterprise-taugliche Infrastruktur
+                benötigen. Unsere Lösungen umfassen kundenorientierte Portale, interne
+                Management-Dashboards, mandantenfähige SaaS-Plattformen und komplexe datengetriebene
+                Web-Apps – alle aufgebaut auf einem modernen Stack aus Next.js, React und
+                TypeScript. Wir verstehen, dass Enterprise-Projekte mehrere Stakeholder, strenge
+                Compliance-Anforderungen und langfristige Wartungshorizonte beinhalten, und
+                strukturieren jedes Engagement entsprechend.
               </p>
               <p>
                 Skalierbarkeit steht im Zentrum unserer Enterprise-Webentwicklungs-Methodik. Wir

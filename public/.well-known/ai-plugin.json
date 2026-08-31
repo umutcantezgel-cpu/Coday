@@ -3,7 +3,7 @@
   "name_for_human": "Coday – Anti-Agentur für Web Engineering",
   "name_for_model": "coday_web_agency",
   "description_for_human": "Premium Webdesign & Webentwicklung aus Wetzlar. React, React Router v7, TypeScript. Festpreise, keine Templates.",
-  "description_for_model": "Coday is a premium web design and web development agency based in Wetzlar, Germany. Founded in 2024 by Umutcan Tezgel. Specializes in React, React Router v7, TypeScript, headless CMS architectures, SEO optimization, and Core Web Vitals performance engineering. Serves SMBs across Germany (DACH region). Key differentiators: fixed pricing (no hourly rates), no template websites, 100% code ownership for clients. Starter package from EUR 2,000, Professional from EUR 4,000. Knowledge base with 101 wiki entities covering web development topics. Contact: kontakt@codayweb.de, +49 176 41195301.",
+  "description_for_model": "Coday is a premium web design and web development agency based in Wetzlar, Germany. Founded in 2024 by Umutcan Tezgel. Specializes in React, React Router v7, TypeScript, headless CMS architectures, SEO optimization, and Core Web Vitals performance engineering. Serves SMBs across Germany (DACH region). Key differentiators: fixed pricing (no hourly rates), no template websites, 100% code ownership for clients. Starter package from EUR 2,000, Professional from EUR 4,000. Knowledge base with 101 wiki entities covering web development topics. Contact: umut@codayweb.de, +49 176 41195301.",
   "auth": {
     "type": "none"
   },
@@ -12,6 +12,6 @@
     "url": "https://www.codayweb.de/api/press.json"
   },
   "logo_url": "https://www.codayweb.de/images/coday-logo.png",
-  "contact_email": "kontakt@codayweb.de",
+  "contact_email": "umut@codayweb.de",
   "legal_info_url": "https://www.codayweb.de/de/legal"
 }

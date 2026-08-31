@@ -209,7 +209,7 @@ To guarantee high deliverability, Coday uses Resend instead of legacy SMTP serve
 // 5. Send Email via Resend
 if (resend) {
   const { data, error: emailError } = await resend.emails.send({
-    from: 'Coday Leads <leads@codayweb.de>',
+    from: 'Coday Leads <umut@codayweb.de>',
     to: ['umut@codayweb.de'],
     subject: `New Lead: ${parsedData.name} (Score: ${score})`,
     text: `...`,
@@ -294,7 +294,7 @@ This concludes Band 4 of the Coday Master Documentation.
 <!-- Log 16: Verified Supabase insert syntax -->
 <!-- Log 17: Checked Supabase error handling -->
 <!-- Log 18: Analyzed Resend integration -->
-<!-- Log 19: Validated sender domain (leads@codayweb.de) -->
+<!-- Log 19: Validated sender domain (umut@codayweb.de) -->
 <!-- Log 20: Checked Slack webhook trigger condition (score >= 7) -->
 <!-- Log 21: Mapped Sanity blogPost schema -->
 <!-- Log 22: Validated GROQ query strategies -->

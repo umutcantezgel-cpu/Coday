@@ -424,7 +424,7 @@
     "scroll_cta": {
       "ready": "Bereit für den nächsten Schritt?",
       "dominate": "Dominieren Sie Ihren Markt digital",
-      "book_audit": "Kostenlose Analyse anfragen"
+      "book_audit": "Online-Termin buchen"
     },
     "categories": {
       "all": "Alle"
@@ -2076,7 +2076,7 @@
     "eyebrow": "High-End Digital Agency",
     "headline_prefix": "Wir erstellen Ihre Website in",
     "headline_gradient": "Wetzlar & Hessen.",
-    "description": "Als lokaler Webdesigner aus Wetzlar entwickeln wir professionelle Webseiten für Handwerker, Praxen und Dienstleister, die messbar neue Kunden bringen. Zuverlässig und zum Festpreis.",
+    "description": "Ihre Webdesign Agentur Wetzlar: Websites, die Kunden gewinnen. Als lokaler Partner entwickeln wir High-Performance Webseiten für Handwerker, Praxen und Dienstleister in Wetzlar und Hessen – zuverlässig und zum verbindlichen Festpreis.",
     "rotating": [
       "Next.js App Router Architektur",
       "Headless CMS Integration",
@@ -2168,9 +2168,12 @@
   },
   "industries": {
     "overview": {
+      "badge": "Branchenspezifisches Webdesign",
+      "headline_prefix": "Maßgeschneiderte Webdesign",
+      "headline_gradient": "Branchenlösungen",
       "label": "Branchen",
       "title": "Maßgeschneiderte Webdesign Branchenlösungen",
-      "description": "Spezialisiertes Webdesign für jede Branche von Coday in Wetzlar.",
+      "description": "Maßgeschneiderte Webdesign Branchenlösungen von Coday in Wetzlar & Mittelhessen: Spezialisierte Weblösungen für Handwerk, Ärzte, Kanzleien und Gastronomie mit maximaler Conversion und planbarer Neukundengewinnung.",
       "cta": "Jetzt anfragen"
     },
     "title_prefix": "Maßgeschneiderte Lösungen",

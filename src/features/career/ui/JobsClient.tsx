@@ -158,8 +158,8 @@ const Jobs: React.FC = () => {
           </h1>
           <p className="text-base sm:text-lg text-slate-600 max-w-3xl leading-relaxed">
             {isEn
-              ? 'Join a high-caliber engineering culture without agency fluff. Direct founder mentorship, M4 Max hardware, and 100% remote freedom.'
-              : 'Werde Teil einer modernen Web-Agentur ohne bürokratischen Ballast. Direkte Zusammenarbeit mit dem Gründer, M4 Max Hardware und 100% Remote-Work.'}
+              ? 'Explore our open positions and career opportunities at Coday Web Agency. Direct founder mentorship, M4 Max hardware, and 100% remote freedom for senior engineers and growth specialists.'
+              : 'Entdecke offene Positionen & Jobs bei der Coday Webagentur in Wetzlar & Remote. Direkte Zusammenarbeit mit dem Gründer, M4 Max Hardware und 100% Remote-Freiheit für Senior Entwickler und SEO-Experten.'}
           </p>
         </div>
 

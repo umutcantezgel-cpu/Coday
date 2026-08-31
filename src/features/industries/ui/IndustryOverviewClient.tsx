@@ -586,7 +586,9 @@ export function IndustryOverviewClient() {
               href="/booking"
               className="w-full sm:w-auto px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all text-sm shadow-lg flex items-center justify-center gap-2"
             >
-              <span>{t('overview.cta_banner.button')}</span>
+              <span>
+                {isEn ? 'Book Free Strategy Session' : 'Online-Termin im Live-Kalender buchen'}
+              </span>
               <OptimizedIcon icon={ArrowRight} className="w-4 h-4" />
             </Link>
 
@@ -594,7 +596,7 @@ export function IndustryOverviewClient() {
               href="/calculator"
               className="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl transition-all text-sm border border-white/20"
             >
-              <span>{t('overview.cta_banner.calculator_btn')}</span>
+              <span>{isEn ? 'Calculate Project Cost' : 'Projektkosten online kalkulieren'}</span>
             </Link>
           </div>
         </div>

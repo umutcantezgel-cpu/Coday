@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import GradientText from '@/shared/ui/GradientText';
 import { cn } from '@/shared/lib/utils';
 import { LazyQuickContactForm } from './LazyQuickContactForm';
@@ -13,6 +13,8 @@ import { ClientRotatingText } from './ClientRotatingText';
 
 export const HeroSection: React.FC = () => {
   const t = useTranslations('home');
+  const locale = useLocale();
+  const isEn = locale === 'en';
 
   return (
     <section className="relative w-full overflow-x-hidden bg-bg-primary px-4 pt-2 pb-8 md:pt-4 md:pb-12">
@@ -98,7 +100,7 @@ export const HeroSection: React.FC = () => {
                 'w-full justify-center text-base'
               )}
             >
-              {t('hero.cta')}
+              <span>{isEn ? 'Book Strategy Call' : 'Online-Termin buchen'}</span>
               <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
             <Link

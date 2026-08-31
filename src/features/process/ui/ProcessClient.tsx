@@ -160,8 +160,8 @@ export const ProcessClient: React.FC = () => {
 
           <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-12">
             {isEn
-              ? 'In 4 Steps to a High-Performance Website: From initial audit to 100/100 PageSpeed launch in 14 to 28 business days — discover how our agile web development workflow guarantees predictable project success.'
-              : 'In 4 Stufen zur High-Performance Website: Vom kostenlosen Audit bis zum 100/100 PageSpeed Launch in 14 bis 28 Werktagen — erfahren Sie, wie unser agiler Entwicklungsprozess planbaren Projekterfolg garantiert.'}
+              ? 'Our Web Design Process by Coday Web Agency: From initial audit to 100/100 PageSpeed launch in 14 to 28 business days — discover how our agile web development workflow guarantees predictable project success.'
+              : 'Unser Webdesign-Prozess in 5 Schritten der Coday Webagentur: Vom kostenlosen Audit bis zum 100/100 PageSpeed Launch in 14 bis 28 Werktagen — erfahren Sie, wie unser agiler Entwicklungsprozess planbaren Projekterfolg garantiert.'}
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">

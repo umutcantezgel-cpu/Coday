@@ -10,7 +10,7 @@ export async function GET() {
   const urlEntries = locales.flatMap((locale) => {
     return academyData.map((course) => {
       const lang = locale === 'en' ? 'en' : 'de';
-      const pageUrl = `${BASE_URL}/${locale}/knowledge/academy?video=${course.slug}`;
+      const pageUrl = `${BASE_URL}/${locale}/knowledge/academy`;
       const thumbnailUrl = `${BASE_URL}${course.image}`;
       const contentUrl = `${BASE_URL}${course.videoSrc}`;
       const title = course.content[lang].title;

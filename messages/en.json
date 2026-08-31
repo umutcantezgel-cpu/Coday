@@ -424,7 +424,7 @@
     "scroll_cta": {
       "ready": "Ready for the next step?",
       "dominate": "Dominate your market digitally",
-      "book_audit": "Claim Free Analysis"
+      "book_audit": "Book Strategy Call"
     },
     "categories": {
       "all": "All"
@@ -2172,9 +2172,12 @@
   },
   "industries": {
     "overview": {
+      "badge": "Industry-Specific Web Design",
+      "headline_prefix": "Tailored Web Design",
+      "headline_gradient": "Industry Solutions",
       "label": "Industries",
-      "title": "Industry Solutions for Web Design",
-      "description": "Specialized web design for every industry. Custom Industry Solutions for Web Design to help you dominate your sector.",
+      "title": "Tailored Web Design Industry Solutions",
+      "description": "Tailored Web Design Industry Solutions by Coday: Specialized high-performance web solutions for craftsmen, medical practices, law firms, and gastronomy in Central Hesse and beyond.",
       "cta": "Request Now"
     },
     "title_prefix": "Maßgeschneiderte Lösungen",
@@ -3344,7 +3347,7 @@
       "label": "Interactive Price Calculator",
       "title_1": "Calculate Your",
       "title_2": "Dream Digital Project",
-      "subtitle_default": "Select desired modules and features for a transparent fixed-price offer upon request.",
+      "subtitle_default": "Calculate your web project: Select desired modules and features for a transparent fixed-price offer upon request.",
       "subtitle_packages": "Customize your selected package to match your exact business requirements.",
       "satisfied": "Satisfied with your selection?",
       "next_step": "Next Step",

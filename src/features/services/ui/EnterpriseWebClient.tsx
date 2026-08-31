@@ -63,7 +63,7 @@ export function EnterpriseWebClient() {
                 className="group relative px-8 py-4 bg-secondary text-white rounded-full font-bold text-lg overflow-hidden transition motion-reduce:duration-[0.01ms] hover:scale-[0.97] ease-spring"
               >
                 <span className="relative z-10 flex items-center">
-                  {t('enterprise_web_page.hero.cta_primary')}
+                  <span>Termin im Live-Kalender buchen</span>
                   <ArrowRight className="ms-2 w-5 h-5 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform motion-reduce:duration-[0.01ms]" />
                 </span>
                 <div className="absolute inset-0 bg-sapphire opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] duration-300" />
@@ -73,7 +73,7 @@ export function EnterpriseWebClient() {
                 href="/work"
                 className="px-8 py-4 bg-surface-elevated border border-slate-200 text-content-base rounded-full font-bold text-lg hover:bg-surface-muted transition-colors motion-reduce:duration-[0.01ms]"
               >
-                {t('enterprise_web_page.hero.cta_secondary')}
+                Case Studies ansehen
               </NavLink>
             </div>
           </m.div>

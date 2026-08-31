@@ -276,15 +276,11 @@ export const wikiEntities: WikiEntity[] = [
     relatedEntities: ['design-token', 'next-js', 'e-e-a-t'],
   },
   {
-    slug: 'motion/react',
+    slug: 'motion-react',
     displayName: 'Framer Motion',
-    aliases: ['Framer'],
+    aliases: ['Framer', 'Motion React'],
     category: 'Tech',
-    relatedEntities: [
-      'cinematic-page-transition motion-reduce:duration-[0.01ms]',
-      'micro-interaction',
-      'kinetic-typography',
-    ],
+    relatedEntities: ['cinematic-page-transition', 'micro-interaction', 'kinetic-typography'],
   },
   {
     slug: 'lenis-scroll',
@@ -690,7 +686,7 @@ export const wikiEntities: WikiEntity[] = [
     displayName: 'Kinetic Typography',
     aliases: ['Animated Typography'],
     category: 'Design',
-    relatedEntities: ['prefers-reduced-motion', 'motion/react', 'awwwards'],
+    relatedEntities: ['prefers-reduced-motion', 'motion-react', 'awwwards'],
   },
   {
     slug: 'magnetic-ui',
@@ -700,22 +696,18 @@ export const wikiEntities: WikiEntity[] = [
     relatedEntities: ['micro-interaction', 'awwwards', 'e-e-a-t'],
   },
   {
-    slug: 'cinematic-page-transition motion-reduce:duration-[0.01ms]',
+    slug: 'cinematic-page-transition',
     displayName: 'Cinematic Page Transition',
     aliases: ['Page Transitions'],
     category: 'Design',
-    relatedEntities: ['motion/react', 'preloader', 'awwwards'],
+    relatedEntities: ['motion-react', 'preloader', 'awwwards'],
   },
   {
     slug: 'preloader',
     displayName: 'Preloader',
     aliases: ['Loading Screen'],
     category: 'Design',
-    relatedEntities: [
-      'cinematic-page-transition motion-reduce:duration-[0.01ms]',
-      'awwwards',
-      'e-e-a-t',
-    ],
+    relatedEntities: ['cinematic-page-transition', 'awwwards', 'e-e-a-t'],
   },
   {
     slug: 'parallax-scroll',
@@ -774,7 +766,7 @@ export const wikiEntities: WikiEntity[] = [
       'prefers-reduced-motion',
       'kinetic-typography',
       'magnetic-ui',
-      'cinematic-page-transition motion-reduce:duration-[0.01ms]',
+      'cinematic-page-transition',
       'preloader',
       'parallax-scroll',
       'mix-blend-mode',
@@ -875,7 +867,7 @@ export const wikiEntities: WikiEntity[] = [
     displayName: 'Micro Interaction',
     aliases: ['Microinteractions'],
     category: 'Design',
-    relatedEntities: ['motion/react', 'magnetic-ui', 'custom-cursor', 'haptic-feedback'],
+    relatedEntities: ['motion-react', 'magnetic-ui', 'custom-cursor', 'haptic-feedback'],
   },
   {
     slug: 'design-token',

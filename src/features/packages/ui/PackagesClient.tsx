@@ -340,7 +340,7 @@ export const PackagesClient: React.FC = () => {
                   })}
                 </p>
                 <NavLink
-                  href="/booking"
+                  href="/contact"
                   className="inline-flex items-center gap-2 px-8 py-3.5 bg-transparent border border-accent/40 text-accent font-bold rounded-xl hover:bg-accent/10 hover:border-accent/60 transition motion-reduce:duration-[0.01ms] duration-300 hover:-translate-y-0.5"
                 >
                   {t('custom.cta', { fallback: 'Individuelles Angebot anfragen' })}

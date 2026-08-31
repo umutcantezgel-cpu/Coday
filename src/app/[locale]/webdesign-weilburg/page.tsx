@@ -151,7 +151,7 @@ export default async function WebdesignWeilburgPage({
         badgeText="HANDWERK, TOURISMUS & MITTELSTAND WEBAGENTUR WEILBURG"
         headline="Webdesign & Next.js Entwicklung in"
         headlineGradient="Weilburg an der Lahn"
-        description="Speziell für Handwerk, Bauunternehmen, Hotellerie, Tourismus und Mittelstand im Lahntal. Maximale Ladezeiten unter 500ms, perfekte Google-Rankings und planbare Neukundengewinnung. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+        description="Professionelles Webdesign Weilburg und High-End Webentwicklung speziell für Handwerk, Bauunternehmen, Hotellerie, Tourismus und Mittelstand im Lahntal. Maximale Ladezeiten unter 500ms, perfekte Google-Rankings und planbare Neukundengewinnung. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
         cityName="Weilburg"
         sourceTag="local_seo_weilburg"
         formHeading="Kostenlose Bedarfsanalyse für Weilburg"

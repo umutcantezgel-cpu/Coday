@@ -200,10 +200,11 @@ export default async function NextJsMigrationPage({
           </h1>
 
           <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-10">
-            Schluss mit Plugin-Chaos, Sicherheitslücken und frustrierend langsamen Ladezeiten. Wir
-            transformieren Ihre bestehende Website oder Ihren Online-Shop in eine blitzschnelle,
-            serverlose Next.js 15 & Headless CMS Architektur — mit 100% SEO-Ranking-Garantie und
-            null Ausfallzeit. Verbindlicher Festpreis auf Anfrage.
+            Next.js Migration Service von Coday: Professionelle Umstellung von WordPress zu
+            Enterprise-Speed. Schluss mit Plugin-Chaos, Sicherheitslücken und frustrierend langsamen
+            Ladezeiten. Wir transformieren Ihre bestehende Website oder Ihren Online-Shop in eine
+            blitzschnelle, serverlose Next.js 15 & Headless CMS Architektur — mit 100%
+            SEO-Ranking-Garantie und null Ausfallzeit. Verbindlicher Festpreis auf Anfrage.
           </p>
 
           {/* Lead Capture Form in Hero */}
