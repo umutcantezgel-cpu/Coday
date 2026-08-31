@@ -45,7 +45,7 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Agency Wetzlar | High Performance & High Conversion · Coday',
+      title: 'Web Design Agency Wetzlar | High Conversion · Coday',
       description:
         'Your local web design agency in Wetzlar: High-performance & high-conversion websites, sub-0.3s speed & measurable leads for SMEs and crafts. Fixed prices.',
       keywords: [
@@ -63,7 +63,7 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Agentur Wetzlar | High-Performance Websites · Coday',
+    title: 'Webdesign Agentur Wetzlar | High-End Websites · Coday',
     description:
       'Ihre lokale Webdesign Agentur in Wetzlar: High-Performance & High-Conversion Websites für Mittelstand, Handwerk & Praxen. Sub-0,3s Ladezeiten & messbare Leads.',
     keywords: [

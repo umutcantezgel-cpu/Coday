@@ -418,7 +418,7 @@
       "final_cta": {
         "title": "Übersicht",
         "desc": "Wir entwickeln maßgeschneiderte High-Performance-Lösungen für maximale Ergebnisse.",
-        "button": "Mehr erfahren"
+        "button": "Zur Leistungsübersicht"
       }
     },
     "scroll_cta": {
@@ -953,7 +953,7 @@
     "cta": {
       "title": "Übersicht",
       "desc": "Wir entwickeln maßgeschneiderte High-Performance-Lösungen für maximale Ergebnisse.",
-      "button": "Mehr erfahren"
+      "button": "Erstgespräch vereinbaren"
     },
     "authorDesc": "Author desc",
     "moreAboutAuthor": "More about author",
@@ -2003,7 +2003,7 @@
       }
     },
     "actions": {
-      "read_more": "Mehr erfahren"
+      "read_more": "Details zum Angebot ansehen"
     },
     "generic_detail": {
       "not_found": {
@@ -2036,7 +2036,7 @@
       "final_cta": {
         "title": "Übersicht",
         "desc": "Wir entwickeln maßgeschneiderte High-Performance-Lösungen für maximale Ergebnisse.",
-        "button": "Mehr erfahren"
+        "button": "Projektanfrage stellen"
       }
     },
     "nav": {
@@ -4088,7 +4088,7 @@
       "description": "Wir entwickeln maßgeschneiderte High-Performance-Lösungen für maximale Ergebnisse."
     },
     "cta_section": {
-      "button": "Mehr erfahren",
+      "button": "Leistungspakete ansehen",
       "title": "Übersicht",
       "text": "Text"
     },
