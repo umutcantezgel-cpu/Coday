@@ -52,8 +52,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const isEn = locale === 'en';
   const title = isEn
-    ? `${entity.displayName} Definition & Best Practices | Coday`
-    : `${entity.displayName} Definition & Best Practices | Coday`;
+    ? `${entity.displayName} – Tech-Wiki | Coday`
+    : `${entity.displayName} – Tech-Wiki | Coday`;
   const description = isEn
     ? `Comprehensive technical definition, architectural insights and best practices for ${entity.displayName} in modern Next.js and web engineering by Coday.`
     : `Detaillierte Definition, technische Einordnung und Best Practices zu ${entity.displayName} für modernes Webdesign und Next.js Entwicklung von Coday.`;

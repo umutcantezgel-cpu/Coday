@@ -325,7 +325,7 @@ export const getNavItems = (): NavItem[] => [
         links: [
           { label: 'nav.work.batherm', href: 'https://www.batherm.de' },
           { label: 'nav.work.schluesseldienst', href: '/work/schluesseldienst-wetzlar' },
-          { label: 'nav.work.ratsstuben', href: 'https://lindener-ratsstuben.de' },
+          { label: 'nav.work.ratsstuben', href: 'https://www.lindener-ratsstuben.de/' },
           { label: 'nav.work.hey_fede', href: '/work/hey-fede' },
         ],
       },
@@ -358,7 +358,7 @@ export const getNavItems = (): NavItem[] => [
       {
         title: 'nav.resources.tools.title',
         links: [
-          { label: 'nav.academy.audit.label', href: '/analyzer', desc: 'nav.academy.audit.desc' },
+          { label: 'nav.academy.audit.label', href: '/calculator', desc: 'nav.academy.audit.desc' },
           { label: 'nav.resources.calculator', href: '/calculator' },
         ],
       },

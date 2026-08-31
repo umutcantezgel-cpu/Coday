@@ -292,18 +292,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }),
     ...sitemapEntries('/branchen/startups-tech', { changeFrequency: 'monthly', priority: 0.8 }),
     ...sitemapEntries('/branchen/automobil', { changeFrequency: 'monthly', priority: 0.8 }),
-    ...sitemapEntries('/branchen/automobil/kfz-werkstatt', {
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    }),
-    ...sitemapEntries('/branchen/automobil/kfz-mechatroniker', {
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    }),
-    ...sitemapEntries('/branchen/automobil/autohaendler', {
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    }),
     ...sitemapEntries('/branchen/gesundheitswesen/arzt-wetzlar', {
       changeFrequency: 'monthly',
       priority: 0.8,
@@ -340,7 +328,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...sitemapEntries('/garantie', { changeFrequency: 'monthly', priority: 0.6 }),
     ...sitemapEntries('/partnerschaft', { changeFrequency: 'monthly', priority: 0.5 }),
     ...sitemapEntries('/presse', { changeFrequency: 'monthly', priority: 0.5 }),
-    ...sitemapEntries('/analyzer', { changeFrequency: 'monthly', priority: 0.6 }),
     ...sitemapEntries('/calculator', { changeFrequency: 'monthly', priority: 0.6 }),
     ...sitemapEntries('/uebersicht', { changeFrequency: 'monthly', priority: 0.4 }),
   ];

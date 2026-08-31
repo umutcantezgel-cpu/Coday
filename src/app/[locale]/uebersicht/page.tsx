@@ -555,26 +555,10 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                 </li>
                 <li>
                   <Link
-                    href="/branchen/automobil/kfz-werkstatt"
+                    href="/branchen/automobil"
                     className="text-text-light hover:text-primary transition-colors"
                   >
-                    KFZ Werkstatt Website
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/branchen/automobil/autohaendler"
-                    className="text-text-light hover:text-primary transition-colors"
-                  >
-                    Autohändler Website
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/branchen/automobil/kfz-mechatroniker"
-                    className="text-text-light hover:text-primary transition-colors"
-                  >
-                    KFZ Mechatroniker Recruiting
+                    Webdesign für KFZ-Werkstätten & Autohändler
                   </Link>
                 </li>
                 <li>
@@ -640,22 +624,12 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link
-                    href="/analyzer"
-                    className="text-text-light hover:text-primary transition-colors"
-                  >
-                    {locale === 'en'
-                      ? 'Free Website Audit & Analysis Tool'
-                      : 'Kostenlose Website-Analyse & Audit'}
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     href="/calculator"
                     className="text-text-light hover:text-primary transition-colors"
                   >
                     {locale === 'en'
-                      ? 'Interactive Website Cost Calculator'
-                      : 'Website Kostenrechner'}
+                      ? 'Interactive Website Cost Calculator & Audit'
+                      : 'Kostenloser Website Kostenrechner & Audit'}
                   </Link>
                 </li>
                 <li>

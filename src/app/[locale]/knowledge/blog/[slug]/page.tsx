@@ -93,6 +93,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
           'E-Mail Marketing Automation',
         'Corporate Video: Warum 90% aller Imagefilme Geldverschwendung sind':
           'Video Content Excellence',
+        'Warum WordPress im Jahr 2026 tot ist (und warum Agenturen es Ihnen trotzdem verkaufen)':
+          'Warum WordPress 2026 tot ist',
         'Headless CMS: Warum WordPress für moderne Unternehmen ein Risiko ist':
           'Warum WordPress tot ist',
         'Neuro-Design: Die Psychologie hinter 10x höheren Conversion-Rates':

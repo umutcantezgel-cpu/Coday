@@ -60,7 +60,8 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ className = '' }) => {
         </li>
         {pathnames.map((value, index) => {
           const isLast = index === pathnames.length - 1;
-          const to = `/${pathnames.slice(0, index + 1).join('/')}`;
+          const rawTo = `/${pathnames.slice(0, index + 1).join('/')}`;
+          const to = rawTo === '/knowledge' ? '/knowledge/wikihub' : rawTo;
           const translationKey = getTranslationKey(value);
           // If translation returns the key itself, try to capitalize the raw path
           const translatedLabel =

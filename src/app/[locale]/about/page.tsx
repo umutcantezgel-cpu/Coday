@@ -84,7 +84,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           url: `${BASE_URL}/${locale}/about`,
           sameAs: [
             'https://www.provenexpert.com/de-de/coday-webagentur/',
-            'https://maps.app.goo.gl/9SagecgXw7Vf5csH7',
+            'https://www.google.com/maps?cid=8570940562624494590',
             'https://www.linkedin.com/in/umutcan-emre-tezgel-156382218/',
           ],
           knowsAbout: [

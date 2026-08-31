@@ -126,7 +126,7 @@ export const LocalSplitHero: React.FC<LocalSplitHeroProps> = ({
             {/* Dual Verified Review Authority Links */}
             <div className="flex flex-wrap items-center gap-2.5 mb-8">
               <a
-                href="https://maps.app.goo.gl/9SagecgXw7Vf5csH7"
+                href="https://www.google.com/maps?cid=8570940562624494590"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-xs text-xs font-semibold text-slate-800 hover:border-amber-400 hover:shadow-xs transition-all group"

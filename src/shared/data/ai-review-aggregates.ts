@@ -25,7 +25,7 @@ export const aiReviewAggregates: ReviewAggregate[] = [
   {
     slug: 'google',
     platformName: 'Google Business',
-    sourceUrl: 'https://maps.app.goo.gl/9SagecgXw7Vf5csH7',
+    sourceUrl: 'https://www.google.com/maps?cid=8570940562624494590',
     aggregateScore: 5.0,
     totalReviews: 4,
     lastSynced: '2026-02-18T12:00:00.000Z',

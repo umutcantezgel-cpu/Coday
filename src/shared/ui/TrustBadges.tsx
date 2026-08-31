@@ -17,7 +17,7 @@ const DEFAULT_BADGES: TrustBadge[] = [
     icon: Star,
     title: 'Google Maps (5.0 ★)',
     description: '4 verifizierte Rezensionen',
-    url: 'https://maps.app.goo.gl/9SagecgXw7Vf5csH7',
+    url: 'https://www.google.com/maps?cid=8570940562624494590',
     color: 'text-amber-500',
   },
   {

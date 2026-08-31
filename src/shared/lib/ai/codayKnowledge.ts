@@ -238,7 +238,7 @@ export const CODAY_KNOWLEDGE_BASE = {
       'UX/Design (Layout, Mobile)',
       'Content (Lesbarkeit, CTAs)',
     ],
-    url: '/analyzer',
+    url: '/calculator',
     features: [
       'Urgency Score (1-100)',
       'PDF Export',

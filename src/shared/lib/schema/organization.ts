@@ -20,7 +20,7 @@ export function getOrganizationSchema(): Organization {
     logo: 'https://www.codayweb.de/images/brand/coday-logo-footer.png',
     sameAs: [
       'https://www.provenexpert.com/de-de/coday-webagentur/',
-      'https://maps.app.goo.gl/9SagecgXw7Vf5csH7',
+      'https://www.google.com/maps?cid=8570940562624494590',
       'https://www.linkedin.com/company/coday',
       'https://www.linkedin.com/in/umutcan-emre-tezgel-156382218/',
       'https://github.com/coday',

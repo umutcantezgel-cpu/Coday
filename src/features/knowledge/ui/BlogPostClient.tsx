@@ -4,7 +4,6 @@ import React from 'react';
 import { useParams } from 'next/navigation';
 
 import { Link, useRouter } from '@/i18n/navigation';
-import { getLocalizedPath } from '@/shared/lib/navigation';
 import {
   ArrowLeft,
   CalendarBlank,
@@ -53,13 +52,6 @@ const BlogPost: React.FC = () => {
     const otherLangPosts = getBlogPosts(otherLocale);
     return otherLangPosts.find((p) => String(p.id) === String(post.id));
   }, [post, otherLocale]);
-
-  const alternateLinks = React.useMemo(() => {
-    if (!otherPost) return undefined;
-    const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.codayweb.de';
-    const path = getLocalizedPath(`/knowledge/blog/${otherPost.slug}`, otherLocale);
-    return [{ hreflang: otherLocale, href: `${BASE_URL}${path}` }];
-  }, [otherPost, otherLocale]);
 
   if (!post) {
     const otherLangPost = getBlogPost(slug || '', otherLocale);

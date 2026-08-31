@@ -165,7 +165,7 @@ export function IndustryOverviewClient() {
               {/* Review Authority Badges */}
               <div className="flex flex-wrap items-center gap-3 pt-2">
                 <a
-                  href="https://maps.app.goo.gl/9SagecgXw7Vf5csH7"
+                  href="https://www.google.com/maps?cid=8570940562624494590"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-700 hover:border-primary/50 hover:text-primary transition-all shadow-xs"

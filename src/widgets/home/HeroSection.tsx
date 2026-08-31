@@ -24,7 +24,7 @@ export const HeroSection: React.FC = () => {
           {/* Dual Verified Review Authority Links (Above-the-Fold Trust Kicker) */}
           <div className="flex flex-wrap items-center gap-2.5 mb-4 lg:mb-5">
             <a
-              href="https://maps.app.goo.gl/9SagecgXw7Vf5csH7"
+              href="https://www.google.com/maps?cid=8570940562624494590"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-xs text-xs font-semibold text-slate-800 hover:border-amber-400 hover:bg-amber-50/50 hover:shadow-sm transition-all group cursor-pointer"

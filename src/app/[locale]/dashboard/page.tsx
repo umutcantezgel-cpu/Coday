@@ -34,9 +34,9 @@ export default async function DashboardPage(props: { params: Promise<{ locale: s
   const params = await props.params;
   setRequestLocale(params.locale);
 
-  // For now, we redirect the dashboard to the analyzer or a coming-soon page.
+  // For now, we redirect the dashboard to the calculator or a coming-soon page.
   // The user can implement a real auth-gated dashboard later.
-  redirect(`/${params.locale}/analyzer`);
+  redirect(`/${params.locale}/calculator`);
 
   return (
     <>

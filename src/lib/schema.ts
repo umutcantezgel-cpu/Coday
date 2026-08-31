@@ -179,10 +179,10 @@ export function getOrganizationSchema(locale: string = 'de') {
         availableLanguage: ['German', 'English'],
       },
     ],
-    hasMap: 'https://maps.app.goo.gl/9SagecgXw7Vf5csH7',
+    hasMap: 'https://www.google.com/maps?cid=8570940562624494590',
     sameAs: [
       'https://www.provenexpert.com/de-de/coday-webagentur/',
-      'https://maps.app.goo.gl/9SagecgXw7Vf5csH7',
+      'https://www.google.com/maps?cid=8570940562624494590',
       'https://www.linkedin.com/company/coday',
       'https://www.linkedin.com/in/umutcan-emre-tezgel-156382218/',
       'https://github.com/coday',
@@ -244,10 +244,10 @@ export function getProfessionalServiceSchema(locale: string = 'de') {
       latitude: 50.5558,
       longitude: 8.504,
     },
-    hasMap: 'https://maps.app.goo.gl/9SagecgXw7Vf5csH7',
+    hasMap: 'https://www.google.com/maps?cid=8570940562624494590',
     sameAs: [
       'https://www.provenexpert.com/de-de/coday-webagentur/',
-      'https://maps.app.goo.gl/9SagecgXw7Vf5csH7',
+      'https://www.google.com/maps?cid=8570940562624494590',
       'https://www.linkedin.com/company/coday',
       'https://www.linkedin.com/in/umutcan-emre-tezgel-156382218/',
       'https://www.instagram.com/codayweb',
@@ -331,10 +331,10 @@ export function getLocalBusinessSchema(locale: string = 'de') {
     url: BASE_URL,
     telephone: '+49-176-41195301',
     image: `${BASE_URL}/logo.png`,
-    hasMap: 'https://maps.app.goo.gl/9SagecgXw7Vf5csH7',
+    hasMap: 'https://www.google.com/maps?cid=8570940562624494590',
     sameAs: [
       'https://www.provenexpert.com/de-de/coday-webagentur/',
-      'https://maps.app.goo.gl/9SagecgXw7Vf5csH7',
+      'https://www.google.com/maps?cid=8570940562624494590',
       'https://www.linkedin.com/company/coday',
       'https://www.linkedin.com/in/umutcan-emre-tezgel-156382218/',
     ],
@@ -375,7 +375,7 @@ export function getArticleSchema(post: {
 }) {
   return {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': 'TechArticle',
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': post.url,
@@ -387,8 +387,17 @@ export function getArticleSchema(post: {
     dateModified: post.publishedAt,
     author: {
       '@type': 'Person',
-      name: post.authorName || 'Umutcan Emre Tezgel',
-      url: BASE_URL,
+      '@id': FOUNDER_ID,
+      name:
+        post.authorName && post.authorName !== 'Lead Architect'
+          ? post.authorName
+          : 'Umutcan Emre Tezgel',
+      jobTitle: 'Inhaber, Lead Architect & Fullstack Engineer',
+      url: `${BASE_URL}/de/about`,
+      sameAs: [
+        'https://www.linkedin.com/in/umutcan-emre-tezgel-156382218/',
+        'https://github.com/umurey',
+      ],
     },
     publisher: {
       '@id': ORG_ID,

@@ -245,7 +245,7 @@ export const AboutClient: React.FC = () => {
             {...stagger(0.4)}
           >
             <a
-              href="https://maps.app.goo.gl/9SagecgXw7Vf5csH7"
+              href="https://www.google.com/maps?cid=8570940562624494590"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm text-slate-700 text-xs sm:text-sm font-medium hover:border-amber-400 hover:shadow-md transition-all group"

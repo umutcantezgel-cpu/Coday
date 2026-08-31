@@ -261,7 +261,7 @@ const ProjectDetail: React.FC = () => {
                 </h3>
                 <div className="space-y-2.5">
                   <a
-                    href="https://maps.app.goo.gl/9SagecgXw7Vf5csH7"
+                    href="https://www.google.com/maps?cid=8570940562624494590"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-blue-500/50 hover:bg-blue-50/30 transition-all group"
