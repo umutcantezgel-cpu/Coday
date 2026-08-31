@@ -1,7 +1,4 @@
-'use client';
-
-import React, { ReactNode, useEffect, useRef } from 'react';
-import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import React, { ReactNode } from 'react';
 
 interface MotionWrapperProps {
   children: ReactNode;

@@ -1,16 +1,11 @@
 'use client';
 
 import React from 'react';
-import {
-  m,
-  LazyMotion,
-  domAnimation,
-  AnimatePresence,
-  useReducedMotion,
-  Variants,
-} from 'motion/react';
+import { m, LazyMotion, AnimatePresence, useReducedMotion, Variants } from 'motion/react';
 import { usePathname } from '@/i18n/navigation';
 import { FrozenRoute } from '@/shared/ui/animations/FrozenRoute';
+
+const loadFeatures = () => import('motion/react').then((res) => res.domAnimation);
 
 const transitionVariants: Variants = {
   initial: (custom: {
@@ -63,13 +58,13 @@ export const PageTransition = ({ children }: { children: React.ReactNode }) => {
   };
 
   return (
-    <LazyMotion features={domAnimation}>
+    <LazyMotion features={loadFeatures}>
       <AnimatePresence mode="popLayout" custom={customProps} initial={false}>
         <m.div
           key={pathname}
           custom={customProps}
           variants={transitionVariants}
-          initial="initial"
+          initial={false}
           animate="animate"
           exit="exit"
           className="flex-grow flex flex-col min-h-screen"

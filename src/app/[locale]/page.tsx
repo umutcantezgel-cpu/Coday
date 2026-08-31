@@ -9,13 +9,33 @@ import React from 'react';
 
 import { ScrollReveal } from '@/shared/ui/animations/ScrollReveal';
 import { SeoContentSection } from '@/widgets/home/SeoContentSection';
-import { StatsSection } from '@/widgets/home/StatsSection';
-import { PhilosophySection } from '@/widgets/home/PhilosophySection';
-import { ServicesSection } from '@/widgets/home/ServicesSection';
-import { IndustriesGrid } from '@/widgets/home/IndustriesGrid';
-import { TestimonialsSection } from '@/widgets/home/TestimonialsSection';
-import { PortfolioTeaserSection } from '@/widgets/home/PortfolioTeaserSection';
 import AgencyComparisonTable from '@/features/analyzer/ui/AgencyComparisonTable';
+import nextDynamic from 'next/dynamic';
+
+const StatsSection = nextDynamic(
+  () => import('@/widgets/home/StatsSection').then((mod) => mod.StatsSection),
+  { ssr: true }
+);
+const PhilosophySection = nextDynamic(
+  () => import('@/widgets/home/PhilosophySection').then((mod) => mod.PhilosophySection),
+  { ssr: true }
+);
+const ServicesSection = nextDynamic(
+  () => import('@/widgets/home/ServicesSection').then((mod) => mod.ServicesSection),
+  { ssr: true }
+);
+const PortfolioTeaserSection = nextDynamic(
+  () => import('@/widgets/home/PortfolioTeaserSection').then((mod) => mod.PortfolioTeaserSection),
+  { ssr: true }
+);
+const IndustriesGrid = nextDynamic(
+  () => import('@/widgets/home/IndustriesGrid').then((mod) => mod.IndustriesGrid),
+  { ssr: true }
+);
+const TestimonialsSection = nextDynamic(
+  () => import('@/widgets/home/TestimonialsSection').then((mod) => mod.TestimonialsSection),
+  { ssr: true }
+);
 
 export const dynamic = 'force-static';
 

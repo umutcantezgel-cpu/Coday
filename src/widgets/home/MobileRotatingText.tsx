@@ -9,10 +9,7 @@ export const MobileRotatingText: React.FC<{ texts: string[] }> = ({ texts }) => 
     return () => clearInterval(id);
   }, [texts.length]);
   return (
-    <span
-      key={index}
-      className="inline-block text-base sm:text-lg font-semibold text-primary-700 transition-opacity duration-300"
-    >
+    <span className="inline-block min-h-[2.75rem] flex items-center text-base sm:text-lg font-semibold text-primary-700 transition-opacity duration-300">
       {texts[index] || texts[0]}
     </span>
   );

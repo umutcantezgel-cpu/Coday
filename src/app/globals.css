@@ -531,6 +531,13 @@ body {
   }
 }
 
+/* Ensure transition-colors only targets composited properties (avoids non-composited outline-color animation warning) */
+.transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 @media (max-width: 768px) {
   .animate-float {
     animation: none !important;

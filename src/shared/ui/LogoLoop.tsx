@@ -110,36 +110,39 @@ const LogoLoop = React.memo<LogoLoopProps>(
     }, [speed, direction, isVertical]);
 
     const updateDimensions = useCallback(() => {
-      const containerWidth = containerRef.current?.clientWidth ?? 0;
-      const sequenceRect = seqRef.current?.getBoundingClientRect?.();
-      const sequenceWidth = sequenceRect?.width ?? 0;
-      const sequenceHeight = sequenceRect?.height ?? 0;
-      if (isVertical) {
-        const parentHeight = containerRef.current?.parentElement?.clientHeight ?? 0;
-        if (containerRef.current && parentHeight > 0) {
-          const targetHeight = Math.ceil(parentHeight);
-          if (containerRef.current.style.height !== `${targetHeight}px`)
-            containerRef.current.style.height = `${targetHeight}px`;
-        }
-        if (sequenceHeight > 0) {
-          const newHeight = Math.ceil(sequenceHeight);
-          setSeqHeight((prev) => (prev !== newHeight ? newHeight : prev));
+      requestAnimationFrame(() => {
+        if (!containerRef.current || !seqRef.current) return;
+        const containerWidth = containerRef.current.clientWidth ?? 0;
+        const sequenceRect = seqRef.current.getBoundingClientRect?.();
+        const sequenceWidth = sequenceRect?.width ?? 0;
+        const sequenceHeight = sequenceRect?.height ?? 0;
+        if (isVertical) {
+          const parentHeight = containerRef.current.parentElement?.clientHeight ?? 0;
+          if (containerRef.current && parentHeight > 0) {
+            const targetHeight = Math.ceil(parentHeight);
+            if (containerRef.current.style.height !== `${targetHeight}px`)
+              containerRef.current.style.height = `${targetHeight}px`;
+          }
+          if (sequenceHeight > 0) {
+            const newHeight = Math.ceil(sequenceHeight);
+            setSeqHeight((prev) => (prev !== newHeight ? newHeight : prev));
 
-          const viewport = containerRef.current?.clientHeight ?? parentHeight ?? sequenceHeight;
+            const viewport = containerRef.current.clientHeight ?? parentHeight ?? sequenceHeight;
+            const copiesNeeded =
+              Math.ceil(viewport / sequenceHeight) + ANIMATION_CONFIG.COPY_HEADROOM;
+            const newCopyCount = Math.max(ANIMATION_CONFIG.MIN_COPIES, copiesNeeded);
+            setCopyCount((prev) => (prev !== newCopyCount ? newCopyCount : prev));
+          }
+        } else if (sequenceWidth > 0) {
+          const newWidth = Math.ceil(sequenceWidth);
+          setSeqWidth((prev) => (prev !== newWidth ? newWidth : prev));
+
           const copiesNeeded =
-            Math.ceil(viewport / sequenceHeight) + ANIMATION_CONFIG.COPY_HEADROOM;
+            Math.ceil(containerWidth / sequenceWidth) + ANIMATION_CONFIG.COPY_HEADROOM;
           const newCopyCount = Math.max(ANIMATION_CONFIG.MIN_COPIES, copiesNeeded);
           setCopyCount((prev) => (prev !== newCopyCount ? newCopyCount : prev));
         }
-      } else if (sequenceWidth > 0) {
-        const newWidth = Math.ceil(sequenceWidth);
-        setSeqWidth((prev) => (prev !== newWidth ? newWidth : prev));
-
-        const copiesNeeded =
-          Math.ceil(containerWidth / sequenceWidth) + ANIMATION_CONFIG.COPY_HEADROOM;
-        const newCopyCount = Math.max(ANIMATION_CONFIG.MIN_COPIES, copiesNeeded);
-        setCopyCount((prev) => (prev !== newCopyCount ? newCopyCount : prev));
-      }
+      });
     }, [isVertical]);
 
     // Animation loop
