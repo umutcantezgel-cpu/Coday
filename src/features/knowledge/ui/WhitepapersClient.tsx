@@ -136,7 +136,6 @@ const Whitepapers: React.FC = () => {
                 <a
                   href={paper.fileUrl}
                   download
-                  rel="nofollow noopener noreferrer"
                   className="w-full py-3.5 rounded-xl bg-secondary hover:bg-secondary/90 text-white font-bold text-sm shadow-sm flex items-center justify-center gap-2 transition-all"
                 >
                   <OptimizedIcon icon={DownloadSimple} className="w-4 h-4" />

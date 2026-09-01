@@ -7,22 +7,24 @@ export const revalidate = 86400; // 24 hours
 export async function GET() {
   const locales = ['de', 'en'] as const;
 
-  const urlEntries = locales.flatMap((locale) => {
-    return academyData.map((course) => {
-      const lang = locale === 'en' ? 'en' : 'de';
-      const pageUrl = `${BASE_URL}/${locale}/knowledge/academy`;
-      const thumbnailUrl = `${BASE_URL}${course.image}`;
-      const contentUrl = `${BASE_URL}${course.videoSrc}`;
-      const title = course.content[lang].title;
-      const description = course.content[lang].description;
-      const tagsXml = course.tags
-        .slice(0, 5)
-        .map((tag) => `      <video:tag><![CDATA[${tag}]]></video:tag>`)
-        .join('\n');
+  // Google expects ONE <url> per page with all its <video:video> children.
+  // Duplicate <loc> blocks risk being deduplicated down to a single video.
+  const urlEntries = locales.map((locale) => {
+    const lang = locale === 'en' ? 'en' : 'de';
+    const pageUrl = `${BASE_URL}/${locale}/knowledge/academy`;
 
-      return `  <url>
-    <loc>${pageUrl}</loc>
-    <video:video>
+    const videosXml = academyData
+      .map((course) => {
+        const thumbnailUrl = `${BASE_URL}${course.image}`;
+        const contentUrl = `${BASE_URL}${course.videoSrc}`;
+        const title = course.content[lang].title;
+        const description = course.content[lang].description;
+        const tagsXml = course.tags
+          .slice(0, 5)
+          .map((tag) => `      <video:tag><![CDATA[${tag}]]></video:tag>`)
+          .join('\n');
+
+        return `    <video:video>
       <video:thumbnail_loc>${thumbnailUrl}</video:thumbnail_loc>
       <video:title><![CDATA[${title}]]></video:title>
       <video:description><![CDATA[${description}]]></video:description>
@@ -34,9 +36,14 @@ export async function GET() {
       <video:live>no</video:live>
 ${tagsXml}
       <video:uploader info="${BASE_URL}/${locale}/about">Coday Webagentur Wetzlar</video:uploader>
-    </video:video>
+    </video:video>`;
+      })
+      .join('\n');
+
+    return `  <url>
+    <loc>${pageUrl}</loc>
+${videosXml}
   </url>`;
-    });
   });
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

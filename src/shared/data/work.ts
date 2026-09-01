@@ -639,7 +639,7 @@ export const workData: Record<string, Project> = {
     type: 'case_study',
     status: 'live',
     thumbnail: 'heartbeat',
-    liveUrl: 'https://www.lindener-ratsstuben.de/',
+    liveUrl: 'https://www.lindener-ratsstuben.de/de',
     heroImage: 'bg-surface-dark',
     content: {
       de: {

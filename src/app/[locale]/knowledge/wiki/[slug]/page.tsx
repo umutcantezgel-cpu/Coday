@@ -54,9 +54,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const title = isEn
     ? `${entity.displayName} – Tech-Wiki | Coday`
     : `${entity.displayName} – Tech-Wiki | Coday`;
+  // Description templates must stay within 120-155 chars for every entity:
+  // displayName lengths range from 3 ("FWA") to 31 ("Incremental Static Regeneration").
   const description = isEn
-    ? `Comprehensive technical definition, architectural insights and best practices for ${entity.displayName} in modern Next.js and web engineering by Coday.`
-    : `Detaillierte Definition, technische Einordnung und Best Practices zu ${entity.displayName} für modernes Webdesign und Next.js Entwicklung von Coday.`;
+    ? `Technical definition, architectural insights and proven best practices for ${entity.displayName} in modern Next.js and web engineering by Coday.`
+    : `Definition, technische Einordnung und bewährte Best Practices zu ${entity.displayName} für modernes Webdesign und Next.js Entwicklung von Coday.`;
 
   return generatePageMetadata({
     title,

@@ -227,7 +227,7 @@ export const ContactClient: React.FC = () => {
                           <OptimizedIcon icon={LinkedinLogo} />
                         </a>
                         <a
-                          href="https://www.facebook.com/profile.php?id=61588758264018"
+                          href="https://www.facebook.com/people/Coday/61588758264018/"
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label="Facebook"

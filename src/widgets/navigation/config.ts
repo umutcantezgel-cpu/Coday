@@ -325,7 +325,7 @@ export const getNavItems = (): NavItem[] => [
         links: [
           { label: 'nav.work.batherm', href: 'https://www.batherm.de' },
           { label: 'nav.work.schluesseldienst', href: '/work/schluesseldienst-wetzlar' },
-          { label: 'nav.work.ratsstuben', href: 'https://www.lindener-ratsstuben.de/' },
+          { label: 'nav.work.ratsstuben', href: 'https://www.lindener-ratsstuben.de/de' },
           { label: 'nav.work.hey_fede', href: '/work/hey-fede' },
         ],
       },

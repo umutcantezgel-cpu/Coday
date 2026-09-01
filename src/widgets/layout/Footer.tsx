@@ -362,7 +362,7 @@ export const Footer: React.FC = () => {
             {[
               {
                 icon: FacebookLogo,
-                href: 'https://www.facebook.com/profile.php?id=61588758264018',
+                href: 'https://www.facebook.com/people/Coday/61588758264018/',
                 label: 'Facebook',
                 hoverClass: 'hover:text-blue-600 hover:border-blue-300',
               },
@@ -374,7 +374,7 @@ export const Footer: React.FC = () => {
               },
               {
                 icon: TwitterLogo,
-                href: 'https://twitter.com/codayweb',
+                href: 'https://x.com/codayweb',
                 label: 'Twitter',
                 hoverClass: 'hover:text-sky-600 hover:border-sky-300',
               },

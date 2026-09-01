@@ -54,7 +54,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Webdesign Löhnberg | Webseiten vom lokalen Profi · Coday',
     description:
-      'Webdesign & Local SEO für Löhnberg (35792), Niedershausen, Selters & Obershausen. Ultraschnelle Next.js Websites für Handwerk, B49-Industrie & Tourismus. Feste Konditionen.',
+      'Webdesign & Local SEO für Löhnberg (35792), Niedershausen, Selters & Obershausen. Schnelle Next.js Websites für Handwerk & Tourismus. Feste Konditionen.',
     keywords: [
       'Webdesign Löhnberg',
       'Webagentur Löhnberg 35792',

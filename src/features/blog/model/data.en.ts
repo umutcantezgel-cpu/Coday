@@ -1270,7 +1270,7 @@ The financial implications of neglecting these performance indicators culminate 
     title: 'Digital Sovereignty: Why the US Cloud Act is a Ticking Time Bomb',
     slug: 'digital-sovereignty-public-sector',
     excerpt:
-      "For the public sector and Critical Infrastructure, 'Cloud First' often means 'America First'. We explain why Digital Sovereignty is the only viable strategy for 2026.",
+      "For the public sector and Critical Infrastructure, 'Cloud First' often means 'America First'. Why Digital Sovereignty is the only strategy for 2026.",
     category: 'Government',
     readTime: '20 min.',
     image: '/images/services/online-praesenz-digitale-sichtbarkeit-internet-marketing.webp',

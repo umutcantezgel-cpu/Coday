@@ -21,9 +21,9 @@ export const companyInfo: CompanyInfo = {
   certifications: ['DSGVO Compliant'],
   socialMedia: {
     linkedin: 'https://www.linkedin.com/in/umutcan-tezgel',
-    twitter: 'https://twitter.com/coday',
+    twitter: 'https://x.com/coday',
     instagram: 'https://www.instagram.com/codayweb/',
-    facebook: 'https://www.facebook.com/profile.php?id=61588758264018',
+    facebook: 'https://www.facebook.com/people/Coday/61588758264018/',
     github: 'https://github.com/coday',
   },
   openingHours: {
