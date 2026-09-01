@@ -39,6 +39,18 @@ const iconMap: Record<string, React.ElementType> = {
   rocket_launch: RocketLaunch,
 };
 
+// Industries with dedicated city landing pages (see src/features/local-seo/model/content/)
+const industryCityPages: Record<string, { citySlug: string; city: string }[]> = {
+  'aerzte-gesundheit': [
+    { citySlug: 'wetzlar', city: 'Wetzlar' },
+    { citySlug: 'giessen', city: 'Gießen' },
+  ],
+  'handwerk-bau': [
+    { citySlug: 'wetzlar', city: 'Wetzlar' },
+    { citySlug: 'giessen', city: 'Gießen' },
+  ],
+};
+
 export function IndustryDetailClient({ industrySlug }: { industrySlug?: string }) {
   const params = useParams();
   const slug = industrySlug || (params?.industry as string);
@@ -240,6 +252,29 @@ export function IndustryDetailClient({ industrySlug }: { industrySlug?: string }
           </div>
         </div>
       </section>
+
+      {/* City landing pages for this industry */}
+      {slug && industryCityPages[slug] && (
+        <section className="py-12 border-t border-gray-100">
+          <div className="container mx-auto px-4">
+            <h2 className="text-2xl font-bold text-secondary mb-6">
+              {t.has('detail.locations.title') ? t('detail.locations.title') : 'Standorte'}
+            </h2>
+            <div className="flex flex-wrap gap-4">
+              {industryCityPages[slug].map(({ citySlug, city }) => (
+                <Link
+                  key={citySlug}
+                  href={`/branchen/${slug}/${citySlug}`}
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-gray-200 bg-white text-secondary font-semibold text-sm hover:border-primary hover:text-primary transition-colors"
+                >
+                  {t(industry.title)} {city}
+                  <ArrowRight size={14} />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Cross-Pollination / Related Industries */}
       <section className="py-20 border-t border-gray-100">

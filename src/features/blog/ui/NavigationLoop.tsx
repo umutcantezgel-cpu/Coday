@@ -20,9 +20,17 @@ export const RelatedArticles: React.FC<{ currentSlug: string; category: string }
     .filter((post) => post.category === category && post.slug !== currentSlug)
     .slice(0, 2);
 
-  // If not enough, fill with latest posts
+  // If not enough, fill with the current post's index neighbours (wrap-around).
+  // Most categories occur only once, so a "latest posts" fallback would link the
+  // same two articles from every post and leave the rest with a single inlink.
   if (related.length < 2) {
-    const others = allPosts
+    const currentIndex = allPosts.findIndex((post) => post.slug === currentSlug);
+    const n = allPosts.length;
+    const neighbours =
+      currentIndex === -1
+        ? allPosts
+        : [allPosts[(currentIndex - 1 + n) % n], allPosts[(currentIndex + 1) % n]];
+    const others = neighbours
       .filter((post) => post.slug !== currentSlug && !related.find((r) => r.slug === post.slug))
       .slice(0, 2 - related.length);
     related.push(...others);

@@ -223,6 +223,8 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
                           onMouseEnter={() =>
                             setActiveTabs((prev) => ({ ...prev, [item.label]: idx }))
                           }
+                          onClick={() => setActiveTabs((prev) => ({ ...prev, [item.label]: idx }))}
+                          onFocus={() => setActiveTabs((prev) => ({ ...prev, [item.label]: idx }))}
                         >
                           {t(group.title)}
                           {activeTabs[item.label] === idx && <div className="active-indicator" />}
@@ -234,20 +236,24 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
                   {/* Content Grid */}
                   <div className="dropdown-content">
                     {item.groups && item.groups.length > 0 ? (
-                      // Show active group
-                      (() => {
+                      // Render EVERY group in the DOM (crawlable internal links) and
+                      // toggle visibility via CSS; only the active tab's group is shown.
+                      item.groups.map((group, groupIdx) => {
                         const activeIndex = activeTabs[item.label] || 0;
-                        const activeGroup =
-                          item.groups.length > 1 ? item.groups[activeIndex] : item.groups[0];
+                        const isActiveGroup =
+                          item.groups!.length > 1 ? groupIdx === activeIndex : groupIdx === 0;
 
                         return (
-                          <div className="dropdown-links-grid">
+                          <div
+                            key={group.title}
+                            className={`dropdown-links-grid ${isActiveGroup ? '' : 'hidden'}`}
+                          >
                             {/* Title if single group */}
-                            {item.groups.length === 1 && (
-                              <div className="dropdown-group-title">{t(activeGroup!.title)}</div>
+                            {item.groups!.length === 1 && (
+                              <div className="dropdown-group-title">{t(group.title)}</div>
                             )}
 
-                            {activeGroup!.links.map((link, i) => (
+                            {group.links.map((link, i) => (
                               <div key={i} className="dropdown-link-item group relative">
                                 <div className="link-icon-wrapper" aria-hidden="true">
                                   <OptimizedIcon icon={ArrowUpRight} className="link-arrow" />
@@ -278,7 +284,7 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
                             ))}
                           </div>
                         );
-                      })()
+                      })
                     ) : (
                       // No groups (fallback)
                       <div className="dropdown-links-grid">

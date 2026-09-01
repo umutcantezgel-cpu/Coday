@@ -277,9 +277,7 @@ export function WebDesignClient() {
                     href={
                       feature.slug === 'design-systems'
                         ? '/services/design/design-systems'
-                        : feature.slug === 'ux-ui-design'
-                          ? '/services/design/ui-ux'
-                          : `/services/web-design/${feature.slug}`
+                        : `/services/web-design/${feature.slug}`
                     }
                     className="before:absolute before:inset-0 before:z-30 hover:underline"
                   >

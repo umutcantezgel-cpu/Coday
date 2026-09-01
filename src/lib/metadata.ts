@@ -15,6 +15,9 @@ export function generateRobotsMeta(opts: {
     case 'default':
       return { index: true, follow: true };
     case 'legal':
+      // noindex, but FOLLOW: legal pages carry the full nav+footer — nofollow
+      // here would mark every internal link from them as nofollow site-wide
+      return { index: false, follow: true };
     case 'noindex':
       return { index: false, follow: false };
     case 'studio':

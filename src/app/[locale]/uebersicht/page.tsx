@@ -4,6 +4,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { getOrganizationSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
+import { getBlogPosts } from '@/features/blog/model/data';
 
 export const dynamic = 'force-static';
 
@@ -257,6 +258,14 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                     className="text-text-light hover:text-primary transition-colors"
                   >
                     UI & UX Design
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services/web-design/ux-ui-design"
+                    className="text-text-light hover:text-primary transition-colors"
+                  >
+                    UX/UI Design im Webdesign-Prozess
                   </Link>
                 </li>
                 <li>
@@ -531,6 +540,38 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                 </li>
                 <li>
                   <Link
+                    href="/branchen/handwerk-bau/wetzlar"
+                    className="text-text-light hover:text-primary transition-colors"
+                  >
+                    Webdesign Handwerk & Bau Wetzlar
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/branchen/handwerk-bau/giessen"
+                    className="text-text-light hover:text-primary transition-colors"
+                  >
+                    Webdesign Handwerk & Bau Gießen
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/branchen/aerzte-gesundheit/wetzlar"
+                    className="text-text-light hover:text-primary transition-colors"
+                  >
+                    Praxis-Webdesign für Ärzte Wetzlar
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/branchen/aerzte-gesundheit/giessen"
+                    className="text-text-light hover:text-primary transition-colors"
+                  >
+                    Praxis-Webdesign für Ärzte Gießen
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/branchen/gesundheitswesen/arzt-giessen"
                     className="text-text-light hover:text-primary transition-colors"
                   >
@@ -551,14 +592,6 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                     className="text-text-light hover:text-primary transition-colors"
                   >
                     Handwerker Website Wetzlar
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/branchen/automobil"
-                    className="text-text-light hover:text-primary transition-colors"
-                  >
-                    Webdesign für KFZ-Werkstätten & Autohändler
                   </Link>
                 </li>
                 <li>
@@ -684,6 +717,25 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                     {locale === 'en' ? 'Agency Partnership Program' : 'Agentur Partnerschaften'}
                   </Link>
                 </li>
+              </ul>
+            </section>
+
+            {/* Blog Articles — full index so every post has a stable second inlink */}
+            <section>
+              <h2 className="text-xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
+                {locale === 'en' ? 'Blog Articles' : 'Blog-Artikel'}
+              </h2>
+              <ul className="space-y-2 text-sm">
+                {getBlogPosts(locale).map((post) => (
+                  <li key={post.slug}>
+                    <Link
+                      href={`/knowledge/blog/${post.slug}`}
+                      className="text-text-light hover:text-primary transition-colors"
+                    >
+                      {post.title}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </section>
 

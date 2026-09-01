@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import {
@@ -58,6 +58,14 @@ export default async function HandwerkBauPage({ params }: { params: Promise<{ lo
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
+      getBreadcrumbSchema([
+        { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+        { name: isEn ? 'Industries' : 'Branchen', url: `/${_locale}/branchen` },
+        {
+          name: isEn ? 'Crafts & Construction' : 'Handwerk & Bau',
+          url: `/${_locale}/branchen/handwerk-bau`,
+        },
+      ]),
       {
         '@type': 'Service',
         '@id': `${BASE_URL}/${_locale}/branchen/handwerk-bau#service`,
@@ -359,6 +367,31 @@ export default async function HandwerkBauPage({ params }: { params: Promise<{ lo
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Standorte: dedicated city landing pages for this industry */}
+      <section className="py-12 px-4 max-w-5xl mx-auto text-center border-t border-slate-200">
+        <h2 className="text-2xl font-display font-bold text-slate-900 mb-6">
+          {isEn
+            ? 'Web Design for Crafts & Construction by Region'
+            : 'Webdesign für Handwerk & Bau nach Region'}
+        </h2>
+        <div className="flex flex-wrap justify-center gap-4">
+          <Link
+            href="/branchen/handwerk-bau/wetzlar"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 font-semibold text-sm hover:border-primary-700 hover:text-primary-700 transition-colors"
+          >
+            {isEn ? 'Crafts & Construction Web Design Wetzlar' : 'Handwerk & Bau Webdesign Wetzlar'}
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+          <Link
+            href="/branchen/handwerk-bau/giessen"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 font-semibold text-sm hover:border-primary-700 hover:text-primary-700 transition-colors"
+          >
+            {isEn ? 'Crafts & Construction Web Design Gießen' : 'Handwerk & Bau Webdesign Gießen'}
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </section>
 

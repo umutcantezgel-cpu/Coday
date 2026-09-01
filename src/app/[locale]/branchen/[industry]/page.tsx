@@ -14,11 +14,24 @@ import { routing } from '@/i18n/routing';
 
 export const dynamicParams = false;
 
+// Industries with a dedicated static route under src/app/[locale]/branchen/<slug>/.
+// They must NOT also be generated here — two implementations for the same URL
+// make the build output nondeterministic (whichever page is written last wins).
+const INDUSTRIES_WITH_STATIC_ROUTE = new Set([
+  'automobil',
+  'handwerk-bau',
+  'immobilien',
+  'retail',
+  'unternehmensberatung',
+]);
+
 export function generateStaticParams() {
   const params: { locale: string; industry: string }[] = [];
   routing.locales.forEach((locale) => {
     Object.keys(industriesData).forEach((industry) => {
-      params.push({ locale, industry });
+      if (!INDUSTRIES_WITH_STATIC_ROUTE.has(industry)) {
+        params.push({ locale, industry });
+      }
     });
   });
   return params;
