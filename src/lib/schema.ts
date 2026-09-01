@@ -69,7 +69,11 @@ export function getOrganizationSchema(locale: string = 'de') {
   return {
     '@type': ['Organization', 'LocalBusiness', 'ProfessionalService'],
     '@id': ORG_ID,
-    ...getReviewsSchema(locale),
+    // NO aggregateRating/review here: Google ignores self-serving stars on
+    // Organization/LocalBusiness, and the org node appears on every page
+    // (layout + many page graphs) — spreading reviews here caused the GSC
+    // "multiple aggregated ratings" error. Reviews live on Product /
+    // WebApplication nodes only, at most one per page.
     name: 'Coday',
     legalName: 'Umutcan Emre Tezgel',
     alternateName: [

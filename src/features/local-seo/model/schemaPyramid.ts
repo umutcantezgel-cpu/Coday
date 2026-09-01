@@ -1175,7 +1175,9 @@ export function getCityHierarchySchema(citySlug: string, locale: string = 'de') 
         priceRange: '€€€',
         parentOrganization: { '@id': ORG_ID },
         founder: { '@id': FOUNDER_ID },
-        ...getReviewsSchema(locale),
+        // Reviews intentionally NOT spread here — the city page's Product node
+        // already carries them; two AggregateRating instances on one page
+        // trigger the GSC "multiple aggregated ratings" error.
         address: {
           '@type': 'PostalAddress',
           streetAddress: city.street,
