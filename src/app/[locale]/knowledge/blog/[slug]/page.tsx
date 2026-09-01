@@ -63,13 +63,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const otherLocale = locale === 'en' ? 'de' : 'en';
   const otherPost = getBlogPosts(otherLocale).find((p) => String(p.id) === String(post.id));
-  const deSlug = locale === 'de' ? slug : otherPost ? otherPost.slug : slug;
-  const enSlug = locale === 'en' ? slug : otherPost ? otherPost.slug : slug;
+
+  // Only emit hreflang for locales where the post actually exists —
+  // an alternate pointing at a redirecting URL is an hreflang error.
+  const deSlug = locale === 'de' ? slug : otherPost ? otherPost.slug : undefined;
+  const enSlug = locale === 'en' ? slug : otherPost ? otherPost.slug : undefined;
+  const selfUrl = `${BASE_URL}/${locale}/knowledge/blog/${slug}`;
 
   const languages: Record<string, string> = {
-    de: `${BASE_URL}/de/knowledge/blog/${deSlug}`,
-    ...(otherPost || locale === 'en' ? { en: `${BASE_URL}/en/knowledge/blog/${enSlug}` } : {}),
-    'x-default': `${BASE_URL}/de/knowledge/blog/${deSlug}`,
+    ...(deSlug ? { de: `${BASE_URL}/de/knowledge/blog/${deSlug}` } : {}),
+    ...(enSlug ? { en: `${BASE_URL}/en/knowledge/blog/${enSlug}` } : {}),
+    'x-default': deSlug ? `${BASE_URL}/de/knowledge/blog/${deSlug}` : selfUrl,
   };
 
   return {

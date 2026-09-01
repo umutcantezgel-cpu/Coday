@@ -461,7 +461,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         languages: {
           en: `${BASE_URL}/en/knowledge/blog/${post.slug}`,
           ...(otherPost ? { de: `${BASE_URL}/de/knowledge/blog/${otherPost.slug}` } : {}),
-          'x-default': `${BASE_URL}/de/knowledge/blog/${otherPost ? otherPost.slug : post.slug}`,
+          // x-default must point at an existing page: DE twin if it exists, else self
+          'x-default': otherPost
+            ? `${BASE_URL}/de/knowledge/blog/${otherPost.slug}`
+            : `${BASE_URL}/en/knowledge/blog/${post.slug}`,
         },
       },
     };

@@ -96,6 +96,46 @@ describe('Sitemap Technical SEO Validation', () => {
     }
   });
 
+  it('should have unique post ids per locale and symmetric blog hreflang pairs', async () => {
+    const { getBlogPosts } = await import('@/features/blog/model/data');
+    const dePosts = getBlogPosts('de');
+    const enPosts = getBlogPosts('en');
+
+    // Duplicate ids within a locale silently break id-based translation matching
+    for (const posts of [dePosts, enPosts]) {
+      const ids = posts.map((p) => String(p.id));
+      expect(new Set(ids).size).toBe(ids.length);
+    }
+
+    const entries = await sitemap();
+    const blogEntries = entries.filter((e) => e.url.includes('/knowledge/blog/'));
+    const urls = new Set(blogEntries.map((e) => e.url));
+
+    for (const entry of blogEntries) {
+      const languages = entry.alternates?.languages as Record<string, string> | undefined;
+      expect(languages).toBeDefined();
+      if (!languages) continue;
+
+      // Every alternate (x-default included) must be a URL that exists in the sitemap,
+      // i.e. never a redirecting slug
+      for (const href of Object.values(languages)) {
+        expect(urls.has(href)).toBe(true);
+      }
+
+      // Symmetry: the counterpart entry must link back to this entry
+      const isDe = entry.url.includes('/de/knowledge/blog/');
+      const counterpartHref = isDe ? languages.en : languages.de;
+      if (counterpartHref) {
+        const counterpart = blogEntries.find((e) => e.url === counterpartHref);
+        expect(counterpart).toBeDefined();
+        const counterpartLangs = counterpart?.alternates?.languages as
+          | Record<string, string>
+          | undefined;
+        expect(counterpartLangs?.[isDe ? 'de' : 'en']).toBe(entry.url);
+      }
+    }
+  });
+
   it('should not contain URLs that redirect (sitemap must be 200-only)', async () => {
     const entries = await sitemap();
     const urls = entries.map((e) => e.url);

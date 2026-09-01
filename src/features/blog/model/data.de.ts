@@ -168,7 +168,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
   {
-    id: 10,
+    id: 40,
     title: 'Core Web Vitals 2026: Warum langsame Ladezeiten Millionen kosten',
     slug: 'high-performance-web-vitals',
     excerpt:
@@ -272,7 +272,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
   {
-    id: 8,
+    id: 1,
     title: 'Die 5 tödlichen Webdesign-Fehler, die Ihre Conversion zerstören',
     slug: 'die-5-groessten-fehler-im-webdesign',
     excerpt:
@@ -1081,7 +1081,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
   {
-    id: 30,
+    id: 8,
     title: 'Neuro-Design: Wie Sie das Unterbewusstsein Ihrer Kunden hacken',
     slug: 'neuro-design-psychologie',
     excerpt:
@@ -1194,7 +1194,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
   {
-    id: 31,
+    id: 9,
     title: "Die KI-Revolution: Warum 2026 das Jahr der 'Voice-First' Strategie ist",
     slug: 'ki-voice-search-revolution',
     excerpt:
@@ -1294,7 +1294,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
   {
-    id: 32,
+    id: 10,
     title: 'Das Anti-AI Manifest: Warum menschliches Design 2026 gewinnt 🛑',
     slug: 'anti-ai-manifest-menschliches-design',
     excerpt:
@@ -2267,7 +2267,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
   {
-    id: 11,
+    id: 41,
     title: 'Der unsichtbare ROI: Warum UX Design mehr bringt als Marketing',
     slug: 'hidden-roi-ux',
     excerpt:
@@ -2328,7 +2328,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
   {
-    id: 12,
+    id: 42,
     title: 'Die Sicherheits-Lücke: Wie Open Source Ihr Business gefährdet',
     slug: 'security-gap',
     excerpt:
@@ -2389,7 +2389,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
   {
-    id: 13,
+    id: 43,
     title: 'A/B Testing Lügen: Warum 90% aller Tests statistischer Müll sind',
     slug: 'ab-testing-myths',
     excerpt:
@@ -2450,7 +2450,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
   {
-    id: 14,
+    id: 44,
     title: 'Daten-Reife: Vom Bauchgefühl zur algorithmischen Dominanz',
     slug: 'data-maturity',
     excerpt:
@@ -2511,7 +2511,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
   {
-    id: 15,
+    id: 45,
     title: 'Mobile First ist tot. Lang lebe Mobile Only.',
     slug: 'mobile-first-lie',
     excerpt:
@@ -2572,7 +2572,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
   {
-    id: 16,
+    id: 46,
     title: 'Webdesign Kosten & Budgetplanung für Relaunches | Coday',
     slug: 'agency-pricing-secrets',
     excerpt:
@@ -2633,7 +2633,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
   {
-    id: 17,
+    id: 47,
     title: 'Digitale Souveränität: Gehören Ihre Daten wirklich Ihnen?',
     slug: 'tech-sovereignty',
     excerpt:
@@ -2694,7 +2694,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
   {
-    id: 18,
+    id: 48,
     title: 'Web 4.0: Die Geschichte der Zukunft',
     slug: 'web-history-future',
     excerpt:
@@ -2755,7 +2755,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
   {
-    id: 19,
+    id: 49,
     title: 'Top Webdesign Agenturen in Hessen 2026 (Ehrlicher Vergleich)',
     slug: 'top-webdesign-agenturen-hessen-2026',
     excerpt:
