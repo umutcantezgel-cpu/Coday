@@ -17,8 +17,9 @@ const APP_DIR = '.next/server/app';
 const LOCALES_DIR = 'public/locales/de';
 
 if (!fs.existsSync(APP_DIR)) {
-  console.error(`${APP_DIR} not found — run \`next build\` first.`);
-  process.exit(1);
+  // Nothing to inspect without a build — skip rather than block the hook.
+  console.log(`i18n fallback check: skipped (${APP_DIR} not found, run \`next build\` first).`);
+  process.exit(0);
 }
 
 const namespaces = fs

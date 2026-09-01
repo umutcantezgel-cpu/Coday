@@ -23,25 +23,43 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ className = '' }) => {
     return null;
   }
 
-  // Common path mappings to translation keys
-  const getTranslationKey = (pathSegment: string) => {
-    const mappings: Record<string, string> = {
-      services: 'nav.services.label',
-      industries: 'nav.industries.label',
-      work: 'nav.work.label',
-      knowledge: 'nav.resources.knowledge.title',
-      contact: 'nav.about.contact.label',
-      career: 'nav.career.label',
-      legal: 'nav.company.legal',
-      'web-development': 'nav.services.web_development.label',
-      'web-design': 'nav.services.web_design.label',
-      seo: 'nav.services.seo.label',
-      performance: 'nav.services.performance.label',
-      blog: 'nav.academy.blog.label',
-      pricing: 'nav.main.pricing',
-    };
+  // Path segments that reuse an existing nav label.
+  const NAV_KEYS: Record<string, string> = {
+    services: 'nav.services.label',
+    industries: 'nav.industries.label',
+    work: 'nav.work.label',
+    knowledge: 'nav.resources.knowledge.title',
+    contact: 'nav.about.contact.label',
+    career: 'nav.career.label',
+    legal: 'nav.company.legal',
+    'web-development': 'nav.services.web_development.label',
+    'web-design': 'nav.services.web_design.label',
+    seo: 'nav.services.seo.label',
+    performance: 'nav.services.performance.label',
+    blog: 'nav.academy.blog.label',
+    pricing: 'nav.main.pricing',
+  };
 
-    return mappings[pathSegment] || pathSegment;
+  /** "inbound-marketing" -> "Inbound Marketing" */
+  const humanize = (segment: string) =>
+    segment
+      .split('-')
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+
+  /**
+   * Resolution order: a dedicated breadcrumb label, then the matching nav label,
+   * then the humanised slug. `t.has` is required — a missing message does not
+   * return the bare key, it returns `common.<key>` via getMessageFallback, so
+   * comparing the result against the key never detects a miss.
+   */
+  const labelFor = (segment: string) => {
+    if (t.has(`breadcrumb.${segment}`)) return t(`breadcrumb.${segment}`);
+
+    const navKey = NAV_KEYS[segment];
+    if (navKey && t.has(navKey)) return t(navKey);
+
+    return humanize(segment);
   };
 
   return (
@@ -62,12 +80,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ className = '' }) => {
           const isLast = index === pathnames.length - 1;
           const rawTo = `/${pathnames.slice(0, index + 1).join('/')}`;
           const to = rawTo === '/knowledge' ? '/knowledge/wikihub' : rawTo;
-          const translationKey = getTranslationKey(value);
-          // If translation returns the key itself, try to capitalize the raw path
-          const translatedLabel =
-            t(translationKey) === translationKey
-              ? value.charAt(0).toUpperCase() + value.slice(1).replace(/-/g, ' ')
-              : t(translationKey);
+          const translatedLabel = labelFor(value);
 
           return (
             <li key={to} className="flex items-center space-x-2">

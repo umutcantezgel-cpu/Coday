@@ -17,6 +17,7 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
+    "qa:i18n": "node scripts/qa/check-i18n-fallbacks.mjs",
     "test": "vitest",
     "test:run": "vitest run",
     "test:a11y:ci": "echo 'A11y CI checks passed'"

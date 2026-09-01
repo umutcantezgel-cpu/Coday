@@ -35,7 +35,8 @@ export const ROOT_CLIENT_NAMESPACES = ['common', 'error', 'faq'] as const;
 /** Route-family additions, each merged on top of the root set by a nested provider. */
 export const ROUTE_CLIENT_NAMESPACES = {
   home: ['home', 'form'],
-  services: ['services', 'consulting'],
+  // `booking`: /services/consulting embeds the booking calendar.
+  services: ['services', 'consulting', 'booking'],
   industries: ['industries', 'public-sector'],
   knowledge: ['knowledge', 'blog'],
   career: ['careers', 'form'],

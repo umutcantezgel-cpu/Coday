@@ -491,6 +491,23 @@
   "de": "German",
   "en": "English",
   "about": "About Us",
+  "breadcrumb": {
+    "academy": "Academy",
+    "benefits": "Benefits",
+    "branchen": "Industries",
+    "calendar": "Calendar",
+    "community": "Community",
+    "culture": "Work Culture",
+    "events": "Events",
+    "faq": "FAQ",
+    "jobs": "Jobs",
+    "marketplace": "Marketplace",
+    "members": "Members",
+    "newsletter": "Newsletter",
+    "whitepapers": "Whitepapers",
+    "wiki": "Tech Wiki",
+    "wikihub": "Wiki Hub"
+  },
   "skipLink": "Skip to main content",
   "garantie": "Guarantee",
   "meta": {
