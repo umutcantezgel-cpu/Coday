@@ -1,3 +1,4 @@
+import path from 'path';
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
 
@@ -28,7 +29,9 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     reactCompiler: true,
-    optimizeCss: true,
+    // The segment explorer pulls next/dist/compiled/next-devtools (820 kB) into
+    // rootMainFiles, i.e. into the <head> of every production route.
+    devtoolSegmentExplorer: false,
     optimizePackageImports: [
       '@phosphor-icons/react',
       '@phosphor-icons/react/dist/ssr',
@@ -829,6 +832,22 @@ const nextConfig: NextConfig = {
         ],
       },
     ];
+  },
+  webpack: (config, { dev, isServer }) => {
+    // Next requires the dev overlay from client modules that are all guarded by
+    // `process.env.NODE_ENV !== 'production'`, but webpack still bundles the
+    // 820 kB payload into rootMainFiles — the <head> of every production route.
+    // Alias it to a stub for the production client build only.
+    if (!dev && !isServer) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        'next/dist/compiled/next-devtools': path.resolve(
+          process.cwd(),
+          'src/shims/next-devtools-noop.js'
+        ),
+      };
+    }
+    return config;
   },
 };
 
