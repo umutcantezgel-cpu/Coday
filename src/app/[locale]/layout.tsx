@@ -10,6 +10,7 @@ import { Suspense } from 'react';
 import '../globals.css';
 
 import { routing } from '@/i18n/routing';
+import { getOrganizationSchema, getWebSiteSchema } from '@/lib/schema';
 import MainLayout from '@/widgets/layout/MainLayout';
 import { MotionProvider } from '@/shared/ui/providers/MotionProvider';
 import { GoogleAnalytics } from '@/shared/lib/analytics/GoogleAnalytics';
@@ -75,6 +76,13 @@ export default async function RootLayout({
 
   const messages = await getMessages();
 
+  // Global knowledge-graph root: defines #organization and #website site-wide,
+  // so every page-level isPartOf/publisher/provider @id reference resolves.
+  const siteGraph = {
+    '@context': 'https://schema.org',
+    '@graph': [getOrganizationSchema(locale), getWebSiteSchema(locale)],
+  };
+
   return (
     <html lang={locale} className={`${inter.variable} ${outfit.variable}`} suppressHydrationWarning>
       <head>
@@ -90,6 +98,10 @@ export default async function RootLayout({
               }
             `,
           }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteGraph) }}
         />
       </head>
 

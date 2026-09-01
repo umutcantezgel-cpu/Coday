@@ -2,7 +2,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { ContactClient } from '@/features/contact/ui/ContactClient';
-import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, ORG_ID, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -67,27 +67,9 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
         description: isEn
           ? 'Direct contact to Lead Architect Umutcan Emre Tezgel for high-end web development projects.'
           : 'Direkter Kontakt zu Lead-Architekt Umutcan Emre Tezgel für anspruchsvolle Webprojekte.',
-        mainEntity: {
-          '@type': 'LocalBusiness',
-          name: 'Coday Webagentur',
-          url: BASE_URL,
-          telephone: '+49-176-41195301',
-          email: 'umut@codayweb.de',
-          address: {
-            '@type': 'PostalAddress',
-            streetAddress: 'Lessingstraße 4',
-            addressLocality: 'Wetzlar',
-            postalCode: '35578',
-            addressRegion: 'Hessen',
-            addressCountry: 'DE',
-          },
-          openingHoursSpecification: {
-            '@type': 'OpeningHoursSpecification',
-            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-            opens: '09:00',
-            closes: '18:00',
-          },
-        },
+        // Reference the canonical Organization node (typed LocalBusiness) instead of
+        // duplicating an anonymous NAP entity that fragments the knowledge graph.
+        mainEntity: { '@id': ORG_ID },
       },
     ],
   };

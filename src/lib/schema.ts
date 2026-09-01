@@ -117,6 +117,7 @@ export function getOrganizationSchema(locale: string = 'de') {
       givenName: 'Umutcan Emre',
       familyName: 'Tezgel',
       jobTitle: 'Gründer & Web-Entwickler',
+      url: `${BASE_URL}/${locale}/about`,
       worksFor: { '@id': ORG_ID },
       sameAs: [
         'https://www.linkedin.com/in/umutcan-emre-tezgel-156382218/',
@@ -188,6 +189,8 @@ export function getOrganizationSchema(locale: string = 'de') {
       'https://github.com/coday',
       'https://www.instagram.com/codayweb',
       'https://www.youtube.com/@coday',
+      'https://x.com/codayweb',
+      'https://www.facebook.com/people/Coday/61588758264018/',
     ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
@@ -373,32 +376,27 @@ export function getArticleSchema(post: {
   imageUrl?: string;
   authorName?: string;
 }) {
+  // Pseudonymous author names must not be attached to the founder's @id;
+  // the founder node itself is defined once inside the Organization schema.
+  const isFounderAuthor = !post.authorName || post.authorName === 'Lead Architect';
+
   return {
     '@context': 'https://schema.org',
     '@type': 'TechArticle',
+    '@id': `${post.url}#article`,
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': post.url,
     },
+    isPartOf: { '@id': WEBSITE_ID },
     headline: post.title,
     description: post.excerpt,
     image: post.imageUrl ? [post.imageUrl] : [`${BASE_URL}/images/og-image.jpg`],
     datePublished: post.publishedAt,
     dateModified: post.publishedAt,
-    author: {
-      '@type': 'Person',
-      '@id': FOUNDER_ID,
-      name:
-        post.authorName && post.authorName !== 'Lead Architect'
-          ? post.authorName
-          : 'Umutcan Emre Tezgel',
-      jobTitle: 'Inhaber, Lead Architect & Fullstack Engineer',
-      url: `${BASE_URL}/de/about`,
-      sameAs: [
-        'https://www.linkedin.com/in/umutcan-emre-tezgel-156382218/',
-        'https://github.com/umurey',
-      ],
-    },
+    author: isFounderAuthor
+      ? { '@id': FOUNDER_ID }
+      : { '@type': 'Person', name: post.authorName, worksFor: { '@id': ORG_ID } },
     publisher: {
       '@id': ORG_ID,
     },
@@ -409,7 +407,7 @@ export function getServiceSchema(service: { name: string; description: string; u
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    '@id': service.url,
+    '@id': `${service.url}#service`,
     name: service.name,
     description: service.description,
     provider: {

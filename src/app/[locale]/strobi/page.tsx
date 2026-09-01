@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import type { Metadata } from 'next';
 import { StrobiWorldClient } from '@/features/strobi-world';
 import { generateAlternates } from '@/lib/metadata';
+import { BASE_URL, getWebApplicationSchema } from '@/lib/schema';
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -34,10 +35,32 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default function StrobiWorldPage() {
+export default async function StrobiWorldPage({ params }: PageProps) {
+  const { locale } = await params;
+  const isEn = locale === 'en';
+
+  const jsonLd = getWebApplicationSchema(
+    {
+      name: 'Strobi Mii World',
+      description: isEn
+        ? 'Interactive AI avatar with 60 FPS vector physics, minigames and real-time chat, built with Next.js by Coday.'
+        : 'Interaktiver KI-Avatar mit 60-FPS-Vektorphysik, Minispielen und Echtzeit-Chat, entwickelt mit Next.js von Coday.',
+      url: `${BASE_URL}/${locale}/strobi`,
+      applicationCategory: 'EntertainmentApplication',
+    },
+    locale
+  );
+
   return (
-    <Suspense fallback={<div className="min-h-screen bg-slate-950" />}>
-      <StrobiWorldClient />
-    </Suspense>
+    <>
+      <script
+        id="schema-strobi"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <Suspense fallback={<div className="min-h-screen bg-slate-950" />}>
+        <StrobiWorldClient />
+      </Suspense>
+    </>
   );
 }

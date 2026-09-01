@@ -3,7 +3,12 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { IndustryDetailClient } from '@/features/industries/ui/IndustryDetailClient';
 import { IndustryToolEmbed } from '@/features/industries/ui/IndustryToolEmbed';
-import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
+import {
+  getOrganizationSchema,
+  getServiceSchema,
+  getBreadcrumbSchema,
+  BASE_URL,
+} from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -58,6 +63,14 @@ export default async function AutomobilHubPage({
             '@context': 'https://schema.org',
             '@graph': [
               getOrganizationSchema(_locale),
+              getBreadcrumbSchema([
+                { name: _locale === 'en' ? 'Home' : 'Startseite', url: `/${_locale}` },
+                { name: _locale === 'en' ? 'Industries' : 'Branchen', url: `/${_locale}/branchen` },
+                {
+                  name: _locale === 'en' ? 'Automotive' : 'Automobil & KFZ',
+                  url: `/${_locale}/branchen/automobil`,
+                },
+              ]),
               getServiceSchema({
                 name: _seoTitle,
                 description: _seoDesc,

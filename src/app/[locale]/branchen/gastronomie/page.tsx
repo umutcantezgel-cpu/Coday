@@ -2,7 +2,12 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import GastronomieClient from '@/features/industries/ui/GastronomieClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
+import {
+  getOrganizationSchema,
+  getServiceSchema,
+  getBreadcrumbSchema,
+  BASE_URL,
+} from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -53,6 +58,14 @@ export default async function GastronomiePage({ params }: { params: Promise<{ lo
             '@context': 'https://schema.org',
             '@graph': [
               getOrganizationSchema(_locale),
+              getBreadcrumbSchema([
+                { name: _locale === 'en' ? 'Home' : 'Startseite', url: `/${_locale}` },
+                { name: _locale === 'en' ? 'Industries' : 'Branchen', url: `/${_locale}/branchen` },
+                {
+                  name: _locale === 'en' ? 'Restaurants & Gastronomy' : 'Gastronomie',
+                  url: `/${_locale}/branchen/gastronomie`,
+                },
+              ]),
               getServiceSchema({
                 name: _seoTitle,
                 description: _seoDesc,

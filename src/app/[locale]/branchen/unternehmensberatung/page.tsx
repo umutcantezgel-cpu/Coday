@@ -1,6 +1,11 @@
 import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
-import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
+import {
+  getOrganizationSchema,
+  getServiceSchema,
+  getBreadcrumbSchema,
+  BASE_URL,
+} from '@/lib/schema';
 import { setRequestLocale } from 'next-intl/server';
 import { IndustryDetailClient } from '@/features/industries/ui/IndustryDetailClient';
 
@@ -51,6 +56,14 @@ export default async function UnternehmensberatungPage({
             '@context': 'https://schema.org',
             '@graph': [
               getOrganizationSchema(_locale),
+              getBreadcrumbSchema([
+                { name: _locale === 'en' ? 'Home' : 'Startseite', url: `/${_locale}` },
+                { name: _locale === 'en' ? 'Industries' : 'Branchen', url: `/${_locale}/branchen` },
+                {
+                  name: _locale === 'en' ? 'Management Consulting' : 'Unternehmensberatung',
+                  url: `/${_locale}/branchen/unternehmensberatung`,
+                },
+              ]),
               getServiceSchema({
                 name:
                   locale === 'en'

@@ -2,7 +2,12 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import PublicSectorClient from '@/features/industries/ui/PublicSectorClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
+import {
+  getOrganizationSchema,
+  getServiceSchema,
+  getBreadcrumbSchema,
+  BASE_URL,
+} from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -57,6 +62,14 @@ export default async function PublicSectorPage({
             '@context': 'https://schema.org',
             '@graph': [
               getOrganizationSchema(_locale),
+              getBreadcrumbSchema([
+                { name: _locale === 'en' ? 'Home' : 'Startseite', url: `/${_locale}` },
+                { name: _locale === 'en' ? 'Industries' : 'Branchen', url: `/${_locale}/branchen` },
+                {
+                  name: _locale === 'en' ? 'Public Sector' : 'Öffentlicher Sektor',
+                  url: `/${_locale}/branchen/public-sector`,
+                },
+              ]),
               getServiceSchema({
                 name: _seoTitle,
                 description: _seoDesc,
