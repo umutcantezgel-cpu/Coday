@@ -29,6 +29,9 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     reactCompiler: true,
+    // NOTE: optimizeCss was removed here — it is inert on the App Router. Next
+    // only reaches critters from server/post-process.js, which the Pages Router
+    // renderer calls; the served head had zero inlined <style> tags.
     // The segment explorer pulls next/dist/compiled/next-devtools (820 kB) into
     // rootMainFiles, i.e. into the <head> of every production route.
     devtoolSegmentExplorer: false,

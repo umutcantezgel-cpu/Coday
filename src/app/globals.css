@@ -1,5 +1,9 @@
-@import 'tailwindcss';
-@source "./src";
+@import 'tailwindcss' source(none);
+/* `@source` resolves relative to this file, so the previous "./src" pointed at
+   src/app/src, which does not exist. Tailwind then fell back to scanning from the
+   project root and picked up trace.json (45 MB) and baseline-trace.json (75 MB),
+   emitting utilities for strings found inside them. */
+@source "../";
 @theme {
   /* ═══ TAILWIND V4 INTEGRATION FROM CONFIG ═══ */
   --color-accent: #b45309;
