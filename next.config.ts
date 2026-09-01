@@ -618,48 +618,59 @@ const nextConfig: NextConfig = {
         destination: '/:locale/services/web-design',
         permanent: true,
       },
-      // --- Legacy blog post redirects ---
+      // --- Legacy blog post redirects (point old slugs at the live articles) ---
       {
         source: '/knowledge/blog/omni-channel-mix',
-        destination: '/knowledge/blog',
+        destination: '/de/knowledge/blog/der-perfekte-omni-channel-mix',
         permanent: true,
       },
       {
-        source: '/:locale(de|en)/knowledge/blog/omni-channel-mix',
-        destination: '/:locale/knowledge/blog',
+        source: '/de/knowledge/blog/omni-channel-mix',
+        destination: '/de/knowledge/blog/der-perfekte-omni-channel-mix',
         permanent: true,
       },
       {
-        source: '/knowledge/blog/email-marketing-automation',
-        destination: '/knowledge/blog',
-        permanent: true,
-      },
-      {
-        source: '/:locale(de|en)/knowledge/blog/email-marketing-automation',
-        destination: '/:locale/knowledge/blog',
+        source: '/en/knowledge/blog/omni-channel-mix',
+        destination: '/en/knowledge/blog/the-perfect-omni-channel-mix',
         permanent: true,
       },
       {
         source: '/blog/omni-channel-mix',
-        destination: '/knowledge/blog',
+        destination: '/de/knowledge/blog/der-perfekte-omni-channel-mix',
         permanent: true,
       },
       {
-        source: '/:locale(de|en)/blog/omni-channel-mix',
-        destination: '/:locale/knowledge/blog',
+        source: '/de/blog/omni-channel-mix',
+        destination: '/de/knowledge/blog/der-perfekte-omni-channel-mix',
         permanent: true,
       },
+      {
+        source: '/en/blog/omni-channel-mix',
+        destination: '/en/knowledge/blog/the-perfect-omni-channel-mix',
+        permanent: true,
+      },
+      // email-marketing-automation is a live DE-only article — only the EN URL
+      // (no translation exists) redirects to the blog index.
       {
         source: '/blog/email-marketing-automation',
-        destination: '/knowledge/blog',
+        destination: '/de/knowledge/blog/email-marketing-automation',
         permanent: true,
       },
       {
-        source: '/:locale(de|en)/blog/email-marketing-automation',
-        destination: '/:locale/knowledge/blog',
+        source: '/de/blog/email-marketing-automation',
+        destination: '/de/knowledge/blog/email-marketing-automation',
         permanent: true,
       },
-      // --- Legacy /ai/ programmatically generated landing pages (301 redirects) ---
+      {
+        source: '/en/blog/email-marketing-automation',
+        destination: '/en/knowledge/blog',
+        permanent: true,
+      },
+      // --- Legacy /ai/ sitemaps ---
+      // NOTE: No redirects for /ai/ page paths here. Removed programmatic /ai/ landing
+      // pages must answer 410 Gone (handled in src/middleware.ts). Redirects defined in
+      // next.config run BEFORE middleware, so any /ai/ redirect here would make the 410
+      // unreachable and Google would treat the mass-redirects as soft 404s.
       {
         source: '/sitemap-ai-triples.xml',
         destination: '/sitemap.xml',
@@ -668,46 +679,6 @@ const nextConfig: NextConfig = {
       {
         source: '/sitemap_index.xml',
         destination: '/sitemap.xml',
-        permanent: true,
-      },
-      {
-        source: '/:locale(de|en)/ai/:city([a-z0-9-]+)-seo',
-        destination: '/:locale/services/seo',
-        permanent: true,
-      },
-      {
-        source: '/ai/:city([a-z0-9-]+)-seo',
-        destination: '/services/seo',
-        permanent: true,
-      },
-      {
-        source: '/:locale(de|en)/ai/:city([a-z0-9-]+)-webdesign',
-        destination: '/:locale/services/web-design',
-        permanent: true,
-      },
-      {
-        source: '/ai/:city([a-z0-9-]+)-webdesign',
-        destination: '/services/web-design',
-        permanent: true,
-      },
-      {
-        source: '/:locale(de|en)/ai/:city([a-z0-9-]+)-headless-cms',
-        destination: '/:locale/services/development/headless-cms',
-        permanent: true,
-      },
-      {
-        source: '/ai/:city([a-z0-9-]+)-headless-cms',
-        destination: '/services/development/headless-cms',
-        permanent: true,
-      },
-      {
-        source: '/:locale(de|en)/ai/:path*',
-        destination: '/:locale/services/generative-engine-optimization',
-        permanent: true,
-      },
-      {
-        source: '/ai/:path*',
-        destination: '/services/generative-engine-optimization',
         permanent: true,
       },
       // --- Legal & Service Aliases ---

@@ -1,6 +1,6 @@
 import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
-import { redirect, notFound } from 'next/navigation';
+import { permanentRedirect, notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { getBlogPost, getBlogPosts } from '@/features/blog/model/data';
 import { routing } from '@/i18n/routing';
@@ -206,9 +206,9 @@ export default async function BlogPostPage({ params }: PageProps) {
         (p) => String(p.id) === String(otherLangPost.id)
       );
       if (matchInCurrent) {
-        redirect(`/${locale}/knowledge/blog/${matchInCurrent.slug}`);
+        permanentRedirect(`/${locale}/knowledge/blog/${matchInCurrent.slug}`);
       } else {
-        redirect(`/${otherLocale}/knowledge/blog/${otherLangPost.slug}`);
+        permanentRedirect(`/${otherLocale}/knowledge/blog/${otherLangPost.slug}`);
       }
     }
     notFound();

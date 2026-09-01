@@ -60,6 +60,10 @@ describe('Sitemap Technical SEO Validation', () => {
   });
 
   it('should not cross-reference invalid foreign slugs for blog posts in alternates', async () => {
+    const { getBlogPosts } = await import('@/features/blog/model/data');
+    const deSlugs = new Set(getBlogPosts('de').map((p) => p.slug));
+    const enSlugs = new Set(getBlogPosts('en').map((p) => p.slug));
+
     const entries = await sitemap();
 
     const deBlogEntries = entries.filter((e) =>
@@ -67,12 +71,15 @@ describe('Sitemap Technical SEO Validation', () => {
     );
     expect(deBlogEntries.length).toBeGreaterThan(0);
 
-    // Each DE blog post should only have 'de' and 'x-default' in alternates.languages
+    // hreflang alternates must point at slugs that actually exist in the target locale
     for (const entry of deBlogEntries) {
       const languages = entry.alternates?.languages as Record<string, string> | undefined;
       expect(languages).toBeDefined();
       expect(languages?.de).toBe(entry.url);
-      expect(languages?.en).toBeUndefined();
+      if (languages?.en) {
+        const enSlug = languages.en.replace('https://www.codayweb.de/en/knowledge/blog/', '');
+        expect(enSlugs.has(enSlug)).toBe(true);
+      }
     }
 
     const enBlogEntries = entries.filter((e) =>
@@ -82,7 +89,43 @@ describe('Sitemap Technical SEO Validation', () => {
       const languages = entry.alternates?.languages as Record<string, string> | undefined;
       expect(languages).toBeDefined();
       expect(languages?.en).toBe(entry.url);
-      expect(languages?.de).toBeUndefined();
+      if (languages?.de) {
+        const deSlug = languages.de.replace('https://www.codayweb.de/de/knowledge/blog/', '');
+        expect(deSlugs.has(deSlug)).toBe(true);
+      }
     }
+  });
+
+  it('should not contain URLs that redirect (sitemap must be 200-only)', async () => {
+    const entries = await sitemap();
+    const urls = entries.map((e) => e.url);
+
+    // Removed programmatic /ai/ landing pages answer 410 Gone via middleware
+    expect(urls.some((url) => url.includes('/ai/'))).toBe(false);
+
+    // Known permanent redirects (next.config.ts / page-level permanentRedirect)
+    const REDIRECTING_PATHS = [
+      '/standorte/giessen',
+      '/standorte/wetzlar',
+      '/branchen/gesundheitswesen',
+      '/branchen/handwerker',
+      '/work/red-chillies',
+      '/work/akan-dienstleistungen',
+      '/work/prestige-estates',
+      '/work/red-flames',
+      '/work/fitflow',
+      '/work/hotel-zur-post',
+    ];
+    for (const path of REDIRECTING_PATHS) {
+      expect(urls.some((url) => url.endsWith(path))).toBe(false);
+    }
+
+    // Root must appear only as canonical /de and /en — never bare, http or non-www
+    expect(urls).toContain('https://www.codayweb.de/de');
+    expect(urls).toContain('https://www.codayweb.de/en');
+    expect(urls.every((url) => url.startsWith('https://www.codayweb.de/'))).toBe(true);
+    expect(
+      urls.some((url) => url === 'https://www.codayweb.de' || url === 'https://www.codayweb.de/')
+    ).toBe(false);
   });
 });

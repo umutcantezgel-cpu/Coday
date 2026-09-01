@@ -277,7 +277,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.85,
     }),
     ...sitemapEntries('/standorte/hessen', { changeFrequency: 'monthly', priority: 0.85 }),
-    ...sitemapEntries('/standorte/giessen', { changeFrequency: 'monthly', priority: 0.85 }),
+    // NOTE: /standorte/giessen intentionally omitted — it 308-redirects to /webdesign-giessen
+    // (see next.config.ts), and redirecting URLs must not appear in the sitemap.
 
     // === Branchen (Industry pages) ===
     ...sitemapEntries('/branchen', { changeFrequency: 'monthly', priority: 0.7 }),
@@ -314,8 +315,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...sitemapEntries('/branchen/immobilien', { changeFrequency: 'monthly', priority: 0.7 }),
     ...sitemapEntries('/branchen/public-sector', { changeFrequency: 'monthly', priority: 0.6 }),
     ...sitemapEntries('/branchen/retail', { changeFrequency: 'monthly', priority: 0.6 }),
-    ...sitemapEntries('/branchen/gesundheitswesen', { changeFrequency: 'monthly', priority: 0.7 }),
-    ...sitemapEntries('/branchen/handwerker', { changeFrequency: 'monthly', priority: 0.8 }),
+    // NOTE: /branchen/gesundheitswesen and /branchen/handwerker intentionally omitted —
+    // their pages permanentRedirect() to /branchen/aerzte-gesundheit and /branchen/handwerk-bau
+    // (both already listed above), and redirecting URLs must not appear in the sitemap.
     ...sitemapEntries('/branchen/aerzte-gesundheit/giessen', {
       changeFrequency: 'monthly',
       priority: 0.8,
@@ -368,6 +370,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const dynamicDocs = await fetchSanity<SanityDoc[]>(query);
 
+  // Paths that 301/308-redirect via next.config.ts or page-level permanentRedirect().
+  // Sanity may still hold documents for them — they must never enter the sitemap.
+  const REDIRECTED_PATHS = new Set([
+    '/standorte/wetzlar',
+    '/standorte/giessen',
+    '/work/red-chillies',
+    '/work/akan-dienstleistungen',
+    '/work/prestige-estates',
+    '/work/red-flames',
+    '/work/fitflow',
+    '/work/hotel-zur-post',
+  ]);
+
   const dynamicRoutes: MetadataRoute.Sitemap = [];
   dynamicDocs.forEach((doc) => {
     let routePrefix = '';
@@ -395,6 +410,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const slug = doc.slug?.current || '';
     if (slug) {
       const path = `${routePrefix}/${slug}`;
+      if (REDIRECTED_PATHS.has(path) || /^\/work\/roof-template-\d+$/.test(path)) {
+        return;
+      }
       dynamicRoutes.push(
         ...sitemapEntries(path, {
           changeFrequency,
