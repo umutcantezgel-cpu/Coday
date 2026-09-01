@@ -27,6 +27,8 @@ const inter = Inter({
   preload: true,
 });
 
+// Both faces stay preloaded with display:'swap'. Measured alternative: dropping
+// the Outfit preload made FCP worse (1.50s -> 1.65s) with no LCP gain.
 const outfit = Outfit({
   subsets: ['latin'],
   variable: '--font-outfit',
