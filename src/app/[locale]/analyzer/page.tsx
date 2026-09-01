@@ -1,6 +1,6 @@
-import { setRequestLocale, getMessages } from 'next-intl/server';
-import { NextIntlClientProvider } from 'next-intl';
+import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
+import { RouteMessages } from '@/i18n/RouteMessages';
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import {
@@ -62,8 +62,6 @@ export default async function AnalyzerPage(props: { params: Promise<{ locale: st
     defaultValue: 'Kostenloses Website Audit & Performance Analyse.',
   });
 
-  const messages = await getMessages();
-
   const breadcrumbs = getBreadcrumbSchema([
     { name: _locale === 'en' ? 'Home' : 'Startseite', url: `/${_locale}` },
     { name: _locale === 'en' ? 'Analyzer' : 'Website Analyzer', url: `/${_locale}/analyzer` },
@@ -87,7 +85,7 @@ export default async function AnalyzerPage(props: { params: Promise<{ locale: st
     '@graph': [getOrganizationSchema(_locale), breadcrumbs, webApp],
   };
   return (
-    <>
+    <RouteMessages family="calculator" locale={_locale}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -226,6 +224,6 @@ export default async function AnalyzerPage(props: { params: Promise<{ locale: st
           </section>
         </div>
       </div>
-    </>
+    </RouteMessages>
   );
 }

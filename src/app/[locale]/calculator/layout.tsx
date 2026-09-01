@@ -1,4 +1,5 @@
 import { setRequestLocale } from 'next-intl/server';
+import { RouteMessages } from '@/i18n/RouteMessages';
 
 export default async function CalculatorLayout({
   children,
@@ -10,5 +11,9 @@ export default async function CalculatorLayout({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <>{children}</>;
+  return (
+    <RouteMessages family="calculator" locale={locale}>
+      {children}
+    </RouteMessages>
+  );
 }

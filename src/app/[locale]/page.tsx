@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import { getOrganizationSchema, getWebSiteSchema, getMainProductOfferSchema } from '@/lib/schema';
+import { getMainProductOfferSchema } from '@/lib/schema';
+import { RouteMessages } from '@/i18n/RouteMessages';
 import { generatePageMetadata } from '@/lib/metadata';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -86,19 +87,19 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   setRequestLocale(locale);
 
   const _locale = locale || 'de';
-  const orgSchema = getOrganizationSchema(_locale);
-  const websiteSchema = getWebSiteSchema(_locale);
+  // Organization and WebSite are emitted globally by the locale layout; the page
+  // graph only adds what is specific to the homepage.
   const mainProductSchema = getMainProductOfferSchema(_locale);
 
   return (
-    <>
+    <RouteMessages family="home" locale={locale}>
       <script
         id="schema-local-service"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@graph': [orgSchema, websiteSchema, mainProductSchema],
+            '@graph': [mainProductSchema],
           }),
         }}
       />
@@ -138,6 +139,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </ScrollReveal>
 
       <SeoContentSection />
-    </>
+    </RouteMessages>
   );
 }

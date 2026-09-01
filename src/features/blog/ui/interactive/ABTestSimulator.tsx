@@ -41,7 +41,9 @@ const VARIANTS: Record<'A' | 'B', Variant> = {
 };
 
 export const ABTestSimulator: React.FC = () => {
-  const t = useTranslations();
+  // Scoped on purpose: a namespace-less useTranslations() forces the entire
+  // message catalogue into the client payload.
+  const t = useTranslations('blog.abTest');
   const locale = useLocale();
   const [activeVariant, setActiveVariant] = useState<'A' | 'B'>('A');
   const [visitors, setVisitors] = useState(0);
@@ -80,18 +82,15 @@ export const ABTestSimulator: React.FC = () => {
   };
 
   return (
-    <section
-      className="my-12 font-sans w-full max-w-4xl mx-auto"
-      aria-label={t('blog.abTest.title')}
-    >
+    <section className="my-12 font-sans w-full max-w-4xl mx-auto" aria-label={t('title')}>
       <div className="bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-xl">
         {/* Header */}
         <div className="bg-gradient-to-r from-gray-900 to-gray-800 p-6 text-white flex items-center justify-between">
           <div className="flex items-center gap-3">
             <SplitHorizontal className="text-primary" />
             <div>
-              <h3 className="font-bold text-lg leading-tight">{t('blog.abTest.title')}</h3>
-              <p className="text-xs text-gray-400 font-mono">{t('blog.abTest.subtitle')}</p>
+              <h3 className="font-bold text-lg leading-tight">{t('title')}</h3>
+              <p className="text-xs text-gray-400 font-mono">{t('subtitle')}</p>
             </div>
           </div>
           <div className="flex items-center gap-2">
@@ -100,14 +99,14 @@ export const ABTestSimulator: React.FC = () => {
                 onClick={() => setIsRunning(true)}
                 className="active:scale-[0.97] px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg text-sm font-bold transition motion-reduce:duration-[0.01ms] flex items-center gap-2"
               >
-                <ArrowsClockwise className="w-4 h-4" /> {t('blog.abTest.start')}
+                <ArrowsClockwise className="w-4 h-4" /> {t('start')}
               </button>
             ) : (
               <button
                 onClick={() => setIsRunning(false)}
                 className="active:scale-[0.97] px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg text-sm font-bold transition motion-reduce:duration-[0.01ms]"
               >
-                {t('blog.abTest.stop')}
+                {t('stop')}
               </button>
             )}
             <button
@@ -125,7 +124,7 @@ export const ABTestSimulator: React.FC = () => {
           {/* Controls Side */}
           <div className="w-full md:w-1/3 bg-gray-50 p-6 border-r border-gray-100 flex flex-col gap-4">
             <h4 className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2">
-              {t('blog.abTest.selectVariant')}
+              {t('selectVariant')}
             </h4>
 
             {(['A', 'B'] as const).map((variantId) => (
@@ -166,26 +165,22 @@ export const ABTestSimulator: React.FC = () => {
                   )}
                 </div>
                 <div className="text-sm font-medium text-gray-800 mb-1">
-                  {variantId === 'A'
-                    ? t('blog.abTest.variantA.name')
-                    : t('blog.abTest.variantB.name')}
+                  {variantId === 'A' ? t('variantA.name') : t('variantB.name')}
                 </div>
                 <div className="text-xs text-gray-500 leading-snug">
-                  {variantId === 'A'
-                    ? t('blog.abTest.variantA.description')
-                    : t('blog.abTest.variantB.description')}
+                  {variantId === 'A' ? t('variantA.description') : t('variantB.description')}
                 </div>
               </button>
             ))}
 
             <div className="mt-auto pt-6 border-t border-gray-200">
               <h4 className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4">
-                {t('blog.abTest.metrics.header')}
+                {t('metrics.header')}
               </h4>
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
                   <span className="text-gray-600 text-sm flex items-center gap-2">
-                    <Users className="w-4 h-4" /> {t('blog.abTest.metrics.visitors')}
+                    <Users className="w-4 h-4" /> {t('metrics.visitors')}
                   </span>
                   <span className="font-mono font-bold text-gray-900">
                     {formatNumber(visitors, locale)}
@@ -193,16 +188,14 @@ export const ABTestSimulator: React.FC = () => {
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-600 text-sm flex items-center gap-2">
-                    <CursorClick className="w-4 h-4" /> {t('blog.abTest.metrics.conversions')}
+                    <CursorClick className="w-4 h-4" /> {t('metrics.conversions')}
                   </span>
                   <span className="font-mono font-bold text-gray-900">
                     {formatNumber(conversions, locale)}
                   </span>
                 </div>
                 <div className="flex justify-between items-center pt-2 border-t border-gray-100">
-                  <span className="text-gray-800 font-bold text-sm">
-                    {t('blog.abTest.metrics.rate')}
-                  </span>
+                  <span className="text-gray-800 font-bold text-sm">{t('metrics.rate')}</span>
                   <span
                     className={clsx(
                       'font-mono font-bold text-lg',
@@ -253,16 +246,12 @@ export const ABTestSimulator: React.FC = () => {
                           : 'text-2xl leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600'
                       )}
                     >
-                      {activeVariant === 'A'
-                        ? t('blog.abTest.variantA.headline')
-                        : t('blog.abTest.variantB.headline')}
+                      {activeVariant === 'A' ? t('variantA.headline') : t('variantB.headline')}
                     </h3>
 
                     {/* Copy */}
                     <p className="text-sm text-gray-500 mb-8 leading-relaxed">
-                      {activeVariant === 'A'
-                        ? t('blog.abTest.variantA.copy')
-                        : t('blog.abTest.variantB.copy')}
+                      {activeVariant === 'A' ? t('variantA.copy') : t('variantB.copy')}
                     </p>
 
                     {/* Button */}
@@ -273,9 +262,7 @@ export const ABTestSimulator: React.FC = () => {
                         VARIANTS[activeVariant].buttonColor
                       )}
                     >
-                      {activeVariant === 'A'
-                        ? t('blog.abTest.variantA.button')
-                        : t('blog.abTest.variantB.button')}
+                      {activeVariant === 'A' ? t('variantA.button') : t('variantB.button')}
                     </button>
 
                     {/* Trust Elements (Only Variant B) */}
@@ -294,7 +281,7 @@ export const ABTestSimulator: React.FC = () => {
                             ></div>
                           ))}
                         </div>
-                        <span>{t('blog.abTest.variantB.trust')}</span>
+                        <span>{t('variantB.trust')}</span>
                       </m.div>
                     )}
                   </m.div>

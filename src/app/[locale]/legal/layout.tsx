@@ -1,4 +1,5 @@
 import { setRequestLocale } from 'next-intl/server';
+import { RouteMessages } from '@/i18n/RouteMessages';
 
 export default async function LegalLayout({
   children,
@@ -10,5 +11,9 @@ export default async function LegalLayout({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <>{children}</>;
+  return (
+    <RouteMessages family="legal" locale={locale}>
+      {children}
+    </RouteMessages>
+  );
 }
