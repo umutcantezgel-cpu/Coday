@@ -144,6 +144,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.7,
     }),
+    ...sitemapEntries('/services/web-design/ux-ui-design', {
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    }),
 
     // Growth & Marketing
     ...sitemapEntries('/services/growth/seo-optimization', {
@@ -273,6 +277,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.85,
     }),
     ...sitemapEntries('/standorte/hessen', { changeFrequency: 'monthly', priority: 0.85 }),
+    ...sitemapEntries('/standorte/giessen', { changeFrequency: 'monthly', priority: 0.85 }),
 
     // === Branchen (Industry pages) ===
     ...sitemapEntries('/branchen', { changeFrequency: 'monthly', priority: 0.7 }),
@@ -309,6 +314,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...sitemapEntries('/branchen/immobilien', { changeFrequency: 'monthly', priority: 0.7 }),
     ...sitemapEntries('/branchen/public-sector', { changeFrequency: 'monthly', priority: 0.6 }),
     ...sitemapEntries('/branchen/retail', { changeFrequency: 'monthly', priority: 0.6 }),
+    ...sitemapEntries('/branchen/gesundheitswesen', { changeFrequency: 'monthly', priority: 0.7 }),
+    ...sitemapEntries('/branchen/handwerker', { changeFrequency: 'monthly', priority: 0.8 }),
+    ...sitemapEntries('/branchen/aerzte-gesundheit/giessen', {
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    }),
+    ...sitemapEntries('/branchen/aerzte-gesundheit/wetzlar', {
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    }),
+    ...sitemapEntries('/branchen/handwerk-bau/giessen', {
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    }),
+    ...sitemapEntries('/branchen/handwerk-bau/wetzlar', {
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    }),
 
     // === Knowledge ===
     ...sitemapEntries('/knowledge/academy', { changeFrequency: 'weekly', priority: 0.85 }),
@@ -330,6 +353,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...sitemapEntries('/presse', { changeFrequency: 'monthly', priority: 0.5 }),
     ...sitemapEntries('/calculator', { changeFrequency: 'monthly', priority: 0.6 }),
     ...sitemapEntries('/uebersicht', { changeFrequency: 'monthly', priority: 0.4 }),
+    ...sitemapEntries('/strobi', { changeFrequency: 'monthly', priority: 0.4 }),
   ];
 
   // Dynamic content from Sanity

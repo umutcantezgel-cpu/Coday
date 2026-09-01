@@ -18,8 +18,10 @@ const BLOCKED_PATHS = [
   '/*/work/projectdetail',
   '/*/knowledge/blogpost',
   '/*/community/calendar',
+  '/*/community/events',
   '/*/community/marketplace',
   '/*/community/members',
+  '/*/privacy',
 ];
 
 export default function robots(): MetadataRoute.Robots {
