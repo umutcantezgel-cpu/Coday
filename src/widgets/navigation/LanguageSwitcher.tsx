@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from '@/i18n/navigation';
 import { useLocale } from 'next-intl';
-import { getMatchingBlogPost } from '@/features/blog/model/data';
+import { BLOG_SLUG_DE_TO_EN, BLOG_SLUG_EN_TO_DE } from '@/features/blog/model/blogSlugMap';
 
 export const LanguageSwitcher: React.FC = () => {
   const locale = useLocale();
@@ -21,10 +21,18 @@ export const LanguageSwitcher: React.FC = () => {
   if (isBlogPath) {
     const blogSlug = cleanPath.replace('/knowledge/blog/', '').replace(/\/$/, '');
     if (blogSlug) {
-      const matchEn = getMatchingBlogPost(blogSlug, 'de', 'en');
-      const matchDe = getMatchingBlogPost(blogSlug, 'en', 'de');
-      blogEnLink = matchEn ? `/en/knowledge/blog/${matchEn.slug}` : '/en/knowledge/blog';
-      blogDeLink = matchDe ? `/de/knowledge/blog/${matchDe.slug}` : '/de/knowledge/blog';
+      // The current slug belongs to the current locale; only the other side is
+      // looked up. (Resolving both directions from the same slug made every DE
+      // page link "DE" to the English article and vice versa.)
+      if (locale === 'de') {
+        const en = BLOG_SLUG_DE_TO_EN[blogSlug];
+        blogDeLink = `/de/knowledge/blog/${blogSlug}`;
+        blogEnLink = en ? `/en/knowledge/blog/${en}` : '/en/knowledge/blog';
+      } else {
+        const de = BLOG_SLUG_EN_TO_DE[blogSlug];
+        blogEnLink = `/en/knowledge/blog/${blogSlug}`;
+        blogDeLink = de ? `/de/knowledge/blog/${de}` : '/de/knowledge/blog';
+      }
     }
   }
 

@@ -10,6 +10,7 @@ import { Suspense } from 'react';
 import '../globals.css';
 
 import { routing } from '@/i18n/routing';
+import { pickMessages, ROOT_CLIENT_NAMESPACES } from '@/i18n/clientMessages';
 import { getOrganizationSchema, getWebSiteSchema } from '@/lib/schema';
 import MainLayout from '@/widgets/layout/MainLayout';
 import { MotionProvider } from '@/shared/ui/providers/MotionProvider';
@@ -64,6 +65,12 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
+// Paths containing a dot bypass the i18n middleware, so requests browsers make
+// on their own (/favicon.ico, /apple-touch-icon.png) fell through to this
+// dynamic segment and rendered a full page with lang="favicon.ico" — 824 kB of
+// HTML with a 200 status. Unknown locales must 404 instead.
+export const dynamicParams = false;
+
 export default async function RootLayout({
   children,
   params,
@@ -74,7 +81,9 @@ export default async function RootLayout({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const messages = await getMessages();
+  // Only the namespaces the root layout's own client components need; route
+  // families add theirs via nested providers (see src/i18n/clientMessages.ts).
+  const messages = pickMessages(await getMessages(), ROOT_CLIENT_NAMESPACES);
 
   // Global knowledge-graph root: defines #organization and #website site-wide,
   // so every page-level isPartOf/publisher/provider @id reference resolves.
