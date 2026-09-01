@@ -52,7 +52,7 @@
         },
         {
           "key": "Vary",
-          "value": "Accept, User-Agent"
+          "value": "Accept"
         }
       ]
     },
@@ -65,7 +65,7 @@
         },
         {
           "key": "Vary",
-          "value": "Accept, User-Agent"
+          "value": "Accept"
         }
       ]
     },
