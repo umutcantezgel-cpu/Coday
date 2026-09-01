@@ -192,10 +192,22 @@ export default async function DatenschutzPage({ params }: { params: Promise<{ lo
             </p>
           </div>
 
-          {/* 5. Ihre Rechte */}
+          {/* 5. Google Preferred Sources */}
           <div>
             <h2 className="text-xl font-semibold text-secondary-900 mb-3">
-              {isEn ? '5. Your Rights as a Data Subject' : '5. Ihre Rechte als betroffene Person'}
+              {isEn ? '5. Google "Preferred Sources"' : '5. Google „Bevorzugte Quellen“'}
+            </h2>
+            <p>
+              {isEn
+                ? 'On some pages we offer a button to add our website as a "preferred source" in Google Search. The button provided by Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043, USA) is only loaded after you actively click "Load Google button". Only then is a connection to Google servers established, transmitting your IP address and browser information to Google, potentially in the USA (Art. 49(1)(a) GDPR). Without that click, no data is sent to Google. Alternatively, a plain link takes you directly to the Google preferences page; the usual rules of that external site apply there. Legal basis is your consent expressed through the active click (Art. 6(1)(a) GDPR, §25(1) TDDDG).'
+                : 'Auf einigen Seiten bieten wir einen Button an, mit dem Sie unsere Website als „bevorzugte Quelle“ in der Google Suche hinterlegen können. Der von Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043, USA) bereitgestellte Button wird erst geladen, nachdem Sie aktiv auf „Google-Button laden“ geklickt haben. Erst dann wird eine Verbindung zu Google-Servern aufgebaut und dabei Ihre IP-Adresse sowie Browser-Informationen an Google übertragen, ggf. auch in die USA (Art. 49 Abs. 1 lit. a DSGVO). Ohne diesen Klick werden keine Daten an Google gesendet. Alternativ führt ein einfacher Link direkt zur Google-Einstellungsseite; dort gelten die Regeln der externen Website. Rechtsgrundlage ist Ihre durch den aktiven Klick erklärte Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG).'}
+            </p>
+          </div>
+
+          {/* 6. Ihre Rechte */}
+          <div>
+            <h2 className="text-xl font-semibold text-secondary-900 mb-3">
+              {isEn ? '6. Your Rights as a Data Subject' : '6. Ihre Rechte als betroffene Person'}
             </h2>
             <ul className="list-disc pl-5 space-y-1.5">
               <li>

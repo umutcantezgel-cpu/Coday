@@ -54,6 +54,21 @@
     },
     "sitemap": "Seitenübersicht (Sitemap)"
   },
+  "preferredSources": {
+    "sectionTitle": "Updates & Ressourcen",
+    "footerTitle": "Coday als bevorzugte Quelle bei Google",
+    "footerDesc": "Verpassen Sie keine neuen Beiträge zu Webentwicklung, SEO und Next.js: Fügen Sie Coday in der Google Suche als bevorzugte Quelle hinzu – so sehen Sie unsere Inhalte häufiger in den Top-Meldungen und KI-Übersichten.",
+    "articleTitle": "Mehr davon? Coday als bevorzugte Quelle speichern",
+    "articleDesc": "Wenn Ihnen dieser Beitrag geholfen hat: Speichern Sie Coday als bevorzugte Quelle in der Google Suche und entdecken Sie künftig mehr Fachwissen zu Webdesign, SEO und Performance direkt in Ihren Suchergebnissen.",
+    "articleButton": "Als bevorzugte Quelle speichern",
+    "loadButton": "Google-Button laden",
+    "notice": "Beim Laden des Buttons wird eine Verbindung zu Google LLC (USA) hergestellt.",
+    "deeplinkLabel": "Direkt bei Google als bevorzugte Quelle hinterlegen",
+    "newTabHint": "öffnet in neuem Tab",
+    "moreLabel": "Weiterlesen:",
+    "moreBlog": "Blog-Übersicht",
+    "moreServices": "Unsere Leistungen"
+  },
   "generic_detail": {
     "trust": {
       "title": "Vertraut von führenden Unternehmen"

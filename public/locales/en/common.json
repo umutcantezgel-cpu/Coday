@@ -54,6 +54,21 @@
     },
     "sitemap": "Sitemap"
   },
+  "preferredSources": {
+    "sectionTitle": "Updates & Resources",
+    "footerTitle": "Add Coday as a preferred source on Google",
+    "footerDesc": "Never miss new articles on web development, SEO and Next.js: add Coday as a preferred source in Google Search to see our content more often in Top Stories and AI Overviews.",
+    "articleTitle": "Want more of this? Save Coday as a preferred source",
+    "articleDesc": "If this article helped you, add Coday as a preferred source in Google Search and discover more expertise on web design, SEO and performance right in your search results.",
+    "articleButton": "Save as preferred source",
+    "loadButton": "Load Google button",
+    "notice": "Loading the button establishes a connection to Google LLC (USA).",
+    "deeplinkLabel": "Set Coday as a preferred source directly on Google",
+    "newTabHint": "opens in a new tab",
+    "moreLabel": "Keep reading:",
+    "moreBlog": "Blog overview",
+    "moreServices": "Our services"
+  },
   "generic_detail": {
     "trust": {
       "title": "Trusted by leading companies"

@@ -21,6 +21,7 @@ import { SeoAuthorBlock } from '@/features/knowledge/ui/SeoAuthorBlock';
 import { ReadingScore } from '@/features/blog/ui/ReadingScore';
 import { useTranslations, useLocale } from 'next-intl';
 import { SeoTextInjector } from '@/features/seo/ui/SeoTextInjector';
+import { PreferredSourceCta } from '@/shared/ui/PreferredSourceCta';
 
 const BlogPost: React.FC = () => {
   const params = useParams();
@@ -189,6 +190,9 @@ const BlogPost: React.FC = () => {
                   </Link>
                 </div>
               </div>
+
+              {/* Google Preferred Sources */}
+              <PreferredSourceCta variant="article" />
 
               {/* Author Box */}
               <div className="max-w-prose mx-auto border-t border-gray-100 pt-12 flex flex-col sm:flex-row gap-6 items-start sm:items-center">

@@ -11,7 +11,8 @@ export type EventName =
   | 'email_click'
   | 'discovery_call_booked'
   | 'scroll_depth'
-  | 'engaged_reading';
+  | 'engaged_reading'
+  | 'preferred_source_click';
 
 export interface EventProperties {
   cta_label?: string;

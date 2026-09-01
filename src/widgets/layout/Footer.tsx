@@ -22,6 +22,7 @@ import {
 
 import LogoLoop from '@/shared/ui/LogoLoop';
 import { TrustBadges } from '@/shared/ui/TrustBadges';
+import { PreferredSourceCta } from '@/shared/ui/PreferredSourceCta';
 import { clientLogos } from '@/shared/data/clientLogos';
 
 export const Footer: React.FC = () => {
@@ -355,6 +356,9 @@ export const Footer: React.FC = () => {
         <div className="flex justify-center mb-12 opacity-90 hover:opacity-100 transition-all duration-300">
           <TrustBadges align="center" />
         </div>
+
+        {/* Updates & Ressourcen: Google Preferred Sources */}
+        <PreferredSourceCta variant="footer" />
 
         {/* Bottom Bar: Legal & Social */}
         <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-6">
