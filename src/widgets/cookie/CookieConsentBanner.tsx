@@ -32,11 +32,12 @@ export const CookieConsentBanner: React.FC = () => {
   const bannerRef = useFocusTrap(isVisible && !showSettings, handleReject);
 
   useEffect(() => {
-    if (!hasConsented) {
-      // Delay slightly to prevent LCP layout thrashing
-      const timer = setTimeout(() => setIsVisible(true), 2200);
-      return () => clearTimeout(timer);
-    }
+    if (hasConsented) return;
+    // The mount is already deferred by DelayedRender in ConditionalWrapper; this
+    // short tick only covers the persisted consent store rehydrating, so returning
+    // visitors never see the banner flash.
+    const timer = setTimeout(() => setIsVisible(true), 150);
+    return () => clearTimeout(timer);
   }, [hasConsented]);
 
   const shouldRenderBanner = isVisible && !hasConsented;

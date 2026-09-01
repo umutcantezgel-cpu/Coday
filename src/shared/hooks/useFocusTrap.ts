@@ -19,8 +19,10 @@ export const useFocusTrap = (isActive: boolean, onEscape?: () => void) => {
         'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
       );
 
-      if (focusableElements.length > 0) {
-        (focusableElements[0] as HTMLElement).focus();
+      // Only claim focus if the visitor has not already put it somewhere (e.g. a
+      // form field), and never scroll the page to do so.
+      if (focusableElements.length > 0 && document.activeElement === document.body) {
+        (focusableElements[0] as HTMLElement).focus({ preventScroll: true });
       }
 
       const handleKeyDown = (e: KeyboardEvent) => {
@@ -69,4 +71,3 @@ export const useFocusTrap = (isActive: boolean, onEscape?: () => void) => {
 
   return containerRef;
 };
-

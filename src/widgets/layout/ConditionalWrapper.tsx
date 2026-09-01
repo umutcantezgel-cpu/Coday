@@ -1,8 +1,10 @@
 'use client';
 
-import React, { Suspense } from 'react';
+import React from 'react';
 import { usePathname } from 'next/navigation';
 import dynamic from 'next/dynamic';
+import { DelayedRender } from '@/shared/ui/DelayedRender';
+import { usePointerFine } from '@/shared/hooks/usePointerFine';
 
 const FloatingWidgetsManager = dynamic(
   () => import('@/widgets/floating-menu/FloatingWidgetsManager'),
@@ -21,26 +23,33 @@ const WaterCursor = dynamic(() => import('@/shared/ui/WaterCursor'), {
 export const ConditionalWrapper = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname() || '';
   const isDashboard = pathname.startsWith('/dashboard');
+  const pointerFine = usePointerFine();
 
   if (isDashboard) return <>{children}</>;
 
+  // `dynamic(..., { ssr: false })` fetches and mounts as soon as hydration runs.
+  // DelayedRender returns null first, so the chunk is not even requested until
+  // the first interaction or its timeout — whichever comes first.
   return (
     <div className="font-sans min-h-dvh flex flex-col">
-      <Suspense fallback={null}>
-        <WaterCursor tint="coday" />
-      </Suspense>
+      {pointerFine && (
+        <DelayedRender delayMs={2000}>
+          <WaterCursor tint="coday" />
+        </DelayedRender>
+      )}
       {children}
-      <Suspense fallback={null}>
+      <DelayedRender delayMs={4000}>
         <ChatWidget hideTrigger={true} />
-      </Suspense>
+      </DelayedRender>
 
-      <Suspense fallback={null}>
+      <DelayedRender delayMs={4000}>
         <FloatingWidgetsManager />
-      </Suspense>
+      </DelayedRender>
 
-      <Suspense fallback={null}>
+      {/* Fixed timing: the consent offer must not depend on the visitor interacting. */}
+      <DelayedRender delayMs={1500} waitForInteraction={false}>
         <CookieConsentBanner />
-      </Suspense>
+      </DelayedRender>
     </div>
   );
 };
