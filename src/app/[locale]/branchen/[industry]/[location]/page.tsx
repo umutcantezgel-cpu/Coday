@@ -37,6 +37,11 @@ export function generateStaticParams() {
     const matchedCity = citySlugs.find((slug) => name.endsWith(`-${slug}`));
     if (matchedCity) {
       const industry = name.slice(0, -(matchedCity.length + 1)); // remove -city
+      // Region files (kreis-offenbach, landkreis-giessen, …) also end in a city
+      // slug, but their prefix is not an industry. generateMetadata below calls
+      // notFound() for those, yet Next still emits a 200 page carrying the root
+      // layout's metadata — i.e. the homepage title with canonical /de.
+      if (!industriesData[industry]) continue;
       routing.locales.forEach((locale) => {
         params.push({ locale, industry, location: matchedCity });
       });
