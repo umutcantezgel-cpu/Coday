@@ -624,6 +624,139 @@ const nextConfig: NextConfig = {
         destination: '/:locale/services/web-design',
         permanent: true,
       },
+      // --- Cannibalisation: thin duplicates fold into the page that owns the topic ---
+      // Mirrors CANONICAL_HREF in src/shared/data/canonicalLinks.ts. Every internal
+      // link was repointed first, so none of these sources is linked from the site.
+      {
+        source: '/services/growth/seo-optimization',
+        destination: '/services/seo',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/growth/seo-optimization',
+        destination: '/:locale/services/seo',
+        permanent: true,
+      },
+      {
+        source: '/services/growth/performance-optimization',
+        destination: '/services/performance',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/growth/performance-optimization',
+        destination: '/:locale/services/performance',
+        permanent: true,
+      },
+      {
+        source: '/services/growth/digital-consulting',
+        destination: '/services/consulting',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/growth/digital-consulting',
+        destination: '/:locale/services/consulting',
+        permanent: true,
+      },
+      {
+        source: '/services/web-design/ux-ui-design',
+        destination: '/services/design/ui-ux',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/web-design/ux-ui-design',
+        destination: '/:locale/services/design/ui-ux',
+        permanent: true,
+      },
+      {
+        source: '/services/web-design/website-relaunch',
+        destination: '/services/development/migration',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/web-design/website-relaunch',
+        destination: '/:locale/services/development/migration',
+        permanent: true,
+      },
+      {
+        source: '/services/web-development/react-nextjs-agentur',
+        destination: '/services/web-development',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/web-development/react-nextjs-agentur',
+        destination: '/:locale/services/web-development',
+        permanent: true,
+      },
+      {
+        source: '/services/web-development/full-stack-entwicklung',
+        destination: '/services/web-development',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/web-development/full-stack-entwicklung',
+        destination: '/:locale/services/web-development',
+        permanent: true,
+      },
+      {
+        source: '/services/web-development/cloud-infrastructure',
+        destination: '/services/web-development',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/web-development/cloud-infrastructure',
+        destination: '/:locale/services/web-development',
+        permanent: true,
+      },
+      {
+        source: '/services/web-development/e-commerce-shops',
+        destination: '/services/ecommerce-development',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/web-development/e-commerce-shops',
+        destination: '/:locale/services/ecommerce-development',
+        permanent: true,
+      },
+      {
+        source: '/branchen/gastronomie-hotellerie',
+        destination: '/branchen/gastronomie',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/branchen/gastronomie-hotellerie',
+        destination: '/:locale/branchen/gastronomie',
+        permanent: true,
+      },
+      {
+        source: '/branchen/handwerker/wetzlar',
+        destination: '/branchen/handwerk-bau/wetzlar',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/branchen/handwerker/wetzlar',
+        destination: '/:locale/branchen/handwerk-bau/wetzlar',
+        permanent: true,
+      },
+      {
+        source: '/branchen/gesundheitswesen/arzt-wetzlar',
+        destination: '/branchen/aerzte-gesundheit/wetzlar',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/branchen/gesundheitswesen/arzt-wetzlar',
+        destination: '/:locale/branchen/aerzte-gesundheit/wetzlar',
+        permanent: true,
+      },
+      {
+        source: '/branchen/gesundheitswesen/arzt-giessen',
+        destination: '/branchen/aerzte-gesundheit/giessen',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/branchen/gesundheitswesen/arzt-giessen',
+        destination: '/:locale/branchen/aerzte-gesundheit/giessen',
+        permanent: true,
+      },
       // --- Legacy blog post redirects (point old slugs at the live articles) ---
       {
         source: '/knowledge/blog/omni-channel-mix',

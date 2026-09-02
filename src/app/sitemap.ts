@@ -121,47 +121,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     // Web Development
     ...sitemapEntries('/services/web-development', { changeFrequency: 'monthly', priority: 0.8 }),
-    ...sitemapEntries('/services/web-development/react-nextjs-agentur', {
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    }),
-    ...sitemapEntries('/services/web-development/e-commerce-shops', {
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    }),
-    ...sitemapEntries('/services/web-development/full-stack-entwicklung', {
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    }),
-    ...sitemapEntries('/services/web-development/cloud-infrastructure', {
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    }),
 
     // Web Design
     ...sitemapEntries('/services/web-design', { changeFrequency: 'monthly', priority: 0.8 }),
-    ...sitemapEntries('/services/web-design/website-relaunch', {
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    }),
-    ...sitemapEntries('/services/web-design/ux-ui-design', {
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    }),
-
-    // Growth & Marketing
-    ...sitemapEntries('/services/growth/seo-optimization', {
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    }),
-    ...sitemapEntries('/services/growth/performance-optimization', {
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    }),
-    ...sitemapEntries('/services/growth/digital-consulting', {
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    }),
 
     // Specialized Services
     ...sitemapEntries('/services/seo', { changeFrequency: 'monthly', priority: 0.8 }),
@@ -292,25 +254,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.8,
     }),
-    ...sitemapEntries('/branchen/gastronomie-hotellerie', {
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    }),
     ...sitemapEntries('/branchen/startups-tech', { changeFrequency: 'monthly', priority: 0.8 }),
     ...sitemapEntries('/branchen/automobil', { changeFrequency: 'monthly', priority: 0.8 }),
-    ...sitemapEntries('/branchen/gesundheitswesen/arzt-wetzlar', {
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    }),
-    ...sitemapEntries('/branchen/gesundheitswesen/arzt-giessen', {
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    }),
-    ...sitemapEntries('/branchen/handwerker/wetzlar', {
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    }),
-    ...sitemapEntries('/branchen/gastronomie', { changeFrequency: 'monthly', priority: 0.7 }),
+    ...sitemapEntries('/branchen/gastronomie', { changeFrequency: 'monthly', priority: 0.8 }),
     ...sitemapEntries('/branchen/dienstleistung', { changeFrequency: 'monthly', priority: 0.7 }),
     ...sitemapEntries('/branchen/immobilien', { changeFrequency: 'monthly', priority: 0.7 }),
     ...sitemapEntries('/branchen/public-sector', { changeFrequency: 'monthly', priority: 0.6 }),

@@ -143,7 +143,9 @@ describe('Sitemap Technical SEO Validation', () => {
     // Removed programmatic /ai/ landing pages answer 410 Gone via middleware
     expect(urls.some((url) => url.includes('/ai/'))).toBe(false);
 
-    // Known permanent redirects (next.config.ts / page-level permanentRedirect)
+    // Known permanent redirects (next.config.ts / page-level permanentRedirect).
+    // The check below is endsWith, so every path must be written in full — a
+    // shortened '/branchen/gastronomie' would match the live winner instead.
     const REDIRECTING_PATHS = [
       '/standorte/giessen',
       '/standorte/wetzlar',
@@ -155,6 +157,20 @@ describe('Sitemap Technical SEO Validation', () => {
       '/work/red-flames',
       '/work/fitflow',
       '/work/hotel-zur-post',
+      // Cannibalising duplicates folded into their canonical owner
+      '/services/growth/seo-optimization',
+      '/services/growth/performance-optimization',
+      '/services/growth/digital-consulting',
+      '/services/web-design/ux-ui-design',
+      '/services/web-design/website-relaunch',
+      '/services/web-development/react-nextjs-agentur',
+      '/services/web-development/full-stack-entwicklung',
+      '/services/web-development/cloud-infrastructure',
+      '/services/web-development/e-commerce-shops',
+      '/branchen/gastronomie-hotellerie',
+      '/branchen/handwerker/wetzlar',
+      '/branchen/gesundheitswesen/arzt-wetzlar',
+      '/branchen/gesundheitswesen/arzt-giessen',
     ];
     for (const path of REDIRECTING_PATHS) {
       expect(urls.some((url) => url.endsWith(path))).toBe(false);
