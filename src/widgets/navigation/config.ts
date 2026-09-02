@@ -25,6 +25,16 @@ export const getNavItems = (): NavItem[] => [
     textColor: 'var(--color-text-inverse)',
     groups: [
       {
+        title: 'nav.services.overview.title',
+        links: [
+          {
+            label: 'nav.services.all.label',
+            href: '/services',
+            desc: 'nav.services.all.desc',
+          },
+        ],
+      },
+      {
         title: 'nav.services.development.title',
         links: [
           {
@@ -296,6 +306,7 @@ export const getNavItems = (): NavItem[] => [
           { label: 'nav.industries.other.retail', href: '/branchen/retail' },
           { label: 'nav.industries.other.public_sector', href: '/branchen/public-sector' },
           { label: 'nav.industries.other.dienstleistung', href: '/branchen/dienstleistung' },
+          { label: 'nav.industries.crafts.offer', href: '/angebot-handwerker' },
         ],
       },
     ],
@@ -308,9 +319,13 @@ export const getNavItems = (): NavItem[] => [
       {
         title: 'nav.work.featured.title',
         links: [
-          { label: 'nav.work.batherm', href: 'https://www.batherm.de' },
+          // Point at our own case studies, not the clients' live sites: those
+          // were the only external hrefs in the nav, and the desktop menu pushes
+          // every href through next-intl's Link with no rel="noopener".
+          { label: 'nav.work.batherm', href: '/work/batherm' },
           { label: 'nav.work.schluesseldienst', href: '/work/schluesseldienst-wetzlar' },
-          { label: 'nav.work.ratsstuben', href: 'https://www.lindener-ratsstuben.de/de' },
+          { label: 'nav.work.ratsstuben', href: '/work/lindener-ratsstuben' },
+          { label: 'nav.work.talia', href: '/work/talia-boutique' },
           { label: 'nav.work.hey_fede', href: '/work/hey-fede' },
         ],
       },
@@ -333,18 +348,49 @@ export const getNavItems = (): NavItem[] => [
             href: '/knowledge/blog',
             desc: 'nav.academy.blog.desc',
           },
+          // The Academy shipped without a single header link: this group was
+          // named after it while pointing at the blog and the calculator.
+          { label: 'nav.academy.label', href: '/knowledge/academy', desc: 'nav.academy.desc' },
+          {
+            label: 'nav.resources.knowledge.wiki.label',
+            href: '/knowledge/wikihub',
+            desc: 'nav.resources.knowledge.wiki.desc',
+          },
           {
             label: 'nav.resources.knowledge.faq.label',
             href: '/knowledge/faq',
             desc: 'nav.resources.knowledge.faq.desc',
+          },
+          {
+            label: 'nav.academy.whitepapers.label',
+            href: '/knowledge/whitepapers',
+            desc: 'nav.academy.whitepapers.desc',
+          },
+          {
+            label: 'nav.academy.newsletter.label',
+            href: '/knowledge/newsletter',
+            desc: 'nav.academy.newsletter.desc',
           },
         ],
       },
       {
         title: 'nav.resources.tools.title',
         links: [
+          // Was listed twice here, once as the audit and once as the calculator.
           { label: 'nav.academy.audit.label', href: '/calculator', desc: 'nav.academy.audit.desc' },
-          { label: 'nav.resources.calculator', href: '/calculator' },
+          { label: 'nav.booking.label', href: '/booking' },
+          {
+            label: 'nav.resources.tools.strobi.label',
+            href: '/strobi',
+            desc: 'nav.resources.tools.strobi.desc',
+          },
+          // The complete page index: the catch-all that puts every remaining
+          // page, legal included, two clicks from the header.
+          {
+            label: 'nav.resources.tools.sitemap.label',
+            href: '/uebersicht',
+            desc: 'nav.resources.tools.sitemap.desc',
+          },
         ],
       },
     ],
@@ -359,6 +405,9 @@ export const getNavItems = (): NavItem[] => [
         links: [
           { label: 'nav.company.about', href: '/about', desc: 'nav.about.desc' },
           { label: 'nav.about.process.label', href: '/process', desc: 'nav.about.process.desc' },
+          { label: 'nav.main.garantie', href: '/garantie' },
+          { label: 'nav.main.presse', href: '/presse' },
+          { label: 'nav.main.partnerschaft', href: '/partnerschaft' },
         ],
       },
       {

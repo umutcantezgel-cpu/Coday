@@ -215,7 +215,8 @@
         "overview": "Overview: Crafts",
         "desc": "Digital crafts businesses",
         "wetzlar": "Crafts in Wetzlar",
-        "bau": "Crafts & Construction"
+        "bau": "Crafts & Construction",
+        "offer": "Exclusive Trades Offer"
       },
       "other": {
         "title": "Other Industries",
@@ -343,16 +344,35 @@
         "faq": {
           "label": "FAQ",
           "desc": "Common questions"
+        },
+        "wiki": {
+          "label": "Tech Wiki",
+          "desc": "Terms & technologies explained"
         }
       },
       "tools": {
-        "title": "Tools"
+        "title": "Tools",
+        "strobi": {
+          "label": "Strobi World",
+          "desc": "Interactive AI avatar"
+        },
+        "sitemap": {
+          "label": "Site Overview",
+          "desc": "Every page from A to Z"
+        }
       },
       "calculator": "Pricing Calculator",
       "dashboard": "Client Portal"
     },
     "services": {
       "label": "Services",
+      "overview": {
+        "title": "Overview"
+      },
+      "all": {
+        "label": "All Services",
+        "desc": "Every discipline at a glance"
+      },
       "development": {
         "title": "Development"
       },
@@ -427,6 +447,7 @@
       "batherm": "Batherm",
       "schluesseldienst": "MS Locksmith Service",
       "ratsstuben": "Lindener Ratsstuben",
+      "talia": "Talia Boutique",
       "hey_fede": "Hey Fede",
       "all": {
         "title": "Portfolio"

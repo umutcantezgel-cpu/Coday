@@ -221,8 +221,12 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
       while (groupRefs.current.has(`${label}::${count}`)) count++;
       if (count === 0) return;
 
+      // Only meaningful once there is something to scroll: on a panel that fits,
+      // "at the bottom" is true from the start and would pin the last group.
+      const scrollable = host.scrollHeight - host.clientHeight > 1;
+
       let best = 0;
-      if (host.scrollTop + host.clientHeight >= host.scrollHeight - 2) {
+      if (scrollable && host.scrollTop + host.clientHeight >= host.scrollHeight - 2) {
         // At the bottom the last groups share the viewport; without this the
         // final tab could never light up.
         best = count - 1;

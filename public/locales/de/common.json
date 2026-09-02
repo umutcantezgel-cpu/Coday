@@ -215,7 +215,8 @@
         "overview": "Übersicht: Handwerk",
         "desc": "Digitale Handwerksbetriebe",
         "wetzlar": "Handwerker in Wetzlar",
-        "bau": "Handwerk & Bau"
+        "bau": "Handwerk & Bau",
+        "offer": "Exklusiv-Angebot Handwerk"
       },
       "other": {
         "title": "Weitere Branchen",
@@ -343,16 +344,35 @@
         "faq": {
           "label": "FAQ",
           "desc": "Häufige Fragen"
+        },
+        "wiki": {
+          "label": "Tech-Wiki",
+          "desc": "Begriffe & Technologien erklärt"
         }
       },
       "tools": {
-        "title": "Tools"
+        "title": "Tools",
+        "strobi": {
+          "label": "Strobi World",
+          "desc": "Interaktiver KI-Avatar"
+        },
+        "sitemap": {
+          "label": "Seitenübersicht",
+          "desc": "Alle Seiten von A bis Z"
+        }
       },
       "calculator": "Preis-Rechner",
       "dashboard": "Kundenportal"
     },
     "services": {
       "label": "Leistungen",
+      "overview": {
+        "title": "Überblick"
+      },
+      "all": {
+        "label": "Alle Leistungen",
+        "desc": "Jede Disziplin auf einen Blick"
+      },
       "development": {
         "title": "Entwicklung"
       },
@@ -427,6 +447,7 @@
       "batherm": "Batherm",
       "schluesseldienst": "MS Schlüsseldienst",
       "ratsstuben": "Lindener Ratsstuben",
+      "talia": "Talia Boutique",
       "hey_fede": "Hey Fede",
       "all": {
         "title": "Portfolio"
