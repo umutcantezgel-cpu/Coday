@@ -111,6 +111,9 @@
   },
   "loading": "Loading language...",
   "nav": {
+    "a11y": {
+      "sections": "Sections in {category}"
+    },
     "main": {
       "home": "Home",
       "work": "Portfolio",
