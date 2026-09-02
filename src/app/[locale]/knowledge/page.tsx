@@ -1,4 +1,4 @@
-import { redirect } from 'next/navigation';
+import { permanentRedirect } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
 
 export const dynamic = 'force-static';
@@ -15,5 +15,6 @@ export default async function KnowledgeRootPage({
   const { locale } = await params;
   const _locale = locale || 'de';
   setRequestLocale(_locale);
-  redirect(`/${_locale}/knowledge/blog`);
+  // Permanent: the knowledge root is an index, not a destination.
+  permanentRedirect(`/${_locale}/knowledge/blog`);
 }

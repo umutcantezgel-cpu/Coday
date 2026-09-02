@@ -77,10 +77,13 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ className = '' }) => {
           </Link>
         </li>
         {pathnames.map((value, index) => {
-          const isLast = index === pathnames.length - 1;
           const rawTo = `/${pathnames.slice(0, index + 1).join('/')}`;
           const to = rawTo === '/knowledge' ? '/knowledge/wikihub' : rawTo;
           const translatedLabel = labelFor(value);
+          // /knowledge/wiki has no page of its own — it redirects to the wikihub,
+          // which the /knowledge crumb already links. Rendering it as a link put
+          // ~100 internal links onto a redirect.
+          const isLast = index === pathnames.length - 1 || rawTo === '/knowledge/wiki';
 
           return (
             <li key={to} className="flex items-center space-x-2">
