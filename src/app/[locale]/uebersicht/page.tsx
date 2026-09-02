@@ -202,6 +202,46 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                     Case Study: Schlüsseldienst Wetzlar
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/work/batherm"
+                    className="text-text-light hover:text-primary transition-colors"
+                  >
+                    Case Study: Batherm
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/work/lindener-ratsstuben"
+                    className="text-text-light hover:text-primary transition-colors"
+                  >
+                    Case Study: Lindener Ratsstuben
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/work/talia-boutique"
+                    className="text-text-light hover:text-primary transition-colors"
+                  >
+                    Case Study: Talia Boutique
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/work/memobaut"
+                    className="text-text-light hover:text-primary transition-colors"
+                  >
+                    Case Study: MemoBau
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/work/memo-baut"
+                    className="text-text-light hover:text-primary transition-colors"
+                  >
+                    Case Study: Memo Baut
+                  </Link>
+                </li>
               </ul>
             </section>
 
@@ -596,6 +636,54 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                     {locale === 'en'
                       ? 'Frequently Asked Questions (FAQ)'
                       : 'Häufig gestellte Fragen (FAQ)'}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/knowledge/academy"
+                    className="text-text-light hover:text-primary transition-colors"
+                  >
+                    {locale === 'en'
+                      ? 'Web Design Academy & Video Masterclasses'
+                      : 'Webdesign Academy & Video-Masterclasses'}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/knowledge/wikihub"
+                    className="text-text-light hover:text-primary transition-colors"
+                  >
+                    {locale === 'en'
+                      ? 'Tech Wiki & Digital Glossary'
+                      : 'Tech-Wiki & Digital-Glossar'}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/knowledge/whitepapers"
+                    className="text-text-light hover:text-primary transition-colors"
+                  >
+                    {locale === 'en' ? 'Whitepapers & Studies' : 'Whitepapers & Studien'}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/knowledge/newsletter"
+                    className="text-text-light hover:text-primary transition-colors"
+                  >
+                    {locale === 'en'
+                      ? 'Newsletter: Web Design Trends'
+                      : 'Newsletter: Webdesign-Trends'}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/strobi"
+                    className="text-text-light hover:text-primary transition-colors"
+                  >
+                    {locale === 'en'
+                      ? 'Strobi World: Interactive AI Avatar'
+                      : 'Strobi World: Interaktiver KI-Avatar'}
                   </Link>
                 </li>
                 <li>
