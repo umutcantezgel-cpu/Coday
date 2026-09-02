@@ -361,6 +361,25 @@
           "desc": "Alle Seiten von A bis Z"
         }
       },
+      "community": {
+        "title": "Community",
+        "marketplace": {
+          "label": "Website-Bausteine",
+          "desc": "Terminbuchung, Kalkulator & mehr"
+        },
+        "calendar": {
+          "label": "Verfügbarkeit",
+          "desc": "Vorlauf & Starttermine"
+        },
+        "events": {
+          "label": "Workshops & Meetups",
+          "desc": "Formate aus Wetzlar"
+        },
+        "members": {
+          "label": "Partner-Netzwerk",
+          "desc": "Freelancer & Agenturen"
+        }
+      },
       "calculator": "Preis-Rechner",
       "dashboard": "Kundenportal"
     },

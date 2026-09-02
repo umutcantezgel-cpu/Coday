@@ -688,6 +688,46 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                 </li>
                 <li>
                   <Link
+                    href="/community/marketplace"
+                    className="text-text-light hover:text-primary transition-colors"
+                  >
+                    {locale === 'en'
+                      ? 'Website Modules: Booking, Calculators, Configurators'
+                      : 'Website-Bausteine: Terminbuchung, Kalkulator, Konfigurator'}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/community/calendar"
+                    className="text-text-light hover:text-primary transition-colors"
+                  >
+                    {locale === 'en'
+                      ? 'Project Availability & Lead Times'
+                      : 'Projekt-Verfügbarkeit & Vorlaufzeiten'}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/community/events"
+                    className="text-text-light hover:text-primary transition-colors"
+                  >
+                    {locale === 'en'
+                      ? 'Workshops & Meetups in Wetzlar'
+                      : 'Workshops & Meetups in Wetzlar'}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/community/members"
+                    className="text-text-light hover:text-primary transition-colors"
+                  >
+                    {locale === 'en'
+                      ? 'Partner Network Central Hesse'
+                      : 'Partner-Netzwerk Mittelhessen'}
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/garantie"
                     className="text-text-light hover:text-primary transition-colors"
                   >

@@ -17,10 +17,10 @@ const BLOCKED_PATHS = [
   '/*/work/work',
   '/*/work/projectdetail',
   '/*/knowledge/blogpost',
-  '/*/community/calendar',
-  '/*/community/events',
-  '/*/community/marketplace',
-  '/*/community/members',
+  // The four /community/* pages sat here while they held placeholder content:
+  // invented member profiles, workshops with dates that were never scheduled,
+  // products that were never sold. They have been rebuilt around what the
+  // agency actually offers and are open to crawlers again.
   '/*/privacy',
 ];
 

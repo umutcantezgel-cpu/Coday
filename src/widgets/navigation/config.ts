@@ -393,6 +393,31 @@ export const getNavItems = (): NavItem[] => [
           },
         ],
       },
+      {
+        title: 'nav.resources.community.title',
+        links: [
+          {
+            label: 'nav.resources.community.marketplace.label',
+            href: '/community/marketplace',
+            desc: 'nav.resources.community.marketplace.desc',
+          },
+          {
+            label: 'nav.resources.community.calendar.label',
+            href: '/community/calendar',
+            desc: 'nav.resources.community.calendar.desc',
+          },
+          {
+            label: 'nav.resources.community.events.label',
+            href: '/community/events',
+            desc: 'nav.resources.community.events.desc',
+          },
+          {
+            label: 'nav.resources.community.members.label',
+            href: '/community/members',
+            desc: 'nav.resources.community.members.desc',
+          },
+        ],
+      },
     ],
   },
   {

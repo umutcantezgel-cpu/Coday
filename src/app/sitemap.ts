@@ -302,6 +302,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...sitemapEntries('/calculator', { changeFrequency: 'monthly', priority: 0.6 }),
     ...sitemapEntries('/uebersicht', { changeFrequency: 'monthly', priority: 0.4 }),
     ...sitemapEntries('/strobi', { changeFrequency: 'monthly', priority: 0.4 }),
+
+    // === Community ===
+    ...sitemapEntries('/community/marketplace', { changeFrequency: 'monthly', priority: 0.6 }),
+    ...sitemapEntries('/community/members', { changeFrequency: 'monthly', priority: 0.5 }),
+    ...sitemapEntries('/community/calendar', { changeFrequency: 'monthly', priority: 0.5 }),
+    ...sitemapEntries('/community/events', { changeFrequency: 'monthly', priority: 0.5 }),
   ];
 
   // Dynamic content from Sanity

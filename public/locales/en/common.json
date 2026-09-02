@@ -361,6 +361,25 @@
           "desc": "Every page from A to Z"
         }
       },
+      "community": {
+        "title": "Community",
+        "marketplace": {
+          "label": "Website Modules",
+          "desc": "Booking, calculators & more"
+        },
+        "calendar": {
+          "label": "Availability",
+          "desc": "Lead times & start dates"
+        },
+        "events": {
+          "label": "Workshops & Meetups",
+          "desc": "Formats run from Wetzlar"
+        },
+        "members": {
+          "label": "Partner Network",
+          "desc": "Freelancers & agencies"
+        }
+      },
       "calculator": "Pricing Calculator",
       "dashboard": "Client Portal"
     },
