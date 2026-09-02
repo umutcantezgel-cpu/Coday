@@ -14,28 +14,28 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Community Calendar | Web Design Agency Wetzlar',
+      title: 'Project Availability | Lead Times & Start Dates · Coday',
       description:
-        'Current events and dates from the Coday community in Wetzlar. Networking and knowledge sharing for entrepreneurs and web design enthusiasts in Hesse.',
+        'How soon a website can start and how long it takes: answer within 24 hours, a free 20 minute needs analysis, live in 10 to 14 working days.',
       keywords: [
-        'Coday Community Calendar',
-        'Tech Events Wetzlar',
-        'Web Development Meetups Hesse',
-        'Coday Events',
+        'Web Design Lead Time Wetzlar',
+        'Website Start Date Hesse',
+        'How Long Does a Website Take',
+        'Web Agency Availability Central Hesse',
       ],
       path: '/en/community/calendar',
       type: 'default',
     });
   }
   return generatePageMetadata({
-    title: 'Community Kalender | Webdesign Agentur Wetzlar',
+    title: 'Projekt-Verfügbarkeit | Vorlauf & Starttermine · Coday',
     description:
-      'Aktuelle Events und Termine der Coday Community in Wetzlar. Networking und Wissensaustausch für Unternehmer und Webdesign Interessierte in Hessen.',
+      'Wie schnell eine Website starten kann und wie lange sie dauert: Antwort in 24 Stunden, kostenlose 20-Minuten-Bedarfsanalyse, in 10 bis 14 Werktagen online.',
     keywords: [
-      'Coday Community Kalender',
-      'Tech Events Wetzlar',
-      'Webentwicklung Meetup Mittelhessen',
-      'Coday Veranstaltungen',
+      'Website Vorlaufzeit Wetzlar',
+      'Website Starttermin Mittelhessen',
+      'Wie lange dauert eine Website',
+      'Webagentur Verfügbarkeit Hessen',
     ],
     path: '/de/community/calendar',
     type: 'default',

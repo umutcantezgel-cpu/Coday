@@ -14,28 +14,28 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Community Marketplace | Web Design Network Wetzlar',
+      title: 'Website Modules | Booking, Calculators, Configurators · Coday',
       description:
-        'The digital marketplace of the Coday community in Wetzlar. Find service providers, tools and resources for your next web project in Central Hesse.',
+        'Twelve modules built on top of a website: appointment booking, application funnels, needs calculators, member areas and more. Quoted with the project.',
       keywords: [
-        'Web Design Marketplace',
-        'Digital Tools Wetzlar',
-        'SME Business Network Hesse',
-        'Coday Marketplace',
+        'Website Booking System Hesse',
+        'Online Application Funnel Trades',
+        'Website Cost Calculator Module',
+        'Product Configurator Website',
       ],
       path: '/en/community/marketplace',
       type: 'default',
     });
   }
   return generatePageMetadata({
-    title: 'Community Marktplatz | Webdesign Netzwerk Wetzlar',
+    title: 'Website-Bausteine | Terminbuchung, Kalkulator & mehr · Coday',
     description:
-      'Der digitale Marktplatz der Coday Community in Wetzlar. Finden Sie Dienstleister, Tools und Ressourcen für Ihr nächstes Webprojekt in Mittelhessen.',
+      'Zwölf Bausteine, die auf einer Website aufsetzen: Terminbuchung, Express-Bewerbung, Bedarfs-Kalkulator, Mitgliederbereich und mehr. Kalkuliert mit dem Projekt.',
     keywords: [
-      'Webdesign Marktplatz',
-      'Digitale Tools Wetzlar',
-      'Mittelstand Business Netzwerk',
-      'Coday Marktplatz',
+      'Terminbuchung Website Hessen',
+      'Express-Bewerbung Handwerk',
+      'Bedarfs-Kalkulator Website',
+      'Produkt-Konfigurator Website',
     ],
     path: '/de/community/marketplace',
     type: 'default',
@@ -60,13 +60,15 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
       getOrganizationSchema(_locale),
       breadcrumbs,
       {
-        '@type': 'CollectionPage',
-        '@id': `${BASE_URL}/${_locale}/community/marketplace#collection`,
-        name: isEn ? 'Coday Community Marketplace' : 'Coday Community Marktplatz',
+        // WebPage rather than an offer catalogue: modules are quoted with the
+        // project, so there is no price to put into structured data.
+        '@type': 'WebPage',
+        '@id': `${BASE_URL}/${_locale}/community/marketplace#webpage`,
+        name: isEn ? 'Coday Website Modules' : 'Coday Website-Bausteine',
         url: `${BASE_URL}/${_locale}/community/marketplace`,
         description: isEn
-          ? 'The digital marketplace of the Coday community in Wetzlar.'
-          : 'Der digitale Marktplatz der Coday Community in Wetzlar.',
+          ? 'Modules built on top of a website: booking, application funnels, calculators, member areas.'
+          : 'Bausteine, die auf einer Website aufsetzen: Terminbuchung, Bewerbungsstrecken, Kalkulatoren, Mitgliederbereiche.',
         isPartOf: { '@id': `${BASE_URL}/#website` },
       },
     ],

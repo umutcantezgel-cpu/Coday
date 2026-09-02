@@ -14,28 +14,28 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Events | Web Design Community Wetzlar Hesse',
+      title: 'Workshops & Meetups | Next.js, Local SEO · Coday Wetzlar',
       description:
-        'Web design events and digital meetups by Coday in Wetzlar. Workshops, meetups and talks for the business community across Central Hesse region.',
+        'Four workshop formats on web performance, local SEO and conversion, run from Wetzlar. Dates follow demand — register interest and we will set one.',
       keywords: [
-        'Web Design Events Hesse',
-        'Digital Workshops Wetzlar',
-        'Next.js Meetup Central Hesse',
-        'Coday Community',
+        'Next.js Workshop Hesse',
+        'Local SEO Workshop Wetzlar',
+        'Web Performance Training Central Hesse',
+        'Developer Meetup Wetzlar',
       ],
       path: '/en/community/events',
       type: 'default',
     });
   }
   return generatePageMetadata({
-    title: 'Events & Veranstaltungen | Webdesign Wetzlar',
+    title: 'Workshops & Meetups | Next.js, lokales SEO · Coday Wetzlar',
     description:
-      'Webdesign Events und digitale Veranstaltungen von Coday in Wetzlar. Workshops, Meetups und Vorträge für die Business Community in Mittelhessen.',
+      'Vier Workshop-Formate zu Web-Performance, lokalem SEO und Conversion aus Wetzlar. Termine richten sich nach der Nachfrage — Interesse vormerken genügt.',
     keywords: [
-      'Webdesign Events Hessen',
-      'Digitale Workshops Wetzlar',
-      'Next.js Meetup Mittelhessen',
-      'Coday Community Events',
+      'Next.js Workshop Hessen',
+      'Local SEO Workshop Wetzlar',
+      'Web-Performance Schulung Mittelhessen',
+      'Entwickler Meetup Wetzlar',
     ],
     path: '/de/community/events',
     type: 'default',
@@ -60,13 +60,16 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
       getOrganizationSchema(_locale),
       breadcrumbs,
       {
-        '@type': 'CollectionPage',
-        '@id': `${BASE_URL}/${_locale}/community/events#collection`,
-        name: isEn ? 'Coday Webdesign & Tech Events' : 'Coday Webdesign & Tech Events',
+        // WebPage, not Event: the formats have no scheduled dates, and Event
+        // schema without a real startDate would put an invented appointment
+        // into search results.
+        '@type': 'WebPage',
+        '@id': `${BASE_URL}/${_locale}/community/events#webpage`,
+        name: isEn ? 'Coday Workshops & Meetups' : 'Coday Workshops & Meetups',
         url: `${BASE_URL}/${_locale}/community/events`,
         description: isEn
-          ? 'Web design events and digital meetups by Coday in Wetzlar.'
-          : 'Webdesign Events und digitale Veranstaltungen von Coday in Wetzlar.',
+          ? 'Workshop formats on web performance, local SEO and conversion, run from Wetzlar. Dates follow demand.'
+          : 'Workshop-Formate zu Web-Performance, lokalem SEO und Conversion aus Wetzlar. Termine richten sich nach der Nachfrage.',
         isPartOf: { '@id': `${BASE_URL}/#website` },
       },
     ],

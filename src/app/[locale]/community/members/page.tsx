@@ -14,28 +14,28 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Community Members | Web Design Agency Hesse',
+      title: 'Partner Network Central Hesse | Freelancers & Agencies · Coday',
       description:
-        'Members of the Coday community in Wetzlar and Hesse. Connect with entrepreneurs, designers and developers in Central Hesse. Join the network today.',
+        'Coday works with freelancers and agencies across Central Hesse: frontend, design, content and SEO. Fixed briefs, fixed prices, the owner as your contact.',
       keywords: [
-        'Coday Community Members',
-        'Business Network Wetzlar',
-        'Entrepreneurs Central Hesse',
-        'Coday Network',
+        'Web Design Partner Network Hesse',
+        'Freelance Next.js Developer Wetzlar',
+        'Whitelabel Web Development Hesse',
+        'Agency Partnership Central Hesse',
       ],
       path: '/en/community/members',
       type: 'default',
     });
   }
   return generatePageMetadata({
-    title: 'Community Mitglieder | Webdesign Agentur Hessen',
+    title: 'Partner-Netzwerk Mittelhessen | Freelancer & Agenturen · Coday',
     description:
-      'Mitglieder der Coday Community in Wetzlar und Hessen. Vernetzen Sie sich mit Unternehmern, Designern und Entwicklern in Mittelhessen. Jetzt beitreten.',
+      'Coday arbeitet mit Freelancern und Agenturen aus Mittelhessen: Frontend, Design, Content und SEO. Klare Briefings, Festpreise, der Inhaber als Ansprechpartner.',
     keywords: [
-      'Coday Community Mitglieder',
-      'Business Netzwerk Wetzlar',
-      'Unternehmer Netzwerk Mittelhessen',
-      'Coday Netzwerk',
+      'Partner-Netzwerk Webdesign Mittelhessen',
+      'Freelancer Next.js Wetzlar',
+      'Whitelabel Webentwicklung Hessen',
+      'Agentur Partnerschaft Mittelhessen',
     ],
     path: '/de/community/members',
     type: 'default',
@@ -51,7 +51,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const breadcrumbs = getBreadcrumbSchema([
     { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
     { name: 'Community', url: `/${_locale}/community/events` },
-    { name: isEn ? 'Members' : 'Mitglieder', url: `/${_locale}/community/members` },
+    { name: isEn ? 'Partners' : 'Partner', url: `/${_locale}/community/members` },
   ]);
 
   const jsonLd = {
@@ -60,9 +60,10 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
       getOrganizationSchema(_locale),
       breadcrumbs,
       {
-        '@type': 'CollectionPage',
-        '@id': `${BASE_URL}/${_locale}/community/members#collection`,
-        name: isEn ? 'Coday Community Members' : 'Coday Community Mitglieder',
+        // Not a CollectionPage: there is no collection of members to describe.
+        '@type': 'WebPage',
+        '@id': `${BASE_URL}/${_locale}/community/members#webpage`,
+        name: isEn ? 'Coday Partner Network' : 'Coday Partner-Netzwerk',
         url: `${BASE_URL}/${_locale}/community/members`,
         isPartOf: { '@id': `${BASE_URL}/#website` },
       },
