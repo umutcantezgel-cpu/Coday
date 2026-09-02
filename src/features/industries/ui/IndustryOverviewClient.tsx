@@ -4,6 +4,7 @@ import React, { useState, useMemo } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { industriesData } from '@/shared/data/industries';
+import { canonicalHref } from '@/shared/data/canonicalLinks';
 import {
   Buildings as Building2,
   Hammer,
@@ -362,7 +363,7 @@ export function IndustryOverviewClient() {
                     {/* Title with Localized Link (No hardcoded locale!) */}
                     <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900 group-hover:text-primary transition-colors leading-snug">
                       <Link
-                        href={`/branchen/${industry.slug}`}
+                        href={canonicalHref(`/branchen/${industry.slug}`)}
                         className="before:absolute before:inset-0 focus:outline-none"
                       >
                         {t(industry.title)}

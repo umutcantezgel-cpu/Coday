@@ -132,6 +132,12 @@ export default async function HessenMasterPage({
           note: 'Residenzstadt & Maschinenbau',
         },
         {
+          name: 'Löhnberg',
+          link: '/webdesign-loehnberg',
+          highlight: false,
+          note: 'Handwerk & Mittelstand im Lahntal',
+        },
+        {
           name: 'Landkreis Lahn-Dill',
           link: '/regionen/landkreis-lahn-dill',
           highlight: false,

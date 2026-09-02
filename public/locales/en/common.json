@@ -279,7 +279,9 @@
         "limburg": "Web Design Limburg",
         "limburg_desc": "Lahn Valley Economy",
         "weilburg": "Web Design Weilburg",
-        "weilburg_desc": "Residency City & Lahn Commerce"
+        "weilburg_desc": "Residency City & Lahn Commerce",
+        "loehnberg": "Web Design Loehnberg",
+        "loehnberg_desc": "Crafts & SMEs in the Lahn Valley"
       },
       "rhein_main": {
         "title": "Rhine-Main & Taunus",
@@ -409,26 +411,9 @@
         "label": "Consulting",
         "desc": "Digital Strategy"
       },
-      "fullstack": {
-        "label": "Full-Stack Development"
-      },
-      "react_nextjs": {
-        "label": "React & Next.js Agency"
-      },
-      "cloud_infrastructure": {
-        "label": "Cloud Infrastructure"
-      },
-      "website_relaunch": {
-        "label": "Website Relaunch"
-      },
-      "seo_opt": {
-        "label": "SEO Optimization"
-      },
-      "perf_opt": {
-        "label": "Performance Optimization"
-      },
-      "dig_consulting": {
-        "label": "Digital Consulting"
+      "geo": {
+        "label": "GEO & AI Search",
+        "desc": "Visible in ChatGPT & Co."
       }
     },
     "work": {

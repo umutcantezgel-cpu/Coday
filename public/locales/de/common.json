@@ -279,7 +279,9 @@
         "limburg": "Webdesign Limburg",
         "limburg_desc": "Wirtschaftsraum Lahntal",
         "weilburg": "Webdesign Weilburg",
-        "weilburg_desc": "Residenzstadt & Gewerbe Lahntal"
+        "weilburg_desc": "Residenzstadt & Gewerbe Lahntal",
+        "loehnberg": "Webdesign Löhnberg",
+        "loehnberg_desc": "Handwerk & Mittelstand im Lahntal"
       },
       "rhein_main": {
         "title": "Rhein-Main & Taunus",
@@ -409,26 +411,9 @@
         "label": "Consulting",
         "desc": "Digitale Strategie"
       },
-      "fullstack": {
-        "label": "Full-Stack Entwicklung"
-      },
-      "react_nextjs": {
-        "label": "React & Next.js Agentur"
-      },
-      "cloud_infrastructure": {
-        "label": "Cloud Infrastruktur"
-      },
-      "website_relaunch": {
-        "label": "Website Relaunch"
-      },
-      "seo_opt": {
-        "label": "SEO Optimierung"
-      },
-      "perf_opt": {
-        "label": "Performance Opt."
-      },
-      "dig_consulting": {
-        "label": "Digitale Beratung"
+      "geo": {
+        "label": "GEO & KI-Suche",
+        "desc": "Sichtbar in ChatGPT & Co."
       }
     },
     "work": {

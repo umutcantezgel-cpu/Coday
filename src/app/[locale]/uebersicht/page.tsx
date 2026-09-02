@@ -51,6 +51,7 @@ const localTowns = [
   { href: '/webdesign-herborn', label: 'Webdesign Herborn' },
   { href: '/webdesign-limburg', label: 'Webdesign Limburg' },
   { href: '/webdesign-weilburg', label: 'Webdesign Weilburg' },
+  { href: '/webdesign-loehnberg', label: 'Webdesign Löhnberg' },
   { href: '/webdesign-dillenburg', label: 'Webdesign Dillenburg' },
   { href: '/webdesign-friedberg', label: 'Webdesign Friedberg' },
   { href: '/webdesign-frankfurt', label: 'Webdesign Frankfurt am Main' },
@@ -262,14 +263,6 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                 </li>
                 <li>
                   <Link
-                    href="/services/web-design/ux-ui-design"
-                    className="text-text-light hover:text-primary transition-colors"
-                  >
-                    UX/UI Design im Webdesign-Prozess
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     href="/services/design/brand-identity"
                     className="text-text-light hover:text-primary transition-colors"
                   >
@@ -290,14 +283,6 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                     className="text-text-light hover:text-primary transition-colors"
                   >
                     UX & Usability Audit
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/services/web-design/website-relaunch"
-                    className="text-text-light hover:text-primary transition-colors"
-                  >
-                    Website Relaunch Service
                   </Link>
                 </li>
                 <li>
@@ -332,30 +317,6 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                     Web App Entwicklung
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    href="/services/web-development/react-nextjs-agentur"
-                    className="text-text-light hover:text-primary transition-colors"
-                  >
-                    React & Next.js Agentur
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/services/web-development/full-stack-entwicklung"
-                    className="text-text-light hover:text-primary transition-colors"
-                  >
-                    Full Stack Entwicklung
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/services/web-development/cloud-infrastructure"
-                    className="text-text-light hover:text-primary transition-colors"
-                  >
-                    Cloud & Vercel Edge Infrastruktur
-                  </Link>
-                </li>
               </ul>
             </section>
 
@@ -377,14 +338,6 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                 </li>
                 <li>
                   <Link
-                    href="/services/growth/seo-optimization"
-                    className="text-text-light hover:text-primary transition-colors"
-                  >
-                    Local SEO & Keyword-Strategie
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     href="/services/performance"
                     className="text-text-light hover:text-primary transition-colors"
                   >
@@ -393,26 +346,10 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                 </li>
                 <li>
                   <Link
-                    href="/services/growth/performance-optimization"
-                    className="text-text-light hover:text-primary transition-colors"
-                  >
-                    Core Web Vitals Optimierung
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     href="/services/consulting"
                     className="text-text-light hover:text-primary transition-colors"
                   >
                     Digitale Strategieberatung
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/services/growth/digital-consulting"
-                    className="text-text-light hover:text-primary transition-colors"
-                  >
-                    Technologieberatung & Audits
                   </Link>
                 </li>
                 <li>
@@ -464,14 +401,6 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                     className="text-text-light hover:text-primary transition-colors"
                   >
                     Webdesign für Gastronomie & Hotels
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/branchen/gastronomie-hotellerie"
-                    className="text-text-light hover:text-primary transition-colors"
-                  >
-                    Webdesign für Gastronomie & Hotellerie
                   </Link>
                 </li>
                 <li>
@@ -568,30 +497,6 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                     className="text-text-light hover:text-primary transition-colors"
                   >
                     Praxis-Webdesign für Ärzte Gießen
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/branchen/gesundheitswesen/arzt-giessen"
-                    className="text-text-light hover:text-primary transition-colors"
-                  >
-                    Arzt Website Gießen
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/branchen/gesundheitswesen/arzt-wetzlar"
-                    className="text-text-light hover:text-primary transition-colors"
-                  >
-                    Arzt Website Wetzlar
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/branchen/handwerker/wetzlar"
-                    className="text-text-light hover:text-primary transition-colors"
-                  >
-                    Handwerker Website Wetzlar
                   </Link>
                 </li>
                 <li>

@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import { Link as NavLink } from '@/i18n/navigation';
 import BlurText from '@/shared/ui/BlurText';
 import { servicesData } from '@/shared/data/services';
+import { canonicalHref } from '@/shared/data/canonicalLinks';
 import Image from 'next/image';
 import { brandingImages } from '@/shared/data/serviceImages';
 import DesignSystemShowcase from '@/features/web-design/DesignSystemShowcase';
@@ -274,11 +275,7 @@ export function WebDesignClient() {
                 </div>
                 <h3 className="font-display font-bold text-xl text-content-base mb-3 group-hover:text-sapphire transition-colors motion-reduce:duration-[0.01ms] relative z-10">
                   <NavLink
-                    href={
-                      feature.slug === 'design-systems'
-                        ? '/services/design/design-systems'
-                        : `/services/web-design/${feature.slug}`
-                    }
+                    href={canonicalHref(`/services/web-design/${feature.slug}`)}
                     className="before:absolute before:inset-0 before:z-30 hover:underline"
                   >
                     {t(feature.titleKey)}
