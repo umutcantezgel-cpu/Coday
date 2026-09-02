@@ -8,6 +8,7 @@ import {
   getPyramidBreadcrumbs,
 } from '@/features/local-seo/model/schemaPyramid';
 import { LocalSplitHero } from '@/features/local-seo/ui/LocalSplitHero';
+import { RegionalSilo } from '@/features/local-seo/ui/RegionalSilo';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -534,6 +535,8 @@ export default async function WebdesignWiesbadenPage({
           </Link>
         </div>
       </section>
+
+      <RegionalSilo citySlug="webdesign-wiesbaden" locale={_locale} />
     </div>
   );
 }

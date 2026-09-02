@@ -8,6 +8,7 @@ import {
   getPyramidBreadcrumbs,
 } from '@/features/local-seo/model/schemaPyramid';
 import { LocalSplitHero } from '@/features/local-seo/ui/LocalSplitHero';
+import { RegionalSilo } from '@/features/local-seo/ui/RegionalSilo';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -537,6 +538,8 @@ export default async function WebdesignDietzenbachPage({
           </Link>
         </div>
       </section>
+
+      <RegionalSilo citySlug="webdesign-dietzenbach" locale={_locale} />
     </div>
   );
 }

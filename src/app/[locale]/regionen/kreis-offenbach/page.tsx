@@ -288,6 +288,18 @@ export default async function KreisOffenbachPage({
               </Link>
             ))}
           </div>
+
+          <p className="text-sm text-slate-500 mt-8 text-center">
+            Die kreisfreie Stadt Offenbach am Main gehört verwaltungstechnisch nicht zum Kreis –
+            dafür haben wir einen eigenen Standort:{' '}
+            <Link
+              href="/webdesign-offenbach"
+              className="text-amber-700 font-semibold hover:text-amber-800 underline decoration-slate-300 underline-offset-2"
+            >
+              Webdesign Offenbach am Main
+            </Link>
+            .
+          </p>
         </div>
       </section>
 

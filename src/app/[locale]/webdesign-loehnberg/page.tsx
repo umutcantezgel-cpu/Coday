@@ -8,6 +8,7 @@ import {
   getPyramidBreadcrumbs,
 } from '@/features/local-seo/model/schemaPyramid';
 import { LocalSplitHero } from '@/features/local-seo/ui/LocalSplitHero';
+import { RegionalSilo } from '@/features/local-seo/ui/RegionalSilo';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -727,57 +728,7 @@ export default async function WebdesignLoehnbergPage({
       />
 
       {/* 9. REGIONAL SILO & NEIGHBOR LINKS */}
-      <section className="py-16 bg-white border-t border-slate-200 text-sm text-slate-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-xs uppercase tracking-wider font-bold text-slate-400 mb-4">
-            Regionales Netzwerk im Landkreis Limburg-Weilburg & Hessen:
-          </div>
-          <div className="flex flex-wrap gap-x-6 gap-y-2.5">
-            <Link
-              href="/webdesign-weilburg"
-              className="hover:text-amber-800 underline decoration-slate-300 underline-offset-2"
-            >
-              Webdesign Weilburg
-            </Link>
-            <Link
-              href="/webdesign-limburg"
-              className="hover:text-amber-800 underline decoration-slate-300 underline-offset-2"
-            >
-              Webdesign Limburg
-            </Link>
-            <Link
-              href="/webdesign-herborn"
-              className="hover:text-amber-800 underline decoration-slate-300 underline-offset-2"
-            >
-              Webdesign Herborn
-            </Link>
-            <Link
-              href="/webdesign-dillenburg"
-              className="hover:text-amber-800 underline decoration-slate-300 underline-offset-2"
-            >
-              Webdesign Dillenburg
-            </Link>
-            <Link
-              href="/webdesign-agentur-wetzlar"
-              className="hover:text-amber-800 underline decoration-slate-300 underline-offset-2"
-            >
-              Webdesign Agentur Wetzlar
-            </Link>
-            <Link
-              href="/regionen/landkreis-limburg-weilburg"
-              className="hover:text-amber-800 underline decoration-slate-300 underline-offset-2"
-            >
-              Landkreis Limburg-Weilburg
-            </Link>
-            <Link
-              href="/standorte/hessen"
-              className="hover:text-amber-800 underline decoration-slate-300 underline-offset-2"
-            >
-              Webdesign Hessen
-            </Link>
-          </div>
-        </div>
-      </section>
+      <RegionalSilo citySlug="webdesign-loehnberg" locale={_locale} />
     </div>
   );
 }

@@ -284,6 +284,18 @@ export default async function LandkreisDarmstadtDieburgPage({
               </Link>
             ))}
           </div>
+
+          <p className="text-sm text-slate-500 mt-8 text-center">
+            Südlich schließt der Kreis Bergstraße an – für die Bergstraße betreuen wir Sie von
+            unserem Standort{' '}
+            <Link
+              href="/webdesign-bensheim"
+              className="text-amber-700 font-semibold hover:text-amber-800 underline decoration-slate-300 underline-offset-2"
+            >
+              Webdesign Bensheim
+            </Link>{' '}
+            aus.
+          </p>
         </div>
       </section>
 
