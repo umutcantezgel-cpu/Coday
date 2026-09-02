@@ -149,8 +149,12 @@ export default async function WebdesignOberurselPage({
       {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
       <LocalSplitHero
         badgeText="B2B-, IT- & MITTELSTANDS-WEBAGENTUR OBERURSEL"
-        headline="Webdesign & Next.js Entwicklung in"
-        headlineGradient="Oberursel (Taunus)"
+        headline={isEn ? 'Web Design Oberursel:' : 'Webdesign Oberursel:'}
+        headlineGradient={
+          isEn
+            ? 'Next.js Performance for B2B, IT & SMEs'
+            : 'Next.js Performance für B2B, IT & Mittelstand'
+        }
         description="Speziell für IT-Dienstleister, High-Tech-Mittelstand, Ingenieurbüros und B2B-Unternehmen in Oberursel, Steinbach und Kronberg. Schnelle Ladezeiten unter 500ms, perfekte Google-Rankings und planbare Leadgenerierung. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
         cityName="Oberursel"
         sourceTag="local_seo_oberursel"

@@ -150,8 +150,10 @@ export default async function WebdesignHerbornPage({
       {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
       <LocalSplitHero
         badgeText="B2B & INDUSTRIE WEBAGENTUR HERBORN & LAHN-DILL"
-        headline="Webdesign & Next.js Entwicklung in"
-        headlineGradient="Herborn & Lahn-Dill"
+        headline={isEn ? 'Web Design Herborn:' : 'Webdesign Herborn:'}
+        headlineGradient={
+          isEn ? 'B2B Websites & Digital Excellence' : 'B2B-Websites & Digitale Exzellenz'
+        }
         description="Als spezialisierte High-Performance Webagentur für Herborn und den Lahn-Dill-Kreis bieten wir moderne Next.js Entwicklung und hochkonvertierende B2B-Websites für Maschinenbau, Schaltschrankbau und Handwerk. Maximale Ladezeiten unter 500ms, Top-Google-Rankings und planbare Neukundengewinnung."
         cityName="Herborn"
         sourceTag="local_seo_herborn"

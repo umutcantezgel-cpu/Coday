@@ -149,8 +149,12 @@ export default async function WebdesignRodgauPage({
       {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
       <LocalSplitHero
         badgeText="HANDWERK-, MITTELSTAND- & B2B-WEBAGENTUR RODGAU"
-        headline="Webdesign & Next.js Entwicklung in"
-        headlineGradient="Rodgau"
+        headline={isEn ? 'Web Design Rodgau:' : 'Webdesign Rodgau:'}
+        headlineGradient={
+          isEn
+            ? 'Next.js Websites for Crafts, Services & SMEs'
+            : 'Next.js Websites für Handwerk, Dienstleister & Mittelstand'
+        }
         description="Speziell für Handwerksbetriebe, Bauunternehmer, Dienstleister und den B2B-Mittelstand in Jügesheim, Dudenhofen, Nieder-Roden und dem Kreis Offenbach. Subsekundäre Ladezeiten unter 500ms, ausdrucksstarkes Design und planbare Kunden- und Fachkräfteanfragen. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
         cityName="Rodgau"
         sourceTag="local_seo_rodgau"

@@ -149,8 +149,12 @@ export default async function WebdesignBensheimPage({
       {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
       <LocalSplitHero
         badgeText="DENTAL-, MITTELSTANDS- & B2B-WEBAGENTUR BENSHEIM & BERGSTRASSE"
-        headline="Webdesign & Next.js Entwicklung in"
-        headlineGradient="Bensheim & Bergstraße"
+        headline={isEn ? 'Web Design Bensheim:' : 'Webdesign Bensheim:'}
+        headlineGradient={
+          isEn
+            ? 'Next.js Performance for Bergstrasse, Dental & SMEs'
+            : 'Next.js Performance für Bergstraße, Dental & Mittelstand'
+        }
         description="Speziell für Dental- & Medizintechnik, Mittelstand, Tourismus & Weinbau sowie anspruchsvolle Dienstleister in Bensheim, Heppenheim, Zwingenberg und dem Kreis Bergstraße. Subsekundäre Ladezeiten unter 500ms, ausdrucksstarkes B2B-Design und planbare Kundenanfragen. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
         cityName="Bensheim"
         sourceTag="local_seo_bensheim"

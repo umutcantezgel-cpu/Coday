@@ -151,8 +151,12 @@ export default async function WebdesignKasselPage({
       {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
       <LocalSplitHero
         badgeText="INDUSTRIE-, LOGISTIK- & B2B-WEBAGENTUR KASSEL & NORDHESSEN"
-        headline="Webdesign & Next.js Entwicklung in"
-        headlineGradient="Kassel & Nordhessen"
+        headline={isEn ? 'Web Design Kassel:' : 'Webdesign Kassel:'}
+        headlineGradient={
+          isEn
+            ? 'Next.js Performance for Industry, Logistics & North Hesse'
+            : 'Next.js Performance für Industrie, Logistik & Nordhessen'
+        }
         description="Als spezialisierte High-Performance Webagentur für Kassel und Nordhessen realisieren wir zukunftssichere Next.js Entwicklung und maßgeschneiderte B2B-Websites für Industrie, Logistik und den Mittelstand. Ladezeiten unter 500ms, 100/100 Core Web Vitals und automatisierte Neukundengewinnung."
         cityName="Kassel"
         sourceTag="local_seo_kassel"

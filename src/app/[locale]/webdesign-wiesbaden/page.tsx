@@ -150,8 +150,12 @@ export default async function WebdesignWiesbadenPage({
       {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
       <LocalSplitHero
         badgeText="KANZLEIEN, PRAXEN & CONSULTING WEBAGENTUR WIESBADEN"
-        headline="Webdesign & Next.js Entwicklung in der Landeshauptstadt"
-        headlineGradient="Wiesbaden"
+        headline={isEn ? 'Web Design Wiesbaden:' : 'Webdesign Wiesbaden:'}
+        headlineGradient={
+          isEn
+            ? 'Digital Excellence for Law Firms, Practices & Consulting'
+            : 'Digitale Exzellenz für Kanzleien, Praxen & Consulting'
+        }
         description="Als spezialisierte High-Performance Webagentur für Wiesbaden und den Rheingau bieten wir exzellente Next.js Entwicklung und erstklassige B2B-Websites für Wirtschaftskanzleien, Privatkliniken und Premium-Dienstleister. Ladezeiten unter 500ms, Top-Google-Rankings und planbare Mandantengewinnung."
         cityName="Wiesbaden"
         sourceTag="local_seo_wiesbaden"

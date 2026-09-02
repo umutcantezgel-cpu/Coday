@@ -150,8 +150,12 @@ export default async function WebdesignDillenburgPage({
       {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
       <LocalSplitHero
         badgeText="WERKZEUGBAU, METALLTECHNIK & B2B WEBAGENTUR DILLENBURG"
-        headline="Webdesign & Next.js Entwicklung in der"
-        headlineGradient="Oranienstadt Dillenburg"
+        headline={isEn ? 'Web Design Dillenburg:' : 'Webdesign Dillenburg:'}
+        headlineGradient={
+          isEn
+            ? 'B2B Web Development for Toolmaking & Crafts'
+            : 'B2B-Webentwicklung für Werkzeugbau & Handwerk'
+        }
         description="Als spezialisierte High-Performance Webagentur für Dillenburg liefern wir erstklassige Next.js Entwicklung und moderne B2B-Websites für Werkzeugbau, Metalltechnik und Meisterbetriebe. Maximale Ladezeiten unter 500ms, Spitzenplatzierungen bei Google und planbare Neukundengewinnung zum Festpreis."
         cityName="Dillenburg"
         sourceTag="local_seo_dillenburg"

@@ -150,8 +150,12 @@ export default async function WebdesignLimburgPage({
       {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
       <LocalSplitHero
         badgeText="HANDEL, LOGISTIK & DIENSTLEISTER WEBAGENTUR LIMBURG"
-        headline="Webdesign & Next.js Entwicklung in"
-        headlineGradient="Limburg an der Lahn"
+        headline={isEn ? 'Web Design Limburg:' : 'Webdesign Limburg:'}
+        headlineGradient={
+          isEn
+            ? 'Digital Excellence for Retail, Logistics & Services'
+            : 'Digitale Exzellenz für Handel, Logistik & Dienstleistung'
+        }
         description="Speziell für Handel, Logistik, Kanzleien, Praxen und Dienstleister am ICE-Knotenpunkt Limburg, Diez und Elz. Maximale Ladezeiten unter 500ms, perfekte Google-Rankings und planbare Neukundengewinnung. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
         cityName="Limburg"
         sourceTag="local_seo_limburg"

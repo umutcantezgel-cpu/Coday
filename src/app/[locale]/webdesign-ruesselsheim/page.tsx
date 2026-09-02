@@ -150,8 +150,12 @@ export default async function WebdesignRuesselsheimPage({
       {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
       <LocalSplitHero
         badgeText="AUTOMOTIVE-, ENGINEERING- & B2B-WEBAGENTUR RÜSSELSHEIM"
-        headline="Webdesign & Next.js Entwicklung in"
-        headlineGradient="Rüsselsheim am Main"
+        headline={isEn ? 'Web Design Rüsselsheim:' : 'Webdesign Rüsselsheim:'}
+        headlineGradient={
+          isEn
+            ? 'Next.js Performance for Automotive, Engineering & B2B'
+            : 'Next.js Performance für Automotive, Engineering & B2B'
+        }
         description="Speziell für Automotive-Zulieferer, Ingenieurbüros, Technologie- und Gewerbebetriebe in Rüsselsheim, Raunheim und Bischofsheim. Subsekundäre Ladezeiten unter 500ms, ausdrucksstarkes B2B-Design und planbare Leads. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
         cityName="Rüsselsheim am Main"
         sourceTag="local_seo_ruesselsheim"

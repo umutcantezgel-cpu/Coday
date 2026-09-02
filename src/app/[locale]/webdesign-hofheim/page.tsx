@@ -151,8 +151,12 @@ export default async function WebdesignHofheimPage({
       {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
       <LocalSplitHero
         badgeText="PRAXEN-, KANZLEIEN- & B2B-WEBAGENTUR HOFHEIM AM TAUNUS"
-        headline="Webdesign & Next.js Entwicklung in"
-        headlineGradient="Hofheim am Taunus"
+        headline={isEn ? 'Web Design Hofheim am Taunus:' : 'Webdesign Hofheim am Taunus:'}
+        headlineGradient={
+          isEn
+            ? 'Next.js Websites for Practices, Law Firms & B2B'
+            : 'Next.js Websites für Praxen, Kanzleien & B2B'
+        }
         description="Speziell für Facharztpraxen, Kanzleien, Handels- und Dienstleistungsunternehmen in Hofheim, Kriftel, Kelkheim und dem Main-Taunus-Kreis. Subsekundäre Ladezeiten unter 500ms, perfekte Google-Rankings und planbare Mandanten- und Patientengewinnung. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
         cityName="Hofheim"
         sourceTag="local_seo_hofheim"

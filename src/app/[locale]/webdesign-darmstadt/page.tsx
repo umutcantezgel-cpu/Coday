@@ -151,8 +151,12 @@ export default async function WebdesignDarmstadtPage({
       {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
       <LocalSplitHero
         badgeText="WISSENSCHAFTS-, TECH- & B2B-WEBAGENTUR DARMSTADT"
-        headline="Webdesign & High-Performance Next.js in"
-        headlineGradient="Darmstadt"
+        headline={isEn ? 'Web Design Darmstadt:' : 'Webdesign Darmstadt:'}
+        headlineGradient={
+          isEn
+            ? 'Next.js Architectures for Tech, Aerospace & Science'
+            : 'Next.js Architekturen für Tech, Raumfahrt & Wissenschaft'
+        }
         description="Als spezialisierte High-Performance Webagentur für Darmstadt realisieren wir anspruchsvolle Next.js Entwicklung und performante B2B-Websites für Tech-Startups, TU-Spin-offs und den Mittelstand der Digitalstadt. Ladezeiten unter 500ms, Headless CMS und kompromisslose Code-Qualität zum Festpreis."
         cityName="Darmstadt"
         sourceTag="local_seo_darmstadt"

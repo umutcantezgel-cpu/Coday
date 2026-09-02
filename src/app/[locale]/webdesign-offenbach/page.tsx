@@ -149,8 +149,12 @@ export default async function WebdesignOffenbachPage({
       {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
       <LocalSplitHero
         badgeText="DESIGN-, E-COMMERCE & B2B-WEBAGENTUR OFFENBACH"
-        headline="Webdesign & Next.js Entwicklung in"
-        headlineGradient="Offenbach am Main"
+        headline={isEn ? 'Web Design Offenbach:' : 'Webdesign Offenbach:'}
+        headlineGradient={
+          isEn
+            ? 'Strong UI/UX Design & Next.js Performance'
+            : 'Starkes UI/UX Design & Next.js Performance'
+        }
         description="Speziell für Design- & Kreativagenturen, E-Commerce-Marken, Automotive-Zulieferer und urbane Gewerbebetriebe in Offenbach, Kaiserlei und am Hafen. Maximale Ladezeiten unter 500ms, ausdrucksstarkes UI/UX-Design und messbare Leads. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
         cityName="Offenbach am Main"
         sourceTag="local_seo_offenbach"

@@ -149,8 +149,12 @@ export default async function WebdesignBadVilbelPage({
       {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
       <LocalSplitHero
         badgeText="MEDIEN-, PHARMA- & MITTELSTANDS-WEBAGENTUR BAD VILBEL"
-        headline="Webdesign & Next.js Entwicklung in der Quellenstadt"
-        headlineGradient="Bad Vilbel"
+        headline={isEn ? 'Web Design Bad Vilbel:' : 'Webdesign Bad Vilbel:'}
+        headlineGradient={
+          isEn
+            ? 'Next.js Performance for Media, Pharma & SMEs'
+            : 'Next.js Performance für Medien, Pharma & Mittelstand'
+        }
         description="Speziell für Medienunternehmen, Pharma-, Healthcare- und B2B-Dienstleister in Bad Vilbel, Dortelweil und Massenheim. Subsekundäre Ladezeiten unter 500ms, perfekte Google-Rankings und planbare Leadgenerierung. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
         cityName="Bad Vilbel"
         sourceTag="local_seo_bad_vilbel"

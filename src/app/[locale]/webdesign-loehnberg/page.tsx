@@ -168,10 +168,12 @@ export default async function WebdesignLoehnbergPage({
             ? 'HANDCRAFT, INDUSTRY & TOURISM WEB AGENCY LÖHNBERG'
             : 'HANDWERK, INDUSTRIE & TOURISMUS WEBAGENTUR LÖHNBERG'
         }
-        headline={
-          isEn ? 'Web Design & Next.js Development in' : 'Webdesign & Next.js Entwicklung in'
+        headline={isEn ? 'Web Design Löhnberg:' : 'Webdesign Löhnberg:'}
+        headlineGradient={
+          isEn
+            ? 'Next.js for Crafts, B2B Manufacturing & Lahn Valley Tourism'
+            : 'Next.js für Handwerk, B2B-Fertigung & Lahntal-Tourismus'
         }
-        headlineGradient="Löhnberg (35792)"
         description={
           isEn
             ? 'High-speed Next.js platforms, local search engine dominance, and turnkey lead generation for crafts, B49 manufacturing & tourism in Löhnberg, Niedershausen, Obershausen & Selters.'

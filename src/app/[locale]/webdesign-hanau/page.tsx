@@ -150,8 +150,12 @@ export default async function WebdesignHanauPage({
       {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
       <LocalSplitHero
         badgeText="MATERIALTECHNIK-, INDUSTRIE- & B2B-WEBAGENTUR HANAU"
-        headline="Webdesign & Next.js Entwicklung in der Brüder-Grimm-Stadt"
-        headlineGradient="Hanau"
+        headline={isEn ? 'Web Design Hanau:' : 'Webdesign Hanau:'}
+        headlineGradient={
+          isEn
+            ? 'Next.js Platforms for Materials Technology, Industry & Crafts'
+            : 'Next.js Plattformen für Materialtechnik, Industrie & Handwerk'
+        }
         description="Als spezialisierte High-Performance Webagentur für Hanau und den Main-Kinzig-Kreis schaffen wir maßgeschneiderte Next.js Entwicklung und conversionstarke B2B-Websites für Materialtechnik, Industrie und Handwerk. Ladezeiten unter 500ms, 100/100 PageSpeed und planbare Lead-Generierung zum Festpreis."
         cityName="Hanau"
         sourceTag="local_seo_hanau"

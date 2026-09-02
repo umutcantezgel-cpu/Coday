@@ -150,8 +150,10 @@ export default async function WebdesignBadHomburgPage({
       {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
       <LocalSplitHero
         badgeText="FAMILY OFFICES, PHARMA & HEALTHCARE WEBAGENTUR BAD HOMBURG"
-        headline="Webdesign & Next.js Entwicklung in"
-        headlineGradient="Bad Homburg vor der Höhe"
+        headline={isEn ? 'Web Design Bad Homburg:' : 'Webdesign Bad Homburg:'}
+        headlineGradient={
+          isEn ? 'Digital Elegance & Peak Performance' : 'Digitale Eleganz & Spitzenperformance'
+        }
         description="Elegantes UX-Design, kompromisslose Performance und maximale Diskretion für Family Offices, Pharma, Healthcare-Spezialisten und B2B-Unternehmen im Hochtaunus. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
         cityName="Bad Homburg"
         sourceTag="local_seo_bad_homburg"

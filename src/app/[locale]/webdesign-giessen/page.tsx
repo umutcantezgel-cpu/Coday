@@ -148,8 +148,12 @@ export default async function WebdesignGiessenPage({
       {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
       <LocalSplitHero
         badgeText="HIGH-END WEBAGENTUR FÜR GIESSEN & MITTELHESSEN"
-        headline="Webdesign & Next.js Entwicklung in"
-        headlineGradient="Gießen & Umgebung"
+        headline={isEn ? 'Web Design Giessen:' : 'Webdesign Gießen:'}
+        headlineGradient={
+          isEn
+            ? 'Digital Excellence for Local Market Leaders'
+            : 'Digitale Exzellenz für lokale Marktführer'
+        }
         description="Als spezialisierte High-Performance Webagentur für Gießen entwickeln wir maßgeschneiderte B2B-Websites, Klinik-Portale und moderne Next.js Entwicklung für anspruchsvolle Unternehmen. Maximale Ladezeiten unter 500ms, perfekte Google-Rankings und automatisierte Lead-Erfassung zum verbindlichen Festpreis."
         cityName="Gießen"
         sourceTag="local_seo_giessen"

@@ -149,8 +149,12 @@ export default async function WebdesignMarburgPage({
       {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
       <LocalSplitHero
         badgeText="PHARMA, BIOTECH & B2B WEBAGENTUR MARBURG"
-        headline="Webdesign & Next.js Entwicklung in"
-        headlineGradient="Marburg an der Lahn"
+        headline={isEn ? 'Web Design Marburg:' : 'Webdesign Marburg:'}
+        headlineGradient={
+          isEn
+            ? 'Digital Excellence for Pharma, Biotech & SMEs'
+            : 'Digitale Exzellenz für Pharma, Biotech & Mittelstand'
+        }
         description="Als spezialisierte High-Performance Webagentur für Marburg realisieren wir maßgeschneiderte Next.js Entwicklung und verkaufsstarke B2B-Websites für Pharma-, Biotech- und mittelständische Unternehmen in den Behringwerken und ganz Mittelhessen. Maximale Ladezeiten unter 500ms, barrierefreie UX und planbare Neukunden."
         cityName="Marburg"
         sourceTag="local_seo_marburg"

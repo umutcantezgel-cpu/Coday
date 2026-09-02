@@ -151,8 +151,12 @@ export default async function WebdesignFriedbergPage({
       {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
       <LocalSplitHero
         badgeText="PRAXEN-, THM-TECH- & B2B-WEBAGENTUR FRIEDBERG & BAD NAUHEIM"
-        headline="Webdesign & Next.js Entwicklung in"
-        headlineGradient="Friedberg (Hessen)"
+        headline={isEn ? 'Web Design Friedberg:' : 'Webdesign Friedberg:'}
+        headlineGradient={
+          isEn
+            ? 'Next.js Performance for Practices, SMEs & THM Campus'
+            : 'Next.js Performance für Praxen, Mittelstand & THM-Campus'
+        }
         description="Speziell für Facharztpraxen, Kanzleien, Mittelstand und Tech-Unternehmen im Hochschulumfeld von Friedberg und Bad Nauheim. Subsekundäre Ladezeiten unter 500ms, ausdrucksstarkes B2B-Design und planbare Kundenanfragen. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
         cityName="Friedberg"
         sourceTag="local_seo_friedberg"

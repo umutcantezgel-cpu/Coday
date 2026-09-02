@@ -151,8 +151,12 @@ export default async function WebdesignFuldaPage({
       {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
       <LocalSplitHero
         badgeText="INDUSTRIE-, LOGISTIK- & HANDWERKS-WEBAGENTUR FULDA & OSTHESSEN"
-        headline="Webdesign & Next.js Entwicklung in"
-        headlineGradient="Fulda & Osthessen"
+        headline={isEn ? 'Web Design Fulda:' : 'Webdesign Fulda:'}
+        headlineGradient={
+          isEn
+            ? 'Next.js Performance for Industry, Logistics & East Hesse'
+            : 'Next.js Performance für Industrie, Logistik & Osthessen'
+        }
         description="Als spezialisierte High-Performance Webagentur für Fulda und Osthessen bieten wir professionelle Next.js Entwicklung und umsatzstarke B2B-Websites für Industrie, Logistik, Großhandel und Meisterbetriebe. Ladezeiten unter 500ms, Spitzen-Rankings bei Google und planbare Kundenanfragen."
         cityName="Fulda"
         sourceTag="local_seo_fulda"

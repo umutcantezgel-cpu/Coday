@@ -148,8 +148,12 @@ export default async function WebdesignFrankfurtPage({
       {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
       <LocalSplitHero
         badgeText="ENTERPRISE NEXT.JS WEBAGENTUR FRANKFURT AM MAIN"
-        headline="Webdesign & Enterprise Next.js Entwicklung in"
-        headlineGradient="Frankfurt am Main"
+        headline={isEn ? 'Web Design Frankfurt:' : 'Webdesign Frankfurt:'}
+        headlineGradient={
+          isEn
+            ? 'Enterprise Next.js for Finance, Law & Consulting'
+            : 'Enterprise Next.js für Finanzen, Kanzleien & Beratung'
+        }
         description="Als spezialisierte High-Performance Webagentur für Frankfurt am Main entwickeln wir enterprise-fähige Next.js Entwicklung und konversionsstarke B2B-Websites für FinTechs, Kanzleien, Family Offices und Marktführer. Subsekundäre Ladezeiten, 100/100 Core Web Vitals und garantierte Festpreise."
         cityName="Frankfurt am Main"
         sourceTag="local_seo_frankfurt"

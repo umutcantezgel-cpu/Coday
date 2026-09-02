@@ -151,8 +151,12 @@ export default async function WebdesignDietzenbachPage({
       {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
       <LocalSplitHero
         badgeText="GEWERBE-, LOGISTIK- & HANDWERK-WEBAGENTUR DIETZENBACH"
-        headline="Webdesign & Next.js Entwicklung in der Kreisstadt"
-        headlineGradient="Dietzenbach"
+        headline={isEn ? 'Web Design Dietzenbach:' : 'Webdesign Dietzenbach:'}
+        headlineGradient={
+          isEn
+            ? 'Next.js Websites for Trade, Logistics & Crafts'
+            : 'Next.js Websites für Gewerbe, Logistik & Handwerk'
+        }
         description="Speziell für Gewerbebetriebe, Großhändler, Logistikunternehmen und Handwerker in Dietzenbach, Steinberg, Hexenberg und dem Kreis Offenbach. Subsekundäre Ladezeiten unter 500ms, ausdrucksstarkes B2B-Design und planbare Kundenanfragen. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
         cityName="Dietzenbach"
         sourceTag="local_seo_dietzenbach"
