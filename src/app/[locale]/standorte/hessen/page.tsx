@@ -90,10 +90,10 @@ export default async function HessenMasterPage({
       desc: 'Optik, Feinmechanik, Medizintechnik & universitärer Mittelstand.',
       locations: [
         {
-          name: 'Wetzlar (Agentur-HQ)',
+          name: 'Wetzlar',
           link: '/webdesign-agentur-wetzlar',
           highlight: true,
-          note: 'Optik- & MedTech-Zentrum',
+          note: 'Agentur-Hauptsitz · Optik- & MedTech-Zentrum',
         },
         {
           name: 'Gießen',

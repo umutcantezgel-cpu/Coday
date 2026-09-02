@@ -46,37 +46,32 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Agency Wetzlar | High Conversion · Coday',
+      title: 'Get a Website Built in Wetzlar | Fixed Price · Coday',
       description:
-        'Your local web design agency in Wetzlar: High-performance & high-conversion websites, sub-0.3s speed & measurable leads for SMEs and crafts. Fixed prices.',
+        'Having a website built in Wetzlar: fixed price after a free needs analysis, live in 10 to 14 working days, sub-0.3s load times. Built by the owner personally.',
       keywords: [
-        'Web Design Agency Wetzlar',
-        'Web Design Wetzlar',
-        'Web Design Coday',
+        'Get a Website Built in Wetzlar',
+        'Website Creation Wetzlar',
+        'Website Cost Wetzlar',
         'Web Development Wetzlar',
         'Coday Web',
-        'High Performance Web Design',
-        'High Conversion Web Design',
-        'Website Creation Wetzlar',
+        'Fixed Price Website Wetzlar',
       ],
       path: '/en/webdesign-agentur-wetzlar',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Agentur Wetzlar | High-End Websites · Coday',
+    title: 'Website erstellen lassen in Wetzlar | Festpreis · Coday',
     description:
-      'Ihre lokale Webdesign Agentur in Wetzlar: High-Performance & High-Conversion Websites für Mittelstand, Handwerk & Praxen. Sub-0,3s Ladezeiten & messbare Leads.',
+      'Website erstellen lassen in Wetzlar: verbindlicher Festpreis nach kostenloser Bedarfsanalyse, in 10 bis 14 Werktagen online, Ladezeiten unter 0,3s. Vom Inhaber persönlich.',
     keywords: [
-      'Webdesign Agentur Wetzlar',
-      'Webdesign Wetzlar',
-      'Webdesign Coday',
+      'Website erstellen lassen Wetzlar',
+      'Homepage erstellen lassen Wetzlar',
+      'Website erstellen Kosten Wetzlar',
       'Webentwicklung Wetzlar',
       'Coday Web',
-      'High Performance Webdesign',
-      'High Conversion Webdesign',
-      'Homepage erstellen Wetzlar',
-      'Webagentur Wetzlar',
+      'Website Festpreis Wetzlar',
     ],
     path: '/de/webdesign-agentur-wetzlar',
     type: 'money',
@@ -156,15 +151,31 @@ export default async function WebdesignWetzlarPage({
 
       {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
       <LocalSplitHero
-        badgeText="AGENTUR-HQ WETZLAR · HIGH-END WEBENTWICKLUNG"
-        headline="Webdesign & Next.js Entwicklung in"
-        headlineGradient="Wetzlar & Lahn-Dill"
-        description="High-End Webentwicklung, blitzschnelle Ladezeiten unter 500ms und automatisierte Lead-Generierung für den Wetzlarer Mittelstand, Optikunternehmen und Handwerksbetriebe. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+        badgeText={
+          isEn
+            ? 'WETZLAR · FIXED PRICE · LIVE IN 10 TO 14 WORKING DAYS'
+            : 'WETZLAR · FESTPREIS · IN 10 BIS 14 WERKTAGEN ONLINE'
+        }
+        headline={isEn ? 'Get a Website Built in Wetzlar:' : 'Website erstellen lassen in Wetzlar:'}
+        headlineGradient={
+          isEn ? 'Fixed Price, No Agency Overhead' : 'Festpreis statt Agentur-Overhead'
+        }
+        description={
+          isEn
+            ? 'You get a binding fixed price after a free needs analysis, a launch date you can plan around, and load times under 0.3s. Developed by owner Umutcan Emre Tezgel personally, for SMEs, crafts and practices in Wetzlar.'
+            : 'Sie erhalten einen verbindlichen Festpreis nach kostenloser Bedarfsanalyse, einen planbaren Live-Termin und Ladezeiten unter 0,3 Sekunden. Entwickelt von Inhaber Umutcan Emre Tezgel persönlich, für Mittelstand, Handwerk und Praxen in Wetzlar.'
+        }
         cityName="Wetzlar"
         sourceTag="local_seo_wetzlar"
-        formHeading="Kostenlose Bedarfsanalyse für Wetzlar"
-        formSubtitle="Persönliche Beratung durch Inhaber Umutcan Emre Tezgel innerhalb von 24h."
-        secondaryCtaText="Wetzlarer Referenzen ansehen"
+        formHeading={
+          isEn ? 'Free needs analysis for Wetzlar' : 'Kostenlose Bedarfsanalyse für Wetzlar'
+        }
+        formSubtitle={
+          isEn
+            ? 'Personal consultation with owner Umutcan Emre Tezgel within 24h.'
+            : 'Persönliche Beratung durch Inhaber Umutcan Emre Tezgel innerhalb von 24h.'
+        }
+        secondaryCtaText={isEn ? 'See Wetzlar client work' : 'Wetzlarer Referenzen ansehen'}
       />
 
       {/* 2. TRUSTBAR (REAL CLIENT PROOF) */}

@@ -45,7 +45,7 @@ export async function generateMetadata({
 }
 
 const localTowns = [
-  { href: '/webdesign-agentur-wetzlar', label: 'Webdesign Agentur Wetzlar' },
+  { href: '/webdesign-agentur-wetzlar', label: 'Website erstellen lassen in Wetzlar' },
   { href: '/webdesign-giessen', label: 'Webdesign Gießen' },
   { href: '/webdesign-marburg', label: 'Webdesign Marburg' },
   { href: '/webdesign-herborn', label: 'Webdesign Herborn' },

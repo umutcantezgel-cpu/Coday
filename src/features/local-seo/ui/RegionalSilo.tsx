@@ -27,8 +27,8 @@ function displayName(cityName: string) {
  */
 const ANCHOR_OVERRIDES: Record<string, { de: string; en: string }> = {
   'webdesign-agentur-wetzlar': {
-    de: 'Webdesign Agentur Wetzlar',
-    en: 'Web Design Agency Wetzlar',
+    de: 'Website erstellen lassen in Wetzlar',
+    en: 'Get a Website Built in Wetzlar',
   },
 };
 

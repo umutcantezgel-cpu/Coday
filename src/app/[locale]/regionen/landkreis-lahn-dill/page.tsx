@@ -86,10 +86,10 @@ export default async function LandkreisLahnDillPage({
 
   const kommunen = [
     {
-      name: 'Wetzlar (Kreisstadt & HQ)',
+      name: 'Wetzlar',
       link: '/webdesign-agentur-wetzlar',
       highlight: true,
-      note: 'Optik-, Photonik- & Sensorikzentrum',
+      note: 'Kreisstadt & Agentur-Hauptsitz · Optik, Photonik & Sensorik',
     },
     {
       name: 'Herborn',
