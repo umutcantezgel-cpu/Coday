@@ -420,10 +420,11 @@ export function getArticleSchema(post: {
   return {
     '@type': 'TechArticle',
     '@id': `${post.url}#article`,
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': post.url,
-    },
+    // Points at the post's WebPage node rather than the bare document URL. There
+    // was no node with that bare @id, so this edge resolved to nothing on every
+    // single blog post; the WebPage node that fixes it did not exist until the
+    // page-ownership slice created one.
+    mainEntityOfPage: { '@id': `${post.url}#webpage` },
     isPartOf: { '@id': WEBSITE_ID },
     headline: post.title,
     description: post.excerpt,

@@ -203,11 +203,24 @@ export default async function WikiTermPage({ params }: PageProps) {
     name: entity.displayName,
     alternateName: entity.aliases,
     termCode: entity.slug,
-    inDefinedTermSet: `${BASE_URL}/${locale}/knowledge/wikihub`,
+    // An {'@id'} reference rather than a bare string. The hub's DefinedTermSet
+    // already points back here through hasDefinedTerm; this makes the edge a node
+    // reference in both directions instead of one of each.
+    inDefinedTermSet: { '@id': `${BASE_URL}/${locale}/knowledge/wikihub` },
     url: `${BASE_URL}/${locale}/knowledge/wiki/${slug}`,
     description: isEn
       ? `Detailed technical glossary definition and architectural best practices for ${entity.displayName} in modern web engineering.`
       : `Detaillierte Fachdefinition und architektonische Best Practices zu ${entity.displayName} in der modernen Webentwicklung.`,
+    // The related terms were rendered as a "Verwandte Begriffe" grid and existed
+    // nowhere a machine could read. As @id references they connect the 101 terms
+    // to each other — until now every term's only edge was to its own set.
+    ...(relatedEntities.length
+      ? {
+          isRelatedTo: relatedEntities.map((e) => ({
+            '@id': `${BASE_URL}/${locale}/knowledge/wiki/${e.slug}#term`,
+          })),
+        }
+      : {}),
     ...(entity.wikidataId ? { sameAs: entity.wikidataId } : {}),
   };
 
