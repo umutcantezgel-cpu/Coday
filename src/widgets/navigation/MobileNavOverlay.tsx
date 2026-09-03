@@ -38,6 +38,19 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
   // Lock body scroll
   useScrollLock(isOpen);
 
+  // Sync mobile-nav-open class on body for FAB and overlay coordination
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+    if (isOpen) {
+      document.body.classList.add('mobile-nav-open');
+    } else {
+      document.body.classList.remove('mobile-nav-open');
+    }
+    return () => {
+      document.body.classList.remove('mobile-nav-open');
+    };
+  }, [isOpen]);
+
   // handle escape key
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {

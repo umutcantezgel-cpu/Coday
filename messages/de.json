@@ -241,6 +241,7 @@
       },
       "locations": {
         "label": "Standorte & Branchen",
+        "short_label": "Standorte",
         "hessen_mittelhessen": {
           "title": "Mittelhessen & HQ",
           "hessen_hub": "Hessen Master-Hub",

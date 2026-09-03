@@ -64,7 +64,10 @@ export const FloatingMenuMobile = () => {
 
   return (
     <>
-      <div className="fixed bottom-6 right-4 z-[9999] md:hidden flex flex-col items-end gap-3 pointer-events-none">
+      <div
+        id="fab-container"
+        className="fixed bottom-6 right-4 z-[9999] md:hidden flex flex-col items-end gap-3 pointer-events-none"
+      >
         <AnimatePresence>
           {isOpen && (
             <div className="flex flex-col gap-3 mb-2 pointer-events-auto items-end">

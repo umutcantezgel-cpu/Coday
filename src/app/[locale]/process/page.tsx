@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema, getProcessSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getProcessSchema, getWebPageSchema } from '@/lib/schema';
 import ClientComponent from '@/features/process/ui/ProcessClient';
 
 export const dynamic = 'force-static';
@@ -48,16 +48,36 @@ export default async function ProcessPage({ params }: { params: Promise<{ locale
   const _locale = locale || 'de';
   setRequestLocale(_locale);
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: _locale === 'en' ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: _locale === 'en' ? 'Process' : 'Ablauf', url: `/${_locale}/process` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/process`;
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: _locale === 'en' ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: _locale === 'en' ? 'Process' : 'Ablauf', url: `/${_locale}/process` },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // No Organization node here: the root layout already emits #organization and
     // #website site-wide, so repeating it only duplicates ~4 KB of identical JSON.
-    '@graph': [breadcrumbs, getProcessSchema(_locale)],
+    '@graph': [
+      breadcrumbs,
+      // The WebPage names the one entity this URL answers for. Nothing else on
+      // the site may claim #howto as its mainEntity.
+      getWebPageSchema({
+        url: pageUrl,
+        name: _locale === 'en' ? 'How We Work' : 'Unser Ablauf',
+        description:
+          _locale === 'en'
+            ? 'The four phases from first call to launch, with what happens in each and how long it takes.'
+            : 'Die vier Phasen vom ersten Gespräch bis zum Livegang, mit Inhalt und Dauer jeder Phase.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#howto`,
+      }),
+      getProcessSchema(_locale),
+    ],
   };
 
   return (

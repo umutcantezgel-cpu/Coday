@@ -241,6 +241,7 @@
       },
       "locations": {
         "label": "Locations & Industries",
+        "short_label": "Locations",
         "hessen_mittelhessen": {
           "title": "Central Hesse & HQ",
           "hessen_hub": "Hesse Master Hub",

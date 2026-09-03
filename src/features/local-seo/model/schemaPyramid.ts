@@ -1259,6 +1259,18 @@ export function getPyramidBreadcrumbs(
   locale: string = 'de'
 ) {
   const isEn = locale === 'en';
+
+  // The list needs an @id so the page's WebPage node can reference it as its
+  // `breadcrumb`. The URL is derivable from the tier: the state hub, a Kreis hub
+  // or a city page.
+  const pageUrl =
+    tier === 2 && params.countySlug
+      ? `${BASE_URL}/${locale}/regionen/${params.countySlug}`
+      : tier === 3 && params.citySlug
+        ? `${BASE_URL}/${locale}/${params.citySlug}`
+        : `${BASE_URL}/${locale}/standorte/hessen`;
+  const listId = { '@id': `${pageUrl}#breadcrumb` };
+
   const startItem = {
     '@type': 'ListItem',
     position: 1,
@@ -1275,6 +1287,7 @@ export function getPyramidBreadcrumbs(
 
   if (tier === 1) {
     return {
+      ...listId,
       '@type': 'BreadcrumbList',
       itemListElement: [startItem, hessenItem],
     };
@@ -1284,6 +1297,7 @@ export function getPyramidBreadcrumbs(
     const county = COUNTIES_REGIONS[params.countySlug];
     const countyName = county ? county.name : 'Region';
     return {
+      ...listId,
       '@type': 'BreadcrumbList',
       itemListElement: [
         startItem,
@@ -1305,6 +1319,7 @@ export function getPyramidBreadcrumbs(
 
     if (parentCounty) {
       return {
+        ...listId,
         '@type': 'BreadcrumbList',
         itemListElement: [
           startItem,
@@ -1326,6 +1341,7 @@ export function getPyramidBreadcrumbs(
     }
 
     return {
+      ...listId,
       '@type': 'BreadcrumbList',
       itemListElement: [
         startItem,
@@ -1341,6 +1357,7 @@ export function getPyramidBreadcrumbs(
   }
 
   return {
+    ...listId,
     '@type': 'BreadcrumbList',
     itemListElement: [startItem, hessenItem],
   };

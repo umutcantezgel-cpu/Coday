@@ -46,10 +46,10 @@ export const LanguageSwitcher: React.FC = () => {
       : `/en${cleanPath === '/' ? '' : cleanPath}`;
 
   return (
-    <div className="flex items-center p-1 rounded-full bg-slate-100/80 backdrop-blur-md border border-slate-200 shadow-inner">
+    <div className="flex items-center p-0.5 sm:p-1 rounded-full bg-slate-100/80 backdrop-blur-md border border-slate-200 shadow-inner flex-shrink-0">
       <Link
         href={deLink}
-        className={`px-3 py-1.5 text-xs font-bold tracking-wider rounded-full transition-colors flex items-center gap-1 ${
+        className={`px-2 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-bold tracking-wider rounded-full transition-colors flex items-center gap-1 ${
           locale === 'de'
             ? 'bg-white text-slate-900 shadow-sm ring-1 ring-slate-200/50 pointer-events-none'
             : 'text-slate-500 hover:text-slate-800 hover:bg-slate-200/50'
@@ -65,7 +65,7 @@ export const LanguageSwitcher: React.FC = () => {
       </Link>
       <Link
         href={enLink}
-        className={`px-3 py-1.5 text-xs font-bold tracking-wider rounded-full transition-colors flex items-center gap-1 ${
+        className={`px-2 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-bold tracking-wider rounded-full transition-colors flex items-center gap-1 ${
           locale === 'en'
             ? 'bg-white text-slate-900 shadow-sm ring-1 ring-slate-200/50 pointer-events-none'
             : 'text-slate-500 hover:text-slate-800 hover:bg-slate-200/50'

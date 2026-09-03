@@ -386,7 +386,6 @@ export function getArticleSchema(post: {
   const isFounderAuthor = !post.authorName || post.authorName === 'Lead Architect';
 
   return {
-    '@context': 'https://schema.org',
     '@type': 'TechArticle',
     '@id': `${post.url}#article`,
     mainEntityOfPage: {
@@ -410,7 +409,6 @@ export function getArticleSchema(post: {
 
 export function getServiceSchema(service: { name: string; description: string; url: string }) {
   return {
-    '@context': 'https://schema.org',
     '@type': 'Service',
     '@id': `${service.url}#service`,
     name: service.name,
@@ -635,9 +633,61 @@ export function getProcessSchema(locale: string = 'de') {
   };
 }
 
-export function getBreadcrumbSchema(items: { name: string; url: string }[]) {
+/**
+ * The node every page needs and none had: a WebPage that names the one entity
+ * the page is answerable for.
+ *
+ * Without it nothing on this site can say "this URL owns this topic". All 24
+ * city pages describe `Webdesign <Stadt>` and Google had only the prose to tell
+ * them apart. `mainEntity` is that declaration, and the rule it enables — no two
+ * pages may claim the same @id — is what stops them competing with each other.
+ *
+ * `breadcrumb` finally joins the click path to the entity graph. BreadcrumbList
+ * carried no @id anywhere in the repo, so nothing could point at one.
+ */
+export function getWebPageSchema(opts: {
+  url: string;
+  name: string;
+  description: string;
+  locale: string;
+  type?: 'WebPage' | 'CollectionPage' | 'ItemPage' | 'AboutPage' | 'ContactPage' | 'FAQPage';
+  /** The @id of the single entity this page is responsible for. */
+  mainEntityId?: string;
+  primaryImage?: string;
+  /** False only where the page emits no BreadcrumbList — the home page. */
+  hasBreadcrumb?: boolean;
+  datePublished?: string;
+  dateModified?: string;
+}) {
   return {
-    '@context': 'https://schema.org',
+    '@type': opts.type ?? 'WebPage',
+    '@id': `${opts.url}#webpage`,
+    url: opts.url,
+    name: opts.name,
+    description: opts.description,
+    inLanguage: opts.locale === 'en' ? 'en-US' : 'de-DE',
+    isPartOf: { '@id': WEBSITE_ID },
+    ...(opts.hasBreadcrumb === false ? {} : { breadcrumb: { '@id': `${opts.url}#breadcrumb` } }),
+    ...(opts.mainEntityId ? { mainEntity: { '@id': opts.mainEntityId } } : {}),
+    ...(opts.primaryImage
+      ? { primaryImageOfPage: { '@type': 'ImageObject', url: opts.primaryImage } }
+      : {}),
+    ...(opts.datePublished ? { datePublished: opts.datePublished } : {}),
+    ...(opts.dateModified ? { dateModified: opts.dateModified } : {}),
+  };
+}
+
+/**
+ * `pageUrl` gives the list an @id so the page's WebPage node can reference it.
+ * `item` stays a URL string rather than an {'@id'} reference: that is the form
+ * Google documents and validates for breadcrumbs.
+ *
+ * No '@context' here — all 102 call sites push the result into a parent @graph
+ * that already carries one.
+ */
+export function getBreadcrumbSchema(items: { name: string; url: string }[], pageUrl?: string) {
+  return {
+    ...(pageUrl ? { '@id': `${pageUrl}#breadcrumb` } : {}),
     '@type': 'BreadcrumbList',
     itemListElement: items.map((item, index) => ({
       '@type': 'ListItem',
@@ -652,7 +702,6 @@ export function getBreadcrumbSchema(items: { name: string; url: string }[]) {
 
 export function getFaqSchema(faqs: { question: string; answer: string }[]) {
   return {
-    '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: faqs.map((faq) => ({
       '@type': 'Question',
@@ -710,7 +759,6 @@ export function getWebApplicationSchema(
   locale: string = 'de'
 ) {
   return {
-    '@context': 'https://schema.org',
     '@type': 'WebApplication',
     // Fragment, not the bare page URL: an @id equal to the document URI collides
     // with the page entity. Every other node in this file uses a fragment.

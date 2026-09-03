@@ -29,7 +29,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       <RouteAnnouncer />
 
       {/* Spacer for fixed nav */}
-      <div className="h-16 md:h-20" />
+      <div className="h-20 md:h-24" />
 
       <main id="main-content" className="flex-grow pb-20 lg:pb-0">
         <PageTransition>{children}</PageTransition>
