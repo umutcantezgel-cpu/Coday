@@ -2,7 +2,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import ClientComponent from '@/features/landing/ui/AngebotHandwerkerClient';
-import { getBreadcrumbSchema, getReviewsSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
+import { getBreadcrumbSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -77,16 +77,16 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
       : 'Maßgeschneiderte, verkaufsstarke Website für Handwerksbetriebe in Wetzlar und Mittelhessen mit 100/100 PageSpeed.',
     image: `${BASE_URL}/images/og-image.jpg`,
     brand: { '@id': `${BASE_URL}/#organization` },
+    // Price and rating removed for the same reason as everywhere else: quotes
+    // are individual, and the reviews are of Coday, not of this offer. The
+    // rating now sits once on #organization.
     offers: {
       '@type': 'Offer',
       priceCurrency: 'EUR',
-      price: '1990',
-      priceValidUntil: '2027-12-31',
       availability: 'https://schema.org/InStock',
       url: `${BASE_URL}/${_locale}/angebot-handwerker`,
       seller: { '@id': `${BASE_URL}/#organization` },
     },
-    ...getReviewsSchema(_locale),
   };
 
   const jsonLd = {

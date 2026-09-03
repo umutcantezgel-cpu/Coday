@@ -194,10 +194,10 @@ export default async function GeoServicePage({ params }: { params: Promise<{ loc
       { '@type': 'Country', name: 'Switzerland' },
     ],
     description: t.hero.description,
+    // The 2.500 EUR was a fixed figure for work that is scoped per project.
     offers: {
       '@type': 'Offer',
       priceCurrency: 'EUR',
-      price: '2500.00',
       availability: 'https://schema.org/InStock',
     },
   };

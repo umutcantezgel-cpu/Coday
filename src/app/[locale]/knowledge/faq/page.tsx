@@ -74,15 +74,16 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     // The root layout supplies the Organization node for every page, this one included.
     '@graph': [
       breadcrumbs,
-      // No mainEntityId: getFaqSchema's FAQPage node carries no @id yet (a later
-      // slice is expected to add one) so there is nothing here to point at.
+      // The question set is what this page exists for, so it is the entity the
+      // page owns.
       getWebPageSchema({
         url: pageUrl,
         name: pageName,
         description: pageDescription,
         locale: _locale,
+        mainEntityId: `${pageUrl}#faq`,
       }),
-      getFaqSchema(faqs),
+      getFaqSchema(faqs, pageUrl),
     ],
   };
 

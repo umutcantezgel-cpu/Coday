@@ -70,18 +70,18 @@ export function getMainProductOfferSchema(locale: string = 'de') {
     brand: {
       '@id': ORG_ID,
     },
+    // No price. Every quote is individual and fixed only after the free call —
+    // the pricing page says so and its schema was changed to match. A hardcoded
+    // 2.000 EUR on the home page contradicted both.
     offers: {
       '@type': 'Offer',
-      price: '2000',
       priceCurrency: 'EUR',
-      priceValidUntil: '2027-12-31',
       availability: 'https://schema.org/InStock',
       url: `${BASE_URL}/${locale}`,
       seller: {
         '@id': ORG_ID,
       },
     },
-    ...getReviewsSchema(locale),
   };
 }
 
@@ -89,11 +89,19 @@ export function getOrganizationSchema(locale: string = 'de') {
   return {
     '@type': ['Organization', 'LocalBusiness', 'ProfessionalService'],
     '@id': ORG_ID,
-    // NO aggregateRating/review here: Google ignores self-serving stars on
-    // Organization/LocalBusiness, and the org node appears on every page
-    // (layout + many page graphs) — spreading reviews here caused the GSC
-    // "multiple aggregated ratings" error. Reviews live on Product /
-    // WebApplication nodes only, at most one per page.
+    // The rating lives here and nowhere else. It was previously spread across
+    // seven other node types — a Product called "Webdesign Kassel", a WebApplication,
+    // a CollectionPage — none of which anyone has ever reviewed. The 4 Google and
+    // 4 ProvenExpert reviews are about Coday, so they belong on the node that is
+    // Coday.
+    //
+    // The old comment here warned this would trigger the GSC "multiple aggregated
+    // ratings" error. It cannot any more: #organization is emitted exactly once
+    // per document by the root layout, and it is now the only node carrying a
+    // rating. Worth knowing separately: Google does not render star snippets for
+    // self-serving reviews on Organization/LocalBusiness, so this is about
+    // truthful attribution and Knowledge-Graph confidence rather than stars.
+    ...getReviewsSchema(locale),
     name: 'Coday',
     legalName: 'Umutcan Emre Tezgel',
     alternateName: [
@@ -355,7 +363,6 @@ export function getLocalBusinessSchema(locale: string = 'de') {
     parentOrganization: {
       '@id': ORG_ID,
     },
-    ...getReviewsSchema(locale),
     name: locale === 'en' ? 'Coday - Web Design Wetzlar' : 'Coday - Webdesign Wetzlar',
     description:
       locale === 'en'
@@ -610,7 +617,6 @@ export function getPricingSchema(locale: string = 'de') {
         },
       })),
     },
-    ...getReviewsSchema(locale),
   };
 }
 
@@ -817,9 +823,21 @@ export function getBreadcrumbSchema(items: { name: string; url: string }[], page
   };
 }
 
-export function getFaqSchema(faqs: { question: string; answer: string }[]) {
+/**
+ * `pageUrl` gives the node an @id so a WebPage can name it as its mainEntity —
+ * which is what /knowledge/faq needs, since the question set is the entity that
+ * page exists for. Optional because most FAQ blocks sit under a page that owns
+ * something else, and an id on those buys nothing.
+ *
+ * Note on duplicates: `RelevantFAQs` can also emit an FAQPage, and two in one
+ * document is a rich-result validity risk. Verified across the build that no
+ * page currently has two — and qa:graph now fails the build if one ever does,
+ * which is stronger than the comment that used to guard this.
+ */
+export function getFaqSchema(faqs: { question: string; answer: string }[], pageUrl?: string) {
   return {
     '@type': 'FAQPage',
+    ...(pageUrl ? { '@id': `${pageUrl}#faq` } : {}),
     mainEntity: faqs.map((faq) => ({
       '@type': 'Question',
       name: faq.question,
@@ -894,7 +912,6 @@ export function getWebApplicationSchema(
       priceCurrency: 'EUR',
     },
     provider: { '@id': ORG_ID },
-    ...getReviewsSchema(locale),
   };
 }
 
@@ -1002,14 +1019,17 @@ export function getAcademyCollectionSchema(locale: string = 'de') {
     inLanguage: locale,
     isPartOf: { '@id': `${BASE_URL}/#website` },
     about: { '@id': ORG_ID },
-    ...getReviewsSchema(locale),
+    // References, not copies. The academy page also spreads the same
+    // VideoObjects into its @graph at top level, so embedding them here put
+    // every one of the eight @ids into the document twice.
     mainEntity: {
       '@type': 'ItemList',
+      '@id': `${BASE_URL}/${locale}/knowledge/academy#itemlist`,
       numberOfItems: videoSchemas.length,
       itemListElement: videoSchemas.map((video, idx) => ({
         '@type': 'ListItem',
         position: idx + 1,
-        item: video,
+        item: { '@id': video['@id'] },
       })),
     },
   };
