@@ -136,7 +136,9 @@ const Members: React.FC = () => {
 
         {/* Unified Community Subnavigation */}
         <nav aria-label="Community Navigation" className="flex justify-center mb-10">
-          <div className="inline-flex p-1.5 bg-white/80 backdrop-blur-md rounded-2xl border border-slate-200/80 shadow-xs gap-1 sm:gap-2">
+          {/* Wraps rather than overflowing: four tabs are 481px wide on a 375px
+              screen, which pushed the whole document into horizontal scroll. */}
+          <div className="inline-flex max-w-full flex-wrap justify-center p-1.5 bg-white/80 backdrop-blur-md rounded-2xl border border-slate-200/80 shadow-xs gap-1 sm:gap-2">
             {communityNav.map((tab) => {
               const isActive = tab.href === '/community/members';
               const Icon = tab.icon;

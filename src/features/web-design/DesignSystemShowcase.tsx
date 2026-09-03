@@ -36,8 +36,10 @@ const DesignSystemShowcase: React.FC = () => {
   const current = themes[theme];
 
   return (
-    <div className="bg-surface-light rounded-3xl p-8 border border-border-muted overflow-hidden relative">
-      <div className="flex justify-between items-center mb-12">
+    <div className="bg-surface-light rounded-3xl p-6 sm:p-8 border border-border-muted overflow-hidden relative">
+      {/* Stacks on phones. Side by side, the heading was squeezed to one word per
+          line and the toggle still overran its container by 16px. */}
+      <div className="flex flex-col gap-4 mb-12 sm:flex-row sm:justify-between sm:items-center sm:gap-6">
         <div>
           <h3 className="font-display font-bold text-2xl text-content-base">The Power of Tokens</h3>
           <p className="text-slate-500 text-sm mt-1">Ein System. Unendliche Möglichkeiten.</p>
@@ -165,7 +167,9 @@ const DesignSystemShowcase: React.FC = () => {
         </div>
       </m.div>
 
-      <div className="mt-8 grid grid-cols-3 gap-4">
+      {/* One column on phones: at three columns the cells are 87px and the
+          letter-spaced labels need 95px, so they were being clipped. */}
+      <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
         {['Primary Color', 'Border Radius', 'Typography'].map((label, i) => (
           <div key={i} className="text-center">
             <div className="text-xs uppercase tracking-widest text-gray-400 mb-1">{label}</div>
