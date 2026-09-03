@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL } from '@/lib/schema';
+import { BASE_URL, getWebPageSchema } from '@/lib/schema';
 import {
   getCountyHierarchySchema,
   getPyramidBreadcrumbs,
@@ -169,11 +169,24 @@ export default async function RheingauTaunusKreisPage({
 
   const isEn = _locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${_locale}/regionen/rheingau-taunus-kreis`;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     // No Organization node here: the root layout already emits it site-wide.
     '@graph': [
       getPyramidBreadcrumbs(2, { countySlug: 'rheingau-taunus-kreis' }, _locale),
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Rheingau-Taunus District | Agency · Coday'
+          : 'Webdesign Rheingau-Taunus-Kreis | Webagentur · Coday',
+        description: isEn
+          ? 'Web design & SEO in the Rheingau-Taunus district. Premium websites for viticulture, tourism & services in Taunusstein, Idstein & Eltville. Fixed price.'
+          : 'Webdesign & SEO im Rheingau-Taunus-Kreis. Hochwertige Websites für Weinbau, Tourismus & Dienstleister in Taunusstein, Idstein & Eltville. Festpreis.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#service`,
+      }),
       ...(getCountyHierarchySchema('rheingau-taunus-kreis', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

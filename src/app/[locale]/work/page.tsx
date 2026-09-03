@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
-import { getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
+import { getBreadcrumbSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
 import { workData } from '@/shared/data/work';
 import { Link } from '@/i18n/navigation';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
@@ -69,10 +69,15 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
   const projects = Object.values(workData);
   const caseStudies = projects.filter((p) => p.type === 'case_study');
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: isEn ? 'Portfolio' : 'Referenzen', url: `/${_locale}/work` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/work`;
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: isEn ? 'Portfolio' : 'Referenzen', url: `/${_locale}/work` },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -80,14 +85,19 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
     '@graph': [
       breadcrumbs,
       {
-        '@type': 'CollectionPage',
-        '@id': `${BASE_URL}/${_locale}/work#collection`,
-        name: isEn
-          ? 'Portfolio & Case Studies | Coday Web Agency'
-          : 'Portfolio & Case Studies | Coday Webagentur',
-        description: isEn
-          ? 'Real client projects and performance case studies by Coday Web Agency.'
-          : 'Reale Kundenprojekte und Performance-Case-Studies der Coday Webagentur.',
+        // No mainEntityId: the ItemList below carries no @id of its own to
+        // point at. A later slice gives it one.
+        ...getWebPageSchema({
+          url: pageUrl,
+          name: isEn
+            ? 'Portfolio & Case Studies | Coday Web Agency'
+            : 'Portfolio & Case Studies | Coday Webagentur',
+          description: isEn
+            ? 'Real client projects and performance case studies by Coday Web Agency.'
+            : 'Reale Kundenprojekte und Performance-Case-Studies der Coday Webagentur.',
+          locale: _locale,
+          type: 'CollectionPage',
+        }),
         mainEntity: {
           '@type': 'ItemList',
           itemListElement: caseStudies.map((project, idx) => ({

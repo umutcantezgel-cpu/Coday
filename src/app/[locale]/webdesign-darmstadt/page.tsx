@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -88,11 +88,27 @@ export default async function WebdesignDarmstadtPage({
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${_locale}/webdesign-darmstadt`;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     // The root layout already ships the Organization node for this document.
     '@graph': [
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-darmstadt' }, _locale),
+      // The WebPage names the one entity this URL answers for: the #localbusiness
+      // node from getCityHierarchySchema below. Nothing else on the site may
+      // claim that @id as its mainEntity.
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Darmstadt | Tech & Next.js Agency · Coday'
+          : 'Webdesign Darmstadt | Tech & Next.js Webagentur · Coday',
+        description: isEn
+          ? 'High-end web design in Darmstadt. Ultra-fast Next.js architecture & measurable B2B leads for tech & mid-market. Fixed price on request.'
+          : 'High-End Webdesign in Darmstadt: Ultraschnelle Next.js Architektur & messbare B2B-Leads für Tech & Mittelstand. Festpreis auf Anfrage.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#localbusiness`,
+      }),
       ...(getCityHierarchySchema('webdesign-darmstadt', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

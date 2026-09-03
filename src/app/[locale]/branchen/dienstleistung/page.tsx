@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import DienstleistungClient from '@/features/industries/ui/DienstleistungClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getServiceSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
+import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -39,6 +39,7 @@ export default async function DienstleistungPage({
   setRequestLocale(locale);
 
   const _locale = (await params)?.locale || 'de';
+  const pageUrl = `${BASE_URL}/${_locale}/branchen/dienstleistung`;
   const _seoTitle =
     _locale === 'en'
       ? 'Web Design for Service Providers | Wetzlar Hesse | Coday'
@@ -57,18 +58,31 @@ export default async function DienstleistungPage({
             '@context': 'https://schema.org',
             // Organization node omitted on purpose — the root layout renders it globally.
             '@graph': [
-              getBreadcrumbSchema([
-                { name: _locale === 'en' ? 'Home' : 'Startseite', url: `/${_locale}` },
-                { name: _locale === 'en' ? 'Industries' : 'Branchen', url: `/${_locale}/branchen` },
-                {
-                  name: _locale === 'en' ? 'Service Providers' : 'Dienstleister',
-                  url: `/${_locale}/branchen/dienstleistung`,
-                },
-              ]),
+              getBreadcrumbSchema(
+                [
+                  { name: _locale === 'en' ? 'Home' : 'Startseite', url: `/${_locale}` },
+                  {
+                    name: _locale === 'en' ? 'Industries' : 'Branchen',
+                    url: `/${_locale}/branchen`,
+                  },
+                  {
+                    name: _locale === 'en' ? 'Service Providers' : 'Dienstleister',
+                    url: `/${_locale}/branchen/dienstleistung`,
+                  },
+                ],
+                pageUrl
+              ),
+              getWebPageSchema({
+                url: pageUrl,
+                name: _seoTitle,
+                description: _seoDesc,
+                locale: _locale,
+                mainEntityId: `${pageUrl}#service`,
+              }),
               getServiceSchema({
                 name: _seoTitle,
                 description: _seoDesc,
-                url: `${BASE_URL}/${_locale}/branchen/dienstleistung`,
+                url: pageUrl,
               }),
             ],
           }),

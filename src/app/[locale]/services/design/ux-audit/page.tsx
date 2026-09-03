@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { UxAuditClient } from '@/features/services/ui/UxAuditClient';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getServiceSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getServiceSchema, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -57,21 +57,33 @@ export default async function UxAuditPage({ params }: { params: Promise<{ locale
       ? 'Professional UX audit by Coday in Wetzlar. We analyze your website for usability and conversion potential. For businesses across Hesse. Get started.'
       : 'Professioneller UX Audit von Coday in Wetzlar. Wir analysieren Ihre Website auf Nutzerfreundlichkeit und Konversionspotenzial. Für Firmen in Hessen.';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: 'Services', url: `/${_locale}/services` },
-    { name: 'UX Audit', url: `/${_locale}/services/design/ux-audit` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/services/design/ux-audit`;
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: 'Services', url: `/${_locale}/services` },
+      { name: 'UX Audit', url: `/${_locale}/services/design/ux-audit` },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization is defined site-wide in the root layout, so it is omitted.
     '@graph': [
       breadcrumbs,
+      getWebPageSchema({
+        url: pageUrl,
+        name: _seoTitle,
+        description: _seoDesc,
+        locale: _locale,
+        mainEntityId: `${pageUrl}#service`,
+      }),
       getServiceSchema({
         name: _seoTitle,
         description: _seoDesc,
-        url: `${BASE_URL}/${_locale}/services/design/ux-audit`,
+        url: pageUrl,
       }),
     ],
   };

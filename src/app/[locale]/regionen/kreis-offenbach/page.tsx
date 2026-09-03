@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL } from '@/lib/schema';
+import { BASE_URL, getWebPageSchema } from '@/lib/schema';
 import {
   getCountyHierarchySchema,
   getPyramidBreadcrumbs,
@@ -167,11 +167,24 @@ export default async function KreisOffenbachPage({
   ];
   const isEn = _locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${_locale}/regionen/kreis-offenbach`;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     // The Organization node comes from the root layout - no duplicate needed.
     '@graph': [
       getPyramidBreadcrumbs(2, { countySlug: 'kreis-offenbach' }, _locale),
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Offenbach District | Web Agency & SEO · Coday'
+          : 'Webdesign Kreis Offenbach | Webagentur & SEO · Coday',
+        description: isEn
+          ? 'Professional web design in the Offenbach district. Ultra-fast websites for Rodgau, Dietzenbach, Dreieich & Neu-Isenburg. Fixed prices on request.'
+          : 'Professionelles Webdesign im Kreis Offenbach. Ultraschnelle Websites für Rodgau, Dietzenbach, Dreieich & Neu-Isenburg. Verbindlicher Festpreis auf Anfrage.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#service`,
+      }),
       ...(getCountyHierarchySchema('kreis-offenbach', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

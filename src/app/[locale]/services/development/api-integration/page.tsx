@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { ApiIntegrationClient } from '@/features/services/ui/ApiIntegrationClient';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getServiceSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getServiceSchema, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -61,24 +61,36 @@ export default async function ApiIntegrationPage({
       ? 'Seamless API integrations and interface development by Coday in Wetzlar. We connect your systems reliably and efficiently. For businesses in Hesse.'
       : 'Nahtlose API Integrationen und Schnittstellenentwicklung von Coday in Wetzlar. Wir verbinden Ihre Systeme zuverlässig und effizient. Für Firmen in Hessen.';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: 'Services', url: `/${_locale}/services` },
-    {
-      name: isEn ? 'API Integration' : 'API Integration',
-      url: `/${_locale}/services/development/api-integration`,
-    },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/services/development/api-integration`;
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: 'Services', url: `/${_locale}/services` },
+      {
+        name: isEn ? 'API Integration' : 'API Integration',
+        url: `/${_locale}/services/development/api-integration`,
+      },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // No Organization entry: the root layout already ships one per document.
     '@graph': [
       breadcrumbs,
+      getWebPageSchema({
+        url: pageUrl,
+        name: _seoTitle,
+        description: _seoDesc,
+        locale: _locale,
+        mainEntityId: `${pageUrl}#service`,
+      }),
       getServiceSchema({
         name: _seoTitle,
         description: _seoDesc,
-        url: `${BASE_URL}/${_locale}/services/development/api-integration`,
+        url: pageUrl,
       }),
     ],
   };

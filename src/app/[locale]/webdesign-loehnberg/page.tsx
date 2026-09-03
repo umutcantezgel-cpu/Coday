@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
+import { BASE_URL, getWebPageSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -77,12 +78,27 @@ export default async function WebdesignLoehnbergPage({
   setRequestLocale(locale);
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
+  const pageUrl = `${BASE_URL}/${_locale}/webdesign-loehnberg`;
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization comes from the root layout — no need to duplicate it per page.
     '@graph': [
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-loehnberg' }, _locale),
+      // The WebPage names the one entity this URL answers for: the local
+      // business node from getCityHierarchySchema below. No other page may
+      // claim #localbusiness for Löhnberg as its mainEntity.
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Löhnberg | High-End Web Development · Coday'
+          : 'Webdesign Löhnberg | Webseiten vom lokalen Profi · Coday',
+        description: isEn
+          ? 'Web design & Local SEO for Löhnberg (35792), Niedershausen, Selters & Obershausen. Ultra-fast Next.js websites for crafts, industry along B49 & tourism.'
+          : 'Webdesign & Local SEO für Löhnberg (35792), Niedershausen, Selters & Obershausen. Schnelle Next.js Websites für Handwerk & Tourismus. Feste Konditionen.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#localbusiness`,
+      }),
       ...(getCityHierarchySchema('webdesign-loehnberg', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

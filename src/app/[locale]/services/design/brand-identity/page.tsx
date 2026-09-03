@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { BrandIdentityClient } from '@/features/services/ui/BrandIdentityClient';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getServiceSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getServiceSchema, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -61,24 +61,36 @@ export default async function BrandIdentityPage({
       ? 'Strong brand identity and corporate design by Coday in Wetzlar. Logo, colors and typography for your business in Hesse. Start building your brand now.'
       : 'Starke Markenidentität und Corporate Design von Coday in Wetzlar. Logo, Farben und Typografie für Ihr Unternehmen in Hessen. Jetzt Marke gestalten.';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: 'Services', url: `/${_locale}/services` },
-    {
-      name: isEn ? 'Brand Identity' : 'Corporate Design',
-      url: `/${_locale}/services/design/brand-identity`,
-    },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/services/design/brand-identity`;
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: 'Services', url: `/${_locale}/services` },
+      {
+        name: isEn ? 'Brand Identity' : 'Corporate Design',
+        url: `/${_locale}/services/design/brand-identity`,
+      },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // The root layout publishes the Organization node for every route.
     '@graph': [
       breadcrumbs,
+      getWebPageSchema({
+        url: pageUrl,
+        name: _seoTitle,
+        description: _seoDesc,
+        locale: _locale,
+        mainEntityId: `${pageUrl}#service`,
+      }),
       getServiceSchema({
         name: _seoTitle,
         description: _seoDesc,
-        url: `${BASE_URL}/${_locale}/services/design/brand-identity`,
+        url: pageUrl,
       }),
     ],
   };

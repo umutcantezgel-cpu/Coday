@@ -2,7 +2,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import ClientComponent from '@/features/legal/ui/GarantieClient';
-import { getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
+import { getBreadcrumbSchema, getWebPageSchema, BASE_URL, ORG_ID } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -48,27 +48,30 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   setRequestLocale(_locale);
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: isEn ? 'Guarantee' : 'Garantie', url: `/${_locale}/garantie` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/garantie`;
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: isEn ? 'Guarantee' : 'Garantie', url: `/${_locale}/garantie` },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization is defined once in the root layout and only linked to below.
     '@graph': [
       breadcrumbs,
-      {
-        '@type': 'WebPage',
-        '@id': `${BASE_URL}/${_locale}/garantie#webpage`,
+      getWebPageSchema({
+        url: pageUrl,
         name: isEn ? 'Coday Web Design Quality Guarantee' : 'Coday Qualitätsgarantie für Webdesign',
-        url: `${BASE_URL}/${_locale}/garantie`,
         description: isEn
           ? 'Coday guarantees premium web design from Wetzlar: satisfaction, fixed price and on-time delivery.'
           : 'Coday garantiert Ihnen Premium Webdesign aus Wetzlar: Zufriedenheit, Festpreis und termingerechte Lieferung.',
-        isPartOf: { '@id': `${BASE_URL}/#website` },
-        about: { '@id': `${BASE_URL}/#organization` },
-      },
+        locale: _locale,
+        // Restores the edge the hand-written node carried before this slice.
+        aboutId: ORG_ID,
+      }),
     ],
   };
 

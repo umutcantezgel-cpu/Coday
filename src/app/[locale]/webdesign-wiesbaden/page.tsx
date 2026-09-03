@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -86,12 +86,27 @@ export default async function WebdesignWiesbadenPage({
   setRequestLocale(locale);
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
+  const pageUrl = `${BASE_URL}/${_locale}/webdesign-wiesbaden`;
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization is defined once in the root layout and referenced by @id where needed.
     '@graph': [
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-wiesbaden' }, _locale),
+      // The WebPage names the one entity this URL answers for: the local
+      // business node from getCityHierarchySchema below. No other page may
+      // claim #localbusiness for Wiesbaden as its mainEntity.
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Wiesbaden | Premium Web Agency & SEO · Coday'
+          : 'Webdesign Wiesbaden | Premium Webagentur & SEO · Coday',
+        description: isEn
+          ? 'Premium web design in Wiesbaden: Fast load times, prestigious UI/UX design & SEO for law firms, practices & consultants. Fixed price.'
+          : 'Webdesign in Wiesbaden: Schnelle Ladezeiten, seriöse Ästhetik & starkes SEO für Kanzleien, Praxen & Berater. Festpreis auf Anfrage.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#localbusiness`,
+      }),
       ...(getCityHierarchySchema('webdesign-wiesbaden', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

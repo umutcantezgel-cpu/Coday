@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { wikiEntities, WikiEntity } from '@/features/knowledge/model/entities';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import { generatePageMetadata } from '@/lib/metadata';
 import { Link } from '@/i18n/navigation';
 import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
@@ -184,12 +184,17 @@ export default async function WikiTermPage({ params }: PageProps) {
   const catData = getCategoryDescription(entity, isEn);
   const relatedEntities = wikiEntities.filter((e) => entity.relatedEntities.includes(e.slug));
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${locale}` },
-    { name: 'Knowledge', url: `/${locale}/knowledge/blog` },
-    { name: 'WikiHub', url: `/${locale}/knowledge/wikihub` },
-    { name: entity.displayName, url: `/${locale}/knowledge/wiki/${slug}` },
-  ]);
+  const pageUrl = `${BASE_URL}/${locale}/knowledge/wiki/${slug}`;
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${locale}` },
+      { name: 'Knowledge', url: `/${locale}/knowledge/blog` },
+      { name: 'WikiHub', url: `/${locale}/knowledge/wikihub` },
+      { name: entity.displayName, url: `/${locale}/knowledge/wiki/${slug}` },
+    ],
+    pageUrl
+  );
 
   const definedTermSchema = {
     '@context': 'https://schema.org',
@@ -209,7 +214,17 @@ export default async function WikiTermPage({ params }: PageProps) {
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization node ships with the root layout, so this graph only carries page-level nodes.
-    '@graph': [breadcrumbs, definedTermSchema],
+    '@graph': [
+      breadcrumbs,
+      getWebPageSchema({
+        url: pageUrl,
+        name: `${entity.displayName} – Tech-Wiki`,
+        description: definedTermSchema.description,
+        locale,
+        mainEntityId: `${pageUrl}#term`,
+      }),
+      definedTermSchema,
+    ],
   };
 
   return (

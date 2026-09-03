@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import { CODAY_STORAGE_INVENTORY } from '@/shared/lib/consent/storageInventory';
 
 export const dynamic = 'force-static';
@@ -46,26 +46,32 @@ export default async function DatenschutzPage({ params }: { params: Promise<{ lo
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    {
-      name: isEn ? 'Privacy Policy' : 'Datenschutzerklärung',
-      url: `/${_locale}/legal/datenschutz`,
-    },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/legal/datenschutz`;
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      {
+        name: isEn ? 'Privacy Policy' : 'Datenschutzerklärung',
+        url: `/${_locale}/legal/datenschutz`,
+      },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization comes from the root layout; only page-level nodes below.
     '@graph': [
       breadcrumbs,
-      {
-        '@type': 'WebPage',
-        '@id': `${BASE_URL}/${_locale}/legal/datenschutz#webpage`,
+      getWebPageSchema({
+        url: pageUrl,
         name: isEn ? 'Privacy Policy' : 'Datenschutzerklärung',
-        url: `${BASE_URL}/${_locale}/legal/datenschutz`,
-        isPartOf: { '@id': `${BASE_URL}/#website` },
-      },
+        description: isEn
+          ? 'Privacy policy of Coday, your web design agency in Wetzlar. GDPR and TDDDG compliant data processing, local storage transparency, and your rights.'
+          : 'Datenschutzerklärung von Coday, Ihrer Webdesign Agentur in Wetzlar. DSGVO- und TDDDG-konforme Datenverarbeitung, transparente lokale Speicherung und Ihre Rechte.',
+        locale: _locale,
+      }),
     ],
   };
 

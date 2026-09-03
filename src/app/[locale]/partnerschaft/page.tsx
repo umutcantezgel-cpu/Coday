@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import ClientComponent from '@/features/company/ui/PartnerschaftClient';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
@@ -50,26 +50,28 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const _locale = (await params)?.locale || 'de';
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: isEn ? 'Partnership' : 'Partnerschaft', url: `/${_locale}/partnerschaft` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/partnerschaft`;
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: isEn ? 'Partnership' : 'Partnerschaft', url: `/${_locale}/partnerschaft` },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // The root layout supplies the Organization node site-wide.
     '@graph': [
       breadcrumbs,
-      {
-        '@type': 'WebPage',
-        '@id': `${BASE_URL}/${_locale}/partnerschaft#webpage`,
+      getWebPageSchema({
+        url: pageUrl,
         name: isEn ? 'Coday Agency Partner Program' : 'Coday Agentur-Partnerprogramm',
-        url: `${BASE_URL}/${_locale}/partnerschaft`,
         description: isEn
           ? 'Become a Coday partner in Hesse. Together we offer your clients premium web design from Wetzlar.'
           : 'Werden Sie Coday Partner in Hessen. Gemeinsam bieten wir Ihren Kunden erstklassiges Webdesign aus Wetzlar.',
-        inLanguage: _locale,
-      },
+        locale: _locale,
+      }),
     ],
   };
 

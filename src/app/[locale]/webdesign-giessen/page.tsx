@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -85,11 +85,27 @@ export default async function WebdesignGiessenPage({
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${_locale}/webdesign-giessen`;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     // The Organization node ships with the root layout, so it is omitted here.
     '@graph': [
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-giessen' }, _locale),
+      // The WebPage names the one entity this URL answers for: the #localbusiness
+      // node from getCityHierarchySchema below. Nothing else on the site may
+      // claim that @id as its mainEntity.
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Giessen | Next.js Agency & SEO · Coday'
+          : 'Webdesign Gießen | Next.js Webagentur & SEO · Coday',
+        description: isEn
+          ? 'High-end web design in Giessen. Sub-500ms load times, measurable new clients & fixed pricing for practices & mid-market companies.'
+          : 'Webdesign für Gießen: Ultraschnelle Ladezeiten, messbare Neukunden & transparente Festpreise für Praxen, Startups & Mittelstand.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#localbusiness`,
+      }),
       ...(getCityHierarchySchema('webdesign-giessen', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

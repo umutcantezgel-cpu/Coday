@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import PublicSectorClient from '@/features/industries/ui/PublicSectorClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getServiceSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
+import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -39,6 +39,7 @@ export default async function PublicSectorPage({
   setRequestLocale(locale);
 
   const _locale = (await params)?.locale || 'de';
+  const pageUrl = `${BASE_URL}/${_locale}/branchen/public-sector`;
   const _seoTitle =
     _locale === 'en'
       ? 'Web Design for the Public Sector | Hesse Region | Coday'
@@ -57,18 +58,31 @@ export default async function PublicSectorPage({
             '@context': 'https://schema.org',
             // The site-wide Organization node comes from the root layout head.
             '@graph': [
-              getBreadcrumbSchema([
-                { name: _locale === 'en' ? 'Home' : 'Startseite', url: `/${_locale}` },
-                { name: _locale === 'en' ? 'Industries' : 'Branchen', url: `/${_locale}/branchen` },
-                {
-                  name: _locale === 'en' ? 'Public Sector' : 'Öffentlicher Sektor',
-                  url: `/${_locale}/branchen/public-sector`,
-                },
-              ]),
+              getBreadcrumbSchema(
+                [
+                  { name: _locale === 'en' ? 'Home' : 'Startseite', url: `/${_locale}` },
+                  {
+                    name: _locale === 'en' ? 'Industries' : 'Branchen',
+                    url: `/${_locale}/branchen`,
+                  },
+                  {
+                    name: _locale === 'en' ? 'Public Sector' : 'Öffentlicher Sektor',
+                    url: `/${_locale}/branchen/public-sector`,
+                  },
+                ],
+                pageUrl
+              ),
+              getWebPageSchema({
+                url: pageUrl,
+                name: _seoTitle,
+                description: _seoDesc,
+                locale: _locale,
+                mainEntityId: `${pageUrl}#service`,
+              }),
               getServiceSchema({
                 name: _seoTitle,
                 description: _seoDesc,
-                url: `${BASE_URL}/${_locale}/branchen/public-sector`,
+                url: pageUrl,
               }),
             ],
           }),

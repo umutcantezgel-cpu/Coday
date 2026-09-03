@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import ClientComponent from '@/features/career/ui/JobsClient';
 import { Link } from '@/i18n/navigation';
 
@@ -49,24 +49,31 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   setRequestLocale(_locale);
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: isEn ? 'Careers' : 'Karriere', url: `/${_locale}/career` },
-    { name: isEn ? 'Jobs' : 'Stellenangebote', url: `/${_locale}/career/jobs` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/career/jobs`;
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: isEn ? 'Careers' : 'Karriere', url: `/${_locale}/career` },
+      { name: isEn ? 'Jobs' : 'Stellenangebote', url: `/${_locale}/career/jobs` },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization lives in the root layout's graph; repeating it here would duplicate the node.
     '@graph': [
       breadcrumbs,
-      {
-        '@type': 'CollectionPage',
-        '@id': `${BASE_URL}/${_locale}/career/jobs#collection`,
+      getWebPageSchema({
+        url: pageUrl,
         name: isEn ? 'Coday Job Openings' : 'Coday Stellenangebote & Jobs',
-        url: `${BASE_URL}/${_locale}/career/jobs`,
-        isPartOf: { '@id': `${BASE_URL}/#website` },
-      },
+        description: isEn
+          ? 'Current job openings at Coday in Wetzlar. We are looking for web designers, developers and creatives for exciting projects in Central Hesse. Apply now.'
+          : 'Aktuelle Stellenangebote bei Coday in Wetzlar. Wir suchen Webdesigner, Entwickler und Kreative für spannende Projekte in Mittelhessen. Jetzt bewerben.',
+        locale: _locale,
+        type: 'CollectionPage',
+      }),
     ],
   };
 

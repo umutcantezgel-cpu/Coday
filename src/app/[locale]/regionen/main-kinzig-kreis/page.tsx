@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL } from '@/lib/schema';
+import { BASE_URL, getWebPageSchema } from '@/lib/schema';
 import {
   getCountyHierarchySchema,
   getPyramidBreadcrumbs,
@@ -168,11 +168,24 @@ export default async function MainKinzigKreisPage({
 
   const isEn = _locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${_locale}/regionen/main-kinzig-kreis`;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     // The root layout is the single source of the Organization node.
     '@graph': [
       getPyramidBreadcrumbs(2, { countySlug: 'main-kinzig-kreis' }, _locale),
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Main-Kinzig District | B2B Agency MKK · Coday'
+          : 'Webdesign Main-Kinzig-Kreis | B2B Webagentur MKK · Coday',
+        description: isEn
+          ? 'Web development & SEO for the Main-Kinzig district. Next.js websites for industry & SME in Hanau, Maintal & Gelnhausen. Fixed prices on request.'
+          : 'Webentwicklung & SEO für den Main-Kinzig-Kreis. Next.js Websites für Industrie & Mittelstand in Hanau, Maintal & Gelnhausen. Festpreise auf Anfrage.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#service`,
+      }),
       ...(getCountyHierarchySchema('main-kinzig-kreis', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

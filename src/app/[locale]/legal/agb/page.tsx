@@ -2,7 +2,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { AgbClient } from '@/features/legal/ui/AgbClient';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Metadata } from 'next';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -34,23 +34,30 @@ export default async function AgbPage({ params }: { params?: Promise<{ locale: s
   setRequestLocale(_locale);
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: isEn ? 'Terms & Conditions' : 'AGB', url: `/${_locale}/legal/agb` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/legal/agb`;
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: isEn ? 'Terms & Conditions' : 'AGB', url: `/${_locale}/legal/agb` },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // The Organization node already ships from the root layout, so it is not repeated here.
     '@graph': [
       breadcrumbs,
-      {
-        '@type': 'WebPage',
-        '@id': `${BASE_URL}/${_locale}/legal/agb#webpage`,
+      getWebPageSchema({
+        url: pageUrl,
         name: isEn ? 'Terms and Conditions' : 'Allgemeine Geschäftsbedingungen (AGB)',
-        url: `${BASE_URL}/${_locale}/legal/agb`,
-        isPartOf: { '@id': `${BASE_URL}/#website` },
-      },
+        // Matches this page's generateMetadata() default: the `legal.terms.desc`
+        // translation key does not exist, so t() falls back to this literal for
+        // both locales.
+        description: 'Allgemeine Geschäftsbedingungen der Coday Webagentur.',
+        locale: _locale,
+      }),
     ],
   };
 

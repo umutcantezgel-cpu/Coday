@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { ConsultingClient } from '@/features/services/ui/ConsultingClient';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getServiceSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getServiceSchema, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -57,24 +57,36 @@ export default async function ConsultingPage({ params }: { params: Promise<{ loc
       ? 'Strategic digital consulting by Coday in Wetzlar. We guide businesses in Central Hesse through their digital transformation. Book your appointment.'
       : 'Strategische Digitalberatung von Coday in Wetzlar. Wir begleiten Unternehmen in Mittelhessen bei der digitalen Transformation. Jetzt Termin buchen.';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: 'Services', url: `/${_locale}/services` },
-    {
-      name: isEn ? 'Digital Consulting' : 'Digitale Beratung',
-      url: `/${_locale}/services/consulting`,
-    },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/services/consulting`;
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: 'Services', url: `/${_locale}/services` },
+      {
+        name: isEn ? 'Digital Consulting' : 'Digitale Beratung',
+        url: `/${_locale}/services/consulting`,
+      },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization is already in the document head via the root layout.
     '@graph': [
       breadcrumbs,
+      getWebPageSchema({
+        url: pageUrl,
+        name: _seoTitle,
+        description: _seoDesc,
+        locale: _locale,
+        mainEntityId: `${pageUrl}#service`,
+      }),
       getServiceSchema({
         name: _seoTitle,
         description: _seoDesc,
-        url: `${BASE_URL}/${_locale}/services/consulting`,
+        url: pageUrl,
       }),
     ],
   };

@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -87,12 +87,27 @@ export default async function WebdesignHofheimPage({
   setRequestLocale(locale);
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
+  const pageUrl = `${BASE_URL}/${_locale}/webdesign-hofheim`;
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization deliberately absent — the root layout already covers it.
     '@graph': [
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-hofheim' }, _locale),
+      // The WebPage names the one entity this URL answers for: the local
+      // business node from getCityHierarchySchema below. No other page may
+      // claim #localbusiness for Hofheim as its mainEntity.
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Hofheim am Taunus | Web Agency · Coday'
+          : 'Webdesign Hofheim am Taunus | Webagentur · Coday',
+        description: isEn
+          ? 'Web design & SEO in Hofheim am Taunus. Modern websites with <0.5s load time for clinics, law firms & services. Binding fixed price on request.'
+          : 'Webdesign & SEO in Hofheim am Taunus. Next.js Websites mit <0.5s Ladezeit für Praxen, Kanzleien & Dienstleister. Festpreis auf Anfrage.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#localbusiness`,
+      }),
       ...(getCityHierarchySchema('webdesign-hofheim', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

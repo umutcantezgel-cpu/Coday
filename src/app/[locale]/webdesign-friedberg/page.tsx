@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -88,11 +88,27 @@ export default async function WebdesignFriedbergPage({
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${_locale}/webdesign-friedberg`;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization is provided site-wide by the root layout.
     '@graph': [
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-friedberg' }, _locale),
+      // The WebPage names the one entity this URL answers for: the #localbusiness
+      // node from getCityHierarchySchema below. Nothing else on the site may
+      // claim that @id as its mainEntity.
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Friedberg Hesse | Web Agency & SEO · Coday'
+          : 'Webdesign Friedberg Hessen | Webagentur & SEO · Coday',
+        description: isEn
+          ? 'Web design & SEO in Friedberg & Bad Nauheim. Next.js websites with <0.5s load time for clinics, mid-market & THM campus. Fixed price on request.'
+          : 'Webdesign & SEO in Friedberg & Bad Nauheim. Next.js Websites mit <0.5s Ladezeit für Praxen, Mittelstand & Hochschulumfeld. Festpreis auf Anfrage.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#localbusiness`,
+      }),
       ...(getCityHierarchySchema('webdesign-friedberg', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

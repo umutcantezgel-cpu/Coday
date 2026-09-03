@@ -2,7 +2,12 @@ import React, { Suspense } from 'react';
 import type { Metadata } from 'next';
 import { StrobiWorldClient } from '@/features/strobi-world';
 import { generateAlternates } from '@/lib/metadata';
-import { BASE_URL, getWebApplicationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import {
+  BASE_URL,
+  getWebApplicationSchema,
+  getBreadcrumbSchema,
+  getWebPageSchema,
+} from '@/lib/schema';
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -50,22 +55,40 @@ export default async function StrobiWorldPage({ params }: PageProps) {
   const { locale } = await params;
   const isEn = locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${locale}/strobi`;
+  const pageTitle = isEn
+    ? 'Strobi Mii World — Interactive AI Avatar & 3D Playfield | Coday'
+    : 'Strobi Mii World — Interaktiver KI-Avatar & 3D-Spielfeld | Coday';
+  const pageDescription = isEn
+    ? 'Experience Strobi as a living, physical Mii AI avatar: Pet, toss, scale to Titan Boss mode, chat, and play 60 FPS minigames.'
+    : 'Erleben Sie Strobi als lebendigen Mii-Avatar: Kraulen, werfen, vergrößern, Minispiele spielen und in Echtzeit chatten.';
+
   // Was the only JSON-LD-emitting route without a BreadcrumbList — an island in
   // the graph. The WebApplication now also declares isPartOf the WebSite.
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
-      getBreadcrumbSchema([
-        { name: isEn ? 'Home' : 'Startseite', url: `/${locale}` },
-        { name: 'Strobi Mii World', url: `/${locale}/strobi` },
-      ]),
+      getBreadcrumbSchema(
+        [
+          { name: isEn ? 'Home' : 'Startseite', url: `/${locale}` },
+          { name: 'Strobi Mii World', url: `/${locale}/strobi` },
+        ],
+        pageUrl
+      ),
+      getWebPageSchema({
+        url: pageUrl,
+        name: pageTitle,
+        description: pageDescription,
+        locale,
+        mainEntityId: `${pageUrl}#webapp`,
+      }),
       getWebApplicationSchema(
         {
           name: 'Strobi Mii World',
           description: isEn
             ? 'Interactive AI avatar with 60 FPS vector physics, minigames and real-time chat, built with Next.js by Coday.'
             : 'Interaktiver KI-Avatar mit 60-FPS-Vektorphysik, Minispielen und Echtzeit-Chat, entwickelt mit Next.js von Coday.',
-          url: `${BASE_URL}/${locale}/strobi`,
+          url: pageUrl,
           applicationCategory: 'EntertainmentApplication',
         },
         locale

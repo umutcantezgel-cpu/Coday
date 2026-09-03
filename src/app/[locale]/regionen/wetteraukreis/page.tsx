@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL } from '@/lib/schema';
+import { BASE_URL, getWebPageSchema } from '@/lib/schema';
 import {
   getCountyHierarchySchema,
   getPyramidBreadcrumbs,
@@ -217,11 +217,24 @@ export default async function WetteraukreisPage({
 
   const isEn = _locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${_locale}/regionen/wetteraukreis`;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     // The #organization node is emitted once by the root layout, not per page.
     '@graph': [
       getPyramidBreadcrumbs(2, { countySlug: 'wetteraukreis' }, _locale),
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Wetterau District | Web Agency & SEO · Coday'
+          : 'Webdesign Wetteraukreis | Webagentur & SEO · Coday',
+        description: isEn
+          ? 'Web design for Wetterau district: Next.js websites for Friedberg, Bad Nauheim, Butzbach & Karben. Fixed price quotes on request.'
+          : 'Webdesign für den Wetteraukreis: Next.js Websites für Friedberg, Bad Nauheim, Butzbach & Karben. Verbindliche Festpreise auf Anfrage.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#service`,
+      }),
       ...(getCountyHierarchySchema('wetteraukreis', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

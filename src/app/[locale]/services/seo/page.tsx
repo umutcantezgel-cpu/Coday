@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { SeoClient } from '@/features/services/ui/SeoClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
+import { getBreadcrumbSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import {
   ArrowRight,
@@ -59,27 +59,41 @@ export default async function SeoPage({ params }: { params: Promise<{ locale: st
   setRequestLocale(_locale);
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: isEn ? 'Services' : 'Leistungen', url: `/${_locale}/services` },
-    { name: isEn ? 'SEO & GEO' : 'SEO & GEO', url: `/${_locale}/services/seo` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/services/seo`;
+  const pageName = isEn
+    ? 'B2B SEO & Generative Engine Optimization (GEO) Agency'
+    : 'B2B SEO & Generative Engine Optimization (GEO) Agentur';
+  const pageDescription = isEn
+    ? 'Technical SEO audits, Core Web Vitals 100/100 optimization and Generative Engine Optimization for AI search engines.'
+    : 'Technische SEO-Audits, Core Web Vitals 100/100 Optimierung und Generative Engine Optimization für KI-Suchmaschinen.';
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: isEn ? 'Services' : 'Leistungen', url: `/${_locale}/services` },
+      { name: isEn ? 'SEO & GEO' : 'SEO & GEO', url: `/${_locale}/services/seo` },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // The site-wide Organization node is rendered by the root layout.
     '@graph': [
       breadcrumbs,
+      getWebPageSchema({
+        url: pageUrl,
+        name: pageName,
+        description: pageDescription,
+        locale: _locale,
+        mainEntityId: `${pageUrl}#service`,
+      }),
       {
         '@type': 'ProfessionalService',
-        '@id': `${BASE_URL}/${_locale}/services/seo#service`,
-        name: isEn
-          ? 'B2B SEO & Generative Engine Optimization (GEO) Agency'
-          : 'B2B SEO & Generative Engine Optimization (GEO) Agentur',
-        url: `${BASE_URL}/${_locale}/services/seo`,
-        description: isEn
-          ? 'Technical SEO audits, Core Web Vitals 100/100 optimization and Generative Engine Optimization for AI search engines.'
-          : 'Technische SEO-Audits, Core Web Vitals 100/100 Optimierung und Generative Engine Optimization für KI-Suchmaschinen.',
+        '@id': `${pageUrl}#service`,
+        name: pageName,
+        url: pageUrl,
+        description: pageDescription,
         provider: {
           '@id': `${BASE_URL}/#organization`,
         },

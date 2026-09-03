@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -88,11 +88,27 @@ export default async function WebdesignWetzlarPage({
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${_locale}/webdesign-agentur-wetzlar`;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization is already in the document head via the root layout.
     '@graph': [
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-agentur-wetzlar' }, _locale),
+      // The WebPage names the one entity this URL answers for: the #localbusiness
+      // node from getCityHierarchySchema below. Nothing else on the site may
+      // claim that @id as its mainEntity.
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Get a Website Built in Wetzlar | Fixed Price · Coday'
+          : 'Website erstellen lassen in Wetzlar | Festpreis · Coday',
+        description: isEn
+          ? 'Having a website built in Wetzlar: fixed price after a free needs analysis, live in 10 to 14 working days, sub-0.3s load times. Built by the owner personally.'
+          : 'Website erstellen lassen in Wetzlar: verbindlicher Festpreis nach kostenloser Bedarfsanalyse, in 10 bis 14 Werktagen online, Ladezeiten unter 0,3s. Vom Inhaber persönlich.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#localbusiness`,
+      }),
       ...(getCityHierarchySchema('webdesign-agentur-wetzlar', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

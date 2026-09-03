@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL } from '@/lib/schema';
+import { BASE_URL, getWebPageSchema } from '@/lib/schema';
 import {
   getCountyHierarchySchema,
   getPyramidBreadcrumbs,
@@ -162,11 +162,24 @@ export default async function HochtaunuskreisPage({
 
   const isEn = _locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${_locale}/regionen/hochtaunuskreis`;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization is emitted site-wide by the root layout, so it is omitted here.
     '@graph': [
       getPyramidBreadcrumbs(2, { countySlug: 'hochtaunuskreis' }, _locale),
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Hochtaunus District | Web Agency · Coday'
+          : 'Webdesign Hochtaunuskreis | Premium Webagentur · Coday',
+        description: isEn
+          ? 'Exclusive web design for the Hochtaunus district. High-performance websites & discreet service for Bad Homburg, Oberursel & Kronberg. Fixed prices.'
+          : 'Exklusives Webdesign für den Hochtaunuskreis. High-Performance Websites & diskreter Service für Bad Homburg, Oberursel & Kronberg. Festpreis auf Anfrage.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#service`,
+      }),
       ...(getCountyHierarchySchema('hochtaunuskreis', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

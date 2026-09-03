@@ -2,7 +2,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import ClientComponent from '@/features/knowledge/ui/FAQClient';
-import { getBreadcrumbSchema, getFaqSchema, BASE_URL } from '@/lib/schema';
+import { getBreadcrumbSchema, getFaqSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
 import { getFAQs } from '@/features/faq/model';
 
 export const dynamic = 'force-static';
@@ -52,16 +52,38 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const isEn = _locale === 'en';
 
   const faqs = getFAQs(_locale);
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: 'Knowledge', url: `/${_locale}/knowledge/blog` },
-    { name: 'FAQ', url: `/${_locale}/knowledge/faq` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/knowledge/faq`;
+  const pageName = isEn
+    ? 'FAQ | Web Design Agency Wetzlar Central Hesse'
+    : 'Häufige Fragen (FAQ) | Webdesign Agentur Wetzlar';
+  const pageDescription = isEn
+    ? 'Answers to frequently asked questions about web design, pricing and process at Coday in Wetzlar. Everything business owners in Hesse need to know.'
+    : 'Antworten auf häufige Fragen zu Webdesign, Preisen und Ablauf bei Coday in Wetzlar. Alles was Unternehmer in Mittelhessen wissen müssen. Jetzt lesen.';
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: 'Knowledge', url: `/${_locale}/knowledge/blog` },
+      { name: 'FAQ', url: `/${_locale}/knowledge/faq` },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // The root layout supplies the Organization node for every page, this one included.
-    '@graph': [breadcrumbs, getFaqSchema(faqs)],
+    '@graph': [
+      breadcrumbs,
+      // No mainEntityId: getFaqSchema's FAQPage node carries no @id yet (a later
+      // slice is expected to add one) so there is nothing here to point at.
+      getWebPageSchema({
+        url: pageUrl,
+        name: pageName,
+        description: pageDescription,
+        locale: _locale,
+      }),
+      getFaqSchema(faqs),
+    ],
   };
 
   return (

@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -85,12 +85,27 @@ export default async function WebdesignWeilburgPage({
   setRequestLocale(locale);
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
+  const pageUrl = `${BASE_URL}/${_locale}/webdesign-weilburg`;
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // The root layout takes care of the Organization node for every page.
     '@graph': [
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-weilburg' }, _locale),
+      // The WebPage names the one entity this URL answers for: the local
+      // business node from getCityHierarchySchema below. No other page may
+      // claim #localbusiness for Weilburg as its mainEntity.
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Weilburg | High-End Web Development · Coday'
+          : 'Webdesign Weilburg | High-End Webentwicklung · Coday',
+        description: isEn
+          ? 'Web design & SEO for Weilburg an der Lahn. Ultra-fast Next.js websites for crafts, tourism & mid-market. Fixed prices on request.'
+          : 'Webdesign & SEO für Weilburg an der Lahn. Ultraschnelle Next.js Websites für Handwerk, Tourismus & Mittelstand. Verbindliche Festpreise auf Anfrage.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#localbusiness`,
+      }),
       ...(getCityHierarchySchema('webdesign-weilburg', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -86,11 +86,27 @@ export default async function WebdesignBensheimPage({
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${_locale}/webdesign-bensheim`;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization intentionally omitted: the root layout renders it on every page.
     '@graph': [
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-bensheim' }, _locale),
+      // The WebPage names the one entity this URL answers for: the #localbusiness
+      // node from getCityHierarchySchema below. Nothing else on the site may
+      // claim that @id as its mainEntity.
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Bensheim | Web Agency Bergstraße · Coday'
+          : 'Webdesign Bensheim | Webagentur Bergstraße · Coday',
+        description: isEn
+          ? 'Web design in Bensheim & Bergstraße: Fast load times, top Google rankings & more customer inquiries for businesses. Fixed price.'
+          : 'Webdesign in Bensheim & an der Bergstraße: Schnelle Ladezeiten, top Google-Rankings & mehr Kunden für den Mittelstand. Festpreis.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#localbusiness`,
+      }),
       ...(getCityHierarchySchema('webdesign-bensheim', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import ClientComponent from '@/features/community/ui/MembersClient';
 
 export const dynamic = 'force-static';
@@ -48,25 +48,31 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   setRequestLocale(_locale);
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: 'Community', url: `/${_locale}/community/events` },
-    { name: isEn ? 'Partners' : 'Partner', url: `/${_locale}/community/members` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/community/members`;
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: 'Community', url: `/${_locale}/community/events` },
+      { name: isEn ? 'Partners' : 'Partner', url: `/${_locale}/community/members` },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization comes from the root layout, so this graph starts at the breadcrumbs.
     '@graph': [
       breadcrumbs,
-      {
-        // Not a CollectionPage: there is no collection of members to describe.
-        '@type': 'WebPage',
-        '@id': `${BASE_URL}/${_locale}/community/members#webpage`,
+      // Not a CollectionPage: there is no collection of members to describe.
+      getWebPageSchema({
+        url: pageUrl,
         name: isEn ? 'Coday Partner Network' : 'Coday Partner-Netzwerk',
-        url: `${BASE_URL}/${_locale}/community/members`,
-        isPartOf: { '@id': `${BASE_URL}/#website` },
-      },
+        description: isEn
+          ? 'Coday works with freelancers and agencies across Central Hesse: frontend, design, content and SEO. Fixed briefs, fixed prices, the owner as your contact.'
+          : 'Coday arbeitet mit Freelancern und Agenturen aus Mittelhessen: Frontend, Design, Content und SEO. Klare Briefings, Festpreise, der Inhaber als Ansprechpartner.',
+        locale: _locale,
+      }),
     ],
   };
 

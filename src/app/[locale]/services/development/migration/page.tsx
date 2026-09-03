@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { MigrationClient } from '@/features/services/ui/MigrationClient';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getServiceSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getServiceSchema, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -57,24 +57,36 @@ export default async function MigrationPage({ params }: { params: Promise<{ loca
       ? 'Secure website migration and relaunch by Coday in Wetzlar. We transfer your content while optimizing SEO and performance. For businesses across Hesse.'
       : 'Sichere Website Migration und Relaunch von Coday in Wetzlar. Wir übertragen Ihre Inhalte und optimieren dabei SEO und Performance. Für Firmen in Hessen.';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: 'Services', url: `/${_locale}/services` },
-    {
-      name: isEn ? 'Website Migration' : 'Website Migration',
-      url: `/${_locale}/services/development/migration`,
-    },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/services/development/migration`;
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: 'Services', url: `/${_locale}/services` },
+      {
+        name: isEn ? 'Website Migration' : 'Website Migration',
+        url: `/${_locale}/services/development/migration`,
+      },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization is emitted once by the root layout, so it is not repeated.
     '@graph': [
       breadcrumbs,
+      getWebPageSchema({
+        url: pageUrl,
+        name: _seoTitle,
+        description: _seoDesc,
+        locale: _locale,
+        mainEntityId: `${pageUrl}#service`,
+      }),
       getServiceSchema({
         name: _seoTitle,
         description: _seoDesc,
-        url: `${BASE_URL}/${_locale}/services/development/migration`,
+        url: pageUrl,
       }),
     ],
   };

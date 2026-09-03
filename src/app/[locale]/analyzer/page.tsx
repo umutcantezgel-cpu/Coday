@@ -3,7 +3,12 @@ import { getTranslations } from 'next-intl/server';
 import { RouteMessages } from '@/i18n/RouteMessages';
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
-import { getBreadcrumbSchema, getWebApplicationSchema, BASE_URL } from '@/lib/schema';
+import {
+  getBreadcrumbSchema,
+  getWebApplicationSchema,
+  getWebPageSchema,
+  BASE_URL,
+} from '@/lib/schema';
 import UrlInputForm from '@/features/analyzer/ui/UrlInputForm';
 import ReportDashboard from '@/features/analyzer/ui/ReportDashboard';
 
@@ -57,10 +62,14 @@ export default async function AnalyzerPage(props: { params: Promise<{ locale: st
     defaultValue: 'Kostenloses Website Audit & Performance Analyse.',
   });
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: _locale === 'en' ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: _locale === 'en' ? 'Analyzer' : 'Website Analyzer', url: `/${_locale}/analyzer` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/analyzer`;
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: _locale === 'en' ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: _locale === 'en' ? 'Analyzer' : 'Website Analyzer', url: `/${_locale}/analyzer` },
+    ],
+    pageUrl
+  );
 
   const webApp = getWebApplicationSchema(
     {
@@ -69,7 +78,7 @@ export default async function AnalyzerPage(props: { params: Promise<{ locale: st
           ? 'Coday Free Website Analyzer & SEO Audit'
           : 'Coday Kostenloser Website Analyzer',
       description: pageDescription,
-      url: `${BASE_URL}/${_locale}/analyzer`,
+      url: pageUrl,
       applicationCategory: 'DeveloperApplication',
     },
     _locale
@@ -78,7 +87,17 @@ export default async function AnalyzerPage(props: { params: Promise<{ locale: st
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization comes from the root layout, so it is not repeated here.
-    '@graph': [breadcrumbs, webApp],
+    '@graph': [
+      breadcrumbs,
+      getWebPageSchema({
+        url: pageUrl,
+        name: pageTitle,
+        description: pageDescription,
+        locale: _locale,
+        mainEntityId: `${pageUrl}#webapp`,
+      }),
+      webApp,
+    ],
   };
   return (
     <RouteMessages family="calculator" locale={_locale}>

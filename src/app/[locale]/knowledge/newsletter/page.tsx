@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import ClientComponent from '@/features/knowledge/ui/NewsletterClient';
 
 export const dynamic = 'force-static';
@@ -49,27 +49,30 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const _locale = (await params)?.locale || 'de';
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: 'Knowledge', url: `/${_locale}/knowledge/blog` },
-    { name: 'Newsletter', url: `/${_locale}/knowledge/newsletter` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/knowledge/newsletter`;
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: 'Knowledge', url: `/${_locale}/knowledge/blog` },
+      { name: 'Newsletter', url: `/${_locale}/knowledge/newsletter` },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization stays in the root layout — duplicating it per page bloats the document.
     '@graph': [
       breadcrumbs,
-      {
-        '@type': 'WebPage',
-        '@id': `${BASE_URL}/${_locale}/knowledge/newsletter#webpage`,
+      getWebPageSchema({
+        url: pageUrl,
         name: isEn ? 'Coday Web Agency Newsletter' : 'Coday Webagentur Newsletter',
-        url: `${BASE_URL}/${_locale}/knowledge/newsletter`,
         description: isEn
           ? 'Monthly web design and SEO tips from Coday in Wetzlar directly to your inbox.'
           : 'Monatliche Webdesign und SEO Tipps von Coday in Wetzlar direkt in Ihr Postfach.',
-        inLanguage: _locale,
-      },
+        locale: _locale,
+      }),
     ],
   };
 

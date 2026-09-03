@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL } from '@/lib/schema';
+import { BASE_URL, getWebPageSchema } from '@/lib/schema';
 import {
   getCountyHierarchySchema,
   getPyramidBreadcrumbs,
@@ -163,11 +163,24 @@ export default async function LandkreisDarmstadtDieburgPage({
 
   const isEn = _locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${_locale}/regionen/landkreis-darmstadt-dieburg`;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     // Root layout already carries the Organization node for every page.
     '@graph': [
       getPyramidBreadcrumbs(2, { countySlug: 'landkreis-darmstadt-dieburg' }, _locale),
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Darmstadt-Dieburg District | Agency · Coday'
+          : 'Webdesign Landkreis Darmstadt-Dieburg | Agentur · Coday',
+        description: isEn
+          ? 'Your web agency for Darmstadt-Dieburg. Fast Next.js websites for Weiterstadt, Griesheim, Dieburg & Groß-Umstadt. Fixed prices on request.'
+          : 'Ihre Webagentur für Darmstadt-Dieburg. Schnelle Next.js Websites für Weiterstadt, Griesheim, Dieburg & Groß-Umstadt. Festpreise auf Anfrage.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#service`,
+      }),
       ...(getCountyHierarchySchema('landkreis-darmstadt-dieburg', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

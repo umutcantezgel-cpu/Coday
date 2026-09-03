@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL } from '@/lib/schema';
+import { BASE_URL, getWebPageSchema } from '@/lib/schema';
 import {
   getCountyHierarchySchema,
   getPyramidBreadcrumbs,
@@ -162,11 +162,24 @@ export default async function MainTaunusKreisPage({
 
   const isEn = _locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${_locale}/regionen/main-taunus-kreis`;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization node is provided by the root layout for every page.
     '@graph': [
       getPyramidBreadcrumbs(2, { countySlug: 'main-taunus-kreis' }, _locale),
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Main-Taunus District | B2B Agency MTK · Coday'
+          : 'Webdesign Main-Taunus-Kreis | B2B Agentur MTK · Coday',
+        description: isEn
+          ? 'Web design in Main-Taunus district: Next.js websites for Hofheim, Eschborn, Bad Soden & Kelkheim. Fast load times & fixed pricing.'
+          : 'Webdesign im Main-Taunus-Kreis: Next.js Websites für Hofheim, Eschborn, Bad Soden & Kelkheim. Schnelle Ladezeiten & feste Preise.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#service`,
+      }),
       ...(getCountyHierarchySchema('main-taunus-kreis', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

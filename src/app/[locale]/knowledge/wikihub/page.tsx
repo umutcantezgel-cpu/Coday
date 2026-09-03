@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import ClientComponent from '@/features/knowledge/ui/WikiHubClient';
 import { wikiEntities } from '@/features/knowledge/model/entities';
 
@@ -50,31 +50,32 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const _locale = (await params)?.locale || 'de';
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: 'Knowledge', url: `/${_locale}/knowledge/blog` },
-    { name: 'WikiHub', url: `/${_locale}/knowledge/wikihub` },
-  ]);
-
   const hubUrl = `${BASE_URL}/${_locale}/knowledge/wikihub`;
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: 'Knowledge', url: `/${_locale}/knowledge/blog` },
+      { name: 'WikiHub', url: `/${_locale}/knowledge/wikihub` },
+    ],
+    hubUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Root layout owns the Organization node; this graph starts with the page's own entries.
     '@graph': [
       breadcrumbs,
-      {
-        '@type': 'CollectionPage',
-        '@id': `${hubUrl}#collection`,
-        name: isEn ? 'Coday Digital & Web Design WikiHub' : 'Coday Digitales & Webdesign WikiHub',
+      getWebPageSchema({
         url: hubUrl,
+        name: isEn ? 'Coday Digital & Web Design WikiHub' : 'Coday Digitales & Webdesign WikiHub',
         description: isEn
           ? 'Clear web design glossary and digital wiki from Coday in Wetzlar.'
           : 'Verständliches Webdesign Glossar und digitales Wiki von Coday in Wetzlar.',
-        inLanguage: _locale,
-        isPartOf: { '@id': `${BASE_URL}/#website` },
-        mainEntity: { '@id': hubUrl },
-      },
+        locale: _locale,
+        type: 'CollectionPage',
+        mainEntityId: hubUrl,
+      }),
       {
         // Every one of the 101 term pages emits `inDefinedTermSet: <hubUrl>`, but
         // no node with that @id existed — 101 dangling edges per locale. This is

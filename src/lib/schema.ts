@@ -115,19 +115,33 @@ export function getOrganizationSchema(locale: string = 'de') {
       height: 512,
       caption: 'Coday: Webdesign & Webentwicklung Wetzlar Logo',
     },
+    // The single definition of #founder. /about used to re-declare this Person
+    // inline with a different jobTitle and its own knowsAbout list, so two
+    // contradictory versions of one @id shipped in the same document. The richer
+    // values from that copy are merged here rather than dropped.
     founder: {
       '@type': 'Person',
       '@id': FOUNDER_ID,
       name: 'Umutcan Emre Tezgel',
       givenName: 'Umutcan Emre',
       familyName: 'Tezgel',
-      jobTitle: 'Gründer & Web-Entwickler',
+      jobTitle: 'Inhaber, Lead Architect & Fullstack Engineer',
       url: `${BASE_URL}/${locale}/about`,
       worksFor: { '@id': ORG_ID },
+      knowsAbout: [
+        'Next.js 15',
+        'React 19',
+        'TypeScript',
+        'Tailwind CSS 4',
+        'Headless CMS Architecture',
+        'Core Web Vitals & Web Performance',
+        'Technical SEO & GEO',
+      ],
       sameAs: [
         'https://www.linkedin.com/in/umutcan-emre-tezgel-156382218/',
         'https://github.com/umurey',
         'https://www.openpr.de/news/coday',
+        'https://www.provenexpert.com/de-de/coday-webagentur/',
       ],
     },
     knowsAbout: [
@@ -653,6 +667,12 @@ export function getWebPageSchema(opts: {
   type?: 'WebPage' | 'CollectionPage' | 'ItemPage' | 'AboutPage' | 'ContactPage' | 'FAQPage';
   /** The @id of the single entity this page is responsible for. */
   mainEntityId?: string;
+  /**
+   * The @id of what the page is *about* without owning it — usually ORG_ID on
+   * pages that describe the company from an angle (careers, guarantee, booking).
+   * Distinct from mainEntityId, which is an ownership claim only one page may make.
+   */
+  aboutId?: string;
   primaryImage?: string;
   /** False only where the page emits no BreadcrumbList — the home page. */
   hasBreadcrumb?: boolean;
@@ -669,6 +689,7 @@ export function getWebPageSchema(opts: {
     isPartOf: { '@id': WEBSITE_ID },
     ...(opts.hasBreadcrumb === false ? {} : { breadcrumb: { '@id': `${opts.url}#breadcrumb` } }),
     ...(opts.mainEntityId ? { mainEntity: { '@id': opts.mainEntityId } } : {}),
+    ...(opts.aboutId ? { about: { '@id': opts.aboutId } } : {}),
     ...(opts.primaryImage
       ? { primaryImageOfPage: { '@type': 'ImageObject', url: opts.primaryImage } }
       : {}),

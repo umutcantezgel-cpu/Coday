@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -88,11 +88,27 @@ export default async function WebdesignDietzenbachPage({
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${_locale}/webdesign-dietzenbach`;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization node comes from the root layout, not from this page.
     '@graph': [
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-dietzenbach' }, _locale),
+      // The WebPage names the one entity this URL answers for: the #localbusiness
+      // node from getCityHierarchySchema below. Nothing else on the site may
+      // claim that @id as its mainEntity.
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Dietzenbach | Web Agency & SEO · Coday'
+          : 'Webdesign Dietzenbach | Webagentur & SEO · Coday',
+        description: isEn
+          ? 'Web design & development in Dietzenbach. Fast load times, top Google rankings for trade, logistics & craft. Binding fixed price on request.'
+          : 'Webdesign in Dietzenbach: Schnelle Next.js Websites & Top Google-Rankings für Gewerbe, Logistik & Handwerk im Kreis Offenbach. Festpreis.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#localbusiness`,
+      }),
       ...(getCityHierarchySchema('webdesign-dietzenbach', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

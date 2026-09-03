@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL } from '@/lib/schema';
+import { BASE_URL, getWebPageSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -67,6 +67,14 @@ export default async function AutohaendlerPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const _locale = locale || 'de';
+  const isEn = _locale === 'en';
+  const pageUrl = `${BASE_URL}/${_locale}/branchen/automobil/autohaendler`;
+  const pageName = isEn
+    ? 'Web Design for Car Dealerships Hesse | Coday Automotive Web'
+    : 'Webdesign für Autohändler Hessen | Coday Automotive Web';
+  const pageDescription = isEn
+    ? 'High-performance websites for car dealerships in Hesse. Fast vehicle showcase, online test drive booking & SEO. Fixed prices on request.'
+    : 'Websites für Autohäuser & Fahrzeughändler in Hessen. Schnelle Fahrzeugpräsentation, mobile Probefahrt-Buchung & SEO. Festpreise auf Anfrage.';
 
   const dealershipServices = [
     {
@@ -149,6 +157,7 @@ export default async function AutohaendlerPage({
       },
       {
         '@type': 'BreadcrumbList',
+        '@id': `${pageUrl}#breadcrumb`,
         itemListElement: [
           {
             '@type': 'ListItem',
@@ -176,6 +185,13 @@ export default async function AutohaendlerPage({
           },
         ],
       },
+      getWebPageSchema({
+        url: pageUrl,
+        name: pageName,
+        description: pageDescription,
+        locale: _locale,
+        mainEntityId: `${BASE_URL}/${_locale}/branchen/automobil/autohaendler#service`,
+      }),
       {
         '@type': 'FAQPage',
         mainEntity: [

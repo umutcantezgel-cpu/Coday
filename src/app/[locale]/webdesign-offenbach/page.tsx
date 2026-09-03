@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -85,12 +85,27 @@ export default async function WebdesignOffenbachPage({
   setRequestLocale(locale);
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
+  const pageUrl = `${BASE_URL}/${_locale}/webdesign-offenbach`;
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization is rendered once in the root layout head, so it stays out of this graph.
     '@graph': [
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-offenbach' }, _locale),
+      // The WebPage names the one entity this URL answers for: the local
+      // business node from getCityHierarchySchema below. No other page may
+      // claim #localbusiness for Offenbach as its mainEntity.
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Offenbach | High-End Next.js Agency · Coday'
+          : 'Webdesign Offenbach | High-End Next.js Agentur · Coday',
+        description: isEn
+          ? 'Web design in Offenbach am Main: Fast load times, high-impact UI/UX & SEO for businesses & mid-market. Fixed price on request.'
+          : 'Webdesign in Offenbach am Main: Schnelle Ladezeiten, starkes UI/UX-Design & SEO für Dienstleister & Mittelstand. Festpreis auf Anfrage.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#localbusiness`,
+      }),
       ...(getCityHierarchySchema('webdesign-offenbach', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

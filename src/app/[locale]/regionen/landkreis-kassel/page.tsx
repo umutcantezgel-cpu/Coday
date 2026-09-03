@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL } from '@/lib/schema';
+import { BASE_URL, getWebPageSchema } from '@/lib/schema';
 import {
   getCountyHierarchySchema,
   getPyramidBreadcrumbs,
@@ -163,11 +163,24 @@ export default async function LandkreisKasselPage({
 
   const isEn = _locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${_locale}/regionen/landkreis-kassel`;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization is rendered once by the root layout, not repeated per page.
     '@graph': [
       getPyramidBreadcrumbs(2, { countySlug: 'landkreis-kassel' }, _locale),
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Kassel District | Web Agency North Hesse · Coday'
+          : 'Webdesign Landkreis Kassel | Webagentur Nordhessen · Coday',
+        description: isEn
+          ? 'Professional web design in the Kassel district. Next.js websites for Baunatal, Vellmar & Hofgeismar. Fast load times & fixed prices on request.'
+          : 'Professionelles Webdesign im Landkreis Kassel. Next.js Websites für Baunatal, Vellmar & Hofgeismar. Schnelle Ladezeiten & Festpreise auf Anfrage.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#service`,
+      }),
       ...(getCountyHierarchySchema('landkreis-kassel', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

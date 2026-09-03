@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
-import { getServiceSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
+import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
 import { setRequestLocale } from 'next-intl/server';
 import { IndustryDetailClient } from '@/features/industries/ui/IndustryDetailClient';
 
@@ -40,6 +40,13 @@ export default async function UnternehmensberatungPage({
   setRequestLocale(locale);
 
   const _locale = (await params)?.locale || 'de';
+  const pageUrl = `${BASE_URL}/${locale}/branchen/unternehmensberatung`;
+  const _seoTitle =
+    locale === 'en' ? 'Web Design for Management Consulting' : 'Webdesign für Unternehmensberatung';
+  const _seoDesc =
+    locale === 'en'
+      ? 'Custom web design solutions for management consultants by Coday in Wetzlar.'
+      : 'Maßgeschneiderte Webdesign-Lösungen für Unternehmensberatungen von Coday in Wetzlar.';
 
   return (
     <>
@@ -51,24 +58,31 @@ export default async function UnternehmensberatungPage({
             '@context': 'https://schema.org',
             // The root layout takes care of the Organization node for every route.
             '@graph': [
-              getBreadcrumbSchema([
-                { name: _locale === 'en' ? 'Home' : 'Startseite', url: `/${_locale}` },
-                { name: _locale === 'en' ? 'Industries' : 'Branchen', url: `/${_locale}/branchen` },
-                {
-                  name: _locale === 'en' ? 'Management Consulting' : 'Unternehmensberatung',
-                  url: `/${_locale}/branchen/unternehmensberatung`,
-                },
-              ]),
+              getBreadcrumbSchema(
+                [
+                  { name: _locale === 'en' ? 'Home' : 'Startseite', url: `/${_locale}` },
+                  {
+                    name: _locale === 'en' ? 'Industries' : 'Branchen',
+                    url: `/${_locale}/branchen`,
+                  },
+                  {
+                    name: _locale === 'en' ? 'Management Consulting' : 'Unternehmensberatung',
+                    url: `/${_locale}/branchen/unternehmensberatung`,
+                  },
+                ],
+                pageUrl
+              ),
+              getWebPageSchema({
+                url: pageUrl,
+                name: _seoTitle,
+                description: _seoDesc,
+                locale: _locale,
+                mainEntityId: `${pageUrl}#service`,
+              }),
               getServiceSchema({
-                name:
-                  locale === 'en'
-                    ? 'Web Design for Management Consulting'
-                    : 'Webdesign für Unternehmensberatung',
-                description:
-                  locale === 'en'
-                    ? 'Custom web design solutions for management consultants by Coday in Wetzlar.'
-                    : 'Maßgeschneiderte Webdesign-Lösungen für Unternehmensberatungen von Coday in Wetzlar.',
-                url: `${BASE_URL}/${locale}/branchen/unternehmensberatung`,
+                name: _seoTitle,
+                description: _seoDesc,
+                url: pageUrl,
               }),
             ],
           }),

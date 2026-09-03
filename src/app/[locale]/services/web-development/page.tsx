@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { WebDevelopmentClient } from '@/features/services/ui/WebDevelopmentClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getBreadcrumbSchema, BASE_URL, FOUNDER_ID } from '@/lib/schema';
+import { getBreadcrumbSchema, getWebPageSchema, BASE_URL, FOUNDER_ID } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { ArrowRight, Code, ShieldCheck, Lightning, Cpu } from '@phosphor-icons/react/dist/ssr';
 
@@ -56,30 +56,44 @@ export default async function WebDevelopmentPage({
   setRequestLocale(_locale);
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: isEn ? 'Services' : 'Leistungen', url: `/${_locale}/services` },
-    {
-      name: isEn ? 'Web Development' : 'Webentwicklung',
-      url: `/${_locale}/services/web-development`,
-    },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/services/web-development`;
+  const pageName = isEn
+    ? 'Next.js Web Development & Full-Stack Agency'
+    : 'Next.js Webentwicklung & Full-Stack Webagentur';
+  const pageDescription = isEn
+    ? 'Enterprise Next.js 15 and React 19 web development for mid-market and B2B leaders.'
+    : 'Maßgeschneiderte Next.js 15 und React 19 Webentwicklung für den anspruchsvollen Mittelstand und B2B.';
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: isEn ? 'Services' : 'Leistungen', url: `/${_locale}/services` },
+      {
+        name: isEn ? 'Web Development' : 'Webentwicklung',
+        url: `/${_locale}/services/web-development`,
+      },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization lives in the root layout's head, so it is not repeated here.
     '@graph': [
       breadcrumbs,
+      getWebPageSchema({
+        url: pageUrl,
+        name: pageName,
+        description: pageDescription,
+        locale: _locale,
+        mainEntityId: `${pageUrl}#service`,
+      }),
       {
         '@type': 'ProfessionalService',
-        '@id': `${BASE_URL}/${_locale}/services/web-development#service`,
-        name: isEn
-          ? 'Next.js Web Development & Full-Stack Agency'
-          : 'Next.js Webentwicklung & Full-Stack Webagentur',
-        url: `${BASE_URL}/${_locale}/services/web-development`,
-        description: isEn
-          ? 'Enterprise Next.js 15 and React 19 web development for mid-market and B2B leaders.'
-          : 'Maßgeschneiderte Next.js 15 und React 19 Webentwicklung für den anspruchsvollen Mittelstand und B2B.',
+        '@id': `${pageUrl}#service`,
+        name: pageName,
+        url: pageUrl,
+        description: pageDescription,
         provider: {
           '@id': `${BASE_URL}/#organization`,
         },

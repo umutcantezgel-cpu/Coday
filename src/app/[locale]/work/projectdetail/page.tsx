@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import ClientComponent from '@/features/work/ui/ProjectDetailClient';
 
 export const dynamic = 'force-static';
@@ -36,16 +36,33 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   setRequestLocale(_locale);
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: 'Work', url: `/${_locale}/work` },
-    { name: isEn ? 'Project Details' : 'Projektdetails', url: `/${_locale}/work/projectdetail` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/work/projectdetail`;
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: 'Work', url: `/${_locale}/work` },
+      { name: isEn ? 'Project Details' : 'Projektdetails', url: `/${_locale}/work/projectdetail` },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    // Organization is emitted site-wide by the root layout, so only breadcrumbs remain here.
-    '@graph': [breadcrumbs],
+    // Organization is emitted site-wide by the root layout, so only breadcrumbs and the page node remain here.
+    '@graph': [
+      breadcrumbs,
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Project Details | Web Design References Wetzlar'
+          : 'Projektdetails | Webdesign Referenzen Wetzlar',
+        description: isEn
+          ? 'Detailed insight into our web design projects by Coday in Wetzlar. Learn how we help businesses in Central Hesse succeed in the digital landscape.'
+          : 'Detaillierter Einblick in unsere Webdesign Projekte von Coday in Wetzlar. Erfahren Sie wie wir Unternehmen in Mittelhessen digital erfolgreich machen.',
+        locale: _locale,
+      }),
+    ],
   };
 
   return (

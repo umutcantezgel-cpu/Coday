@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import {
   getCountyHierarchySchema,
   getPyramidBreadcrumbs,
@@ -191,11 +191,24 @@ export default async function LandkreisGiessenPage({
 
   const isEn = _locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${_locale}/regionen/landkreis-giessen`;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     // Skip the Organization node - the root layout renders it on every page.
     '@graph': [
       getPyramidBreadcrumbs(2, { countySlug: 'landkreis-giessen' }, _locale),
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Gießen District | Web Agency · Coday'
+          : 'Webdesign Landkreis Gießen | Webagentur · Coday',
+        description: isEn
+          ? 'Web design in the Gießen district. Ultra-fast websites for clinics, trade & SME in Linden, Pohlheim, Lich & Grünberg. Fixed prices on request.'
+          : 'Webdesign im Landkreis Gießen. Ultraschnelle Websites für Praxen, Handwerk & Mittelstand in Linden, Pohlheim, Lich & Grünberg. Festpreise auf Anfrage.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#service`,
+      }),
       ...(getCountyHierarchySchema('landkreis-giessen', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

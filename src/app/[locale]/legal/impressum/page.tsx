@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -39,23 +39,29 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: isEn ? 'Legal Notice' : 'Impressum', url: `/${_locale}/legal/impressum` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/legal/impressum`;
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: isEn ? 'Legal Notice' : 'Impressum', url: `/${_locale}/legal/impressum` },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // No Organization node here - the root layout emits it for every page.
     '@graph': [
       breadcrumbs,
-      {
-        '@type': 'WebPage',
-        '@id': `${BASE_URL}/${_locale}/legal/impressum#webpage`,
+      getWebPageSchema({
+        url: pageUrl,
         name: isEn ? 'Legal Notice' : 'Impressum',
-        url: `${BASE_URL}/${_locale}/legal/impressum`,
-        isPartOf: { '@id': `${BASE_URL}/#website` },
-      },
+        description: isEn
+          ? 'Legal notice and company information for Coday, web design agency in Wetzlar. Owner: Umutcan Emre Tezgel. Contact details and legal information.'
+          : 'Impressum und Anbieterkennzeichnung von Coday, Webdesign Agentur in Wetzlar. Inhaber: Umutcan Emre Tezgel. Kontakt und rechtliche Informationen.',
+        locale: _locale,
+      }),
     ],
   };
 

@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL } from '@/lib/schema';
+import { BASE_URL, ORG_ID, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import ClientComponent from '@/features/career/ui/CultureClient';
 import { Link } from '@/i18n/navigation';
 
@@ -37,46 +37,39 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   setRequestLocale(locale);
   const isEn = locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${locale}/career/culture`;
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${locale}` },
+      { name: isEn ? 'Career' : 'Karriere', url: `/${locale}/career` },
+      {
+        name: isEn ? 'Culture & Philosophy' : 'Kultur & Philosophie',
+        url: `/${locale}/career/culture`,
+      },
+    ],
+    pageUrl
+  );
+
   const jsonLd = {
     '@context': 'https://schema.org',
     // Referenced by @id only — the root layout is what renders the Organization node.
     '@graph': [
-      {
-        '@type': 'AboutPage',
-        '@id': `${BASE_URL}/${locale}/career/culture`,
-        url: `${BASE_URL}/${locale}/career/culture`,
+      breadcrumbs,
+      getWebPageSchema({
+        url: pageUrl,
         name: isEn
           ? 'Our Philosophy & Work Culture | Web Design Wetzlar | Coday'
           : 'Unsere Philosophie & Arbeitskultur | Webdesign Wetzlar | Coday',
         description: isEn
           ? '100% founder-led web design & Next.js development from Wetzlar, Hesse. Radical transparency, AI-augmented engineering & uncompromising performance.'
           : '100% Inhabergeführtes Webdesign & Next.js Entwicklung aus Wetzlar, Hessen. Transparenz, KI-gestütztes Handwerk & kompromisslose Performance.',
-        isPartOf: { '@id': `${BASE_URL}/#website` },
-        about: { '@id': `${BASE_URL}/#organization` },
-        breadcrumb: {
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            {
-              '@type': 'ListItem',
-              position: 1,
-              name: isEn ? 'Home' : 'Startseite',
-              item: `${BASE_URL}/${locale}`,
-            },
-            {
-              '@type': 'ListItem',
-              position: 2,
-              name: isEn ? 'Career' : 'Karriere',
-              item: `${BASE_URL}/${locale}/career`,
-            },
-            {
-              '@type': 'ListItem',
-              position: 3,
-              name: isEn ? 'Culture & Philosophy' : 'Kultur & Philosophie',
-              item: `${BASE_URL}/${locale}/career/culture`,
-            },
-          ],
-        },
-      },
+        locale,
+        type: 'AboutPage',
+        // Restores the edge the hand-written node carried: the page describes the
+        // company without claiming to be the page that owns it.
+        aboutId: ORG_ID,
+      }),
     ],
   };
 

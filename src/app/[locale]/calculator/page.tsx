@@ -2,7 +2,12 @@ import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
-import { getBreadcrumbSchema, getWebApplicationSchema, BASE_URL } from '@/lib/schema';
+import {
+  getBreadcrumbSchema,
+  getWebApplicationSchema,
+  getWebPageSchema,
+  BASE_URL,
+} from '@/lib/schema';
 import ClientComponent from '@/features/calculator/ui/CalculatorClient';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
@@ -59,16 +64,20 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     defaultValue: 'Berechnen Sie die Kosten für Ihr nächstes Webprojekt.',
   });
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: _locale === 'en' ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: _locale === 'en' ? 'Calculator' : 'Kostenrechner', url: `/${_locale}/calculator` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/calculator`;
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: _locale === 'en' ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: _locale === 'en' ? 'Calculator' : 'Kostenrechner', url: `/${_locale}/calculator` },
+    ],
+    pageUrl
+  );
 
   const webApp = getWebApplicationSchema(
     {
       name: _locale === 'en' ? 'Coday Web Project Cost Calculator' : 'Coday Website Kostenrechner',
       description: pageDescription,
-      url: `${BASE_URL}/${_locale}/calculator`,
+      url: pageUrl,
       applicationCategory: 'BusinessApplication',
     },
     _locale
@@ -79,7 +88,17 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization node is emitted once site-wide by the root layout.
-    '@graph': [breadcrumbs, webApp],
+    '@graph': [
+      breadcrumbs,
+      getWebPageSchema({
+        url: pageUrl,
+        name: pageTitle,
+        description: pageDescription,
+        locale: _locale,
+        mainEntityId: `${pageUrl}#webapp`,
+      }),
+      webApp,
+    ],
   };
   return (
     <>

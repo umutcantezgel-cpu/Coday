@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL } from '@/lib/schema';
+import { BASE_URL, getWebPageSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -67,6 +67,14 @@ export default async function KfzWerkstattPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const _locale = locale || 'de';
+  const isEn = _locale === 'en';
+  const pageUrl = `${BASE_URL}/${_locale}/branchen/automobil/kfz-werkstatt`;
+  const pageName = isEn
+    ? 'Web Design for Auto Repair Shops Hesse | Coday Automotive'
+    : 'Webdesign für KFZ-Werkstätten Hessen | Coday Automotive';
+  const pageDescription = isEn
+    ? 'High-performance websites for auto repair shops in Hesse. Online appointment booking for inspections & repairs. Fixed prices on request.'
+    : 'High-Performance Websites für KFZ-Werkstätten in Hessen. Online-Terminbuchung für Inspektion, HU/AU & Reparatur. Festpreise auf Anfrage.';
 
   const services = [
     {
@@ -149,6 +157,7 @@ export default async function KfzWerkstattPage({
       },
       {
         '@type': 'BreadcrumbList',
+        '@id': `${pageUrl}#breadcrumb`,
         itemListElement: [
           {
             '@type': 'ListItem',
@@ -176,6 +185,13 @@ export default async function KfzWerkstattPage({
           },
         ],
       },
+      getWebPageSchema({
+        url: pageUrl,
+        name: pageName,
+        description: pageDescription,
+        locale: _locale,
+        mainEntityId: `${BASE_URL}/${_locale}/branchen/automobil/kfz-werkstatt#service`,
+      }),
       {
         '@type': 'FAQPage',
         mainEntity: [

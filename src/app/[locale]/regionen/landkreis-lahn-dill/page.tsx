@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import {
   getCountyHierarchySchema,
   getPyramidBreadcrumbs,
@@ -215,11 +215,24 @@ export default async function LandkreisLahnDillPage({
 
   const isEn = _locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${_locale}/regionen/landkreis-lahn-dill`;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     // The Organization node is inherited from the root layout.
     '@graph': [
       getPyramidBreadcrumbs(2, { countySlug: 'landkreis-lahn-dill' }, _locale),
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Lahn-Dill District | Regional Web Agency · Coday'
+          : 'Webdesign Lahn-Dill-Kreis | Regionale Webagentur · Coday',
+        description: isEn
+          ? 'Your local web agency for the Lahn-Dill district. High-performance websites & SEO for SME & trade in Wetzlar, Herborn & Dillenburg. Fixed prices.'
+          : 'Ihre lokale Webagentur für den Lahn-Dill-Kreis. High-Performance Websites & SEO für Mittelstand & Handwerk in Wetzlar, Herborn & Dillenburg. Festpreise.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#service`,
+      }),
       ...(getCountyHierarchySchema('landkreis-lahn-dill', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

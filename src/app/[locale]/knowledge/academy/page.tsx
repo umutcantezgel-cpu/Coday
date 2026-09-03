@@ -4,6 +4,7 @@ import { setRequestLocale } from 'next-intl/server';
 import {
   BASE_URL,
   getBreadcrumbSchema,
+  getWebPageSchema,
   getAcademyCollectionSchema,
   getAcademyVideoSchemas,
 } from '@/lib/schema';
@@ -59,11 +60,16 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const _locale = (await params)?.locale || 'de';
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: 'Knowledge', url: `/${_locale}/knowledge/blog` },
-    { name: 'Academy', url: `/${_locale}/knowledge/academy` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/knowledge/academy`;
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: 'Knowledge', url: `/${_locale}/knowledge/blog` },
+      { name: 'Academy', url: `/${_locale}/knowledge/academy` },
+    ],
+    pageUrl
+  );
 
   const collectionSchema = getAcademyCollectionSchema(_locale);
   const videoSchemas = getAcademyVideoSchemas(_locale);
@@ -71,7 +77,18 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Skipping Organization here — the root layout already emits it site-wide.
-    '@graph': [breadcrumbs, collectionSchema, ...videoSchemas],
+    '@graph': [
+      breadcrumbs,
+      getWebPageSchema({
+        url: pageUrl,
+        name: collectionSchema.name,
+        description: collectionSchema.description,
+        locale: _locale,
+        mainEntityId: `${pageUrl}#collection`,
+      }),
+      collectionSchema,
+      ...videoSchemas,
+    ],
   };
 
   return (

@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -86,12 +86,27 @@ export default async function WebdesignLimburgPage({
   setRequestLocale(locale);
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
+  const pageUrl = `${BASE_URL}/${_locale}/webdesign-limburg`;
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // The Organization node already ships from the root layout, so it is not repeated here.
     '@graph': [
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-limburg' }, _locale),
+      // The WebPage names the one entity this URL answers for: the local
+      // business node from getCityHierarchySchema below. No other page may
+      // claim #localbusiness for Limburg as its mainEntity.
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Limburg | Next.js Agency & SEO · Coday'
+          : 'Webdesign Limburg | Next.js Agentur & SEO · Coday',
+        description: isEn
+          ? 'Professional web design in Limburg an der Lahn. Modern websites, top loading times & SEO for services, trade & law firms. Fixed price on request.'
+          : 'Professionelles Webdesign in Limburg an der Lahn. Moderne Websites, Top-Ladezeiten & SEO für Dienstleister, Handel & Kanzleien. Festpreis auf Anfrage.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#localbusiness`,
+      }),
       ...(getCityHierarchySchema('webdesign-limburg', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

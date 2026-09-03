@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -87,12 +87,27 @@ export default async function WebdesignKasselPage({
   setRequestLocale(locale);
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
+  const pageUrl = `${BASE_URL}/${_locale}/webdesign-kassel`;
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization node is emitted once site-wide by the root layout.
     '@graph': [
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-kassel' }, _locale),
+      // The WebPage names the one entity this URL answers for: the local
+      // business node from getCityHierarchySchema below. No other page may
+      // claim #localbusiness for Kassel as its mainEntity.
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Kassel | Next.js Agency · Coday'
+          : 'Webdesign Kassel | High-Performance Agentur · Coday',
+        description: isEn
+          ? 'Web design & web development in Kassel. Next.js 15 platforms for industry, logistics & SME in North Hesse. Fixed prices on request.'
+          : 'Webdesign & Webentwicklung in Kassel. Next.js 15 Plattformen für Industrie, Logistik & Mittelstand in Nordhessen. Verbindliche Festpreise auf Anfrage.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#localbusiness`,
+      }),
       ...(getCityHierarchySchema('webdesign-kassel', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

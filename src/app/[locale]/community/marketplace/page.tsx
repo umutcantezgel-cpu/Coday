@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import ClientComponent from '@/features/community/ui/MarketplaceClient';
 
 export const dynamic = 'force-static';
@@ -48,29 +48,32 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   setRequestLocale(_locale);
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: 'Community', url: `/${_locale}/community/events` },
-    { name: isEn ? 'Marketplace' : 'Marktplatz', url: `/${_locale}/community/marketplace` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/community/marketplace`;
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: 'Community', url: `/${_locale}/community/events` },
+      { name: isEn ? 'Marketplace' : 'Marktplatz', url: `/${_locale}/community/marketplace` },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // The Organization node is rendered once by the root layout, so it is left out below.
     '@graph': [
       breadcrumbs,
-      {
-        // WebPage rather than an offer catalogue: modules are quoted with the
-        // project, so there is no price to put into structured data.
-        '@type': 'WebPage',
-        '@id': `${BASE_URL}/${_locale}/community/marketplace#webpage`,
+      // WebPage rather than an offer catalogue: modules are quoted with the
+      // project, so there is no price to put into structured data.
+      getWebPageSchema({
+        url: pageUrl,
         name: isEn ? 'Coday Website Modules' : 'Coday Website-Bausteine',
-        url: `${BASE_URL}/${_locale}/community/marketplace`,
         description: isEn
           ? 'Modules built on top of a website: booking, application funnels, calculators, member areas.'
           : 'Bausteine, die auf einer Website aufsetzen: Terminbuchung, Bewerbungsstrecken, Kalkulatoren, Mitgliederbereiche.',
-        isPartOf: { '@id': `${BASE_URL}/#website` },
-      },
+        locale: _locale,
+      }),
     ],
   };
 

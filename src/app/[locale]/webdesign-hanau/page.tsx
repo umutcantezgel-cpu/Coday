@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -87,11 +87,27 @@ export default async function WebdesignHanauPage({
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${_locale}/webdesign-hanau`;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     // Dropped the duplicate Organization node; the root layout owns it.
     '@graph': [
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-hanau' }, _locale),
+      // The WebPage names the one entity this URL answers for: the #localbusiness
+      // node from getCityHierarchySchema below. Nothing else on the site may
+      // claim that @id as its mainEntity.
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Hanau | B2B Web Development & SEO · Coday'
+          : 'Webdesign Hanau | B2B Webentwicklung & SEO · Coday',
+        description: isEn
+          ? 'Web design & SEO for Hanau & Main-Kinzig. Ultra-fast Next.js platforms for industry, craft & technology companies. Fixed price on request.'
+          : 'Webdesign & SEO für Hanau und Main-Kinzig. Ultraschnelle Next.js Plattformen für Industrie, Handwerk & Technologieunternehmen. Festpreise auf Anfrage.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#localbusiness`,
+      }),
       ...(getCityHierarchySchema('webdesign-hanau', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

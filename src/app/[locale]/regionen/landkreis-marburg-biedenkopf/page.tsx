@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import {
   getCountyHierarchySchema,
   getPyramidBreadcrumbs,
@@ -168,11 +168,24 @@ export default async function LandkreisMarburgBiedenkopfPage({
 
   const isEn = _locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${_locale}/regionen/landkreis-marburg-biedenkopf`;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization already ships from the root layout, so this graph starts at the breadcrumbs.
     '@graph': [
       getPyramidBreadcrumbs(2, { countySlug: 'landkreis-marburg-biedenkopf' }, _locale),
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Marburg-Biedenkopf District | Agency · Coday'
+          : 'Webdesign Landkreis Marburg-Biedenkopf | Agentur · Coday',
+        description: isEn
+          ? 'Web design in the Marburg-Biedenkopf district. High-performance websites for pharma, crafts & SME in Marburg, Biedenkopf & Gladenbach. Fixed price.'
+          : 'Webdesign im Landkreis Marburg-Biedenkopf. Performante Websites für Pharma, Handwerk & Mittelstand in Marburg, Biedenkopf & Gladenbach. Festpreis.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#service`,
+      }),
       ...(getCountyHierarchySchema('landkreis-marburg-biedenkopf', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

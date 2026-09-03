@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import {
@@ -54,28 +54,42 @@ export default async function HandwerkBauPage({ params }: { params: Promise<{ lo
   setRequestLocale(_locale);
   const isEn = _locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${_locale}/branchen/handwerk-bau`;
+  const pageName = isEn
+    ? 'Web Design & Mobile Recruiting for Craftsmen & Construction'
+    : 'Webdesign & 60s Express-Recruiting für Handwerk & Baugewerbe';
+  const pageDescription = isEn
+    ? 'Bespoke Next.js web design and mobile-first recruiting funnels for craft and construction businesses.'
+    : 'Maßgeschneidertes Next.js Webdesign und mobile Express-Recruiting Funnels für Handwerks- und Baubetriebe.';
+
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization is defined once in the root layout, so this graph starts at the breadcrumbs.
     '@graph': [
-      getBreadcrumbSchema([
-        { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-        { name: isEn ? 'Industries' : 'Branchen', url: `/${_locale}/branchen` },
-        {
-          name: isEn ? 'Crafts & Construction' : 'Handwerk & Bau',
-          url: `/${_locale}/branchen/handwerk-bau`,
-        },
-      ]),
+      getBreadcrumbSchema(
+        [
+          { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+          { name: isEn ? 'Industries' : 'Branchen', url: `/${_locale}/branchen` },
+          {
+            name: isEn ? 'Crafts & Construction' : 'Handwerk & Bau',
+            url: `/${_locale}/branchen/handwerk-bau`,
+          },
+        ],
+        pageUrl
+      ),
+      getWebPageSchema({
+        url: pageUrl,
+        name: pageName,
+        description: pageDescription,
+        locale: _locale,
+        mainEntityId: `${pageUrl}#service`,
+      }),
       {
         '@type': 'Service',
         '@id': `${BASE_URL}/${_locale}/branchen/handwerk-bau#service`,
-        name: isEn
-          ? 'Web Design & Mobile Recruiting for Craftsmen & Construction'
-          : 'Webdesign & 60s Express-Recruiting für Handwerk & Baugewerbe',
-        url: `${BASE_URL}/${_locale}/branchen/handwerk-bau`,
-        description: isEn
-          ? 'Bespoke Next.js web design and mobile-first recruiting funnels for craft and construction businesses.'
-          : 'Maßgeschneidertes Next.js Webdesign und mobile Express-Recruiting Funnels für Handwerks- und Baubetriebe.',
+        name: pageName,
+        url: pageUrl,
+        description: pageDescription,
         provider: {
           '@id': `${BASE_URL}/#organization`,
         },

@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import ClientComponent from '@/features/work/ui/ProjectDetailClient';
 import { workData } from '@/shared/data/work';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import { notFound } from 'next/navigation';
 
 export const dynamicParams = false;
@@ -65,17 +65,30 @@ export default async function Page(props: { params: Promise<{ locale: string; sl
   const project = workData[params.slug];
   const content = isEn ? project.content.en : project.content.de;
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: isEn ? 'Portfolio' : 'Referenzen', url: `/${_locale}/work` },
-    { name: content.title, url: `/${_locale}/work/${params.slug}` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/work/${params.slug}`;
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: isEn ? 'Portfolio' : 'Referenzen', url: `/${_locale}/work` },
+      { name: content.title, url: `/${_locale}/work/${params.slug}` },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // The Organization node lives in the root layout; the case study only links to it by @id.
     '@graph': [
       breadcrumbs,
+      getWebPageSchema({
+        url: pageUrl,
+        name: content.title,
+        description: content.challenge.description,
+        locale: _locale,
+        type: 'ItemPage',
+        mainEntityId: `${pageUrl}#case-study`,
+      }),
       {
         '@type': 'CreativeWork',
         '@id': `${BASE_URL}/${_locale}/work/${params.slug}#case-study`,

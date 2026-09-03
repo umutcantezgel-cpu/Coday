@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
-import { getServiceSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
+import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
 import { setRequestLocale } from 'next-intl/server';
 import { IndustryDetailClient } from '@/features/industries/ui/IndustryDetailClient';
 import { IndustryToolEmbed } from '@/features/industries/ui/IndustryToolEmbed';
@@ -105,11 +105,22 @@ export default async function IndustryDetailPage({
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: isEn ? 'Industries' : 'Branchen', url: `/${_locale}/branchen` },
-    { name: formattedIndustry, url: `/${_locale}/branchen/${industry}` },
-  ]);
+  const pageUrl = `${BASE_URL}/${locale}/branchen/${industry}`;
+  const pageName =
+    locale === 'en' ? `Web Design for ${formattedIndustry}` : `Webdesign für ${formattedIndustry}`;
+  const pageDescription =
+    locale === 'en'
+      ? `Custom web design solutions for the ${formattedIndustry} industry by Coday in Wetzlar.`
+      : `Maßgeschneiderte Webdesign-Lösungen für die Branche ${formattedIndustry} von Coday in Wetzlar.`;
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: isEn ? 'Industries' : 'Branchen', url: `/${_locale}/branchen` },
+      { name: formattedIndustry, url: `/${_locale}/branchen/${industry}` },
+    ],
+    pageUrl
+  );
 
   return (
     <>
@@ -122,16 +133,17 @@ export default async function IndustryDetailPage({
             // Organization already ships in the root layout head; no need to duplicate it.
             '@graph': [
               breadcrumbs,
+              getWebPageSchema({
+                url: pageUrl,
+                name: pageName,
+                description: pageDescription,
+                locale: _locale,
+                mainEntityId: `${pageUrl}#service`,
+              }),
               getServiceSchema({
-                name:
-                  locale === 'en'
-                    ? `Web Design for ${formattedIndustry}`
-                    : `Webdesign für ${formattedIndustry}`,
-                description:
-                  locale === 'en'
-                    ? `Custom web design solutions for the ${formattedIndustry} industry by Coday in Wetzlar.`
-                    : `Maßgeschneiderte Webdesign-Lösungen für die Branche ${formattedIndustry} von Coday in Wetzlar.`,
-                url: `${BASE_URL}/${locale}/branchen/${industry}`,
+                name: pageName,
+                description: pageDescription,
+                url: pageUrl,
               }),
             ],
           }),

@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import ClientComponent from '@/features/knowledge/ui/WhitepapersClient';
 
 export const dynamic = 'force-static';
@@ -49,29 +49,33 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const _locale = (await params)?.locale || 'de';
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: 'Knowledge', url: `/${_locale}/knowledge/blog` },
-    { name: 'Whitepapers', url: `/${_locale}/knowledge/whitepapers` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/knowledge/whitepapers`;
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: 'Knowledge', url: `/${_locale}/knowledge/blog` },
+      { name: 'Whitepapers', url: `/${_locale}/knowledge/whitepapers` },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // The Organization entity is emitted once by the root layout and not repeated here.
     '@graph': [
       breadcrumbs,
-      {
-        '@type': 'CollectionPage',
-        '@id': `${BASE_URL}/${_locale}/knowledge/whitepapers#collection`,
+      getWebPageSchema({
+        url: pageUrl,
         name: isEn
           ? 'Coday Web Design Studies & Whitepapers'
           : 'Coday Webdesign Studien & Whitepapers',
-        url: `${BASE_URL}/${_locale}/knowledge/whitepapers`,
         description: isEn
           ? 'Free whitepapers and studies on web design and digital marketing from Coday in Wetzlar.'
           : 'Kostenlose Whitepapers und Studien zu Webdesign und digitalem Marketing von Coday in Wetzlar.',
-        inLanguage: _locale,
-      },
+        locale: _locale,
+        type: 'CollectionPage',
+      }),
     ],
   };
 

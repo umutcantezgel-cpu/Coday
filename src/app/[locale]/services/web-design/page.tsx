@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { WebDesignClient } from '@/features/services/ui/WebDesignClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getServiceSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
+import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -50,27 +50,39 @@ export default async function WebDesignPage({ params }: { params: Promise<{ loca
   setRequestLocale(_locale);
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: isEn ? 'Services' : 'Leistungen', url: `/${_locale}/services` },
-    { name: isEn ? 'Web Design' : 'Webdesign', url: `/${_locale}/services/web-design` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/services/web-design`;
+  const pageName = isEn
+    ? 'Professional Web Design in Wetzlar & Hesse'
+    : 'Professionelles Webdesign in Wetzlar & Hessen';
+  const pageDescription = isEn
+    ? 'Premium web design by experts in Wetzlar. Modern layouts, high conversion rates and outstanding aesthetics.'
+    : 'Premium Webdesign vom Profi in Wetzlar. Moderne Layouts, hohe Konversionsraten und zeitlose Ästhetik für Unternehmen in Mittelhessen. Jetzt starten.';
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: isEn ? 'Services' : 'Leistungen', url: `/${_locale}/services` },
+      { name: isEn ? 'Web Design' : 'Webdesign', url: `/${_locale}/services/web-design` },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // The Organization node is emitted once site-wide by the root layout.
     '@graph': [
       breadcrumbs,
+      getWebPageSchema({
+        url: pageUrl,
+        name: pageName,
+        description: pageDescription,
+        locale: _locale,
+        mainEntityId: `${pageUrl}#service`,
+      }),
       getServiceSchema({
-        name:
-          _locale === 'en'
-            ? 'Professional Web Design in Wetzlar & Hesse'
-            : 'Professionelles Webdesign in Wetzlar & Hessen',
-        description:
-          _locale === 'en'
-            ? 'Premium web design by experts in Wetzlar. Modern layouts, high conversion rates and outstanding aesthetics.'
-            : 'Premium Webdesign vom Profi in Wetzlar. Moderne Layouts, hohe Konversionsraten und zeitlose Ästhetik für Unternehmen in Mittelhessen. Jetzt starten.',
-        url: `${BASE_URL}/${_locale}/services/web-design`,
+        name: pageName,
+        description: pageDescription,
+        url: pageUrl,
       }),
     ],
   };

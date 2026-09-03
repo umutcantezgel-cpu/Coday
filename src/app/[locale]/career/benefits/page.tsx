@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import ClientComponent from '@/features/career/ui/BenefitsClient';
 import { CheckCircle } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
@@ -55,11 +55,16 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   setRequestLocale(_locale);
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: isEn ? 'Careers' : 'Karriere', url: `/${_locale}/career` },
-    { name: 'Benefits', url: `/${_locale}/career/benefits` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/career/benefits`;
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: isEn ? 'Careers' : 'Karriere', url: `/${_locale}/career` },
+      { name: 'Benefits', url: `/${_locale}/career/benefits` },
+    ],
+    pageUrl
+  );
 
   const faqs = isEn
     ? [
@@ -126,19 +131,16 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     '@graph': [
       breadcrumbs,
       faqSchema,
-      {
-        '@type': 'WebPage',
-        '@id': `${BASE_URL}/${_locale}/career/benefits#webpage`,
+      getWebPageSchema({
+        url: pageUrl,
         name: isEn
           ? 'Benefits & Working at Coday | Web Developer Jobs Wetzlar'
           : 'Benefits & Arbeiten bei Coday | Webentwickler Jobs Wetzlar',
         description: isEn
           ? 'Explore benefits of working at Coday: M-Series gear, 100% remote, fair pay & learning budget. Discover rewarding web developer jobs in Wetzlar & Hesse.'
           : 'Attraktive Benefits & Arbeiten bei Coday: High-End Hardware, Remote-Work & Weiterbildungsbudget. Jetzt Webentwickler Jobs Wetzlar & Mittelhessen entdecken!',
-        url: `${BASE_URL}/${_locale}/career/benefits`,
-        inLanguage: _locale,
-        isPartOf: { '@id': `${BASE_URL}/#website` },
-      },
+        locale: _locale,
+      }),
     ],
   };
 

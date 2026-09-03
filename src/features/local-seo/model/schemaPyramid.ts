@@ -31,6 +31,72 @@ export const HESSEN_STATE = {
   lng: 8.5022,
 };
 
+/**
+ * The two tiers the pyramid was missing.
+ *
+ * Both ids are locale-independent on purpose: Hessen is not a different place in
+ * English, and a Kreis page in either locale should point at the same node. The
+ * existing tier ids are locale-scoped because they are page anchors; these two
+ * are not anchored to any page, so they carry no locale.
+ */
+export const PLACE_DE_ID = `${BASE_URL}/#place-deutschland`;
+export const PLACE_MITTELHESSEN_ID = `${BASE_URL}/#place-mittelhessen`;
+
+/**
+ * Mittelhessen is the Regierungsbezirk Coday actually works out of — Wetzlar sits
+ * in Lahn-Dill. Without it the graph claimed the Lahn-Dill-Kreis and the Landkreis
+ * Kassel are siblings at the same distance from the business, which is false: one
+ * is home, the other is 190 km away.
+ */
+export const MITTELHESSEN_COUNTY_SLUGS = [
+  'landkreis-lahn-dill',
+  'landkreis-giessen',
+  'landkreis-marburg-biedenkopf',
+  'landkreis-limburg-weilburg',
+] as const;
+
+/** `Deutschland`, the top of the containment chain. Every place resolves up to it. */
+export function getCountryNode() {
+  return {
+    '@type': 'Country',
+    '@id': PLACE_DE_ID,
+    name: 'Deutschland',
+    alternateName: 'Germany',
+    sameAs: 'https://www.wikidata.org/wiki/Q183',
+  };
+}
+
+/** The tier between Hessen and the four home Kreise. */
+export function getMittelhessenNode(locale: string = 'de') {
+  return {
+    '@type': 'AdministrativeArea',
+    '@id': PLACE_MITTELHESSEN_ID,
+    name: 'Mittelhessen',
+    sameAs: 'https://www.wikidata.org/wiki/Q1720',
+    containedInPlace: { '@id': `${BASE_URL}/${locale}/standorte/hessen#state-hub` },
+    containsPlace: MITTELHESSEN_COUNTY_SLUGS.map((slug) => ({
+      '@id': `${BASE_URL}/${locale}/regionen/${slug}#region`,
+    })),
+  };
+}
+
+/**
+ * A district gets a real node so `containsPlace` is a graph edge rather than a
+ * bare string. Deliberately no page: ~175 Stadtteil landing pages would be the
+ * doorway pattern Google's March 2024 core update targeted.
+ */
+export function districtId(cityUrl: string, district: string) {
+  const slug = district
+    .toLowerCase()
+    .replace(/ä/g, 'ae')
+    .replace(/ö/g, 'oe')
+    .replace(/ü/g, 'ue')
+    .replace(/ß/g, 'ss')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+  return `${cityUrl}#district-${slug}`;
+}
+
 export const COUNTIES_REGIONS: Record<string, CountyData> = {
   'landkreis-lahn-dill': {
     slug: 'landkreis-lahn-dill',
@@ -986,6 +1052,30 @@ export const CITIES_HIERARCHY: Record<string, CityDataHierarchy> = {
 };
 
 /**
+ * Which municipalities of a Kreis have a page of their own.
+ *
+ * Matched on `countySlug`, never on the display name: five of the 24 city pages
+ * (Frankfurt, Wiesbaden, Kassel, Darmstadt, Offenbach) are kreisfrei and appear in
+ * no municipality list at all, and others differ in spelling ("Wetzlar (HQ)" vs
+ * "Wetzlar"). Only the covered cities get an @id; the rest stay name-only, because
+ * inventing a node for a place with no page would be a reference to nothing.
+ */
+function coveredCitiesOf(countySlug: string) {
+  return Object.values(CITIES_HIERARCHY).filter((c) => c.countySlug === countySlug);
+}
+
+/** Loose comparison, used only to avoid listing a covered city twice. */
+function samePlace(a: string, b: string) {
+  const norm = (s: string) =>
+    s
+      .toLowerCase()
+      .replace(/\([^)]*\)/g, '')
+      .replace(/\b(am main|an der lahn|vor der höhe)\b/g, '')
+      .replace(/[^a-zäöüß]/g, '');
+  return norm(a) === norm(b);
+}
+
+/**
  * Tier 1: State Master Hub Schema (/standorte/hessen)
  */
 export function getHessenMasterSchema(locale: string = 'de') {
@@ -995,19 +1085,25 @@ export function getHessenMasterSchema(locale: string = 'de') {
   return {
     '@context': 'https://schema.org',
     '@graph': [
+      getCountryNode(),
+      getMittelhessenNode(locale),
       {
         '@type': 'AdministrativeArea',
         '@id': `${stateUrl}#state-hub`,
         name: 'Hessen',
         sameAs: HESSEN_STATE.wikidataId,
         url: stateUrl,
-        containsPlace: Object.values(COUNTIES_REGIONS).map((c) => ({
-          '@type': 'AdministrativeArea',
-          '@id': `${BASE_URL}/${locale}/regionen/${c.slug}#region`,
-          name: c.name,
-          sameAs: c.wikidataId,
-          url: `${BASE_URL}/${locale}/regionen/${c.slug}`,
-        })),
+        // The chain now terminates: city -> Kreis -> (Mittelhessen) -> Hessen -> DE.
+        containedInPlace: { '@id': PLACE_DE_ID },
+        // References, not inline copies. Each Kreis defines itself on its own
+        // page; re-declaring name/sameAs/url here produced a second version of
+        // every one of those 13 nodes that could silently drift out of step.
+        containsPlace: [
+          { '@id': PLACE_MITTELHESSEN_ID },
+          ...Object.values(COUNTIES_REGIONS)
+            .filter((c) => !MITTELHESSEN_COUNTY_SLUGS.includes(c.slug as never))
+            .map((c) => ({ '@id': `${BASE_URL}/${locale}/regionen/${c.slug}#region` })),
+        ],
       },
       {
         '@type': ['LocalBusiness', 'ProfessionalService'],
@@ -1064,25 +1160,37 @@ export function getCountyHierarchySchema(countySlug: string, locale: string = 'd
   const stateUrl = `${BASE_URL}/${locale}/standorte/hessen`;
   const isEn = locale === 'en';
 
+  const inMittelhessen = MITTELHESSEN_COUNTY_SLUGS.includes(county.slug as never);
+  const covered = coveredCitiesOf(county.slug);
+  const uncovered = county.municipalities.filter(
+    (m) => !covered.some((c) => samePlace(c.cityName, m))
+  );
+
   return {
     '@context': 'https://schema.org',
     '@graph': [
+      // Mittelhessen has no page, so it must be defined in every document that
+      // points at it — a site-global @id is not dereferenceable the way a page
+      // anchor is.
+      ...(inMittelhessen ? [getMittelhessenNode(locale)] : []),
       {
         '@type': 'AdministrativeArea',
         '@id': `${countyUrl}#region`,
         name: county.name,
         sameAs: county.wikidataId,
         url: countyUrl,
+        // The four home Kreise sit under Mittelhessen; the rest hang directly off
+        // Hessen. Before this the graph put Lahn-Dill and Landkreis Kassel at the
+        // same distance from the business, which is not where Coday works.
         containedInPlace: {
-          '@type': 'AdministrativeArea',
-          '@id': `${stateUrl}#state-hub`,
-          name: 'Hessen',
-          sameAs: HESSEN_STATE.wikidataId,
+          '@id': inMittelhessen ? PLACE_MITTELHESSEN_ID : `${stateUrl}#state-hub`,
         },
-        containsPlace: county.municipalities.map((m) => ({
-          '@type': 'City',
-          name: m,
-        })),
+        containsPlace: [
+          // Cities with a page of their own are real graph edges now, not the
+          // name-only stubs that pointed at nothing.
+          ...covered.map((c) => ({ '@id': `${BASE_URL}/${locale}/${c.slug}#city` })),
+          ...uncovered.map((m) => ({ '@type': 'City', name: m })),
+        ],
       },
       {
         '@type': ['LocalBusiness', 'ProfessionalService'],
@@ -1106,13 +1214,12 @@ export function getCountyHierarchySchema(countySlug: string, locale: string = 'd
           addressRegion: 'Hessen',
           addressCountry: 'DE',
         },
+        // The Kreis and its covered cities by reference; the municipalities with
+        // no page of their own stay name-only, because no node describes them.
         areaServed: [
-          {
-            '@type': 'AdministrativeArea',
-            name: county.name,
-            sameAs: county.wikidataId,
-          },
-          ...county.municipalities.map((m) => ({
+          { '@id': `${countyUrl}#region` },
+          ...covered.map((c) => ({ '@id': `${BASE_URL}/${locale}/${c.slug}#city` })),
+          ...uncovered.map((m) => ({
             '@type': 'City',
             name: m,
           })),
@@ -1143,22 +1250,21 @@ export function getCityHierarchySchema(citySlug: string, locale: string = 'de') 
         name: city.cityName,
         sameAs: city.wikidataId,
         url: cityUrl,
-        containedInPlace: parentCounty
-          ? {
-              '@type': 'AdministrativeArea',
-              '@id': `${BASE_URL}/${locale}/regionen/${parentCounty.slug}#region`,
-              name: parentCounty.name,
-              sameAs: parentCounty.wikidataId,
-            }
-          : {
-              '@type': 'AdministrativeArea',
-              '@id': `${stateUrl}#state-hub`,
-              name: 'Hessen',
-              sameAs: HESSEN_STATE.wikidataId,
-            },
+        // A reference, not a second copy: the Kreis defines itself on its own page.
+        containedInPlace: {
+          '@id': parentCounty
+            ? `${BASE_URL}/${locale}/regionen/${parentCounty.slug}#region`
+            : `${stateUrl}#state-hub`,
+        },
+        // Districts are defined here, with an @id, because they have no page of
+        // their own and never will — ~175 Stadtteil landing pages would be the
+        // doorway pattern Google's March 2024 core update went after. This gives
+        // the graph the full geographic depth without a single thin page.
         containsPlace: city.districts.map((d) => ({
           '@type': 'Place',
+          '@id': districtId(cityUrl, d),
           name: d,
+          containedInPlace: { '@id': `${cityUrl}#city` },
         })),
       },
       {
@@ -1191,25 +1297,15 @@ export function getCityHierarchySchema(citySlug: string, locale: string = 'de') 
           latitude: city.lat,
           longitude: city.lng,
         },
+        // All references: every one of these places is defined once, either in
+        // this graph (city, districts) or on the Kreis page. Repeating name and
+        // sameAs here only created second versions that could drift.
         areaServed: [
-          {
-            '@type': 'City',
-            name: city.cityName.replace(' (HQ)', ''),
-            sameAs: city.wikidataId,
-          },
+          { '@id': `${cityUrl}#city` },
           ...(parentCounty
-            ? [
-                {
-                  '@type': 'AdministrativeArea' as const,
-                  name: parentCounty.name,
-                  sameAs: parentCounty.wikidataId,
-                },
-              ]
+            ? [{ '@id': `${BASE_URL}/${locale}/regionen/${parentCounty.slug}#region` }]
             : []),
-          ...city.districts.map((d) => ({
-            '@type': 'Place' as const,
-            name: d,
-          })),
+          ...city.districts.map((d) => ({ '@id': districtId(cityUrl, d) })),
         ],
         hasOfferCatalog: {
           '@type': 'OfferCatalog',

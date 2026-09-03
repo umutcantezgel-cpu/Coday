@@ -2,7 +2,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import ClientComponent from '@/features/knowledge/ui/BlogClient';
-import { getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
+import { getBreadcrumbSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -51,17 +51,36 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   setRequestLocale(_locale);
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: 'Knowledge', url: `/${_locale}/knowledge/blog` },
-    { name: 'Blog', url: `/${_locale}/knowledge/blog` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/knowledge/blog`;
+  const pageName = isEn
+    ? 'Web Design Blog | Tips & Trends from Wetzlar'
+    : 'Webdesign Blog | Tipps & Trends aus Wetzlar';
+  const pageDescription = isEn
+    ? 'Latest web design tips, SEO trends and digital strategies from Coday in Wetzlar. Practical knowledge for craftsmen and businesses in Central Hesse.'
+    : 'Aktuelle Webdesign Tipps, SEO Trends und digitale Strategien von Coday in Wetzlar. Praxiswissen für Handwerker und Unternehmen in Mittelhessen.';
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: 'Knowledge', url: `/${_locale}/knowledge/blog` },
+      { name: 'Blog', url: `/${_locale}/knowledge/blog` },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Publisher points at the Organization node the root layout emits; no copy needed here.
     '@graph': [
       breadcrumbs,
+      getWebPageSchema({
+        url: pageUrl,
+        name: pageName,
+        description: pageDescription,
+        locale: _locale,
+        type: 'CollectionPage',
+        mainEntityId: `${pageUrl}#blog`,
+      }),
       {
         '@type': 'Blog',
         '@id': `${BASE_URL}/${_locale}/knowledge/blog#blog`,

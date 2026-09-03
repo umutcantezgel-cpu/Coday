@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
-import { getServiceSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
+import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
 import { IndustryDetailClient } from '@/features/industries/ui/IndustryDetailClient';
 import { LocalSeoTemplate } from '@/features/local-seo/ui/LocalSeoTemplate';
 import { setRequestLocale } from 'next-intl/server';
@@ -165,12 +165,23 @@ export default async function IndustryLocationPage({
     return notFound();
   }
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: isEn ? 'Industries' : 'Branchen', url: `/${_locale}/branchen` },
-    { name: formattedIndustry, url: `/${_locale}/branchen/${industry}` },
-    { name: formattedLocation, url: `/${_locale}/branchen/${industry}/${location}` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/branchen/${industry}/${location}`;
+  const pageName = isEn
+    ? `Web Design for ${formattedIndustry}${formattedLocation ? ` in ${formattedLocation}` : ''}`
+    : `Webdesign für ${formattedIndustry}${formattedLocation ? ` in ${formattedLocation}` : ''}`;
+  const pageDescription = isEn
+    ? `Professional web design for ${formattedIndustry}${formattedLocation ? ` in ${formattedLocation}` : ''} by Coday.`
+    : `Professionelles Webdesign für ${formattedIndustry}${formattedLocation ? ` in ${formattedLocation}` : ''} von Coday.`;
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: isEn ? 'Industries' : 'Branchen', url: `/${_locale}/branchen` },
+      { name: formattedIndustry, url: `/${_locale}/branchen/${industry}` },
+      { name: formattedLocation, url: `/${_locale}/branchen/${industry}/${location}` },
+    ],
+    pageUrl
+  );
 
   const schemaScript = (
     <script
@@ -182,14 +193,17 @@ export default async function IndustryLocationPage({
           // The root layout supplies the Organization node for every page.
           '@graph': [
             breadcrumbs,
+            getWebPageSchema({
+              url: pageUrl,
+              name: pageName,
+              description: pageDescription,
+              locale: _locale,
+              mainEntityId: `${pageUrl}#service`,
+            }),
             getServiceSchema({
-              name: isEn
-                ? `Web Design for ${formattedIndustry}${formattedLocation ? ` in ${formattedLocation}` : ''}`
-                : `Webdesign für ${formattedIndustry}${formattedLocation ? ` in ${formattedLocation}` : ''}`,
-              description: isEn
-                ? `Professional web design for ${formattedIndustry}${formattedLocation ? ` in ${formattedLocation}` : ''} by Coday.`
-                : `Professionelles Webdesign für ${formattedIndustry}${formattedLocation ? ` in ${formattedLocation}` : ''} von Coday.`,
-              url: `${BASE_URL}/${_locale}/branchen/${industry}/${location}`,
+              name: pageName,
+              description: pageDescription,
+              url: pageUrl,
             }),
           ],
         }),

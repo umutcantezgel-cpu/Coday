@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import ClientComponent from '@/features/community/ui/EventsClient';
 
 export const dynamic = 'force-static';
@@ -48,30 +48,33 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   setRequestLocale(_locale);
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: 'Community', url: `/${_locale}/community/events` },
-    { name: isEn ? 'Events' : 'Veranstaltungen', url: `/${_locale}/community/events` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/community/events`;
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: 'Community', url: `/${_locale}/community/events` },
+      { name: isEn ? 'Events' : 'Veranstaltungen', url: `/${_locale}/community/events` },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization is omitted on purpose: the root layout already puts it in the head.
     '@graph': [
       breadcrumbs,
-      {
-        // WebPage, not Event: the formats have no scheduled dates, and Event
-        // schema without a real startDate would put an invented appointment
-        // into search results.
-        '@type': 'WebPage',
-        '@id': `${BASE_URL}/${_locale}/community/events#webpage`,
+      // WebPage, not Event: the formats have no scheduled dates, and Event
+      // schema without a real startDate would put an invented appointment
+      // into search results.
+      getWebPageSchema({
+        url: pageUrl,
         name: isEn ? 'Coday Workshops & Meetups' : 'Coday Workshops & Meetups',
-        url: `${BASE_URL}/${_locale}/community/events`,
         description: isEn
           ? 'Workshop formats on web performance, local SEO and conversion, run from Wetzlar. Dates follow demand.'
           : 'Workshop-Formate zu Web-Performance, lokalem SEO und Conversion aus Wetzlar. Termine richten sich nach der Nachfrage.',
-        isPartOf: { '@id': `${BASE_URL}/#website` },
-      },
+        locale: _locale,
+      }),
     ],
   };
 

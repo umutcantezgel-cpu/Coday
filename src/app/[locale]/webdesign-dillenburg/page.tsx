@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -87,11 +87,27 @@ export default async function WebdesignDillenburgPage({
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${_locale}/webdesign-dillenburg`;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     // Left out the Organization node — the root layout emits it globally.
     '@graph': [
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-dillenburg' }, _locale),
+      // The WebPage names the one entity this URL answers for: the #localbusiness
+      // node from getCityHierarchySchema below. Nothing else on the site may
+      // claim that @id as its mainEntity.
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Dillenburg | Next.js B2B Web Agency · Coday'
+          : 'Webdesign Dillenburg | Next.js B2B Webagentur · Coday',
+        description: isEn
+          ? 'Web design & development in Dillenburg. Fast loading times, measurable B2B leads for tooling, metal technology & crafts. Fixed price on request.'
+          : 'Webdesign & Webentwicklung in Dillenburg. Schnelle Ladezeiten, messbare B2B-Leads für Werkzeugbau, Metalltechnik & Handwerk. Festpreis auf Anfrage.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#localbusiness`,
+      }),
       ...(getCityHierarchySchema('webdesign-dillenburg', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

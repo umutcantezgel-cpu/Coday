@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -86,12 +86,27 @@ export default async function WebdesignRuesselsheimPage({
   setRequestLocale(locale);
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
+  const pageUrl = `${BASE_URL}/${_locale}/webdesign-ruesselsheim`;
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization is inherited from the root layout's site-wide JSON-LD.
     '@graph': [
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-ruesselsheim' }, _locale),
+      // The WebPage names the one entity this URL answers for: the local
+      // business node from getCityHierarchySchema below. No other page may
+      // claim #localbusiness for Rüsselsheim as its mainEntity.
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Rüsselsheim | Automotive & B2B Agency · Coday'
+          : 'Webdesign Rüsselsheim | Automotive & B2B Agentur · Coday',
+        description: isEn
+          ? 'Web design & development in Rüsselsheim am Main. High-performance Next.js platforms for engineering, automotive & mid-market. Fixed price on request.'
+          : 'Webdesign & Webentwicklung in Rüsselsheim am Main. Performante Next.js Websites für Ingenieurbüros, Automotive & Mittelstand. Festpreis auf Anfrage.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#localbusiness`,
+      }),
       ...(getCityHierarchySchema('webdesign-ruesselsheim', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

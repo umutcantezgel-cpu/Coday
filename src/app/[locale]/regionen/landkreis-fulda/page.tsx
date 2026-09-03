@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL } from '@/lib/schema';
+import { BASE_URL, getWebPageSchema } from '@/lib/schema';
 import {
   getCountyHierarchySchema,
   getPyramidBreadcrumbs,
@@ -173,11 +173,26 @@ export default async function LandkreisFuldaPage({
     },
   ];
 
+  const pageUrl = `${BASE_URL}/${_locale}/regionen/landkreis-fulda`;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization lives in the root layout; this graph only adds page nodes.
     '@graph': [
       getPyramidBreadcrumbs(2, { countySlug: 'landkreis-fulda' }, _locale),
+      getWebPageSchema({
+        url: pageUrl,
+        name:
+          _locale === 'en'
+            ? 'Web Design Fulda District | B2B & SEO Agency · Coday'
+            : 'Webdesign Landkreis Fulda | B2B & SEO Agentur · Coday',
+        description:
+          _locale === 'en'
+            ? 'Web development & web design for the Fulda district & East Hesse. High-performance platforms for logistics, crafts & industry. Fixed price.'
+            : 'Webentwicklung & Webdesign für den Landkreis Fulda & Osthessen. Performante Plattformen für Logistik, Handwerk & Industrie. Festpreis auf Anfrage.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#service`,
+      }),
       ...(getCountyHierarchySchema('landkreis-fulda', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

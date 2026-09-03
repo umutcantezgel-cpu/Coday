@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
-import { getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
+import { getBreadcrumbSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
 import { getBlogPosts } from '@/features/blog/model/data';
 
 export const dynamic = 'force-static';
@@ -95,25 +95,29 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
   setRequestLocale(_locale);
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: isEn ? 'Overview' : 'Übersicht', url: `/${_locale}/uebersicht` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/uebersicht`;
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: isEn ? 'Overview' : 'Übersicht', url: `/${_locale}/uebersicht` },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization is emitted globally in the root layout's head.
     '@graph': [
       breadcrumbs,
-      {
-        '@type': 'CollectionPage',
-        '@id': `${BASE_URL}/${_locale}/uebersicht`,
+      getWebPageSchema({
+        url: pageUrl,
         name: isEn ? 'Coday Sitemap & Directory' : 'Coday Seitenübersicht',
         description: isEn
           ? 'Directory of all services, locations and solutions.'
           : 'Übersicht aller Leistungen, Standorte und Branchenlösungen der Coday Webagentur.',
-        isPartOf: { '@id': `${BASE_URL}/#website` },
-      },
+        locale: _locale,
+        type: 'CollectionPage',
+      }),
     ],
   };
 

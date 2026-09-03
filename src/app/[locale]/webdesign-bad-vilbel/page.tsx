@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -86,11 +86,27 @@ export default async function WebdesignBadVilbelPage({
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${_locale}/webdesign-bad-vilbel`;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     // The root layout supplies the Organization node, so it stays out of this graph.
     '@graph': [
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-bad-vilbel' }, _locale),
+      // The WebPage names the one entity this URL answers for: the #localbusiness
+      // node from getCityHierarchySchema below. Nothing else on the site may
+      // claim that @id as its mainEntity.
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Bad Vilbel | Web Development & SEO · Coday'
+          : 'Webdesign Bad Vilbel | Webentwicklung & SEO · Coday',
+        description: isEn
+          ? 'Professional web design in Bad Vilbel. Modern websites, top PageSpeed & local Google rankings for mid-market & services. Fixed price on request.'
+          : 'Webdesign in Bad Vilbel: Schnelle Next.js Websites, Top-PageSpeed & lokale Google-Rankings für Mittelstand & Dienstleister. Verbindlicher Festpreis.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#localbusiness`,
+      }),
       ...(getCityHierarchySchema('webdesign-bad-vilbel', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

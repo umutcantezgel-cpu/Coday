@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import ClientComponent from '@/features/community/ui/CalendarClient';
 
 export const dynamic = 'force-static';
@@ -48,24 +48,30 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   setRequestLocale(_locale);
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: isEn ? 'Community' : 'Community', url: `/${_locale}/community/events` },
-    { name: isEn ? 'Calendar' : 'Kalender', url: `/${_locale}/community/calendar` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/community/calendar`;
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: isEn ? 'Community' : 'Community', url: `/${_locale}/community/events` },
+      { name: isEn ? 'Calendar' : 'Kalender', url: `/${_locale}/community/calendar` },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // The root layout is the single source of the Organization node.
     '@graph': [
       breadcrumbs,
-      {
-        '@type': 'WebPage',
-        '@id': `${BASE_URL}/${_locale}/community/calendar#webpage`,
+      getWebPageSchema({
+        url: pageUrl,
         name: isEn ? 'Coday Community Calendar' : 'Coday Community Kalender',
-        url: `${BASE_URL}/${_locale}/community/calendar`,
-        isPartOf: { '@id': `${BASE_URL}/#website` },
-      },
+        description: isEn
+          ? 'How soon a website can start and how long it takes: answer within 24 hours, a free 20 minute needs analysis, live in 10 to 14 working days.'
+          : 'Wie schnell eine Website starten kann und wie lange sie dauert: Antwort in 24 Stunden, kostenlose 20-Minuten-Bedarfsanalyse, in 10 bis 14 Werktagen online.',
+        locale: _locale,
+      }),
     ],
   };
 

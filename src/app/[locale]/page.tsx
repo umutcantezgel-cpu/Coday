@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getMainProductOfferSchema } from '@/lib/schema';
+import { BASE_URL, ORG_ID, getMainProductOfferSchema, getWebPageSchema } from '@/lib/schema';
 import { RouteMessages } from '@/i18n/RouteMessages';
 import { generatePageMetadata } from '@/lib/metadata';
 import { Skeleton } from '@/shared/ui/Skeleton';
@@ -87,9 +87,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   setRequestLocale(locale);
 
   const _locale = locale || 'de';
+  const isEn = _locale === 'en';
   // Organization and WebSite are emitted globally by the locale layout; the page
   // graph only adds what is specific to the homepage.
   const mainProductSchema = getMainProductOfferSchema(_locale);
+  const pageUrl = `${BASE_URL}/${_locale}`;
 
   return (
     <RouteMessages family="home" locale={locale}>
@@ -99,7 +101,25 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@graph': [mainProductSchema],
+            '@graph': [
+              // The apex of the pyramid: the home page is the one URL answerable
+              // for the organisation itself. Every other page names a narrower
+              // entity, which is what keeps them out of each other's way.
+              getWebPageSchema({
+                url: pageUrl,
+                name: isEn
+                  ? 'Coday — Web Design & Web Development Agency in Wetzlar'
+                  : 'Coday — Webdesign & Webentwicklung Agentur in Wetzlar',
+                description: isEn
+                  ? 'High-performance websites from Wetzlar: 100/100 PageSpeed, Next.js architecture, fixed price after a free call.'
+                  : 'High-Performance Websites aus Wetzlar: 100/100 PageSpeed, Next.js-Architektur, Festpreis nach kostenlosem Gespräch.',
+                locale: _locale,
+                // The home page carries no BreadcrumbList, so it must not claim one.
+                hasBreadcrumb: false,
+                mainEntityId: ORG_ID,
+              }),
+              mainProductSchema,
+            ],
           }),
         }}
       />

@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { EnterpriseWebClient } from '@/features/services/ui/EnterpriseWebClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getServiceSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
+import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -54,30 +54,42 @@ export default async function EnterpriseWebPage({
   setRequestLocale(_locale);
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: isEn ? 'Services' : 'Leistungen', url: `/${_locale}/services` },
-    {
-      name: isEn ? 'Enterprise Web' : 'Enterprise Web',
-      url: `/${_locale}/services/enterprise-web`,
-    },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/services/enterprise-web`;
+  const pageName = isEn
+    ? 'Enterprise Web Development Wetzlar'
+    : 'Enterprise Webentwicklung Wetzlar';
+  const pageDescription = isEn
+    ? 'Scalable and secure enterprise web solutions by Coday in Wetzlar. Portals, intranets and complex web applications.'
+    : 'Skalierbare und sichere Enterprise Web-Lösungen von Coday in Wetzlar. Portale, Intranets und Webanwendungen für Unternehmen in Hessen.';
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: isEn ? 'Services' : 'Leistungen', url: `/${_locale}/services` },
+      {
+        name: isEn ? 'Enterprise Web' : 'Enterprise Web',
+        url: `/${_locale}/services/enterprise-web`,
+      },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // The root layout defines #organization for the whole site; omit it here.
     '@graph': [
       breadcrumbs,
+      getWebPageSchema({
+        url: pageUrl,
+        name: pageName,
+        description: pageDescription,
+        locale: _locale,
+        mainEntityId: `${pageUrl}#service`,
+      }),
       getServiceSchema({
-        name:
-          _locale === 'en'
-            ? 'Enterprise Web Development Wetzlar'
-            : 'Enterprise Webentwicklung Wetzlar',
-        description:
-          _locale === 'en'
-            ? 'Scalable and secure enterprise web solutions by Coday in Wetzlar. Portals, intranets and complex web applications.'
-            : 'Skalierbare und sichere Enterprise Web-Lösungen von Coday in Wetzlar. Portale, Intranets und Webanwendungen für Unternehmen in Hessen.',
-        url: `${BASE_URL}/${_locale}/services/enterprise-web`,
+        name: pageName,
+        description: pageDescription,
+        url: pageUrl,
       }),
     ],
   };

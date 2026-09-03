@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
-import { getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
+import { getBreadcrumbSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
 import { CareerOverviewClient } from '@/features/career/ui/CareerOverviewClient';
 import { Link } from '@/i18n/navigation';
 import { Briefcase, Buildings, Lightning } from '@phosphor-icons/react/dist/ssr';
@@ -48,25 +48,29 @@ export default async function CareerPage({ params }: { params: Promise<{ locale:
   const { locale } = await params;
   const isEn = locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${locale}` },
-    { name: isEn ? 'Careers' : 'Karriere', url: `/${locale}/career` },
-  ]);
+  const pageUrl = `${BASE_URL}/${locale}/career`;
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${locale}` },
+      { name: isEn ? 'Careers' : 'Karriere', url: `/${locale}/career` },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // No Organization entry here — the root layout emits that node for every page.
     '@graph': [
       breadcrumbs,
-      {
-        '@type': 'WebPage',
-        '@id': `${BASE_URL}/${locale}/career`,
+      getWebPageSchema({
+        url: pageUrl,
         name: isEn ? 'Careers at Coday' : 'Karriere bei Coday',
         description: isEn
           ? 'Discover exciting career opportunities at the web design agency Coday in Wetzlar. Join our team for premium web development & digital solutions.'
           : 'Entdecken Sie tolle Karrieremöglichkeiten in der Webdesign Agentur Coday in Wetzlar. Werden Sie Teil unseres Teams für Premium Webentwicklung!',
-        isPartOf: { '@id': `${BASE_URL}/#website` },
-      },
+        locale,
+      }),
     ],
   };
 

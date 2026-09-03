@@ -3,7 +3,7 @@ import { Link } from '@/i18n/navigation';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { ORG_ID, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
+import { ORG_ID, getBreadcrumbSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -175,10 +175,15 @@ export default async function GeoServicePage({ params }: { params: Promise<{ loc
   setRequestLocale(_locale);
   const t = _locale === 'en' ? content.en : content.de;
 
+  const pageUrl = `${BASE_URL}/${_locale}/services/generative-engine-optimization`;
+
   const serviceJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    '@id': 'https://www.codayweb.de/services/generative-engine-optimization#service',
+    // Was hardcoded without a locale segment, so /de and /en both claimed
+    // `…/services/generative-engine-optimization#service` — a URI matching no
+    // real route, and one node for two pages.
+    '@id': `${pageUrl}#service`,
     name: 'Generative Engine Optimization (GEO)',
     provider: {
       '@id': ORG_ID,
@@ -210,16 +215,30 @@ export default async function GeoServicePage({ params }: { params: Promise<{ loc
     })),
   };
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: locale === 'en' ? 'Home' : 'Startseite', url: `/${locale}` },
-    { name: locale === 'en' ? 'Services' : 'Leistungen', url: `/${locale}/services` },
-    { name: 'GEO', url: `/${locale}/services/generative-engine-optimization` },
-  ]);
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: locale === 'en' ? 'Home' : 'Startseite', url: `/${locale}` },
+      { name: locale === 'en' ? 'Services' : 'Leistungen', url: `/${locale}/services` },
+      { name: 'GEO', url: `/${locale}/services/generative-engine-optimization` },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // ORG_ID resolves against the Organization node the root layout emits.
-    '@graph': [breadcrumbs, serviceJsonLd, faqJsonLd],
+    '@graph': [
+      breadcrumbs,
+      getWebPageSchema({
+        url: pageUrl,
+        name: `${t.hero.title} ${t.hero.titleHighlight} ${t.hero.titleSuffix}`,
+        description: t.hero.description,
+        locale: _locale,
+        mainEntityId: `${pageUrl}#service`,
+      }),
+      serviceJsonLd,
+      faqJsonLd,
+    ],
   };
 
   return (

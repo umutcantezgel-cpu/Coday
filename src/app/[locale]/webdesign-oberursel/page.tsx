@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -85,12 +85,27 @@ export default async function WebdesignOberurselPage({
   setRequestLocale(locale);
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
+  const pageUrl = `${BASE_URL}/${_locale}/webdesign-oberursel`;
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // The Organization entity is supplied globally by the root layout.
     '@graph': [
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-oberursel' }, _locale),
+      // The WebPage names the one entity this URL answers for: the local
+      // business node from getCityHierarchySchema below. No other page may
+      // claim #localbusiness for Oberursel as its mainEntity.
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Oberursel | Next.js Agency & SEO · Coday'
+          : 'Webdesign Oberursel | Next.js Agentur & SEO · Coday',
+        description: isEn
+          ? 'Web agency for Oberursel: Modern B2B websites, ultra-fast load times & lead generation for mid-market & IT. Fixed price on request.'
+          : 'Webagentur für Oberursel: Moderne B2B-Websites, schnelle Ladezeiten & Lead-Generierung für Mittelstand & IT. Festpreis auf Anfrage.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#localbusiness`,
+      }),
       ...(getCityHierarchySchema('webdesign-oberursel', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -85,12 +85,27 @@ export default async function WebdesignRodgauPage({
   setRequestLocale(locale);
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
+  const pageUrl = `${BASE_URL}/${_locale}/webdesign-rodgau`;
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // No Organization node here — the root layout already emits it site-wide.
     '@graph': [
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-rodgau' }, _locale),
+      // The WebPage names the one entity this URL answers for: the local
+      // business node from getCityHierarchySchema below. No other page may
+      // claim #localbusiness for Rodgau as its mainEntity.
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Rodgau | Web Agency & SEO · Coday'
+          : 'Webdesign Rodgau | Lokale Webagentur & SEO · Coday',
+        description: isEn
+          ? 'Professional web design in Rodgau & Kreis Offenbach. Ultra-fast load times, measurable leads for craft & SME businesses. Fixed price on request.'
+          : 'Professionelles Webdesign in Rodgau & Kreis Offenbach. Ultraschnelle Ladezeiten, messbare Leads für Handwerk & Mittelstand. Festpreise auf Anfrage.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#localbusiness`,
+      }),
       ...(getCityHierarchySchema('webdesign-rodgau', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

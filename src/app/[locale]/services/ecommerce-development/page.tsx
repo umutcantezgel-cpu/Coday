@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { EcommerceDevelopmentClient } from '@/features/services/ui/EcommerceDevelopmentClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
+import { getBreadcrumbSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import {
   ArrowRight,
@@ -59,27 +59,44 @@ export default async function EcommercePage({ params }: { params: Promise<{ loca
   setRequestLocale(_locale);
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: isEn ? 'Services' : 'Leistungen', url: `/${_locale}/services` },
-    { name: isEn ? 'E-Commerce' : 'E-Commerce', url: `/${_locale}/services/ecommerce-development` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/services/ecommerce-development`;
+  const pageName = isEn
+    ? 'Headless E-Commerce & Online Store Development'
+    : 'Headless E-Commerce & Online Shop Entwicklung';
+  const pageDescription = isEn
+    ? 'High-performance Headless E-Commerce storefronts with Next.js 15, Shopify Storefront API and Stripe Checkout.'
+    : 'Hochperformante Headless Online-Shops mit Next.js 15, Shopify Storefront API und Stripe Checkout.';
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: isEn ? 'Services' : 'Leistungen', url: `/${_locale}/services` },
+      {
+        name: isEn ? 'E-Commerce' : 'E-Commerce',
+        url: `/${_locale}/services/ecommerce-development`,
+      },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization stays out of this graph; the root layout emits it site-wide.
     '@graph': [
       breadcrumbs,
+      getWebPageSchema({
+        url: pageUrl,
+        name: pageName,
+        description: pageDescription,
+        locale: _locale,
+        mainEntityId: `${pageUrl}#service`,
+      }),
       {
         '@type': 'Service',
-        '@id': `${BASE_URL}/${_locale}/services/ecommerce-development#service`,
-        name: isEn
-          ? 'Headless E-Commerce & Online Store Development'
-          : 'Headless E-Commerce & Online Shop Entwicklung',
-        url: `${BASE_URL}/${_locale}/services/ecommerce-development`,
-        description: isEn
-          ? 'High-performance Headless E-Commerce storefronts with Next.js 15, Shopify Storefront API and Stripe Checkout.'
-          : 'Hochperformante Headless Online-Shops mit Next.js 15, Shopify Storefront API und Stripe Checkout.',
+        '@id': `${pageUrl}#service`,
+        name: pageName,
+        url: pageUrl,
+        description: pageDescription,
         provider: {
           '@id': `${BASE_URL}/#organization`,
         },

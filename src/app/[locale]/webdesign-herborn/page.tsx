@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -86,12 +86,27 @@ export default async function WebdesignHerbornPage({
   setRequestLocale(locale);
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
+  const pageUrl = `${BASE_URL}/${_locale}/webdesign-herborn`;
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Root layout emits the Organization node, so this graph skips it.
     '@graph': [
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-herborn' }, _locale),
+      // The WebPage names the one entity this URL answers for: the local
+      // business node from getCityHierarchySchema below. No other page may
+      // claim #localbusiness for Herborn as its mainEntity.
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Herborn | B2B Websites & SEO Agency · Coday'
+          : 'Webdesign Herborn | B2B-Websites & SEO Agentur · Coday',
+        description: isEn
+          ? 'Your web agency for Herborn & Lahn-Dill. Modern web design, ultra-fast load times & more B2B inquiries for industry & crafts. Fixed price on request.'
+          : 'Ihre Webagentur für Herborn & Lahn-Dill. Modernes Webdesign, ultraschnelle Ladezeiten & mehr B2B-Anfragen für Industrie & Handwerk. Festpreis auf Anfrage.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#localbusiness`,
+      }),
       ...(getCityHierarchySchema('webdesign-herborn', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

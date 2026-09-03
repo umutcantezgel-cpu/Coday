@@ -7,7 +7,7 @@ import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { ServicesOverview } from '@/features/services/ui/ServicesOverview';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { routing } from '@/i18n/routing';
-import { getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
+import { getBreadcrumbSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -54,14 +54,19 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   setRequestLocale(_locale);
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: isEn ? 'Services' : 'Leistungen', url: `/${_locale}/services` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/services`;
+
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: isEn ? 'Services' : 'Leistungen', url: `/${_locale}/services` },
+    ],
+    pageUrl
+  );
 
   const servicesCatalog = {
     '@type': 'OfferCatalog',
-    '@id': `${BASE_URL}/${_locale}/services#catalog`,
+    '@id': `${pageUrl}#catalog`,
     name: isEn ? 'Coday Web Services' : 'Coday Webdesign & Webentwicklung Leistungen',
     itemListElement: [
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Webdesign & UI/UX' } },
@@ -78,7 +83,24 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization is provided site-wide by the root layout.
-    '@graph': [breadcrumbs, servicesCatalog],
+    '@graph': [
+      breadcrumbs,
+      // This index owns the offer catalogue; the individual service pages each
+      // own their own #service node. No two pages claim the same mainEntity.
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design & SEO Services | Agency in Wetzlar'
+          : 'Webdesign & SEO Leistungen | Agentur in Wetzlar',
+        description: isEn
+          ? 'Every web design and SEO service from your agency in Wetzlar at a glance, from a company website to an online shop.'
+          : 'Alle Webdesign und SEO Leistungen Ihrer Agentur in Wetzlar auf einen Blick. Von der Firmenwebseite bis zum Onlineshop, alles aus einer Hand.',
+        locale: _locale,
+        type: 'CollectionPage',
+        mainEntityId: `${pageUrl}#catalog`,
+      }),
+      servicesCatalog,
+    ],
   };
 
   return (

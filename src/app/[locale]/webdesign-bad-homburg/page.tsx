@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -87,11 +87,27 @@ export default async function WebdesignBadHomburgPage({
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${_locale}/webdesign-bad-homburg`;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     // Skip Organization — the root layout emits that node site-wide.
     '@graph': [
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-bad-homburg' }, _locale),
+      // The WebPage names the one entity this URL answers for: the #localbusiness
+      // node from getCityHierarchySchema below. Nothing else on the site may
+      // claim that @id as its mainEntity.
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Bad Homburg | High-End Web Agency · Coday'
+          : 'Webdesign Bad Homburg | High-End Webagentur · Coday',
+        description: isEn
+          ? 'Web design in Bad Homburg: Elegant UX design, maximum performance & discretion for family offices, practices & B2B. Fixed price on request.'
+          : 'Webdesign in Bad Homburg: Elegantes UX-Design, maximale Performance & Diskretion für Family Offices, Praxen & B2B. Festpreis auf Anfrage.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#localbusiness`,
+      }),
       ...(getCityHierarchySchema('webdesign-bad-homburg', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

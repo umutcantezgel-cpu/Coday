@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL } from '@/lib/schema';
+import { BASE_URL, getWebPageSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -63,11 +63,27 @@ export default async function NextJsMigrationPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const _locale = locale || 'de';
+  const isEn = _locale === 'en';
+
+  const pageUrl = `${BASE_URL}/${_locale}/landingpages/nextjsmigration`;
+  const pageTitle = isEn
+    ? 'WordPress to Next.js Migration Agency | Coday'
+    : 'WordPress zu Next.js Migration | Coday Webagentur';
+  const pageDescription = isEn
+    ? 'Migrate your website from WordPress to Next.js 15. 10x faster load times, 100% security & seamless SEO relaunch without ranking loss.'
+    : 'Migrieren Sie Ihre Website von WordPress auf Next.js 15. 10x schnellere Ladezeiten, 100% Sicherheit & nahtloser SEO-Relaunch ohne Ranking-Verlust.';
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization node is emitted once site-wide by the root layout.
     '@graph': [
+      getWebPageSchema({
+        url: pageUrl,
+        name: pageTitle,
+        description: pageDescription,
+        locale: _locale,
+        mainEntityId: `${pageUrl}#service`,
+      }),
       {
         '@type': 'Service',
         '@id': `${BASE_URL}/${_locale}/landingpages/nextjsmigration#service`,
@@ -104,6 +120,7 @@ export default async function NextJsMigrationPage({
         },
       },
       {
+        '@id': `${pageUrl}#breadcrumb`,
         '@type': 'BreadcrumbList',
         itemListElement: [
           {

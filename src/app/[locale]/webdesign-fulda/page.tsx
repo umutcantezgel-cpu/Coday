@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -88,11 +88,27 @@ export default async function WebdesignFuldaPage({
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${_locale}/webdesign-fulda`;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     // No Organization entry needed; the root layout emits one per document.
     '@graph': [
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-fulda' }, _locale),
+      // The WebPage names the one entity this URL answers for: the #localbusiness
+      // node from getCityHierarchySchema below. Nothing else on the site may
+      // claim that @id as its mainEntity.
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Fulda | High-Performance Web Agency · Coday'
+          : 'Webdesign Fulda | High-Performance Webagentur · Coday',
+        description: isEn
+          ? 'Web design & SEO for Fulda and East Hesse. Ultra-fast websites, B2B lead generation for industry, logistics & trade. Fixed prices on request.'
+          : 'Webdesign & SEO für Fulda und Osthessen. Blitzschnelle Websites, B2B-Lead-Generierung für Industrie, Logistik & Handwerk. Festpreise auf Anfrage.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#localbusiness`,
+      }),
       ...(getCityHierarchySchema('webdesign-fulda', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

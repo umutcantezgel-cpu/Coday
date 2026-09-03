@@ -3,7 +3,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { IndustryDetailClient } from '@/features/industries/ui/IndustryDetailClient';
 import { IndustryToolEmbed } from '@/features/industries/ui/IndustryToolEmbed';
-import { getServiceSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
+import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -40,6 +40,7 @@ export default async function AutomobilHubPage({
   setRequestLocale(locale);
 
   const _locale = (await params)?.locale || 'de';
+  const pageUrl = `${BASE_URL}/${_locale}/branchen/automobil`;
   const _seoTitle =
     _locale === 'en'
       ? 'Web Design for the Automotive Industry | Wetzlar | Coday'
@@ -58,18 +59,31 @@ export default async function AutomobilHubPage({
             '@context': 'https://schema.org',
             // Organization lives in the root layout head and is shared by all pages.
             '@graph': [
-              getBreadcrumbSchema([
-                { name: _locale === 'en' ? 'Home' : 'Startseite', url: `/${_locale}` },
-                { name: _locale === 'en' ? 'Industries' : 'Branchen', url: `/${_locale}/branchen` },
-                {
-                  name: _locale === 'en' ? 'Automotive' : 'Automobil & KFZ',
-                  url: `/${_locale}/branchen/automobil`,
-                },
-              ]),
+              getBreadcrumbSchema(
+                [
+                  { name: _locale === 'en' ? 'Home' : 'Startseite', url: `/${_locale}` },
+                  {
+                    name: _locale === 'en' ? 'Industries' : 'Branchen',
+                    url: `/${_locale}/branchen`,
+                  },
+                  {
+                    name: _locale === 'en' ? 'Automotive' : 'Automobil & KFZ',
+                    url: `/${_locale}/branchen/automobil`,
+                  },
+                ],
+                pageUrl
+              ),
+              getWebPageSchema({
+                url: pageUrl,
+                name: _seoTitle,
+                description: _seoDesc,
+                locale: _locale,
+                mainEntityId: `${pageUrl}#service`,
+              }),
               getServiceSchema({
                 name: _seoTitle,
                 description: _seoDesc,
-                url: `${BASE_URL}/${_locale}/branchen/automobil`,
+                url: pageUrl,
               }),
             ],
           }),

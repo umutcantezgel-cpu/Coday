@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL } from '@/lib/schema';
+import { BASE_URL, getWebPageSchema } from '@/lib/schema';
 import {
   getCountyHierarchySchema,
   getPyramidBreadcrumbs,
@@ -181,11 +181,24 @@ export default async function LandkreisLimburgWeilburgPage({
 
   const isEn = _locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${_locale}/regionen/landkreis-limburg-weilburg`;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     // No Organization entry: the root layout emits that node for the whole site.
     '@graph': [
       getPyramidBreadcrumbs(2, { countySlug: 'landkreis-limburg-weilburg' }, _locale),
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Limburg-Weilburg District | Agency · Coday'
+          : 'Webdesign Landkreis Limburg-Weilburg | Agentur · Coday',
+        description: isEn
+          ? 'Web agency for the Limburg-Weilburg district. Next.js websites & SEO for Limburg, Weilburg, Bad Camberg & the Lahn valley. Fixed prices on request.'
+          : 'Webagentur für den Landkreis Limburg-Weilburg. Next.js Websites & SEO für Limburg, Weilburg, Bad Camberg & das Lahntal. Festpreise auf Anfrage.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#service`,
+      }),
       ...(getCountyHierarchySchema('landkreis-limburg-weilburg', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

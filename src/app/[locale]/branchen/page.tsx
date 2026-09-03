@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { IndustryOverviewClient } from '@/features/industries/ui/IndustryOverviewClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getServiceSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
+import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
 export const dynamic = 'force-static';
@@ -55,6 +55,7 @@ export default async function IndustryOverviewPage({
   setRequestLocale(_locale);
   const isEn = _locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${_locale}/branchen`;
   const _seoTitle = isEn
     ? 'Web Design Industry Solutions Wetzlar & Hesse | Coday'
     : 'Webdesign Branchenlösungen Wetzlar & Mittelhessen | Coday';
@@ -63,20 +64,30 @@ export default async function IndustryOverviewPage({
     ? 'Specialized web design for every industry by Coday in Wetzlar. Craftsmen, doctors, restaurants and service providers in Central Hesse. Inquire now.'
     : 'Spezialisiertes Webdesign für jede Branche von Coday in Wetzlar. Handwerker, Ärzte, Gastronomen und Dienstleister in Mittelhessen. Jetzt anfragen.';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: isEn ? 'Industries' : 'Branchen', url: `/${_locale}/branchen` },
-  ]);
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: isEn ? 'Industries' : 'Branchen', url: `/${_locale}/branchen` },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization is emitted once by the root layout and does not belong in this graph.
     '@graph': [
       breadcrumbs,
+      getWebPageSchema({
+        url: pageUrl,
+        name: _seoTitle,
+        description: _seoDesc,
+        locale: _locale,
+        mainEntityId: `${pageUrl}#service`,
+      }),
       getServiceSchema({
         name: _seoTitle,
         description: _seoDesc,
-        url: `${BASE_URL}/${_locale}/branchen`,
+        url: pageUrl,
       }),
     ],
   };

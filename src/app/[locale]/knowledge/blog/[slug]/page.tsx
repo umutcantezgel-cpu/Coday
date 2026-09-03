@@ -4,7 +4,7 @@ import { permanentRedirect, notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { getBlogPost, getBlogPosts } from '@/features/blog/model/data';
 import { routing } from '@/i18n/routing';
-import { getArticleSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
+import { getArticleSchema, getBreadcrumbSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
 import BlogPostClient from '@/features/knowledge/ui/BlogPostClient';
 
 interface PageProps {
@@ -214,12 +214,15 @@ export default async function BlogPostPage({ params }: PageProps) {
   }
 
   const breadcrumbs = post
-    ? getBreadcrumbSchema([
-        { name: locale === 'en' ? 'Home' : 'Startseite', url: `/${locale}` },
-        { name: 'Knowledge', url: `/${locale}/knowledge/blog` },
-        { name: 'Blog', url: `/${locale}/knowledge/blog` },
-        { name: post.title, url: `/${locale}/knowledge/blog/${slug}` },
-      ])
+    ? getBreadcrumbSchema(
+        [
+          { name: locale === 'en' ? 'Home' : 'Startseite', url: `/${locale}` },
+          { name: 'Knowledge', url: `/${locale}/knowledge/blog` },
+          { name: 'Blog', url: `/${locale}/knowledge/blog` },
+          { name: post.title, url: `/${locale}/knowledge/blog/${slug}` },
+        ],
+        `${BASE_URL}/${locale}/knowledge/blog/${slug}`
+      )
     : null;
 
   const jsonLd = post
@@ -227,6 +230,15 @@ export default async function BlogPostPage({ params }: PageProps) {
         '@context': 'https://schema.org',
         '@graph': [
           breadcrumbs,
+          getWebPageSchema({
+            url: `${BASE_URL}/${locale}/knowledge/blog/${slug}`,
+            name: post.title,
+            description: post.excerpt,
+            locale,
+            mainEntityId: `${BASE_URL}/${locale}/knowledge/blog/${slug}#article`,
+            datePublished: post.date,
+            dateModified: post.date,
+          }),
           getArticleSchema({
             title: post.title,
             excerpt: post.excerpt,

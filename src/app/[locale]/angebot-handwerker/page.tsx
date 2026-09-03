@@ -2,7 +2,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import ClientComponent from '@/features/landing/ui/AngebotHandwerkerClient';
-import { getBreadcrumbSchema, getReviewsSchema, BASE_URL } from '@/lib/schema';
+import { getBreadcrumbSchema, getReviewsSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -49,13 +49,24 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   setRequestLocale(_locale);
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    {
-      name: isEn ? 'Craftsmen Offer' : 'Angebot für Handwerker',
-      url: `/${_locale}/angebot-handwerker`,
-    },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/angebot-handwerker`;
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      {
+        name: isEn ? 'Craftsmen Offer' : 'Angebot für Handwerker',
+        url: `/${_locale}/angebot-handwerker`,
+      },
+    ],
+    pageUrl
+  );
+
+  const pageTitle = isEn
+    ? 'Web Design Offer for Craftsmen | Central Hesse | Coday'
+    : 'Webdesign Angebot für Handwerker | Mittelhessen | Coday';
+  const pageDescription = isEn
+    ? 'Special web design package for craftsmen in Wetzlar and Central Hesse. Fixed price, fast delivery and design that brings new clients. Inquire today.'
+    : 'Spezielles Webdesign Paket für Handwerker in Wetzlar und Mittelhessen. Festpreis, schnelle Umsetzung und Design das Aufträge bringt. Jetzt anfragen.';
 
   const handwerkerProduct = {
     '@type': 'Product',
@@ -81,7 +92,17 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization is emitted once in the root layout head, so we only link it by @id here.
-    '@graph': [breadcrumbs, handwerkerProduct],
+    '@graph': [
+      breadcrumbs,
+      getWebPageSchema({
+        url: pageUrl,
+        name: pageTitle,
+        description: pageDescription,
+        locale: _locale,
+        mainEntityId: `${pageUrl}#product`,
+      }),
+      handwerkerProduct,
+    ],
   };
 
   return (

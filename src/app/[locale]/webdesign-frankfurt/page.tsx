@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -85,11 +85,27 @@ export default async function WebdesignFrankfurtPage({
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${_locale}/webdesign-frankfurt`;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     // The root layout handles the Organization node for all pages.
     '@graph': [
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-frankfurt' }, _locale),
+      // The WebPage names the one entity this URL answers for: the #localbusiness
+      // node from getCityHierarchySchema below. Nothing else on the site may
+      // claim that @id as its mainEntity.
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Frankfurt | High-End Next.js Web Agency · Coday'
+          : 'Webdesign Frankfurt | High-End Next.js Webagentur · Coday',
+        description: isEn
+          ? 'Enterprise web design in Frankfurt am Main. Next.js 15, <0.4s load time & B2B leads for FinTech, law firms & mid-market. Fixed price.'
+          : 'Enterprise Webdesign in Frankfurt am Main. Next.js 15, <0.4s Ladezeit & B2B-Leads für FinTech, Kanzleien & Mittelstand. Verbindlicher Festpreis.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#localbusiness`,
+      }),
       ...(getCityHierarchySchema('webdesign-frankfurt', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

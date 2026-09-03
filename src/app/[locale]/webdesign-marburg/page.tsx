@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -85,12 +85,27 @@ export default async function WebdesignMarburgPage({
   setRequestLocale(locale);
   const _locale = locale || 'de';
   const isEn = _locale === 'en';
+  const pageUrl = `${BASE_URL}/${_locale}/webdesign-marburg`;
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Root layout already renders the Organization node for every page.
     '@graph': [
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-marburg' }, _locale),
+      // The WebPage names the one entity this URL answers for: the local
+      // business node from getCityHierarchySchema below. No other page may
+      // claim #localbusiness for Marburg as its mainEntity.
+      getWebPageSchema({
+        url: pageUrl,
+        name: isEn
+          ? 'Web Design Marburg | High-Performance Web Agency · Coday'
+          : 'Webdesign Marburg | High-Performance Webagentur · Coday',
+        description: isEn
+          ? 'Web design & Next.js development in Marburg. Fast load times, accessible UX design & top SEO for pharma, practices & mid-market. Fixed price on request.'
+          : 'Webdesign & Next.js Entwicklung in Marburg. Schnelle Ladezeiten, barrierefreies UX-Design & Top-SEO für Pharma, Praxen & Mittelstand. Festpreis auf Anfrage.',
+        locale: _locale,
+        mainEntityId: `${pageUrl}#localbusiness`,
+      }),
       ...(getCityHierarchySchema('webdesign-marburg', _locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',

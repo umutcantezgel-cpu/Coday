@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL } from '@/lib/schema';
+import { BASE_URL, getWebPageSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -67,6 +67,14 @@ export default async function KfzMechatronikerPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const _locale = locale || 'de';
+  const isEn = _locale === 'en';
+  const pageUrl = `${BASE_URL}/${_locale}/branchen/automobil/kfz-mechatroniker`;
+  const pageName = isEn
+    ? 'Web Design for Auto Mechanics Hesse | Coday Auto-Tech'
+    : 'Webdesign für KFZ-Mechatroniker Hessen | Coday Auto-Tech';
+  const pageDescription = isEn
+    ? 'Web development & SEO for auto mechanics & diagnostic centers in Hesse. Modern UI/UX design & more inquiries. Fixed prices on request.'
+    : 'Webentwicklung & SEO für KFZ-Mechatroniker & Diagnose-Betriebe in Hessen. Modernes UI/UX-Design & mehr Werkstattanfragen. Festpreise auf Anfrage.';
 
   const disciplines = [
     {
@@ -149,6 +157,7 @@ export default async function KfzMechatronikerPage({
       },
       {
         '@type': 'BreadcrumbList',
+        '@id': `${pageUrl}#breadcrumb`,
         itemListElement: [
           {
             '@type': 'ListItem',
@@ -176,6 +185,13 @@ export default async function KfzMechatronikerPage({
           },
         ],
       },
+      getWebPageSchema({
+        url: pageUrl,
+        name: pageName,
+        description: pageDescription,
+        locale: _locale,
+        mainEntityId: `${BASE_URL}/${_locale}/branchen/automobil/kfz-mechatroniker#service`,
+      }),
       {
         '@type': 'FAQPage',
         mainEntity: [

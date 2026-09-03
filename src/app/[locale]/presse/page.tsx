@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import ClientComponent from '@/features/company/ui/PresseClient';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
@@ -50,26 +50,28 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const _locale = (await params)?.locale || 'de';
   const isEn = _locale === 'en';
 
-  const breadcrumbs = getBreadcrumbSchema([
-    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-    { name: isEn ? 'Press' : 'Presse', url: `/${_locale}/presse` },
-  ]);
+  const pageUrl = `${BASE_URL}/${_locale}/presse`;
+  const breadcrumbs = getBreadcrumbSchema(
+    [
+      { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+      { name: isEn ? 'Press' : 'Presse', url: `/${_locale}/presse` },
+    ],
+    pageUrl
+  );
 
   const jsonLd = {
     '@context': 'https://schema.org',
     // Organization is declared once in the root layout, not per page.
     '@graph': [
       breadcrumbs,
-      {
-        '@type': 'WebPage',
-        '@id': `${BASE_URL}/${_locale}/presse#webpage`,
+      getWebPageSchema({
+        url: pageUrl,
         name: isEn ? 'Coday Press & Media Center' : 'Coday Presse- & Medienbereich',
-        url: `${BASE_URL}/${_locale}/presse`,
         description: isEn
           ? 'Press materials and media information from Coday, your web design agency in Wetzlar.'
           : 'Pressematerial und Medieninformationen von Coday, Ihrer Webdesign Agentur in Wetzlar.',
-        inLanguage: _locale,
-      },
+        locale: _locale,
+      }),
     ],
   };
 

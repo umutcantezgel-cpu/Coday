@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
 import {
   getHessenMasterSchema,
   getPyramidBreadcrumbs,
@@ -338,11 +338,26 @@ export default async function HessenMasterPage({
 
   const isEn = _locale === 'en';
 
+  const pageUrl = `${BASE_URL}/${_locale}/standorte/hessen`;
+  const pageTitle = isEn
+    ? 'Web Design Hesse | Leading Next.js Web Agency · Coday'
+    : 'Webdesign Hessen | Führende Next.js Webagentur · Coday';
+  const pageDescription = isEn
+    ? 'High-end web design & Next.js development across Hesse. 100/100 Core Web Vitals, blazing fast load times & measurable leads for German SMEs.'
+    : 'High-End Webdesign & Next.js Entwicklung in ganz Hessen. 100/100 Core Web Vitals, blitzschnelle Ladezeiten & messbare Leads für den hessischen Mittelstand.';
+
   const jsonLd = {
     '@context': 'https://schema.org',
     // No Organization node here — the root layout already emits it for every page.
     '@graph': [
       getPyramidBreadcrumbs(1, {}, _locale),
+      getWebPageSchema({
+        url: pageUrl,
+        name: pageTitle,
+        description: pageDescription,
+        locale: _locale,
+        mainEntityId: `${pageUrl}#business`,
+      }),
       ...(getHessenMasterSchema(_locale)?.['@graph'] || []),
       {
         '@type': 'FAQPage',
