@@ -74,6 +74,28 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     ],
   };
 
+  // Rendered on both locales, so it is translated -- and it describes the
+  // modules the page lists rather than a directory of third-party providers.
+  const seo = isEn
+    ? {
+        heading: 'Website modules: what gets built on top of the pages',
+        paragraphs: [
+          'A website is the base. This page lists the twelve modules that get built on top of it when a business needs more than pages. Appointment booking replaces the phone tag that practices, trades and consultancies lose enquiries to. An express application funnel lets candidates apply from a phone in under a minute, which matters wherever hiring is the bottleneck: trades, care, hospitality. A needs calculator qualifies an enquiry before it reaches your inbox and works for trades, agencies and B2B services alike.',
+          'Several modules are industry-specific rather than general purpose. A digital intake form takes the paperwork out of a first appointment at practices and clinics. A digital menu and a voucher shop belong to restaurants, hotels, retail and wellness. A product configurator lets manufacturing, retail and automotive customers assemble what they want before they ask what it costs. A member area with a login serves associations, B2B networks and franchises, and a download centre does the same for industry and the public sector.',
+          'The remaining modules widen reach rather than deepen a workflow. A multilingual site is what exporters, tourism businesses and clinics need when their customers do not all read German. A blog and knowledge base is the groundwork for anyone building organic search traffic instead of buying it. Virtual tours give real estate agents, hotels and clinics a way to be walked through before anyone drives over.',
+          'Modules are quoted with the project rather than sold off a shelf, which is why no price is listed here. What a booking system costs depends on whether it has to talk to the calendar you already use, and what a configurator costs depends on how many options it has to combine. The free needs analysis puts a binding fixed price on the combination you actually need; the cost calculator gives you a range before that conversation happens.',
+        ],
+      }
+    : {
+        heading: 'Website-Bausteine: was auf den Seiten aufgebaut wird',
+        paragraphs: [
+          'Eine Website ist die Basis. Diese Seite listet die zwölf Bausteine, die darauf gebaut werden, wenn ein Betrieb mehr braucht als Seiten. Eine Terminbuchung ersetzt das Telefon-Pingpong, an dem Praxen, Handwerk und Beratung Anfragen verlieren. Eine Express-Bewerbung lässt Kandidaten in unter einer Minute vom Handy aus bewerben — entscheidend überall dort, wo die Personalsuche der Engpass ist: Handwerk, Pflege, Gastronomie. Ein Bedarfs-Kalkulator qualifiziert eine Anfrage, bevor sie im Postfach landet, und passt Handwerk, Agenturen und B2B-Dienstleistern gleichermaßen.',
+          'Mehrere Bausteine sind branchenspezifisch statt allgemein. Ein digitaler Anamnesebogen nimmt Praxen und Kliniken den Papierkram aus dem Ersttermin. Digitale Speisekarte und Gutschein-Shop gehören zu Gastronomie, Hotellerie, Handel und Wellness. Ein Produkt-Konfigurator lässt Kunden aus Fertigung, Handel und Automobil zusammenstellen, was sie wollen, bevor sie nach dem Preis fragen. Ein Mitgliederbereich mit Login bedient Verbände, B2B-Netzwerke und Franchise-Systeme, ein Download-Center dasselbe für Industrie und öffentlichen Sektor.',
+          'Die übrigen Bausteine erweitern die Reichweite, statt einen Arbeitsablauf zu vertiefen. Mehrsprachigkeit brauchen Exporteure, Tourismusbetriebe und Kliniken, deren Kunden nicht alle Deutsch lesen. Ein Blog- und Wissensbereich ist die Grundlage für alle, die organische Reichweite aufbauen wollen, statt sie zu kaufen. Virtuelle Touren geben Immobilienmaklern, Hotels und Kliniken einen Weg, sich zeigen zu lassen, bevor jemand hinfährt.',
+          'Bausteine werden mit dem Projekt kalkuliert statt aus dem Regal verkauft — deshalb steht hier kein Preis. Was eine Terminbuchung kostet, hängt davon ab, ob sie mit dem Kalender sprechen muss, den Sie ohnehin nutzen; was ein Konfigurator kostet, davon, wie viele Optionen er kombinieren muss. Die kostenlose Bedarfsanalyse setzt einen verbindlichen Festpreis auf genau die Kombination, die Sie brauchen. Der Kostenrechner gibt vorher eine Spanne.',
+        ],
+      };
+
   return (
     <>
       <script
@@ -83,54 +105,11 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
       <ClientComponent />
       {/* SEO Content */}
       <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
-        <h2 className="text-3xl font-display font-bold mb-6">
-          Der Coday Community Marktplatz – Ihr Netzwerk für Webdesign in Wetzlar
-        </h2>
+        <h2 className="text-3xl font-display font-bold mb-6">{seo.heading}</h2>
         <div className="space-y-4 text-base leading-relaxed">
-          <p>
-            Herzlich willkommen auf dem offiziellen Community Marktplatz von Coday, Ihrem zentralen
-            Knotenpunkt für digitales Wachstum, Webdesign und erstklassige Dienstleistungen in
-            Wetzlar und der gesamten Region Mittelhessen. Unser Marktplatz ist weitaus mehr als nur
-            ein einfaches Verzeichnis – er ist ein lebendiges, dynamisches Netzwerk aus
-            Fachexperten, innovativen Dienstleistern und zukunftsorientierten Unternehmen, die
-            gemeinsam die digitale Landschaft prägen. Hier bringen wir Angebot und Nachfrage im
-            Bereich der modernen Webentwicklung, des E-Commerce und des digitalen Marketings
-            effizient zusammen. Egal, ob Sie auf der Suche nach spezialisierten Tools,
-            maßgeschneiderten Ressourcen oder erfahrenen Freelancern für Ihr nächstes großes
-            Webprojekt sind, auf unserem Marktplatz werden Sie garantiert fündig.
-          </p>
-          <p>
-            Die Stärke unseres Netzwerks liegt in der engen lokalen Verbundenheit mit Wetzlar und
-            Hessen, kombiniert mit einem globalen Verständnis für modernste Technologietrends. Wir
-            wissen, dass herausragende digitale Produkte oft das Ergebnis erfolgreicher
-            Kollaborationen sind. Deshalb fördert der Coday Community Marktplatz den direkten
-            Austausch zwischen Kreativen, Entwicklern und Unternehmern. Finden Sie hier Experten für
-            anspruchsvolle Headless-CMS-Integrationen, Spezialisten für Suchmaschinenoptimierung
-            (SEO) oder talentierte UI/UX-Designer, die Ihrer Marke ein unverwechselbares Gesicht
-            verleihen. Jedes Mitglied und jeder gelistete Dienstleister teilt unseren hohen Anspruch
-            an Qualität, Performance und Ästhetik.
-          </p>
-          <p>
-            Darüber hinaus bietet der Marktplatz Zugang zu exklusiven Ressourcen und Best Practices,
-            die den Arbeitsalltag von Web-Profis erheblich erleichtern. Von handverlesenen
-            Code-Snippets über erprobte Design-Templates bis hin zu detaillierten Leitfäden für
-            Performance-Optimierung (wie Core Web Vitals) – unsere Community teilt ihr Wissen
-            großzügig. Dieser kollaborative Ansatz sorgt dafür, dass alle Beteiligten kontinuierlich
-            voneinander lernen und wachsen können. Wenn Sie selbst Dienstleistungen oder digitale
-            Produkte anbieten, die für die Webdesign-Branche relevant sind, bietet Ihnen dieser
-            Marktplatz die ideale Plattform, um Ihre Sichtbarkeit in der Region Wetzlar massiv zu
-            erhöhen und wertvolle Geschäftskontakte zu knüpfen.
-          </p>
-          <p>
-            Treten Sie noch heute der Coday Community bei und profitieren Sie von den vielfältigen
-            Synergieeffekten unseres starken Netzwerks. Gemeinsam treiben wir die digitale
-            Transformation in Mittelhessen voran und setzen neue Standards in der Webentwicklung.
-            Der Community Marktplatz ist Ihr verlässlicher Begleiter auf dem Weg zum digitalen
-            Erfolg. Durchstöbern Sie die verschiedenen Kategorien, entdecken Sie innovative
-            Lösungsansätze und vernetzen Sie sich mit den besten Köpfen der Branche. Coday Wetzlar
-            steht für Premium-Qualität, und genau diesen Standard spiegelt unser Marktplatz in jeder
-            Hinsicht wider. Wir laden Sie herzlich ein, Teil dieser spannenden Reise zu werden.
-          </p>
+          {seo.paragraphs.map((paragraph) => (
+            <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+          ))}
         </div>
       </section>
     </>
