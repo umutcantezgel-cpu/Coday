@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -89,8 +89,8 @@ export default async function WebdesignDillenburgPage({
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // Left out the Organization node — the root layout emits it globally.
     '@graph': [
-      getOrganizationSchema(_locale),
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-dillenburg' }, _locale),
       ...(getCityHierarchySchema('webdesign-dillenburg', _locale)?.['@graph'] || []),
       {

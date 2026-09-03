@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { BASE_URL } from '@/lib/schema';
 import {
   getCountyHierarchySchema,
   getPyramidBreadcrumbs,
@@ -171,8 +171,8 @@ export default async function RheingauTaunusKreisPage({
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // No Organization node here: the root layout already emits it site-wide.
     '@graph': [
-      getOrganizationSchema(_locale),
       getPyramidBreadcrumbs(2, { countySlug: 'rheingau-taunus-kreis' }, _locale),
       ...(getCountyHierarchySchema('rheingau-taunus-kreis', _locale)?.['@graph'] || []),
       {

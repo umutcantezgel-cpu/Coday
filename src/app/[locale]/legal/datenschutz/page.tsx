@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
-import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
 import { CODAY_STORAGE_INVENTORY } from '@/shared/lib/consent/storageInventory';
 
 export const dynamic = 'force-static';
@@ -56,8 +56,8 @@ export default async function DatenschutzPage({ params }: { params: Promise<{ lo
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // Organization comes from the root layout; only page-level nodes below.
     '@graph': [
-      getOrganizationSchema(_locale),
       breadcrumbs,
       {
         '@type': 'WebPage',

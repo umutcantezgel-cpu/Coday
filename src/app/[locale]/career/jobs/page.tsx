@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
 import ClientComponent from '@/features/career/ui/JobsClient';
 import { Link } from '@/i18n/navigation';
 
@@ -57,8 +57,8 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // Organization lives in the root layout's graph; repeating it here would duplicate the node.
     '@graph': [
-      getOrganizationSchema(_locale),
       breadcrumbs,
       {
         '@type': 'CollectionPage',

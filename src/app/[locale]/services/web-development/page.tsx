@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { WebDevelopmentClient } from '@/features/services/ui/WebDevelopmentClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getOrganizationSchema, getBreadcrumbSchema, BASE_URL, FOUNDER_ID } from '@/lib/schema';
+import { getBreadcrumbSchema, BASE_URL, FOUNDER_ID } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { ArrowRight, Code, ShieldCheck, Lightning, Cpu } from '@phosphor-icons/react/dist/ssr';
 
@@ -67,8 +67,8 @@ export default async function WebDevelopmentPage({
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // Organization lives in the root layout's head, so it is not repeated here.
     '@graph': [
-      getOrganizationSchema(_locale),
       breadcrumbs,
       {
         '@type': 'ProfessionalService',

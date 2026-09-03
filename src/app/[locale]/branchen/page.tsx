@@ -2,12 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { IndustryOverviewClient } from '@/features/industries/ui/IndustryOverviewClient';
 import { setRequestLocale } from 'next-intl/server';
-import {
-  getOrganizationSchema,
-  getServiceSchema,
-  getBreadcrumbSchema,
-  BASE_URL,
-} from '@/lib/schema';
+import { getServiceSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
 export const dynamic = 'force-static';
@@ -75,8 +70,8 @@ export default async function IndustryOverviewPage({
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // Organization is emitted once by the root layout and does not belong in this graph.
     '@graph': [
-      getOrganizationSchema(_locale),
       breadcrumbs,
       getServiceSchema({
         name: _seoTitle,

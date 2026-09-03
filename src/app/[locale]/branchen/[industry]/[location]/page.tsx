@@ -1,11 +1,6 @@
 import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
-import {
-  getOrganizationSchema,
-  getServiceSchema,
-  getBreadcrumbSchema,
-  BASE_URL,
-} from '@/lib/schema';
+import { getServiceSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
 import { IndustryDetailClient } from '@/features/industries/ui/IndustryDetailClient';
 import { LocalSeoTemplate } from '@/features/local-seo/ui/LocalSeoTemplate';
 import { setRequestLocale } from 'next-intl/server';
@@ -184,8 +179,8 @@ export default async function IndustryLocationPage({
       dangerouslySetInnerHTML={{
         __html: JSON.stringify({
           '@context': 'https://schema.org',
+          // The root layout supplies the Organization node for every page.
           '@graph': [
-            getOrganizationSchema(_locale),
             breadcrumbs,
             getServiceSchema({
               name: isEn

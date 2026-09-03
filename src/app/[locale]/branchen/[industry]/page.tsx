@@ -1,11 +1,6 @@
 import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
-import {
-  getOrganizationSchema,
-  getServiceSchema,
-  getBreadcrumbSchema,
-  BASE_URL,
-} from '@/lib/schema';
+import { getServiceSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
 import { setRequestLocale } from 'next-intl/server';
 import { IndustryDetailClient } from '@/features/industries/ui/IndustryDetailClient';
 import { IndustryToolEmbed } from '@/features/industries/ui/IndustryToolEmbed';
@@ -124,8 +119,8 @@ export default async function IndustryDetailPage({
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
+            // Organization already ships in the root layout head; no need to duplicate it.
             '@graph': [
-              getOrganizationSchema(_locale),
               breadcrumbs,
               getServiceSchema({
                 name:

@@ -48,7 +48,9 @@ const PsychologyGrid: React.FC = () => {
           >
             <Icon name={law.icon} />
           </div>
-          <h4 className="font-bold text-lg text-content-base mb-2">{law.title}</h4>
+          {/* h3, not h4: these cards sit directly under the section's h2, so an
+              h4 skipped a level. */}
+          <h3 className="font-bold text-lg text-content-base mb-2">{law.title}</h3>
           <p className="text-content-muted text-sm mb-4 leading-relaxed max-w-prose text-pretty h-[60px]">
             {law.desc}
           </p>

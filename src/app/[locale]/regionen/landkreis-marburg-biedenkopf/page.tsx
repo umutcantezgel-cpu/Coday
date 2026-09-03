@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
 import {
   getCountyHierarchySchema,
   getPyramidBreadcrumbs,
@@ -170,8 +170,8 @@ export default async function LandkreisMarburgBiedenkopfPage({
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // Organization already ships from the root layout, so this graph starts at the breadcrumbs.
     '@graph': [
-      getOrganizationSchema(_locale),
       getPyramidBreadcrumbs(2, { countySlug: 'landkreis-marburg-biedenkopf' }, _locale),
       ...(getCountyHierarchySchema('landkreis-marburg-biedenkopf', _locale)?.['@graph'] || []),
       {

@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { BASE_URL } from '@/lib/schema';
 import {
   getCountyHierarchySchema,
   getPyramidBreadcrumbs,
@@ -169,8 +169,8 @@ export default async function KreisOffenbachPage({
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // The Organization node comes from the root layout - no duplicate needed.
     '@graph': [
-      getOrganizationSchema(_locale),
       getPyramidBreadcrumbs(2, { countySlug: 'kreis-offenbach' }, _locale),
       ...(getCountyHierarchySchema('kreis-offenbach', _locale)?.['@graph'] || []),
       {

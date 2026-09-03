@@ -3,7 +3,7 @@ import { Link } from '@/i18n/navigation';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { ORG_ID, getOrganizationSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
+import { ORG_ID, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -218,7 +218,8 @@ export default async function GeoServicePage({ params }: { params: Promise<{ loc
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@graph': [getOrganizationSchema(locale), breadcrumbs, serviceJsonLd, faqJsonLd],
+    // ORG_ID resolves against the Organization node the root layout emits.
+    '@graph': [breadcrumbs, serviceJsonLd, faqJsonLd],
   };
 
   return (

@@ -2,12 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { WebAppsClient } from '@/features/services/ui/WebAppsClient';
 import { setRequestLocale } from 'next-intl/server';
-import {
-  BASE_URL,
-  getOrganizationSchema,
-  getServiceSchema,
-  getBreadcrumbSchema,
-} from '@/lib/schema';
+import { BASE_URL, getServiceSchema, getBreadcrumbSchema } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -70,8 +65,8 @@ export default async function WebAppsPage({ params }: { params: Promise<{ locale
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // The Organization node comes from the root layout, not from this page.
     '@graph': [
-      getOrganizationSchema(_locale),
       breadcrumbs,
       getServiceSchema({
         name: _seoTitle,

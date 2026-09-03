@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
 import {
   getHessenMasterSchema,
   getPyramidBreadcrumbs,
@@ -340,8 +340,8 @@ export default async function HessenMasterPage({
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // No Organization node here — the root layout already emits it for every page.
     '@graph': [
-      getOrganizationSchema(_locale),
       getPyramidBreadcrumbs(1, {}, _locale),
       ...(getHessenMasterSchema(_locale)?.['@graph'] || []),
       {

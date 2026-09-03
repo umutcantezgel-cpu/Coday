@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import {
   BASE_URL,
-  getOrganizationSchema,
   getBreadcrumbSchema,
   getAcademyCollectionSchema,
   getAcademyVideoSchemas,
@@ -71,7 +70,8 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@graph': [getOrganizationSchema(_locale), breadcrumbs, collectionSchema, ...videoSchemas],
+    // Skipping Organization here — the root layout already emits it site-wide.
+    '@graph': [breadcrumbs, collectionSchema, ...videoSchemas],
   };
 
   return (

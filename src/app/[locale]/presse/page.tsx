@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
 import ClientComponent from '@/features/company/ui/PresseClient';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
@@ -57,8 +57,8 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // Organization is declared once in the root layout, not per page.
     '@graph': [
-      getOrganizationSchema(_locale),
       breadcrumbs,
       {
         '@type': 'WebPage',

@@ -2,12 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { ConsultingClient } from '@/features/services/ui/ConsultingClient';
 import { setRequestLocale } from 'next-intl/server';
-import {
-  BASE_URL,
-  getOrganizationSchema,
-  getServiceSchema,
-  getBreadcrumbSchema,
-} from '@/lib/schema';
+import { BASE_URL, getServiceSchema, getBreadcrumbSchema } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -73,8 +68,8 @@ export default async function ConsultingPage({ params }: { params: Promise<{ loc
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // Organization is already in the document head via the root layout.
     '@graph': [
-      getOrganizationSchema(_locale),
       breadcrumbs,
       getServiceSchema({
         name: _seoTitle,

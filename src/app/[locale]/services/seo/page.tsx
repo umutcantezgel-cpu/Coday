@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { SeoClient } from '@/features/services/ui/SeoClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getOrganizationSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
+import { getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import {
   ArrowRight,
@@ -67,8 +67,8 @@ export default async function SeoPage({ params }: { params: Promise<{ locale: st
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // The site-wide Organization node is rendered by the root layout.
     '@graph': [
-      getOrganizationSchema(_locale),
       breadcrumbs,
       {
         '@type': 'ProfessionalService',

@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import {
@@ -56,8 +56,8 @@ export default async function HandwerkBauPage({ params }: { params: Promise<{ lo
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // Organization is defined once in the root layout, so this graph starts at the breadcrumbs.
     '@graph': [
-      getOrganizationSchema(_locale),
       getBreadcrumbSchema([
         { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
         { name: isEn ? 'Industries' : 'Branchen', url: `/${_locale}/branchen` },

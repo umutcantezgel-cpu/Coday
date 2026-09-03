@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
 import ClientComponent from '@/features/career/ui/BenefitsClient';
 import { CheckCircle } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
@@ -122,8 +122,8 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // The Organization node already ships from the root layout, so it stays out of this graph.
     '@graph': [
-      getOrganizationSchema(_locale),
       breadcrumbs,
       faqSchema,
       {

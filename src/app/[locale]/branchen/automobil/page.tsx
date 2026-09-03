@@ -3,12 +3,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { IndustryDetailClient } from '@/features/industries/ui/IndustryDetailClient';
 import { IndustryToolEmbed } from '@/features/industries/ui/IndustryToolEmbed';
-import {
-  getOrganizationSchema,
-  getServiceSchema,
-  getBreadcrumbSchema,
-  BASE_URL,
-} from '@/lib/schema';
+import { getServiceSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -61,8 +56,8 @@ export default async function AutomobilHubPage({
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
+            // Organization lives in the root layout head and is shared by all pages.
             '@graph': [
-              getOrganizationSchema(_locale),
               getBreadcrumbSchema([
                 { name: _locale === 'en' ? 'Home' : 'Startseite', url: `/${_locale}` },
                 { name: _locale === 'en' ? 'Industries' : 'Branchen', url: `/${_locale}/branchen` },

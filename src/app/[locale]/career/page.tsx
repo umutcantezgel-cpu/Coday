@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
-import { getOrganizationSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
+import { getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
 import { CareerOverviewClient } from '@/features/career/ui/CareerOverviewClient';
 import { Link } from '@/i18n/navigation';
 import { Briefcase, Buildings, Lightning } from '@phosphor-icons/react/dist/ssr';
@@ -55,8 +55,8 @@ export default async function CareerPage({ params }: { params: Promise<{ locale:
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // No Organization entry here — the root layout emits that node for every page.
     '@graph': [
-      getOrganizationSchema(locale),
       breadcrumbs,
       {
         '@type': 'WebPage',

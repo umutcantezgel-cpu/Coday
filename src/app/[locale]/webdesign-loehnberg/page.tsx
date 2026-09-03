@@ -2,7 +2,6 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { getOrganizationSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -81,8 +80,8 @@ export default async function WebdesignLoehnbergPage({
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // Organization comes from the root layout — no need to duplicate it per page.
     '@graph': [
-      getOrganizationSchema(_locale),
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-loehnberg' }, _locale),
       ...(getCityHierarchySchema('webdesign-loehnberg', _locale)?.['@graph'] || []),
       {

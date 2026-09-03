@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { wikiEntities, WikiEntity } from '@/features/knowledge/model/entities';
-import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
 import { generatePageMetadata } from '@/lib/metadata';
 import { Link } from '@/i18n/navigation';
 import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
@@ -208,7 +208,8 @@ export default async function WikiTermPage({ params }: PageProps) {
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@graph': [getOrganizationSchema(locale), breadcrumbs, definedTermSchema],
+    // Organization node ships with the root layout, so this graph only carries page-level nodes.
+    '@graph': [breadcrumbs, definedTermSchema],
   };
 
   return (

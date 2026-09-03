@@ -2,12 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import PublicSectorClient from '@/features/industries/ui/PublicSectorClient';
 import { setRequestLocale } from 'next-intl/server';
-import {
-  getOrganizationSchema,
-  getServiceSchema,
-  getBreadcrumbSchema,
-  BASE_URL,
-} from '@/lib/schema';
+import { getServiceSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -60,8 +55,8 @@ export default async function PublicSectorPage({
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
+            // The site-wide Organization node comes from the root layout head.
             '@graph': [
-              getOrganizationSchema(_locale),
               getBreadcrumbSchema([
                 { name: _locale === 'en' ? 'Home' : 'Startseite', url: `/${_locale}` },
                 { name: _locale === 'en' ? 'Industries' : 'Branchen', url: `/${_locale}/branchen` },

@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
 import ClientComponent from '@/features/knowledge/ui/WikiHubClient';
 import { wikiEntities } from '@/features/knowledge/model/entities';
 
@@ -60,8 +60,8 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // Root layout owns the Organization node; this graph starts with the page's own entries.
     '@graph': [
-      getOrganizationSchema(_locale),
       breadcrumbs,
       {
         '@type': 'CollectionPage',
@@ -81,9 +81,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
         // the set they point at, and it links back to each term by its own @id.
         '@type': 'DefinedTermSet',
         '@id': hubUrl,
-        name: isEn
-          ? 'Coday Web Design & Digital Glossary'
-          : 'Coday Webdesign- & Digital-Glossar',
+        name: isEn ? 'Coday Web Design & Digital Glossary' : 'Coday Webdesign- & Digital-Glossar',
         url: hubUrl,
         description: isEn
           ? 'Web design, SEO and web development terms explained for business owners in Central Hesse.'

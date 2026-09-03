@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { BASE_URL } from '@/lib/schema';
 import {
   getCountyHierarchySchema,
   getPyramidBreadcrumbs,
@@ -219,8 +219,8 @@ export default async function WetteraukreisPage({
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // The #organization node is emitted once by the root layout, not per page.
     '@graph': [
-      getOrganizationSchema(_locale),
       getPyramidBreadcrumbs(2, { countySlug: 'wetteraukreis' }, _locale),
       ...(getCountyHierarchySchema('wetteraukreis', _locale)?.['@graph'] || []),
       {

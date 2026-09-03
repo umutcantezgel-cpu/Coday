@@ -1,12 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import {
-  BASE_URL,
-  getOrganizationSchema,
-  getBreadcrumbSchema,
-  getProcessSchema,
-} from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getProcessSchema } from '@/lib/schema';
 import ClientComponent from '@/features/process/ui/ProcessClient';
 
 export const dynamic = 'force-static';
@@ -60,7 +55,9 @@ export default async function ProcessPage({ params }: { params: Promise<{ locale
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@graph': [getOrganizationSchema(_locale), breadcrumbs, getProcessSchema(_locale)],
+    // No Organization node here: the root layout already emits #organization and
+    // #website site-wide, so repeating it only duplicates ~4 KB of identical JSON.
+    '@graph': [breadcrumbs, getProcessSchema(_locale)],
   };
 
   return (

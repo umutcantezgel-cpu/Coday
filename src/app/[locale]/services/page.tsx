@@ -7,7 +7,7 @@ import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { ServicesOverview } from '@/features/services/ui/ServicesOverview';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { routing } from '@/i18n/routing';
-import { getOrganizationSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
+import { getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -77,7 +77,8 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@graph': [getOrganizationSchema(_locale), breadcrumbs, servicesCatalog],
+    // Organization is provided site-wide by the root layout.
+    '@graph': [breadcrumbs, servicesCatalog],
   };
 
   return (

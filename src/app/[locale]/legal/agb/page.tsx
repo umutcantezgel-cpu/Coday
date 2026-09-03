@@ -2,7 +2,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { AgbClient } from '@/features/legal/ui/AgbClient';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Metadata } from 'next';
-import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -41,8 +41,8 @@ export default async function AgbPage({ params }: { params?: Promise<{ locale: s
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // The Organization node already ships from the root layout, so it is not repeated here.
     '@graph': [
-      getOrganizationSchema(_locale),
       breadcrumbs,
       {
         '@type': 'WebPage',

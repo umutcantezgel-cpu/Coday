@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { BASE_URL } from '@/lib/schema';
 import {
   getCountyHierarchySchema,
   getPyramidBreadcrumbs,
@@ -164,8 +164,8 @@ export default async function MainTaunusKreisPage({
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // Organization node is provided by the root layout for every page.
     '@graph': [
-      getOrganizationSchema(_locale),
       getPyramidBreadcrumbs(2, { countySlug: 'main-taunus-kreis' }, _locale),
       ...(getCountyHierarchySchema('main-taunus-kreis', _locale)?.['@graph'] || []),
       {

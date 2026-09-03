@@ -2,12 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { UxAuditClient } from '@/features/services/ui/UxAuditClient';
 import { setRequestLocale } from 'next-intl/server';
-import {
-  BASE_URL,
-  getOrganizationSchema,
-  getServiceSchema,
-  getBreadcrumbSchema,
-} from '@/lib/schema';
+import { BASE_URL, getServiceSchema, getBreadcrumbSchema } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -70,8 +65,8 @@ export default async function UxAuditPage({ params }: { params: Promise<{ locale
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // Organization is defined site-wide in the root layout, so it is omitted.
     '@graph': [
-      getOrganizationSchema(_locale),
       breadcrumbs,
       getServiceSchema({
         name: _seoTitle,

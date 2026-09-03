@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -88,8 +88,8 @@ export default async function WebdesignOffenbachPage({
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // Organization is rendered once in the root layout head, so it stays out of this graph.
     '@graph': [
-      getOrganizationSchema(_locale),
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-offenbach' }, _locale),
       ...(getCityHierarchySchema('webdesign-offenbach', _locale)?.['@graph'] || []),
       {

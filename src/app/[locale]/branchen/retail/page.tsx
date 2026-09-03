@@ -2,12 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import RetailClient from '@/features/industries/ui/RetailClient';
 import { setRequestLocale } from 'next-intl/server';
-import {
-  getOrganizationSchema,
-  getServiceSchema,
-  getBreadcrumbSchema,
-  BASE_URL,
-} from '@/lib/schema';
+import { getServiceSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -56,8 +51,8 @@ export default async function RetailPage({ params }: { params: Promise<{ locale:
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
+            // Organization is inherited from the root layout's global JSON-LD.
             '@graph': [
-              getOrganizationSchema(_locale),
               getBreadcrumbSchema([
                 { name: _locale === 'en' ? 'Home' : 'Startseite', url: `/${_locale}` },
                 { name: _locale === 'en' ? 'Industries' : 'Branchen', url: `/${_locale}/branchen` },

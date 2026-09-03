@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { BASE_URL } from '@/lib/schema';
 import {
   getCountyHierarchySchema,
   getPyramidBreadcrumbs,
@@ -170,8 +170,8 @@ export default async function MainKinzigKreisPage({
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // The root layout is the single source of the Organization node.
     '@graph': [
-      getOrganizationSchema(_locale),
       getPyramidBreadcrumbs(2, { countySlug: 'main-kinzig-kreis' }, _locale),
       ...(getCountyHierarchySchema('main-kinzig-kreis', _locale)?.['@graph'] || []),
       {

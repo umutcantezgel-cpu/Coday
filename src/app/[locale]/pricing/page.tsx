@@ -1,11 +1,6 @@
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
-import {
-  BASE_URL,
-  getOrganizationSchema,
-  getBreadcrumbSchema,
-  getPricingSchema,
-} from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getPricingSchema } from '@/lib/schema';
 import Packages from '@/features/pricing/ui/Packages';
 import { setRequestLocale } from 'next-intl/server';
 
@@ -92,7 +87,8 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@graph': [getOrganizationSchema(_locale), breadcrumbs, getPricingSchema(_locale), pricingFaq],
+    // Organization node lives in the root layout, so it stays out of this graph.
+    '@graph': [breadcrumbs, getPricingSchema(_locale), pricingFaq],
   };
 
   return (

@@ -2,7 +2,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { ContactClient } from '@/features/contact/ui/ContactClient';
-import { BASE_URL, ORG_ID, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, ORG_ID, getBreadcrumbSchema } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -55,8 +55,8 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // The Organization node itself is emitted by the root layout; here it is only referenced.
     '@graph': [
-      getOrganizationSchema(_locale),
       breadcrumbs,
       {
         '@type': 'ContactPage',

@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
 import ClientComponent from '@/features/community/ui/MembersClient';
 
 export const dynamic = 'force-static';
@@ -56,8 +56,8 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // Organization comes from the root layout, so this graph starts at the breadcrumbs.
     '@graph': [
-      getOrganizationSchema(_locale),
       breadcrumbs,
       {
         // Not a CollectionPage: there is no collection of members to describe.

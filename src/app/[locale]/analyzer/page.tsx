@@ -3,12 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import { RouteMessages } from '@/i18n/RouteMessages';
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
-import {
-  getOrganizationSchema,
-  getBreadcrumbSchema,
-  getWebApplicationSchema,
-  BASE_URL,
-} from '@/lib/schema';
+import { getBreadcrumbSchema, getWebApplicationSchema, BASE_URL } from '@/lib/schema';
 import UrlInputForm from '@/features/analyzer/ui/UrlInputForm';
 import ReportDashboard from '@/features/analyzer/ui/ReportDashboard';
 
@@ -82,7 +77,8 @@ export default async function AnalyzerPage(props: { params: Promise<{ locale: st
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@graph': [getOrganizationSchema(_locale), breadcrumbs, webApp],
+    // Organization comes from the root layout, so it is not repeated here.
+    '@graph': [breadcrumbs, webApp],
   };
   return (
     <RouteMessages family="calculator" locale={_locale}>

@@ -1,11 +1,6 @@
 import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
-import {
-  getOrganizationSchema,
-  getServiceSchema,
-  getBreadcrumbSchema,
-  BASE_URL,
-} from '@/lib/schema';
+import { getServiceSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
 import { ServiceDetailClient } from '@/features/services/ui/ServiceDetailClient';
 import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -99,8 +94,8 @@ export default async function ServiceDetailPage({
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
+            // Organization comes from the root layout; don't repeat it per page.
             '@graph': [
-              getOrganizationSchema(_locale),
               breadcrumbs,
               getServiceSchema({
                 name: serviceTitle || slug,

@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { BASE_URL } from '@/lib/schema';
 import {
   getCountyHierarchySchema,
   getPyramidBreadcrumbs,
@@ -175,8 +175,8 @@ export default async function LandkreisFuldaPage({
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // Organization lives in the root layout; this graph only adds page nodes.
     '@graph': [
-      getOrganizationSchema(_locale),
       getPyramidBreadcrumbs(2, { countySlug: 'landkreis-fulda' }, _locale),
       ...(getCountyHierarchySchema('landkreis-fulda', _locale)?.['@graph'] || []),
       {

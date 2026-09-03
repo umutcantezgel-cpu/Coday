@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { EcommerceDevelopmentClient } from '@/features/services/ui/EcommerceDevelopmentClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getOrganizationSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
+import { getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import {
   ArrowRight,
@@ -67,8 +67,8 @@ export default async function EcommercePage({ params }: { params: Promise<{ loca
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // Organization stays out of this graph; the root layout emits it site-wide.
     '@graph': [
-      getOrganizationSchema(_locale),
       breadcrumbs,
       {
         '@type': 'Service',

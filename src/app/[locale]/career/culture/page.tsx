@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { getOrganizationSchema, BASE_URL } from '@/lib/schema';
+import { BASE_URL } from '@/lib/schema';
 import ClientComponent from '@/features/career/ui/CultureClient';
 import { Link } from '@/i18n/navigation';
 
@@ -39,8 +39,8 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // Referenced by @id only — the root layout is what renders the Organization node.
     '@graph': [
-      getOrganizationSchema(locale),
       {
         '@type': 'AboutPage',
         '@id': `${BASE_URL}/${locale}/career/culture`,

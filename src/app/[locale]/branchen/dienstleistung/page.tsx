@@ -2,12 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import DienstleistungClient from '@/features/industries/ui/DienstleistungClient';
 import { setRequestLocale } from 'next-intl/server';
-import {
-  getOrganizationSchema,
-  getServiceSchema,
-  getBreadcrumbSchema,
-  BASE_URL,
-} from '@/lib/schema';
+import { getServiceSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -60,8 +55,8 @@ export default async function DienstleistungPage({
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
+            // Organization node omitted on purpose — the root layout renders it globally.
             '@graph': [
-              getOrganizationSchema(_locale),
               getBreadcrumbSchema([
                 { name: _locale === 'en' ? 'Home' : 'Startseite', url: `/${_locale}` },
                 { name: _locale === 'en' ? 'Industries' : 'Branchen', url: `/${_locale}/branchen` },

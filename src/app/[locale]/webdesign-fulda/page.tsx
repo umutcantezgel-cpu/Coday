@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -90,8 +90,8 @@ export default async function WebdesignFuldaPage({
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // No Organization entry needed; the root layout emits one per document.
     '@graph': [
-      getOrganizationSchema(_locale),
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-fulda' }, _locale),
       ...(getCityHierarchySchema('webdesign-fulda', _locale)?.['@graph'] || []),
       {

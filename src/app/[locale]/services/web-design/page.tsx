@@ -2,12 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { WebDesignClient } from '@/features/services/ui/WebDesignClient';
 import { setRequestLocale } from 'next-intl/server';
-import {
-  getOrganizationSchema,
-  getServiceSchema,
-  getBreadcrumbSchema,
-  BASE_URL,
-} from '@/lib/schema';
+import { getServiceSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -63,8 +58,8 @@ export default async function WebDesignPage({ params }: { params: Promise<{ loca
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // The Organization node is emitted once site-wide by the root layout.
     '@graph': [
-      getOrganizationSchema(_locale),
       breadcrumbs,
       getServiceSchema({
         name:

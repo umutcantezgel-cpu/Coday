@@ -2,12 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { ApiIntegrationClient } from '@/features/services/ui/ApiIntegrationClient';
 import { setRequestLocale } from 'next-intl/server';
-import {
-  BASE_URL,
-  getOrganizationSchema,
-  getServiceSchema,
-  getBreadcrumbSchema,
-} from '@/lib/schema';
+import { BASE_URL, getServiceSchema, getBreadcrumbSchema } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -77,8 +72,8 @@ export default async function ApiIntegrationPage({
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // No Organization entry: the root layout already ships one per document.
     '@graph': [
-      getOrganizationSchema(_locale),
       breadcrumbs,
       getServiceSchema({
         name: _seoTitle,

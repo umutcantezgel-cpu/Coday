@@ -2,7 +2,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { AboutClient } from '@/features/about/ui/AboutClient';
-import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -57,8 +57,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // The Organization node is already emitted site-wide by the root layout.
     '@graph': [
-      getOrganizationSchema(locale),
       breadcrumbs,
       {
         '@type': 'AboutPage',

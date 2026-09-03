@@ -2,12 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { HeadlessCmsClient } from '@/features/services/ui/HeadlessCmsClient';
 import { setRequestLocale } from 'next-intl/server';
-import {
-  BASE_URL,
-  getOrganizationSchema,
-  getServiceSchema,
-  getBreadcrumbSchema,
-} from '@/lib/schema';
+import { BASE_URL, getServiceSchema, getBreadcrumbSchema } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -70,8 +65,8 @@ export default async function HeadlessCmsPage({ params }: { params: Promise<{ lo
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // Root layout owns the Organization node; page graphs only reference it.
     '@graph': [
-      getOrganizationSchema(_locale),
       breadcrumbs,
       getServiceSchema({
         name: _seoTitle,

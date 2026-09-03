@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
-import { getOrganizationSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
+import { getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
 import { workData } from '@/shared/data/work';
 import { Link } from '@/i18n/navigation';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
@@ -76,8 +76,8 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // Skipping the Organization node — the root layout emits it for the whole site.
     '@graph': [
-      getOrganizationSchema(_locale),
       breadcrumbs,
       {
         '@type': 'CollectionPage',

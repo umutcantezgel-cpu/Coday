@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
 import {
   getCountyHierarchySchema,
   getPyramidBreadcrumbs,
@@ -193,8 +193,8 @@ export default async function LandkreisGiessenPage({
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // Skip the Organization node - the root layout renders it on every page.
     '@graph': [
-      getOrganizationSchema(_locale),
       getPyramidBreadcrumbs(2, { countySlug: 'landkreis-giessen' }, _locale),
       ...(getCountyHierarchySchema('landkreis-giessen', _locale)?.['@graph'] || []),
       {

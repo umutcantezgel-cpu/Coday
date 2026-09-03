@@ -2,12 +2,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
-import {
-  getOrganizationSchema,
-  getBreadcrumbSchema,
-  getWebApplicationSchema,
-  BASE_URL,
-} from '@/lib/schema';
+import { getBreadcrumbSchema, getWebApplicationSchema, BASE_URL } from '@/lib/schema';
 import ClientComponent from '@/features/calculator/ui/CalculatorClient';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
@@ -83,7 +78,8 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@graph': [getOrganizationSchema(_locale), breadcrumbs, webApp],
+    // Organization node is emitted once site-wide by the root layout.
+    '@graph': [breadcrumbs, webApp],
   };
   return (
     <>

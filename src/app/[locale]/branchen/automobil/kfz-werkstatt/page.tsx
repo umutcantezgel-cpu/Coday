@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { BASE_URL } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -93,8 +93,8 @@ export default async function KfzWerkstattPage({
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // Skipping Organization here — the root layout emits it on every route.
     '@graph': [
-      getOrganizationSchema(_locale),
       {
         '@type': 'LocalBusiness',
         '@id': `${BASE_URL}/${_locale}/branchen/automobil/kfz-werkstatt#localbusiness`,

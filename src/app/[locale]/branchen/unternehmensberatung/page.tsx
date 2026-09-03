@@ -1,11 +1,6 @@
 import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
-import {
-  getOrganizationSchema,
-  getServiceSchema,
-  getBreadcrumbSchema,
-  BASE_URL,
-} from '@/lib/schema';
+import { getServiceSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
 import { setRequestLocale } from 'next-intl/server';
 import { IndustryDetailClient } from '@/features/industries/ui/IndustryDetailClient';
 
@@ -54,8 +49,8 @@ export default async function UnternehmensberatungPage({
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
+            // The root layout takes care of the Organization node for every route.
             '@graph': [
-              getOrganizationSchema(_locale),
               getBreadcrumbSchema([
                 { name: _locale === 'en' ? 'Home' : 'Startseite', url: `/${_locale}` },
                 { name: _locale === 'en' ? 'Industries' : 'Branchen', url: `/${_locale}/branchen` },

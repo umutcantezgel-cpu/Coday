@@ -2,12 +2,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import ClientComponent from '@/features/landing/ui/AngebotHandwerkerClient';
-import {
-  getOrganizationSchema,
-  getBreadcrumbSchema,
-  getReviewsSchema,
-  BASE_URL,
-} from '@/lib/schema';
+import { getBreadcrumbSchema, getReviewsSchema, BASE_URL } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -85,7 +80,8 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@graph': [getOrganizationSchema(_locale), breadcrumbs, handwerkerProduct],
+    // Organization is emitted once in the root layout head, so we only link it by @id here.
+    '@graph': [breadcrumbs, handwerkerProduct],
   };
 
   return (

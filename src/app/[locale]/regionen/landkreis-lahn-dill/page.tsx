@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
 import {
   getCountyHierarchySchema,
   getPyramidBreadcrumbs,
@@ -217,8 +217,8 @@ export default async function LandkreisLahnDillPage({
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // The Organization node is inherited from the root layout.
     '@graph': [
-      getOrganizationSchema(_locale),
       getPyramidBreadcrumbs(2, { countySlug: 'landkreis-lahn-dill' }, _locale),
       ...(getCountyHierarchySchema('landkreis-lahn-dill', _locale)?.['@graph'] || []),
       {

@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import ClientComponent from '@/features/work/ui/ProjectDetailClient';
 import { workData } from '@/shared/data/work';
-import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
 import { notFound } from 'next/navigation';
 
 export const dynamicParams = false;
@@ -73,8 +73,8 @@ export default async function Page(props: { params: Promise<{ locale: string; sl
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // The Organization node lives in the root layout; the case study only links to it by @id.
     '@graph': [
-      getOrganizationSchema(_locale),
       breadcrumbs,
       {
         '@type': 'CreativeWork',

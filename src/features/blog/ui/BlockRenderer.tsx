@@ -204,7 +204,9 @@ const ComparisonBlockRenderer: React.FC<{ block: ComparisonBlock }> = ({ block }
                 : 'bg-gray-50 border-gray-100'
             )}
           >
-            <h4
+            {/* h3, not h4: comparison blocks follow an h2 in the article body,
+                so an h4 here skipped a level on every "X vs Y" post. */}
+            <h3
               className={cn(
                 'font-bold mb-4 flex items-center gap-2 text-xl',
                 item.isHighlight ? 'text-primary' : 'text-gray-700'
@@ -212,7 +214,7 @@ const ComparisonBlockRenderer: React.FC<{ block: ComparisonBlock }> = ({ block }
             >
               {item.isHighlight && <ArrowsLeftRight size={20} className="text-primary" />}
               {item.title}
-            </h4>
+            </h3>
             <ul className="space-y-3">
               {item.points.map((point, pIdx) => (
                 <li key={pIdx} className="flex items-start gap-3 text-sm font-medium text-gray-600">

@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
 import ClientComponent from '@/features/community/ui/MarketplaceClient';
 
 export const dynamic = 'force-static';
@@ -56,8 +56,8 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // The Organization node is rendered once by the root layout, so it is left out below.
     '@graph': [
-      getOrganizationSchema(_locale),
       breadcrumbs,
       {
         // WebPage rather than an offer catalogue: modules are quoted with the

@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { BASE_URL } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -66,8 +66,8 @@ export default async function NextJsMigrationPage({
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // Organization node is emitted once site-wide by the root layout.
     '@graph': [
-      getOrganizationSchema(_locale),
       {
         '@type': 'Service',
         '@id': `${BASE_URL}/${_locale}/landingpages/nextjsmigration#service`,

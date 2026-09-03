@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema } from '@/lib/schema';
 import {
   getCityHierarchySchema,
   getPyramidBreadcrumbs,
@@ -88,8 +88,8 @@ export default async function WebdesignBensheimPage({
 
   const jsonLd = {
     '@context': 'https://schema.org',
+    // Organization intentionally omitted: the root layout renders it on every page.
     '@graph': [
-      getOrganizationSchema(_locale),
       getPyramidBreadcrumbs(3, { citySlug: 'webdesign-bensheim' }, _locale),
       ...(getCityHierarchySchema('webdesign-bensheim', _locale)?.['@graph'] || []),
       {

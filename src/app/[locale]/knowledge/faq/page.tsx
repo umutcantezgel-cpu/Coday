@@ -2,7 +2,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import ClientComponent from '@/features/knowledge/ui/FAQClient';
-import { getOrganizationSchema, getBreadcrumbSchema, getFaqSchema, BASE_URL } from '@/lib/schema';
+import { getBreadcrumbSchema, getFaqSchema, BASE_URL } from '@/lib/schema';
 import { getFAQs } from '@/features/faq/model';
 
 export const dynamic = 'force-static';
@@ -60,7 +60,8 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@graph': [getOrganizationSchema(_locale), breadcrumbs, getFaqSchema(faqs)],
+    // The root layout supplies the Organization node for every page, this one included.
+    '@graph': [breadcrumbs, getFaqSchema(faqs)],
   };
 
   return (
