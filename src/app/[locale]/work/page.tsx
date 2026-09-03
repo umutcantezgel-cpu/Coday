@@ -211,48 +211,58 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                   key={project.slug}
                   className="group relative rounded-3xl overflow-hidden bg-white border border-slate-200 hover:border-amber-400/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
                 >
-                  {/* Top Image Preview */}
-                  <div className="relative aspect-video overflow-hidden bg-slate-100 border-b border-slate-100">
-                    {heroImage ? (
-                      <OptimizedImage
-                        src={heroImage}
-                        alt={content.solution.imageAlts?.[0] || content.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      />
-                    ) : (
-                      <div className="w-full h-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 flex items-center justify-center p-8 text-center relative overflow-hidden group-hover:scale-105 transition-transform duration-700">
-                        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]" />
-                        <div className="relative z-10">
-                          <span className="text-[11px] uppercase tracking-widest text-primary font-bold mb-1.5 block">
-                            {content.category}
-                          </span>
-                          <span className="text-xl sm:text-2xl font-black font-display text-white tracking-tight">
-                            {content.title}
-                          </span>
+                  {/* Top Image Preview.
+                      Same trap as the case-study hero: the box is aspect-video, so
+                      192px tall on a phone, and the metrics row was absolutely
+                      positioned inside it — the project title ran straight through
+                      the cards. Below `sm` the metrics sit under the image; from
+                      `sm` up the overlay is unchanged. */}
+                  <div className="relative">
+                    <div className="relative aspect-video overflow-hidden bg-slate-100 border-b border-slate-100">
+                      {heroImage ? (
+                        <OptimizedImage
+                          src={heroImage}
+                          alt={content.solution.imageAlts?.[0] || content.title}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 flex items-center justify-center p-6 sm:p-8 text-center relative overflow-hidden group-hover:scale-105 transition-transform duration-700">
+                          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]" />
+                          <div className="relative z-10">
+                            <span className="text-[11px] uppercase tracking-widest text-primary font-bold mb-1.5 block">
+                              {content.category}
+                            </span>
+                            <span className="text-lg sm:text-2xl font-black font-display text-white tracking-tight text-balance">
+                              {content.title}
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent pointer-events-none" />
+                      )}
+                      {/* Only needed where the metrics actually overlay the image. */}
+                      <div className="absolute inset-0 hidden sm:block bg-gradient-to-t from-slate-900/60 via-transparent to-transparent pointer-events-none" />
 
-                    {/* Live Badge */}
-                    {project.status === 'live' && project.liveUrl && (
-                      <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md text-emerald-800 text-xs font-bold px-3 py-1.5 rounded-full border border-emerald-200 shadow-sm flex items-center gap-1.5">
-                        <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-                        Live Projekt
-                      </div>
-                    )}
+                      {/* Live Badge */}
+                      {project.status === 'live' && project.liveUrl && (
+                        <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md text-emerald-800 text-xs font-bold px-3 py-1.5 rounded-full border border-emerald-200 shadow-sm flex items-center gap-1.5">
+                          <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+                          Live Projekt
+                        </div>
+                      )}
+                    </div>
 
-                    {/* Verified Metrics Overlay */}
-                    <div className="absolute bottom-4 left-4 right-4 grid grid-cols-3 gap-2">
+                    {/* Verified Metrics */}
+                    <div className="grid grid-cols-3 gap-2 px-4 pt-3 sm:p-0 sm:absolute sm:bottom-4 sm:left-4 sm:right-4">
                       {content.results.metrics.map((metric, i) => (
                         <div
                           key={i}
-                          className="bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-sm p-2.5 rounded-xl text-center"
+                          className="bg-slate-50 sm:bg-white/95 sm:backdrop-blur-md border border-slate-200/90 shadow-sm p-2.5 rounded-xl text-center"
                         >
                           <div className="text-amber-800 font-extrabold text-sm sm:text-base">
                             {metric.value}
                           </div>
-                          <div className="text-slate-600 text-[10px] sm:text-xs font-medium truncate">
+                          {/* Was `truncate`, which silently ate labels like
+                              "Qualifizierte Leads" in a 98px cell. */}
+                          <div className="text-slate-600 text-[10px] sm:text-xs font-medium hyphens-auto break-words">
                             {metric.label}
                           </div>
                         </div>

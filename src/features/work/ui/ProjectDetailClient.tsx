@@ -472,12 +472,16 @@ const ProjectDetail: React.FC = () => {
                     </div>
                     <div className="ml-2 w-full max-w-[200px] h-4 bg-white rounded-sm border border-slate-200/60"></div>
                   </div>
-                  <div className="aspect-[21/9] bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 flex flex-col items-center justify-center p-8 text-center relative overflow-hidden">
+                  {/* 21:9 is only 147px tall at phone width, and p-8 leaves 83px
+                      for a label plus a title that wraps to two lines — the text
+                      was clipped top and bottom. A softer ratio and tighter
+                      padding below `sm`; unchanged from `sm` up. */}
+                  <div className="aspect-[16/10] sm:aspect-[21/9] bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 flex flex-col items-center justify-center p-5 sm:p-8 text-center relative overflow-hidden">
                     <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px]" />
                     <span className="text-xs uppercase tracking-widest text-primary font-bold mb-2 block relative z-10">
                       {project.category}
                     </span>
-                    <span className="text-2xl sm:text-3xl lg:text-4xl font-black font-display text-white tracking-tight relative z-10">
+                    <span className="text-lg sm:text-3xl lg:text-4xl font-black font-display text-white tracking-tight relative z-10 text-balance">
                       {project.title}
                     </span>
                   </div>
