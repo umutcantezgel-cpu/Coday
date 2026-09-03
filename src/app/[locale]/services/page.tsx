@@ -7,7 +7,8 @@ import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { ServicesOverview } from '@/features/services/ui/ServicesOverview';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { routing } from '@/i18n/routing';
-import { getBreadcrumbSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
+import { getBreadcrumbSchema, getWebPageSchema, getOfferCatalog, BASE_URL } from '@/lib/schema';
+import { SERVICE_TREE } from '@/features/services/model/serviceTree';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -64,21 +65,16 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     pageUrl
   );
 
-  const servicesCatalog = {
-    '@type': 'OfferCatalog',
-    '@id': `${pageUrl}#catalog`,
+  // Built from the service tree, so the catalogue lists the eight top-level
+  // services that actually have a page and points at each by @id. The five
+  // hardcoded strings it replaces matched no route — "Barrierefreiheit
+  // (BITV/WCAG)" was an offer with nothing behind it.
+  const servicesCatalog = getOfferCatalog({
+    id: `${pageUrl}#catalog`,
     name: isEn ? 'Coday Web Services' : 'Coday Webdesign & Webentwicklung Leistungen',
-    itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Webdesign & UI/UX' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Next.js Webentwicklung' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Lokale & Technische SEO' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'PageSpeed & Performance' } },
-      {
-        '@type': 'Offer',
-        itemOffered: { '@type': 'Service', name: 'Barrierefreiheit (BITV/WCAG)' },
-      },
-    ],
-  };
+    paths: SERVICE_TREE.map((s) => s.path),
+    locale: _locale,
+  });
 
   const jsonLd = {
     '@context': 'https://schema.org',

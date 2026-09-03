@@ -1,3 +1,4 @@
+import { serviceNodeForPath } from '@/features/services/model/serviceTree';
 import { PACKAGE_LIST, type Locale as PackageLocale } from '@/shared/data/packages';
 import { academyData } from '@/shared/data/academy';
 import { GOOGLE_REVIEWS, REVIEWS_SUMMARY } from '@/shared/data/reviews';
@@ -234,25 +235,12 @@ export function getOrganizationSchema(locale: string = 'de') {
       'https://x.com/codayweb',
       'https://www.facebook.com/people/Coday/61588758264018/',
     ],
+    // The eight offers used to be anonymous Service nodes naming strings that
+    // matched no page — "Local SEO" had no URL behind it at all. They now point
+    // at the real service pages, so the catalogue is a set of edges into the
+    // graph rather than a list of words.
     hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: 'Web Services & Packages',
-      itemListElement: [
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Webdesign' } },
-        {
-          '@type': 'Offer',
-          itemOffered: { '@type': 'Service', name: 'Next.js 15 Web Development' },
-        },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'SEO-Optimierung' } },
-        {
-          '@type': 'Offer',
-          itemOffered: { '@type': 'Service', name: 'Generative Engine Optimization (GEO)' },
-        },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Headless CMS (Sanity)' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Performance-Optimierung' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Local SEO' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'E-Commerce' } },
-      ],
+      '@id': `${BASE_URL}/${locale}/services#catalog`,
     },
   };
 }
@@ -444,17 +432,69 @@ export function getArticleSchema(post: {
   };
 }
 
+/** The @id of a service page's own Service node. */
+export function serviceId(path: string, locale: string) {
+  return `${BASE_URL}/${locale}${path}#service`;
+}
+
+/**
+ * An OfferCatalog whose offers reference real Service nodes by @id instead of
+ * re-declaring anonymous copies. Feeds `/services#catalog`, each parent
+ * service's catalogue of its sub-services, and #organization.
+ */
+export function getOfferCatalog(opts: {
+  id: string;
+  name: string;
+  paths: string[];
+  locale: string;
+}) {
+  return {
+    '@type': 'OfferCatalog',
+    '@id': opts.id,
+    name: opts.name,
+    itemListElement: opts.paths.map((path) => ({
+      '@type': 'Offer',
+      itemOffered: { '@id': serviceId(path, opts.locale) },
+    })),
+  };
+}
+
 export function getServiceSchema(service: { name: string; description: string; url: string }) {
+  const locale = service.url.includes('/en/') ? 'en' : 'de';
+  const path = service.url.replace(BASE_URL, '').replace(/^\/(de|en)/, '');
+  const node = serviceNodeForPath(path);
+  const children = node?.children;
+
   return {
     '@type': 'Service',
     '@id': `${service.url}#service`,
     name: service.name,
     description: service.description,
+    // Resolved from the service tree rather than added at 23 call sites. Every
+    // Service node on this site shipped without a serviceType until now.
+    ...(node ? { serviceType: node.serviceType } : {}),
     provider: {
       '@id': ORG_ID,
     },
+    // The four sub-services of a parent are named through an OfferCatalog, which
+    // is how Schema.org models service composition. Before this, nothing
+    // connected /services/design/ui-ux to /services/web-design.
+    ...(children && children.length
+      ? {
+          hasOfferCatalog: getOfferCatalog({
+            id: `${service.url}#catalog`,
+            name: service.name,
+            paths: children,
+            locale,
+          }),
+        }
+      : {}),
+    // Germany converges on the pyramid's own node; Austria and Switzerland stay
+    // anonymous because no node describes them and inventing one would be a
+    // claim to a presence that does not exist. The reach itself is unchanged —
+    // narrowing a service like Enterprise Web to Mittelhessen would be wrong.
     areaServed: [
-      { '@type': 'Country', name: 'Germany' },
+      { '@id': PLACE_DE_ID },
       { '@type': 'Country', name: 'Austria' },
       { '@type': 'Country', name: 'Switzerland' },
     ],

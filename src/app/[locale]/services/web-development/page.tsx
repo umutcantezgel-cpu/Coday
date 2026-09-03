@@ -2,7 +2,15 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { WebDevelopmentClient } from '@/features/services/ui/WebDevelopmentClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getBreadcrumbSchema, getWebPageSchema, BASE_URL, FOUNDER_ID } from '@/lib/schema';
+import {
+  getBreadcrumbSchema,
+  getWebPageSchema,
+  getOfferCatalog,
+  BASE_URL,
+  FOUNDER_ID,
+  PLACE_DE_ID,
+} from '@/lib/schema';
+import { SERVICE_TREE } from '@/features/services/model/serviceTree';
 import { Link } from '@/i18n/navigation';
 import { ArrowRight, Code, ShieldCheck, Lightning, Cpu } from '@phosphor-icons/react/dist/ssr';
 
@@ -97,43 +105,23 @@ export default async function WebDevelopmentPage({
         provider: {
           '@id': `${BASE_URL}/#organization`,
         },
-        areaServed: {
-          '@type': 'AdministrativeArea',
-          name: 'Hessen, Deutschland',
-        },
-        hasOfferCatalog: {
-          '@type': 'OfferCatalog',
-          name: 'Web Development Services',
-          itemListElement: [
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
-                name: 'Next.js 15 & React 19 Architecture',
-                description:
-                  'Server Components, SSG, Sub-0.3s Ladezeiten und 100/100 Core Web Vitals.',
-              },
-            },
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
-                name: 'Sanity Headless CMS Integration',
-                description:
-                  'Strukturierte Redaktionsumgebung mit Live-Preview ohne Datenbank-Verwaltungsaufwand.',
-              },
-            },
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
-                name: 'B2B API & ERP Integrationen',
-                description:
-                  'Sichere Anbindung von REST/GraphQL APIs, CRM-Systemen und Zahlungsdienstleistern.',
-              },
-            },
-          ],
-        },
+        serviceType: 'Web Development',
+        areaServed: [
+          { '@id': PLACE_DE_ID },
+          { '@type': 'Country', name: 'Austria' },
+          { '@type': 'Country', name: 'Switzerland' },
+        ],
+        // The three offers here described Next.js, Sanity and API work as
+        // anonymous services while /services/development/{web-apps,headless-cms,
+        // api-integration,migration} each had a page saying the same thing. The
+        // catalogue now names those pages, so the parent/child relation exists in
+        // the graph instead of only in the navigation.
+        hasOfferCatalog: getOfferCatalog({
+          id: `${pageUrl}#catalog`,
+          name: pageName,
+          paths: SERVICE_TREE.find((s) => s.path === '/services/web-development')?.children ?? [],
+          locale: _locale,
+        }),
       },
       {
         '@type': 'TechArticle',
