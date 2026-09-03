@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getWebPageSchema } from '@/lib/schema';
+import { BASE_URL, getWebPageSchema, getAudienceSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -140,6 +140,11 @@ export default async function KfzWerkstattPage({
           { '@type': 'City', name: 'Limburg' },
         ],
       },
+      getAudienceSchema({
+        url: pageUrl,
+        audienceType: isEn ? 'Auto repair shops' : 'KFZ-Werkstätten',
+        name: isEn ? 'Auto repair shops' : 'KFZ-Werkstätten',
+      }),
       {
         '@type': 'ProfessionalService',
         '@id': `${BASE_URL}/${_locale}/branchen/automobil/kfz-werkstatt#service`,
@@ -147,6 +152,7 @@ export default async function KfzWerkstattPage({
         provider: {
           '@id': `${BASE_URL}/#organization`,
         },
+        audience: { '@id': `${pageUrl}#audience` },
         serviceType: [
           'KFZ-Werkstatt Webdesign Hessen',
           'Automotive Dashboard & Online-Terminbuchung',

@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getWebPageSchema } from '@/lib/schema';
+import { BASE_URL, getWebPageSchema, getAudienceSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -140,6 +140,11 @@ export default async function AutohaendlerPage({
           { '@type': 'City', name: 'Limburg' },
         ],
       },
+      getAudienceSchema({
+        url: pageUrl,
+        audienceType: isEn ? 'Car dealerships' : 'Autohändler und Autohäuser',
+        name: isEn ? 'Car dealerships' : 'Autohändler und Autohäuser',
+      }),
       {
         '@type': 'ProfessionalService',
         '@id': `${BASE_URL}/${_locale}/branchen/automobil/autohaendler#service`,
@@ -147,6 +152,7 @@ export default async function AutohaendlerPage({
         provider: {
           '@id': `${BASE_URL}/#organization`,
         },
+        audience: { '@id': `${pageUrl}#audience` },
         serviceType: [
           'Autohaus Webdesign Hessen',
           'Digitaler Fahrzeug-Showroom & Filter',

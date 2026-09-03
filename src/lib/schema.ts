@@ -459,7 +459,37 @@ export function getOfferCatalog(opts: {
   };
 }
 
-export function getServiceSchema(service: { name: string; description: string; url: string }) {
+/**
+ * The trade an industry page speaks to, as an entity rather than an adjective.
+ *
+ * Anchored to the industry page rather than site-global, so a page one level
+ * down (/branchen/handwerk-bau/wetzlar) can reference it across documents the
+ * way it already references a city. That is what lets the industry+location page
+ * name two parents — an audience and a place — without competing with either:
+ * it is the only page in the graph that claims both.
+ */
+export function getAudienceSchema(opts: { url: string; audienceType: string; name?: string }) {
+  return {
+    '@type': 'Audience',
+    '@id': `${opts.url}#audience`,
+    audienceType: opts.audienceType,
+    ...(opts.name ? { name: opts.name } : {}),
+  };
+}
+
+export function getServiceSchema(service: {
+  name: string;
+  description: string;
+  url: string;
+  /** @id of the Audience this service speaks to — industry pages. */
+  audienceId?: string;
+  /**
+   * Replaces the national reach with specific places. Used by the
+   * industry+location pages, which are the most specific nodes in the graph and
+   * should say so rather than claiming three countries.
+   */
+  areaServedIds?: string[];
+}) {
   const locale = service.url.includes('/en/') ? 'en' : 'de';
   const path = service.url.replace(BASE_URL, '').replace(/^\/(de|en)/, '');
   const node = serviceNodeForPath(path);
@@ -489,15 +519,18 @@ export function getServiceSchema(service: { name: string; description: string; u
           }),
         }
       : {}),
+    ...(service.audienceId ? { audience: { '@id': service.audienceId } } : {}),
     // Germany converges on the pyramid's own node; Austria and Switzerland stay
     // anonymous because no node describes them and inventing one would be a
     // claim to a presence that does not exist. The reach itself is unchanged —
     // narrowing a service like Enterprise Web to Mittelhessen would be wrong.
-    areaServed: [
-      { '@id': PLACE_DE_ID },
-      { '@type': 'Country', name: 'Austria' },
-      { '@type': 'Country', name: 'Switzerland' },
-    ],
+    areaServed: service.areaServedIds
+      ? service.areaServedIds.map((id) => ({ '@id': id }))
+      : [
+          { '@id': PLACE_DE_ID },
+          { '@type': 'Country', name: 'Austria' },
+          { '@type': 'Country', name: 'Switzerland' },
+        ],
   };
 }
 

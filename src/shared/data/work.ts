@@ -65,6 +65,21 @@ export interface Project {
     en: ProjectContent;
   };
   liveUrl?: string;
+
+  /**
+   * Which industry page this project is evidence for. The trade was only ever a
+   * free-text `stats` row that differs between locales ("Sanitär & Heizung" vs
+   * "HVAC & Plumbing"), so it could not be linked to anything. As a slug it
+   * becomes an edge to that industry's Audience node.
+   */
+  industrySlug?: 'handwerk-bau' | 'gastronomie' | 'retail' | 'immobilien';
+
+  /**
+   * The city page this project is evidence for, where the case study itself
+   * names a location. Only set where the record's own copy says so — two of the
+   * six do. The rest stay empty rather than being assigned a plausible city.
+   */
+  citySlug?: string;
 }
 
 export const workData: Record<string, Project> = {
@@ -74,6 +89,8 @@ export const workData: Record<string, Project> = {
     category: 'development',
     type: 'case_study',
     status: 'live',
+    // "Sanitär & Heizung" / "HVAC & Plumbing" — the trade this project proves.
+    industrySlug: 'handwerk-bau',
     thumbnail: 'handyman',
     liveUrl: 'https://www.batherm.de',
     heroImage: 'bg-surface-dark',
@@ -220,6 +237,9 @@ export const workData: Record<string, Project> = {
     category: 'development',
     type: 'case_study',
     status: 'live',
+    // "Garten- & Landschaftsbau"; the subtitle names Wetzlar itself.
+    industrySlug: 'handwerk-bau',
+    citySlug: 'webdesign-agentur-wetzlar',
     thumbnail: 'tree',
     liveUrl: 'https://memobaut.de',
     heroImage: 'bg-surface-dark',
@@ -366,6 +386,8 @@ export const workData: Record<string, Project> = {
     category: 'ecommerce',
     type: 'case_study',
     status: 'live',
+    // "Fashion & Retail" in both locales.
+    industrySlug: 'retail',
     thumbnail: 'shopping-bag',
     liveUrl: 'https://talia-boutique.de/',
     heroImage: 'bg-surface-dark',
@@ -491,6 +513,9 @@ export const workData: Record<string, Project> = {
     category: 'development',
     type: 'case_study',
     status: 'live',
+    // "Schlüsseldienst" / "Locksmith"; the title is "Schlüssel Schmiede Wetzlar".
+    industrySlug: 'handwerk-bau',
+    citySlug: 'webdesign-agentur-wetzlar',
     thumbnail: 'house',
     liveUrl: undefined,
     heroImage: 'bg-surface-dark',
@@ -638,6 +663,9 @@ export const workData: Record<string, Project> = {
     category: 'development',
     type: 'case_study',
     status: 'live',
+    // "Gastronomie" / "Gastronomy". No citySlug: the record names no location,
+    // and Linden is an inference from the client's name, not a stated fact.
+    industrySlug: 'gastronomie',
     thumbnail: 'heartbeat',
     liveUrl: 'https://www.lindener-ratsstuben.de/de',
     heroImage: 'bg-surface-dark',

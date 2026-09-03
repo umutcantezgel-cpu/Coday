@@ -107,12 +107,37 @@ function main() {
     })
   );
 
+  /**
+   * Every @id defined anywhere in the build. Collected in a first pass so a
+   * cross-document reference can be checked against the node that actually
+   * exists, not merely against the page it points into. Without this, any
+   * fragment hung off a real URL — `…/branchen/handwerk-bau#audience` — would
+   * pass whether or not that node was ever emitted.
+   */
+  const definedAnywhere = new Set();
+
   const resolves = (id, definedHere) => {
     if (definedHere.has(id)) return true;
     if (id.startsWith(`${ORIGIN}/#`)) return false; // site-global, must be in-document
-    const base = id.split('#')[0];
-    return servedUris.has(base) || servedUris.has(base.replace(/\/$/, ''));
+    if (definedAnywhere.has(id)) return true;
+    // A reference to a page as a whole, with no fragment, resolves if that page
+    // is served.
+    if (!id.includes('#')) {
+      return servedUris.has(id) || servedUris.has(id.replace(/\/$/, ''));
+    }
+    return false;
   };
+
+  // First pass: which nodes exist at all.
+  for (const file of files) {
+    for (const block of jsonLdBlocks(readFileSync(file, 'utf8'))) {
+      if (block.__unparsable) continue;
+      eachNode(block, (node) => {
+        const id = node['@id'];
+        if (typeof id === 'string' && !isReferenceOnly(node)) definedAnywhere.add(id);
+      });
+    }
+  }
 
   const findings = { dangling: [], doubleDefined: [], rating: [], faq: [], noLocale: [] };
   const mainEntityOwners = new Map(); // entity @id -> Set of page urls claiming it

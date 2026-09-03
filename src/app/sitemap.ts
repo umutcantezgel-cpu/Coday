@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { getBlogPosts } from '@/features/blog/model/data';
 import { wikiEntities } from '@/features/knowledge/model/entities';
+import { workData } from '@/shared/data/work';
 
 const BASE_URL = 'https://www.codayweb.de';
 
@@ -110,6 +111,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...sitemapEntries('/pricing', { changeFrequency: 'monthly', priority: 0.9 }),
     ...sitemapEntries('/process', { changeFrequency: 'monthly', priority: 0.7 }),
     ...sitemapEntries('/work', { changeFrequency: 'monthly', priority: 0.8 }),
+
+    // The case studies themselves. They are prerendered from workData and linked
+    // from the header, but the sitemap only ever got them from Sanity — and
+    // fetchSanity returns [] on any error, so all twelve pages were missing from
+    // sitemap.xml whenever that call failed, which is the default state with no
+    // project configured. Enumerating the local data makes them deterministic.
+    ...Object.values(workData).flatMap((project) =>
+      sitemapEntries(`/work/${project.slug}`, {
+        changeFrequency: 'monthly',
+        priority: project.type === 'case_study' ? 0.75 : 0.6,
+      })
+    ),
     ...sitemapEntries('/angebot-handwerker', { changeFrequency: 'monthly', priority: 0.8 }),
     ...sitemapEntries('/landingpages/nextjsmigration', {
       changeFrequency: 'monthly',
@@ -430,5 +443,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...localBlogRoutesEn,
   ];
 
-  return allRoutes;
+  // The case studies are now enumerated from local data, and Sanity may hold
+  // documents for the same slugs. A URL listed twice is a malformed sitemap, so
+  // the first entry wins — static routes are declared before the Sanity ones and
+  // carry the priorities this file decides, not whatever a CMS document says.
+  const seen = new Set<string>();
+  return allRoutes.filter((route) => {
+    if (seen.has(route.url)) return false;
+    seen.add(route.url);
+    return true;
+  });
 }

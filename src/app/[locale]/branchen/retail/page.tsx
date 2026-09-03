@@ -2,7 +2,13 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import RetailClient from '@/features/industries/ui/RetailClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
+import {
+  getServiceSchema,
+  getAudienceSchema,
+  getBreadcrumbSchema,
+  getWebPageSchema,
+  BASE_URL,
+} from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -75,10 +81,16 @@ export default async function RetailPage({ params }: { params: Promise<{ locale:
                 locale: _locale,
                 mainEntityId: `${pageUrl}#service`,
               }),
+              getAudienceSchema({
+                url: pageUrl,
+                audienceType: _locale === 'en' ? 'Retail and Shops' : 'Einzelhandel und Shops',
+                name: _locale === 'en' ? 'Retail and Shops' : 'Einzelhandel und Shops',
+              }),
               getServiceSchema({
                 name: _seoTitle,
                 description: _seoDesc,
                 url: pageUrl,
+                audienceId: `${pageUrl}#audience`,
               }),
             ],
           }),

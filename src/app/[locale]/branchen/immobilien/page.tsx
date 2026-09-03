@@ -2,7 +2,13 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import ImmobilienClient from '@/features/industries/ui/ImmobilienClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
+import {
+  getServiceSchema,
+  getAudienceSchema,
+  getBreadcrumbSchema,
+  getWebPageSchema,
+  BASE_URL,
+} from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -75,10 +81,22 @@ export default async function ImmobilienPage({ params }: { params: Promise<{ loc
                 locale: _locale,
                 mainEntityId: `${pageUrl}#service`,
               }),
+              getAudienceSchema({
+                url: pageUrl,
+                audienceType:
+                  _locale === 'en'
+                    ? 'Real estate agents, property managers and developers'
+                    : 'Immobilienmakler, Hausverwaltungen und Bauträger',
+                name:
+                  _locale === 'en'
+                    ? 'Real estate agents, property managers and developers'
+                    : 'Immobilienmakler, Hausverwaltungen und Bauträger',
+              }),
               getServiceSchema({
                 name: _seoTitle,
                 description: _seoDesc,
                 url: pageUrl,
+                audienceId: `${pageUrl}#audience`,
               }),
             ],
           }),

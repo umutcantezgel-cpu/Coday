@@ -2,7 +2,13 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { IndustryOverviewClient } from '@/features/industries/ui/IndustryOverviewClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
+import {
+  getServiceSchema,
+  getAudienceSchema,
+  getBreadcrumbSchema,
+  getWebPageSchema,
+  BASE_URL,
+} from '@/lib/schema';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
 export const dynamic = 'force-static';
@@ -84,10 +90,20 @@ export default async function IndustryOverviewPage({
         locale: _locale,
         mainEntityId: `${pageUrl}#service`,
       }),
+      getAudienceSchema({
+        url: pageUrl,
+        audienceType: isEn
+          ? 'Businesses and companies in Central Hesse'
+          : 'Unternehmen und Betriebe in Mittelhessen',
+        name: isEn
+          ? 'Businesses and companies in Central Hesse'
+          : 'Unternehmen und Betriebe in Mittelhessen',
+      }),
       getServiceSchema({
         name: _seoTitle,
         description: _seoDesc,
         url: pageUrl,
+        audienceId: `${pageUrl}#audience`,
       }),
     ],
   };

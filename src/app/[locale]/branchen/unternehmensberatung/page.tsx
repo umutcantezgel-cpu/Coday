@@ -1,6 +1,12 @@
 import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
-import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
+import {
+  getServiceSchema,
+  getAudienceSchema,
+  getBreadcrumbSchema,
+  getWebPageSchema,
+  BASE_URL,
+} from '@/lib/schema';
 import { setRequestLocale } from 'next-intl/server';
 import { IndustryDetailClient } from '@/features/industries/ui/IndustryDetailClient';
 
@@ -79,10 +85,17 @@ export default async function UnternehmensberatungPage({
                 locale: _locale,
                 mainEntityId: `${pageUrl}#service`,
               }),
+              getAudienceSchema({
+                url: pageUrl,
+                audienceType:
+                  _locale === 'en' ? 'Management Consultants' : 'Unternehmensberatungen',
+                name: _locale === 'en' ? 'Management Consultants' : 'Unternehmensberatungen',
+              }),
               getServiceSchema({
                 name: _seoTitle,
                 description: _seoDesc,
                 url: pageUrl,
+                audienceId: `${pageUrl}#audience`,
               }),
             ],
           }),

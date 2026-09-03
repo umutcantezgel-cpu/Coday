@@ -2,7 +2,13 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import DienstleistungClient from '@/features/industries/ui/DienstleistungClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
+import {
+  getServiceSchema,
+  getAudienceSchema,
+  getBreadcrumbSchema,
+  getWebPageSchema,
+  BASE_URL,
+} from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -79,10 +85,16 @@ export default async function DienstleistungPage({
                 locale: _locale,
                 mainEntityId: `${pageUrl}#service`,
               }),
+              getAudienceSchema({
+                url: pageUrl,
+                audienceType: _locale === 'en' ? 'Service Providers' : 'Dienstleister',
+                name: _locale === 'en' ? 'Service Providers' : 'Dienstleister',
+              }),
               getServiceSchema({
                 name: _seoTitle,
                 description: _seoDesc,
                 url: pageUrl,
+                audienceId: `${pageUrl}#audience`,
               }),
             ],
           }),

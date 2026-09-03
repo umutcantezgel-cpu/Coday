@@ -15,6 +15,16 @@ import { cities } from '@/features/local-seo/model/cities';
 
 export const dynamicParams = false;
 
+// Maps the bare city slug carried in the `location` param to the page slug the
+// city pyramid (CITIES_HIERARCHY in schemaPyramid.ts) uses for that place, e.g.
+// "wetzlar" -> "webdesign-agentur-wetzlar" for /webdesign-agentur-wetzlar#city.
+// Only cities with a built city page belong here; a location with no entry
+// gets no areaServedIds rather than a link to a page that does not exist.
+const CITY_PAGE_SLUGS: Record<string, string> = {
+  wetzlar: 'webdesign-agentur-wetzlar',
+  giessen: 'webdesign-giessen',
+};
+
 export function generateStaticParams() {
   const params: { locale: string; industry: string; location: string }[] = [];
   const dirPath = path.join(process.cwd(), 'src', 'features', 'local-seo', 'model', 'content');
@@ -204,6 +214,13 @@ export default async function IndustryLocationPage({
               name: pageName,
               description: pageDescription,
               url: pageUrl,
+              // References the parent industry page's Audience rather than
+              // declaring a new one — this page is the intersection of that
+              // trade and a place, not a third thing.
+              audienceId: `${BASE_URL}/${_locale}/branchen/${industry}#audience`,
+              ...(CITY_PAGE_SLUGS[location]
+                ? { areaServedIds: [`${BASE_URL}/${_locale}/${CITY_PAGE_SLUGS[location]}#city`] }
+                : {}),
             }),
           ],
         }),

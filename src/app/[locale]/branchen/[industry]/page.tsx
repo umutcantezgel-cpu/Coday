@@ -1,6 +1,12 @@
 import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
-import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
+import {
+  getServiceSchema,
+  getAudienceSchema,
+  getBreadcrumbSchema,
+  getWebPageSchema,
+  BASE_URL,
+} from '@/lib/schema';
 import { setRequestLocale } from 'next-intl/server';
 import { IndustryDetailClient } from '@/features/industries/ui/IndustryDetailClient';
 import { IndustryToolEmbed } from '@/features/industries/ui/IndustryToolEmbed';
@@ -140,10 +146,16 @@ export default async function IndustryDetailPage({
                 locale: _locale,
                 mainEntityId: `${pageUrl}#service`,
               }),
+              getAudienceSchema({
+                url: pageUrl,
+                audienceType: formattedIndustry,
+                name: formattedIndustry,
+              }),
               getServiceSchema({
                 name: pageName,
                 description: pageDescription,
                 url: pageUrl,
+                audienceId: `${pageUrl}#audience`,
               }),
             ],
           }),

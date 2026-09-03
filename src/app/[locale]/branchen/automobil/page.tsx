@@ -3,7 +3,13 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { IndustryDetailClient } from '@/features/industries/ui/IndustryDetailClient';
 import { IndustryToolEmbed } from '@/features/industries/ui/IndustryToolEmbed';
-import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
+import {
+  getServiceSchema,
+  getAudienceSchema,
+  getBreadcrumbSchema,
+  getWebPageSchema,
+  BASE_URL,
+} from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -80,10 +86,22 @@ export default async function AutomobilHubPage({
                 locale: _locale,
                 mainEntityId: `${pageUrl}#service`,
               }),
+              getAudienceSchema({
+                url: pageUrl,
+                audienceType:
+                  _locale === 'en'
+                    ? 'Car dealerships, workshops and automotive businesses'
+                    : 'Autohäuser, Werkstätten und KFZ-Betriebe',
+                name:
+                  _locale === 'en'
+                    ? 'Car dealerships, workshops and automotive businesses'
+                    : 'Autohäuser, Werkstätten und KFZ-Betriebe',
+              }),
               getServiceSchema({
                 name: _seoTitle,
                 description: _seoDesc,
                 url: pageUrl,
+                audienceId: `${pageUrl}#audience`,
               }),
             ],
           }),

@@ -85,8 +85,6 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
     '@graph': [
       breadcrumbs,
       {
-        // No mainEntityId: the ItemList below carries no @id of its own to
-        // point at. A later slice gives it one.
         ...getWebPageSchema({
           url: pageUrl,
           name: isEn
@@ -97,19 +95,18 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
             : 'Reale Kundenprojekte und Performance-Case-Studies der Coday Webagentur.',
           locale: _locale,
           type: 'CollectionPage',
+          mainEntityId: `${pageUrl}#itemlist`,
         }),
         mainEntity: {
           '@type': 'ItemList',
+          '@id': `${pageUrl}#itemlist`,
+          // References, not copies. Each case study defines itself on its own
+          // page; repeating name, headline and description here produced a
+          // second version of every one of them that nothing could reconcile.
           itemListElement: caseStudies.map((project, idx) => ({
             '@type': 'ListItem',
             position: idx + 1,
-            item: {
-              '@type': 'CreativeWork',
-              name: project.content[lang].title,
-              headline: project.content[lang].subtitle,
-              url: `${BASE_URL}/${_locale}/work/${project.slug}`,
-              description: project.content[lang].challenge.description,
-            },
+            item: { '@id': `${BASE_URL}/${_locale}/work/${project.slug}#case-study` },
           })),
         },
       },

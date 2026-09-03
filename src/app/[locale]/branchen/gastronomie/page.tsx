@@ -2,7 +2,13 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import GastronomieClient from '@/features/industries/ui/GastronomieClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, BASE_URL } from '@/lib/schema';
+import {
+  getServiceSchema,
+  getAudienceSchema,
+  getBreadcrumbSchema,
+  getWebPageSchema,
+  BASE_URL,
+} from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -75,10 +81,18 @@ export default async function GastronomiePage({ params }: { params: Promise<{ lo
                 locale: _locale,
                 mainEntityId: `${pageUrl}#service`,
               }),
+              getAudienceSchema({
+                url: pageUrl,
+                audienceType:
+                  _locale === 'en' ? 'Restaurants and Gastronomy' : 'Restaurants und Gastronomie',
+                name:
+                  _locale === 'en' ? 'Restaurants and Gastronomy' : 'Restaurants und Gastronomie',
+              }),
               getServiceSchema({
                 name: _seoTitle,
                 description: _seoDesc,
                 url: pageUrl,
+                audienceId: `${pageUrl}#audience`,
               }),
             ],
           }),

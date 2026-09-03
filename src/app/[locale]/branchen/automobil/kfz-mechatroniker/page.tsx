@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getWebPageSchema } from '@/lib/schema';
+import { BASE_URL, getWebPageSchema, getAudienceSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -140,6 +140,15 @@ export default async function KfzMechatronikerPage({
           { '@type': 'City', name: 'Limburg' },
         ],
       },
+      getAudienceSchema({
+        url: pageUrl,
+        audienceType: isEn
+          ? 'Auto mechanics & diagnostic centers'
+          : 'KFZ-Mechatroniker & Diagnose-Betriebe',
+        name: isEn
+          ? 'Auto mechanics & diagnostic centers'
+          : 'KFZ-Mechatroniker & Diagnose-Betriebe',
+      }),
       {
         '@type': 'ProfessionalService',
         '@id': `${BASE_URL}/${_locale}/branchen/automobil/kfz-mechatroniker#service`,
@@ -147,6 +156,7 @@ export default async function KfzMechatronikerPage({
         provider: {
           '@id': `${BASE_URL}/#organization`,
         },
+        audience: { '@id': `${pageUrl}#audience` },
         serviceType: [
           'Chiptuning & Performance Webdesign Hessen',
           'Diagnose-Zentrum & Steuergeräte Portale',

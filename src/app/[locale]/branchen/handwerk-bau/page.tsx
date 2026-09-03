@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getBreadcrumbSchema, getWebPageSchema } from '@/lib/schema';
+import { BASE_URL, getBreadcrumbSchema, getWebPageSchema, getAudienceSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import {
@@ -84,6 +84,11 @@ export default async function HandwerkBauPage({ params }: { params: Promise<{ lo
         locale: _locale,
         mainEntityId: `${pageUrl}#service`,
       }),
+      getAudienceSchema({
+        url: pageUrl,
+        audienceType: isEn ? 'Craft and construction businesses' : 'Handwerks- und Baubetriebe',
+        name: isEn ? 'Craft and construction businesses' : 'Handwerks- und Baubetriebe',
+      }),
       {
         '@type': 'Service',
         '@id': `${BASE_URL}/${_locale}/branchen/handwerk-bau#service`,
@@ -93,6 +98,7 @@ export default async function HandwerkBauPage({ params }: { params: Promise<{ lo
         provider: {
           '@id': `${BASE_URL}/#organization`,
         },
+        audience: { '@id': `${pageUrl}#audience` },
         areaServed: {
           '@type': 'AdministrativeArea',
           name: 'Hessen, Deutschland',

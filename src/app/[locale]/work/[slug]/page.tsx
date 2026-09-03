@@ -91,18 +91,35 @@ export default async function Page(props: { params: Promise<{ locale: string; sl
       }),
       {
         '@type': 'CreativeWork',
-        '@id': `${BASE_URL}/${_locale}/work/${params.slug}#case-study`,
+        '@id': `${pageUrl}#case-study`,
         name: content.title,
         headline: content.subtitle,
-        url: `${BASE_URL}/${_locale}/work/${params.slug}`,
+        url: pageUrl,
         description: content.challenge.description,
         creator: {
           '@id': `${BASE_URL}/#organization`,
         },
-        about: {
-          '@type': 'Service',
-          name: content.category,
-        },
+        // `about` used to be a blank Service node whose name was a display
+        // string — "Web Development & Lead Gen" — matching no page. The project
+        // already lists the services it demonstrates in `relatedServices`, and
+        // those are real routes, so the case study now points at their nodes.
+        // A reference becomes evidence attached to a service instead of a label.
+        about: (content.relatedServices ?? []).map((s) => ({
+          '@id': `${BASE_URL}/${_locale}${s.path}#service`,
+        })),
+        // The same reference is also evidence for a trade and, where the case
+        // study names one, for a place. Both are referenced across documents:
+        // the industry page owns its Audience, the city page owns its City.
+        ...(project.industrySlug
+          ? {
+              audience: {
+                '@id': `${BASE_URL}/${_locale}/branchen/${project.industrySlug}#audience`,
+              },
+            }
+          : {}),
+        ...(project.citySlug
+          ? { spatialCoverage: { '@id': `${BASE_URL}/${_locale}/${project.citySlug}#city` } }
+          : {}),
       },
     ],
   };
