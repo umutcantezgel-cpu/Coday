@@ -315,8 +315,8 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
             <div className="space-y-4 text-sm sm:text-base leading-relaxed">
               <p>
                 {isEn
-                  ? 'As a specialized web agency focused on high-performance Next.js solutions, we rely exclusively on verifiable client projects. From craft businesses like Batherm and MemoBau to e-commerce flagships like Talia Boutique or emergency services like Locksmith Wetzlar: We transform sluggish websites into predictable revenue engines.'
-                  : 'Als spezialisierte Webagentur mit Fokus auf High-Performance Next.js-Lösungen setzen wir ausschließlich auf verifizierbare Kundenprojekte. Ob Handwerksbetriebe wie Batherm und MemoBau, E-Commerce Flagships wie Talia Boutique oder Notdienst-Unternehmen wie MS Schlüsseldienst Wetzlar: Wir transformieren langsame, ineffiziente Websites in planbare Umsatzbringer.'}
+                  ? 'As a specialized web agency focused on high-performance Next.js solutions, we rely exclusively on verifiable client projects. From craft businesses like Batherm and Memo BauT to e-commerce flagships like Talia Boutique or emergency services like Locksmith Wetzlar: We transform sluggish websites into predictable revenue engines.'
+                  : 'Als spezialisierte Webagentur mit Fokus auf High-Performance Next.js-Lösungen setzen wir ausschließlich auf verifizierbare Kundenprojekte. Ob Handwerksbetriebe wie Batherm und Memo BauT, E-Commerce Flagships wie Talia Boutique oder Notdienst-Unternehmen wie MS Schlüsseldienst Wetzlar: Wir transformieren langsame, ineffiziente Websites in planbare Umsatzbringer.'}
               </p>
               <p>
                 {isEn

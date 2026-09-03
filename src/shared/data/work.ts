@@ -214,7 +214,7 @@ export const workData: Record<string, Project> = {
     },
   },
 
-  // --- MemoBau (Garten- & Landschaftsbau Wetzlar) ---
+  // --- Memo BauT (Garten- & Landschaftsbau Wetzlar) ---
   memobaut: {
     slug: 'memobaut',
     category: 'development',
@@ -225,7 +225,7 @@ export const workData: Record<string, Project> = {
     heroImage: 'bg-surface-dark',
     content: {
       de: {
-        title: 'MemoBau — Exklusive Gartenarchitektur',
+        title: 'Memo BauT — Exklusive Gartenarchitektur',
         subtitle: 'Premium Garten- & Landschaftsbau Wetzlar',
         category: 'Web Development & UI/UX Design',
         stats: [
@@ -236,7 +236,7 @@ export const workData: Record<string, Project> = {
         challenge: {
           title: 'Das Problem',
           description:
-            'MemoBau realisiert meisterhafte Garten- und Außenanlagen im gehobenen Segment, war digital jedoch für anspruchsvolle Eigenheimbesitzer und B2B-Bauträger unsichtbar.',
+            'Memo BauT realisiert meisterhafte Garten- und Außenanlagen im gehobenen Segment, war digital jedoch für anspruchsvolle Eigenheimbesitzer und B2B-Bauträger unsichtbar.',
           list: [
             'Keine repräsentative Präsentation der exklusiven Naturstein- & Terrassenprojekte',
             'Hoher telefonischer Beratungsaufwand ohne Vorqualifizierung des Projektbudgets',
@@ -244,7 +244,7 @@ export const workData: Record<string, Project> = {
           ],
           quote: {
             text: 'Unsere Baustellen waren Premium-Handwerk, aber unsere alte Website wirkte wie von 2010. Coday hat unsere digitale Präsenz auf Meister-Niveau gehoben.',
-            author: 'Geschäftsführung, MemoBau Wetzlar',
+            author: 'Geschäftsführung, Memo BauT Wetzlar',
           },
         },
         approach: {
@@ -292,7 +292,7 @@ export const workData: Record<string, Project> = {
         ],
       },
       en: {
-        title: 'MemoBau — Landscape Architecture',
+        title: 'Memo BauT — Landscape Architecture',
         subtitle: 'Premium Landscape Architecture Wetzlar',
         category: 'Web Development & UI/UX Design',
         stats: [
@@ -303,7 +303,7 @@ export const workData: Record<string, Project> = {
         challenge: {
           title: 'The Problem',
           description:
-            'MemoBau creates master-grade outdoor living spaces and gardens, but was digitally invisible to high-net-worth homeowners and property developers.',
+            'Memo BauT creates master-grade outdoor living spaces and gardens, but was digitally invisible to high-net-worth homeowners and property developers.',
           list: [
             'No visual showcase for exclusive stone, patio and pool landscaping projects',
             'High manual consulting time with unqualified budget inquiries',
@@ -311,7 +311,7 @@ export const workData: Record<string, Project> = {
           ],
           quote: {
             text: 'Our craftsmanship was top tier, but our old website felt stuck in 2010. Coday elevated our entire digital appearance to master craftsman level.',
-            author: 'Management, MemoBau Wetzlar',
+            author: 'Management, Memo BauT Wetzlar',
           },
         },
         approach: {
@@ -765,100 +765,6 @@ export const workData: Record<string, Project> = {
           { name: 'Web Design & UI/UX', path: '/services/web-design' },
           { name: 'Local SEO', path: '/services/seo' },
         ],
-      },
-    },
-  },
-
-  // --- Memo Baut (In Development) ---
-  'memo-baut': {
-    slug: 'memo-baut',
-    category: 'development',
-    type: 'in_progress',
-    status: 'building',
-    completion: 80,
-    thumbnail: 'hammer',
-    liveUrl: 'https://memo-baut-test.vercel.app/',
-    heroImage: 'bg-surface-dark',
-    content: {
-      de: {
-        title: 'Memo Baut',
-        subtitle: 'In Entwicklung — Fast fertig',
-        category: 'Web Development',
-        stats: [
-          { label: 'Status', value: 'In Entwicklung' },
-          { label: 'Tech Stack', value: 'Next.js 15, Tailwind' },
-          { label: 'Fortschritt', value: '80%' },
-        ],
-        challenge: {
-          title: 'Das Projekt',
-          description:
-            'Ein neues digitales Erlebnis für ein Bauunternehmen, das aktuell in der finalen Entwicklungsphase ist.',
-          list: ['Konzeptphase abgeschlossen', 'Design implementiert', 'Launch steht bevor'],
-        },
-        approach: {
-          title: 'Unser Ansatz',
-          description: 'Fokus auf schnelle Ladezeiten und klare Strukturierung der Bauprojekte.',
-          steps: [
-            { title: 'Konzeption', description: 'Strukturierung der Dienstleistungen.' },
-            { title: 'Entwicklung', description: 'Umsetzung mit Next.js.' },
-            { title: 'Launch', description: 'Go-Live in Kürze.' },
-          ],
-        },
-        solution: {
-          title: 'Coming Soon',
-          description: 'Dieses Projekt befindet sich im finalen Feinschliff.',
-          images: [],
-          imageAlts: [],
-        },
-        results: {
-          title: 'Ergebnisse',
-          description: 'Ergebnisse nach Launch.',
-          metrics: [
-            { label: 'Status', value: 'In Dev', change: 'Aktiv' },
-            { label: 'Fortschritt', value: '80%', change: 'Bald fertig' },
-            { label: 'Launch', value: 'Bald', change: '2026' },
-          ],
-        },
-      },
-      en: {
-        title: 'Memo Baut',
-        subtitle: 'In Development — Almost complete',
-        category: 'Web Development',
-        stats: [
-          { label: 'Status', value: 'In Development' },
-          { label: 'Tech Stack', value: 'Next.js 15, Tailwind' },
-          { label: 'Progress', value: '80%' },
-        ],
-        challenge: {
-          title: 'The Project',
-          description:
-            'A new digital experience for a construction company, currently in final development.',
-          list: ['Concept phase completed', 'Design implemented', 'Launch imminent'],
-        },
-        approach: {
-          title: 'Our Approach',
-          description: 'Focus on fast load times and clear structuring of construction projects.',
-          steps: [
-            { title: 'Conception', description: 'Structuring of services.' },
-            { title: 'Development', description: 'Implementation with Next.js.' },
-            { title: 'Launch', description: 'Go-Live shortly.' },
-          ],
-        },
-        solution: {
-          title: 'Coming Soon',
-          description: 'This project is in final polish.',
-          images: [],
-          imageAlts: [],
-        },
-        results: {
-          title: 'Results',
-          description: 'Results after launch.',
-          metrics: [
-            { label: 'Status', value: 'In Dev', change: 'Active' },
-            { label: 'Progress', value: '80%', change: 'Almost done' },
-            { label: 'Launch', value: 'Soon', change: '2026' },
-          ],
-        },
       },
     },
   },

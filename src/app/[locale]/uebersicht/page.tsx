@@ -231,15 +231,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                     href="/work/memobaut"
                     className="text-text-light hover:text-primary transition-colors"
                   >
-                    Case Study: MemoBau
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/work/memo-baut"
-                    className="text-text-light hover:text-primary transition-colors"
-                  >
-                    Case Study: Memo Baut
+                    Case Study: Memo BauT
                   </Link>
                 </li>
               </ul>

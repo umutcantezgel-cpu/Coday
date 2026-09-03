@@ -96,6 +96,19 @@ const nextConfig: NextConfig = {
         destination: '/:locale/webdesign-agentur-wetzlar',
         permanent: true,
       },
+      // `memo-baut` was the in-development record for the client that launched
+      // as memobaut.de. It duplicated the finished `memobaut` case study and
+      // pointed at a Vercel preview deployment, so it goes to the real one.
+      {
+        source: '/work/memo-baut',
+        destination: '/work/memobaut',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/work/memo-baut',
+        destination: '/:locale/work/memobaut',
+        permanent: true,
+      },
       // Archived / Legacy Case Studies -> /work
       {
         source: '/work/red-chillies',

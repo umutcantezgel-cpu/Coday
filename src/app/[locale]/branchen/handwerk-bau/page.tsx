@@ -303,7 +303,7 @@ export default async function HandwerkBauPage({ params }: { params: Promise<{ lo
                   </span>
                   <span className="text-xs text-slate-500">Wetzlar</span>
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">MemoBau Wetzlar</h3>
+                <h3 className="text-2xl font-bold text-slate-900 mb-2">Memo BauT Wetzlar</h3>
                 <p className="text-slate-600 text-sm leading-relaxed mb-6">
                   +380% Neukunden-Anfragen durch interaktiven Garten- & Terrassen-Konfigurator.
                   100/100 Core Web Vitals und Spitzenrankings.
@@ -314,7 +314,7 @@ export default async function HandwerkBauPage({ params }: { params: Promise<{ lo
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 hover:text-amber-800 transition-colors"
               >
                 <span>
-                  {isEn ? 'MemoBau Case Study & Results' : 'Case Study MemoBau & Ergebnisse'}
+                  {isEn ? 'Memo BauT Case Study & Results' : 'Case Study Memo BauT & Ergebnisse'}
                 </span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>

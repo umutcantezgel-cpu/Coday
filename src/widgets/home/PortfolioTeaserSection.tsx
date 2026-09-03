@@ -11,7 +11,7 @@ export const PortfolioTeaserSection: React.FC = () => {
   const locale = useLocale();
   const currentLang = locale as 'de' | 'en';
 
-  // Featured real client projects for the teaser (Batherm, Schlüsseldienst, MemoBau)
+  // Featured real client projects for the teaser (Batherm, Schlüsseldienst, Memo BauT)
   const projects = [
     workData['batherm'],
     workData['schluesseldienst-wetzlar'],

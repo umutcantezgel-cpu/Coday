@@ -157,6 +157,7 @@ describe('Sitemap Technical SEO Validation', () => {
       '/work/red-flames',
       '/work/fitflow',
       '/work/hotel-zur-post',
+      '/work/memo-baut',
       // Cannibalising duplicates folded into their canonical owner
       '/services/growth/seo-optimization',
       '/services/growth/performance-optimization',

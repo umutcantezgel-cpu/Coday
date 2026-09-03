@@ -247,10 +247,10 @@
         "href": "https://talia-boutique.de/"
       },
       {
-        "name": "Memo Baut (In Entwicklung)",
-        "metric": "WIP",
-        "label": "Preview ansehen",
-        "href": "https://memo-baut-test.vercel.app/"
+        "name": "Memo BauT",
+        "metric": "Live",
+        "label": "Gartenbau-Website ansehen",
+        "href": "https://memobaut.de"
       },
       {
         "name": "Lindener Ratsstuben",
