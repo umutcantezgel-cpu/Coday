@@ -127,67 +127,81 @@ const ProjectDetail: React.FC = () => {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary font-bold text-xs uppercase tracking-widest mb-6">
               {project.category}
             </div>
-            <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-7xl text-gray-900 mb-4 leading-tight">
-              Case Study: {project.title} &ndash; {project.category}
+            {/* The category is already the badge directly above, so repeating it
+                here only made the h1 84 characters and five lines tall on a phone.
+                This now mirrors the title tag: "<project> – Case Study | Coday". */}
+            <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-7xl text-gray-900 mb-4 leading-tight text-balance">
+              Case Study: {project.title}
             </h1>
             <p className="text-xl sm:text-2xl text-gray-500 max-w-3xl mx-auto leading-relaxed">
               {project.subtitle}
             </p>
           </m.div>
 
-          {/* Hero Image / Gradient Fallback */}
-          <m.div
-            initial={{ opacity: 0, y: 30, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="relative rounded-3xl overflow-hidden aspect-video bg-surface-dark shadow-2xl group"
-          >
-            {heroImage ? (
-              <OptimizedImage
-                src={heroImage}
-                alt={project.solution.imageAlts?.[0] || `${project.title} Hero`}
-                className="absolute inset-0 w-full h-full object-cover transition-transform motion-reduce:duration-[0.01ms] duration-1000 group-hover:scale-105"
-                priority={true}
-                width={1920}
-                height={1080}
-              />
-            ) : (
-              <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 flex flex-col items-center justify-center p-8 text-center">
-                <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:24px_24px]" />
-                <div className="relative z-10 max-w-xl">
-                  <span className="text-xs sm:text-sm uppercase tracking-widest text-primary font-bold mb-3 block">
-                    {project.category}
-                  </span>
-                  <span className="text-3xl sm:text-5xl lg:text-6xl font-black font-display text-white tracking-tight block mb-2">
-                    {project.title}
-                  </span>
+          {/* Hero Image / Gradient Fallback.
+              The stats used to be absolutely positioned inside this box at every
+              width. On a phone the box is only ~193px tall (aspect-video at 343px
+              wide), while three stat cards wrap to three or four lines each — so
+              the cards and the centred fallback title rendered on top of one
+              another, text over text. Below `sm` the stats now sit under the
+              image; from `sm` up the overlay is exactly as it was. */}
+          <div className="relative">
+            <m.div
+              initial={{ opacity: 0, y: 30, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="relative rounded-3xl overflow-hidden aspect-video bg-surface-dark shadow-2xl group"
+            >
+              {heroImage ? (
+                <OptimizedImage
+                  src={heroImage}
+                  alt={project.solution.imageAlts?.[0] || `${project.title} Hero`}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform motion-reduce:duration-[0.01ms] duration-1000 group-hover:scale-105"
+                  priority={true}
+                  width={1920}
+                  height={1080}
+                />
+              ) : (
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 flex flex-col items-center justify-center p-6 sm:p-8 text-center">
+                  <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:24px_24px]" />
+                  <div className="relative z-10 max-w-xl">
+                    <span className="text-xs sm:text-sm uppercase tracking-widest text-primary font-bold mb-2 sm:mb-3 block">
+                      {project.category}
+                    </span>
+                    <span className="text-xl sm:text-5xl lg:text-6xl font-black font-display text-white tracking-tight block mb-2 text-balance">
+                      {project.title}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
 
-            {/* Gradient overlay on bottom for stats */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+              {/* Darkens the foot of the image so the overlaid stats stay legible.
+                  Only needed where the stats actually overlay. */}
+              <div className="absolute inset-0 hidden sm:block bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+            </m.div>
 
-            {/* Stats Overlay */}
-            <div className="absolute bottom-6 left-6 right-6 grid grid-cols-3 gap-3 sm:gap-4">
+            <div className="mt-4 grid grid-cols-3 gap-3 sm:mt-0 sm:absolute sm:bottom-6 sm:left-6 sm:right-6 sm:gap-4">
               {project.stats.map((stat, i) => (
                 <m.div
                   key={i}
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 + i * 0.1 }}
-                  className="bg-white/10 backdrop-blur-md border border-white/10 p-4 sm:p-6 rounded-xl sm:rounded-2xl text-center"
+                  className="bg-slate-900 sm:bg-white/10 sm:backdrop-blur-md border border-white/10 p-3 sm:p-6 rounded-xl sm:rounded-2xl text-center"
                 >
-                  <div className="text-white/60 text-xs sm:text-sm font-medium uppercase mb-1 tracking-wider">
+                  {/* German compounds like "Landschaftsbau" are wider than a
+                      third of a phone screen, so they need to be allowed to
+                      hyphenate — the page carries lang="de", so auto works. */}
+                  <div className="text-white/60 text-[11px] sm:text-sm font-medium uppercase mb-1 tracking-wider hyphens-auto break-words">
                     {stat.label}
                   </div>
-                  <div className="text-white font-bold text-base sm:text-xl lg:text-2xl">
+                  <div className="text-white font-bold text-sm sm:text-xl lg:text-2xl hyphens-auto break-words">
                     {stat.value}
                   </div>
                 </m.div>
               ))}
             </div>
-          </m.div>
+          </div>
         </div>
       </section>
 

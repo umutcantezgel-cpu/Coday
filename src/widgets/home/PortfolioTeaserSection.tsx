@@ -127,7 +127,11 @@ export const PortfolioTeaserSection: React.FC = () => {
                     {content.subtitle}
                   </p>
 
-                  <div className="relative z-20 w-max">
+                  {/* No w-max: max-content width made this link 598px wide on a 375px
+                      screen, so the label ran straight off the viewport. The link is
+                      still inline-flex, so the underline keeps hugging the text
+                      wherever it fits. */}
+                  <div className="relative z-20">
                     <Link
                       href={`/work/${project.slug}`}
                       aria-label={`${content.title} Case Study`}
@@ -140,7 +144,7 @@ export const PortfolioTeaserSection: React.FC = () => {
                       </span>
                       <ArrowRight
                         weight="bold"
-                        className="transform group-hover:translate-x-2 transition-transform duration-300 w-5 h-5"
+                        className="shrink-0 transform group-hover:translate-x-2 transition-transform duration-300 w-5 h-5"
                       />
                     </Link>
                   </div>
