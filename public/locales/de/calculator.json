@@ -9,26 +9,31 @@
       "add": "Hinzufügen",
       "included": "Im Paket enthalten",
       "selected": "Ausgewählt"
-    }
+    },
+    "price_tag": "Festpreis nach Gespräch",
+    "optional_short": "Als Extra wählbar",
+    "included_short": "Inklusive",
+    "more": "Mehr erfahren",
+    "less": "Weniger anzeigen"
   },
   "categories": {
-    "basis": "Projekt Basis",
-    "commerce": "E-Commerce",
-    "design": "Web Design",
-    "function": "Funktionalität",
-    "seo": "Technical SEO",
-    "support": "Betrieb & Wartung",
-    "tech": "Advanced Tech"
+    "basis": "Ihr Paket",
+    "commerce": "Online-Shop",
+    "design": "Design",
+    "function": "Funktionen",
+    "seo": "Bei Google gefunden werden",
+    "support": "Betreuung nach dem Start",
+    "tech": "Technik-Extras"
   },
   "hero": {
     "continue": "Weiter zur Anfrage",
-    "label": "Der Projekt-Konfigurator",
-    "next_step": "Im nächsten Schritt senden Sie uns Ihre Anfrage.",
-    "satisfied": "Zufrieden mit Ihrer Konfiguration?",
-    "subtitle_default": "Ermitteln Sie den Investitionsrahmen für Ihre digitale Plattform. Konfigurieren Sie individuelle Features aus 9 Bereichen, passgenau für Startups bis hin zu Enterprise-Kunden.",
-    "subtitle_packages": "Erweitern Sie Ihr gewähltes Paket für Ihr Webprojekt mit zusätzlichen Modulen.",
-    "title_1": "Kalkulieren Sie Ihr",
-    "title_2": "Webprojekt.",
+    "label": "Extras wählen",
+    "next_step": "Im nächsten Schritt senden Sie Ihre unverbindliche Anfrage.",
+    "satisfied": "Zufrieden mit Ihrer Auswahl?",
+    "subtitle_default": "Wählen Sie ein Paket und die Extras, die Sie brauchen. Danach erhalten Sie ein verbindliches Festpreis-Angebot nach einem kostenlosen Gespräch.",
+    "subtitle_packages": "Ergänzen Sie Ihr gewähltes Paket mit Extras. Alles fließt in Ihr Festpreis-Angebot ein.",
+    "title_1": "Ergänzen Sie Ihr",
+    "title_2": "Paket mit Extras.",
     "title": "Projektkosten-Rechner"
   },
   "module_count": "{count} Modul ausgewählt",
@@ -47,19 +52,19 @@
       "name": "Ultimate Hub"
     },
     "basis-business": {
-      "description": "Mehrseitige Unternehmens-Präsenz (B2B)",
+      "description": "Bis zu 12 Seiten mit Anfrage- und Bewerberformular, damit Kunden und Mitarbeiter Sie finden.",
       "learn_more": "Der Standard für anspruchsvollen B2B-Mittelstand, Industrie & Kanzleien. Bis zu 12 Seiten, Sub-0,3s Ladezeit und 60-Sekunden Recruiting-Funnel.",
-      "name": "Business (Mittel)"
+      "name": "Der Kundenmagnet"
     },
     "basis-corporate": {
-      "description": "Umfassende Unternehmensplattform (bis 30 Seiten)",
+      "description": "Bis zu 30 Seiten, zweite Sprache und interaktive Rechner für größere Unternehmen.",
       "learn_more": "Digitale Flaggschiff-Präsenz mit holistischen SEO-Topic-Clustern, interaktiven Conversion-Pfaden und Vorbereitung für globale Mehrsprachigkeit.",
-      "name": "Pro Corporate (Groß)"
+      "name": "Die Unternehmensplattform"
     },
     "basis-enterprise": {
-      "description": "Skalierbare Multi-Region Enterprise Plattform",
+      "description": "Für Konzerne, Filialnetze und Plattformen mit sehr vielen Besuchern.",
       "learn_more": "Für Großkunden, Konzerne und bundesweite/internationale Rollouts. Höchste Sicherheits- und Compliance-Standards (WAF, DDoS, DSGVO) und dediziertes VIP-SLA.",
-      "name": "Enterprise Platform (Extrem groß)"
+      "name": "Die Großplattform"
     },
     "basis-professional": {
       "description": "Erweiterte Unternehmens-Präsenz (CMS)",
@@ -67,94 +72,101 @@
       "name": "Professional Website"
     },
     "basis-starter": {
-      "description": "High-Performance Landing Page (Next.js)",
+      "description": "Kompakte Website mit bis zu 5 Seiten, die in unter einer halben Sekunde lädt.",
       "learn_more": "Eine blitzschnelle 'One-Pager' Webseite, ideal für Kampagnen, Produktlaunches oder Startups. Technisch optimiert für maximale Conversion und sofortige Sichtbarkeit.",
-      "name": "Starter Website"
+      "name": "Die Visitenkarte"
     },
     "commerce-headless": {
-      "description": "Custom Frontend für Shopify/WooCommerce",
+      "description": "Verkaufen Sie Produkte direkt über Ihre Website, mit sicherem Bezahlvorgang und schnellem Warenkorb.",
       "learn_more": "Die Königsklasse des E-Commerce. Wir trennen das Design (Frontend) von der Technik (Shopify/WooCommerce), um einzigartige Einkaufserlebnisse ohne Design-Limitationen zu schaffen.",
-      "name": "Headless Commerce"
+      "name": "Online-Shop"
     },
     "commerce-starter": {
-      "description": "Professioneller Shopify Store",
+      "description": "Ein fertig eingerichteter Shop, in dem Sie sofort verkaufen können.",
       "learn_more": "Ein fertig eingerichteter Shopify-Shop. Starten Sie den Verkauf Ihrer Produkte mit einem professionellen Theme, optimiertem Checkout und allen nötigen Rechtstexten in wenigen Tagen.",
-      "name": "Shopify Setup"
+      "name": "Fertiger Online-Shop (Shopify)"
     },
     "design-motion": {
-      "description": "Advanced Animations & Transitions",
+      "description": "Sanfte Bewegungen, die Besucher durch die Seite führen und Wertigkeit vermitteln.",
       "learn_more": "Bringen Sie Leben in Ihre Seite. Hochwertige Animationen, sanftes Scrollen und nahtlose Übergänge fesseln den Nutzer und führen ihn intuitiv durch Ihre Inhalte.",
-      "name": "Motion Experience"
+      "name": "Animationen & Effekte"
     },
     "design-system": {
-      "description": "Wiederverwendbare Komponenten-Bibliothek",
+      "description": "Einheitliche Bausteine, damit neue Seiten später schnell und im gleichen Stil entstehen.",
       "learn_more": "Sorgt für Konsistenz und spart Zeit: Wir entwickeln eine Bibliothek wiederverwendbarer Komponenten (Buttons, Inputs, Cards), die das Design einheitlich hält und zukünftige Erweiterungen beschleunigt.",
-      "name": "Design System"
+      "name": "Design-Baukasten"
     },
     "design-ui": {
-      "description": "Individuelles Screen-Design (Figma)",
+      "description": "Sie sehen und genehmigen jedes Layout als Entwurf, bevor wir mit dem Bau beginnen.",
       "learn_more": "Ein Design, das genau zu Ihrer Marke passt. Wir erstellen individuelle Layouts in Figma, bevor wir eine Zeile Code schreiben, damit die Optik zu 100% Ihren Vorstellungen entspricht.",
-      "name": "Premium UI Design"
+      "name": "Individuelles Design"
     },
     "func-api": {
-      "description": "Anbindung externer Dienste (CRM, ERP)",
+      "description": "Anfragen und Daten landen automatisch in Ihrer Kundenverwaltung oder Warenwirtschaft.",
       "learn_more": "Verbinden Sie Ihre Webseite mit anderen Tools. Wir sorgen dafür, dass Daten automatisch zwischen Ihrer Seite und Ihrem CRM, ERP oder Newsletter-Tool fließen.",
-      "name": "API Integration"
+      "name": "Anbindung Ihrer Programme"
     },
     "func-auth": {
-      "description": "Login, Registrierung, User-Dashboard",
+      "description": "Ein geschützter Bereich, in dem sich Kunden oder Mitarbeiter anmelden, etwa für Dokumente oder Bestellungen.",
       "learn_more": "Lassen Sie Nutzer sich registrieren und einloggen. Notwendig für Kundenportale, geschützte Bereiche, Dashboards oder Membership-Seiten.",
-      "name": "User Auth & Profil"
+      "name": "Kundenbereich mit Login"
     },
     "func-cms": {
-      "description": "Content Management (Sanity/Strapi)",
+      "description": "Sie pflegen Texte, Bilder und Neuigkeiten selbst, ohne Programmierkenntnisse und ohne Wartezeit.",
       "learn_more": "Ändern Sie Texte und Bilder kinderleicht selbst. Wir integrieren ein modernes Content Management System (Sanity oder Strapi), das Sie und Ihr Team ohne Programmierkenntnisse bedienen können.",
-      "name": "Headless CMS"
+      "name": "Texte & Bilder selbst ändern"
     },
     "seo-speed": {
-      "description": "Ladezeit-Optimierung auf <1s",
+      "description": "Für bestehende Seiten: Wir holen die letzten Zehntelsekunden aus der Ladezeit heraus.",
       "learn_more": "Geschwindigkeit ist Geld. Wir tunen die Performance so weit, dass die Seite in unter einer Sekunde lädt, das freut Nutzer und wird von Google mit besserem Ranking belohnt.",
-      "name": "Performance Max"
+      "name": "Extra-Tuning für Ladezeit"
     },
     "seo-tech": {
-      "description": "Struktur, Schema.org, Core Web Vitals",
+      "description": "Wir bereiten Ihre Seite so auf, dass Google jede Leistung versteht und Zusatzinfos wie Bewertungen im Suchergebnis zeigt.",
       "learn_more": "Das Fundament für Google-Erfolg. Wir optimieren die technische Struktur, Metadaten und Schemata Ihrer Seite, damit Suchmaschinen Ihre Inhalte perfekt verstehen und indexieren.",
-      "name": "Technical SEO Audit"
+      "name": "Besser bei Google gefunden werden"
     },
     "support-basic": {
-      "description": "Server Updates & Backups",
+      "description": "Hosting, Sicherheits-Updates und tägliche Sicherungen. Sie müssen sich um nichts kümmern.",
       "learn_more": "Wir kümmern uns um die Technik. Monatliche Updates, tägliche Backups und Server-Wartung garantieren, dass Ihre Seite immer sicher und erreichbar bleibt.",
-      "name": "Hosting & Wartung"
+      "name": "Rundum-sorglos-Betreuung"
     },
     "support-pro": {
-      "description": "24/7 Notfall-Support & Weiterentwicklung",
+      "description": "Garantierte Reaktionszeiten und ein direkter Draht zum Entwickler, wenn es schnell gehen muss.",
       "learn_more": "Ihr technischer Partner auf Abruf. Wir bieten schnelle Hilfe bei Problemen und unterstützen Sie kontinuierlich bei der Weiterentwicklung Ihrer Plattform.",
-      "name": "SLA Support"
+      "name": "Bevorzugter Support"
     },
     "tech-i18n": {
-      "description": "Mehrsprachigkeit (i18n Setup)",
+      "description": "Ihre Website in einer weiteren Sprache, jeweils mit eigener Adresse für Google.",
       "learn_more": "Erreichen Sie internationale Kunden. Wir strukturieren die Seite so, dass sie beliebig viele Sprachen unterstützt und Inhalte einfach übersetzt werden können.",
-      "name": "Internationalization"
+      "name": "Zweite Sprache"
     },
     "tech-pwa": {
-      "description": "Offline-Support & Installability",
+      "description": "Ihre Website lässt sich wie eine App auf dem Handy installieren, mit Startsymbol und Offline-Ansicht.",
       "learn_more": "Macht Ihre Webseite zur App. Nutzer können sie auf dem Homescreen installieren und (teilweise) offline nutzen, für ein App-ähnliches Erlebnis im Browser.",
-      "name": "PWA Features"
+      "name": "Als App aufs Handy"
     }
   },
   "summary": {
     "continue": "Weiter zur Anfrage",
     "discount": "Rabatt aktiviert",
-    "empty": "Wähle Module aus...",
+    "empty": "Noch nichts ausgewählt",
     "guarantee": {
-      "text": "Dieses Setup garantiert einen Google Lighthouse Score von",
-      "title": "Garantie"
+      "title": "Unsere Garantien",
+      "text": "Fester Preis, Google-Bestwerte beim Start und die Website gehört zu 100 % Ihnen."
     },
     "monthly": "Monatlich",
     "one_time": "Einmalig",
     "share": "Konfiguration teilen",
-    "title": "Ihr Paket",
-    "package": "Gewähltes Paket"
+    "title": "Ihre Auswahl",
+    "package": "Gewähltes Paket",
+    "package_label": "Paket",
+    "addon_label": "Extra",
+    "selected": "Ausgewählt",
+    "price_title": "Ihr Festpreis-Angebot",
+    "price_tag": "Festpreis nach kostenlosem Gespräch",
+    "price_text": "Sie zahlen erst, wenn Sie das Angebot annehmen. 50 % bei Start, 50 % nach Ihrer Freigabe.",
+    "cta": "Kostenloses Angebot anfordern"
   },
   "meta": {
     "title": "Projektkosten-Rechner für Webseiten & Web-Apps | Coday",

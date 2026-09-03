@@ -9,26 +9,31 @@
       "add": "Add",
       "included": "Included in Package",
       "selected": "Selected"
-    }
+    },
+    "price_tag": "Fixed price after a call",
+    "optional_short": "Available as an extra",
+    "included_short": "Included",
+    "more": "Learn more",
+    "less": "Show less"
   },
   "categories": {
-    "basis": "Project Basis",
-    "commerce": "E-commerce",
-    "design": "Web design",
-    "function": "Functionality",
-    "seo": "Technical SEO",
-    "support": "Operations & Maintenance",
-    "tech": "Advanced Tech"
+    "basis": "Your package",
+    "commerce": "Online shop",
+    "design": "Design",
+    "function": "Features",
+    "seo": "Get found on Google",
+    "support": "Care after launch",
+    "tech": "Tech extras"
   },
   "hero": {
-    "continue": "Continue to Inquiry",
-    "label": "The Project Configurator",
-    "next_step": "Send us your inquiry in the next step.",
-    "satisfied": "Satisfied with your configuration?",
-    "subtitle_default": "Determine the required budget for your new website or app. Build your perfect package across 9 feature categories, tailored to your exact business needs.",
-    "subtitle_packages": "Extend your selected package for your web project with additional modules.",
-    "title_1": "Calculate Your",
-    "title_2": "Web Project.",
+    "continue": "Continue to request",
+    "label": "Choose extras",
+    "next_step": "Send your non-binding request in the next step.",
+    "satisfied": "Happy with your selection?",
+    "subtitle_default": "Pick a package and the extras you need. You then receive a binding fixed-price quote after a free call.",
+    "subtitle_packages": "Add extras to your selected package. Everything flows into your fixed-price quote.",
+    "title_1": "Complete your",
+    "title_2": "package with extras.",
     "title": "Project Cost Calculator"
   },
   "module_count": "{count} module selected",
@@ -47,19 +52,19 @@
       "name": "Ultimate Hub"
     },
     "basis-business": {
-      "description": "Multi-page B2B Corporate Platform",
+      "description": "Up to 12 pages with inquiry and applicant forms so customers and staff can find you.",
       "learn_more": "The gold standard for mid-market leaders, B2B companies & industry. Up to 12 pages, sub-0.3s load speed, and 60-second recruiting funnel.",
-      "name": "Business (Standard)"
+      "name": "The Client Magnet"
     },
     "basis-corporate": {
-      "description": "Comprehensive Corporate Platform (up to 30 pages)",
+      "description": "Up to 30 pages, a second language and interactive calculators for larger companies.",
       "learn_more": "Digital flagship presence with holistic SEO topic clusters, multi-step conversion paths, and global multi-language architecture (i18n).",
-      "name": "Pro Corporate (Large)"
+      "name": "The Company Platform"
     },
     "basis-enterprise": {
-      "description": "Scalable Multi-Region Enterprise Platform",
+      "description": "For corporations, branch networks and platforms with very high traffic.",
       "learn_more": "For large enterprises, corporations, and nationwide/international rollouts. Maximum security & compliance (WAF, DDoS, GDPR) with dedicated VIP SLA.",
-      "name": "Enterprise Platform (Extremely Large)"
+      "name": "The Enterprise Platform"
     },
     "basis-professional": {
       "description": "Advanced Corporate Presence (CMS)",
@@ -67,94 +72,101 @@
       "name": "Professional website"
     },
     "basis-starter": {
-      "description": "High-Performance Landing Page (Next.js)",
+      "description": "Compact website with up to 5 pages that loads in under half a second.",
       "learn_more": "A lightning-fast 'one-pager' website, ideal for campaigns, product launches, or startups. Technically optimized for maximum conversion and immediate visibility.",
-      "name": "Starter website"
+      "name": "The Business Card"
     },
     "commerce-headless": {
-      "description": "Custom Frontend for Shopify/WooCommerce",
+      "description": "Sell products directly on your website with secure checkout and a fast cart.",
       "learn_more": "The top tier of e-commerce. We separate design (frontend) from technology (Shopify/WooCommerce) to create unique shopping experiences without design limitations.",
-      "name": "Headless commerce"
+      "name": "Online shop"
     },
     "commerce-starter": {
-      "description": "Professional Shopify Store",
+      "description": "A fully set-up shop where you can start selling right away.",
       "learn_more": "A fully set up Shopify store. Start selling your products with a professional theme, optimized checkout, and all necessary legal texts in just a few days.",
-      "name": "Shopify setup"
+      "name": "Ready-made online shop (Shopify)"
     },
     "design-motion": {
-      "description": "Advanced Animations & Transitions",
+      "description": "Smooth motion that guides visitors through the page and signals quality.",
       "learn_more": "Bring your site to life. High-quality animations, smooth scrolling, and seamless transitions captivate users and guide them intuitively through your content.",
-      "name": "Motion Experience"
+      "name": "Animations & effects"
     },
     "design-system": {
-      "description": "Reusable Component Library",
+      "description": "Consistent building blocks so new pages can be added quickly in the same style.",
       "learn_more": "Ensures consistency and saves time: We develop a library of reusable components (buttons, inputs, cards) that keeps the design uniform and accelerates future expansions.",
-      "name": "Design system"
+      "name": "Design toolkit"
     },
     "design-ui": {
-      "description": "Custom Screen Design (Figma)",
+      "description": "You see and approve every layout as a draft before we start building.",
       "learn_more": "A design that fits your brand perfectly. We create individual layouts in Figma before writing a single line of code to ensure the look matches your vision 100%.",
-      "name": "Premium UI design"
+      "name": "Custom design"
     },
     "func-api": {
-      "description": "External Service Integration (CRM, ERP)",
+      "description": "Inquiries and data flow automatically into your CRM or inventory system.",
       "learn_more": "Connect your website with other tools. We ensure data flows automatically between your site and your CRM, ERP, or newsletter tool.",
-      "name": "API integration"
+      "name": "Connect your business software"
     },
     "func-auth": {
-      "description": "Login, Registration, User Dashboard",
+      "description": "A protected area where customers or staff sign in, for example for documents or orders.",
       "learn_more": "Let users register and log in. Necessary for customer portals, protected areas, dashboards, or membership sites.",
-      "name": "User Auth & Profile"
+      "name": "Client area with login"
     },
     "func-cms": {
-      "description": "Content Management (Sanity/Strapi)",
+      "description": "You update texts, images and news yourself, no coding and no waiting.",
       "learn_more": "Change text and images yourself easily. We integrate a modern Content Management System (Sanity or Strapi) that you and your team can operate without coding skills.",
-      "name": "Headless CMS"
+      "name": "Edit texts & images yourself"
     },
     "seo-speed": {
-      "description": "Load Time Optimization <1s",
+      "description": "For existing sites: we squeeze the last tenths of a second out of the load time.",
       "learn_more": "Speed is money. We tune performance so the site loads in under a second, users enjoy it, and Google rewards it with better rankings.",
-      "name": "Performance Max"
+      "name": "Extra speed tuning"
     },
     "seo-tech": {
-      "description": "Structure, Schema.org, Core Web Vitals",
+      "description": "We prepare your site so Google understands every service and shows extras like reviews in the results.",
       "learn_more": "The foundation for Google success. We optimize technical structure, metadata, and schemas so search engines understand and index your content perfectly.",
-      "name": "Technical SEO audit"
+      "name": "Get found on Google"
     },
     "support-basic": {
-      "description": "Server updates & backups",
+      "description": "Hosting, security updates and daily backups. Nothing for you to worry about.",
       "learn_more": "We take care of the tech. Monthly updates, daily backups, and server maintenance ensure your site always stays secure and accessible.",
-      "name": "Hosting & Maintenance"
+      "name": "Worry-free care"
     },
     "support-pro": {
-      "description": "24/7 Emergency Support & Development",
+      "description": "Guaranteed response times and a direct line to the developer when it has to be fast.",
       "learn_more": "Your technical partner on demand. We provide fast help with problems and continuously support the further development of your platform.",
-      "name": "SLA support"
+      "name": "Priority support"
     },
     "tech-i18n": {
-      "description": "Multi-language Support (i18n Setup)",
+      "description": "Your website in an additional language, each with its own address for Google.",
       "learn_more": "Reach international customers. We structure the site to support any number of languages and make content easy to translate.",
-      "name": "Internationalization"
+      "name": "Second language"
     },
     "tech-pwa": {
-      "description": "Offline Support & Installability",
+      "description": "Your website can be installed on phones like an app, with a home-screen icon and offline view.",
       "learn_more": "Turns your website into an app. Users can install it on their homescreen and use it (partially) offline, for an app-like experience in the browser.",
-      "name": "PWA features"
+      "name": "Installable as a phone app"
     }
   },
   "summary": {
     "continue": "Continue to Inquiry",
     "discount": "Discount activated",
-    "empty": "Select modules...",
+    "empty": "Nothing selected yet",
     "guarantee": {
-      "text": "This setup guarantees a Google Lighthouse score of",
-      "title": "Guarantee"
+      "title": "Our guarantees",
+      "text": "Fixed price, top Google scores at launch and the website belongs to you 100%."
     },
     "monthly": "Monthly",
     "one_time": "One-time",
     "share": "Share Configuration",
-    "title": "Your Package",
-    "package": "Selected Package"
+    "title": "Your selection",
+    "package": "Selected package",
+    "package_label": "Package",
+    "addon_label": "Extra",
+    "selected": "Selected",
+    "price_title": "Your fixed-price quote",
+    "price_tag": "Fixed price after a free call",
+    "price_text": "You only pay once you accept the quote. 50% at kick-off, 50% after your approval.",
+    "cta": "Request free quote"
   },
   "meta": {
     "title": "Project Cost Estimator & Price Calculator | Coday",

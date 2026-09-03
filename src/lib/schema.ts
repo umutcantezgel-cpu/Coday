@@ -1,3 +1,4 @@
+import { PACKAGE_LIST, type Locale as PackageLocale } from '@/shared/data/packages';
 import { academyData } from '@/shared/data/academy';
 import { GOOGLE_REVIEWS, REVIEWS_SUMMARY } from '@/shared/data/reviews';
 
@@ -465,17 +466,16 @@ export function getDynamicLocationSchema(location: {
 /* ═══ PAGE-SPECIFIC SCHEMAS ═══ */
 
 export function getPricingSchema(locale: string = 'de') {
+  const lang: PackageLocale = locale === 'en' ? 'en' : 'de';
+  const pricingUrl = `${BASE_URL}/${locale}/pricing`;
   return {
     '@type': ['Service', 'Product'],
-    '@id': `${BASE_URL}/${locale}/pricing#pricing-product`,
-    name:
-      locale === 'en'
-        ? 'Coday Web Design & Next.js Development Packages'
-        : 'Coday Webdesign & Next.js Entwicklung Pakete',
+    '@id': `${pricingUrl}#pricing-product`,
+    name: lang === 'en' ? 'Coday Website Packages' : 'Coday Website-Pakete',
     description:
-      locale === 'en'
-        ? 'Modular web design and Next.js development packages for businesses and SMEs. Fixed price proposals on request with 5.0 Google rating.'
-        : 'Modulare Webdesign- und Next.js Entwicklungspakete für Unternehmen und Mittelstand. Individuelle Festpreis-Angebote auf Anfrage mit 5.0 Google Bewertung.',
+      lang === 'en'
+        ? 'Four website packages for businesses, from a compact business card site to an enterprise platform. Binding fixed-price quote after a free consultation.'
+        : 'Vier Website-Pakete für Unternehmen, von der kompakten Visitenkarte bis zur Großplattform. Verbindliches Festpreis-Angebot nach kostenlosem Gespräch.',
     brand: { '@id': ORG_ID },
     provider: { '@id': ORG_ID },
     image: `${BASE_URL}/images/og-image.jpg`,
@@ -483,17 +483,24 @@ export function getPricingSchema(locale: string = 'de') {
       '@type': 'AdministrativeArea',
       name: 'Hessen',
     },
+    // No price values on purpose: quotes are individual ("Auf Anfrage").
     offers: {
-      '@type': 'Offer',
-      price: '2000',
-      priceCurrency: 'EUR',
-      priceValidUntil: '2027-12-31',
-      description:
-        locale === 'en'
-          ? 'Bespoke fixed-price proposal following a free consultation'
-          : 'Individuelles Festpreisangebot nach kostenloser Bedarfsanalyse',
-      availability: 'https://schema.org/InStock',
-      url: `${BASE_URL}/${locale}/pricing`,
+      '@type': 'OfferCatalog',
+      '@id': `${pricingUrl}#offer-catalog`,
+      name: lang === 'en' ? 'Coday website packages' : 'Coday Website-Pakete',
+      itemListElement: PACKAGE_LIST.map((pkg) => ({
+        '@type': 'Offer',
+        '@id': `${pricingUrl}#offer-${pkg.id}`,
+        name: pkg.name[lang],
+        availability: 'https://schema.org/InStock',
+        url: `${pricingUrl}#packages-selection`,
+        itemOffered: {
+          '@type': 'Service',
+          '@id': `${pricingUrl}#service-${pkg.id}`,
+          name: pkg.name[lang],
+          provider: { '@id': ORG_ID },
+        },
+      })),
     },
     ...getReviewsSchema(locale),
   };

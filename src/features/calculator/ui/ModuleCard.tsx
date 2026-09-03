@@ -97,10 +97,10 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
         </div>
         <div className="text-right">
           <div className="font-display font-bold text-sm text-gray-900">
-            {isIncluded ? 'Im Paket enthalten' : 'Auf Anfrage'}
+            {isIncluded ? t('card.status.included') : t('card.price_tag')}
           </div>
           <div className="text-[10px] text-gray-500 uppercase tracking-wide">
-            {isIncluded ? 'Inklusive' : 'Individuell wählbar'}
+            {isIncluded ? t('card.included_short') : t('card.optional_short')}
           </div>
         </div>
       </div>
@@ -117,10 +117,11 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
         {/* Learn More Toggle */}
         <button
           onClick={handleToggleDetails}
+          aria-expanded={showDetails}
           className="active:scale-[0.97] focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none flex items-center gap-1 text-[10px] font-bold uppercase tracking-wide text-primary hover:text-primary/80 transition-colors motion-reduce:duration-[0.01ms] mb-2 rounded"
         >
           <Icon name={showDetails ? 'expand_less' : 'expand_more'} className="text-sm" />
-          {showDetails ? 'Weniger anzeigen' : 'Mehr erfahren'}
+          {showDetails ? t('card.less') : t('card.more')}
         </button>
 
         {/* Expandable Details */}

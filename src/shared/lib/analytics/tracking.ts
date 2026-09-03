@@ -12,7 +12,11 @@ export type EventName =
   | 'discovery_call_booked'
   | 'scroll_depth'
   | 'engaged_reading'
-  | 'preferred_source_click';
+  | 'preferred_source_click'
+  | 'package_select'
+  | 'addon_toggle'
+  | 'package_finder_result'
+  | 'package_inquiry_click';
 
 export interface EventProperties {
   cta_label?: string;
@@ -20,6 +24,10 @@ export interface EventProperties {
   destination?: string;
   depth?: number; // for scroll_depth (25, 50, 75, 100)
   duration_seconds?: number; // for engaged_reading
+  package_id?: string; // for package_* events and form_submit
+  addon_id?: string; // for addon_toggle
+  addon_count?: number; // for package_inquiry_click and form_submit
+  selected?: boolean; // for addon_toggle
   [key: string]: unknown;
 }
 

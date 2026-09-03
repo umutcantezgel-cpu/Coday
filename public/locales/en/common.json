@@ -1,5 +1,4 @@
 {
-  "strobi": "Strobi Mii World",
   "404": {
     "config_button": "Configure Project",
     "desc": "The requested resource could not be found. The URL might have been changed or the content is no longer available.",
@@ -7,6 +6,7 @@
     "home_button": "Back to Home",
     "title": "Resource not found (404)"
   },
+  "strobi": "Strobi Mii World",
   "buttons": {
     "close": "Close",
     "menu": "Menu",
@@ -493,9 +493,9 @@
   },
   "welcome": "Welcome to Coday",
   "steps": {
-    "packages": "Choose Solution",
-    "calculator": "Evaluate Project",
-    "contact": "Send Request"
+    "packages": "Choose package",
+    "calculator": "Choose extras",
+    "contact": "Send request"
   },
   "social": {
     "visit": "Visit us on {platform}",

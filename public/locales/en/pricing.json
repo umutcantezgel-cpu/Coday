@@ -1,267 +1,505 @@
 {
-  "comparison": {
-    "headers": {
-      "feature": "Feature / Scope",
-      "starter": "Starter (Compact)",
-      "business": "Business (Standard)",
-      "corporate": "Pro Corporate (Large)",
-      "enterprise": "Enterprise Platform"
-    },
-    "rows": {
-      "cms": {
-        "ent": "Optional",
-        "label": "Headless CMS (Sanity)",
-        "corporate": "Optional",
-        "business": "Optional",
-        "starter": "Optional"
+  "meta": {
+    "title": "Website Packages & Pricing | Coday Web Agency Wetzlar",
+    "description": "Four website packages from the business card to the enterprise platform, explained in plain language. Fixed price after a free call, no hidden costs, the website belongs to you."
+  },
+  "hero": {
+    "badge": "Fixed price after a free call",
+    "title": "Which website fits",
+    "title_highlight": "your business?",
+    "subtitle": "Four packages, from the compact business card to the enterprise platform. You pick a package and extras, we discuss everything in a free call, and you receive a binding fixed-price quote. No hidden costs, no subscription.",
+    "cta_primary": "Find the right package",
+    "cta_secondary": "Prefer to talk? Book a call",
+    "reviews_google": "Google (4 reviews)",
+    "reviews_provenexpert": "ProvenExpert (4 reviews)",
+    "reviews_google_title": "See Coday's Google reviews",
+    "reviews_provenexpert_title": "See Coday's ProvenExpert profile"
+  },
+  "how": {
+    "label": "How it works",
+    "title": "Three steps to your new website",
+    "steps": [
+      {
+        "title": "Choose a package",
+        "text": "Pick the package that matches the size of your business. Not sure? The package finder helps with two questions."
       },
-      "custom": {
-        "ent": "Optional",
-        "label": "Custom Apps / Portals (Add-on)",
-        "corporate": "Optional",
-        "business": "Optional",
-        "starter": "Optional"
+      {
+        "title": "Tick your extras",
+        "text": "Add only what you really need, for example an online shop or editing texts yourself."
       },
-      "ecommerce": {
-        "ent": "Optional",
-        "label": "E-Commerce Shop (Add-on)",
-        "corporate": "Optional",
-        "business": "Optional",
-        "starter": "Optional"
-      },
-      "pages": {
-        "ent": "Massive Platforms",
-        "label": "Page Scope",
-        "corporate": "Up to 30",
-        "business": "Up to 12",
-        "starter": "1-5"
-      },
-      "seo": {
-        "ent": "Multi-Region",
-        "label": "SEO Architecture",
-        "corporate": "Holistic",
-        "business": "Topic Silos",
-        "starter": "Local"
-      },
-      "support": {
-        "ent": "Voluntary",
-        "label": "Maintenance & Support",
-        "corporate": "Voluntary",
-        "business": "Voluntary",
-        "starter": "Voluntary"
+      {
+        "title": "Free call, then a fixed price",
+        "text": "I get back to you within 24 hours. After a short call you receive your binding quote."
       }
+    ]
+  },
+  "proof": {
+    "label": "Why Coday",
+    "title": "Direct contact, modern technology, a clear price",
+    "text": "You talk to the person who builds your website. The technology is built for speed, and the price is fixed before we start.",
+    "pillars": [
+      {
+        "subtitle": "Short paths",
+        "title": "You talk directly to the developer",
+        "text": "From the first question to launch, Umutcan Emre Tezgel looks after you personally. No middlemen, no long approval loops."
+      },
+      {
+        "subtitle": "Measurably proven",
+        "title": "Top marks from Google",
+        "text": "Every Coday website scores full marks in Google's speed test. That means visitors never wait, and Google prefers to show you."
+      },
+      {
+        "subtitle": "Full independence",
+        "title": "The website belongs to you",
+        "text": "You receive all files, designs and logins. No subscription, no lock-in with us."
+      }
+    ],
+    "badge": "Verified result",
+    "headline": "In black and white: 100 out of 100 points from Google",
+    "body": "Many websites lose visitors because they load slowly. Coday websites reach full marks in all four categories of Google's official test.",
+    "metrics": {
+      "performance": "Speed",
+      "accessibility": "Accessibility",
+      "best_practices": "Technology",
+      "seo": "Google visibility"
     },
-    "title": "Package Comparison"
+    "screenshot_label": "Google PageSpeed Insights (mobile & desktop)",
+    "screenshot_score": "100 / 100",
+    "screenshot_alt": "Google PageSpeed Insights: 100 out of 100 points for a Coday website"
   },
-  "trust": {
-    "code_ownership": "100% Code Ownership",
-    "satisfaction": "100% Satisfaction",
-    "performance": "PageSpeed 95+",
-    "support": "24/7 support"
+  "packages_section": {
+    "label": "4 packages",
+    "title": "Choose your package",
+    "subtitle": "From a compact presence to an enterprise platform. Every package comes with a fixed price, fast loading and full ownership. Extras are added in the next step."
   },
-  "cta_section": {
-    "button": "Book Appointment",
-    "text": "Schedule a free consultation.",
-    "title": "Still unsure?"
+  "tier_label": "Package {tier} of {total}",
+  "delivery": "Ready in about {days} business days",
+  "price": {
+    "tag": "Fixed price after a free call",
+    "sub": "You only pay once you accept the quote",
+    "payment": "50% at kick-off, 50% after your approval",
+    "no_risk": "Non-binding and free"
   },
-  "features": {
-    "enterprise": [
-      "Scalable multi-region edge architecture & platform logic",
-      "Engineered for massive user traffic & nationwide/global rollouts",
-      "Complex custom software architecture & enterprise integrations",
-      "Maximum security & compliance (WAF, DDoS, ISO/GDPR)",
-      "Dedicated VIP SLA & guaranteed developer response times",
-      "Direct lead architect collaboration with Umutcan Emre Tezgel"
-    ],
-    "corporate": [
-      "Extensive Next.js 15 corporate platform (up to 30 pages)",
-      "Holistic SEO topic clusters & rich schema dominance",
-      "Multi-step conversion funnels (calculators, funnels & filters)",
-      "Multi-language architecture (i18n ready)",
-      "Bespoke design system & component tokens",
-      "Personal conversion rate & strategic guidance"
-    ],
-    "business": [
-      "Bespoke Next.js 15 B2B platform (up to 12 pages)",
-      "100/100 Core Web Vitals & sub-0.3s load time",
-      "Technical SEO, topic silos & rich snippets",
-      "Micro-animations & custom bento grid UI",
-      "60-second mobile express recruiting funnel",
-      "Direct line to lead architect Umutcan Emre Tezgel"
-    ],
-    "starter": [
-      "Custom Next.js 15 website (1–5 pages)",
-      "100/100 Google Core Web Vitals & sub-0.3s speed",
-      "Mobile-first design & GDPR-compliant contact funnel",
-      "Local SEO optimization & Google Maps alignment",
-      "100% source code & design ownership (no subscription)",
-      "Vercel Edge hosting deployment"
-    ]
-  },
-  "labels": {
-    "setup": "Setup",
-    "monthly": "/month",
-    "delivery": "~{days} days delivery"
-  },
-  "not_included": {
-    "enterprise": [
-      "Headless CMS (optional add-on)",
-      "E-Commerce Shop (optional add-on)",
-      "Custom Apps (optional add-on)"
-    ],
-    "corporate": [
-      "Headless CMS (optional add-on)",
-      "E-Commerce Shop (optional add-on)",
-      "Custom Apps (optional add-on)"
-    ],
-    "business": [
-      "Headless CMS (optional add-on)",
-      "E-Commerce Shop (optional add-on)",
-      "Custom Apps (optional add-on)"
-    ],
-    "starter": [
-      "Headless CMS (optional add-on)",
-      "E-Commerce Shop (optional add-on)",
-      "Custom Apps (optional add-on)"
-    ]
+  "card": {
+    "for_who": "For whom",
+    "example": "Typical",
+    "select": "Choose this package",
+    "selected": "Selected",
+    "selected_hint": "Adjust extras below",
+    "included": "Included",
+    "not_included": "Available as an extra",
+    "hint_label": "What does that mean?"
   },
   "packages": {
-    "enterprise": {
-      "badge": "Enterprise & Platforms",
-      "cta": "Request Enterprise",
-      "name": "Enterprise Platform (Extremely Large)",
-      "tagline": "For large enterprises, corporations & global multi-region rollouts"
-    },
-    "corporate": {
-      "badge": "Full Corporate Scope",
-      "cta": "Choose Corporate",
-      "name": "Pro Corporate (Large)",
-      "tagline": "Comprehensive corporate platform with maximum conversion & brand authority"
+    "starter": {
+      "name": "The Business Card",
+      "subtitle": "Compact website with 1 to 5 pages",
+      "for_who": "For trades, practices and service providers that want a credible presence and to be found online.",
+      "example": "Locksmith, physiotherapy practice, tax advisor",
+      "outcome": "A fast, modern website that shows your business at its best and brings in inquiries.",
+      "features": [
+        {
+          "label": "Up to 5 pages",
+          "hint": "For example home, services, about, contact and legal notice."
+        },
+        {
+          "label": "Loads in under half a second",
+          "hint": "Visitors leave when a page takes long to load. Yours opens instantly, on phones too. Google rates that with full marks."
+        },
+        {
+          "label": "Looks great on every phone",
+          "hint": "Most visitors come from a smartphone. We design for the phone first, then for the big screen."
+        },
+        {
+          "label": "Contact form that respects privacy",
+          "hint": "Inquiries land straight in your inbox. Privacy notice and consent are built in (GDPR)."
+        },
+        {
+          "label": "Get found on Google in your region",
+          "hint": "We align your site with searches like “electrician Wetzlar” and connect it with your Google Business Profile."
+        },
+        {
+          "label": "The website belongs entirely to you",
+          "hint": "No subscription, no lock-in. You receive all files and can switch at any time."
+        }
+      ],
+      "not_included": [
+        { "label": "Edit texts & images yourself", "addon_id": "func-cms" },
+        { "label": "Online shop", "addon_id": "commerce-headless" },
+        { "label": "Client area with login", "addon_id": "func-auth" }
+      ],
+      "cta": "Choose The Business Card"
     },
     "business": {
-      "badge": "Bestseller Mid-Market",
-      "cta": "Choose Business",
-      "name": "Business (Standard)",
-      "tagline": "The benchmark for ambitious SMEs, B2B companies & law firms"
+      "name": "The Client Magnet",
+      "subtitle": "Up to 12 pages, inquiry and applicant forms included",
+      "badge": "Most popular",
+      "for_who": "For companies with several services that want to win new customers and staff on a regular basis.",
+      "example": "Construction company, law firm, industrial supplier",
+      "outcome": "A website that explains your services clearly, builds trust and delivers inquiries as well as applications.",
+      "features": [
+        {
+          "label": "Up to 12 pages",
+          "hint": "Enough room for every service, references, team and careers, each with its own page."
+        },
+        {
+          "label": "Loads in under half a second",
+          "hint": "Visitors leave when a page takes long to load. Yours opens instantly, on phones too. Google rates that with full marks."
+        },
+        {
+          "label": "60-second application form",
+          "hint": "Candidates apply straight from their phone in under a minute, no cover letter needed. You receive everything by e-mail."
+        },
+        {
+          "label": "Every service gets its own easy-to-find page",
+          "hint": "Customers find exactly the service they search for on Google instead of just your home page. Google also shows extras like reviews right in the results."
+        },
+        {
+          "label": "High-quality design with subtle animations",
+          "hint": "Small movements guide the eye and make your site feel more premium than your competitors'."
+        },
+        {
+          "label": "Direct line to the developer",
+          "hint": "From start to finish you talk to Umutcan Emre Tezgel, who builds your site. No middlemen."
+        }
+      ],
+      "not_included": [
+        { "label": "Edit texts & images yourself", "addon_id": "func-cms" },
+        { "label": "Online shop", "addon_id": "commerce-headless" },
+        { "label": "Client area with login", "addon_id": "func-auth" }
+      ],
+      "cta": "Choose The Client Magnet"
     },
-    "starter": {
-      "cta": "Choose Starter",
-      "name": "Starter (Compact)",
-      "tagline": "Compact high-speed website for local service providers & trades"
+    "corporate": {
+      "name": "The Company Platform",
+      "subtitle": "Up to 30 pages, second language and calculators included",
+      "badge": "For growing companies",
+      "for_who": "For companies with many services or locations that operate internationally or want to guide visitors step by step to an inquiry.",
+      "example": "Exporting mid-sized company, clinic, training provider",
+      "outcome": "Your digital flagship: extensive, multilingual and built to lead visitors step by step to an inquiry.",
+      "features": [
+        {
+          "label": "Up to 30 pages",
+          "hint": "Room for all services, locations, industries and guide content."
+        },
+        {
+          "label": "Second language included",
+          "hint": "Your website in two languages, each with its own address so Google finds both versions."
+        },
+        {
+          "label": "Interactive calculators and selection aids",
+          "hint": "For example a cost calculator or a questionnaire that guides visitors to the right offer and prepares the inquiry."
+        },
+        {
+          "label": "Topic worlds that Google understands",
+          "hint": "Related content is linked so Google sees you as the expert for a whole topic, not just for single keywords."
+        },
+        {
+          "label": "Your own design system",
+          "hint": "All colours, fonts and building blocks are defined. New pages are added quickly later, in the same style."
+        },
+        {
+          "label": "Personal guidance on optimisation",
+          "hint": "After launch we look together at where visitors drop off and improve the site in a targeted way."
+        }
+      ],
+      "not_included": [
+        { "label": "Edit texts & images yourself", "addon_id": "func-cms" },
+        { "label": "Online shop", "addon_id": "commerce-headless" },
+        { "label": "Client area with login", "addon_id": "func-auth" }
+      ],
+      "cta": "Choose The Company Platform"
+    },
+    "enterprise": {
+      "name": "The Enterprise Platform",
+      "subtitle": "For corporations, branch networks and very high traffic",
+      "badge": "Enterprise",
+      "for_who": "For corporations, brands with many locations and platforms that must serve very many visitors at once, nationwide or internationally.",
+      "example": "Retail chain, association, nationwide service provider",
+      "outcome": "A platform that stays stable under heavy traffic, connects to your systems and meets the highest security requirements.",
+      "features": [
+        {
+          "label": "Any number of pages and locations",
+          "hint": "Even hundreds of location or product pages are generated and maintained automatically."
+        },
+        {
+          "label": "Stays fast even under heavy traffic",
+          "hint": "Your site is delivered from many places worldwide at once. Ad campaigns or press coverage will not bring it to a halt."
+        },
+        {
+          "label": "Connection to your business software",
+          "hint": "Data flows automatically between the website and your CRM or inventory system."
+        },
+        {
+          "label": "Highest security and data protection",
+          "hint": "Protection against attacks, encrypted transfer and GDPR-compliant data handling."
+        },
+        {
+          "label": "Guaranteed response times",
+          "hint": "A dedicated contact and contractually agreed response times when something is urgent."
+        },
+        {
+          "label": "Strategic guidance by the owner",
+          "hint": "Umutcan Emre Tezgel plans the architecture personally and supports you long term."
+        }
+      ],
+      "not_included": [
+        { "label": "Edit texts & images yourself", "addon_id": "func-cms" },
+        { "label": "Online shop", "addon_id": "commerce-headless" },
+        { "label": "Client area with login", "addon_id": "func-auth" }
+      ],
+      "cta": "Choose The Enterprise Platform"
     }
   },
-  "page": {
-    "headline": "Three Packages. <0>Zero Surprises.</0>",
-    "subheadline": "Three Packages. Zero Surprises. Choose the package that fits your goals. All proposals on request with no hidden costs.",
-    "title": "Web Design Pricing & SEO Costs | Packages - Coday",
-    "description": "Transparent web design quotes and SEO packages. We offer fixed price proposals for high-end web development with no hidden costs."
+  "finder": {
+    "label": "Not sure which package?",
+    "title": "Two questions, one recommendation",
+    "subtitle": "Answer two short questions and we suggest the right package, with no obligation.",
+    "toggle_open": "Open package finder",
+    "toggle_close": "Close package finder",
+    "q_goal": "What should your website mainly do?",
+    "goals": {
+      "found": "Be found and look credible",
+      "grow": "Win customers and applicants regularly",
+      "scale": "Show many services or locations, also multilingual",
+      "network": "Branches, corporation or very high traffic"
+    },
+    "q_size": "Roughly how many pages do you need?",
+    "sizes": {
+      "s": "Up to 5",
+      "m": "6 to 12",
+      "l": "13 to 30",
+      "xl": "More than 30 or not sure yet"
+    },
+    "result_prefix": "Our recommendation:",
+    "result_cta": "Use this package",
+    "reset": "Start over"
   },
-  "custom": {
-    "title": "Bigger Project?",
-    "description": "For more complex requirements, e.g. over 30 pages, custom features, or special integrations, we'll gladly create a tailored quote for you.",
-    "cta": "Request Custom Quote",
-    "badge": "Custom"
+  "addons": {
+    "label": "Extras",
+    "title": "Add extras",
+    "subtitle": "Add only what you need. Tap an extra to add or remove it. All extras are included in your fixed-price quote.",
+    "recommended": "Recommended for your package",
+    "add": "Add",
+    "selected": "Selected",
+    "included": "Included in package",
+    "type_optional": "Optional",
+    "type_care": "Voluntary, cancel monthly",
+    "for_who_label": "Useful for",
+    "items": {
+      "func-cms": {
+        "name": "Edit texts & images yourself",
+        "benefit": "You update texts, images and news yourself, no coding and no waiting.",
+        "for_who": "Content that changes more than a few times a year.",
+        "type": "optional"
+      },
+      "commerce-headless": {
+        "name": "Online shop",
+        "benefit": "Sell products directly on your website with secure checkout and a fast cart.",
+        "for_who": "Retailers and manufacturers with their own range.",
+        "type": "optional"
+      },
+      "func-auth": {
+        "name": "Client area with login",
+        "benefit": "A protected area where customers or staff sign in, for example for documents, orders or portals.",
+        "for_who": "Companies that provide documents or tools to customers.",
+        "type": "optional"
+      },
+      "seo-tech": {
+        "name": "Get found on Google",
+        "benefit": "We prepare your site so Google understands every service and shows extras like reviews in the results.",
+        "for_who": "Everyone who wants to win new customers via Google.",
+        "type": "optional"
+      },
+      "design-ui": {
+        "name": "Custom design",
+        "benefit": "You see and approve every layout as a draft before we start building.",
+        "for_who": "Brands with clear ideas or an existing visual identity.",
+        "type": "optional"
+      },
+      "tech-i18n": {
+        "name": "Second language",
+        "benefit": "Your website in an additional language, each with its own address for Google.",
+        "for_who": "Companies with international customers.",
+        "type": "optional"
+      },
+      "tech-pwa": {
+        "name": "Installable as a phone app",
+        "benefit": "Your website can be installed on phones like an app, with a home-screen icon and offline view.",
+        "for_who": "Services customers use regularly.",
+        "type": "optional"
+      },
+      "support-basic": {
+        "name": "Worry-free care",
+        "benefit": "Hosting, security updates and daily backups. Nothing for you to worry about.",
+        "for_who": "Everyone who does not want to deal with technology. Your site runs without it too.",
+        "type": "care"
+      },
+      "support-pro": {
+        "name": "Priority support",
+        "benefit": "Guaranteed response times and a direct line to the developer when it has to be fast.",
+        "for_who": "Companies whose website is business-critical.",
+        "type": "care"
+      }
+    }
+  },
+  "summary": {
+    "label": "Your selection",
+    "addons_none": "no extras",
+    "addons_one": "1 extra",
+    "addons_many": "{count} extras",
+    "next_title": "What happens next",
+    "next_steps": [
+      "I get back to you within 24 hours.",
+      "Short, free call (about 15 minutes) about goals and scope.",
+      "You receive your binding fixed-price quote and decide at your own pace."
+    ],
+    "cta": "Request free quote",
+    "phone_cta": "Prefer to call?",
+    "no_risk": "Non-binding. You pay nothing until you accept the quote."
+  },
+  "comparison": {
+    "label": "Comparison",
+    "title": "All packages at a glance",
+    "subtitle": "What is included, what comes as an extra?",
+    "col_feature": "Feature",
+    "values": {
+      "included": "Included",
+      "addon": "As an extra",
+      "no": "Not included",
+      "voluntary": "Voluntary add-on"
+    },
+    "rows": [
+      {
+        "key": "pages",
+        "label": "Number of pages",
+        "starter": "1 to 5",
+        "business": "up to 12",
+        "corporate": "up to 30",
+        "enterprise": "unlimited"
+      },
+      {
+        "key": "delivery",
+        "label": "Ready in",
+        "starter": "about 14 business days",
+        "business": "about 21 business days",
+        "corporate": "about 30 business days",
+        "enterprise": "about 45 business days"
+      },
+      {
+        "key": "speed",
+        "label": "Loads in under half a second",
+        "starter": "included",
+        "business": "included",
+        "corporate": "included",
+        "enterprise": "included"
+      },
+      {
+        "key": "recruiting",
+        "label": "60-second application form",
+        "starter": "addon",
+        "business": "included",
+        "corporate": "included",
+        "enterprise": "included"
+      },
+      {
+        "key": "language",
+        "label": "Second language",
+        "starter": "addon",
+        "business": "addon",
+        "corporate": "included",
+        "enterprise": "included"
+      },
+      {
+        "key": "cms",
+        "label": "Edit texts & images yourself",
+        "starter": "addon",
+        "business": "addon",
+        "corporate": "addon",
+        "enterprise": "addon"
+      },
+      {
+        "key": "shop",
+        "label": "Online shop",
+        "starter": "addon",
+        "business": "addon",
+        "corporate": "addon",
+        "enterprise": "addon"
+      },
+      {
+        "key": "login",
+        "label": "Client area with login",
+        "starter": "addon",
+        "business": "addon",
+        "corporate": "addon",
+        "enterprise": "addon"
+      },
+      {
+        "key": "support",
+        "label": "Care after launch",
+        "starter": "voluntary",
+        "business": "voluntary",
+        "corporate": "voluntary",
+        "enterprise": "voluntary"
+      },
+      {
+        "key": "ownership",
+        "label": "The website belongs to you",
+        "starter": "included",
+        "business": "included",
+        "corporate": "included",
+        "enterprise": "included"
+      }
+    ]
   },
   "faq": {
-    "title": "Frequently Asked Questions",
+    "label": "Frequently asked",
+    "title": "Everything about pricing and process",
     "items": [
       {
-        "question": "Why Fixed pricing?",
-        "answer": "I believe in transparency. My Fixed prices give you full planning security, no hidden costs, no subsequent demands. You know exactly what you get and what it costs."
+        "question": "What does a website from Coday cost?",
+        "answer": "It depends on the scope: number of pages, the extras you want and whether we supply texts and images. That is why we do not quote a flat rate but prepare a binding fixed-price quote after a free call. You only pay for what you really need, and the price does not change afterwards."
       },
       {
-        "question": "What if I need more?",
-        "answer": "My packages cover most requirements. If you need additional pages, features, or special integrations, I will calculate these transparently as an add-on or set up a custom project."
+        "question": "What happens after I request a package?",
+        "answer": "I get back to you within 24 hours. In a short call of about 15 minutes we clarify goals and scope. Then you receive your fixed-price quote. The project only starts once you accept it."
       },
       {
-        "question": "How long does the implementation take?",
-        "answer": "Depending on the package, the delivery time is between 2 and 4 weeks. I work efficiently with proven processes so your new website can go live quickly, without compromising on quality."
+        "question": "How does payment work?",
+        "answer": "In two steps: 50% at project start, 50% only once the website is live and you have approved it. No hidden costs, no subscription."
+      },
+      {
+        "question": "Do I have to supply texts and images myself?",
+        "answer": "No, that is not a requirement. We gladly use what you have. Missing texts and images are discussed in the first call and planned into the quote."
+      },
+      {
+        "question": "Can I upgrade to a bigger package or add extras later?",
+        "answer": "Yes. Every package can be extended later because they all share the same technology. Extras such as an online shop or a client area are simply added."
+      },
+      {
+        "question": "What ongoing costs should I expect?",
+        "answer": "The website itself runs without a mandatory contract. Thanks to modern technology, hosting is very affordable and low-maintenance. If you prefer not to deal with anything, you can add the voluntary worry-free care, cancellable monthly."
+      },
+      {
+        "question": "What if I do not like the result?",
+        "answer": "You see drafts and interim versions before the site goes live and approve every phase. On top of that our guarantees apply: fixed price, top Google scores at launch and the website belongs to you 100%."
       }
     ]
   },
-  "retainers": {
-    "title": "Support & Growth Retainer",
-    "description": "Sustainable growth and continuous optimization after go-live.",
-    "basic": {
-      "name": "Basic",
-      "price": "On Request",
-      "features": [
-        "Monthly Analytics Review",
-        "2h Support Time",
-        "Security Updates",
-        "Uptime Monitoring"
-      ]
-    },
-    "growth": {
-      "name": "Growth",
-      "price": "On Request",
-      "features": [
-        "Everything in Basic",
-        "2 Content Updates per month",
-        "1 A/B experiment",
-        "5h Support Time"
-      ]
-    },
-    "partnership": {
-      "name": "Partnership",
-      "price": "On Request",
-      "features": [
-        "Everything in Growth",
-        "Priority Support (24h SLA)",
-        "Quarterly CRO Review",
-        "10h Dev Time"
-      ]
-    }
+  "final_cta": {
+    "title": "Ready for your new website?",
+    "text": "Request your free fixed-price quote or book a short call with Umutcan Emre Tezgel. Non-binding and risk-free.",
+    "cta": "Request free quote",
+    "cta_secondary": "Book a 15-minute call",
+    "trust": [
+      "Fixed-price guarantee",
+      "50% at kick-off, 50% after approval",
+      "The website belongs to you 100%"
+    ],
+    "guarantees_link": "See all guarantees"
   },
-  "value_prop": {
-    "title": "Why Next.js? Why Coday?",
-    "description": "Your website is no longer just a simple business card, it is your strongest, fully automated sales representative. An investment in performance is an investment in measurable revenue.",
-    "points": [
-      {
-        "title": "Millisecond Load Times",
-        "description": "53% of users bounce if a page takes longer than 3 seconds to load. My headless architecture guarantees load times in the milliseconds."
-      },
-      {
-        "title": "Maximum Conversion",
-        "description": "Every second of delay costs you 7% in conversions. A 100/100 Google Lighthouse score means a seamless user experience and significantly more inquiries."
-      },
-      {
-        "title": "Local SEO Dominance",
-        "description": "With structured data (JSON-LD) and Entity-Based SEO, I catapult your local business to the top of the Google Local Pack."
-      }
-    ]
-  },
-  "trust_section": {
-    "title": "Results that speak for themselves",
-    "references": [
-      {
-        "name": "Batherm (Wetzlar)",
-        "metric": "+240%",
-        "label": "More qualified B2B inquiries in the first quarter after relaunch",
-        "href": "https://www.batherm.de"
-      },
-      {
-        "name": "Talia Boutique",
-        "metric": "Live",
-        "label": "View Online Store",
-        "href": "https://talia-boutique.de/"
-      },
-      {
-        "name": "Memo BauT",
-        "metric": "Live",
-        "label": "View Landscaping Website",
-        "href": "https://memobaut.de"
-      },
-      {
-        "name": "Lindener Ratsstuben",
-        "metric": "< 0.8s",
-        "label": "Load time (LCP) in the 99th percentile, massive boost on Google Maps",
-        "href": "https://lindener-ratsstuben.de"
-      }
-    ]
-  },
-  "seoText": {
-    "title": "Web Design Pricing & Fixed-Price Packages | Coday",
-    "content": "We offer transparent web design packages with fixed pricing to ensure full budget predictability and cost control for your digital projects. Request your custom web development package in Wetzlar today."
+  "sticky": {
+    "label": "Your selection",
+    "cta": "Request quote"
   }
 }

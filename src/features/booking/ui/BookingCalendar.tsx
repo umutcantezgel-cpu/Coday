@@ -79,6 +79,7 @@ const BookingCalendar = ({
         date: formattedDate,
         time_slot: selectedTime,
         service_type: initialServiceType,
+        locale: locale === 'en' ? 'en' : 'de',
       });
 
       if (res.error) {

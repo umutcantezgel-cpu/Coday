@@ -1,267 +1,505 @@
 {
-  "comparison": {
-    "headers": {
-      "feature": "Leistungsumfang",
-      "starter": "Starter (Klein)",
-      "business": "Business (Mittel)",
-      "corporate": "Pro Corporate (Groß)",
-      "enterprise": "Enterprise (Extrem groß)"
-    },
-    "rows": {
-      "cms": {
-        "ent": "Optional",
-        "label": "Headless CMS (Sanity)",
-        "corporate": "Optional",
-        "business": "Optional",
-        "starter": "Optional"
+  "meta": {
+    "title": "Website-Pakete & Preise | Coday Webagentur Wetzlar",
+    "description": "Vier Website-Pakete von der Visitenkarte bis zur Großplattform, verständlich erklärt. Festpreis nach kostenlosem Gespräch, keine versteckten Kosten, die Website gehört Ihnen."
+  },
+  "hero": {
+    "badge": "Festpreis nach kostenlosem Gespräch",
+    "title": "Welche Website passt zu",
+    "title_highlight": "Ihrem Unternehmen?",
+    "subtitle": "Vier Pakete, von der kompakten Visitenkarte bis zur Großplattform. Sie wählen Paket und Extras, wir besprechen alles in einem kostenlosen Gespräch, und Sie erhalten ein verbindliches Festpreis-Angebot. Keine versteckten Kosten, kein Abo.",
+    "cta_primary": "Passendes Paket finden",
+    "cta_secondary": "Lieber direkt sprechen? Termin buchen",
+    "reviews_google": "Google (4 Rezensionen)",
+    "reviews_provenexpert": "ProvenExpert (4 Bewertungen)",
+    "reviews_google_title": "Google-Rezensionen für Coday ansehen",
+    "reviews_provenexpert_title": "ProvenExpert-Profil von Coday ansehen"
+  },
+  "how": {
+    "label": "So funktioniert’s",
+    "title": "In drei Schritten zur neuen Website",
+    "steps": [
+      {
+        "title": "Paket wählen",
+        "text": "Suchen Sie das Paket aus, das zu Ihrer Unternehmensgröße passt. Unsicher? Der Paketfinder hilft mit zwei Fragen."
       },
-      "custom": {
-        "ent": "Optional",
-        "label": "Custom Apps / Portale (Add-on)",
-        "corporate": "Optional",
-        "business": "Optional",
-        "starter": "Optional"
+      {
+        "title": "Extras ankreuzen",
+        "text": "Ergänzen Sie nur, was Sie wirklich brauchen, zum Beispiel einen Online-Shop oder das Selbst-Ändern von Texten."
       },
-      "ecommerce": {
-        "ent": "Optional",
-        "label": "E-Commerce Shop (Add-on)",
-        "corporate": "Optional",
-        "business": "Optional",
-        "starter": "Optional"
-      },
-      "pages": {
-        "ent": "Riesige Plattformen",
-        "label": "Seitenumfang",
-        "corporate": "Bis 30",
-        "business": "Bis 12",
-        "starter": "1-5"
-      },
-      "seo": {
-        "ent": "Multi-Region",
-        "label": "SEO-Architektur",
-        "corporate": "Holistisch",
-        "business": "Topic-Silos",
-        "starter": "Lokal"
-      },
-      "support": {
-        "ent": "Freiwillig",
-        "label": "Wartung & Support",
-        "corporate": "Freiwillig",
-        "business": "Freiwillig",
-        "starter": "Freiwillig"
+      {
+        "title": "Kostenloses Gespräch, dann Festpreis",
+        "text": "Ich melde mich innerhalb von 24 Stunden. Nach einem kurzen Gespräch erhalten Sie Ihr verbindliches Angebot."
       }
+    ]
+  },
+  "proof": {
+    "label": "Warum Coday",
+    "title": "Direkter Kontakt, moderne Technik, klarer Preis",
+    "text": "Sie sprechen mit dem Menschen, der Ihre Website baut. Die Technik ist auf Geschwindigkeit ausgelegt, und der Preis steht fest, bevor es losgeht.",
+    "pillars": [
+      {
+        "subtitle": "Kurze Wege",
+        "title": "Sie sprechen direkt mit dem Entwickler",
+        "text": "Von der ersten Frage bis zum Start betreut Sie Umutcan Emre Tezgel persönlich. Keine Zwischenstellen, keine langen Abstimmungsschleifen."
+      },
+      {
+        "subtitle": "Messbar belegt",
+        "title": "Bestnoten bei Google",
+        "text": "Jede Coday-Website erreicht bei Googles Geschwindigkeitstest die volle Punktzahl. Das heißt: Besucher warten nicht, und Google zeigt Sie lieber."
+      },
+      {
+        "subtitle": "Volle Unabhängigkeit",
+        "title": "Die Website gehört Ihnen",
+        "text": "Sie erhalten alle Dateien, Designs und Zugänge. Kein Abo, keine Bindung an uns."
+      }
+    ],
+    "badge": "Geprüftes Ergebnis",
+    "headline": "Schwarz auf weiß: 100 von 100 Punkten bei Google",
+    "body": "Viele Websites verlieren Besucher, weil sie langsam laden. Coday-Websites erreichen im offiziellen Google-Test in allen vier Kategorien die volle Punktzahl.",
+    "metrics": {
+      "performance": "Geschwindigkeit",
+      "accessibility": "Barrierefreiheit",
+      "best_practices": "Technik",
+      "seo": "Google-Sichtbarkeit"
     },
-    "title": "Paket-Vergleich"
+    "screenshot_label": "Google PageSpeed Insights (Handy & Desktop)",
+    "screenshot_score": "100 / 100",
+    "screenshot_alt": "Google PageSpeed Insights: 100 von 100 Punkten für eine Coday-Website"
   },
-  "trust": {
-    "code_ownership": "100% Code-Eigentum",
-    "satisfaction": "100% Zufriedenheit",
-    "performance": "PageSpeed 95+",
-    "support": "24/7 Support"
+  "packages_section": {
+    "label": "4 Pakete",
+    "title": "Wählen Sie Ihr Paket",
+    "subtitle": "Vom kompakten Auftritt bis zur Großplattform. Bei allen Paketen gilt: fester Preis, schnelle Ladezeit, die Website gehört Ihnen. Extras kommen im nächsten Schritt dazu."
   },
-  "cta_section": {
-    "button": "Termin buchen",
-    "text": "Vereinbaren Sie ein kostenloses Beratungsgespräch.",
-    "title": "Noch unsicher?"
+  "tier_label": "Paket {tier} von {total}",
+  "delivery": "Fertig in ca. {days} Werktagen",
+  "price": {
+    "tag": "Festpreis nach kostenlosem Gespräch",
+    "sub": "Sie zahlen erst, wenn Sie das Angebot annehmen",
+    "payment": "50 % bei Start, 50 % nach Ihrer Freigabe",
+    "no_risk": "Unverbindlich und kostenlos"
   },
-  "features": {
-    "enterprise": [
-      "Skalierbare Multi-Region Edge-Architektur & Plattform-Logik",
-      "Konzipiert für riesige Nutzerzahlen & extreme Reichweiten",
-      "Komplexe individuelle Software-Architektur & Schnittstellen",
-      "Höchste Sicherheits- & Compliance-Standards (WAF, DDoS, DSGVO)",
-      "Dediziertes VIP-SLA & garantierte Entwickler-Reaktionszeiten",
-      "Direkte Inhaber-Architektur mit Umutcan Emre Tezgel"
-    ],
-    "corporate": [
-      "Umfangreiche Next.js 15 Corporate-Plattform (bis 30 Seiten)",
-      "Holistische SEO Topic-Cluster & Rich Schema Dominanz",
-      "Mehrstufige Conversion-Pfade (Rechner, Funnels & Filter)",
-      "Vorbereitung für globale Mehrsprachigkeit (i18n)",
-      "Maßgeschneidertes Designsystem & Component Tokens",
-      "Persönliche Conversion-Rate- & Strategie-Begleitung"
-    ],
-    "business": [
-      "Maßgeschneiderte Next.js 15 B2B-Plattform (bis 12 Unterseiten)",
-      "100/100 Core Web Vitals & Sub-0,3s Ladezeit",
-      "Technisches SEO, Topic-Silos & Rich Snippets",
-      "Micro-Animations & maßgeschneidertes Bento-UI",
-      "60-Sekunden Express-Mitarbeitergewinnung",
-      "Direkter Draht zum Lead-Architekten Umutcan Emre Tezgel"
-    ],
-    "starter": [
-      "Maßgeschneiderte Next.js 15 Website (1–5 Unterseiten)",
-      "100/100 Google Core Web Vitals & Sub-0,3s Ladezeit",
-      "Mobile-First Design & DSGVO-Kontaktfunnel",
-      "Lokale SEO-Optimierung & Google Maps Ausrichtung",
-      "100% Quellcode- & Design-Eigentum (Kein Abo)",
-      "Vercel Edge Hosting Deployment"
-    ]
-  },
-  "labels": {
-    "setup": "Einrichtung",
-    "monthly": "/Monat",
-    "delivery": "Lieferung in ~{days} Tagen"
-  },
-  "not_included": {
-    "enterprise": [
-      "Headless CMS (optional zubuchbar)",
-      "E-Commerce Shop (optional zubuchbar)",
-      "Custom Apps (optional zubuchbar)"
-    ],
-    "corporate": [
-      "Headless CMS (optional zubuchbar)",
-      "E-Commerce Shop (optional zubuchbar)",
-      "Custom Apps (optional zubuchbar)"
-    ],
-    "business": [
-      "Headless CMS (optional zubuchbar)",
-      "E-Commerce Shop (optional zubuchbar)",
-      "Custom Apps (optional zubuchbar)"
-    ],
-    "starter": [
-      "Headless CMS (optional zubuchbar)",
-      "E-Commerce Shop (optional zubuchbar)",
-      "Custom Apps (optional zubuchbar)"
-    ]
+  "card": {
+    "for_who": "Für wen",
+    "example": "Typisch",
+    "select": "Dieses Paket wählen",
+    "selected": "Gewählt",
+    "selected_hint": "Extras unten anpassen",
+    "included": "Inklusive",
+    "not_included": "Als Extra dazubuchbar",
+    "hint_label": "Was heißt das?"
   },
   "packages": {
-    "enterprise": {
-      "badge": "Großkunden & Plattformen",
-      "cta": "Enterprise anfragen",
-      "name": "Enterprise Platform (Extrem groß)",
-      "tagline": "Für Großkunden, Konzerne & bundesweite / internationale Rollouts"
-    },
-    "corporate": {
-      "badge": "Umfassende Präsenz",
-      "cta": "Corporate wählen",
-      "name": "Pro Corporate (Groß)",
-      "tagline": "Umfassende Unternehmensplattform mit maximaler Markenstärke"
+    "starter": {
+      "name": "Die Visitenkarte",
+      "subtitle": "Kompakte Website mit 1 bis 5 Seiten",
+      "for_who": "Für Handwerksbetriebe, Praxen und Dienstleister, die online seriös auftreten und gefunden werden wollen.",
+      "example": "Schlüsseldienst, Physiopraxis, Steuerberatung",
+      "outcome": "Eine schnelle, moderne Website, die Ihr Unternehmen von seiner besten Seite zeigt und Anfragen bringt.",
+      "features": [
+        {
+          "label": "Bis zu 5 Seiten",
+          "hint": "Zum Beispiel Startseite, Leistungen, Über uns, Kontakt und Impressum."
+        },
+        {
+          "label": "Lädt in unter einer halben Sekunde",
+          "hint": "Besucher springen ab, wenn eine Seite lange lädt. Ihre öffnet sich sofort, auch auf dem Handy. Google bewertet das mit der vollen Punktzahl."
+        },
+        {
+          "label": "Sieht auf jedem Handy gut aus",
+          "hint": "Die meisten Besucher kommen vom Smartphone. Wir gestalten zuerst für das Handy, dann für den großen Bildschirm."
+        },
+        {
+          "label": "Kontaktformular, das den Datenschutz einhält",
+          "hint": "Anfragen landen direkt in Ihrem Postfach. Datenschutzhinweis und Einwilligung sind eingebaut (DSGVO)."
+        },
+        {
+          "label": "Bei Google in Ihrer Region gefunden werden",
+          "hint": "Wir richten Ihre Seite auf Suchen wie „Elektriker Wetzlar“ aus und verknüpfen sie mit Ihrem Google-Unternehmensprofil."
+        },
+        {
+          "label": "Die Website gehört komplett Ihnen",
+          "hint": "Kein Abo, keine Bindung. Sie erhalten alle Dateien und können jederzeit wechseln."
+        }
+      ],
+      "not_included": [
+        { "label": "Texte & Bilder selbst ändern", "addon_id": "func-cms" },
+        { "label": "Online-Shop", "addon_id": "commerce-headless" },
+        { "label": "Kundenbereich mit Login", "addon_id": "func-auth" }
+      ],
+      "cta": "Die Visitenkarte wählen"
     },
     "business": {
-      "badge": "Bestseller Mittelstand",
-      "cta": "Business wählen",
-      "name": "Business (Mittel)",
-      "tagline": "Der Maßstab für anspruchsvollen B2B-Mittelstand & Kanzleien"
+      "name": "Der Kundenmagnet",
+      "subtitle": "Bis zu 12 Seiten, Anfrage- und Bewerberformulare inklusive",
+      "badge": "Beliebteste Wahl",
+      "for_who": "Für Unternehmen mit mehreren Leistungen, die regelmäßig neue Kunden und Mitarbeiter gewinnen wollen.",
+      "example": "Bauunternehmen, Kanzlei, Industriezulieferer",
+      "outcome": "Eine Website, die Ihre Leistungen verständlich erklärt, Vertrauen aufbaut und Anfragen wie Bewerbungen liefert.",
+      "features": [
+        {
+          "label": "Bis zu 12 Seiten",
+          "hint": "Genug Platz für jede Leistung, Referenzen, Team und Karriere, jeweils mit eigener Seite."
+        },
+        {
+          "label": "Lädt in unter einer halben Sekunde",
+          "hint": "Besucher springen ab, wenn eine Seite lange lädt. Ihre öffnet sich sofort, auch auf dem Handy. Google bewertet das mit der vollen Punktzahl."
+        },
+        {
+          "label": "Bewerbungsformular in 60 Sekunden",
+          "hint": "Interessierte bewerben sich direkt vom Handy in unter einer Minute, ohne Anschreiben. Sie erhalten alles per E-Mail."
+        },
+        {
+          "label": "Jede Leistung bekommt eine eigene, gut auffindbare Seite",
+          "hint": "So finden Kunden bei Google genau die Leistung, die sie suchen, statt nur Ihre Startseite. Google zeigt zudem Zusatzinfos wie Bewertungen direkt im Suchergebnis."
+        },
+        {
+          "label": "Hochwertiges Design mit dezenten Animationen",
+          "hint": "Kleine Bewegungen führen den Blick und lassen Ihre Seite wertiger wirken als die des Wettbewerbs."
+        },
+        {
+          "label": "Direkter Draht zum Entwickler",
+          "hint": "Sie sprechen von Anfang bis Ende mit Umutcan Emre Tezgel, der Ihre Seite baut. Keine Zwischenstellen."
+        }
+      ],
+      "not_included": [
+        { "label": "Texte & Bilder selbst ändern", "addon_id": "func-cms" },
+        { "label": "Online-Shop", "addon_id": "commerce-headless" },
+        { "label": "Kundenbereich mit Login", "addon_id": "func-auth" }
+      ],
+      "cta": "Den Kundenmagnet wählen"
     },
-    "starter": {
-      "cta": "Starter wählen",
-      "name": "Starter (Klein)",
-      "tagline": "Kompakte High-Speed Webpräsenz für lokale Dienstleister & Handwerk"
+    "corporate": {
+      "name": "Die Unternehmensplattform",
+      "subtitle": "Bis zu 30 Seiten, zweite Sprache und Rechner inklusive",
+      "badge": "Für wachsende Unternehmen",
+      "for_who": "Für Unternehmen mit vielen Leistungen oder Standorten, die international auftreten oder Besucher gezielt zur Anfrage führen wollen.",
+      "example": "Mittelständler mit Export, Klinik, Bildungsträger",
+      "outcome": "Ihr digitales Flaggschiff: umfangreich, mehrsprachig und darauf ausgelegt, Besucher Schritt für Schritt zur Anfrage zu führen.",
+      "features": [
+        {
+          "label": "Bis zu 30 Seiten",
+          "hint": "Platz für alle Leistungen, Standorte, Branchen und Ratgeber-Inhalte."
+        },
+        {
+          "label": "Zweite Sprache inklusive",
+          "hint": "Ihre Website in Deutsch und Englisch, jeweils mit eigener Adresse, damit Google beide Versionen findet."
+        },
+        {
+          "label": "Interaktive Rechner und Auswahlhilfen",
+          "hint": "Zum Beispiel ein Kostenrechner oder ein Fragebogen, der Besucher zum passenden Angebot führt und die Anfrage vorbereitet."
+        },
+        {
+          "label": "Themenwelten, die Google versteht",
+          "hint": "Zusammengehörige Inhalte werden so verknüpft, dass Google Sie als Experten für ein ganzes Thema einstuft, nicht nur für einzelne Suchbegriffe."
+        },
+        {
+          "label": "Eigenes Design-System",
+          "hint": "Alle Farben, Schriften und Bausteine sind festgelegt. Neue Seiten entstehen später schnell und im gleichen Stil."
+        },
+        {
+          "label": "Persönliche Begleitung bei der Optimierung",
+          "hint": "Nach dem Start schauen wir gemeinsam, wo Besucher abspringen, und verbessern die Seite gezielt."
+        }
+      ],
+      "not_included": [
+        { "label": "Texte & Bilder selbst ändern", "addon_id": "func-cms" },
+        { "label": "Online-Shop", "addon_id": "commerce-headless" },
+        { "label": "Kundenbereich mit Login", "addon_id": "func-auth" }
+      ],
+      "cta": "Die Unternehmensplattform wählen"
+    },
+    "enterprise": {
+      "name": "Die Großplattform",
+      "subtitle": "Für Konzerne, Filialnetze und sehr viele Besucher",
+      "badge": "Großkunden",
+      "for_who": "Für Konzerne, Marken mit vielen Standorten und Plattformen, die bundesweit oder international sehr viele Besucher gleichzeitig bedienen müssen.",
+      "example": "Filialkette, Verband, überregionaler Dienstleister",
+      "outcome": "Eine Plattform, die auch bei Besucheransturm stabil bleibt, sich an Ihre Systeme anbindet und höchste Sicherheitsanforderungen erfüllt.",
+      "features": [
+        {
+          "label": "Beliebig viele Seiten und Standorte",
+          "hint": "Auch hunderte Standort- oder Produktseiten werden automatisch erzeugt und gepflegt."
+        },
+        {
+          "label": "Bleibt auch bei Besucheransturm schnell",
+          "hint": "Ihre Seite wird weltweit an vielen Orten gleichzeitig ausgeliefert. Werbekampagnen oder Presseberichte bringen sie nicht zum Stillstand."
+        },
+        {
+          "label": "Anbindung an Ihre Unternehmenssoftware",
+          "hint": "Daten fließen automatisch zwischen Website und Ihrer Kundenverwaltung oder Warenwirtschaft (CRM/ERP)."
+        },
+        {
+          "label": "Höchste Sicherheit und Datenschutz",
+          "hint": "Schutz vor Angriffen, verschlüsselte Übertragung und DSGVO-konforme Datenhaltung."
+        },
+        {
+          "label": "Garantierte Reaktionszeiten",
+          "hint": "Ein fester Ansprechpartner und vertraglich zugesicherte Antwortzeiten, wenn etwas dringend ist."
+        },
+        {
+          "label": "Strategische Begleitung durch den Inhaber",
+          "hint": "Umutcan Emre Tezgel plant die Architektur persönlich und begleitet Sie langfristig."
+        }
+      ],
+      "not_included": [
+        { "label": "Texte & Bilder selbst ändern", "addon_id": "func-cms" },
+        { "label": "Online-Shop", "addon_id": "commerce-headless" },
+        { "label": "Kundenbereich mit Login", "addon_id": "func-auth" }
+      ],
+      "cta": "Die Großplattform wählen"
     }
   },
-  "page": {
-    "headline": "Transparente Angebote für <0>messbaren Erfolg</0>.",
-    "subheadline": "Transparente Angebote für messbaren Erfolg: Wählen Sie das Paket, das zu Ihren Zielen passt. Alle Angebote auf Anfrage, verbindlich und ohne versteckte Kosten.",
-    "title": "Webdesign Preise & Angebote | Pakete - Coday",
-    "description": "Transparente Webdesign Angebote und SEO Pakete. Wir bieten 100% Festpreisgarantie für High-End Webentwicklung ohne versteckte Kosten. Jetzt anfragen!"
+  "finder": {
+    "label": "Unsicher, welches Paket?",
+    "title": "Zwei Fragen, eine Empfehlung",
+    "subtitle": "Beantworten Sie zwei kurze Fragen. Wir schlagen Ihnen das passende Paket vor, ganz ohne Verpflichtung.",
+    "toggle_open": "Paketfinder öffnen",
+    "toggle_close": "Paketfinder schließen",
+    "q_goal": "Was soll Ihre Website vor allem leisten?",
+    "goals": {
+      "found": "Gefunden werden und seriös auftreten",
+      "grow": "Regelmäßig Kunden und Bewerber gewinnen",
+      "scale": "Viele Leistungen oder Standorte zeigen, auch mehrsprachig",
+      "network": "Filialen, Konzern oder sehr viele Besucher"
+    },
+    "q_size": "Wie viele Seiten brauchen Sie ungefähr?",
+    "sizes": {
+      "s": "Bis 5",
+      "m": "6 bis 12",
+      "l": "13 bis 30",
+      "xl": "Mehr als 30 oder noch unklar"
+    },
+    "result_prefix": "Unsere Empfehlung:",
+    "result_cta": "Dieses Paket übernehmen",
+    "reset": "Neu starten"
   },
-  "custom": {
-    "title": "Größeres Projekt?",
-    "description": "Für komplexere Anforderungen, z. B. über 30 Seiten, individuelle Funktionen oder spezielle Integrationen, erstellen wir Ihnen gerne ein maßgeschneidertes Angebot.",
-    "cta": "Individuelles Angebot anfragen",
-    "badge": "Individuell"
+  "addons": {
+    "label": "Extras",
+    "title": "Extras dazubuchen",
+    "subtitle": "Ergänzen Sie nur, was Sie brauchen. Tippen Sie auf ein Extra, um es hinzuzufügen oder zu entfernen. Alle Extras werden im Festpreis-Angebot berücksichtigt.",
+    "recommended": "Empfohlen für Ihr Paket",
+    "add": "Hinzufügen",
+    "selected": "Ausgewählt",
+    "included": "Im Paket enthalten",
+    "type_optional": "Optional",
+    "type_care": "Freiwillig, monatlich kündbar",
+    "for_who_label": "Sinnvoll für",
+    "items": {
+      "func-cms": {
+        "name": "Texte & Bilder selbst ändern",
+        "benefit": "Sie pflegen Texte, Bilder und Neuigkeiten selbst, ohne Programmierkenntnisse und ohne Wartezeit.",
+        "for_who": "Inhalte, die sich öfter als ein paar Mal im Jahr ändern.",
+        "type": "optional"
+      },
+      "commerce-headless": {
+        "name": "Online-Shop",
+        "benefit": "Verkaufen Sie Produkte direkt über Ihre Website, mit sicherem Bezahlvorgang und schnellem Warenkorb.",
+        "for_who": "Händler und Hersteller mit eigenem Sortiment.",
+        "type": "optional"
+      },
+      "func-auth": {
+        "name": "Kundenbereich mit Login",
+        "benefit": "Ein geschützter Bereich, in dem sich Kunden oder Mitarbeiter anmelden, etwa für Dokumente, Bestellungen oder Portale.",
+        "for_who": "Unternehmen, die Kunden Unterlagen oder Werkzeuge bereitstellen.",
+        "type": "optional"
+      },
+      "seo-tech": {
+        "name": "Besser bei Google gefunden werden",
+        "benefit": "Wir bereiten Ihre Seite so auf, dass Google jede Leistung versteht und Zusatzinfos wie Bewertungen im Suchergebnis zeigt.",
+        "for_who": "Alle, die Neukunden über Google gewinnen wollen.",
+        "type": "optional"
+      },
+      "design-ui": {
+        "name": "Individuelles Design",
+        "benefit": "Sie sehen und genehmigen jedes Layout als Entwurf, bevor wir mit dem Bau beginnen.",
+        "for_who": "Marken mit klaren Vorstellungen oder bestehendem Erscheinungsbild.",
+        "type": "optional"
+      },
+      "tech-i18n": {
+        "name": "Zweite Sprache",
+        "benefit": "Ihre Website in einer weiteren Sprache, jeweils mit eigener Adresse für Google.",
+        "for_who": "Unternehmen mit internationalen Kunden.",
+        "type": "optional"
+      },
+      "tech-pwa": {
+        "name": "Als App aufs Handy",
+        "benefit": "Ihre Website lässt sich wie eine App auf dem Handy installieren, mit Startsymbol und Offline-Ansicht.",
+        "for_who": "Angebote, die Kunden regelmäßig nutzen.",
+        "type": "optional"
+      },
+      "support-basic": {
+        "name": "Rundum-sorglos-Betreuung",
+        "benefit": "Hosting, Sicherheits-Updates und tägliche Sicherungen. Sie müssen sich um nichts kümmern.",
+        "for_who": "Alle, die sich nicht um Technik kümmern möchten. Ohne Betreuung läuft Ihre Seite trotzdem.",
+        "type": "care"
+      },
+      "support-pro": {
+        "name": "Bevorzugter Support",
+        "benefit": "Garantierte Reaktionszeiten und ein direkter Draht zum Entwickler, wenn es schnell gehen muss.",
+        "for_who": "Unternehmen, bei denen die Website geschäftskritisch ist.",
+        "type": "care"
+      }
+    }
+  },
+  "summary": {
+    "label": "Ihre Auswahl",
+    "addons_none": "ohne Extras",
+    "addons_one": "1 Extra",
+    "addons_many": "{count} Extras",
+    "next_title": "So geht es weiter",
+    "next_steps": [
+      "Ich melde mich innerhalb von 24 Stunden bei Ihnen.",
+      "Kurzes, kostenloses Gespräch (ca. 15 Minuten) zu Zielen und Umfang.",
+      "Sie erhalten Ihr verbindliches Festpreis-Angebot und entscheiden in Ruhe."
+    ],
+    "cta": "Kostenloses Angebot anfordern",
+    "phone_cta": "Lieber anrufen?",
+    "no_risk": "Unverbindlich. Sie zahlen nichts, bis Sie das Angebot annehmen."
+  },
+  "comparison": {
+    "label": "Vergleich",
+    "title": "Alle Pakete auf einen Blick",
+    "subtitle": "Was ist drin, was kommt als Extra dazu?",
+    "col_feature": "Leistung",
+    "values": {
+      "included": "Inklusive",
+      "addon": "Als Extra",
+      "no": "Nicht enthalten",
+      "voluntary": "Freiwillig zubuchbar"
+    },
+    "rows": [
+      {
+        "key": "pages",
+        "label": "Anzahl Seiten",
+        "starter": "1 bis 5",
+        "business": "bis 12",
+        "corporate": "bis 30",
+        "enterprise": "unbegrenzt"
+      },
+      {
+        "key": "delivery",
+        "label": "Fertig in",
+        "starter": "ca. 14 Werktagen",
+        "business": "ca. 21 Werktagen",
+        "corporate": "ca. 30 Werktagen",
+        "enterprise": "ca. 45 Werktagen"
+      },
+      {
+        "key": "speed",
+        "label": "Lädt in unter einer halben Sekunde",
+        "starter": "included",
+        "business": "included",
+        "corporate": "included",
+        "enterprise": "included"
+      },
+      {
+        "key": "recruiting",
+        "label": "Bewerbungsformular in 60 Sekunden",
+        "starter": "addon",
+        "business": "included",
+        "corporate": "included",
+        "enterprise": "included"
+      },
+      {
+        "key": "language",
+        "label": "Zweite Sprache",
+        "starter": "addon",
+        "business": "addon",
+        "corporate": "included",
+        "enterprise": "included"
+      },
+      {
+        "key": "cms",
+        "label": "Texte & Bilder selbst ändern",
+        "starter": "addon",
+        "business": "addon",
+        "corporate": "addon",
+        "enterprise": "addon"
+      },
+      {
+        "key": "shop",
+        "label": "Online-Shop",
+        "starter": "addon",
+        "business": "addon",
+        "corporate": "addon",
+        "enterprise": "addon"
+      },
+      {
+        "key": "login",
+        "label": "Kundenbereich mit Login",
+        "starter": "addon",
+        "business": "addon",
+        "corporate": "addon",
+        "enterprise": "addon"
+      },
+      {
+        "key": "support",
+        "label": "Betreuung nach dem Start",
+        "starter": "voluntary",
+        "business": "voluntary",
+        "corporate": "voluntary",
+        "enterprise": "voluntary"
+      },
+      {
+        "key": "ownership",
+        "label": "Die Website gehört Ihnen",
+        "starter": "included",
+        "business": "included",
+        "corporate": "included",
+        "enterprise": "included"
+      }
+    ]
   },
   "faq": {
-    "title": "Häufig gestellte Fragen",
+    "label": "Häufige Fragen",
+    "title": "Alles Wichtige zu Preisen und Ablauf",
     "items": [
       {
-        "question": "Warum Festpreis?",
-        "answer": "Ich glaube an Transparenz. Mit meinen Festpreisen haben Sie volle Planungssicherheit, keine versteckten Kosten, keine Nachforderungen. Sie wissen genau, was Sie bekommen und was es kostet."
+        "question": "Was kostet eine Website bei Coday?",
+        "answer": "Das hängt vom Umfang ab: Anzahl der Seiten, gewünschte Extras und ob wir Texte und Bilder liefern. Deshalb nennen wir keinen Pauschalpreis, sondern erstellen nach einem kostenlosen Gespräch ein verbindliches Festpreis-Angebot. Sie zahlen nur für das, was Sie wirklich brauchen, und der Preis ändert sich danach nicht mehr."
       },
       {
-        "question": "Was, wenn ich mehr will?",
-        "answer": "Meine Pakete decken die meisten Anforderungen ab. Wenn Sie zusätzliche Seiten, Funktionen oder spezielle Integrationen benötigen, kalkuliere ich diese transparent als Zusatzleistung oder setze ein individuelles Projekt auf."
+        "question": "Was passiert, nachdem ich ein Paket angefragt habe?",
+        "answer": "Ich melde mich innerhalb von 24 Stunden. In einem kurzen Gespräch von etwa 15 Minuten klären wir Ziele und Umfang. Danach erhalten Sie Ihr Festpreis-Angebot. Erst wenn Sie es annehmen, beginnt das Projekt."
       },
       {
-        "question": "Wie lange dauert die Umsetzung?",
-        "answer": "Je nach Paket liegt die Lieferzeit zwischen 2 und 4 Wochen. Ich arbeite effizient mit bewährten Prozessen, damit Ihre neue Website schnell online gehen kann, ohne Kompromisse bei der Qualität."
+        "question": "Wie läuft die Bezahlung?",
+        "answer": "In zwei Schritten: 50 % bei Projektstart, 50 % erst, wenn die Website online ist und Sie sie abgenommen haben. Keine versteckten Kosten, kein Abo."
+      },
+      {
+        "question": "Muss ich Texte und Bilder selbst liefern?",
+        "answer": "Nein, das ist keine Voraussetzung. Was Sie haben, nutzen wir gern. Fehlende Texte und Bilder besprechen wir im Erstgespräch und planen sie im Angebot mit ein."
+      },
+      {
+        "question": "Kann ich später ein größeres Paket oder Extras dazubuchen?",
+        "answer": "Ja. Jedes Paket lässt sich später erweitern, weil alle auf derselben Technik aufbauen. Extras wie ein Online-Shop oder ein Kundenbereich kommen einfach dazu."
+      },
+      {
+        "question": "Welche laufenden Kosten kommen auf mich zu?",
+        "answer": "Die Website selbst läuft ohne Pflichtvertrag. Dank moderner Technik ist das Hosting sehr günstig und wartungsarm. Wer sich um nichts kümmern möchte, kann die freiwillige Rundum-sorglos-Betreuung dazubuchen, monatlich kündbar."
+      },
+      {
+        "question": "Was ist, wenn mir das Ergebnis nicht gefällt?",
+        "answer": "Sie sehen Entwürfe und Zwischenstände, bevor die Seite online geht, und geben jede Phase frei. Zusätzlich gelten unsere Garantien: fester Preis, Google-Bestwerte beim Start und die Website gehört zu 100 % Ihnen."
       }
     ]
   },
-  "retainers": {
-    "title": "Support & Growth Retainer",
-    "description": "Nachhaltiges Wachstum und kontinuierliche Optimierung nach dem Go-Live.",
-    "basic": {
-      "name": "Basic",
-      "price": "Auf Anfrage",
-      "features": [
-        "Monatliches Analytics-Review",
-        "2h Support-Time",
-        "Security-Updates",
-        "Uptime-Monitoring"
-      ]
-    },
-    "growth": {
-      "name": "Growth",
-      "price": "Auf Anfrage",
-      "features": [
-        "Alles aus Basic",
-        "2 Content-Updates pro Monat",
-        "1 A/B Experiment",
-        "5h Support-Time"
-      ]
-    },
-    "partnership": {
-      "name": "Partnership",
-      "price": "Auf Anfrage",
-      "features": [
-        "Alles aus Growth",
-        "Priority-Support (24h SLA)",
-        "Quartalsweise CRO-Review",
-        "10h Dev-Zeit"
-      ]
-    }
+  "final_cta": {
+    "title": "Bereit für Ihre neue Website?",
+    "text": "Fordern Sie Ihr kostenloses Festpreis-Angebot an oder buchen Sie ein kurzes Gespräch mit Umutcan Emre Tezgel. Unverbindlich und ohne Risiko.",
+    "cta": "Kostenloses Angebot anfordern",
+    "cta_secondary": "15-Minuten-Gespräch buchen",
+    "trust": [
+      "Festpreis-Garantie",
+      "50 % bei Start, 50 % nach Freigabe",
+      "Die Website gehört zu 100 % Ihnen"
+    ],
+    "guarantees_link": "Alle Garantien ansehen"
   },
-  "value_prop": {
-    "title": "Warum Next.js? Warum Coday?",
-    "description": "Ihre Website ist kein simples Aushängeschild mehr, sie ist Ihr stärkster, vollautomatisierter Vertriebsmitarbeiter. Eine Investition in Performance ist eine Investition in messbaren Umsatz.",
-    "points": [
-      {
-        "title": "Millisekunden-Ladezeiten",
-        "description": "53% der Nutzer springen ab, wenn eine Seite länger als 3 Sekunden lädt. Meine Headless-Architektur garantiert Ladezeiten im Millisekundenbereich."
-      },
-      {
-        "title": "Maximale Conversion",
-        "description": "Jede Sekunde Verzögerung kostet Sie 7% an Conversion. Ein 100/100 Google Lighthouse-Score bedeutet ein reibungsloses Nutzererlebnis und signifikant mehr Anfragen."
-      },
-      {
-        "title": "Lokale SEO-Sichtbarkeit",
-        "description": "Mit strukturierten Daten (JSON-LD) und lokalem SEO bringe ich Ihr Geschäft in Wetzlar und Hessen an die Spitze des Google Local Packs."
-      }
-    ]
-  },
-  "trust_section": {
-    "title": "Ergebnisse, die für sich sprechen",
-    "references": [
-      {
-        "name": "Batherm (Wetzlar)",
-        "metric": "+240%",
-        "label": "Mehr qualifizierte B2B-Anfragen im ersten Quartal nach Relaunch",
-        "href": "https://www.batherm.de"
-      },
-      {
-        "name": "Talia Boutique",
-        "metric": "Live",
-        "label": "Online Store ansehen",
-        "href": "https://talia-boutique.de/"
-      },
-      {
-        "name": "Memo BauT",
-        "metric": "Live",
-        "label": "Gartenbau-Website ansehen",
-        "href": "https://memobaut.de"
-      },
-      {
-        "name": "Lindener Ratsstuben",
-        "metric": "< 0.8s",
-        "label": "Ladezeit (LCP) im 99. Perzentil, massiver Boost bei Google Maps",
-        "href": "https://lindener-ratsstuben.de"
-      }
-    ]
-  },
-  "seoText": {
-    "title": "Webdesign Preise & Festpreis-Pakete | Coday",
-    "content": "Transparente Festpreise für moderne Webentwicklung und maßgeschneiderte B2B-Websites in Wetzlar und Hessen. 100% Planungssicherheit ohne versteckte Kosten."
+  "sticky": {
+    "label": "Ihre Auswahl",
+    "cta": "Angebot anfordern"
   }
 }

@@ -1,5 +1,4 @@
 {
-  "strobi": "Strobi Mii World",
   "404": {
     "config_button": "Projekt konfigurieren",
     "desc": "Die angeforderte Ressource konnte nicht gefunden werden. Möglicherweise wurde die URL geändert oder der Inhalt ist nicht mehr verfügbar.",
@@ -7,6 +6,7 @@
     "home_button": "Zurück zur Startseite",
     "title": "Ressource nicht gefunden (404)"
   },
+  "strobi": "Strobi Mii World",
   "buttons": {
     "close": "Schließen",
     "menu": "Menü",
@@ -493,8 +493,8 @@
   },
   "welcome": "Willkommen bei Coday",
   "steps": {
-    "packages": "Lösung wählen",
-    "calculator": "Projekt evaluieren",
+    "packages": "Paket wählen",
+    "calculator": "Extras wählen",
     "contact": "Anfrage senden"
   },
   "social": {

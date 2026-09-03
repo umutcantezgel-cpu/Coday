@@ -1,7 +1,31 @@
 /**
- * High-End Luxury HTML Email Templates for Coday Lead Generation
- * Compatible with all major email clients (Apple Mail, Gmail, Outlook, iOS Mail)
+ * Lead e-mails (contact wizard, package configurator, quick forms).
+ *
+ * Plain-language rule: the customer e-mail never uses tech jargon and never
+ * mentions prices. Package and add-on names are resolved server-side from
+ * `src/shared/data/packages.ts` / `modules.ts` before they reach these templates.
  */
+
+import {
+  EMAIL_BASE_URL,
+  EMAIL_BRAND,
+  EMAIL_COLORS,
+  escapeHtml,
+  renderButtonRow,
+  renderChecklist,
+  renderHeading,
+  renderKeyValue,
+  renderNote,
+  renderPanel,
+  renderParagraph,
+  renderQuote,
+  renderShell,
+  renderSignature,
+  renderSteps,
+  type EmailLang,
+} from './layout';
+
+export type EmailLocale = EmailLang;
 
 export interface LeadEmailData {
   name: string;
@@ -10,362 +34,305 @@ export interface LeadEmailData {
   company?: string;
   message?: string;
   project?: string;
+  /** Canonical package id (starter | business | corporate | enterprise). */
+  packageId?: string;
+  packageTier?: number;
+  /** Plain-language package name in the customer's language. */
   packageName?: string;
+  /** Former size label, agency notification only. */
+  packageLegacyName?: string;
   addons?: Array<{ id: string; name: string; category?: string }>;
   deliveryDays?: number;
   source?: string;
+  locale?: EmailLocale;
+  score?: number;
   date?: string;
 }
 
-/**
- * Escapes HTML characters to prevent XSS in email templates
- */
-function escapeHtml(str: string | undefined | null): string {
-  if (!str) return '';
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;');
+function customerLocale(data: LeadEmailData): EmailLang {
+  return data.locale === 'en' ? 'en' : 'de';
 }
 
-/**
- * 1. Agency Notification Email (umut@codayweb.de)
- * Dark Luxury Dashboard Style with High Contrast and Quick Action Links
- */
+function digitsOnly(phone: string): string {
+  return phone.replace(/[^0-9+]/g, '');
+}
+
+/* ------------------------------------------------------------------------- */
+/* 1. Agency notification (always German)                                     */
+/* ------------------------------------------------------------------------- */
+
+export function getAgencyLeadSubject(data: LeadEmailData): string {
+  const focus = data.packageName || data.project || 'Projekt';
+  const score = typeof data.score === 'number' ? ` · Score ${data.score}/10` : '';
+  return `Neue Anfrage: ${data.name} · ${focus}${score}`;
+}
+
 export function generateAgencyLeadEmailHtml(data: LeadEmailData): string {
   const name = escapeHtml(data.name || 'Unbekannt');
   const email = escapeHtml(data.email || '—');
-  const phone = escapeHtml(data.phone || 'Nicht angegeben');
-  const company = escapeHtml(data.company || 'Nicht angegeben');
-  const message = escapeHtml(data.message || 'Keine Nachricht eingegeben.');
+  const phone = data.phone ? escapeHtml(data.phone) : '';
+  const company = escapeHtml(data.company || '');
+  const message = escapeHtml(data.message || '');
   const packageName = escapeHtml(data.packageName || data.project || 'Individuelles Projekt');
   const source = escapeHtml(data.source || 'Website Kontaktformular');
-  const dateStr = data.date || new Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' });
+  const locale = (data.locale || 'de').toUpperCase();
+  const score = typeof data.score === 'number' ? data.score : null;
+  const dateStr = escapeHtml(
+    data.date || new Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' })
+  );
+  const addons = (data.addons ?? []).map(
+    (a) =>
+      `${escapeHtml(a.name)} <span style="color: ${EMAIL_COLORS.faint}; font-size: 12px;">(${escapeHtml(a.id)})</span>`
+  );
+  const packageMeta = [
+    data.packageLegacyName ? escapeHtml(data.packageLegacyName) : null,
+    data.packageId ? `ID ${escapeHtml(data.packageId)}` : null,
+    data.packageTier ? `Paket ${data.packageTier} von 4` : null,
+    data.deliveryDays ? `~${data.deliveryDays} Werktage` : null,
+  ]
+    .filter(Boolean)
+    .join(' · ');
 
-  const addonsListHtml =
-    data.addons && data.addons.length > 0
-      ? data.addons
-          .map(
-            (addon) => `
-              <li style="margin-bottom: 6px; color: #e2e8f0; font-size: 13px; list-style-type: none; display: flex; align-items: center;">
-                <span style="color: #f59e0b; margin-right: 8px; font-weight: bold;">+</span>
-                <span>${escapeHtml(addon.name)}</span>
-              </li>`
-          )
-          .join('')
-      : '<li style="color: #94a3b8; font-size: 13px; list-style-type: none; font-style: italic;">Keine Zusatzmodule gewählt (Nur Basispaket)</li>';
+  const hot = score !== null && score >= 7;
 
-  return `<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neue qualifizierte Projektanfrage</title>
-</head>
-<body style="margin: 0; padding: 0; background-color: #0f172a; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #f8fafc; line-height: 1.6;">
-  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #0f172a; padding: 32px 16px;">
-    <tr>
-      <td align="center">
-        <!-- Main Card Container -->
-        <table role="presentation" width="100%" max-width="640" cellspacing="0" cellpadding="0" border="0" style="max-width: 640px; background-color: #1e293b; border-radius: 20px; border: 1px solid #334155; overflow: hidden; box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);">
-          
-          <!-- Header Banner -->
-          <tr>
-            <td style="padding: 32px 32px 24px 32px; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-bottom: 1px solid #334155;">
-              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
-                <tr>
-                  <td>
-                    <div style="display: inline-block; padding: 4px 12px; background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 9999px; color: #fbbf24; font-size: 11px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 12px;">
-                      ⚡ Neuer Lead eingegangen
-                    </div>
-                    <h1 style="margin: 0 0 4px 0; color: #ffffff; font-size: 24px; font-weight: 800; letter-spacing: -0.02em;">
-                      ${name}
-                    </h1>
-                    <p style="margin: 0; color: #94a3b8; font-size: 14px;">
-                      Projektfokus: <strong style="color: #38bdf8;">${packageName}</strong>
-                    </p>
-                  </td>
-                  <td align="right" valign="top">
-                    <span style="font-size: 11px; color: #64748b; font-family: monospace;">${dateStr}</span>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
+  const buttons = [
+    {
+      href: `mailto:${email}?subject=${encodeURIComponent('Ihre Anfrage bei Coday')}`,
+      label: 'Antworten',
+      variant: 'primary' as const,
+    },
+    ...(phone
+      ? [
+          {
+            href: `tel:${digitsOnly(data.phone!)}`,
+            label: `Anrufen ${phone}`,
+            variant: 'secondary' as const,
+          },
+          {
+            href: `https://api.whatsapp.com/send?phone=${encodeURIComponent(digitsOnly(data.phone!).replace(/^\+/, ''))}`,
+            label: 'WhatsApp',
+            variant: 'secondary' as const,
+          },
+        ]
+      : []),
+  ];
 
-          <!-- Quick Action Bar -->
-          <tr>
-            <td style="padding: 16px 32px; background-color: #0f172a; border-bottom: 1px solid #334155;">
-              <table role="presentation" cellspacing="0" cellpadding="0" border="0">
-                <tr>
-                  <td style="padding-right: 12px;">
-                    <a href="mailto:${email}?subject=Ihre%20Anfrage%20bei%20Coday%20Webdesign" style="display: inline-block; padding: 10px 18px; background-color: #f59e0b; color: #0f172a; font-size: 13px; font-weight: 800; text-decoration: none; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.03em;">
-                      ✉️ Antworten (${email})
-                    </a>
-                  </td>
-                  ${
-                    data.phone
-                      ? `<td>
-                    <a href="tel:${phone}" style="display: inline-block; padding: 10px 18px; background-color: #334155; color: #ffffff; font-size: 13px; font-weight: 700; text-decoration: none; border-radius: 9999px; border: 1px solid #475569;">
-                      📞 Anrufen (${phone})
-                    </a>
-                  </td>`
-                      : ''
-                  }
-                </tr>
-              </table>
-            </td>
-          </tr>
+  const body = [
+    renderButtonRow(buttons),
+    renderPanel(
+      renderKeyValue([
+        { label: 'Name', value: name, highlight: true },
+        {
+          label: 'E-Mail',
+          value: `<a href="mailto:${email}" style="color: ${EMAIL_COLORS.info}; text-decoration: none;">${email}</a>`,
+        },
+        {
+          label: 'Telefon',
+          value: phone || `<span style="color: ${EMAIL_COLORS.faint};">nicht angegeben</span>`,
+        },
+        {
+          label: 'Unternehmen',
+          value: company || `<span style="color: ${EMAIL_COLORS.faint};">nicht angegeben</span>`,
+        },
+      ]),
+      'neutral',
+      'Kontakt'
+    ),
+    renderPanel(
+      `${renderKeyValue([
+        { label: 'Paket', value: packageName, highlight: true },
+        ...(packageMeta
+          ? [
+              {
+                label: 'Details',
+                value: `<span style="color: ${EMAIL_COLORS.muted}; font-size: 13px;">${packageMeta}</span>`,
+              },
+            ]
+          : []),
+      ])}
+      <p style="margin: 14px 0 6px 0; color: ${EMAIL_COLORS.accentDark}; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;">Extras</p>
+      ${renderChecklist(addons, 'Keine Extras gewählt (nur Paket)')}`,
+      'amber',
+      'Gewählte Konfiguration'
+    ),
+    renderHeading('Nachricht'),
+    message
+      ? renderQuote(message)
+      : `<p style="margin: 0 0 20px 0; color: ${EMAIL_COLORS.faint}; font-size: 14px; font-style: italic;">Keine Nachricht eingegeben.</p>`,
+    renderPanel(
+      renderKeyValue([
+        {
+          label: 'Score',
+          value:
+            score !== null
+              ? `<strong style="color: ${hot ? EMAIL_COLORS.success : EMAIL_COLORS.heading};">${score}/10${hot ? ' · heiß' : ''}</strong>`
+              : '—',
+        },
+        { label: 'Quelle', value: source },
+        { label: 'Sprache', value: locale },
+        { label: 'Eingang', value: dateStr },
+      ]),
+      'neutral',
+      'Details'
+    ),
+  ].join('');
 
-          <!-- Body Content -->
-          <tr>
-            <td style="padding: 32px;">
-              
-              <!-- Customer Profile Box -->
-              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-bottom: 24px; background-color: #0f172a; border-radius: 14px; border: 1px solid #334155; padding: 16px;">
-                <tr>
-                  <td style="padding: 8px 12px; color: #94a3b8; font-size: 13px; width: 35%; border-bottom: 1px solid #1e293b;">Kunde / Ansprechpartner</td>
-                  <td style="padding: 8px 12px; color: #ffffff; font-size: 13px; font-weight: 600; border-bottom: 1px solid #1e293b;">${name}</td>
-                </tr>
-                <tr>
-                  <td style="padding: 8px 12px; color: #94a3b8; font-size: 13px; border-bottom: 1px solid #1e293b;">E-Mail-Adresse</td>
-                  <td style="padding: 8px 12px; color: #38bdf8; font-size: 13px; font-weight: 600; border-bottom: 1px solid #1e293b;"><a href="mailto:${email}" style="color: #38bdf8; text-decoration: none;">${email}</a></td>
-                </tr>
-                <tr>
-                  <td style="padding: 8px 12px; color: #94a3b8; font-size: 13px; border-bottom: 1px solid #1e293b;">Telefonnummer</td>
-                  <td style="padding: 8px 12px; color: #ffffff; font-size: 13px; font-weight: 600; border-bottom: 1px solid #1e293b;">${phone}</td>
-                </tr>
-                <tr>
-                  <td style="padding: 8px 12px; color: #94a3b8; font-size: 13px; border-bottom: 1px solid #1e293b;">Unternehmen / Organisation</td>
-                  <td style="padding: 8px 12px; color: #ffffff; font-size: 13px; font-weight: 600; border-bottom: 1px solid #1e293b;">${company}</td>
-                </tr>
-                <tr>
-                  <td style="padding: 8px 12px; color: #94a3b8; font-size: 13px;">Kanal / Quelle</td>
-                  <td style="padding: 8px 12px; color: #cbd5e1; font-size: 13px;">${source}</td>
-                </tr>
-              </table>
-
-              <!-- Configuration Matrix -->
-              <div style="margin-bottom: 24px; padding: 20px; background-color: #0f172a; border-radius: 14px; border: 1px solid #334155;">
-                <h3 style="margin: 0 0 12px 0; color: #f59e0b; font-size: 14px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase;">
-                  📦 Gewählte Projekt-Konfiguration
-                </h3>
-                
-                <div style="margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid #1e293b;">
-                  <span style="font-size: 12px; color: #94a3b8; text-transform: uppercase; display: block; margin-bottom: 2px;">Basispaket</span>
-                  <span style="font-size: 16px; font-weight: 800; color: #ffffff;">${packageName}</span>
-                  ${data.deliveryDays ? `<span style="display: inline-block; margin-left: 8px; font-size: 11px; padding: 2px 8px; border-radius: 6px; background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3);">~${data.deliveryDays} Werktage</span>` : ''}
-                </div>
-
-                <div>
-                  <span style="font-size: 12px; color: #94a3b8; text-transform: uppercase; display: block; margin-bottom: 6px;">Gewählte Zusatzmodule / Add-ons:</span>
-                  <ul style="margin: 0; padding: 0;">
-                    ${addonsListHtml}
-                  </ul>
-                </div>
-              </div>
-
-              <!-- Customer Message -->
-              <div style="padding: 20px; background-color: #0f172a; border-radius: 14px; border: 1px solid #334155; margin-bottom: 24px;">
-                <h3 style="margin: 0 0 10px 0; color: #cbd5e1; font-size: 14px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase;">
-                  💬 Nachricht des Kunden
-                </h3>
-                <div style="color: #f1f5f9; font-size: 14px; line-height: 1.7; white-space: pre-wrap; font-style: italic; background-color: #1e293b; padding: 14px; border-radius: 10px; border-left: 3px solid #f59e0b;">
-                  "${message}"
-                </div>
-              </div>
-
-              <!-- Footer info -->
-              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
-                <tr>
-                  <td style="color: #64748b; font-size: 12px;">
-                    Coday Agency Dispatcher · Wetzlar, Hessen<br>
-                    Live Lead System (Zero-Latency Resend Edge)
-                  </td>
-                  <td align="right" style="color: #64748b; font-size: 12px;">
-                    <a href="https://codayweb.de" style="color: #94a3b8; text-decoration: none;">codayweb.de</a>
-                  </td>
-                </tr>
-              </table>
-
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-</body>
-</html>`;
+  return renderShell({
+    lang: 'de',
+    title: 'Neue Projektanfrage',
+    preheader: escapeHtml(`${data.name} · ${data.packageName || data.project || 'Projekt'}`),
+    badge: hot ? 'Neue Anfrage · heißer Lead' : 'Neue Anfrage',
+    badgeTone: hot ? 'emerald' : 'amber',
+    headline: name,
+    intro: `Paket: <strong style="color: ${EMAIL_COLORS.heading};">${packageName}</strong>`,
+    body,
+    footer: `Automatische Benachrichtigung von <a href="${EMAIL_BASE_URL}" style="color: ${EMAIL_COLORS.muted}; text-decoration: none;">codayweb.de</a> · Antworten geht direkt an den Kunden.`,
+  });
 }
 
-/**
- * 2. Customer Autoresponder & Confirmation Email (to lead)
- * Ultra-Professional, High-Trust Coday Luxury HTML Template
- */
+/* ------------------------------------------------------------------------- */
+/* 2. Customer confirmation (German or English, plain language, no prices)   */
+/* ------------------------------------------------------------------------- */
+
+const CUSTOMER_COPY = {
+  de: {
+    subjectWithPackage: (pkg: string) => `Ihre Anfrage bei Coday: ${pkg}`,
+    subject: 'Vielen Dank für Ihre Anfrage bei Coday',
+    title: 'Ihre Anfrage bei Coday',
+    badge: 'Anfrage eingegangen',
+    headline: 'Vielen Dank für Ihre Anfrage!',
+    intro:
+      'Ihre Nachricht ist angekommen. Ich melde mich innerhalb von 24 Stunden persönlich bei Ihnen.',
+    greeting: (name: string) => `Hallo ${name},`,
+    body: 'schön, dass Sie sich für eine Website von Coday interessieren. Hier noch einmal Ihre Auswahl und was als Nächstes passiert.',
+    selectionTitle: 'Ihre Auswahl',
+    packageLabel: 'Paket',
+    deliveryLabel: 'Fertig in',
+    deliveryValue: (days: number) => `ca. ${days} Werktagen nach Projektstart`,
+    addonsLabel: 'Extras',
+    noAddons: 'Keine Extras gewählt. Sie können jederzeit im Gespräch welche ergänzen.',
+    messageLabel: 'Ihre Nachricht',
+    nextTitle: 'Wie geht es jetzt weiter?',
+    steps: [
+      {
+        title: 'Ich melde mich innerhalb von 24 Stunden',
+        text: 'Sie erhalten eine persönliche Rückmeldung von mir, keine automatische Antwort.',
+      },
+      {
+        title: 'Kurzes, kostenloses Gespräch',
+        text: 'In etwa 15 Minuten klären wir Ihre Ziele und den Umfang. Ohne Fachchinesisch.',
+      },
+      {
+        title: 'Verbindliches Festpreis-Angebot',
+        text: 'Danach erhalten Sie Ihr Angebot. Sie entscheiden in Ruhe und zahlen erst, wenn Sie es annehmen.',
+      },
+    ],
+    noRisk:
+      'Unverbindlich und kostenlos. Es entstehen Ihnen keine Kosten, bis Sie das Angebot annehmen.',
+    bookingText:
+      'Sie möchten nicht warten? Wählen Sie direkt einen freien Termin für unser Gespräch.',
+    bookingCta: 'Termin auswählen',
+    bookingUrl: `${EMAIL_BASE_URL}/de/booking`,
+    callCta: 'Anrufen',
+    whatsappCta: 'WhatsApp',
+  },
+  en: {
+    subjectWithPackage: (pkg: string) => `Your request at Coday: ${pkg}`,
+    subject: 'Thank you for your request at Coday',
+    title: 'Your request at Coday',
+    badge: 'Request received',
+    headline: 'Thank you for your request!',
+    intro: 'Your message has arrived. I will get back to you personally within 24 hours.',
+    greeting: (name: string) => `Hello ${name},`,
+    body: 'great that you are interested in a website by Coday. Here is your selection again and what happens next.',
+    selectionTitle: 'Your selection',
+    packageLabel: 'Package',
+    deliveryLabel: 'Ready in',
+    deliveryValue: (days: number) => `about ${days} business days after kick-off`,
+    addonsLabel: 'Extras',
+    noAddons: 'No extras selected. You can add some at any time during our call.',
+    messageLabel: 'Your message',
+    nextTitle: 'What happens next?',
+    steps: [
+      {
+        title: 'I get back to you within 24 hours',
+        text: 'You receive a personal reply from me, not an automated one.',
+      },
+      {
+        title: 'Short, free call',
+        text: 'In about 15 minutes we clarify your goals and the scope. No tech jargon.',
+      },
+      {
+        title: 'Binding fixed-price quote',
+        text: 'Then you receive your quote. Decide at your own pace and pay only once you accept it.',
+      },
+    ],
+    noRisk: 'Non-binding and free. There is no cost to you until you accept the quote.',
+    bookingText: 'Do not want to wait? Pick a free slot for our call right away.',
+    bookingCta: 'Choose a time',
+    bookingUrl: `${EMAIL_BASE_URL}/en/booking`,
+    callCta: 'Call',
+    whatsappCta: 'WhatsApp',
+  },
+} as const;
+
+export function getCustomerConfirmationSubject(data: LeadEmailData): string {
+  const copy = CUSTOMER_COPY[customerLocale(data)];
+  return data.packageName ? copy.subjectWithPackage(data.packageName) : copy.subject;
+}
+
 export function generateCustomerConfirmationEmailHtml(data: LeadEmailData): string {
-  const name = escapeHtml(data.name || 'Guten Tag');
+  const lang = customerLocale(data);
+  const copy = CUSTOMER_COPY[lang];
+  const name = escapeHtml(data.name || '');
   const packageName = escapeHtml(
-    data.packageName || data.project || 'Maßgeschneidertes Webprojekt'
+    data.packageName ||
+      data.project ||
+      (lang === 'en' ? 'Custom web project' : 'Individuelles Webprojekt')
   );
   const message = escapeHtml(data.message || '');
+  const addons = (data.addons ?? []).map((a) => escapeHtml(a.name));
 
-  const addonsListHtml =
-    data.addons && data.addons.length > 0
-      ? data.addons
-          .map(
-            (addon) => `
-              <li style="margin-bottom: 6px; color: #334155; font-size: 13px; list-style-type: none; display: flex; align-items: center;">
-                <span style="color: #d97706; margin-right: 8px; font-weight: bold;">✓</span>
-                <span>${escapeHtml(addon.name)}</span>
-              </li>`
-          )
-          .join('')
-      : '<li style="color: #64748b; font-size: 13px; list-style-type: none; font-style: italic;">Basispaket (Zusatzmodule können im Erstgespräch flexibel ergänzt werden)</li>';
+  const body = [
+    renderParagraph(copy.greeting(`<strong>${name}</strong>`)),
+    renderParagraph(copy.body),
+    renderPanel(
+      `${renderKeyValue([
+        { label: copy.packageLabel, value: packageName, highlight: true },
+        ...(data.deliveryDays
+          ? [{ label: copy.deliveryLabel, value: copy.deliveryValue(data.deliveryDays) }]
+          : []),
+      ])}
+      <p style="margin: 14px 0 6px 0; color: ${EMAIL_COLORS.accentDark}; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;">${copy.addonsLabel}</p>
+      ${renderChecklist(addons, copy.noAddons)}`,
+      'amber',
+      copy.selectionTitle
+    ),
+    message ? `${renderHeading(copy.messageLabel)}${renderQuote(`„${message}“`)}` : '',
+    renderHeading(copy.nextTitle),
+    renderPanel(renderSteps([...copy.steps]), 'neutral'),
+    renderNote(`&#10003; ${copy.noRisk}`, 'emerald'),
+    renderParagraph(copy.bookingText),
+    renderButtonRow([
+      { href: copy.bookingUrl, label: copy.bookingCta, variant: 'primary' },
+      {
+        href: EMAIL_BRAND.phoneHref,
+        label: `${copy.callCta} ${EMAIL_BRAND.phoneDisplay}`,
+        variant: 'secondary',
+      },
+      { href: EMAIL_BRAND.whatsappHref, label: copy.whatsappCta, variant: 'secondary' },
+    ]),
+    renderSignature(lang),
+  ].join('');
 
-  return `<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ihre Projektanfrage bei Coday</title>
-</head>
-<body style="margin: 0; padding: 0; background-color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #0f172a; line-height: 1.6;">
-  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f8fafc; padding: 32px 16px;">
-    <tr>
-      <td align="center">
-        <!-- Main Container Card -->
-        <table role="presentation" width="100%" max-width="600" cellspacing="0" cellpadding="0" border="0" style="max-width: 600px; background-color: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; overflow: hidden; box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);">
-          
-          <!-- Header Banner -->
-          <tr>
-            <td style="padding: 36px 32px 28px 32px; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #ffffff; text-align: left;">
-              <div style="display: inline-block; padding: 4px 12px; background: rgba(245, 158, 11, 0.2); border: 1px solid rgba(245, 158, 11, 0.35); border-radius: 9999px; color: #fef3c7; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 14px;">
-                Coday Webagentur Wetzlar
-              </div>
-              <h1 style="margin: 0 0 6px 0; color: #ffffff; font-size: 26px; font-weight: 800; letter-spacing: -0.02em;">
-                Vielen Dank für Ihre Anfrage! 🚀
-              </h1>
-              <p style="margin: 0; color: #94a3b8; font-size: 14px;">
-                Wir haben Ihre Details erhalten und bearbeiten diese mit höchster Priorität.
-              </p>
-            </td>
-          </tr>
-
-          <!-- Body Content -->
-          <tr>
-            <td style="padding: 32px;">
-              
-              <!-- Greeting -->
-              <p style="margin: 0 0 16px 0; font-size: 16px; color: #1e293b;">
-                Hallo <strong>${name}</strong>,
-              </p>
-              <p style="margin: 0 0 24px 0; font-size: 15px; color: #475569; line-height: 1.6;">
-                vielen Dank für Ihr Interesse an einer Zusammenarbeit mit Coday. Wir haben Ihre Projektanfrage erfolgreich in unserem System erfasst.
-              </p>
-
-              <!-- Configuration Summary Box -->
-              <div style="margin-bottom: 28px; padding: 22px; background-color: #fffbeb; border-radius: 16px; border: 1px solid #fde68a;">
-                <h3 style="margin: 0 0 12px 0; color: #92400e; font-size: 13px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase;">
-                  📋 Ihre angefragte Projektkonfiguration
-                </h3>
-                
-                <div style="margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid #fef3c7;">
-                  <span style="font-size: 12px; color: #78350f; text-transform: uppercase; display: block; font-weight: 600;">Gewähltes Leistungspaket:</span>
-                  <span style="font-size: 16px; font-weight: 800; color: #0f172a;">${packageName}</span>
-                </div>
-
-                <div>
-                  <span style="font-size: 12px; color: #78350f; text-transform: uppercase; display: block; font-weight: 600; margin-bottom: 4px;">Berücksichtigte Zusatzmodule / Add-ons:</span>
-                  <ul style="margin: 0; padding: 0;">
-                    ${addonsListHtml}
-                  </ul>
-                </div>
-              </div>
-
-              ${
-                message
-                  ? `
-              <!-- Customer Note Quote -->
-              <div style="margin-bottom: 28px; padding: 16px 20px; background-color: #f8fafc; border-radius: 12px; border-left: 4px solid #d97706;">
-                <span style="font-size: 11px; color: #64748b; text-transform: uppercase; font-weight: bold; display: block; margin-bottom: 4px;">Ihre übermittelte Nachricht:</span>
-                <p style="margin: 0; color: #334155; font-size: 13px; font-style: italic; line-height: 1.6;">"${message}"</p>
-              </div>`
-                  : ''
-              }
-
-              <!-- Next Steps Timeline -->
-              <div style="margin-bottom: 32px;">
-                <h3 style="margin: 0 0 16px 0; color: #0f172a; font-size: 15px; font-weight: 800; letter-spacing: -0.01em;">
-                  Wie geht es jetzt weiter? (Ihr 3-Schritte-Fahrplan)
-                </h3>
-
-                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
-                  <tr>
-                    <td valign="top" style="width: 28px; padding-bottom: 16px;">
-                      <div style="width: 24px; height: 24px; background-color: #d97706; color: #ffffff; border-radius: 50%; text-align: center; font-size: 12px; font-weight: bold; line-height: 24px;">1</div>
-                    </td>
-                    <td style="padding-left: 12px; padding-bottom: 16px;">
-                      <strong style="color: #0f172a; font-size: 14px; display: block;">Sichtung & technische Analyse</strong>
-                      <span style="color: #64748b; font-size: 13px;">Wir prüfen Ihre Anforderungen innerhalb von 24 Stunden persönlich.</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td valign="top" style="width: 28px; padding-bottom: 16px;">
-                      <div style="width: 24px; height: 24px; background-color: #d97706; color: #ffffff; border-radius: 50%; text-align: center; font-size: 12px; font-weight: bold; line-height: 24px;">2</div>
-                    </td>
-                    <td style="padding-left: 12px; padding-bottom: 16px;">
-                      <strong style="color: #0f172a; font-size: 14px; display: block;">Kostenloses 15-Minuten Erstgespräch</strong>
-                      <span style="color: #64748b; font-size: 13px;">Kurze Abstimmung Ihrer Zielgruppe, Conversion-Ziele und Prioritäten.</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td valign="top" style="width: 28px;">
-                      <div style="width: 24px; height: 24px; background-color: #d97706; color: #ffffff; border-radius: 50%; text-align: center; font-size: 12px; font-weight: bold; line-height: 24px;">3</div>
-                    </td>
-                    <td style="padding-left: 12px;">
-                      <strong style="color: #0f172a; font-size: 14px; display: block;">Verbindliches Festpreisangebot</strong>
-                      <span style="color: #64748b; font-size: 13px;">Transparente Kalkulation ohne versteckte Abos oder Überraschungen.</span>
-                    </td>
-                  </tr>
-                </table>
-              </div>
-
-              <!-- Direct Calendar Booking CTA -->
-              <div style="text-align: center; margin-bottom: 32px; padding: 24px; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 16px;">
-                <p style="margin: 0 0 16px 0; color: #e2e8f0; font-size: 14px;">
-                  Möchten Sie Wartezeit sparen? Sichern Sie sich direkt einen freien Beratungsslot in unserem Kalender:
-                </p>
-                <a href="https://codayweb.de/de/booking" style="display: inline-block; padding: 14px 28px; background-color: #f59e0b; color: #0f172a; font-size: 14px; font-weight: 800; text-decoration: none; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.03em; box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);">
-                  📅 Jetzt Wunschtermin wählen ➔
-                </a>
-              </div>
-
-              <!-- Signature & Guarantee -->
-              <div style="padding-top: 20px; border-top: 1px solid #e2e8f0;">
-                <p style="margin: 0 0 4px 0; font-size: 14px; color: #64748b;">Mit besten Grüßen aus Wetzlar,</p>
-                <p style="margin: 0 0 2px 0; font-size: 16px; font-weight: 800; color: #0f172a;">Umutcan Emre Tezgel</p>
-                <p style="margin: 0 0 12px 0; font-size: 13px; color: #d97706; font-weight: 600;">Inhaber & Lead Web Architect · Coday</p>
-                <p style="margin: 0; font-size: 12px; color: #94a3b8;">
-                  Wetzlar, Hessen · <a href="https://codayweb.de" style="color: #64748b;">codayweb.de</a> · <a href="mailto:umut@codayweb.de" style="color: #64748b;">umut@codayweb.de</a>
-                </p>
-              </div>
-
-            </td>
-          </tr>
-
-          <!-- Legal Footer -->
-          <tr>
-            <td style="padding: 20px 32px; background-color: #f1f5f9; border-top: 1px solid #e2e8f0; text-align: center; color: #94a3b8; font-size: 11px;">
-              © ${new Date().getFullYear()} Coday · 100% Made in Wetzlar, Hessen · DSGVO-konform
-            </td>
-          </tr>
-
-        </table>
-      </td>
-    </tr>
-  </table>
-</body>
-</html>`;
+  return renderShell({
+    lang,
+    title: copy.title,
+    preheader: copy.intro,
+    badge: copy.badge,
+    badgeTone: 'emerald',
+    headline: copy.headline,
+    intro: copy.intro,
+    body,
+  });
 }

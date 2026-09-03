@@ -2,20 +2,25 @@ import React, { useMemo } from 'react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { CheckCircle, ArrowRight, ShieldCheck, Sparkle } from '@phosphor-icons/react/dist/ssr';
 import { useCalculatorStore } from '@/features/calculator/model/store';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Link as NavLink } from '@/i18n/navigation';
 import { modules } from '@/shared/data/modules';
+import type { Locale } from '@/shared/data/packages';
 
 export const CalculatorSummary: React.FC = () => {
   const t = useTranslations('calculator');
+  const locale = useLocale() as Locale;
   const selectedModuleIds = useCalculatorStore((state) => state.selectedModuleIds);
   const getPackageName = useCalculatorStore((state) => state.getPackageName);
 
-  const selectedModules = useMemo(() => {
-    return modules.filter((m) => selectedModuleIds.has(m.id));
-  }, [selectedModuleIds]);
+  const packageName = getPackageName(locale);
 
-  const packageName = getPackageName();
+  // The package itself is shown in the badge above, so the list only carries extras.
+  const selectedModules = useMemo(() => {
+    return modules.filter(
+      (m) => selectedModuleIds.has(m.id) && (!packageName || m.category !== 'basis')
+    );
+  }, [selectedModuleIds, packageName]);
 
   return (
     <div
@@ -44,9 +49,9 @@ export const CalculatorSummary: React.FC = () => {
             key={module.id}
             className="flex justify-between items-start text-sm py-1 border-b border-gray-50"
           >
-            <span className="text-gray-700 font-medium">{t(`modules.${module.id}.name`)}</span>
+            <span className="text-gray-700 font-medium">{module.plainName[locale]}</span>
             <span className="text-xs text-amber-700 font-bold bg-amber-50 px-2 py-0.5 rounded whitespace-nowrap">
-              Ausgewählt
+              {module.category === 'basis' ? t('summary.package_label') : t('summary.addon_label')}
             </span>
           </div>
         ))}
@@ -56,13 +61,10 @@ export const CalculatorSummary: React.FC = () => {
         <div className="p-4 rounded-2xl bg-slate-900 text-white">
           <div className="flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-wider mb-1">
             <Sparkle className="w-4 h-4" />
-            Maßgeschneidertes Festpreisangebot
+            {t('summary.price_title')}
           </div>
-          <div className="font-display font-bold text-2xl text-white">Preise auf Anfrage</div>
-          <p className="text-xs text-slate-300 mt-2 leading-relaxed">
-            Maximale Kosteneffizienz durch direkte Inhaber-Realisierung. Verbindliches
-            Festpreisangebot nach kostenloser Bedarfsanalyse.
-          </p>
+          <div className="font-display font-bold text-xl text-white">{t('summary.price_tag')}</div>
+          <p className="text-xs text-slate-300 mt-2 leading-relaxed">{t('summary.price_text')}</p>
         </div>
       </div>
 
@@ -71,7 +73,7 @@ export const CalculatorSummary: React.FC = () => {
           href="/contact"
           className="w-full py-4 bg-amber-400 text-slate-950 rounded-xl font-bold hover:bg-amber-300 transition motion-reduce:duration-[0.01ms] shadow-lg hover:shadow-amber-500/25 flex items-center justify-center transform hover:-translate-y-0.5 text-lg focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:outline-none"
         >
-          <span>Angebot unverbindlich anfragen</span>
+          <span>{t('summary.cta')}</span>
           <OptimizedIcon icon={ArrowRight} className="ml-2 text-lg" />
         </NavLink>
       </div>
@@ -79,12 +81,9 @@ export const CalculatorSummary: React.FC = () => {
       <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
         <div className="flex items-center text-emerald-800 text-xs font-bold uppercase tracking-wider mb-1">
           <ShieldCheck className="mr-1 text-base text-emerald-600" />
-          100/100 Qualitätsgarantie
+          {t('summary.guarantee.title')}
         </div>
-        <p className="text-xs text-emerald-900/80 leading-relaxed">
-          Google Core Web Vitals 100/100, Sub-0,3s Ladezeit & 100% Quellcode-Eigentum ohne
-          monatliche Bindung.
-        </p>
+        <p className="text-xs text-emerald-900/80 leading-relaxed">{t('summary.guarantee.text')}</p>
       </div>
     </div>
   );

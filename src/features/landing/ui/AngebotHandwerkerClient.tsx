@@ -377,6 +377,12 @@ export default function AngebotHandwerker() {
                   </li>
                 ))}
               </ul>
+              <a
+                href={`${isEn ? '/en' : '/de'}/contact?package=starter`}
+                className="mt-8 block text-center w-full bg-navy text-white font-bold uppercase tracking-widest py-4 rounded-xl hover:bg-indigo transition-colors motion-reduce:duration-[0.01ms]"
+              >
+                {isEn ? 'Request Foundation' : 'Fundament anfragen'}
+              </a>
             </m.div>
 
             {/* PAKET 3 - FLAGGSCHIFF (Center) */}
@@ -438,7 +444,7 @@ export default function AngebotHandwerker() {
                 ))}
               </ul>
               <a
-                href="#kontakt"
+                href={`${isEn ? '/en' : '/de'}/contact?package=corporate`}
                 className="block text-center w-full bg-gold text-white font-bold uppercase tracking-widest py-4 rounded-xl hover:bg-gold-bright transition-colors motion-reduce:duration-[0.01ms] shadow-lg shadow-gold/20"
               >
                 {isEn ? 'Request Masterpiece' : 'Meisterstück anfragen'}
@@ -500,6 +506,12 @@ export default function AngebotHandwerker() {
                     </li>
                   ))}
                 </ul>
+                <a
+                  href={`${isEn ? '/en' : '/de'}/contact?package=business`}
+                  className="mt-8 block text-center w-full bg-teal-500 text-white font-bold uppercase tracking-widest py-4 rounded-xl hover:bg-teal-400 transition-colors motion-reduce:duration-[0.01ms]"
+                >
+                  {isEn ? 'Request Growth Machine' : 'Wachstums-Maschine anfragen'}
+                </a>
               </div>
             </m.div>
           </div>

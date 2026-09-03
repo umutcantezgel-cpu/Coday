@@ -12,6 +12,7 @@ import { useCalculatorStore } from '@/features/calculator/model/store';
 import BookingCalendar from '@/features/booking/ui/BookingCalendar';
 import { trackEvent } from '@/shared/lib/analytics/tracking';
 import { StrobiAvatar } from '@/entities/avatar';
+import { getPackage, PACKAGE_COUNT, type Locale } from '@/shared/data/packages';
 
 type WizardFormData = {
   project?: string;
@@ -25,7 +26,7 @@ type WizardFormData = {
 
 export const ApplicationWizard: React.FC = () => {
   const t = useTranslations('form');
-  const locale = useLocale();
+  const locale = useLocale() as Locale;
   const searchParams = useSearchParams();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -35,9 +36,8 @@ export const ApplicationWizard: React.FC = () => {
 
   const selectedPackageId = useCalculatorStore((state) => state.selectedPackageId);
   const getPackageName = useCalculatorStore((state) => state.getPackageName);
-  const getSummaryText = useCalculatorStore((state) => state.getSummaryText);
   const getSelectedModules = useCalculatorStore((state) => state.getSelectedModules);
-  const getStructuredLeadData = useCalculatorStore((state) => state.getStructuredLeadData);
+  const getSelectedAddonIds = useCalculatorStore((state) => state.getSelectedAddonIds);
   const setPackageAndAddons = useCalculatorStore((state) => state.setPackageAndAddons);
 
   // Sync with URL parameters if present
@@ -50,7 +50,8 @@ export const ApplicationWizard: React.FC = () => {
     }
   }, [searchParams, setPackageAndAddons]);
 
-  const hasPackage = !!selectedPackageId;
+  const selectedPackage = getPackage(selectedPackageId);
+  const hasPackage = !!selectedPackage;
 
   const WizardSchema = z.object({
     project: z
@@ -81,7 +82,7 @@ export const ApplicationWizard: React.FC = () => {
     resolver: zodResolver(WizardSchema),
     mode: 'onBlur',
     defaultValues: {
-      project: hasPackage ? getPackageName() || '' : '',
+      project: hasPackage ? getPackageName(locale) || '' : '',
       name: '',
       email: '',
       phone: '',
@@ -94,12 +95,12 @@ export const ApplicationWizard: React.FC = () => {
   // Keep project field updated with selected package name
   useEffect(() => {
     if (hasPackage) {
-      const pkgName = getPackageName();
+      const pkgName = getPackageName(locale);
       if (pkgName) {
         setValue('project', pkgName);
       }
     }
-  }, [hasPackage, selectedPackageId, getPackageName, setValue]);
+  }, [hasPackage, selectedPackageId, getPackageName, setValue, locale]);
 
   const submittedEmail = useWatch({ control, name: 'email' }) || '';
   const submittedName = useWatch({ control, name: 'name' }) || '';
@@ -127,10 +128,8 @@ export const ApplicationWizard: React.FC = () => {
     setError(null);
 
     try {
-      const structuredData = getStructuredLeadData();
-      const packageDisplayName = hasPackage
-        ? structuredData.packageName || getPackageName() || 'Individuelles Paket'
-        : undefined;
+      const packageDisplayName = hasPackage ? getPackageName(locale) || undefined : undefined;
+      const addonIds = hasPackage ? getSelectedAddonIds() : [];
 
       const result = await saveLeadInternalAction({
         name: data.name,
@@ -138,9 +137,10 @@ export const ApplicationWizard: React.FC = () => {
         phone: data.phone,
         message: data.message || '',
         project: data.project || packageDisplayName || undefined,
-        packageName: packageDisplayName,
-        packageId: hasPackage ? structuredData.packageId : undefined,
-        addons: hasPackage ? structuredData.addons : undefined,
+        packageId: selectedPackage?.id,
+        addonIds,
+        locale,
+        _bot_trap_field: data._bot_trap_field,
         source: hasPackage ? 'Package & Add-ons Configurator' : 'Direct Contact Form',
       });
 
@@ -148,21 +148,24 @@ export const ApplicationWizard: React.FC = () => {
 
       setSuccess(true);
       trackEvent('form_submit', {
-        destination: hasPackage ? getPackageName() || 'package' : 'direct',
+        destination: hasPackage ? packageDisplayName || 'package' : 'direct',
+        package_id: selectedPackage?.id,
+        addon_count: addonIds.length,
       });
     } catch (err: unknown) {
       console.error('Wizard submission error:', err);
-      setError(err instanceof Error ? err.message : t('wizard.error_generic'));
+      setError(err instanceof Error ? err.message : t('wizard.error.submit'));
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  // Package Summary without price leakage
+  // Package summary without any price information
   const renderPackageSummary = () => {
-    if (!hasPackage) return null;
-    const packageName = getPackageName();
+    if (!selectedPackage) return null;
+    const packageName = getPackageName(locale);
     const selectedModules = getSelectedModules();
+    const addonModules = selectedModules.filter((mod) => mod.category !== 'basis');
 
     return (
       <m.div
@@ -170,59 +173,62 @@ export const ApplicationWizard: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         className="mb-6 p-5 bg-gradient-to-br from-amber-500/10 via-amber-50/80 to-emerald-500/10 rounded-2xl border border-amber-500/30 shadow-xs"
       >
-        <div className="flex items-center justify-between mb-3.5 pb-3 border-b border-amber-200/60">
+        <div className="flex items-start justify-between gap-3 mb-3.5 pb-3 border-b border-amber-200/60">
           <div className="flex items-center gap-2.5">
-            <div className="w-6 h-6 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-xs shadow-xs">
+            <div className="w-6 h-6 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-xs shadow-xs shrink-0">
               ✓
             </div>
             <div>
               <span className="text-[11px] font-bold text-amber-900 uppercase tracking-wider block">
-                {t('wizard.package_summary.title', { fallback: 'Ihre gewählte Konfiguration' })}
+                {t('wizard.package_summary.title')}
               </span>
               <span className="font-bold text-slate-900 text-sm sm:text-base">{packageName}</span>
             </div>
           </div>
-          <span className="text-xs bg-amber-100 text-amber-900 font-extrabold px-3 py-1 rounded-full border border-amber-200 whitespace-nowrap">
-            {selectedModules.length} {selectedModules.length === 1 ? 'Modul' : 'Module'}
+          <span className="text-[11px] bg-amber-100 text-amber-900 font-bold px-2.5 py-1 rounded-full border border-amber-200 whitespace-nowrap">
+            {t('wizard.package_summary.tier', {
+              tier: selectedPackage.tier,
+              total: PACKAGE_COUNT,
+            })}
           </span>
         </div>
 
         <div className="space-y-1.5 mb-3.5 max-h-48 overflow-y-auto pr-1">
-          {selectedModules.map((mod) => (
+          <div className="flex justify-between items-center text-xs sm:text-sm py-1 border-b border-slate-100">
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0" />
+              <span className="text-slate-700 font-medium">{packageName}</span>
+            </div>
+            <span className="text-amber-800 font-bold text-xs bg-amber-100/70 px-2 py-0.5 rounded-full whitespace-nowrap">
+              {t('wizard.package_summary.package')}
+            </span>
+          </div>
+          {addonModules.map((mod) => (
             <div
               key={mod.id}
               className="flex justify-between items-center text-xs sm:text-sm py-1 border-b border-slate-100"
             >
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0" />
-                <span className="text-slate-700 font-medium">{mod.name}</span>
-                {mod.category === 'basis' && (
-                  <span className="text-[10px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-semibold">
-                    Basis
-                  </span>
-                )}
+                <span className="w-1.5 h-1.5 rounded-full bg-slate-400 flex-shrink-0" />
+                <span className="text-slate-700 font-medium">{mod.plainName[locale]}</span>
               </div>
-              <span className="text-amber-800 font-bold text-xs bg-amber-100/70 px-2 py-0.5 rounded-full whitespace-nowrap">
-                {mod.category === 'basis' ? 'Basispaket' : 'Zusatzmodul'}
+              <span className="text-slate-700 font-bold text-xs bg-slate-100 px-2 py-0.5 rounded-full whitespace-nowrap">
+                {t('wizard.package_summary.addon')}
               </span>
             </div>
           ))}
         </div>
 
-        <div className="pt-3 border-t border-amber-200/60 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-          <div>
-            <span className="text-[11px] text-slate-500 uppercase tracking-wider block font-semibold">
-              Kalkulation: Individuelles Festpreisangebot
-            </span>
-            <span className="text-[11px] text-slate-400">
-              100% verbindliches Angebot nach kostenloser Erstberatung ohne versteckte Kosten
-            </span>
-          </div>
-          <div className="text-left sm:text-right">
-            <span className="text-base sm:text-lg font-black text-amber-900 font-display">
-              Auf Anfrage
-            </span>
-          </div>
+        <div className="pt-3 border-t border-amber-200/60">
+          <span className="text-[11px] text-amber-900 uppercase tracking-wider block font-bold mb-1">
+            {t('wizard.package_summary.next_title')}
+          </span>
+          <p className="text-xs text-slate-700 leading-relaxed">
+            {t('wizard.package_summary.next_text')}
+          </p>
+          <p className="text-[11px] text-emerald-800 mt-1.5 font-medium">
+            {t('wizard.package_summary.no_risk')}
+          </p>
         </div>
       </m.div>
     );
@@ -245,7 +251,12 @@ export const ApplicationWizard: React.FC = () => {
           <h2 className="text-2xl font-bold text-gray-900 mb-2">
             {t('wizard.success.booking_title')}
           </h2>
-          <p className="text-gray-600 mb-8">{t('wizard.success.booking_desc')}</p>
+          <p className="text-gray-600 mb-2">{t('wizard.success.booking_desc')}</p>
+          {submittedEmail && (
+            <p className="text-sm text-gray-500 mb-8">
+              {t('wizard.success.confirmation_sent', { email: submittedEmail })}
+            </p>
+          )}
           <div className="w-full rounded-2xl overflow-hidden border border-gray-100 bg-gray-50 mb-8">
             <BookingCalendar
               prefillData={{
@@ -478,6 +489,7 @@ export const ApplicationWizard: React.FC = () => {
                   className="w-full px-4 py-3 min-h-[48px] rounded-xl border border-gray-200 outline-none transition motion-reduce:duration-[0.01ms] focus:border-primary focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent"
                   placeholder={t('wizard.step3.phone.placeholder')}
                   autoComplete="tel"
+                  inputMode="tel"
                 />
               </div>
               <div className="space-y-2">

@@ -11,17 +11,19 @@ import { useCalculatorStore } from '@/features/calculator/model/store';
 import { ModuleCard } from '@/features/calculator/ui/ModuleCard';
 import { CalculatorSummary } from '@/features/calculator/ui/Summary';
 import { modules, ModuleCategory } from '@/shared/data/modules';
+import { getPackage } from '@/shared/data/packages';
 import StepIndicator from '@/shared/ui/StepIndicator';
 import { ArrowRight } from '@phosphor-icons/react/dist/ssr';
 
 const Calculator: React.FC = () => {
   const t = useTranslations('calculator');
-  // Note: i18n is not supported by next-intl directly in components like this.
   const selectedModuleIds = useCalculatorStore((state) => state.selectedModuleIds);
   const selectedPackageId = useCalculatorStore((state) => state.selectedPackageId);
   const toggleModule = useCalculatorStore((state) => state.toggleModule);
   const setStep = useCalculatorStore((state) => state.setStep);
   const navigate = useRouter();
+
+  const selectedPackage = getPackage(selectedPackageId);
 
   const [openCategories, setOpenCategories] = React.useState<Set<string>>(new Set(['basis']));
 
@@ -47,7 +49,7 @@ const Calculator: React.FC = () => {
     'seo',
     'support',
   ];
-  const categories = selectedPackageId ? allCategories.filter((c) => c !== 'basis') : allCategories;
+  const categories = selectedPackage ? allCategories.filter((c) => c !== 'basis') : allCategories;
 
   // Set step on mount
   useEffect(() => {
@@ -72,7 +74,7 @@ const Calculator: React.FC = () => {
           {t('hero.title_1')} <br /> <span className="text-gradient">{t('hero.title_2')}</span>
         </h1>
         <p className="text-xl text-gray-600">
-          {selectedPackageId ? t('hero.subtitle_packages') : t('hero.subtitle_default')}
+          {selectedPackage ? t('hero.subtitle_packages') : t('hero.subtitle_default')}
         </p>
       </section>
 
@@ -136,35 +138,31 @@ const Calculator: React.FC = () => {
                   >
                     <div className="p-6 pt-0 border-t border-gray-50 bg-gray-50/30">
                       <div className="grid md:grid-cols-2 gap-4 mt-6">
-                        {categoryModules.map((module) => (
-                          <ModuleCard
-                            key={module.id}
-                            module={module}
-                            isSelected={selectedModuleIds.has(module.id)}
-                            isIncluded={
-                              (selectedPackageId === 'starter' && module.id === 'basis-starter') ||
-                              ((selectedPackageId === 'business' ||
-                                selectedPackageId === 'professional') &&
-                                module.id === 'basis-business') ||
-                              ((selectedPackageId === 'corporate' ||
-                                selectedPackageId === 'pro-corporate' ||
-                                selectedPackageId === 'scale') &&
-                                module.id === 'basis-corporate') ||
-                              (selectedPackageId === 'enterprise' &&
-                                module.id === 'basis-enterprise')
-                            }
-                            onToggle={() => toggleModule(module.id)}
-                            disabled={
-                              module.dependencies &&
-                              !module.dependencies.every((dep) => selectedModuleIds.has(dep))
-                            }
-                            isRecommended={
-                              module.isRecommended ||
-                              (['business', 'professional'].includes(selectedPackageId || '') &&
-                                module.id === 'func-cms')
-                            }
-                          />
-                        ))}
+                        {categoryModules.map((module) => {
+                          const isIncluded =
+                            !!selectedPackage &&
+                            (module.id === selectedPackage.basisModuleId ||
+                              selectedPackage.includedAddonIds.includes(module.id));
+                          const isRecommended =
+                            module.isRecommended ||
+                            (!!selectedPackage &&
+                              selectedPackage.recommendedAddonIds.includes(module.id));
+
+                          return (
+                            <ModuleCard
+                              key={module.id}
+                              module={module}
+                              isSelected={selectedModuleIds.has(module.id)}
+                              isIncluded={isIncluded}
+                              onToggle={() => toggleModule(module.id)}
+                              disabled={
+                                module.dependencies &&
+                                !module.dependencies.every((dep) => selectedModuleIds.has(dep))
+                              }
+                              isRecommended={isRecommended}
+                            />
+                          );
+                        })}
                       </div>
                     </div>
                   </div>

@@ -1,7 +1,21 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { modules, Module } from '@/shared/data/modules';
-import { formatCurrency } from '@/shared/utils/formatters';
+import { modules, Module, getModule } from '@/shared/data/modules';
+import {
+  PACKAGES,
+  normalizePackageId,
+  getPackageName as lookupPackageName,
+  type PackageId,
+  type Locale,
+} from '@/shared/data/packages';
+
+const DEFAULT_PACKAGE: PackageId = 'business';
+
+/** Basis module id for a package id or alias; unknown ids fall back to the default package. */
+function basisModuleFor(packageId: string): string {
+  const id = normalizePackageId(packageId) ?? DEFAULT_PACKAGE;
+  return PACKAGES[id].basisModuleId;
+}
 
 interface CalculatorState {
   selectedModuleIds: Set<string>;
@@ -18,9 +32,10 @@ interface CalculatorState {
   getTotalOneTime: () => number;
   getTotalMonthly: () => number;
   getSelectedModules: () => Module[];
-  getPackageName: () => string | null;
+  getSelectedAddonIds: () => string[];
+  getPackageName: (locale?: Locale) => string | null;
   getSummaryText: () => string;
-  getStructuredLeadData: () => {
+  getStructuredLeadData: (locale?: Locale) => {
     packageId: string;
     packageName: string;
     addons: Array<{ id: string; name: string; category?: string }>;
@@ -41,87 +56,41 @@ export const useCalculatorStore = create<CalculatorState>()(
         if (keepAddons) {
           // Keep existing non-basis modules
           currentSet.forEach((id) => {
-            const mod = modules.find((m) => m.id === id);
+            const mod = getModule(id);
             if (mod && mod.category !== 'basis') {
               newSet.add(id);
             }
           });
         }
 
-        // Map Packages exactly 1:1 to their base module (4 Tiers)
-        switch (packageId) {
-          case 'starter':
-          case 'onepager':
-            newSet.add('basis-starter');
-            break;
-          case 'business':
-          case 'professional':
-            newSet.add('basis-business');
-            break;
-          case 'corporate':
-          case 'pro-corporate':
-          case 'scale':
-            newSet.add('basis-corporate');
-            break;
-          case 'enterprise':
-          case 'ultimate':
-          case 'custom-app':
-            newSet.add('basis-enterprise');
-            break;
-          default:
-            newSet.add('basis-business');
-        }
+        newSet.add(basisModuleFor(packageId));
 
         set({
-          selectedPackageId: packageId,
+          selectedPackageId: normalizePackageId(packageId) ?? packageId,
           selectedModuleIds: newSet,
         });
       },
 
       setPackageAndAddons: (packageId, addonIds = []) => {
-        const newSet = new Set<string>();
+        const newSet = new Set<string>([basisModuleFor(packageId)]);
 
-        // Add base package (4 Tiers)
-        switch (packageId) {
-          case 'starter':
-          case 'onepager':
-            newSet.add('basis-starter');
-            break;
-          case 'business':
-          case 'professional':
-            newSet.add('basis-business');
-            break;
-          case 'corporate':
-          case 'pro-corporate':
-          case 'scale':
-            newSet.add('basis-corporate');
-            break;
-          case 'enterprise':
-          case 'ultimate':
-          case 'custom-app':
-            newSet.add('basis-enterprise');
-            break;
-          default:
-            newSet.add('basis-business');
-        }
-
-        // Add verified add-on modules
+        // Add verified add-on modules only
         addonIds.forEach((id) => {
-          const mod = modules.find((m) => m.id === id);
+          const mod = getModule(id);
           if (mod && mod.category !== 'basis') {
             newSet.add(id);
           }
         });
 
         set({
-          selectedPackageId: packageId,
+          selectedPackageId: normalizePackageId(packageId) ?? packageId,
           selectedModuleIds: newSet,
         });
       },
 
       toggleModule: (moduleId) =>
         set((state) => {
-          const foundModule = modules.find((m) => m.id === moduleId);
+          const foundModule = getModule(moduleId);
           if (!foundModule) return state;
 
           const newSet = new Set(state.selectedModuleIds);
@@ -179,22 +148,13 @@ export const useCalculatorStore = create<CalculatorState>()(
         return modules.filter((m) => selectedModuleIds.has(m.id));
       },
 
-      getPackageName: () => {
-        const { selectedPackageId } = get();
-        if (!selectedPackageId) return null;
-        const names: Record<string, string> = {
-          starter: 'Starter (Klein)',
-          onepager: 'Starter (Klein)',
-          business: 'Business (Mittel)',
-          professional: 'Business (Mittel)',
-          corporate: 'Pro Corporate (Groß)',
-          'pro-corporate': 'Pro Corporate (Groß)',
-          scale: 'Pro Corporate (Groß)',
-          enterprise: 'Enterprise Platform (Extrem groß)',
-          ultimate: 'Enterprise Platform (Extrem groß)',
-        };
-        return names[selectedPackageId] || null;
-      },
+      getSelectedAddonIds: () =>
+        get()
+          .getSelectedModules()
+          .filter((m) => m.category !== 'basis')
+          .map((m) => m.id),
+
+      getPackageName: (locale = 'de') => lookupPackageName(get().selectedPackageId, locale),
 
       getSummaryText: () => {
         const selectedMods = get().getSelectedModules();
@@ -205,24 +165,27 @@ export const useCalculatorStore = create<CalculatorState>()(
           text += `Gewähltes Paket: ${packageName}\n`;
         }
         if (selectedMods.length > 0) {
-          text += `Ausgewählte Module / Add-ons: ${selectedMods.map((m) => m.name).join(', ')}\n`;
+          text += `Ausgewählte Module / Add-ons: ${selectedMods.map((m) => m.plainName.de).join(', ')}\n`;
         }
         text += `Kalkulation: Individuelles Angebot auf Anfrage`;
         return text;
       },
 
-      getStructuredLeadData: () => {
+      getStructuredLeadData: (locale = 'de') => {
         const { selectedPackageId, selectedModuleIds } = get();
-        const packageName = get().getPackageName();
+        const packageName = get().getPackageName(locale);
         const allModules = modules.filter((m) => selectedModuleIds.has(m.id));
         const basisModule = allModules.find((m) => m.category === 'basis');
         const addons = allModules
           .filter((m) => m.category !== 'basis')
-          .map((m) => ({ id: m.id, name: m.name, category: m.category }));
+          .map((m) => ({ id: m.id, name: m.plainName[locale], category: m.category }));
 
         return {
-          packageId: selectedPackageId || basisModule?.id || 'individual',
-          packageName: packageName || basisModule?.name || 'Individuelles Projekt',
+          packageId: normalizePackageId(selectedPackageId) || basisModule?.id || 'individual',
+          packageName:
+            packageName ||
+            basisModule?.plainName[locale] ||
+            (locale === 'en' ? 'Custom project' : 'Individuelles Projekt'),
           addons,
         };
       },
@@ -237,10 +200,16 @@ export const useCalculatorStore = create<CalculatorState>()(
           if (!str) return null;
           try {
             const parsed = JSON.parse(str);
+            const storedPackageId: unknown = parsed?.state?.selectedPackageId;
             return {
               ...parsed,
               state: {
                 ...parsed.state,
+                // Visitors may still carry legacy aliases (e.g. "professional") in storage.
+                selectedPackageId:
+                  typeof storedPackageId === 'string'
+                    ? (normalizePackageId(storedPackageId) ?? storedPackageId)
+                    : null,
                 selectedModuleIds: new Set(parsed.state.selectedModuleIds),
               },
             };

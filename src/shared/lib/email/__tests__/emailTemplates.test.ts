@@ -10,7 +10,7 @@ import {
 
 describe('Email Templates Module', () => {
   describe('Agency Lead Email (generateAgencyLeadEmailHtml)', () => {
-    it('generates dark luxury HTML containing all lead details, package, and add-ons', () => {
+    it('generates light-design HTML containing all lead details, package, and add-ons', () => {
       const html = generateAgencyLeadEmailHtml({
         name: 'Max Mustermann',
         email: 'max@example.de',
@@ -35,7 +35,8 @@ describe('Email Templates Module', () => {
       expect(html).toContain('Mobile App &amp; PWA Experience');
       expect(html).toContain('~21 Werktage');
       expect(html).toContain('mailto:max@example.de');
-      expect(html).toContain('tel:+49 170 1234567');
+      expect(html).toContain('tel:+491701234567');
+      expect(html).not.toContain('background-color: #0f172a');
     });
 
     it('escapes dangerous HTML characters to prevent XSS injection', () => {
@@ -70,10 +71,36 @@ describe('Email Templates Module', () => {
       expect(html).toContain('Julia Schmidt');
       expect(html).toContain('Enterprise Platform (Extrem groß)');
       expect(html).toContain('E-Commerce Storefront (Shopify / Medusa)');
-      expect(html).toContain('Wie geht es jetzt weiter? (Ihr 3-Schritte-Fahrplan)');
+      expect(html).toContain('Wie geht es jetzt weiter?');
       expect(html).toContain('https://codayweb.de/de/booking');
       expect(html).toContain('Umutcan Emre Tezgel');
-      expect(html).toContain('Inhaber & Lead Web Architect');
+      expect(html).toContain('Inhaber &amp; Webentwickler');
+    });
+
+    it('renders the plain-language package names and an English variant', () => {
+      const de = generateCustomerConfirmationEmailHtml({
+        name: 'Max Mustermann',
+        email: 'max@example.de',
+        packageName: 'Der Kundenmagnet',
+        packageId: 'business',
+        deliveryDays: 21,
+        locale: 'de',
+      });
+      expect(de).toContain('Der Kundenmagnet');
+      expect(de).toContain('ca. 21 Werktagen');
+      expect(de).toContain('keine Kosten, bis Sie das Angebot annehmen');
+
+      const en = generateCustomerConfirmationEmailHtml({
+        name: 'Jane Doe',
+        email: 'jane@example.com',
+        packageName: 'The Client Magnet',
+        addons: [{ id: 'func-cms', name: 'Edit texts & images yourself', category: 'function' }],
+        locale: 'en',
+      });
+      expect(en).toContain('<html lang="en">');
+      expect(en).toContain('What happens next?');
+      expect(en).toContain('Edit texts &amp; images yourself');
+      expect(en).toContain('https://codayweb.de/en/booking');
     });
   });
 
@@ -93,15 +120,19 @@ describe('Email Templates Module', () => {
       const customerHtml = generateCustomerBookingEmailHtml(bookingData);
 
       expect(agencyHtml).toContain('Dr. Michael Weber');
-      expect(agencyHtml).toContain('2026-09-15');
+      expect(agencyHtml).toContain('Dienstag, 15. September 2026');
       expect(agencyHtml).toContain('14:30 Uhr');
+      expect(agencyHtml).toContain('calendar.google.com');
       expect(agencyHtml).toContain('weber@praxis-wetzlar.de');
       expect(agencyHtml).toContain('Fokus auf neue Praxis-Website');
 
       expect(customerHtml).toContain('Dr. Michael Weber');
-      expect(customerHtml).toContain('2026-09-15');
+      expect(customerHtml).toContain('Dienstag, 15. September 2026');
       expect(customerHtml).toContain('14:30 Uhr');
+      expect(customerHtml).toContain('06441 987654');
       expect(customerHtml).toContain('Umutcan Emre Tezgel');
+      expect(customerHtml).toContain('<meta name="color-scheme" content="light">');
+      expect(customerHtml).not.toContain('background-color: #0f172a');
     });
   });
 

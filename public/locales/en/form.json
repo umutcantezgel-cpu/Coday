@@ -66,8 +66,8 @@
         "placeholder": "John Doe"
       },
       "phone": {
-        "label": "Phone (Optional)",
-        "placeholder": "+1 234 567890"
+        "label": "Your phone number (optional)",
+        "placeholder": "+49 …"
       },
       "privacy": {
         "hint": "Note: You can revoke this consent at any time with effect for the future.",
@@ -93,7 +93,8 @@
       "trust_text": "Working with Coday significantly increased our digital visibility. The first call alone was incredibly valuable.",
       "trust_source": "Batherm, Building Services",
       "booking_title": "Your request has been successfully sent!",
-      "booking_desc": "We will review your details and get back to you shortly. Optional: Skip the email back-and-forth and book a meeting directly."
+      "booking_desc": "We will review your details and get back to you shortly. Optional: Skip the email back-and-forth and book a meeting directly.",
+      "confirmation_sent": "A confirmation is on its way to {email}."
     },
     "validation": {
       "email": "Please enter a valid email address",
@@ -104,12 +105,18 @@
       "required": "This field is required"
     },
     "title_direct": "Describe Your Project",
-    "subtitle": "We will get back to you within 24 hours.",
-    "title_package": "Your selected package",
+    "subtitle": "Free and non-binding. I will get back to you within 24 hours.",
+    "title_package": "Request your selected package",
     "package_summary": {
-      "title": "Selected package:",
-      "total": "Estimated total price",
-      "more": "more modules"
+      "title": "Your selection",
+      "package": "Package",
+      "addon": "Extra",
+      "tier": "Package {tier} of {total}",
+      "next_title": "What happens now?",
+      "next_text": "I will get back to you within 24 hours. After a short, free call you receive your binding fixed-price quote.",
+      "no_risk": "Non-binding. You pay nothing until you accept the quote.",
+      "more": "more",
+      "total": "Estimated total"
     }
   },
   "cookie": {
