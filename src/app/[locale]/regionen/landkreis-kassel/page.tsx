@@ -8,6 +8,7 @@ import {
   getPyramidBreadcrumbs,
 } from '@/features/local-seo/model/schemaPyramid';
 import { LocalSplitHero } from '@/features/local-seo/ui/LocalSplitHero';
+import { CountySilo } from '@/features/local-seo/ui/CountySilo';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -668,6 +669,8 @@ export default async function LandkreisKasselPage({
           </Link>
         </div>
       </section>
+
+      <CountySilo countySlug="landkreis-kassel" locale={_locale} />
     </div>
   );
 }

@@ -7,8 +7,6 @@ export const BASE_URL = 'https://www.codayweb.de';
 export const ORG_ID = `${BASE_URL}/#organization`;
 export const FOUNDER_ID = `${BASE_URL}/#founder`;
 export const WEBSITE_ID = `${BASE_URL}/#website`;
-export const LOCAL_BUSINESS_ID = `${BASE_URL}/#local-business`;
-export const PROFESSIONAL_SERVICE_ID = `${BASE_URL}/#professional-service`;
 
 /**
  * The top of the place chain. Site-global rather than page-anchored, because
@@ -253,158 +251,6 @@ export function getOrganizationSchema(locale: string = 'de') {
   };
 }
 
-export function getProfessionalServiceSchema(locale: string = 'de') {
-  return {
-    '@type': 'ProfessionalService',
-    '@id': `${BASE_URL}/#professional-service`,
-    provider: {
-      '@id': ORG_ID,
-    },
-    name: 'Coday Web Agency',
-    legalName: 'Umutcan Emre Tezgel',
-    description:
-      locale === 'en'
-        ? 'High-End Web Development & Generative Engine Optimization'
-        : 'High-End Webentwicklung & Generative Engine Optimization',
-    image: `${BASE_URL}/images/og-image.jpg`,
-    url: BASE_URL,
-    telephone: '+49-176-41195301',
-    vatID: 'DE459754827',
-    taxID: '039 874 00784',
-    foundingDate: '2026',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Lessingstraße 4',
-      postalCode: '35578',
-      addressLocality: 'Wetzlar',
-      addressRegion: 'Hessen',
-      addressCountry: 'DE',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 50.5558,
-      longitude: 8.504,
-    },
-    hasMap: 'https://www.google.com/maps?cid=8570940562624494590',
-    sameAs: [
-      'https://www.provenexpert.com/de-de/coday-webagentur/',
-      'https://www.google.com/maps?cid=8570940562624494590',
-      'https://www.linkedin.com/company/coday',
-      'https://www.linkedin.com/in/umutcan-emre-tezgel-156382218/',
-      'https://www.instagram.com/codayweb',
-    ],
-    founder: {
-      '@type': 'Person',
-      '@id': FOUNDER_ID,
-      name: 'Umutcan Emre Tezgel',
-      sameAs: [
-        'https://www.linkedin.com/in/umutcan-emre-tezgel-156382218/',
-        'https://www.openpr.de/news/coday',
-      ],
-    },
-    areaServed: [
-      { '@type': 'City', name: 'Wetzlar' },
-      { '@type': 'City', name: 'Gießen' },
-      { '@type': 'City', name: 'Marburg' },
-      { '@type': 'City', name: 'Herborn' },
-      { '@type': 'City', name: 'Dillenburg' },
-      { '@type': 'City', name: 'Limburg' },
-      { '@type': 'City', name: 'Weilburg' },
-      { '@type': 'City', name: 'Haiger' },
-      { '@type': 'City', name: 'Ehringshausen' },
-      { '@type': 'City', name: 'Sinn' },
-      { '@type': 'City', name: 'Aßlar' },
-      { '@type': 'City', name: 'Solms' },
-      { '@type': 'City', name: 'Lahnau' },
-      { '@type': 'City', name: 'Braunfels' },
-      { '@type': 'City', name: 'Leun' },
-      { '@type': 'City', name: 'Hüttenberg' },
-      { '@type': 'City', name: 'Schöffengrund' },
-      { '@type': 'City', name: 'Waldsolms' },
-      { '@type': 'AdministrativeArea', name: 'Lahn-Dill-Kreis' },
-      { '@type': 'AdministrativeArea', name: 'Landkreis Gießen' },
-      { '@type': 'AdministrativeArea', name: 'Marburg-Biedenkopf' },
-      { '@type': 'AdministrativeArea', name: 'Limburg-Weilburg' },
-      { '@type': 'AdministrativeArea', name: 'Hessen' },
-    ],
-    priceRange: '€€€',
-    openingHours: 'Mo,Tu,We,Th,Fr 09:00-18:00',
-    serviceType: [
-      'Web Development',
-      'Headless CMS Integration',
-      'Search Engine Optimization',
-      'Generative Engine Optimization',
-    ],
-    hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: 'Web Services & Packages',
-      itemListElement: [
-        {
-          '@type': 'Offer',
-          itemOffered: { '@type': 'Service', name: 'Next.js 15 Web Development' },
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: { '@type': 'Service', name: 'Generative Engine Optimization (GEO)' },
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: { '@type': 'Service', name: 'Sanity Headless CMS Setup' },
-        },
-      ],
-    },
-  };
-}
-
-export function getLocalBusinessSchema(locale: string = 'de') {
-  return {
-    '@type': 'LocalBusiness',
-    '@id': `${BASE_URL}/#local-business`,
-    parentOrganization: {
-      '@id': ORG_ID,
-    },
-    name: locale === 'en' ? 'Coday - Web Design Wetzlar' : 'Coday - Webdesign Wetzlar',
-    description:
-      locale === 'en'
-        ? 'High-End Web Development & Generative Engine Optimization'
-        : 'High-End Webentwicklung & Generative Engine Optimization',
-    url: BASE_URL,
-    telephone: '+49-176-41195301',
-    image: `${BASE_URL}/logo.png`,
-    hasMap: 'https://www.google.com/maps?cid=8570940562624494590',
-    sameAs: [
-      'https://www.provenexpert.com/de-de/coday-webagentur/',
-      'https://www.google.com/maps?cid=8570940562624494590',
-      'https://www.linkedin.com/company/coday',
-      'https://www.linkedin.com/in/umutcan-emre-tezgel-156382218/',
-    ],
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Lessingstraße 4',
-      postalCode: '35578',
-      addressLocality: 'Wetzlar',
-      addressRegion: 'Hessen',
-      addressCountry: 'DE',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 50.564,
-      longitude: 8.502,
-    },
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '09:00',
-        closes: '18:00',
-      },
-    ],
-    paymentAccepted: 'Bank Transfer, Invoice, SEPA',
-    currenciesAccepted: 'EUR',
-    priceRange: '€€€',
-  };
-}
-
 export function getArticleSchema(post: {
   title: string;
   excerpt: string;
@@ -542,43 +388,6 @@ export function getServiceSchema(service: {
   };
 }
 
-export function getDynamicLocationSchema(location: {
-  city: string;
-  description: string;
-  url: string;
-  latitude?: number;
-  longitude?: number;
-}) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': location.url,
-    parentOrganization: {
-      '@id': ORG_ID,
-    },
-    name: `Coday Webdesign ${location.city}`,
-    description: location.description,
-    url: location.url,
-    telephone: '+49-176-41195301',
-    image: `${BASE_URL}/logo.png`,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: location.city,
-      addressRegion: 'Hessen',
-      addressCountry: 'DE',
-    },
-    ...(location.latitude && location.longitude
-      ? {
-          geo: {
-            '@type': 'GeoCoordinates',
-            latitude: location.latitude,
-            longitude: location.longitude,
-          },
-        }
-      : {}),
-  };
-}
-
 /* ═══ PAGE-SPECIFIC SCHEMAS ═══ */
 
 export function getPricingSchema(locale: string = 'de') {
@@ -615,38 +424,6 @@ export function getPricingSchema(locale: string = 'de') {
           '@id': `${pricingUrl}#service-${pkg.id}`,
           name: pkg.name[lang],
           provider: { '@id': ORG_ID },
-        },
-      })),
-    },
-  };
-}
-
-export function getPortfolioSchema(
-  projects: { name: string; url: string; description: string }[],
-  locale: string = 'de'
-) {
-  return {
-    '@type': 'CollectionPage',
-    '@id': `${BASE_URL}/${locale}/work#portfolio`,
-    name: locale === 'en' ? 'Coday Portfolio & References' : 'Coday Portfolio & Referenzen',
-    description:
-      locale === 'en'
-        ? 'Real client projects by Coday in Wetzlar. Case studies with measurable results.'
-        : 'Echte Kundenprojekte von Coday in Wetzlar. Case Studies mit messbaren Ergebnissen.',
-    url: `${BASE_URL}/${locale}/work`,
-    isPartOf: { '@id': `${BASE_URL}/#website` },
-    about: { '@id': ORG_ID },
-    mainEntity: {
-      '@type': 'ItemList',
-      itemListElement: projects.map((p, i) => ({
-        '@type': 'ListItem',
-        position: i + 1,
-        item: {
-          '@type': 'CreativeWork',
-          name: p.name,
-          url: p.url,
-          description: p.description,
-          creator: { '@id': ORG_ID },
         },
       })),
     },
@@ -850,41 +627,6 @@ export function getFaqSchema(faqs: { question: string; answer: string }[], pageU
   };
 }
 
-export function getAboutSchema(locale: string = 'de') {
-  return {
-    '@type': 'AboutPage',
-    '@id': `${BASE_URL}/${locale}/about#webpage`,
-    url: `${BASE_URL}/${locale}/about`,
-    name:
-      locale === 'en'
-        ? 'About Coday – Solo Web Agency Wetzlar'
-        : 'Über Coday – Solo Webagentur Wetzlar',
-    description:
-      locale === 'en'
-        ? 'Learn about Umutcan Emre Tezgel and the philosophy behind Coday Web: High-conversion websites, 100/100 PageSpeed, and direct developer communication.'
-        : 'Erfahren Sie mehr über Umutcan Emre Tezgel und die Philosophie von Coday Web: Verkaufsstarke Webseiten, 100/100 PageSpeed und direkte Betreuung ohne Zwischenhändler.',
-    isPartOf: { '@id': `${BASE_URL}/#website` },
-    about: { '@id': ORG_ID },
-    mainEntity: { '@id': FOUNDER_ID },
-  };
-}
-
-export function getContactSchema(locale: string = 'de') {
-  return {
-    '@type': 'ContactPage',
-    '@id': `${BASE_URL}/${locale}/contact#webpage`,
-    url: `${BASE_URL}/${locale}/contact`,
-    name: locale === 'en' ? 'Contact Coday Web Agency' : 'Kontakt zu Coday Webagentur Wetzlar',
-    description:
-      locale === 'en'
-        ? 'Contact Coday Web for custom web design, SEO, and web development in Wetzlar and Central Hesse. Free initial consultation.'
-        : 'Nehmen Sie Kontakt zu Coday Web auf für maßgeschneidertes Webdesign, SEO und Webentwicklung in Wetzlar und Mittelhessen. Kostenloses Erstgespräch.',
-    isPartOf: { '@id': `${BASE_URL}/#website` },
-    about: { '@id': ORG_ID },
-    mainEntity: { '@id': `${BASE_URL}/#local-business` },
-  };
-}
-
 export function getWebApplicationSchema(
   app: {
     name: string;
@@ -913,59 +655,6 @@ export function getWebApplicationSchema(
       priceCurrency: 'EUR',
     },
     provider: { '@id': ORG_ID },
-  };
-}
-
-export function getCaseStudySchema(project: {
-  title: string;
-  client: string;
-  description: string;
-  url: string;
-  image?: string;
-  datePublished?: string;
-}) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'CreativeWork',
-    '@id': project.url,
-    headline: project.title,
-    name: project.title,
-    description: project.description,
-    url: project.url,
-    image: project.image ? [project.image] : [`${BASE_URL}/images/og-image.jpg`],
-    creator: { '@id': ORG_ID },
-    publisher: { '@id': ORG_ID },
-    datePublished: project.datePublished || '2026-01-01',
-    about: {
-      '@type': 'Organization',
-      name: project.client,
-    },
-  };
-}
-
-export function getIndustrySchema(industry: {
-  name: string;
-  description: string;
-  url: string;
-  category: string;
-}) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    '@id': industry.url,
-    name: `Webdesign für ${industry.name} – Coday Web`,
-    description: industry.description,
-    url: industry.url,
-    serviceType: `Webdesign & Webentwicklung für ${industry.name}`,
-    category: industry.category,
-    provider: { '@id': ORG_ID },
-    areaServed: [
-      { '@type': 'City', name: 'Wetzlar' },
-      { '@type': 'City', name: 'Gießen' },
-      { '@type': 'City', name: 'Marburg' },
-      { '@type': 'AdministrativeArea', name: 'Mittelhessen' },
-      { '@type': 'AdministrativeArea', name: 'Hessen' },
-    ],
   };
 }
 

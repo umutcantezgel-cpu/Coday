@@ -16,8 +16,6 @@ export { default as ExpandableSection } from '@/shared/ui/ExpandableSection';
 export { default as GlobalCTA } from '@/shared/ui/GlobalCTA';
 export { default as InteractiveQuiz } from '@/shared/ui/InteractiveQuiz';
 export { OptimizedImage } from '@/shared/ui/OptimizedImage';
-export { JsonLd, type SchemaData } from '@/shared/ui/JsonLd';
-export { VideoEmbed } from '@/shared/ui/VideoEmbed';
 export { default as ScrollFloat } from '@/shared/ui/ScrollFloat';
 export { default as ScrollReveal } from '@/shared/ui/ScrollReveal';
 export { default as StepIndicator } from '@/shared/ui/StepIndicator';
