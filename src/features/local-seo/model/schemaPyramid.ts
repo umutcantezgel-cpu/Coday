@@ -1,4 +1,4 @@
-import { BASE_URL, ORG_ID, FOUNDER_ID, getReviewsSchema } from '@/lib/schema';
+import { BASE_URL, ORG_ID, FOUNDER_ID, PLACE_DE_ID, getReviewsSchema } from '@/lib/schema';
 
 export interface CountyData {
   slug: string;
@@ -32,14 +32,14 @@ export const HESSEN_STATE = {
 };
 
 /**
- * The two tiers the pyramid was missing.
+ * The tier between Hessen and the four home Kreise. Locale-independent on purpose:
+ * Mittelhessen is not a different place in English, and a Kreis page in either
+ * locale points at the same node. The tier ids around it are locale-scoped only
+ * because they are page anchors; this one is anchored to no page.
  *
- * Both ids are locale-independent on purpose: Hessen is not a different place in
- * English, and a Kreis page in either locale should point at the same node. The
- * existing tier ids are locale-scoped because they are page anchors; these two
- * are not anchored to any page, so they carry no locale.
+ * `PLACE_DE_ID` lives in @/lib/schema because #organization references it and
+ * #organization ships on every page, so its node has to be in the root layout.
  */
-export const PLACE_DE_ID = `${BASE_URL}/#place-deutschland`;
 export const PLACE_MITTELHESSEN_ID = `${BASE_URL}/#place-mittelhessen`;
 
 /**
@@ -55,18 +55,7 @@ export const MITTELHESSEN_COUNTY_SLUGS = [
   'landkreis-limburg-weilburg',
 ] as const;
 
-/** `Deutschland`, the top of the containment chain. Every place resolves up to it. */
-export function getCountryNode() {
-  return {
-    '@type': 'Country',
-    '@id': PLACE_DE_ID,
-    name: 'Deutschland',
-    alternateName: 'Germany',
-    sameAs: 'https://www.wikidata.org/wiki/Q183',
-  };
-}
-
-/** The tier between Hessen and the four home Kreise. */
+/** Mittelhessen as a node, with its four Kreise beneath it. */
 export function getMittelhessenNode(locale: string = 'de') {
   return {
     '@type': 'AdministrativeArea',
@@ -1085,7 +1074,8 @@ export function getHessenMasterSchema(locale: string = 'de') {
   return {
     '@context': 'https://schema.org',
     '@graph': [
-      getCountryNode(),
+      // Deutschland is not repeated here: the root layout emits it on every page,
+      // because #organization names it as an areaServed.
       getMittelhessenNode(locale),
       {
         '@type': 'AdministrativeArea',

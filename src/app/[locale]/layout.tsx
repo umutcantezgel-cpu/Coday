@@ -11,7 +11,7 @@ import '../globals.css';
 
 import { routing } from '@/i18n/routing';
 import { pickMessages, ROOT_CLIENT_NAMESPACES } from '@/i18n/clientMessages';
-import { getOrganizationSchema, getWebSiteSchema } from '@/lib/schema';
+import { getCountryNode, getOrganizationSchema, getWebSiteSchema } from '@/lib/schema';
 import MainLayout from '@/widgets/layout/MainLayout';
 import { MotionProvider } from '@/shared/ui/providers/MotionProvider';
 import { GoogleAnalytics } from '@/shared/lib/analytics/GoogleAnalytics';
@@ -89,9 +89,12 @@ export default async function RootLayout({
 
   // Global knowledge-graph root: defines #organization and #website site-wide,
   // so every page-level isPartOf/publisher/provider @id reference resolves.
+  // #place-deutschland belongs here for the same reason — #organization names it
+  // as an areaServed, and a fragment id on the origin only resolves inside the
+  // document that defines it.
   const siteGraph = {
     '@context': 'https://schema.org',
-    '@graph': [getOrganizationSchema(locale), getWebSiteSchema(locale)],
+    '@graph': [getOrganizationSchema(locale), getWebSiteSchema(locale), getCountryNode()],
   };
 
   return (

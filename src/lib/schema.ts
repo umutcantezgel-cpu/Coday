@@ -9,6 +9,24 @@ export const WEBSITE_ID = `${BASE_URL}/#website`;
 export const LOCAL_BUSINESS_ID = `${BASE_URL}/#local-business`;
 export const PROFESSIONAL_SERVICE_ID = `${BASE_URL}/#professional-service`;
 
+/**
+ * The top of the place chain. Site-global rather than page-anchored, because
+ * #organization names it as an areaServed and #organization ships on every page —
+ * a fragment id on the origin only resolves inside the document that defines it.
+ * The root layout is therefore where it belongs.
+ */
+export const PLACE_DE_ID = `${BASE_URL}/#place-deutschland`;
+
+export function getCountryNode() {
+  return {
+    '@type': 'Country',
+    '@id': PLACE_DE_ID,
+    name: 'Deutschland',
+    alternateName: 'Germany',
+    sameAs: 'https://www.wikidata.org/wiki/Q183',
+  };
+}
+
 export function getReviewsSchema(locale: string = 'de') {
   return {
     aggregateRating: {
@@ -181,14 +199,19 @@ export function getOrganizationSchema(locale: string = 'de') {
         closes: '18:00',
       },
     ],
+    // One convention for places, not two. These used to put the Wikidata URI in
+    // @id while the location pyramid gave the same four cities their own @id with
+    // Wikidata in sameAs — so Wetzlar existed twice in the graph under different
+    // identifiers. The organisation now points at the pyramid's own nodes, which
+    // carry the Wikidata link themselves.
     areaServed: [
-      { '@type': 'City', name: 'Wetzlar', '@id': 'https://www.wikidata.org/wiki/Q3852' },
-      { '@type': 'City', name: 'Gießen', '@id': 'https://www.wikidata.org/wiki/Q3869' },
-      { '@type': 'City', name: 'Marburg', '@id': 'https://www.wikidata.org/wiki/Q3866' },
-      { '@type': 'City', name: 'Frankfurt am Main', '@id': 'https://www.wikidata.org/wiki/Q1794' },
-      { '@type': 'AdministrativeArea', name: 'Lahn-Dill-Kreis' },
-      { '@type': 'AdministrativeArea', name: 'Hessen' },
-      { '@type': 'Country', name: 'Germany' },
+      { '@id': `${BASE_URL}/${locale}/webdesign-agentur-wetzlar#city` },
+      { '@id': `${BASE_URL}/${locale}/webdesign-giessen#city` },
+      { '@id': `${BASE_URL}/${locale}/webdesign-marburg#city` },
+      { '@id': `${BASE_URL}/${locale}/webdesign-frankfurt#city` },
+      { '@id': `${BASE_URL}/${locale}/regionen/landkreis-lahn-dill#region` },
+      { '@id': `${BASE_URL}/${locale}/standorte/hessen#state-hub` },
+      { '@id': PLACE_DE_ID },
     ],
     contactPoint: [
       {
