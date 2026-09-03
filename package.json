@@ -20,6 +20,7 @@
     "qa:i18n": "node scripts/qa/check-i18n-fallbacks.mjs",
     "qa:redirects": "node scripts/qa/check-redirects.mjs",
     "qa:nav": "node scripts/qa/check-nav-reach.mjs",
+    "qa:graph": "node scripts/qa/check-graph.mjs",
     "test": "vitest",
     "test:run": "vitest run",
     "test:a11y:ci": "echo 'A11y CI checks passed'"
