@@ -27,13 +27,43 @@ export function generateRobotsMeta(opts: {
 }
 
 /**
+ * Routes published in German only. Their English variants still render, but they
+ * canonicalise to the German URL and are kept out of the index — see
+ * `isDeOnlyEnglishVariant`.
+ */
+const DE_ONLY_ROUTES = [
+  '/presse',
+  '/garantie',
+  '/partnerschaft',
+  '/legal/agb',
+  '/legal/datenschutz',
+  '/legal/impressum',
+];
+
+/** Strips the locale prefix from a locale-prefixed path. */
+function routeSegment(path: string): string {
+  return path.replace(/^\/(en|de)/, '').replace(/\/$/, '') || '';
+}
+
+/**
+ * True for the English variant of a German-only route.
+ *
+ * Those pages used to say `index, follow` while canonicalising to the German
+ * URL — two contradictory instructions on the same page. Google resolves that
+ * by dropping the English URL anyway, so the honest signal is noindex.
+ */
+export function isDeOnlyEnglishVariant(path: string): boolean {
+  return path.startsWith('/en') && DE_ONLY_ROUTES.includes(routeSegment(path));
+}
+
+/**
  * Generate canonical + hreflang alternates from a locale-prefixed path.
  * The canonical always points to the current page's absolute URL.
  * Hreflang includes de, en, and x-default (pointing to de).
  */
 export function generateAlternates(path: string): Metadata['alternates'] {
   // Strip locale prefix to get the route segment
-  const cleanPath = path.replace(/^\/(en|de)/, '').replace(/\/$/, '') || '';
+  const cleanPath = routeSegment(path);
 
   let dePath = `/de${cleanPath}`;
   let enPath = `/en${cleanPath}`;
@@ -41,15 +71,6 @@ export function generateAlternates(path: string): Metadata['alternates'] {
   // Canonical points to the current locale's path
   const isEn = path.startsWith('/en');
   const canonicalPath = isEn ? enPath : dePath;
-
-  const DE_ONLY_ROUTES = [
-    '/presse',
-    '/garantie',
-    '/partnerschaft',
-    '/legal/agb',
-    '/legal/datenschutz',
-    '/legal/impressum',
-  ];
 
   const isDeOnly = DE_ONLY_ROUTES.includes(cleanPath);
   const isBlogPath = /^\/knowledge\/blog\/.+/.test(cleanPath);
@@ -146,7 +167,11 @@ export function generatePageMetadata(opts: {
     ],
   };
 
-  const finalType = opts.type;
+  // An English page that canonicalises to its German twin must not also ask to
+  // be indexed. /en/garantie, /en/partnerschaft and /en/presse did exactly that.
+  // 'legal' rather than 'noindex' on purpose: these pages carry the full nav and
+  // footer, so nofollow here would mark every internal link on them as nofollow.
+  const finalType = isDeOnlyEnglishVariant(opts.path) ? 'legal' : opts.type;
 
   return {
     metadataBase: new URL(BASE_URL),

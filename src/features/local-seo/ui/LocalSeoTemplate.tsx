@@ -55,13 +55,27 @@ export const LocalSeoTemplate: React.FC<LocalSeoTemplateProps> = ({ content, cit
   const isEn = locale === 'en';
   const cityName = content.displayName || content.target.split('-').join(' ');
 
+  /**
+   * The h1 is `headline` + `headlineGradient`. Passing `hero.headline` into both
+   * the badge and the headline put the eyebrow line inside the h1 too, which is
+   * how /branchen/handwerk-bau/giessen ended up with a 170-character h1 (195 in
+   * English) that opened with a slogan rather than the keyword.
+   *
+   * The subheadline alone is the real, keyword-first headline. Where it carries a
+   * colon, that is the natural split for the gradient half.
+   */
+  const h1Text: string = content.hero.subheadline;
+  const colonIndex = h1Text.indexOf(': ');
+  const h1Lead = colonIndex > 0 ? h1Text.slice(0, colonIndex + 1) : h1Text;
+  const h1Gradient = colonIndex > 0 ? h1Text.slice(colonIndex + 2) : '';
+
   return (
     <div className="bg-background-light min-h-dvh">
       {/* Split Hero Section with Above-the-Fold Contact Form */}
       <LocalSplitHero
         badgeText={content.hero.headline}
-        headline={content.hero.headline}
-        headlineGradient={content.hero.subheadline}
+        headline={h1Lead}
+        headlineGradient={h1Gradient}
         description={content.hero.description}
         cityName={cityName}
         sourceTag={`local_seo_${content.target.toLowerCase().replace(/[^a-z0-9]/g, '_')}`}
