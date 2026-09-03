@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 import ClientComponent from '@/features/knowledge/ui/WikiHubClient';
+import { wikiEntities } from '@/features/knowledge/model/entities';
 
 export const dynamic = 'force-static';
 
@@ -55,6 +56,8 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     { name: 'WikiHub', url: `/${_locale}/knowledge/wikihub` },
   ]);
 
+  const hubUrl = `${BASE_URL}/${_locale}/knowledge/wikihub`;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -62,13 +65,34 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
       breadcrumbs,
       {
         '@type': 'CollectionPage',
-        '@id': `${BASE_URL}/${_locale}/knowledge/wikihub#collection`,
+        '@id': `${hubUrl}#collection`,
         name: isEn ? 'Coday Digital & Web Design WikiHub' : 'Coday Digitales & Webdesign WikiHub',
-        url: `${BASE_URL}/${_locale}/knowledge/wikihub`,
+        url: hubUrl,
         description: isEn
           ? 'Clear web design glossary and digital wiki from Coday in Wetzlar.'
           : 'Verständliches Webdesign Glossar und digitales Wiki von Coday in Wetzlar.',
         inLanguage: _locale,
+        isPartOf: { '@id': `${BASE_URL}/#website` },
+        mainEntity: { '@id': hubUrl },
+      },
+      {
+        // Every one of the 101 term pages emits `inDefinedTermSet: <hubUrl>`, but
+        // no node with that @id existed — 101 dangling edges per locale. This is
+        // the set they point at, and it links back to each term by its own @id.
+        '@type': 'DefinedTermSet',
+        '@id': hubUrl,
+        name: isEn
+          ? 'Coday Web Design & Digital Glossary'
+          : 'Coday Webdesign- & Digital-Glossar',
+        url: hubUrl,
+        description: isEn
+          ? 'Web design, SEO and web development terms explained for business owners in Central Hesse.'
+          : 'Begriffe aus Webdesign, SEO und Webentwicklung, erklärt für Unternehmen in Mittelhessen.',
+        inLanguage: _locale,
+        publisher: { '@id': `${BASE_URL}/#organization` },
+        hasDefinedTerm: wikiEntities.map((entity) => ({
+          '@id': `${BASE_URL}/${_locale}/knowledge/wiki/${entity.slug}#term`,
+        })),
       },
     ],
   };

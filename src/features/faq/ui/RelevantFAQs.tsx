@@ -10,9 +10,20 @@ interface Props {
   serviceId: string | string[];
   title?: string;
   className?: string;
+  /**
+   * Emit this block's FAQPage JSON-LD. Set to false on pages whose own `@graph`
+   * already carries an FAQPage — two FAQPage nodes in one document is the same
+   * rich-result validity risk as two AggregateRating nodes.
+   */
+  emitSchema?: boolean;
 }
 
-export const RelevantFAQs: React.FC<Props> = ({ serviceId, title, className = '' }) => {
+export const RelevantFAQs: React.FC<Props> = ({
+  serviceId,
+  title,
+  className = '',
+  emitSchema = true,
+}) => {
   const t = useTranslations('faq');
   const tCommon = useTranslations('common');
   const locale = useLocale();
@@ -49,10 +60,12 @@ export const RelevantFAQs: React.FC<Props> = ({ serviceId, title, className = ''
 
   return (
     <section className={`py-16 ${className}`}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-      />
+      {emitSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
+      )}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-display font-black text-slate-900  mb-10 text-center">
           {title || tCommon('generic_detail.faq.title')}

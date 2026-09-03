@@ -557,56 +557,74 @@ export function getWebSiteSchema(locale: string = 'de') {
   };
 }
 
+/**
+ * HowTo for /process.
+ *
+ * The names and texts below mirror the four phases `ProcessClient` actually
+ * renders, one for one. It previously described five differently-named steps
+ * ("Kostenloses Erstgespräch", "Strategie & Konzept" …) that appear nowhere on
+ * the page — structured data contradicting the content it annotates, which is
+ * worse than having none.
+ */
 export function getProcessSchema(locale: string = 'de') {
+  const isEn = locale === 'en';
+
+  const steps = isEn
+    ? [
+        {
+          name: 'Deep Audit & Strategy Workshop',
+          text: 'Target audience analysis, competitor benchmarking and information architecture: Core Web Vitals audit, conversion roadmapping and a semantic topic-cluster plan.',
+        },
+        {
+          name: 'High-End UI/UX Prototyping',
+          text: 'A custom Figma design system with zero templates and full design sign-off before a line of code: interactive desktop and mobile prototype, typography tokens, conversion-optimised component hierarchy.',
+        },
+        {
+          name: 'Next.js Enterprise Engineering',
+          text: 'Hand-written TypeScript on Next.js 15 server components with Sanity headless CMS integration, built for sub-0.3s load times.',
+        },
+        {
+          name: 'Launch, QA Gates & Growth Silo',
+          text: 'Zero-downtime DNS cutover, Google Search Console indexing and continuous monitoring with conversion tracking in place.',
+        },
+      ]
+    : [
+        {
+          name: 'Deep Audit & Strategie-Workshop',
+          text: 'Fundierte Analyse Ihrer Wettbewerber und Zielgruppen, Definition von Sitemap und Conversion-Pfaden: Lighthouse- und Core-Web-Vitals-Audit, Conversion-Architektur, Keyword- und Topic-Cluster-Planung.',
+        },
+        {
+          name: 'High-End UI/UX Prototyping',
+          text: 'Individuelle Design-Konzepte in Figma mit 100 % Freigabe vor Entwicklungsstart: interaktiver Desktop- und Mobile-Prototyp, eigenes Design-System mit Typografie-Tokens, conversion-optimierte Komponenten.',
+        },
+        {
+          name: 'Next.js Enterprise Engineering',
+          text: 'Handgeschriebener TypeScript-Code mit Next.js 15 Server Components und Sanity-CMS-Integration, ausgelegt auf Ladezeiten unter 0,3 Sekunden.',
+        },
+        {
+          name: 'Launch, QA Gates & Wachstums-Silo',
+          text: 'Zero-Downtime-Migration, Indexierung über die Google Search Console und nachhaltiges Conversion-Tracking mit laufendem Monitoring.',
+        },
+      ];
+
   return {
     '@type': 'HowTo',
     '@id': `${BASE_URL}/${locale}/process#howto`,
-    name:
-      locale === 'en'
-        ? 'How your website is created at Coday'
-        : 'So entsteht Ihre Website bei Coday',
-    description:
-      locale === 'en'
-        ? 'From the initial consultation to launch — the structured web design process by Coday in 5 steps.'
-        : 'Vom Erstgespräch bis zum Launch — der strukturierte Webdesign-Prozess von Coday in 5 Schritten.',
-    totalTime: 'P21D',
-    estimatedCost: {
-      '@type': 'MonetaryAmount',
-      currency: 'EUR',
-      value: '2000',
-    },
-    step: [
-      {
-        '@type': 'HowToStep',
-        position: 1,
-        name: 'Kostenloses Erstgespräch',
-        text: 'Wir lernen Ihr Unternehmen, Ihre Ziele und Ihre Zielgruppe kennen. 30 Minuten, unverbindlich.',
-      },
-      {
-        '@type': 'HowToStep',
-        position: 2,
-        name: 'Strategie & Konzept',
-        text: 'Basierend auf dem Erstgespräch erstelle ich ein maßgeschneidertes Konzept mit Seitenstruktur, Design-Richtung und technischer Architektur.',
-      },
-      {
-        '@type': 'HowToStep',
-        position: 3,
-        name: 'Design & Entwicklung',
-        text: 'Ich entwickle Ihre Website mit Next.js, optimiert auf Performance, SEO und Nutzererlebnis. Sie sehen regelmäßig den Fortschritt.',
-      },
-      {
-        '@type': 'HowToStep',
-        position: 4,
-        name: 'Review & Feinschliff',
-        text: 'Sie testen die Website, geben Feedback. Ich optimiere bis zur Perfektion — alles im Festpreis enthalten.',
-      },
-      {
-        '@type': 'HowToStep',
-        position: 5,
-        name: 'Launch & Übergabe',
-        text: 'Ihre Website geht live. Sie erhalten 100% Code-Eigentum, Dokumentation und optionalen Support.',
-      },
-    ],
+    name: isEn ? 'How your website is created at Coday' : 'So entsteht Ihre Website bei Coday',
+    description: isEn
+      ? 'From the strategy workshop to launch — the structured web design process by Coday in four phases over roughly 24 days.'
+      : 'Vom Strategie-Workshop bis zum Launch — der strukturierte Webdesign-Prozess von Coday in vier Phasen über rund 24 Tage.',
+    // The page states days 1–24 across the four phases.
+    totalTime: 'P24D',
+    provider: { '@id': ORG_ID },
+    // No per-step `url`: the page renders no anchor ids, so any fragment here
+    // would point at nothing.
+    step: steps.map((s, i) => ({
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+    })),
   };
 }
 
@@ -687,13 +705,17 @@ export function getWebApplicationSchema(
   return {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    '@id': app.url,
+    // Fragment, not the bare page URL: an @id equal to the document URI collides
+    // with the page entity. Every other node in this file uses a fragment.
+    '@id': `${app.url}#webapp`,
     name: app.name,
     description: app.description,
     url: app.url,
     applicationCategory: app.applicationCategory || 'BusinessApplication',
     operatingSystem: 'All',
     browserRequirements: 'Requires JavaScript. Requires HTML5.',
+    inLanguage: locale,
+    isPartOf: { '@id': WEBSITE_ID },
     offers: {
       '@type': 'Offer',
       price: '0',
@@ -775,12 +797,8 @@ export function getAcademyVideoSchemas(locale: string = 'de') {
     publisher: {
       '@id': ORG_ID,
     },
-    author: {
-      '@type': 'Person',
-      name: 'Umutcan Emre Tezgel',
-      jobTitle: 'Lead Web Architect & Founder',
-      url: `${BASE_URL}/${locale}/about`,
-    },
+    // The canonical founder node, not a second id-less Person for the same human.
+    author: { '@id': FOUNDER_ID },
     locationCreated: {
       '@type': 'Place',
       name: 'Wetzlar, Hessen, Deutschland',

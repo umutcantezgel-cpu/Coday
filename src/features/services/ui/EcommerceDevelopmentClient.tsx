@@ -83,7 +83,8 @@ export function EcommerceDevelopmentClient() {
           title={t('ecommerce_page.seoText.title')}
           text={`${t('ecommerce_page.seoText.content')} ${t('ecommerce_page.hero.title_prefix')} ${t('ecommerce_page.hero.title_suffix')}`}
         />
-        <RelevantFAQs serviceId="web-development" />
+        {/* The page's own @graph already carries an FAQPage (#faq). */}
+        <RelevantFAQs serviceId="web-development" emitSchema={false} />
       </section>
     </div>
   );

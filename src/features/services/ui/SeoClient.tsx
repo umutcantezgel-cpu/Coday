@@ -232,7 +232,8 @@ export function SeoClient() {
         title={t('seo_page.seoText.title')}
         text={`${t('seo_page.seoText.content')} ${t('seo_page.hero.title_prefix')} ${t('seo_page.hero.title_suffix')}`}
       />
-      <RelevantFAQs serviceId="seo" className="mb-24" />
+      {/* The page's own @graph already carries an FAQPage (#faq). */}
+      <RelevantFAQs serviceId="seo" className="mb-24" emitSchema={false} />
 
       {/* SEO Process Timeline */}
       <section className="bg-secondary py-24 mb-24 text-white overflow-hidden relative">

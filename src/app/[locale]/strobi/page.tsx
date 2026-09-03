@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import type { Metadata } from 'next';
 import { StrobiWorldClient } from '@/features/strobi-world';
 import { generateAlternates } from '@/lib/metadata';
-import { BASE_URL, getWebApplicationSchema } from '@/lib/schema';
+import { BASE_URL, getWebApplicationSchema, getBreadcrumbSchema } from '@/lib/schema';
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -50,17 +50,28 @@ export default async function StrobiWorldPage({ params }: PageProps) {
   const { locale } = await params;
   const isEn = locale === 'en';
 
-  const jsonLd = getWebApplicationSchema(
-    {
-      name: 'Strobi Mii World',
-      description: isEn
-        ? 'Interactive AI avatar with 60 FPS vector physics, minigames and real-time chat, built with Next.js by Coday.'
-        : 'Interaktiver KI-Avatar mit 60-FPS-Vektorphysik, Minispielen und Echtzeit-Chat, entwickelt mit Next.js von Coday.',
-      url: `${BASE_URL}/${locale}/strobi`,
-      applicationCategory: 'EntertainmentApplication',
-    },
-    locale
-  );
+  // Was the only JSON-LD-emitting route without a BreadcrumbList — an island in
+  // the graph. The WebApplication now also declares isPartOf the WebSite.
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      getBreadcrumbSchema([
+        { name: isEn ? 'Home' : 'Startseite', url: `/${locale}` },
+        { name: 'Strobi Mii World', url: `/${locale}/strobi` },
+      ]),
+      getWebApplicationSchema(
+        {
+          name: 'Strobi Mii World',
+          description: isEn
+            ? 'Interactive AI avatar with 60 FPS vector physics, minigames and real-time chat, built with Next.js by Coday.'
+            : 'Interaktiver KI-Avatar mit 60-FPS-Vektorphysik, Minispielen und Echtzeit-Chat, entwickelt mit Next.js von Coday.',
+          url: `${BASE_URL}/${locale}/strobi`,
+          applicationCategory: 'EntertainmentApplication',
+        },
+        locale
+      ),
+    ],
+  };
 
   return (
     <>

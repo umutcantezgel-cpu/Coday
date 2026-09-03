@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { WebDevelopmentClient } from '@/features/services/ui/WebDevelopmentClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getOrganizationSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
+import { getOrganizationSchema, getBreadcrumbSchema, BASE_URL, FOUNDER_ID } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { ArrowRight, Code, ShieldCheck, Lightning, Cpu } from '@phosphor-icons/react/dist/ssr';
 
@@ -129,10 +129,9 @@ export default async function WebDevelopmentPage({
           : 'Moderne Webentwicklungs-Architektur mit Next.js 15 und React Server Components',
         description:
           'Detaillierte Analyse, warum serverseitig vorkompilierte Next.js Architekturen monolithische PHP- und WordPress-Systeme in Performance, Sicherheit und Skalierbarkeit übertreffen.',
-        author: {
-          '@type': 'Person',
-          name: 'Umutcan Emre Tezgel',
-        },
+        // Reference the canonical founder node the layout already emits rather
+        // than declaring a second, id-less Person for the same human.
+        author: { '@id': FOUNDER_ID },
       },
     ],
   };
