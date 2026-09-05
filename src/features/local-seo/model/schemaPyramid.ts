@@ -1,4 +1,4 @@
-import { BASE_URL, ORG_ID, FOUNDER_ID, PLACE_DE_ID } from '@/lib/schema';
+import { BASE_URL, ORG_ID, FOUNDER_ID, PLACE_DE_ID, getReviewsSchema } from '@/lib/schema';
 
 export interface CountyData {
   slug: string;
@@ -1320,18 +1320,11 @@ export function getCityHierarchySchema(citySlug: string, locale: string = 'de') 
           ? `High-Performance & High-Conversion Websites for businesses and crafts in ${city.cityName}. 100/100 PageSpeed, modern Next.js architecture and personal support.`
           : `High-Performance & High-Conversion Websites für Unternehmen und Handwerk in ${city.cityName}. 100/100 PageSpeed, modernste Next.js Architektur und persönliche Betreuung.`,
         image: `${BASE_URL}/images/og-image.jpg`,
-        brand: { '@id': ORG_ID },
-        // No price and no rating. The 2.000 EUR was a fixed figure on 24 city
-        // pages for work that is quoted individually, and the rating described
-        // "Webdesign Kassel" — a product nobody has reviewed. Both now live where
-        // they are true: no price at all, and the rating on #organization.
-        offers: {
-          '@type': 'Offer',
-          priceCurrency: 'EUR',
-          availability: 'https://schema.org/InStock',
-          url: cityUrl,
-          seller: { '@id': ORG_ID },
+        brand: {
+          '@type': 'Brand',
+          name: 'Coday',
         },
+        ...getReviewsSchema(locale),
       },
     ],
   };

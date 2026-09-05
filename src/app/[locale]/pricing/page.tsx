@@ -79,7 +79,7 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
         name: t('meta.title'),
         description: t('meta.description'),
         locale: _locale,
-        mainEntityId: `${pageUrl}#pricing-product`,
+        mainEntityId: `${pageUrl}#pricing-service`,
       }),
       getPricingSchema(_locale),
       pricingFaq,

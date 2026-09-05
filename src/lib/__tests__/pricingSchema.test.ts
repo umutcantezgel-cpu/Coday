@@ -7,8 +7,8 @@ describe('getPricingSchema', () => {
     const schema = getPricingSchema('de') as Record<string, unknown> & {
       offers: { '@type': string; itemListElement: Array<Record<string, unknown>> };
     };
-    expect(schema['@id']).toBe(`${BASE_URL}/de/pricing#pricing-product`);
-    expect(schema['@type']).toEqual(['Service', 'Product']);
+    expect(schema['@id']).toBe(`${BASE_URL}/de/pricing#pricing-service`);
+    expect(schema['@type']).toBe('Service');
     expect(schema.offers['@type']).toBe('OfferCatalog');
     expect(schema.offers.itemListElement).toHaveLength(PACKAGE_LIST.length);
     expect(JSON.stringify(schema.offers)).not.toContain('"price"');

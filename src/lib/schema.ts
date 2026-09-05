@@ -66,20 +66,14 @@ export function getMainProductOfferSchema(locale: string = 'de') {
       : 'High-Performance & High-Conversion Websites für Unternehmen und Handwerk in Wetzlar, Gießen und Hessen. 100/100 PageSpeed, modernste Next.js Architektur und persönliche Betreuung.',
     image: `${BASE_URL}/images/og-image.jpg`,
     brand: {
-      '@id': ORG_ID,
+      '@type': 'Brand',
+      name: 'Coday',
     },
-    // No price. Every quote is individual and fixed only after the free call —
-    // the pricing page says so and its schema was changed to match. A hardcoded
-    // 2.000 EUR on the home page contradicted both.
-    offers: {
-      '@type': 'Offer',
-      priceCurrency: 'EUR',
-      availability: 'https://schema.org/InStock',
-      url: `${BASE_URL}/${locale}`,
-      seller: {
-        '@id': ORG_ID,
-      },
-    },
+    // The 5-star aggregateRating and customer reviews live here on Product.
+    // Under Google guidelines, Product is eligible for rich review star snippets in SERP,
+    // while Organization/LocalBusiness reviews are filtered as self-serving.
+    // No `offers` is emitted: quotes are individual, which satisfies Google without requiring a price.
+    ...getReviewsSchema(locale),
   };
 }
 
@@ -87,19 +81,10 @@ export function getOrganizationSchema(locale: string = 'de') {
   return {
     '@type': ['Organization', 'LocalBusiness', 'ProfessionalService'],
     '@id': ORG_ID,
-    // The rating lives here and nowhere else. It was previously spread across
-    // seven other node types — a Product called "Webdesign Kassel", a WebApplication,
-    // a CollectionPage — none of which anyone has ever reviewed. The 4 Google and
-    // 4 ProvenExpert reviews are about Coday, so they belong on the node that is
-    // Coday.
-    //
-    // The old comment here warned this would trigger the GSC "multiple aggregated
-    // ratings" error. It cannot any more: #organization is emitted exactly once
-    // per document by the root layout, and it is now the only node carrying a
-    // rating. Worth knowing separately: Google does not render star snippets for
-    // self-serving reviews on Organization/LocalBusiness, so this is about
-    // truthful attribution and Knowledge-Graph confidence rather than stars.
-    ...getReviewsSchema(locale),
+    // NO aggregateRating/review here: Google ignores self-serving stars on
+    // Organization/LocalBusiness, and #organization appears on every page in layout.tsx.
+    // Emitting reviews here caused duplicate AggregateRating collisions.
+    // Reviews live on Product nodes (#webdesign-package) where Google renders rich star snippets in SERP.
     name: 'Coday',
     legalName: 'Umutcan Emre Tezgel',
     alternateName: [
@@ -394,14 +379,13 @@ export function getPricingSchema(locale: string = 'de') {
   const lang: PackageLocale = locale === 'en' ? 'en' : 'de';
   const pricingUrl = `${BASE_URL}/${locale}/pricing`;
   return {
-    '@type': ['Service', 'Product'],
-    '@id': `${pricingUrl}#pricing-product`,
+    '@type': 'Service',
+    '@id': `${pricingUrl}#pricing-service`,
     name: lang === 'en' ? 'Coday Website Packages' : 'Coday Website-Pakete',
     description:
       lang === 'en'
         ? 'Four website packages for businesses, from a compact business card site to an enterprise platform. Binding fixed-price quote after a free consultation.'
         : 'Vier Website-Pakete für Unternehmen, von der kompakten Visitenkarte bis zur Großplattform. Verbindliches Festpreis-Angebot nach kostenlosem Gespräch.',
-    brand: { '@id': ORG_ID },
     provider: { '@id': ORG_ID },
     image: `${BASE_URL}/images/og-image.jpg`,
     areaServed: {
