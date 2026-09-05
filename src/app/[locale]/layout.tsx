@@ -20,6 +20,7 @@ import { MetaPixel } from '@/shared/lib/analytics/MetaPixel';
 import { LinkedInInsight } from '@/shared/lib/analytics/LinkedInInsight';
 import { ClarityAnalytics } from '@/shared/lib/analytics/ClarityAnalytics';
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -134,6 +135,7 @@ export default async function RootLayout({
 
         <Suspense fallback={null}>
           <Analytics />
+          <SpeedInsights />
           <GoogleAnalytics />
           <PostHogAnalytics />
           <MetaPixel />
