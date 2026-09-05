@@ -1,5 +1,4 @@
 #!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
 
 echo "Running Pre-Push QA Gates..."
 node scripts/qa/gate-3-bundle-size.js
