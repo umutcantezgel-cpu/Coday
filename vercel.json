@@ -1,6 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
+  "regions": ["fra1"],
+  "cleanUrls": true,
   "installCommand": "npm install --legacy-peer-deps",
   "trailingSlash": false,
   "redirects": [
@@ -70,6 +72,24 @@
       ]
     },
     {
+      "source": "/",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, s-maxage=3600, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/(sitemap\\.xml|video-sitemap\\.xml|robots\\.txt|icon\\.png|apple-icon\\.png|manifest\\.json)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, s-maxage=86400, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
       "source": "/sw.js",
       "headers": [
         {
@@ -130,7 +150,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://maps.googleapis.com https://news.google.com https://*.sentry.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://*.supabase.co https://generativelanguage.googleapis.com https://api.resend.com https://www.google-analytics.com https://news.google.com https://*.sentry.io https://*.googletagmanager.com; worker-src 'self' blob:; frame-src 'self' https://calendly.com https://www.google.com https://news.google.com; object-src 'none'; base-uri 'self'; form-action 'self';"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://www.googletagmanager.com https://www.google-analytics.com https://maps.googleapis.com https://news.google.com https://*.sentry.io https://*.clarity.ms https://c.bing.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com https://*.supabase.co https://generativelanguage.googleapis.com https://api.resend.com https://www.google-analytics.com https://news.google.com https://*.sentry.io https://*.googletagmanager.com https://*.clarity.ms https://*.bing.com; worker-src 'self' blob:; frame-src 'self' https://calendly.com https://www.google.com https://news.google.com; object-src 'none'; base-uri 'self'; form-action 'self';"
         },
         {
           "key": "Cross-Origin-Opener-Policy",

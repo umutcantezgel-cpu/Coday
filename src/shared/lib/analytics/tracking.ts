@@ -1,3 +1,5 @@
+import { track } from '@vercel/analytics';
+
 export type EventName =
   | 'cta_click'
   | 'form_start'
@@ -41,6 +43,26 @@ export const trackEvent = (eventName: EventName, properties?: EventProperties) =
     // PostHog — type from src/@types/global.d.ts
     if (window.posthog) {
       window.posthog.capture(eventName, properties);
+    }
+
+    // Vercel Web Analytics Custom Events
+    try {
+      const vercelProps: Record<string, string | number | boolean | null> = {};
+      if (properties) {
+        for (const [key, val] of Object.entries(properties)) {
+          if (
+            typeof val === 'string' ||
+            typeof val === 'number' ||
+            typeof val === 'boolean' ||
+            val === null
+          ) {
+            vercelProps[key] = val;
+          }
+        }
+      }
+      track(eventName, vercelProps);
+    } catch {
+      // Ignore if Vercel Analytics is disabled
     }
   }
 };

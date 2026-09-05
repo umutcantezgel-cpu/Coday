@@ -7,6 +7,8 @@
  * trackEvent('cta_click', { text: 'Kostenlose Beratung', position: 'hero' });
  */
 
+import { track } from '@vercel/analytics';
+
 export type ConversionEvent =
   | 'form_start'
   | 'form_progress'
@@ -46,6 +48,26 @@ export function trackEvent(eventName: ConversionEvent, properties?: EventPropert
   // Dispatch CustomEvent for any listener (future GA, Plausible, etc.)
   if (typeof document !== 'undefined') {
     document.dispatchEvent(new CustomEvent('analytics', { detail: payload }));
+  }
+
+  // Dispatch to Vercel Web Analytics
+  try {
+    const vercelProps: Record<string, string | number | boolean | null> = {};
+    if (properties) {
+      for (const [key, val] of Object.entries(properties)) {
+        if (
+          typeof val === 'string' ||
+          typeof val === 'number' ||
+          typeof val === 'boolean' ||
+          val === null
+        ) {
+          vercelProps[key] = val;
+        }
+      }
+    }
+    track(eventName, vercelProps);
+  } catch {
+    // Ignore in unsupported environments
   }
 }
 
