@@ -65,6 +65,7 @@ typecheck_report.txt
 *.report.html
 mobile-audit-results/
 public/sw.js
+*.xml
 
 # Playwright
 playwright-report/

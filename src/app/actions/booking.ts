@@ -15,7 +15,12 @@ import {
 } from '@/shared/lib/email/bookingTemplates';
 import { berlinToUtc, buildIcs } from '@/shared/lib/email/ics';
 import { EMAIL_BRAND } from '@/shared/lib/email/layout';
-import { sendEmail, getAdminEmail, isEmailConfigured } from '@/shared/lib/email/sendEmail';
+import {
+  sendEmail,
+  getAdminEmail,
+  getPrimaryAdminEmail,
+  isEmailConfigured,
+} from '@/shared/lib/email/sendEmail';
 
 // Max 5 booking attempts per 10 minutes per IP
 const bookingRateLimiter = createRateLimiter({
@@ -137,6 +142,8 @@ export async function bookAppointment(payload: BookingPayload): Promise<BookingR
     }
 
     // 3. Calendar attachment for both sides
+    const adminEmail = getAdminEmail();
+    const primaryAdmin = getPrimaryAdminEmail();
     const start = berlinToUtc(booking.date, booking.time_slot);
     const ics = buildIcs({
       uid: `booking-${booking.date}-${booking.time_slot.replace(':', '')}-${Date.now()}@codayweb.de`,
@@ -145,7 +152,7 @@ export async function bookAppointment(payload: BookingPayload): Promise<BookingR
       summary: lang === 'en' ? 'Call with Coday' : 'Gespräch mit Coday',
       description: getServiceLabel(booking.service_type, lang),
       location: lang === 'en' ? 'Phone / online' : 'Telefon / online',
-      organizer: { name: EMAIL_BRAND.owner, email: getAdminEmail() },
+      organizer: { name: EMAIL_BRAND.owner, email: primaryAdmin },
       attendee: { name: booking.name, email: booking.email },
       url: 'https://codayweb.de',
     });
@@ -166,14 +173,13 @@ export async function bookAppointment(payload: BookingPayload): Promise<BookingR
       return { success: true, message: 'Booking recorded (email not configured)' };
     }
 
-    const adminEmail = getAdminEmail();
     const [customerRes, adminRes] = await Promise.all([
       sendEmail({
         kind: 'booking_customer',
         to: booking.email,
         subject: getCustomerBookingSubject(bookingData),
         html: generateCustomerBookingEmailHtml(bookingData),
-        replyTo: adminEmail,
+        replyTo: primaryAdmin,
         attachments,
         tags: [{ name: 'kind', value: 'booking_customer' }],
       }),

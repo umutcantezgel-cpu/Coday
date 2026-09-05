@@ -7,7 +7,14 @@ vi.mock('resend', () => ({
   },
 }));
 
-import { sendEmail, classifyFailure, FALLBACK_FROM } from '@/shared/lib/email/sendEmail';
+import {
+  sendEmail,
+  classifyFailure,
+  FALLBACK_FROM,
+  getDefaultFrom,
+  getPrimaryAdminEmail,
+  getAdminEmail,
+} from '@/shared/lib/email/sendEmail';
 
 const input = {
   kind: 'test',
@@ -99,5 +106,18 @@ describe('sendEmail', () => {
     expect(classifyFailure(new Error('ETIMEDOUT'))).toBe('transient');
     expect(classifyFailure({ message: 'Sender not verified' })).toBe('sender');
     expect(classifyFailure({ statusCode: 422, message: 'Invalid to' })).toBe('fatal');
+  });
+
+  it('provides default senders and admin recipient', () => {
+    delete process.env.EMAIL_FROM;
+    delete process.env.PRIMARY_ADMIN_EMAIL;
+    delete process.env.ADMIN_EMAIL;
+
+    expect(getDefaultFrom()).toBe('Coday <kontakt@codayweb.de>');
+    expect(getPrimaryAdminEmail()).toBe('umut@codayweb.de');
+    expect(getAdminEmail()).toBe('umut@codayweb.de');
+
+    process.env.ADMIN_EMAIL = 'custom@example.com';
+    expect(getAdminEmail()).toBe('custom@example.com');
   });
 });

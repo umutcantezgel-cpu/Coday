@@ -169,6 +169,7 @@ export async function saveLeadInternalAction(
     }
 
     const adminEmail = getAdminEmail();
+    const primaryAdmin = Array.isArray(adminEmail) ? adminEmail[0] : adminEmail;
     const [adminRes, customerRes] = await Promise.all([
       sendEmail({
         kind: 'lead_agency',
@@ -183,7 +184,7 @@ export async function saveLeadInternalAction(
         to: lead.email,
         subject: getCustomerConfirmationSubject(emailPayload),
         html: generateCustomerConfirmationEmailHtml(emailPayload),
-        replyTo: adminEmail,
+        replyTo: primaryAdmin,
         tags: [{ name: 'kind', value: 'lead_customer' }],
       }),
     ]);

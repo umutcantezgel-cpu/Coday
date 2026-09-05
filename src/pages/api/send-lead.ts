@@ -38,7 +38,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const data = req.body;
     const RESEND_API_KEY = process.env.RESEND_API_KEY;
     const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'umut@codayweb.de';
-    const EMAIL_FROM = process.env.EMAIL_FROM || 'Coday Leads <umut@codayweb.de>';
+    const EMAIL_FROM = process.env.EMAIL_FROM || 'Coday Leads <kontakt@codayweb.de>';
 
     if (!RESEND_API_KEY) {
       console.warn('RESEND_API_KEY missing - skipping email send.');
