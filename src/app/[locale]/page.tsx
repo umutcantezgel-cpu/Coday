@@ -130,35 +130,37 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <TrustBar />
       </ScrollReveal>
 
-      <ScrollReveal index={1}>
+      <ScrollReveal index={1} className="section-defer">
         <StatsSection />
       </ScrollReveal>
 
-      <div>
+      <div className="section-defer">
         <AgencyComparisonTable />
       </div>
 
-      <ScrollReveal index={0}>
+      <ScrollReveal index={0} className="section-defer">
         <PhilosophySection />
       </ScrollReveal>
 
-      <ScrollReveal index={1}>
+      <ScrollReveal index={1} className="section-defer">
         <ServicesSection />
       </ScrollReveal>
 
-      <ScrollReveal index={0}>
+      <ScrollReveal index={0} className="section-defer">
         <PortfolioTeaserSection />
       </ScrollReveal>
 
-      <ScrollReveal index={1}>
+      <ScrollReveal index={1} className="section-defer">
         <IndustriesGrid />
       </ScrollReveal>
 
-      <ScrollReveal index={1}>
+      <ScrollReveal index={1} className="section-defer">
         <TestimonialsSection />
       </ScrollReveal>
 
-      <SeoContentSection />
+      <div className="section-defer">
+        <SeoContentSection />
+      </div>
     </RouteMessages>
   );
 }

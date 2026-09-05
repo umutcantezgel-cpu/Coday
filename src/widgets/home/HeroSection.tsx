@@ -120,7 +120,10 @@ export const HeroSection: React.FC = () => {
 
         {/* Right Column: Quick Contact Form (Hidden on Mobile) */}
         <div className="hidden lg:flex lg:col-span-5 justify-end mt-8 lg:mt-0 relative">
-          <LazyQuickContactForm />
+          {/* `hidden lg:flex` only hid the markup — below 1024px the form was
+              still rendered and hydrated. Mobile gets its own CTAs above, so
+              skipping it entirely costs nothing. */}
+          <LazyQuickContactForm desktopOnly />
         </div>
       </div>
     </section>

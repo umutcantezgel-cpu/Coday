@@ -49,6 +49,12 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [hasBeenOpened, setHasBeenOpened] = useState(false);
+
+  const toggleMobileMenu = () => {
+    if (!hasBeenOpened) setHasBeenOpened(true);
+    setIsMobileOpen((prev) => !prev);
+  };
 
   // UX States
   const [isVisible, setIsVisible] = useState(true);
@@ -577,7 +583,7 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
             </React.Suspense>
             <button
               className={`mobile-menu-trigger p-2 min-w-[44px] min-h-[44px] flex items-center justify-center active:scale-[0.9] transition-transform motion-reduce:duration-[0.01ms] ${isMobileOpen ? 'is-open' : ''}`}
-              onClick={() => setIsMobileOpen(!isMobileOpen)}
+              onClick={toggleMobileMenu}
               aria-label={isMobileOpen ? 'Close Menu' : 'Open Menu'}
               aria-expanded={isMobileOpen}
             >
@@ -591,12 +597,14 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
-      <MobileNavOverlay
-        items={items}
-        isOpen={isMobileOpen}
-        onClose={() => setIsMobileOpen(false)}
-      />
+      {/* Mobile Menu Overlay - rendered only after first user trigger to prevent initial JS bundle & hydration overhead */}
+      {hasBeenOpened && (
+        <MobileNavOverlay
+          items={items}
+          isOpen={isMobileOpen}
+          onClose={() => setIsMobileOpen(false)}
+        />
+      )}
     </header>
   );
 };

@@ -47,7 +47,7 @@ export const ConditionalWrapper = ({ children }: { children: React.ReactNode }) 
       </DelayedRender>
 
       {/* Fixed timing: the consent offer must not depend on the visitor interacting. */}
-      <DelayedRender delayMs={2500} waitForInteraction={false}>
+      <DelayedRender delayMs={4000} waitForInteraction={false}>
         <CookieConsentBanner />
       </DelayedRender>
     </div>

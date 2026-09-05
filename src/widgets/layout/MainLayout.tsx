@@ -2,10 +2,7 @@ import React from 'react';
 import { useTranslations } from 'next-intl';
 
 import MobileReadyNav from '@/widgets/navigation/MobileReadyNav';
-import dynamic from 'next/dynamic';
-const Footer = dynamic(() => import('@/widgets/layout/Footer').then((mod) => mod.Footer), {
-  ssr: true,
-});
+import { Footer } from '@/widgets/layout/Footer';
 import { RouteAnnouncer } from '@/shared/ui/RouteAnnouncer';
 import { ConditionalWrapper } from './ConditionalWrapper';
 import { PageTransition } from '@/widgets/layout/PageTransition';

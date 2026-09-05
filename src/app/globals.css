@@ -1517,3 +1517,9 @@ body.mobile-nav-open #fab-container {
     animation-duration: 0.01ms !important;
   }
 }
+
+/* ──────────────── Content Visibility Optimization ──────────────── */
+.section-defer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 650px;
+}

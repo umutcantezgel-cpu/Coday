@@ -1,8 +1,7 @@
-'use client';
 import React from 'react';
 import { Link } from '@/i18n/navigation';
 import { useTranslations, useLocale } from 'next-intl';
-import { useConsentStore } from '@/shared/lib/consent/consentStore';
+import { FooterPrivacyButton } from '@/widgets/layout/FooterPrivacyButton';
 
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
@@ -28,7 +27,6 @@ export const Footer: React.FC = () => {
   const t = useTranslations('common');
   const locale = useLocale();
   const isEn = locale === 'en';
-  const openSettings = useConsentStore((state) => state.openSettings);
 
   return (
     <footer
@@ -420,19 +418,7 @@ export const Footer: React.FC = () => {
                 <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-slate-900 transition-all duration-200 group-hover:w-full"></span>
               </Link>
             ))}
-            <button
-              type="button"
-              onClick={openSettings}
-              className="hover:text-slate-900 transition-colors duration-200 relative group cursor-pointer text-xs font-medium text-slate-700 bg-transparent border-none p-0"
-              aria-label={
-                isEn
-                  ? 'Open Privacy & Cookie Settings'
-                  : 'Privatsphäre- & Cookie-Einstellungen öffnen'
-              }
-            >
-              <span>{isEn ? 'Privacy Settings' : 'Cookie-Einstellungen'}</span>
-              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-slate-900 transition-all duration-200 group-hover:w-full"></span>
-            </button>
+            <FooterPrivacyButton isEn={isEn} />
             <span className="text-slate-700 font-medium ml-2">
               © {new Date().getFullYear()} {t('footer.rights')}
             </span>
