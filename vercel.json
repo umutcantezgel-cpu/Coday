@@ -81,7 +81,7 @@
       ]
     },
     {
-      "source": "/(sitemap\\.xml|video-sitemap\\.xml|robots\\.txt|icon\\.png|apple-icon\\.png|manifest\\.json)",
+      "source": "/(sitemap\\.xml|video-sitemap\\.xml|robots\\.txt|icon\\.png|apple-icon\\.png|manifest\\.json|\\.well-known/security\\.txt)",
       "headers": [
         {
           "key": "Cache-Control",

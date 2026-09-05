@@ -1,0 +1,8 @@
+# RFC 9116 Responsible Vulnerability Disclosure Policy
+# Coday — Solo Headless Web Agency (Wetzlar, Hessen, Germany)
+Contact: mailto:umut@codayweb.de
+Preferred-Languages: de, en
+Canonical: https://www.codayweb.de/.well-known/security.txt
+Policy: https://www.codayweb.de/de/legal
+Expires: 2027-09-05T00:00:00.000Z
+Hiring: https://www.codayweb.de/de/career

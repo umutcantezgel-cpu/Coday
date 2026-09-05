@@ -9,9 +9,44 @@ const perplexityLimiter = createRateLimiter({
   windowMs: 60_000,
 });
 
+function isAllowedOrigin(req: VercelRequest): boolean {
+  if (process.env.NODE_ENV !== 'production') {
+    return true;
+  }
+  const origin = (req.headers['origin'] as string) || '';
+  const referer = (req.headers['referer'] as string) || '';
+
+  const allowedHostnames = ['codayweb.de', 'www.codayweb.de'];
+
+  if (origin) {
+    try {
+      const originUrl = new URL(origin);
+      if (allowedHostnames.includes(originUrl.hostname)) return true;
+    } catch {
+      return false;
+    }
+  }
+
+  if (referer) {
+    try {
+      const refererUrl = new URL(referer);
+      if (allowedHostnames.includes(refererUrl.hostname)) return true;
+    } catch {
+      return false;
+    }
+  }
+
+  return false;
+}
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  // Origin verification guard against external API quota harvesting
+  if (!isAllowedOrigin(req)) {
+    return res.status(403).json({ error: 'Access forbidden: unauthorized origin' });
   }
 
   // Rate limiting
