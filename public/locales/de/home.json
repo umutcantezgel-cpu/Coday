@@ -190,6 +190,9 @@
     "success_title": "Anfrage erhalten!",
     "success_subtitle": "Wir haben Ihre Daten erhalten und melden uns in Kürze bei Ihnen.",
     "new_request": "Neue Anfrage senden",
+    "mobile_title": "Schnellnachricht",
+    "mobile_subtitle": "Zwei Felder genügen. Ihre Nachricht landet direkt in meinem Postfach — kein Callcenter, kein Vertrieb.",
+    "message_placeholder": "Worum geht es? (optional)",
     "errors": {
       "name": "Bitte geben Sie Ihren Namen ein (min. 2 Zeichen)",
       "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein"

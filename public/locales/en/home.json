@@ -190,6 +190,9 @@
     "success_title": "Request received!",
     "success_subtitle": "We have received your details and will be in touch shortly.",
     "new_request": "Send a new request",
+    "mobile_title": "Quick message",
+    "mobile_subtitle": "Two fields is all it takes. Your message lands straight in my inbox — no call centre, no sales team.",
+    "message_placeholder": "What is it about? (optional)",
     "errors": {
       "name": "Please enter your name (min. 2 characters)",
       "email": "Please enter a valid email address"

@@ -92,6 +92,27 @@ describe.skipIf(!dir)('email preview export', () => {
         locale: 'de',
         score: 6,
       }),
+      // Exactly what the mobile hero sheet sends: a name, an e-mail, an optional
+      // phone number and the visitor's own words. No package, no city, no
+      // project — the sparsest payload any form produces.
+      'lead-customer-quick-mobile.html': generateCustomerConfirmationEmailHtml({
+        name: 'Jonas Behrens',
+        email: 'jonas@behrens-dach.de',
+        phone: '+49 176 4433221',
+        message: 'Unsere Seite ist von 2014 und auf dem Handy unbrauchbar. Was würde das kosten?',
+        formKind: 'quick',
+        locale: 'de',
+      }),
+      'lead-agency-quick-mobile.html': generateAgencyLeadEmailHtml({
+        name: 'Jonas Behrens',
+        email: 'jonas@behrens-dach.de',
+        phone: '+49 176 4433221',
+        message: 'Unsere Seite ist von 2014 und auf dem Handy unbrauchbar. Was würde das kosten?',
+        formKind: 'quick',
+        source: 'quick_contact_mobile',
+        locale: 'de',
+        score: 5,
+      }),
       'newsletter-customer-de.html': generateNewsletterConfirmationHtml('de'),
       'newsletter-customer-en.html': generateNewsletterConfirmationHtml('en'),
       'newsletter-agency.html': generateAgencyNewsletterHtml(
@@ -111,6 +132,6 @@ describe.skipIf(!dir)('email preview export', () => {
         .map((f) => `<li><a href="${f}">${f}</a></li>`)
         .join('')}</ul>`
     );
-    expect(Object.keys(files)).toHaveLength(11);
+    expect(Object.keys(files)).toHaveLength(13);
   });
 });

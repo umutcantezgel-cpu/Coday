@@ -113,6 +113,17 @@ export function generateAgencyLeadEmailHtml(data: LeadEmailData): string {
 
   const hot = score !== null && score >= 7;
 
+  /**
+   * Only the configurator sends package fields. Quick contact, the city pages
+   * and the public-sector form send none, and there `packageName` falls back to
+   * the project or to "Individuelles Projekt" — so a "Paket:" header and a
+   * "Gewählte Konfiguration" panel would claim a selection that never happened.
+   * `project` deliberately does not count: a city lead's "Webdesign Herborn" is
+   * the subject of the enquiry, not a chosen tier.
+   */
+  const hasPackage = Boolean(data.packageId || data.packageTier || data.packageName);
+  const showConfiguration = hasPackage || addons.length > 0;
+
   const buttons = [
     {
       href: `mailto:${email}?subject=${encodeURIComponent('Ihre Anfrage bei Coday')}`,
@@ -156,23 +167,25 @@ export function generateAgencyLeadEmailHtml(data: LeadEmailData): string {
       'neutral',
       'Kontakt'
     ),
-    renderPanel(
-      `${renderKeyValue([
-        { label: 'Paket', value: packageName, highlight: true },
-        ...(packageMeta
-          ? [
-              {
-                label: 'Details',
-                value: `<span style="color: ${EMAIL_COLORS.muted}; font-size: 13px;">${packageMeta}</span>`,
-              },
-            ]
-          : []),
-      ])}
+    showConfiguration
+      ? renderPanel(
+          `${renderKeyValue([
+            { label: 'Paket', value: packageName, highlight: true },
+            ...(packageMeta
+              ? [
+                  {
+                    label: 'Details',
+                    value: `<span style="color: ${EMAIL_COLORS.muted}; font-size: 13px;">${packageMeta}</span>`,
+                  },
+                ]
+              : []),
+          ])}
       <p style="margin: 14px 0 6px 0; color: ${EMAIL_COLORS.accentDark}; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;">Extras</p>
       ${renderChecklist(addons, 'Keine Extras gewählt (nur Paket)')}`,
-      'amber',
-      'Gewählte Konfiguration'
-    ),
+          'amber',
+          'Gewählte Konfiguration'
+        )
+      : '',
     renderHeading('Nachricht'),
     message
       ? renderQuote(message)
@@ -222,7 +235,7 @@ export function generateAgencyLeadEmailHtml(data: LeadEmailData): string {
     badge: hot ? 'Neue Anfrage · heißer Lead' : 'Neue Anfrage',
     badgeTone: hot ? 'emerald' : 'amber',
     headline: name,
-    intro: `Paket: <strong style="color: ${EMAIL_COLORS.heading};">${packageName}</strong>`,
+    intro: `${hasPackage ? 'Paket' : 'Anliegen'}: <strong style="color: ${EMAIL_COLORS.heading};">${packageName}</strong>`,
     body,
     footer: `Automatische Benachrichtigung von <a href="${EMAIL_BASE_URL}" style="color: ${EMAIL_COLORS.muted}; text-decoration: none;">codayweb.de</a> · Antworten geht direkt an den Kunden.`,
   });

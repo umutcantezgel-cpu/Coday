@@ -3,6 +3,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import GradientText from '@/shared/ui/GradientText';
 import { cn } from '@/shared/lib/utils';
 import { LazyQuickContactForm } from './LazyQuickContactForm';
+import { MobileQuickContact } from './MobileQuickContact';
 import { Link } from '@/i18n/navigation';
 import { ArrowRight, Briefcase } from '@phosphor-icons/react/dist/ssr';
 import { baseButtonStyles, buttonVariants, buttonSizes } from '@/shared/ui/ButtonStyles';
@@ -89,30 +90,37 @@ export const HeroSection: React.FC = () => {
             </span>
           </div>
 
-          {/* Mobile Only CTAs */}
+          {/* Mobile Only CTAs.
+
+              The desktop column to the right carries the contact form; below
+              1024px it is not rendered at all, so the lowest-commitment action
+              leads here instead. Booking a call and browsing work both ask more
+              of a first-time visitor than two fields do, so they sit underneath
+              as compact outlines rather than competing for the same emphasis. */}
           <div className="mt-8 flex flex-col w-full gap-3 lg:hidden">
+            <MobileQuickContact />
             <Link
               href="/booking"
               className={cn(
                 baseButtonStyles,
-                buttonVariants['primary'],
-                buttonSizes['lg'],
-                'w-full justify-center text-base'
+                buttonVariants['outline'],
+                buttonSizes['md'],
+                'w-full justify-center text-sm'
               )}
             >
               <span>{isEn ? 'Book Strategy Call' : 'Online-Termin buchen'}</span>
-              <ArrowRight className="w-5 h-5 ml-2" />
+              <ArrowRight className="w-4 h-4 ml-2" />
             </Link>
             <Link
               href="/work"
               className={cn(
                 baseButtonStyles,
                 buttonVariants['outline'],
-                buttonSizes['lg'],
-                'w-full justify-center text-base'
+                buttonSizes['md'],
+                'w-full justify-center text-sm'
               )}
             >
-              <Briefcase className="w-5 h-5 mr-2" />
+              <Briefcase className="w-4 h-4 mr-2" />
               {t('hero.view_projects')}
             </Link>
           </div>

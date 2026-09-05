@@ -120,6 +120,41 @@ describe('context shapes the copy', () => {
     expect(html).not.toContain('Keine Extras gewählt');
   });
 
+  /**
+   * The agency notification carried the same defect the customer copy was fixed
+   * for: `packageName` falls back to "Individuelles Projekt", so every
+   * package-less lead arrived headed "Paket:" with a "Gewählte Konfiguration"
+   * panel reading "Keine Extras gewählt (nur Paket)". The mobile quick-contact
+   * sheet makes that the common case rather than the rare one.
+   */
+  it('does not claim a configuration in the agency mail when none was made', () => {
+    const html = generateAgencyLeadEmailHtml({
+      ...base,
+      message: 'Unsere Seite ist alt.',
+      formKind: 'quick',
+      source: 'quick_contact_mobile',
+    });
+    expect(html).toContain('Anliegen');
+    expect(html).not.toContain('Paket:');
+    expect(html).not.toContain('Gewählte Konfiguration');
+    expect(html).not.toContain('Keine Extras gewählt');
+    // What the person actually wrote must still come through.
+    expect(html).toContain('Unsere Seite ist alt.');
+  });
+
+  it('keeps the configuration panel in the agency mail for a configurator lead', () => {
+    const html = generateAgencyLeadEmailHtml({
+      ...base,
+      packageId: 'business',
+      packageName: 'Der Kundenmagnet',
+      addons: [{ id: 'func-cms', name: 'Texte selbst ändern' }],
+      formKind: 'contact',
+    });
+    expect(html).toContain('Paket:');
+    expect(html).toContain('Gewählte Konfiguration');
+    expect(html).toContain('Texte selbst ändern');
+  });
+
   it('keeps package and extras for a configurator lead', () => {
     const html = generateCustomerConfirmationEmailHtml({
       ...base,
