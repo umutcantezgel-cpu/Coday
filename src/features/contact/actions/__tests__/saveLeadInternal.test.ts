@@ -120,6 +120,21 @@ describe('saveLeadInternalAction', () => {
     expect(sendMock.mock.calls[0][0].subject).toContain('Newsletter Subscriber');
   });
 
+  it('maps direct contact form project types to friendly names', async () => {
+    const result = await saveLeadInternalAction({
+      name: 'Umut Tester',
+      email: 'umut@codayweb.de',
+      project: 'webdesign',
+      message: 'Brauche ein Redesign.',
+      locale: 'de',
+      source: 'Direct Contact Form',
+    });
+    expect(result.success).toBe(true);
+    const [agencyCall, customerCall] = sendMock.mock.calls;
+    expect(agencyCall[0].subject).toContain('Webdesign & Corporate Website');
+    expect(customerCall[0].subject).toBe('Ihre Anfrage bei Coday: Webdesign & Corporate Website');
+  });
+
   it('rejects invalid payloads before touching Resend', async () => {
     const result = await saveLeadInternalAction({ name: 'X', email: 'not-an-email' });
     expect(result.success).toBe(false);

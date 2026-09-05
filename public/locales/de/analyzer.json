@@ -84,7 +84,7 @@
     "body_score": "Gesamtscore: {score}/100",
     "body_urgency": "Dringlichkeit: {score}/100",
     "body_link": "Vollständiger Report: {url}",
-    "signature": "Mit freundlichen Grüßen,\nDas Coday Team\n\n---\nCoday Digital | The Agency Killer\nkontakt@coday.de | coday.de",
+    "signature": "Mit freundlichen Grüßen,\nDas Coday Team\n\n---\nCoday Digital | The Agency Killer\numut@codayweb.de | codayweb.de",
     "error_unknown": "Unbekannter Fehler"
   },
   "pdf": {
@@ -97,7 +97,7 @@
     "no_issues": "Keine kritischen Probleme gefunden!",
     "consultation_title": "Kostenloses Beratungsgespräch",
     "consultation_text": "Lassen Sie uns gemeinsam Ihre Website optimieren. Buchen Sie jetzt Ihr kostenloses 30-Minuten-Gespräch.",
-    "footer_rights": "© {year} Coday Digital | coday.de",
+    "footer_rights": "© {year} Coday Digital | codayweb.de",
     "footer_generated": "Dieser Report wurde automatisch durch KI-Analyse generiert."
   },
   "severity": {

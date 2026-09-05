@@ -1,6 +1,6 @@
 # Google Search Console Disavow File
 # Domain: codayweb.de
-# Maintainer: Umutcan Tezgel (kontakt@codayweb.de)
+# Maintainer: Umutcan Tezgel (umut@codayweb.de)
 # Last reviewed: 2026-05-03
 # Review frequency: Monthly (1st of each month)
 #

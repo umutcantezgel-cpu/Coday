@@ -82,12 +82,23 @@ export async function saveLeadInternalAction(
 
     // 2. Honeypot: pretend success, never send or store anything.
     if (lead._bot_trap_field && lead._bot_trap_field.trim().length > 0) {
+      console.warn('[saveLeadInternal] Honeypot triggered, dropping submission.');
       return { success: true, status: 'honeypot_dropped' };
     }
 
     // 3. Resolve package and add-ons server-side
+    const PROJECT_LABELS: Record<string, { de: string; en: string }> = {
+      webdesign: { de: 'Webdesign & Corporate Website', en: 'Web Design & Corporate Website' },
+      webapp: { de: 'Web Applikation / SaaS', en: 'Web Application / SaaS' },
+      ecommerce: { de: 'E-Commerce / Online-Shop', en: 'E-Commerce' },
+      audit: { de: 'Website Audit & Optimierung', en: 'Website Audit & Optimization' },
+    };
+
     const pkg = lead.packageId ? PACKAGES[lead.packageId] : null;
-    const packageName = pkg ? pkg.name[lead.locale] : undefined;
+    const friendlyProject = lead.project
+      ? PROJECT_LABELS[lead.project]?.[lead.locale] || lead.project
+      : undefined;
+    const packageName = pkg ? pkg.name[lead.locale] : friendlyProject;
     const addons = lead.addonIds
       .map((id) => getModule(id))
       .filter((m): m is NonNullable<typeof m> => !!m)

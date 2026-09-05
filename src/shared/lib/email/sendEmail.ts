@@ -47,7 +47,7 @@ export interface SendEmailResult {
 export const FALLBACK_FROM = 'Coday <onboarding@resend.dev>';
 
 export function getDefaultFrom(): string {
-  return process.env.EMAIL_FROM || 'Coday <kontakt@codayweb.de>';
+  return process.env.EMAIL_FROM || 'Coday <umut@codayweb.de>';
 }
 
 export function getPrimaryAdminEmail(): string {

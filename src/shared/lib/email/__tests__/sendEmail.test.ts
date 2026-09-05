@@ -113,7 +113,7 @@ describe('sendEmail', () => {
     delete process.env.PRIMARY_ADMIN_EMAIL;
     delete process.env.ADMIN_EMAIL;
 
-    expect(getDefaultFrom()).toBe('Coday <kontakt@codayweb.de>');
+    expect(getDefaultFrom()).toBe('Coday <umut@codayweb.de>');
     expect(getPrimaryAdminEmail()).toBe('umut@codayweb.de');
     expect(getAdminEmail()).toBe('umut@codayweb.de');
 

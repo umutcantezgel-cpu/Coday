@@ -3313,8 +3313,8 @@
           "placeholder": "max@mustermann.de"
         },
         "phone": {
-          "label": "Ihr Name",
-          "placeholder": "Max Mustermann"
+          "label": "Ihre Telefonnummer (optional)",
+          "placeholder": "+49 123 4567890"
         },
         "message": {
           "label": "Nachricht / Projekt-Details",

@@ -341,12 +341,12 @@ export const ApplicationWizard: React.FC = () => {
             aria-label={hasPackage ? t('wizard.title_package') : t('wizard.title_direct')}
           >
             {/* Honeypot field for bot protection */}
-            <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true">
+            <div style={{ display: 'none' }} aria-hidden="true">
               <input
                 type="text"
                 {...register('_bot_trap_field')}
                 tabIndex={-1}
-                autoComplete="off"
+                autoComplete="new-password"
               />
             </div>
 
@@ -361,28 +361,33 @@ export const ApplicationWizard: React.FC = () => {
                 >
                   {t('wizard.step1.project_type.label')}
                 </label>
-                <select
-                  aria-required="true"
-                  id="project-type"
-                  {...register('project')}
-                  aria-invalid={!!errors.project}
-                  aria-describedby={errors.project ? 'project-type-error' : undefined}
-                  className={`w-full px-4 py-3 rounded-xl border outline-none transition motion-reduce:duration-[0.01ms] bg-white appearance-none ${
-                    errors.project
-                      ? 'border-red-500 ring-1 ring-red-500'
-                      : 'border-gray-200 focus:border-primary focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent'
-                  }`}
-                >
-                  <option value="">{t('wizard.step1.project_type.placeholder')}</option>
-                  <option value="webdesign">
-                    {t('wizard.step1.project_type.options.webdesign')}
-                  </option>
-                  <option value="webapp">{t('wizard.step1.project_type.options.webapp')}</option>
-                  <option value="ecommerce">
-                    {t('wizard.step1.project_type.options.ecommerce')}
-                  </option>
-                  <option value="audit">{t('wizard.step1.project_type.options.audit')}</option>
-                </select>
+                <div className="relative">
+                  <select
+                    aria-required="true"
+                    id="project-type"
+                    {...register('project')}
+                    aria-invalid={!!errors.project}
+                    aria-describedby={errors.project ? 'project-type-error' : undefined}
+                    className={`w-full px-4 py-3 pr-10 rounded-xl border outline-none transition motion-reduce:duration-[0.01ms] bg-white appearance-none cursor-pointer ${
+                      errors.project
+                        ? 'border-red-500 ring-1 ring-red-500'
+                        : 'border-gray-200 focus:border-primary focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent'
+                    }`}
+                  >
+                    <option value="">{t('wizard.step1.project_type.placeholder')}</option>
+                    <option value="webdesign">
+                      {t('wizard.step1.project_type.options.webdesign')}
+                    </option>
+                    <option value="webapp">{t('wizard.step1.project_type.options.webapp')}</option>
+                    <option value="ecommerce">
+                      {t('wizard.step1.project_type.options.ecommerce')}
+                    </option>
+                    <option value="audit">{t('wizard.step1.project_type.options.audit')}</option>
+                  </select>
+                  <div className="absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                    <Icon name="expand_more" className="w-5 h-5" />
+                  </div>
+                </div>
                 <AnimatePresence>
                   {errors.project && (
                     <m.div
