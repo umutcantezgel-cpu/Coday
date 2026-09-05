@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Code, PaintBrush, TrendUp, Sparkle, ArrowRight } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
@@ -14,6 +14,8 @@ interface LevelItem {
 
 const CareerPathBuilder: React.FC = () => {
   const t = useTranslations('careers.path');
+  const locale = useLocale();
+  const isEn = locale === 'en';
   const [activeTrack, setActiveTrack] = useState<TrackKey>('dev');
 
   const tracks: { key: TrackKey; label: string; icon: React.ElementType }[] = [
@@ -32,7 +34,9 @@ const CareerPathBuilder: React.FC = () => {
           <span className="text-xs font-bold uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-1 rounded-md">
             {t('selector_title')}
           </span>
-          <h3 className="text-2xl font-bold font-display text-slate-900 mt-2">{t('title')}</h3>
+          <h3 className="text-2xl font-bold font-display text-slate-900 mt-2">
+            {isEn ? 'Career Levels & Milestones' : 'Karriere-Stufen & Meilensteine'}
+          </h3>
         </div>
       </div>
 

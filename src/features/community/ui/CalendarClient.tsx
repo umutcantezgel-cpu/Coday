@@ -141,13 +141,13 @@ const Calendar: React.FC = () => {
             {isEn ? 'Lead times & capacity' : 'Vorlauf & Kapazität'}
           </span>
           <h1 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl text-secondary tracking-tight">
-            <span>{isEn ? 'Project ' : 'Projekt-'}</span>
+            <span>{isEn ? 'Project Availability ' : 'Projekt-Verfügbarkeit '}</span>
             <GradientText
               colors={['#147a7a', '#2563eb', '#147a7a']}
               animationSpeed={8}
               className="inline-block"
             >
-              {isEn ? 'Availability' : 'Verfügbarkeit'}
+              {isEn ? '& Timelines' : '& Vorlaufzeiten'}
             </GradientText>
           </h1>
           <p className="text-base sm:text-lg text-slate-600 max-w-3xl leading-relaxed">

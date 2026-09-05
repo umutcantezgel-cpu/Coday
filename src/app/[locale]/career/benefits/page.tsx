@@ -17,9 +17,9 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Benefits & Working at Coday | Web Developer Jobs Wetzlar',
+      title: 'Benefits & Careers at Coday | Developer Jobs',
       description:
-        'Explore benefits of working at Coday: M-Series gear, 100% remote, fair pay & learning budget. Discover rewarding web developer jobs in Wetzlar & Hesse.',
+        'Benefits and careers at Coday: modern hardware, remote options and learning budgets for developers in Wetzlar and Hesse.',
       keywords: [
         'Benefits',
         'Working at Coday',
@@ -33,9 +33,9 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: 'Benefits & Arbeiten bei Coday | Webentwickler Jobs Wetzlar',
+    title: 'Benefits & Jobs bei Coday | Entwickler in Wetzlar',
     description:
-      'Attraktive Benefits & Arbeiten bei Coday: High-End Hardware, Remote-Work & Weiterbildungsbudget. Jetzt Webentwickler Jobs Wetzlar & Mittelhessen entdecken!',
+      'Benefits und Jobs bei Coday: Modernste Hardware, Remote-Option und Weiterbildung für Entwickler in Wetzlar und Hessen.',
     keywords: [
       'Benefits',
       'Arbeiten bei Coday',

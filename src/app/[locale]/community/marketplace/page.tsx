@@ -16,7 +16,7 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: 'Website Modules | Booking, Calculators, Configurators · Coday',
       description:
-        'Twelve modules built on top of a website: appointment booking, application funnels, needs calculators, member areas and more. Quoted with the project.',
+        'Twelve custom website modules: appointment booking, job funnels, cost calculators, and member portals. Tailored for your project.',
       keywords: [
         'Website Booking System Hesse',
         'Online Application Funnel Trades',
@@ -30,7 +30,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Website-Bausteine | Terminbuchung, Kalkulator & mehr · Coday',
     description:
-      'Zwölf Bausteine, die auf einer Website aufsetzen: Terminbuchung, Express-Bewerbung, Bedarfs-Kalkulator, Mitgliederbereich und mehr. Kalkuliert mit dem Projekt.',
+      'Zwölf Website-Bausteine von Coday: Terminbuchung, Express-Bewerbung, Kalkulatoren und Kundenbereiche. Maßgeschneidert kalkuliert.',
     keywords: [
       'Terminbuchung Website Hessen',
       'Express-Bewerbung Handwerk',
@@ -53,7 +53,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const breadcrumbs = getBreadcrumbSchema(
     [
       { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-      { name: 'Community', url: `/${_locale}/community/events` },
+      { name: 'Community', url: `/${_locale}/community` },
       { name: isEn ? 'Marketplace' : 'Marktplatz', url: `/${_locale}/community/marketplace` },
     ],
     pageUrl

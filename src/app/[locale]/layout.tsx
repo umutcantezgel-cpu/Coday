@@ -48,18 +48,18 @@ export async function generateMetadata({
 
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Wetzlar | Web Development Wetzlar | Coday Web',
+      title: 'Web Design Wetzlar & Next.js Agency · Coday',
       description:
-        'Coday is your web design agency in Wetzlar and Central Hesse. Fast, modern websites at a fixed price with personal support. Get your free consultation.',
+        'Web design agency in Wetzlar & Central Hesse: fast Next.js websites at a fixed price with direct owner support. Inquire today!',
       path: '/en',
       type: 'money',
     });
   }
 
   return generatePageMetadata({
-    title: 'Webdesign Wetzlar | Webentwicklung Wetzlar | Coday Web',
+    title: 'Webdesign Wetzlar & Next.js Agentur · Coday',
     description:
-      'Coday ist Ihre Webdesign Agentur in Wetzlar und Mittelhessen. Schnelle, moderne Webseiten zum Festpreis mit persönlicher Betreuung. Jetzt beraten lassen.',
+      'Webdesign Agentur in Wetzlar & Mittelhessen: Schnelle Next.js Webseiten zum Festpreis mit persönlicher Betreuung. Jetzt anfragen!',
     path: '/de',
     type: 'money',
   });
@@ -102,11 +102,8 @@ export default async function RootLayout({
   return (
     <html lang={locale} className={`${inter.variable} ${outfit.variable}`} suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://vitals.vercel-insights.com" />
-        <link rel="preconnect" href="https://va.vercel-scripts.com" />
         <link rel="dns-prefetch" href="https://vitals.vercel-insights.com" />
         <link rel="dns-prefetch" href="https://va.vercel-scripts.com" />
-        <link rel="preconnect" href="https://cdn.sanity.io" />
         <link rel="dns-prefetch" href="https://cdn.sanity.io" />
         <script
           dangerouslySetInnerHTML={{

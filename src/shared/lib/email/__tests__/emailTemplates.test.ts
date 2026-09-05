@@ -72,7 +72,9 @@ describe('Email Templates Module', () => {
       expect(html).toContain('Enterprise Platform (Extrem groß)');
       expect(html).toContain('E-Commerce Storefront (Shopify / Medusa)');
       expect(html).toContain('Wie geht es jetzt weiter?');
-      expect(html).toContain('https://codayweb.de/de/booking');
+      // www: the site canonicalises there, so the bare host cost every link in
+      // every e-mail a redirect.
+      expect(html).toContain('https://www.codayweb.de/de/booking');
       expect(html).toContain('Umutcan Emre Tezgel');
       expect(html).toContain('Inhaber &amp; Webentwickler');
     });
@@ -100,7 +102,7 @@ describe('Email Templates Module', () => {
       expect(en).toContain('<html lang="en">');
       expect(en).toContain('What happens next?');
       expect(en).toContain('Edit texts &amp; images yourself');
-      expect(en).toContain('https://codayweb.de/en/booking');
+      expect(en).toContain('https://www.codayweb.de/en/booking');
     });
   });
 

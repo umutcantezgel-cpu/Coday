@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { m } from 'motion/react';
 import {
@@ -43,6 +43,7 @@ type GovContactData = z.infer<typeof GovContactSchema>;
 
 export const GovContactForm: React.FC = () => {
   const t = useTranslations('public-sector');
+  const locale = useLocale();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -86,17 +87,18 @@ export const GovContactForm: React.FC = () => {
     setError(null);
 
     try {
-      // Format message for generic lead structure
-      const fullMessage = `
-            🏛️ BEHÖRDEN-ANFRAGE
-            -------------------
-            Behörde: ${data.authority}
-            Haushaltsjahr: ${t(`request_quote.fields.year.options.${data.year}`)}
-            Verfahren: ${t(`request_quote.fields.type.options.${data.type}`)}
-            
-            Nachricht:
-            ${data.message || 'Keine zusätzliche Nachricht'}
-            `;
+      // Budget year and procedure have no field of their own, so they go into
+      // `project` — which the agency notification shows and the confirmation
+      // renders as the subject of the enquiry. They must not go into `message`:
+      // that is quoted back to the sender verbatim, and it used to hand them a
+      // block headed "🏛️ BEHÖRDEN-ANFRAGE" with their own answers listed under it.
+      // The authority itself is already carried by `company`.
+      const projectLabel = [
+        t(`request_quote.fields.type.options.${data.type}`),
+        t(`request_quote.fields.year.options.${data.year}`),
+      ]
+        .filter(Boolean)
+        .join(' · ');
 
       // 1. Insert into Supabase via Server Action
       const result = await saveLeadInternalAction({
@@ -104,8 +106,11 @@ export const GovContactForm: React.FC = () => {
         email: data.email,
         phone: data.phone,
         company: data.authority,
-        message: fullMessage,
+        message: data.message ? data.message.trim() : undefined,
+        project: projectLabel || undefined,
+        formKind: 'gov',
         source: 'Public Sector Page',
+        locale: locale === 'en' ? 'en' : 'de',
       });
 
       if (!result.success) throw new Error(result.error || 'Unknown error saving lead');

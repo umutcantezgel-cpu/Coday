@@ -16,7 +16,7 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: 'Workshops & Meetups | Next.js, Local SEO · Coday Wetzlar',
       description:
-        'Four workshop formats on web performance, local SEO and conversion, run from Wetzlar. Dates follow demand — register interest and we will set one.',
+        'Four workshop formats on web performance, local SEO and conversion in Wetzlar. Flexible dates on demand — register your interest now.',
       keywords: [
         'Next.js Workshop Hesse',
         'Local SEO Workshop Wetzlar',
@@ -30,7 +30,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Workshops & Meetups | Next.js, lokales SEO · Coday Wetzlar',
     description:
-      'Vier Workshop-Formate zu Web-Performance, lokalem SEO und Conversion aus Wetzlar. Termine richten sich nach der Nachfrage — Interesse vormerken genügt.',
+      'Vier Workshop-Formate zu Web-Performance, lokalem SEO und Conversion aus Wetzlar. Termine nach Bedarf — jetzt unverbindlich vormerken.',
     keywords: [
       'Next.js Workshop Hessen',
       'Local SEO Workshop Wetzlar',
@@ -53,7 +53,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const breadcrumbs = getBreadcrumbSchema(
     [
       { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-      { name: 'Community', url: `/${_locale}/community/events` },
+      { name: 'Community', url: `/${_locale}/community` },
       { name: isEn ? 'Events' : 'Veranstaltungen', url: `/${_locale}/community/events` },
     ],
     pageUrl

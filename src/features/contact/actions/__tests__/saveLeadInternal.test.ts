@@ -83,7 +83,9 @@ describe('saveLeadInternalAction', () => {
     const customerCall = sendMock.mock.calls[1][0];
     expect(customerCall.subject).toBe('Your request at Coday: The Business Card');
     expect(customerCall.html).toContain('Get found on Google');
-    expect(customerCall.html).toContain('https://codayweb.de/en/booking');
+    // www: the site canonicalises there, so the bare host cost every link in
+    // every e-mail a redirect.
+    expect(customerCall.html).toContain('https://www.codayweb.de/en/booking');
   });
 
   it('silently drops honeypot submissions without sending or storing anything', async () => {

@@ -14,7 +14,7 @@ import {
   BookingEmailData,
 } from '@/shared/lib/email/bookingTemplates';
 import { berlinToUtc, buildIcs } from '@/shared/lib/email/ics';
-import { EMAIL_BRAND } from '@/shared/lib/email/layout';
+import { EMAIL_BASE_URL, EMAIL_BRAND } from '@/shared/lib/email/layout';
 import {
   sendEmail,
   getAdminEmail,
@@ -154,7 +154,7 @@ export async function bookAppointment(payload: BookingPayload): Promise<BookingR
       location: lang === 'en' ? 'Phone / online' : 'Telefon / online',
       organizer: { name: EMAIL_BRAND.owner, email: primaryAdmin },
       attendee: { name: booking.name, email: booking.email },
-      url: 'https://codayweb.de',
+      url: EMAIL_BASE_URL,
     });
     const attachments = [
       {
@@ -174,15 +174,21 @@ export async function bookAppointment(payload: BookingPayload): Promise<BookingR
     }
 
     const [customerRes, adminRes] = await Promise.all([
-      sendEmail({
-        kind: 'booking_customer',
-        to: booking.email,
-        subject: getCustomerBookingSubject(bookingData),
-        html: generateCustomerBookingEmailHtml(bookingData),
-        replyTo: primaryAdmin,
-        attachments,
-        tags: [{ name: 'kind', value: 'booking_customer' }],
-      }),
+      sendEmail(
+        {
+          kind: 'booking_customer',
+          to: booking.email,
+          subject: getCustomerBookingSubject(bookingData),
+          html: generateCustomerBookingEmailHtml(bookingData),
+          replyTo: primaryAdmin,
+          attachments,
+          tags: [{ name: 'kind', value: 'booking_customer' }],
+        },
+        // A confirmed appointment with a calendar invite is the last thing that
+        // should arrive from a stranger's domain. The agency copy below keeps
+        // the fallback, so the booking still reaches the inbox either way.
+        { allowFallbackSender: false }
+      ),
       sendEmail({
         kind: 'booking_agency',
         to: adminEmail,

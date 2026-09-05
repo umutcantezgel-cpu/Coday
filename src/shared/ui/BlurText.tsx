@@ -53,7 +53,7 @@ const BlurText: React.FC<BlurTextProps> = ({
       {elements.map((segment, index) => (
         <span
           key={index}
-          className={`inline-block transition-[opacity,transform] duration-500 ease-out will-change-[opacity,transform] transform-gpu motion-reduce:transition-none ${
+          className={`inline-block transition-[opacity,transform] duration-500 ease-out motion-reduce:transition-none ${
             !isHydrated || inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1.5'
           }`}
           style={{ transitionDelay: isHydrated && inView ? `${(index * delay) / 1000}s` : '0s' }}

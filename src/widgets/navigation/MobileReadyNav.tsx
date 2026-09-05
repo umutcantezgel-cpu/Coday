@@ -13,7 +13,6 @@ import { usePathname } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import { getNavItems } from '@/widgets/navigation/config';
 import dynamic from 'next/dynamic';
-import '@/widgets/navigation/MobileReadyNav.css';
 
 const MobileNavOverlay = dynamic(
   () => import('@/widgets/navigation/MobileNavOverlay').then((m) => m.MobileNavOverlay),

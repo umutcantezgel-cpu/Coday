@@ -8,7 +8,8 @@
 
 export type EmailLang = 'de' | 'en';
 
-export const EMAIL_BASE_URL = 'https://codayweb.de';
+/** With `www.`: the site canonicalises there, so the bare host costs every link a redirect. */
+export const EMAIL_BASE_URL = 'https://www.codayweb.de';
 
 export const EMAIL_BRAND = {
   name: 'Coday',

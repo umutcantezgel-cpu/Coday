@@ -37,7 +37,11 @@ const Events: React.FC = () => {
 
   const communityNav = [
     { label: isEn ? 'Events' : 'Events & Workshops', href: '/community/events', icon: Sparkle },
-    { label: isEn ? 'Availability' : 'Verfügbarkeit', href: '/community/calendar', icon: CalendarBlank },
+    {
+      label: isEn ? 'Availability' : 'Verfügbarkeit',
+      href: '/community/calendar',
+      icon: CalendarBlank,
+    },
     { label: isEn ? 'Partners' : 'Partner', href: '/community/members', icon: Users },
     {
       label: isEn ? 'Modules' : 'Bausteine',
@@ -180,13 +184,13 @@ const Events: React.FC = () => {
             {isEn ? 'Formats, not fixed dates' : 'Formate statt fester Termine'}
           </span>
           <h1 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl text-secondary tracking-tight">
-            <span>{isEn ? 'Workshops & ' : 'Workshops & '}</span>
+            <span>{isEn ? 'Web Development ' : 'Web-Entwicklung '}</span>
             <GradientText
               colors={['#147a7a', '#2563eb', '#147a7a']}
               animationSpeed={8}
               className="inline-block"
             >
-              {isEn ? 'Meetups' : 'Meetups'}
+              {isEn ? 'Workshops & Meetups' : 'Workshops & Meetups'}
             </GradientText>
           </h1>
           <p className="text-base sm:text-lg text-slate-600 max-w-3xl leading-relaxed">
@@ -296,7 +300,7 @@ const Events: React.FC = () => {
         {/* CTA */}
         <section className="rounded-3xl border border-slate-200 bg-white p-8 sm:p-10 text-center">
           <h2 className="font-display font-bold text-2xl sm:text-3xl text-slate-900 mb-3">
-            {isEn ? 'Register interest' : 'Interesse vormerken'}
+            {isEn ? 'Request Your Format' : 'Jetzt Termin & Format anfragen'}
           </h2>
           <p className="text-slate-600 max-w-2xl mx-auto mb-6 leading-relaxed">
             {isEn

@@ -14,9 +14,9 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Project Availability | Lead Times & Start Dates · Coday',
+      title: 'Project Availability | Lead Times & Dates · Coday',
       description:
-        'How soon a website can start and how long it takes: answer within 24 hours, a free 20 minute needs analysis, live in 10 to 14 working days.',
+        'Website lead times at Coday: 24h response, free 20-minute needs analysis, and production go-live within 10 to 14 working days.',
       keywords: [
         'Web Design Lead Time Wetzlar',
         'Website Start Date Hesse',
@@ -28,9 +28,9 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: 'Projekt-Verfügbarkeit | Vorlauf & Starttermine · Coday',
+    title: 'Projekt-Verfügbarkeit | Termine & Vorlauf · Coday',
     description:
-      'Wie schnell eine Website starten kann und wie lange sie dauert: Antwort in 24 Stunden, kostenlose 20-Minuten-Bedarfsanalyse, in 10 bis 14 Werktagen online.',
+      'Website-Vorlauf und Termine bei Coday: Antwort in 24 Stunden, kostenlose 20-Minuten-Analyse und Go-Live in 10 bis 14 Werktagen.',
     keywords: [
       'Website Vorlaufzeit Wetzlar',
       'Website Starttermin Mittelhessen',
@@ -53,7 +53,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const breadcrumbs = getBreadcrumbSchema(
     [
       { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-      { name: isEn ? 'Community' : 'Community', url: `/${_locale}/community/events` },
+      { name: isEn ? 'Community' : 'Community', url: `/${_locale}/community` },
       { name: isEn ? 'Calendar' : 'Kalender', url: `/${_locale}/community/calendar` },
     ],
     pageUrl

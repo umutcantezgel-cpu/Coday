@@ -23,7 +23,7 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'B2B SEO & Generative Engine Optimization Agency | Coday',
+      title: 'B2B SEO & AI Search Engine Agency · Coday',
       description:
         'Google top rankings & visibility in AI search engines (GEO). Technical SEO audits, Core Web Vitals and semantic content architecture.',
       keywords: [
@@ -38,7 +38,7 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: 'B2B SEO & Generative Engine Optimization Agentur | Coday',
+    title: 'B2B SEO & KI-Suchmaschinen Agentur · Coday',
     description:
       'Google Top-Rankings & Sichtbarkeit in KI-Suchmaschinen (GEO). Technische SEO-Audits, Core Web Vitals und semantische Content-Silos.',
     keywords: [

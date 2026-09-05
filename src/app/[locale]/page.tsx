@@ -48,9 +48,9 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Wetzlar | Web Development Wetzlar | Coday Web',
+      title: 'Web Design Wetzlar & Next.js Agency · Coday',
       description:
-        'Coday is your web design agency in Wetzlar and Central Hesse. Fast, modern websites at a fixed price with personal support. Get your free consultation.',
+        'Web design agency in Wetzlar: Fast Next.js websites at a fixed price with personal founder support. Free consultation for modern businesses.',
       keywords: [
         'Web Design Wetzlar',
         'Web Development Wetzlar',
@@ -65,9 +65,9 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Wetzlar | Webentwicklung Wetzlar | Coday Web',
+    title: 'Webdesign Wetzlar & Next.js Agentur · Coday',
     description:
-      'Coday ist Ihre Webdesign Agentur in Wetzlar und Mittelhessen. Schnelle, moderne Webseiten zum Festpreis mit persönlicher Betreuung. Jetzt beraten lassen.',
+      'Webdesign Agentur in Wetzlar & Mittelhessen: Schnelle Next.js Webseiten zum verbindlichen Festpreis. Persönliche Betreuung durch Inhaber.',
     keywords: [
       'Webdesign Wetzlar',
       'Webentwicklung Wetzlar',

@@ -160,11 +160,22 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         'The Future of E-Commerce: Why Your Shop is Leaking Money': 'The Future of E-Commerce',
       };
 
-      let mappedTitle = seoTitleMap[post.title] || post.title;
-      let finalTitle =
-        locale === 'en' ? `${mappedTitle} | Coday Tech Blog` : `${mappedTitle} | Coday Blog`;
-      if (finalTitle.length > 65) {
-        finalTitle = locale === 'en' ? `${mappedTitle} (EN)` : mappedTitle;
+      const seoSlugMap: Record<string, string> = {
+        'neuro-design-psychologie': 'Neuro-Design im Webdesign',
+        'neuro-design-psychology': 'Neuro-Design for Websites',
+        'ki-voice-search-revolution': 'Voice-First Strategie 2026',
+        'ai-voice-search-revolution': 'Voice-First Strategy 2026',
+        'anti-ai-manifest-menschliches-design': 'Anti-AI Manifest 2026',
+        'anti-ai-manifesto-human-design': 'The Anti-AI Manifesto',
+      };
+
+      let mappedTitle = seoSlugMap[slug] || seoTitleMap[post.title] || post.title;
+      // Clean up any emojis that might inflate pixel width
+      mappedTitle = mappedTitle.replace(/[\u{1F300}-\u{1F9FF}]/gu, '').trim();
+
+      let finalTitle = `${mappedTitle} · Coday`;
+      if (finalTitle.length > 55) {
+        finalTitle = mappedTitle.length <= 55 ? mappedTitle : mappedTitle.substring(0, 52) + '...';
       }
       return finalTitle;
     })(),

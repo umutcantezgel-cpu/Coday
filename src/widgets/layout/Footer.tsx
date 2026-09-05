@@ -1,7 +1,6 @@
 'use client';
 import React from 'react';
 import { Link } from '@/i18n/navigation';
-import { m } from 'motion/react';
 import { useTranslations, useLocale } from 'next-intl';
 import { useConsentStore } from '@/shared/lib/consent/consentStore';
 
@@ -45,13 +44,7 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-20 lg:pt-28 pb-8">
         {/* Massive Typography CTA Section in Elevated Light Card */}
         <div className="mb-24 relative">
-          <m.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-50px' }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="p-8 sm:p-14 lg:p-16 rounded-3xl bg-white border border-slate-200/90 shadow-xl relative overflow-hidden text-center"
-          >
+          <div className="p-8 sm:p-14 lg:p-16 rounded-3xl bg-white border border-slate-200/90 shadow-xl relative overflow-hidden text-center">
             <div className="absolute top-0 right-0 w-80 h-80 bg-primary-50 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-amber-50 rounded-full blur-3xl pointer-events-none -ml-20 -mb-20" />
 
@@ -89,7 +82,7 @@ export const Footer: React.FC = () => {
                 </span>
               </Link>
             </div>
-          </m.div>
+          </div>
         </div>
 
         {/* Client Logos / Trust */}

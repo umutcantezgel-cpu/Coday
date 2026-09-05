@@ -97,15 +97,20 @@ export const LocalBottomContactSection: React.FC<LocalBottomContactSectionProps>
     setError(null);
 
     try {
-      const fullMessage = `Anfrage von lokaler SEO-Abschlusssektion für ${cityName}.\n\nBereich/Ortsteil: ${formData.category || 'Nicht angegeben'}\nTelefon: ${formData.phone || 'Nicht angegeben'}\nNachricht/Website: ${formData.message || 'Keine Nachricht angegeben'}`;
-
+      // The Ortsteil is a field, not a sentence. It used to be folded into
+      // `message` together with our internal section name and the phone number,
+      // all of which the confirmation quoted back to the customer.
       const result = await saveLeadInternalAction({
         name: formData.name.trim(),
         email: formData.email.trim(),
         phone: formData.phone ? formData.phone.trim() : undefined,
-        message: fullMessage,
+        message: formData.message ? formData.message.trim() : undefined,
         project: `Webdesign ${cityName} (${formData.category || 'Standort-Analyse'})`,
+        cityName,
+        district: formData.category ? formData.category.trim() : undefined,
+        formKind: 'local',
         source: sourceTag,
+        locale: isEn ? 'en' : 'de',
       });
 
       if (!result.success) throw new Error(result.error || 'Unknown error');

@@ -33,6 +33,16 @@ export interface SendEmailInput {
 export interface SendEmailOptions {
   maxAttempts?: number;
   retryDelayMs?: number;
+  /**
+   * Whether a rejected sender domain may fall back to `onboarding@resend.dev`.
+   *
+   * True for the agency notification: a lead from an odd address beats no lead.
+   * False for anything a customer receives — a German branded e-mail arriving
+   * from a stranger's domain reads as phishing, lands in spam, and spends the
+   * reputation of the one mailbox this agency has. Better to fail loudly and
+   * let the Slack alert and the Supabase row carry the lead.
+   */
+  allowFallbackSender?: boolean;
 }
 
 export interface SendEmailResult {
@@ -114,7 +124,10 @@ export async function sendEmail(
 
   const maxAttempts = Math.max(1, options.maxAttempts ?? 3);
   const retryDelayMs = options.retryDelayMs ?? (process.env.NODE_ENV === 'test' ? 0 : 400);
-  const senders = Array.from(new Set([getDefaultFrom(), FALLBACK_FROM]));
+  const allowFallback = options.allowFallbackSender ?? true;
+  const senders = allowFallback
+    ? Array.from(new Set([getDefaultFrom(), FALLBACK_FROM]))
+    : [getDefaultFrom()];
   const resend = new Resend(apiKey);
   const to = Array.isArray(input.to) ? input.to : [input.to];
   const text = input.text ?? htmlToText(input.html);

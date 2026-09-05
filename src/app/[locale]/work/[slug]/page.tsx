@@ -38,8 +38,10 @@ export async function generateMetadata(props: {
     'Coday Web Projekt',
   ];
 
+  const shortTitle = content.title.split(/[—-]/)[0].trim();
+
   return generatePageMetadata({
-    title: `${content.title} – Case Study | Coday`,
+    title: `${shortTitle} Case Study · Coday`,
     description: description.length > 140 ? description.substring(0, 137) + '...' : description,
     keywords,
     path: `/${locale}/work/${slug}`,

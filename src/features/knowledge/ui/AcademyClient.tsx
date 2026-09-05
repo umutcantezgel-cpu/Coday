@@ -26,32 +26,48 @@ import { academyData, Course } from '@/shared/data/academy';
 import { StrobiInteractiveStage } from '@/entities/avatar';
 import { useChatStore } from '@/widgets/chatbot/lib/chatStore';
 
+function VideoParamWatcher({
+  onSelect,
+  dismissedSlug,
+}: {
+  onSelect: (course: Course) => void;
+  dismissedSlug: string | null;
+}) {
+  const searchParams = useSearchParams();
+  const querySlug = searchParams?.get('video');
+
+  useEffect(() => {
+    if (querySlug && querySlug !== dismissedSlug) {
+      const found = academyData.find((c) => c.slug === querySlug);
+      if (found) {
+        onSelect(found);
+      }
+    }
+  }, [querySlug, dismissedSlug, onSelect]);
+
+  return null;
+}
+
 function AcademyContent() {
   const t = useTranslations('knowledge');
   const locale = useLocale();
   const isEn = locale === 'en';
-  const searchParams = useSearchParams();
   const { toggleChat } = useChatStore();
   const [activeModalVideo, setActiveModalVideo] = useState<Course | null>(null);
   const [dismissedSlug, setDismissedSlug] = useState<string | null>(null);
   const currentLang = locale as 'de' | 'en';
 
-  const querySlug = searchParams?.get('video');
-  const selectedVideo =
-    activeModalVideo ??
-    (querySlug && querySlug !== dismissedSlug
-      ? (academyData.find((c) => c.slug === querySlug) ?? null)
-      : null);
+  const selectedVideo = activeModalVideo;
 
   const handleOpenVideo = (course: Course) => {
     setActiveModalVideo(course);
   };
 
   const handleCloseVideo = () => {
-    setActiveModalVideo(null);
-    if (querySlug) {
-      setDismissedSlug(querySlug);
+    if (activeModalVideo?.slug) {
+      setDismissedSlug(activeModalVideo.slug);
     }
+    setActiveModalVideo(null);
   };
 
   const knowledgeNav = [
@@ -68,6 +84,9 @@ function AcademyContent() {
 
   return (
     <main className="bg-background-light min-h-dvh pt-4 pb-20 md:pt-6 md:pb-28">
+      <Suspense fallback={null}>
+        <VideoParamWatcher onSelect={setActiveModalVideo} dismissedSlug={dismissedSlug} />
+      </Suspense>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumbs */}
         <div className="mb-6 flex justify-start">
@@ -311,9 +330,5 @@ function AcademyContent() {
 }
 
 export default function Academy() {
-  return (
-    <Suspense fallback={<div className="min-h-dvh bg-background-light" />}>
-      <AcademyContent />
-    </Suspense>
-  );
+  return <AcademyContent />;
 }

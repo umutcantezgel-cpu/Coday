@@ -144,10 +144,9 @@ export default function WikiHub() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {filteredEntities.map((entity) => (
-            <Link
+            <article
               key={entity.slug}
-              href={`/knowledge/wiki/${entity.slug}`}
-              className="group bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 hover:shadow-xl hover:border-primary/40 transition-all duration-300 flex flex-col justify-between"
+              className="group relative bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 hover:shadow-xl hover:border-primary/40 transition-all duration-300 flex flex-col justify-between"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
@@ -158,10 +157,15 @@ export default function WikiHub() {
                 </div>
 
                 <h2 className="text-xl font-bold font-display text-slate-900 group-hover:text-primary transition-colors">
-                  {entity.displayName}
+                  <Link
+                    href={`/knowledge/wiki/${entity.slug}`}
+                    className="focus:outline-none before:absolute before:inset-0"
+                  >
+                    {entity.displayName}
+                  </Link>
                 </h2>
 
-                <div className="flex flex-wrap gap-1.5 pt-1">
+                <div className="flex flex-wrap gap-1.5 pt-1 relative z-10">
                   {entity.aliases &&
                     entity.aliases.length > 0 &&
                     entity.aliases.slice(0, 2).map((alias, idx) => (
@@ -184,14 +188,14 @@ export default function WikiHub() {
                 </div>
               </div>
 
-              <div className="pt-4 mt-6 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-700 group-hover:text-primary transition-colors">
+              <div className="pt-4 mt-6 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-700 group-hover:text-primary transition-colors pointer-events-none">
                 <span>{isEn ? 'Read article' : 'Artikel lesen'}</span>
                 <OptimizedIcon
                   icon={ArrowRight}
                   className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
                 />
               </div>
-            </Link>
+            </article>
           ))}
         </div>
 

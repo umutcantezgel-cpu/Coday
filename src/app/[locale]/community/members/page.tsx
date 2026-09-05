@@ -14,9 +14,9 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Partner Network Central Hesse | Freelancers & Agencies · Coday',
+      title: 'Partner Network Hesse | Devs & Partners · Coday',
       description:
-        'Coday works with freelancers and agencies across Central Hesse: frontend, design, content and SEO. Fixed briefs, fixed prices, the owner as your contact.',
+        'Coday collaborates with freelancers and agencies across Hesse: frontend, UI design and SEO with clear briefs and fixed pricing.',
       keywords: [
         'Web Design Partner Network Hesse',
         'Freelance Next.js Developer Wetzlar',
@@ -28,9 +28,9 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: 'Partner-Netzwerk Mittelhessen | Freelancer & Agenturen · Coday',
+    title: 'Partner-Netzwerk Mittelhessen | Freelancer · Coday',
     description:
-      'Coday arbeitet mit Freelancern und Agenturen aus Mittelhessen: Frontend, Design, Content und SEO. Klare Briefings, Festpreise, der Inhaber als Ansprechpartner.',
+      'Coday kooperiert mit Freelancern und Agenturen in Mittelhessen: Frontend, Design und SEO mit festen Briefings und klaren Festpreisen.',
     keywords: [
       'Partner-Netzwerk Webdesign Mittelhessen',
       'Freelancer Next.js Wetzlar',
@@ -53,7 +53,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const breadcrumbs = getBreadcrumbSchema(
     [
       { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
-      { name: 'Community', url: `/${_locale}/community/events` },
+      { name: 'Community', url: `/${_locale}/community` },
       { name: isEn ? 'Partners' : 'Partner', url: `/${_locale}/community/members` },
     ],
     pageUrl

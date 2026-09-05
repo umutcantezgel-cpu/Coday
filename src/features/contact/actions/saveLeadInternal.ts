@@ -18,6 +18,33 @@ import {
 import { calculatePackageLeadScore, HOT_LEAD_THRESHOLD } from '@/features/contact/schema/leadScore';
 import { PACKAGES } from '@/shared/data/packages';
 import { getModule } from '@/shared/data/modules';
+import {
+  generateNewsletterConfirmationHtml,
+  getNewsletterConfirmationSubject,
+  generateAgencyNewsletterHtml,
+  getAgencyNewsletterSubject,
+} from '@/shared/lib/email/newsletterTemplates';
+import { CITIES_HIERARCHY } from '@/features/local-seo/model/schemaPyramid';
+import { haversineDistance } from '@/shared/data/cities/utils';
+
+const HQ = CITIES_HIERARCHY['webdesign-agentur-wetzlar'];
+
+/**
+ * Straight-line km from the Wetzlar office, for cities we have coordinates for.
+ * Decides whether the confirmation offers to come by or suggests a video call —
+ * so it must return undefined rather than a guess when the city is unknown.
+ */
+function distanceFromWetzlar(cityName?: string): number | undefined {
+  if (!cityName || !HQ) return undefined;
+  const norm = (s: string) =>
+    s
+      .toLowerCase()
+      .replace(/\s*\(hq\)\s*$/, '')
+      .trim();
+  const target = norm(cityName);
+  const city = Object.values(CITIES_HIERARCHY).find((c) => norm(c.cityName) === target);
+  return city ? haversineDistance(HQ.lat, HQ.lng, city.lat, city.lng) : undefined;
+}
 
 // Max 5 lead submissions per 10 minutes per IP
 const leadRateLimiter = createRateLimiter({
@@ -127,6 +154,10 @@ export async function saveLeadInternalAction(
       source: lead.source,
       locale: lead.locale,
       score,
+      cityName: lead.cityName,
+      district: lead.district,
+      formKind: lead.formKind,
+      distanceKm: distanceFromWetzlar(lead.cityName),
     };
 
     const summaryLine = `${lead.name} · ${packageName || lead.project || 'Projekt'} · ${lead.email}${lead.phone ? ` · ${lead.phone}` : ''}`;
@@ -136,23 +167,41 @@ export async function saveLeadInternalAction(
     if (process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY) {
       try {
         const supabase = createAdminClient();
-        const { error: dbError } = await supabase.from('leads').insert([
-          {
-            name: lead.name,
-            email: lead.email,
-            phone: lead.phone ?? null,
-            company: lead.company ?? null,
-            message: lead.message ?? null,
-            project: packageName || lead.project || null,
-            source: lead.source ?? null,
-            selected_package_id: pkg?.id ?? null,
-            package_name: packageName ?? null,
-            selected_module_ids: pkg ? [pkg.basisModuleId, ...lead.addonIds] : lead.addonIds,
-            delivery_days: pkg?.deliveryDays ?? null,
-            locale: lead.locale,
-            score,
-          },
-        ]);
+        const baseRow = {
+          name: lead.name,
+          email: lead.email,
+          phone: lead.phone ?? null,
+          company: lead.company ?? null,
+          message: lead.message ?? null,
+          project: packageName || lead.project || null,
+          source: lead.source ?? null,
+          selected_package_id: pkg?.id ?? null,
+          package_name: packageName ?? null,
+          selected_module_ids: pkg ? [pkg.basisModuleId, ...lead.addonIds] : lead.addonIds,
+          delivery_days: pkg?.deliveryDays ?? null,
+          locale: lead.locale,
+          score,
+        };
+        const originRow = {
+          city_name: lead.cityName ?? null,
+          district: lead.district ?? null,
+          form_kind: lead.formKind ?? null,
+        };
+
+        let { error: dbError } = await supabase
+          .from('leads')
+          .insert([{ ...baseRow, ...originRow }]);
+
+        // A deploy can land before 20260905_leads_origin_columns.sql is applied.
+        // Rather than lose the row until someone notices, retry without the new
+        // columns and say so in the log.
+        if (dbError && /column .* does not exist|schema cache/i.test(dbError.message ?? '')) {
+          console.warn(
+            '[saveLeadInternal] origin columns missing — apply 20260905_leads_origin_columns.sql. Storing without them.'
+          );
+          ({ error: dbError } = await supabase.from('leads').insert([baseRow]));
+        }
+
         if (dbError) {
           console.error('Supabase lead insert failed (non-blocking):', dbError);
           dbStatus = 'failed';
@@ -181,23 +230,45 @@ export async function saveLeadInternalAction(
 
     const adminEmail = getAdminEmail();
     const primaryAdmin = Array.isArray(adminEmail) ? adminEmail[0] : adminEmail;
+
+    // A newsletter signup is not a project enquiry. It used to receive one:
+    // "Hallo Newsletter Subscriber", the string "Source: Newsletter" quoted back
+    // as the subscriber's own message, and a promise of a fixed-price quote.
+    const isNewsletter = lead.formKind === 'newsletter';
+    const dateStr = new Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' });
+
     const [adminRes, customerRes] = await Promise.all([
       sendEmail({
-        kind: 'lead_agency',
+        kind: isNewsletter ? 'newsletter_agency' : 'lead_agency',
         to: adminEmail,
-        subject: getAgencyLeadSubject(emailPayload),
-        html: generateAgencyLeadEmailHtml(emailPayload),
+        subject: isNewsletter
+          ? getAgencyNewsletterSubject(lead.email)
+          : getAgencyLeadSubject(emailPayload),
+        html: isNewsletter
+          ? generateAgencyNewsletterHtml(lead.email, dateStr)
+          : generateAgencyLeadEmailHtml(emailPayload),
         replyTo: lead.email,
-        tags: [{ name: 'kind', value: 'lead_agency' }],
+        tags: [{ name: 'kind', value: isNewsletter ? 'newsletter_agency' : 'lead_agency' }],
       }),
-      sendEmail({
-        kind: 'lead_customer',
-        to: lead.email,
-        subject: getCustomerConfirmationSubject(emailPayload),
-        html: generateCustomerConfirmationEmailHtml(emailPayload),
-        replyTo: primaryAdmin,
-        tags: [{ name: 'kind', value: 'lead_customer' }],
-      }),
+      sendEmail(
+        {
+          kind: isNewsletter ? 'newsletter_customer' : 'lead_customer',
+          to: lead.email,
+          subject: isNewsletter
+            ? getNewsletterConfirmationSubject(lead.locale)
+            : getCustomerConfirmationSubject(emailPayload),
+          html: isNewsletter
+            ? generateNewsletterConfirmationHtml(lead.locale)
+            : generateCustomerConfirmationEmailHtml(emailPayload),
+          replyTo: primaryAdmin,
+          tags: [{ name: 'kind', value: isNewsletter ? 'newsletter_customer' : 'lead_customer' }],
+        },
+        // Never send a customer-facing mail from onboarding@resend.dev: a German
+        // branded message from a stranger's domain reads as phishing and burns
+        // the reputation of the single mailbox this agency owns. The agency copy
+        // above keeps the fallback, so the lead still arrives.
+        { allowFallbackSender: false }
+      ),
     ]);
 
     const emailStatus =

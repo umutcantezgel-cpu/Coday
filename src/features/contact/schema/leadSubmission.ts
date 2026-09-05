@@ -28,6 +28,19 @@ export const leadSubmissionSchema = z.object({
   message: optionalTrimmed(4000),
   project: optionalTrimmed(160),
   source: optionalTrimmed(80),
+  /**
+   * Where the enquiry came from, as data rather than prose.
+   *
+   * Five of the six forms used to fold this into `message` — "Anfrage von
+   * lokaler SEO-Landingpage für Wetzlar… Telefon: …" — and the customer
+   * confirmation quotes `message` back verbatim, so people were shown our
+   * internal labels and their own phone number. As fields they can drive the
+   * agency notification and the customer's copy instead, and `message` holds
+   * only what the person actually typed.
+   */
+  cityName: optionalTrimmed(80),
+  district: optionalTrimmed(80),
+  formKind: z.enum(['contact', 'quick', 'local', 'gov', 'newsletter']).optional(),
   locale: z.enum(['de', 'en']).default('de'),
   /** Package id or alias; unknown values become `null` instead of failing. */
   packageId: z

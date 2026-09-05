@@ -89,8 +89,12 @@ export const QuickContactForm: React.FC = () => {
         name: formData.name.trim(),
         email: formData.email.trim(),
         phone: formData.phone ? formData.phone.trim() : undefined,
-        message: 'Lead from Homepage Quick Contact Form',
+        // No `message`: this form has no message field, and the confirmation
+        // quotes `message` back to the customer — people were reading
+        // "Ihre Nachricht: Lead from Homepage Quick Contact Form".
+        formKind: 'quick',
         source: 'quick_contact',
+        locale: locale === 'en' ? 'en' : 'de',
       });
 
       if (!result.success) throw new Error(result.error || 'Unknown error');

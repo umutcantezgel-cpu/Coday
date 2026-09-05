@@ -38,7 +38,7 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Löhnberg | High-End Web Development · Coday',
+      title: 'Web Design Löhnberg & Web Agency · Coday',
       description:
         'Web design & Local SEO for Löhnberg (35792), Niedershausen, Selters & Obershausen. Ultra-fast Next.js websites for crafts, industry along B49 & tourism.',
       keywords: [
@@ -53,7 +53,7 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Löhnberg | Webseiten vom lokalen Profi · Coday',
+    title: 'Webdesign Löhnberg & Webentwicklung · Coday',
     description:
       'Webdesign & Local SEO für Löhnberg (35792), Niedershausen, Selters & Obershausen. Schnelle Next.js Websites für Handwerk & Tourismus. Feste Konditionen.',
     keywords: [
@@ -192,8 +192,8 @@ export default async function WebdesignLoehnbergPage({
         }
         description={
           isEn
-            ? 'High-speed Next.js platforms, local search engine dominance, and turnkey lead generation for crafts, B49 manufacturing & tourism in Löhnberg, Niedershausen, Obershausen & Selters.'
-            : 'Speziell für Handwerk, Bauunternehmen, B2B-Fertigung an der B49 und Lahntal-Tourismus in Löhnberg, Niedershausen, Obershausen und Selters. Sub-0,3s Ladezeiten, 100/100 Core Web Vitals und planbare Neukundengewinnung. Verbindliche Festpreise auf Anfrage.'
+            ? 'Web design Löhnberg and web agency solutions: High-speed Next.js platforms, local search engine dominance, and turnkey lead generation for crafts, B49 manufacturing & tourism in Löhnberg, Niedershausen, Obershausen & Selters.'
+            : 'Webdesign Löhnberg und Webentwicklung für Betriebe: Speziell für Handwerk, Bauunternehmen, B2B-Fertigung an der B49 und Lahntal-Tourismus in Löhnberg, Niedershausen, Obershausen und Selters. Sub-0,3s Ladezeiten, 100/100 Core Web Vitals und planbare Neukundengewinnung.'
         }
         cityName="Löhnberg"
         sourceTag="local_seo_loehnberg"

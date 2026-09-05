@@ -133,12 +133,12 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
               <>
                 The European Commission provides a platform for online dispute resolution (ODR):{' '}
                 <a
-                  href="https://ec.europa.eu/consumers/odr/"
+                  href="https://ec.europa.eu/consumers/odr/main/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-primary-600 hover:underline"
                 >
-                  https://ec.europa.eu/consumers/odr/
+                  https://ec.europa.eu/consumers/odr/main/
                 </a>
                 .<br />
                 Our e-mail address can be found above in the imprint.
@@ -148,12 +148,12 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
                 Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS)
                 bereit:{' '}
                 <a
-                  href="https://ec.europa.eu/consumers/odr/"
+                  href="https://ec.europa.eu/consumers/odr/main/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-primary-600 hover:underline"
                 >
-                  https://ec.europa.eu/consumers/odr/
+                  https://ec.europa.eu/consumers/odr/main/
                 </a>
                 .<br />
                 Unsere E-Mail-Adresse finden Sie oben im Impressum.

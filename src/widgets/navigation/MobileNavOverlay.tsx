@@ -8,7 +8,6 @@ import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { CaretDown, ArrowRight, X } from '@phosphor-icons/react/dist/ssr';
 import { LanguageSwitcher } from '@/widgets/navigation/LanguageSwitcher';
 import { NavItem } from '@/widgets/navigation/config';
-import '@/widgets/navigation/MobileReadyNav.css';
 
 import { useFocusTrap } from '@/shared/hooks/useFocusTrap';
 import { useScrollLock } from '@/hooks/use-scroll-lock';

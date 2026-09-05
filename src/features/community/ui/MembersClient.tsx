@@ -171,13 +171,13 @@ const Members: React.FC = () => {
               {isEn ? 'Central Hesse & Rhine-Main' : 'Mittelhessen & Rhein-Main'}
             </span>
             <h1 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl text-secondary tracking-tight">
-              <span>{isEn ? 'Partner ' : 'Partner-'}</span>
+              <span>{isEn ? 'Coday Partner ' : 'Coday Partner-'}</span>
               <GradientText
                 colors={['#147a7a', '#2563eb', '#147a7a']}
                 animationSpeed={8}
                 className="inline-block"
               >
-                {isEn ? 'Network' : 'Netzwerk'}
+                {isEn ? 'Network Hesse' : 'Netzwerk Mittelhessen'}
               </GradientText>
             </h1>
             <p className="text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed">

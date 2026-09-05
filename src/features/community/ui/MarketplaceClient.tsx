@@ -191,13 +191,13 @@ const Marketplace: React.FC = () => {
             {isEn ? 'Add-ons for your website' : 'Erweiterungen für Ihre Website'}
           </span>
           <h1 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl text-secondary tracking-tight">
-            <span>{isEn ? 'Digital ' : 'Digitale '}</span>
+            <span>{isEn ? 'Digital Website ' : 'Digitale Website-'}</span>
             <GradientText
               colors={['#147a7a', '#2563eb', '#147a7a']}
               animationSpeed={8}
               className="inline-block"
             >
-              {isEn ? 'Modules' : 'Bausteine'}
+              {isEn ? 'Modules & Features' : 'Bausteine & Module'}
             </GradientText>
           </h1>
           <p className="text-base sm:text-lg text-slate-600 max-w-3xl leading-relaxed">

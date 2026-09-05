@@ -14,14 +14,14 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Professional Web Design in Wetzlar & Hesse | Coday',
+      title: 'Web Design & UI/UX Design Services · Coday',
       description:
-        'Premium web design by experts in Wetzlar. Modern layouts, high conversion rates and outstanding aesthetics for your business in Central Hesse. Get started.',
+        'High-end UI/UX web design, responsive layouts and intuitive design systems for measurable conversion growth. Inquire now without obligation.',
       keywords: [
-        'Web Design Wetzlar',
-        'Professional Web Design Hesse',
+        'Web Design Services',
         'UI UX Design Agency',
         'Modern Website Design',
+        'Design Systems Development',
         'Coday Web Design',
       ],
       path: '/en/services/web-design',
@@ -29,15 +29,15 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: 'Professionelles Webdesign in Wetzlar & Hessen | Coday',
+    title: 'Webdesign & UI/UX Design Leistungen · Coday',
     description:
-      'Premium Webdesign vom Profi in Wetzlar. Moderne Layouts, hohe Konversionsraten und zeitlose Ästhetik für Unternehmen in Mittelhessen. Jetzt starten.',
+      'High-End UI/UX Webdesign, Responsive Layouts und intuitive Design-Systeme für messbare Conversion-Steigerungen. Jetzt unverbindlich anfragen.',
     keywords: [
-      'Webdesign Wetzlar',
-      'Professionelles Webdesign Hessen',
+      'Webdesign Leistungen',
       'UI UX Design Agentur',
-      'Homepage erstellen Wetzlar',
+      'Design Systeme Entwicklung',
       'Modernes Webdesign',
+      'Coday Web Design',
     ],
     path: '/de/services/web-design',
     type: 'money',

@@ -76,6 +76,23 @@ describe('sendEmail', () => {
     expect(sendMock.mock.calls[1][0].from).toBe(FALLBACK_FROM);
   });
 
+  /**
+   * Customer-facing mail must never arrive from onboarding@resend.dev: a German
+   * branded message from a stranger's domain reads as phishing, lands in spam,
+   * and spends the reputation of the single mailbox this agency owns. The
+   * agency's own copy keeps the fallback, so the lead still gets through.
+   */
+  it('does not fall back to the shared sender when the caller forbids it', async () => {
+    sendMock.mockResolvedValue({ data: null, error: { message: 'Domain is not verified' } });
+
+    const result = await sendEmail(input, { retryDelayMs: 0, allowFallbackSender: false });
+
+    expect(result.ok).toBe(false);
+    expect(sendMock).toHaveBeenCalledTimes(1);
+    expect(sendMock.mock.calls[0][0].from).toBe('Coday <umut@codayweb.de>');
+    expect(sendMock.mock.calls.some((c) => c[0].from === FALLBACK_FROM)).toBe(false);
+  });
+
   it('gives up on fatal errors without trying the fallback sender', async () => {
     sendMock.mockResolvedValue({
       data: null,

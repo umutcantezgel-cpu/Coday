@@ -29,7 +29,7 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Case Studies & Portfolio | Coday',
+      title: 'Web Design Case Studies & Portfolio · Coday',
       description:
         'Real client projects by Coday: Next.js websites, 100/100 Core Web Vitals and measurable B2B conversion growth for businesses.',
       keywords: [
@@ -44,7 +44,7 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Referenzen & Case Studies | Coday',
+    title: 'Webdesign Referenzen & Case Studies · Coday',
     description:
       'Echte Kundenprojekte von Coday: Next.js Websites, 100/100 Core Web Vitals und messbare Conversion-Steigerungen für Unternehmen.',
     keywords: [
@@ -151,8 +151,8 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
 
             <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-12">
               {isEn
-                ? 'Measurable Impact for Businesses: No fictional mockups or placeholder logos. Every project demonstrates handcrafted Next.js architecture, 100/100 PageSpeed, and measurable conversion growth.'
-                : 'Messbarer Impact für den Mittelstand: Keine fiktiven Mockups oder Platzhalter-Logos. Jedes Projekt demonstriert handgeschriebene Next.js-Architektur, 100/100 PageSpeed und messbare Conversion-Steigerungen.'}
+                ? 'Measurable Impact for Businesses: Explore our web design portfolio and verified case studies of real client projects. Handcrafted Next.js architecture, 100/100 PageSpeed, and measurable conversion growth.'
+                : 'Messbarer Impact für den Mittelstand: Entdecken Sie unsere Webdesign Referenzen und detaillierte Case Studies realer Kunden. Handgeschriebene Next.js-Architektur, 100/100 PageSpeed und messbare Conversion-Steigerungen.'}
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 text-sm font-semibold text-slate-700">

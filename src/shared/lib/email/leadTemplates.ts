@@ -47,6 +47,14 @@ export interface LeadEmailData {
   locale?: EmailLocale;
   score?: number;
   date?: string;
+  /** City page the enquiry came from, when it came from one. */
+  cityName?: string;
+  /** Ortsteil, only the Löhnberg form collects one today. */
+  district?: string;
+  /** Which form was used — decides how the confirmation is worded. */
+  formKind?: 'contact' | 'quick' | 'local' | 'gov' | 'newsletter';
+  /** Straight-line km from Wetzlar, when the city is one we have coordinates for. */
+  distanceKm?: number;
 }
 
 function customerLocale(data: LeadEmailData): EmailLang {
@@ -61,10 +69,20 @@ function digitsOnly(phone: string): string {
 /* 1. Agency notification (always German)                                     */
 /* ------------------------------------------------------------------------- */
 
+const FORM_KIND_LABELS: Record<NonNullable<LeadEmailData['formKind']>, string> = {
+  contact: 'Kontaktformular',
+  quick: 'Schnellkontakt',
+  local: 'Stadtseite',
+  gov: 'Öffentlicher Sektor',
+  newsletter: 'Newsletter',
+};
+
 export function getAgencyLeadSubject(data: LeadEmailData): string {
   const focus = data.packageName || data.project || 'Projekt';
+  // The city belongs in the subject: it decides whether this is a drive or a call.
+  const where = data.cityName ? ` · ${data.cityName}` : '';
   const score = typeof data.score === 'number' ? ` · Score ${data.score}/10` : '';
-  return `Neue Anfrage: ${data.name} · ${focus}${score}`;
+  return `Neue Anfrage: ${data.name}${where} · ${focus}${score}`;
 }
 
 export function generateAgencyLeadEmailHtml(data: LeadEmailData): string {
@@ -168,6 +186,26 @@ export function generateAgencyLeadEmailHtml(data: LeadEmailData): string {
               ? `<strong style="color: ${hot ? EMAIL_COLORS.success : EMAIL_COLORS.heading};">${score}/10${hot ? ' · heiß' : ''}</strong>`
               : '—',
         },
+        // City and Ortsteil used to be buried in the message prose; as their own
+        // rows they answer "drive there or call?" at a glance.
+        ...(data.cityName
+          ? [
+              {
+                label: 'Ort',
+                value:
+                  escapeHtml(data.cityName) +
+                  (typeof data.distanceKm === 'number'
+                    ? ` <span style="color: ${EMAIL_COLORS.faint}; font-size: 12px;">(${Math.round(data.distanceKm)} km${data.distanceKm <= ON_SITE_RADIUS_KM ? ', Vor-Ort-Termin angeboten' : ''})</span>`
+                    : ''),
+                highlight: true,
+              },
+            ]
+          : []),
+        ...(data.district ? [{ label: 'Ortsteil', value: escapeHtml(data.district) }] : []),
+        {
+          label: 'Formular',
+          value: data.formKind ? FORM_KIND_LABELS[data.formKind] : source,
+        },
         { label: 'Quelle', value: source },
         { label: 'Sprache', value: locale },
         { label: 'Eingang', value: dateStr },
@@ -194,6 +232,23 @@ export function generateAgencyLeadEmailHtml(data: LeadEmailData): string {
 /* 2. Customer confirmation (German or English, plain language, no prices)   */
 /* ------------------------------------------------------------------------- */
 
+/**
+ * Wetzlar and back in a morning. Beyond this the on-site offer stops being
+ * honest, so the copy offers a video call instead of implying a drive.
+ */
+export const ON_SITE_RADIUS_KM = 45;
+
+interface CustomerContext {
+  /** They left a number, so the first contact is a call rather than an e-mail. */
+  hasPhone: boolean;
+  /** They picked a package, so the quote is for a known combination. */
+  hasPackage: boolean;
+  /** Close enough to Wetzlar that an on-site meeting is a real offer. */
+  nearby: boolean;
+  /** Already escaped; only rendered when `nearby` is true. */
+  cityName: string;
+}
+
 const CUSTOMER_COPY = {
   de: {
     subjectWithPackage: (pkg: string) => `Ihre Anfrage bei Coday: ${pkg}`,
@@ -204,27 +259,43 @@ const CUSTOMER_COPY = {
     intro:
       'Ihre Nachricht ist angekommen. Ich melde mich innerhalb von 24 Stunden persönlich bei Ihnen.',
     greeting: (name: string) => `Hallo ${name},`,
-    body: 'schön, dass Sie sich für eine Website von Coday interessieren. Hier noch einmal Ihre Auswahl und was als Nächstes passiert.',
+    body: (ctx: CustomerContext) =>
+      ctx.hasPackage
+        ? 'schön, dass Sie sich für eine Website von Coday interessieren. Hier noch einmal Ihre Auswahl und was als Nächstes passiert.'
+        : 'schön, dass Sie sich für eine Website von Coday interessieren. Hier steht, was ich von Ihnen weiß und was als Nächstes passiert.',
     selectionTitle: 'Ihre Auswahl',
     packageLabel: 'Paket',
+    /** Without a configurator selection there is no "Paket" and no "Auswahl". */
+    enquiryTitle: 'Ihre Anfrage',
+    enquiryLabel: 'Ihr Anliegen',
     deliveryLabel: 'Fertig in',
     deliveryValue: (days: number) => `ca. ${days} Werktagen nach Projektstart`,
     addonsLabel: 'Extras',
     noAddons: 'Keine Extras gewählt. Sie können jederzeit im Gespräch welche ergänzen.',
     messageLabel: 'Ihre Nachricht',
     nextTitle: 'Wie geht es jetzt weiter?',
-    steps: [
+    steps: (ctx: CustomerContext) => [
       {
-        title: 'Ich melde mich innerhalb von 24 Stunden',
-        text: 'Sie erhalten eine persönliche Rückmeldung von mir, keine automatische Antwort.',
+        title: ctx.hasPhone
+          ? 'Ich rufe Sie innerhalb von 24 Stunden an'
+          : 'Ich schreibe Ihnen innerhalb von 24 Stunden',
+        text: ctx.hasPhone
+          ? 'Sie haben mir Ihre Nummer hinterlassen, also melde ich mich direkt telefonisch. Passt es gerade nicht, schreiben Sie mir einfach zurück.'
+          : 'Sie erhalten eine persönliche Rückmeldung von mir, keine automatische Antwort.',
       },
       {
-        title: 'Kurzes, kostenloses Gespräch',
-        text: 'In etwa 15 Minuten klären wir Ihre Ziele und den Umfang. Ohne Fachchinesisch.',
+        title: ctx.nearby
+          ? 'Gespräch bei Ihnen vor Ort oder per Video'
+          : 'Kurzes, kostenloses Gespräch',
+        text: ctx.nearby
+          ? `${ctx.cityName} liegt in meiner Nähe — ich komme gern zu Ihnen in den Betrieb. Per Video geht es genauso, wenn Ihnen das lieber ist. Rund 20 Minuten.`
+          : 'In etwa 15 Minuten per Telefon oder Video. Wir klären Ihre Ziele und den Umfang, ohne Fachchinesisch.',
       },
       {
         title: 'Verbindliches Festpreis-Angebot',
-        text: 'Danach erhalten Sie Ihr Angebot. Sie entscheiden in Ruhe und zahlen erst, wenn Sie es annehmen.',
+        text: ctx.hasPackage
+          ? 'Danach erhalten Sie den Festpreis für genau die Zusammenstellung, die Sie gewählt haben. Sie entscheiden in Ruhe und zahlen erst, wenn Sie annehmen.'
+          : 'Danach erhalten Sie Ihr Angebot zum Festpreis. Sie entscheiden in Ruhe und zahlen erst, wenn Sie es annehmen.',
       },
     ],
     noRisk:
@@ -244,27 +315,39 @@ const CUSTOMER_COPY = {
     headline: 'Thank you for your request!',
     intro: 'Your message has arrived. I will get back to you personally within 24 hours.',
     greeting: (name: string) => `Hello ${name},`,
-    body: 'great that you are interested in a website by Coday. Here is your selection again and what happens next.',
+    body: (ctx: CustomerContext) =>
+      ctx.hasPackage
+        ? 'great that you are interested in a website by Coday. Here is your selection again and what happens next.'
+        : 'great that you are interested in a website by Coday. Here is what I have from you and what happens next.',
     selectionTitle: 'Your selection',
     packageLabel: 'Package',
+    /** Without a configurator selection there is no "package" and no "selection". */
+    enquiryTitle: 'Your enquiry',
+    enquiryLabel: 'What you asked about',
     deliveryLabel: 'Ready in',
     deliveryValue: (days: number) => `about ${days} business days after kick-off`,
     addonsLabel: 'Extras',
     noAddons: 'No extras selected. You can add some at any time during our call.',
     messageLabel: 'Your message',
     nextTitle: 'What happens next?',
-    steps: [
+    steps: (ctx: CustomerContext) => [
       {
-        title: 'I get back to you within 24 hours',
-        text: 'You receive a personal reply from me, not an automated one.',
+        title: ctx.hasPhone ? 'I call you within 24 hours' : 'I write back within 24 hours',
+        text: ctx.hasPhone
+          ? 'You left me your number, so I will call you directly. If it is a bad moment, just reply to this e-mail instead.'
+          : 'You receive a personal reply from me, not an automated one.',
       },
       {
-        title: 'Short, free call',
-        text: 'In about 15 minutes we clarify your goals and the scope. No tech jargon.',
+        title: ctx.nearby ? 'On site with you, or by video' : 'Short, free call',
+        text: ctx.nearby
+          ? `${ctx.cityName} is close to me — I am happy to come to your premises. Video works just as well if you prefer. Around 20 minutes.`
+          : 'About 15 minutes by phone or video. We clarify your goals and the scope, without tech jargon.',
       },
       {
         title: 'Binding fixed-price quote',
-        text: 'Then you receive your quote. Decide at your own pace and pay only once you accept it.',
+        text: ctx.hasPackage
+          ? 'Then you receive the fixed price for exactly the combination you selected. Decide at your own pace and pay only once you accept.'
+          : 'Then you receive your fixed-price quote. Decide at your own pace and pay only once you accept it.',
       },
     ],
     noRisk: 'Non-binding and free. There is no cost to you until you accept the quote.',
@@ -293,24 +376,48 @@ export function generateCustomerConfirmationEmailHtml(data: LeadEmailData): stri
   const message = escapeHtml(data.message || '');
   const addons = (data.addons ?? []).map((a) => escapeHtml(a.name));
 
+  const ctx: CustomerContext = {
+    hasPhone: Boolean(data.phone && data.phone.trim()),
+    hasPackage: Boolean(data.packageId),
+    nearby:
+      Boolean(data.cityName) &&
+      typeof data.distanceKm === 'number' &&
+      data.distanceKm <= ON_SITE_RADIUS_KM,
+    cityName: escapeHtml(data.cityName || ''),
+  };
+
   const body = [
     renderParagraph(copy.greeting(`<strong>${name}</strong>`)),
-    renderParagraph(copy.body),
+    renderParagraph(copy.body(ctx)),
+    // Only a configurator lead has a package and extras. Everyone else was
+    // shown "Paket: Webdesign Herborn" and an empty extras list for a selection
+    // they never made.
     renderPanel(
       `${renderKeyValue([
-        { label: copy.packageLabel, value: packageName, highlight: true },
+        {
+          label: ctx.hasPackage ? copy.packageLabel : copy.enquiryLabel,
+          value: packageName,
+          highlight: true,
+        },
         ...(data.deliveryDays
           ? [{ label: copy.deliveryLabel, value: copy.deliveryValue(data.deliveryDays) }]
           : []),
-      ])}
+      ])}${
+        // Extras belong here whenever the configurator was involved — a package,
+        // add-ons, or both. A city or quick-contact lead chose neither and used
+        // to be shown an empty "Extras" list for a selection they never made.
+        ctx.hasPackage || addons.length > 0
+          ? `
       <p style="margin: 14px 0 6px 0; color: ${EMAIL_COLORS.accentDark}; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;">${copy.addonsLabel}</p>
-      ${renderChecklist(addons, copy.noAddons)}`,
+      ${renderChecklist(addons, copy.noAddons)}`
+          : ''
+      }`,
       'amber',
-      copy.selectionTitle
+      ctx.hasPackage ? copy.selectionTitle : copy.enquiryTitle
     ),
     message ? `${renderHeading(copy.messageLabel)}${renderQuote(`„${message}“`)}` : '',
     renderHeading(copy.nextTitle),
-    renderPanel(renderSteps([...copy.steps]), 'neutral'),
+    renderPanel(renderSteps(copy.steps(ctx)), 'neutral'),
     renderNote(`&#10003; ${copy.noRisk}`, 'emerald'),
     renderParagraph(copy.bookingText),
     renderButtonRow([

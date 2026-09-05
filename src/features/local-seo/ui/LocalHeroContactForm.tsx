@@ -74,15 +74,21 @@ export const LocalHeroContactForm: React.FC<LocalHeroContactFormProps> = ({
     setError(null);
 
     try {
-      const fullMessage = `Anfrage von lokaler SEO-Landingpage für ${cityName}.\n\nNachricht: ${formData.message || '-'}\nTelefon: ${formData.phone || '-'}`;
-
+      // `message` carries only what the person typed. It used to be wrapped in
+      // "Anfrage von lokaler SEO-Landingpage für <Stadt>… Telefon: …", and the
+      // confirmation quotes `message` back — so customers were shown our
+      // internal label for the page plus their own number. City and phone are
+      // fields of their own; they do not belong in prose.
       const result = await saveLeadInternalAction({
         name: formData.name.trim(),
         email: formData.email.trim(),
         phone: formData.phone ? formData.phone.trim() : undefined,
-        message: fullMessage,
+        message: formData.message ? formData.message.trim() : undefined,
         project: `Webdesign ${cityName}`,
+        cityName,
+        formKind: 'local',
         source: sourceTag,
+        locale: isEn ? 'en' : 'de',
       });
 
       if (!result.success) throw new Error(result.error || 'Unknown error');

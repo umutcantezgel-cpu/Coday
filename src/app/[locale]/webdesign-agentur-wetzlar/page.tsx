@@ -48,7 +48,7 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: 'Get a Website Built in Wetzlar | Fixed Price · Coday',
       description:
-        'Having a website built in Wetzlar: fixed price after a free needs analysis, live in 10 to 14 working days, sub-0.3s load times. Built by the owner personally.',
+        'Get your website built in Wetzlar: fixed price, live in 10 to 14 working days and sub-0.3s load times. Built by the owner directly.',
       keywords: [
         'Get a Website Built in Wetzlar',
         'Website Creation Wetzlar',
@@ -64,7 +64,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Website erstellen lassen in Wetzlar | Festpreis · Coday',
     description:
-      'Website erstellen lassen in Wetzlar: verbindlicher Festpreis nach kostenloser Bedarfsanalyse, in 10 bis 14 Werktagen online, Ladezeiten unter 0,3s. Vom Inhaber persönlich.',
+      'Website erstellen lassen in Wetzlar: Verbindlicher Festpreis, in 10 bis 14 Werktagen online und Ladezeit < 0,3s. Vom Inhaber gebaut.',
     keywords: [
       'Website erstellen lassen Wetzlar',
       'Homepage erstellen lassen Wetzlar',

@@ -46,7 +46,7 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Gießen District | Web Agency · Coday',
+      title: 'Web Design for Gießen District · Coday',
       description:
         'Web design in the Gießen district. Ultra-fast websites for clinics, trade & SME in Linden, Pohlheim, Lich & Grünberg. Fixed prices on request.',
       keywords: [
@@ -61,7 +61,7 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Landkreis Gießen | Webagentur · Coday',
+    title: 'Webdesign im Landkreis Gießen · Coday',
     description:
       'Webdesign im Landkreis Gießen. Ultraschnelle Websites für Praxen, Handwerk & Mittelstand in Linden, Pohlheim, Lich & Grünberg. Festpreise auf Anfrage.',
     keywords: [

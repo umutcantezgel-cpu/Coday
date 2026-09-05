@@ -22,6 +22,7 @@ const BLOCKED_PATHS = [
   // products that were never sold. They have been rebuilt around what the
   // agency actually offers and are open to crawlers again.
   '/*/privacy',
+  '/documents/',
 ];
 
 export default function robots(): MetadataRoute.Robots {

@@ -22,7 +22,7 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: 'Web Design Academy & Video Masterclasses | Coday Wetzlar',
       description:
-        'Watch high-impact video tutorials on Next.js web development, local SEO, conversion rate optimization, and website pricing by Coday Web Agency Wetzlar.',
+        'Video masterclasses on Next.js web development, local SEO and conversion rate optimization by Coday Web Agency Wetzlar.',
       keywords: [
         'Web Design Academy',
         'Web Design Videos Wetzlar',
@@ -38,7 +38,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Webdesign Academy & Video-Masterclasses | Coday Wetzlar',
     description:
-      'Praxisnahe Video-Masterclasses zu Next.js Webdesign, lokaler SEO-Dominanz, Conversion-Optimierung und Website-Kalkulation von der Coday Webagentur Wetzlar.',
+      'Video-Masterclasses zu Next.js Webdesign, lokaler SEO-Dominanz und Conversion-Optimierung von der Coday Webagentur Wetzlar.',
     keywords: [
       'Webdesign Academy',
       'Webdesign Videos Wetzlar',

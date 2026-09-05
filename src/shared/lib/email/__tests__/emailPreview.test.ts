@@ -9,6 +9,10 @@ import {
   generateAgencyBookingEmailHtml,
   generateCustomerBookingEmailHtml,
 } from '@/shared/lib/email/bookingTemplates';
+import {
+  generateAgencyNewsletterHtml,
+  generateNewsletterConfirmationHtml,
+} from '@/shared/lib/email/newsletterTemplates';
 
 /**
  * Writes rendered e-mails to EMAIL_PREVIEW_DIR for visual checks:
@@ -17,7 +21,7 @@ import {
 const dir = process.env.EMAIL_PREVIEW_DIR;
 
 describe.skipIf(!dir)('email preview export', () => {
-  it('writes the four templates as HTML files', () => {
+  it('writes every template as an HTML file', () => {
     const lead = {
       name: 'Max Mustermann',
       email: 'max@mustermann-bau.de',
@@ -64,6 +68,36 @@ describe.skipIf(!dir)('email preview export', () => {
         locale: 'en',
         phone: undefined,
       }),
+      // A city lead close enough for an on-site meeting, no package, no phone —
+      // the combination that reads most differently from the one above.
+      'lead-customer-local-nearby.html': generateCustomerConfirmationEmailHtml({
+        name: 'Sabine Klein',
+        email: 'kontakt@klein-elektro.de',
+        project: 'Webdesign Herborn',
+        cityName: 'Herborn',
+        distanceKm: 22,
+        formKind: 'local',
+        locale: 'de',
+      }),
+      'lead-agency-local.html': generateAgencyLeadEmailHtml({
+        name: 'Sabine Klein',
+        email: 'kontakt@klein-elektro.de',
+        phone: '+49 2772 555123',
+        project: 'Webdesign Herborn',
+        cityName: 'Herborn',
+        district: 'Burg',
+        distanceKm: 22,
+        formKind: 'local',
+        source: 'local_seo_herborn',
+        locale: 'de',
+        score: 6,
+      }),
+      'newsletter-customer-de.html': generateNewsletterConfirmationHtml('de'),
+      'newsletter-customer-en.html': generateNewsletterConfirmationHtml('en'),
+      'newsletter-agency.html': generateAgencyNewsletterHtml(
+        'sabine@klein-elektro.de',
+        '05.09.2026, 10:12'
+      ),
     };
     fs.mkdirSync(dir!, { recursive: true });
     for (const [name, html] of Object.entries(files)) {
@@ -77,6 +111,6 @@ describe.skipIf(!dir)('email preview export', () => {
         .map((f) => `<li><a href="${f}">${f}</a></li>`)
         .join('')}</ul>`
     );
-    expect(Object.keys(files)).toHaveLength(6);
+    expect(Object.keys(files)).toHaveLength(11);
   });
 });

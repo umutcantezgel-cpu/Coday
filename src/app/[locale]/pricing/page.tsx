@@ -19,29 +19,38 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'pricing' });
   const isEn = locale === 'en';
 
+  if (isEn) {
+    return generatePageMetadata({
+      title: 'Web Design Pricing & Packages | Rates · Coday',
+      description:
+        'Transparent web design pricing: fixed packages, zero hidden costs, live in 10-14 days with sub-0.3s load times. Built by owner.',
+      keywords: [
+        'Website Packages',
+        'Web Design Pricing',
+        'Website Costs Wetzlar',
+        'Fixed Price Web Development',
+        'Coday Web Pricing',
+      ],
+      path: '/en/pricing',
+      type: 'money',
+    });
+  }
+
   return generatePageMetadata({
-    title: t('meta.title'),
-    description: t('meta.description'),
-    keywords: isEn
-      ? [
-          'Website Packages',
-          'Web Design Pricing',
-          'Website Costs Wetzlar',
-          'Fixed Price Web Development',
-          'Coday Web Pricing',
-        ]
-      : [
-          'Website Pakete',
-          'Webdesign Preise',
-          'Website Kosten Wetzlar',
-          'Festpreis Webentwicklung',
-          'Coday Web Preise',
-        ],
-    path: `/${isEn ? 'en' : 'de'}/pricing`,
-    type: 'default',
+    title: 'Webdesign Preise & Pakete | Festpreis · Coday',
+    description:
+      'Transparente Webdesign Preise: Verbindlicher Festpreis, keine versteckten Kosten, in 10-14 Werktagen online. Persönlich vom Inhaber.',
+    keywords: [
+      'Website Pakete',
+      'Webdesign Preise',
+      'Website Kosten Wetzlar',
+      'Festpreis Webentwicklung',
+      'Coday Web Preise',
+    ],
+    path: '/de/pricing',
+    type: 'money',
   });
 }
 

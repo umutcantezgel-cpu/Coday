@@ -65,10 +65,17 @@ const Newsletter: React.FC = () => {
 
     setStatus('loading');
     try {
+      // No invented name and no synthetic message: both reached the subscriber.
+      // The greeting read "Hallo Newsletter Subscriber" and "Source: Newsletter"
+      // was quoted back as their own message. `formKind` routes this to the
+      // newsletter confirmation instead of the project-enquiry one, which
+      // promised a personal call and a binding fixed-price quote.
       const result = await saveLeadInternalAction({
         email,
-        name: 'Newsletter Subscriber',
-        message: 'Source: Newsletter',
+        name: email.split('@')[0].slice(0, 60) || 'Newsletter',
+        formKind: 'newsletter',
+        source: 'newsletter',
+        locale: isEn ? 'en' : 'de',
       });
 
       if (!result.success) throw new Error(result.error || 'Failed to subscribe');
