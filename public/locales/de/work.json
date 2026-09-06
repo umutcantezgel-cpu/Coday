@@ -79,6 +79,7 @@
     "not_found": "Projekt nicht gefunden",
     "back_to_overview": "Zurück zur Übersicht",
     "breadcrumb_projects": "Projekte",
+    "live_site_cta": "Live-Website ansehen",
     "sidebar": {
       "client": "Kunde",
       "industry": "Branche",
@@ -90,7 +91,8 @@
       "result": "Ergebnis",
       "interested_title": "Interessiert an ähnlichen Ergebnissen?",
       "request_project": "Projekt anfragen",
-      "related": "Verwandte Services"
+      "related": "Verwandte Services",
+      "live_site": "Live-Website"
     },
     "hero": {
       "title": "Wir erschaffen digitale Monumente",

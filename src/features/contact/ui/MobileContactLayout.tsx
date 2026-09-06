@@ -1,13 +1,30 @@
 'use client';
-import React, { useState, useEffect, Suspense, lazy } from 'react';
+import React, { useState, Suspense } from 'react';
 import { m, AnimatePresence } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
+import dynamic from 'next/dynamic';
 import { useCalculatorStore } from '@/features/calculator/model/store';
-import BookingCalendar from '@/features/booking/ui/BookingCalendar';
-const ApplicationWizard = lazy(() => import('@/features/contact/ApplicationWizard'));
-import { Icon } from '@/shared/ui/Icon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { Quotes, Star, Calendar, Envelope } from '@phosphor-icons/react/dist/ssr';
 import { Skeleton } from '@/shared/ui/Skeleton';
+
+// Same boundary as ContactClient so the wizard is one chunk, not two.
+const ApplicationWizard = dynamic(() => import('@/features/contact/ApplicationWizard'), {
+  ssr: false,
+  loading: () => <Skeleton className="h-[400px] w-full rounded-2xl" />,
+});
+// Only fetched when the booking tab is opened. The skeleton matches the calendar's
+// initial height on phones (p-4, steps nav, heading, date cards) so nothing shifts.
+const BookingCalendar = dynamic(() => import('@/features/booking/ui/BookingCalendar'), {
+  ssr: false,
+  loading: () => (
+    <div
+      className="h-[260px] md:h-[340px] w-full animate-pulse rounded-2xl bg-slate-100"
+      aria-hidden="true"
+    />
+  ),
+});
 import { DirectContactCard } from '@/features/contact/ui/DirectContactCard';
 
 export const MobileContactLayout: React.FC = () => {
@@ -79,7 +96,7 @@ export const MobileContactLayout: React.FC = () => {
       <div className="px-4 py-8 border-t border-gray-100 mt-8 bg-white mb-24">
         <div className="bg-gray-50 p-6 rounded-2xl relative overflow-hidden">
           <div className="absolute top-0 right-0 p-4 opacity-10">
-            <Icon name="format_quote" className="text-4xl text-primary w-8 h-8" weight="fill" />
+            <OptimizedIcon icon={Quotes} className="text-4xl text-primary w-8 h-8" weight="fill" />
           </div>
           <p className="text-gray-600 italic mb-4 relative z-10 text-sm">
             "{t('testimonial.text')}"
@@ -94,7 +111,7 @@ export const MobileContactLayout: React.FC = () => {
             </div>
             <div className="ml-auto flex text-yellow-400 text-[10px] gap-0.5">
               {[1, 2, 3, 4, 5].map((i) => (
-                <Icon key={i} name="star" weight="fill" className="w-2.5 h-2.5" />
+                <OptimizedIcon key={i} icon={Star} weight="fill" className="w-2.5 h-2.5" />
               ))}
             </div>
           </div>
@@ -127,9 +144,9 @@ export const MobileContactLayout: React.FC = () => {
                 transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
               />
             )}
-            <Icon
-              name="calendar_today"
-              className={`text-xl mb-0.5 ${activeTab === 'booking' ? 'text-primary' : 'text-slate-400'}`}
+            <OptimizedIcon
+              icon={Calendar}
+              className={`text-xl w-5 h-5 mb-0.5 ${activeTab === 'booking' ? 'text-primary' : 'text-slate-400'}`}
             />
             <span className="relative z-10">{t('mobile.tabs.booking')}</span>
           </button>
@@ -153,9 +170,9 @@ export const MobileContactLayout: React.FC = () => {
                 transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
               />
             )}
-            <Icon
-              name="mail"
-              className={`text-xl mb-0.5 ${activeTab === 'contact' ? 'text-purple-600' : 'text-slate-400'}`}
+            <OptimizedIcon
+              icon={Envelope}
+              className={`text-xl w-5 h-5 mb-0.5 ${activeTab === 'contact' ? 'text-purple-600' : 'text-slate-400'}`}
             />
             <span className="relative z-10">{t('mobile.tabs.contact')}</span>
           </button>

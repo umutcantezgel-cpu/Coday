@@ -1,5 +1,6 @@
 import React from 'react';
-import { Icon } from '@/shared/ui/Icon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { ArrowRight, MapPin } from '@phosphor-icons/react/dist/ssr';
 
 interface InteractiveMapProps {
   className?: string;
@@ -49,7 +50,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
         <div className="absolute bottom-4 left-4 right-4 md:right-auto md:max-w-sm bg-white/95 backdrop-blur-md rounded-xl p-4 shadow-lg border border-gray-200">
           <div className="flex items-start gap-3">
             <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-              <Icon name="location_on" className="text-primary" />
+              <OptimizedIcon icon={MapPin} className="text-primary w-4 h-4" />
             </div>
             <div>
               <h3 className="font-bold text-gray-900 mb-1">Coday Standort</h3>
@@ -64,7 +65,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                 className="text-primary text-sm font-medium hover:underline flex items-center gap-1"
               >
                 Route planen
-                <Icon name="arrow_forward" className="text-sm" />
+                <OptimizedIcon icon={ArrowRight} className="text-sm w-3.5 h-3.5 rtl:-scale-x-100" />
               </a>
             </div>
           </div>

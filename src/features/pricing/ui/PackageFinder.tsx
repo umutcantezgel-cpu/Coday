@@ -41,7 +41,7 @@ export const PackageFinder: React.FC<PackageFinderProps> = ({ packageNames, onSe
   const optionClass = (active: boolean) =>
     `text-left px-4 py-3 rounded-xl border text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
       active
-        ? 'bg-amber-500 border-amber-500 text-white shadow-md'
+        ? 'bg-amber-700 border-amber-700 text-white shadow-md'
         : 'bg-white border-slate-200 text-slate-700 hover:border-amber-400 hover:bg-amber-50'
     }`;
 

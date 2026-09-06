@@ -1,35 +1,31 @@
-'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 
 import BlurText from '@/shared/ui/BlurText';
 import { TestimonialBlock } from '@/shared/ui/TestimonialBlock';
 import { FadeInUp } from '@/shared/ui/MotionWrappers';
 import { GOOGLE_REVIEWS, PROVENEXPERT_REVIEWS, REVIEW_PROFILES } from '@/shared/data/reviews';
+import { ReviewFilter } from '@/widgets/home/ReviewFilter';
 
-type ReviewPlatformFilter = 'all' | 'google' | 'provenexpert';
-
+/**
+ * Server component: all eight review cards are rendered on the server.
+ * The only client-side piece is the small ReviewFilter island, which toggles a
+ * data-review-filter attribute on the grid wrapper; each card hides itself via
+ * CSS when the active filter targets the other platform.
+ */
 export const TestimonialsSection: React.FC = () => {
   const t = useTranslations('home');
   const locale = useLocale();
   const isEn = locale === 'en';
-  const [activeFilter, setActiveFilter] = useState<ReviewPlatformFilter>('all');
 
   const allReviews = [...GOOGLE_REVIEWS, ...PROVENEXPERT_REVIEWS];
-
-  const displayedReviews =
-    activeFilter === 'google'
-      ? GOOGLE_REVIEWS
-      : activeFilter === 'provenexpert'
-        ? PROVENEXPERT_REVIEWS
-        : allReviews;
 
   return (
     <section className="py-[var(--space-section)] bg-surface-light relative overflow-hidden">
       <div className="absolute top-0 start-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto">
           {/* Dual Verified Trust Badges: Google Maps & ProvenExpert */}
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-6">
             <a
@@ -97,70 +93,50 @@ export const TestimonialsSection: React.FC = () => {
               : '100% echte Kundenstimmen — zweifach verifiziert auf Google Maps & ProvenExpert mit 5,0 von 5 Sternen.'}
           </p>
 
-          {/* Platform Filter Buttons */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
-            <button
-              type="button"
-              onClick={() => setActiveFilter('all')}
-              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
-                activeFilter === 'all'
-                  ? 'bg-slate-900 text-white shadow-sm'
-                  : 'bg-white text-slate-700 border border-slate-200 hover:border-slate-300 hover:bg-slate-50'
-              }`}
-            >
-              {isEn ? 'All Reviews (8)' : 'Alle Bewertungen (8)'}
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveFilter('google')}
-              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
-                activeFilter === 'google'
-                  ? 'bg-blue-600 text-white shadow-sm'
-                  : 'bg-white text-slate-700 border border-slate-200 hover:border-blue-300 hover:bg-blue-50/50'
-              }`}
-            >
-              <span className="w-2 h-2 rounded-full bg-blue-400" />
-              <span>Google Maps (4)</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveFilter('provenexpert')}
-              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
-                activeFilter === 'provenexpert'
-                  ? 'bg-emerald-700 text-white shadow-sm'
-                  : 'bg-white text-slate-700 border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50/50'
-              }`}
-            >
-              <span className="w-2 h-2 rounded-full bg-emerald-400" />
-              <span>ProvenExpert (4)</span>
-            </button>
-          </div>
         </div>
 
-        {/* Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          {displayedReviews.map((review, index) => (
-            <FadeInUp key={review.id} delay={index * 0.08} duration={0.4} className="h-full">
-              <TestimonialBlock
-                quote={isEn ? review.quote.en : review.quote.de}
-                authorName={review.authorName}
-                authorPosition={review.authorPosition}
-                authorCompany={review.authorCompany}
-                rating={review.rating}
-                source={review.source}
-                sourceUrl={
+        {/* Platform Filter Buttons (client island) + Reviews Grid (server-rendered, filtered via CSS) */}
+        <ReviewFilter
+          labels={{
+            all: isEn ? 'All Reviews (8)' : 'Alle Bewertungen (8)',
+            google: 'Google Maps (4)',
+            provenexpert: 'ProvenExpert (4)',
+          }}
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            {allReviews.map((review, index) => (
+              <div
+                key={review.id}
+                data-source={review.source === 'Google' ? 'google' : 'provenexpert'}
+                className={
                   review.source === 'Google'
-                    ? REVIEW_PROFILES.googleMaps.url
-                    : REVIEW_PROFILES.provenExpert.url
+                    ? 'h-full [[data-review-filter=provenexpert]_&]:hidden'
+                    : 'h-full [[data-review-filter=google]_&]:hidden'
                 }
-                badge={review.badge}
-                relativeTime={review.relativeTime}
-                verified={review.verified}
-                featured={review.id === 'google-review-1' || review.id === 'google-review-4'}
-              />
-            </FadeInUp>
-          ))}
-        </div>
+              >
+                <FadeInUp delay={index * 0.08} duration={0.4} className="h-full">
+                  <TestimonialBlock
+                    quote={isEn ? review.quote.en : review.quote.de}
+                    authorName={review.authorName}
+                    authorPosition={review.authorPosition}
+                    authorCompany={review.authorCompany}
+                    rating={review.rating}
+                    source={review.source}
+                    sourceUrl={
+                      review.source === 'Google'
+                        ? REVIEW_PROFILES.googleMaps.url
+                        : REVIEW_PROFILES.provenExpert.url
+                    }
+                    badge={review.badge}
+                    relativeTime={review.relativeTime}
+                    verified={review.verified}
+                    featured={review.id === 'google-review-1' || review.id === 'google-review-4'}
+                  />
+                </FadeInUp>
+              </div>
+            ))}
+          </div>
+        </ReviewFilter>
 
         {/* Footer Authority Bar */}
         <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6">

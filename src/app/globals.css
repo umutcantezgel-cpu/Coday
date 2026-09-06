@@ -2,8 +2,24 @@
 /* `@source` resolves relative to this file, so the previous "./src" pointed at
    src/app/src, which does not exist. Tailwind then fell back to scanning from the
    project root and picked up trace.json (45 MB) and baseline-trace.json (75 MB),
-   emitting utilities for strings found inside them. */
-@source "../";
+   emitting utilities for strings found inside them.
+   The scan is now limited to .ts/.tsx files, because only those carry class
+   names: the 70 JSON files under src (local-seo content, avatar data, manifest),
+   the unrendered MDX case studies and the .css/.svg/.ignored/.bak leftovers hold
+   none, and scanning them only emitted utilities for coincidental strings. */
+@source "../**/*.{ts,tsx}";
+/* Server-only code without markup: Sanity schema/client and the Pages Router
+   shell (_app, _document, API routes). Add a Pages Router page with classes and
+   this exclusion must go. */
+@source not "../sanity";
+@source not "../pages";
+/* Components nothing imports (verified with grep before excluding). ScrollStack
+   is not listed because src/shared/ui/index.ts still re-exports it. */
+@source not "../widgets/navigation/CardNav.tsx";
+@source not "../widgets/home/DraggableTechStack.tsx";
+@source not "../widgets/home/GamifiedHeroCta.tsx";
+@source not "../widgets/layout/RocketToTop.tsx";
+@source not "../widgets/layout/AnnouncementBar.tsx";
 @theme {
   /* ═══ TAILWIND V4 INTEGRATION FROM CONFIG ═══ */
   --color-accent: #b45309;

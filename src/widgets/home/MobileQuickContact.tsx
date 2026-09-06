@@ -71,7 +71,7 @@ export const MobileQuickContact: React.FC = () => {
           <span className="block text-base font-bold leading-tight">
             {isEn ? 'Send a quick message' : 'Schnellnachricht senden'}
           </span>
-          <span className="mt-0.5 block text-[13px] font-medium leading-tight text-white/90">
+          <span className="mt-0.5 block text-[13px] font-medium leading-tight text-white">
             {isEn ? 'Two fields · reply in 24 hours' : 'Zwei Felder · Antwort in 24 Stunden'}
           </span>
         </span>

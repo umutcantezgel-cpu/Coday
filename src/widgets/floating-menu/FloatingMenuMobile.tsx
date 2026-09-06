@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { m, AnimatePresence } from 'motion/react';
 import {
   ChatCircle,
@@ -13,27 +13,12 @@ import { useChatStore } from '@/widgets/chatbot/lib/chatStore';
 import { useCookieStore } from '@/shared/lib/cookieStore';
 import { VelocityVoidOverlay } from '@/widgets/velocity-void/VelocityVoidOverlay';
 
-/** True while the mobile conversion bar is on screen (it toggles a body class). */
-function useConversionBarActive(): boolean {
-  const [active, setActive] = useState(false);
-  useEffect(() => {
-    if (typeof document === 'undefined') return;
-    const update = () => setActive(document.body.classList.contains('has-conversion-bar'));
-    update();
-    const observer = new MutationObserver(update);
-    observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
-    return () => observer.disconnect();
-  }, []);
-  return active;
-}
-
 export const FloatingMenuMobile = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isGameActive, setIsGameActive] = useState(false);
 
   const { toggleChat } = useChatStore();
   const { openSettings } = useCookieStore();
-  const barActive = useConversionBarActive();
 
   const handleAction = (action: () => void) => {
     setIsOpen(false);
@@ -79,11 +64,12 @@ export const FloatingMenuMobile = () => {
 
   return (
     <>
+      {/* While the mobile conversion bar is on screen it sets `body.has-conversion-bar`;
+          the FAB moves up by the bar height (64px = CONVERSION_BAR_HEIGHT_PX in
+          MobileConversionBar.tsx) purely in CSS, so no observer is needed here. */}
       <div
         id="fab-container"
-        className={`fixed right-4 z-[9999] md:hidden flex flex-col items-end gap-3 pointer-events-none transition-[bottom] duration-300 ${
-          barActive ? 'bottom-[calc(1.5rem+64px+env(safe-area-inset-bottom))]' : 'bottom-6'
-        }`}
+        className="fixed right-4 bottom-6 z-[9999] md:hidden flex flex-col items-end gap-3 pointer-events-none transition-[bottom] duration-300 [body.has-conversion-bar_&]:bottom-[calc(1.5rem+64px+env(safe-area-inset-bottom))]"
       >
         <AnimatePresence>
           {isOpen && (

@@ -130,7 +130,7 @@ export default async function WebsiteCheckPage({
                   key={step.title}
                   className="flex gap-4 rounded-2xl border border-slate-200/80 bg-slate-50/80 p-6"
                 >
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber-500 font-display font-black text-white shadow-md">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber-700 font-display font-black text-white shadow-md">
                     {idx + 1}
                   </span>
                   <div>

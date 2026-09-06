@@ -14,6 +14,7 @@ import {
   TwitterLogo,
   LinkedinLogo,
   ArrowRight,
+  CaretDown,
   RocketLaunch,
   EnvelopeSimple,
   Phone,
@@ -23,6 +24,7 @@ import LogoLoop from '@/shared/ui/LogoLoop';
 import { TrustBadges } from '@/shared/ui/TrustBadges';
 import { PreferredSourceCta } from '@/shared/ui/PreferredSourceCta';
 import { clientLogos } from '@/shared/data/clientLogos';
+import { HESSEN_HUB, LOCATION_GROUPS } from '@/features/local-seo/model/locationLinks';
 
 export const Footer: React.FC = () => {
   const t = useTranslations('common');
@@ -347,6 +349,64 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
         </div>
+
+        {/* All location pages. Collapsed by default, but every link is in the
+            server HTML: crawlers and scripts/qa/check-nav-reach.mjs read it
+            without opening anything. The named group keeps the open-state caret
+            from bleeding into the links' own hover underline group. */}
+        <details className="group/locations mb-16 border-t border-slate-200 pt-8">
+          <summary className="inline-flex cursor-pointer list-none items-center gap-2 rounded text-xs font-bold uppercase tracking-[0.15em] text-slate-900 hover:text-primary-700 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-50 [&::-webkit-details-marker]:hidden">
+            <span className="w-2 h-2 rounded-full bg-primary-800"></span>
+            {t('footer.all_locations')}
+            <OptimizedIcon
+              icon={CaretDown}
+              size="sm"
+              weight="bold"
+              className="text-slate-500 transition-transform duration-200 group-open/locations:rotate-180"
+            />
+          </summary>
+
+          <div className="pt-8">
+            <Link
+              prefetch={false}
+              href={HESSEN_HUB.href}
+              className="group mb-8 inline-flex items-center text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors duration-200"
+            >
+              <span className="relative">
+                {t(HESSEN_HUB.labelKey)}
+                <span className="font-normal text-slate-500">: {t(HESSEN_HUB.descKey)}</span>
+                <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-primary-600 transition-all duration-200 group-hover:w-full"></span>
+              </span>
+            </Link>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+              {LOCATION_GROUPS.map((group) => (
+                <nav key={group.titleKey} aria-label={t(group.titleKey)}>
+                  <h3 className="text-xs font-bold text-slate-900 uppercase tracking-[0.15em] mb-6 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-primary-800"></span>
+                    {t(group.titleKey)}
+                  </h3>
+                  <ul className="space-y-2">
+                    {group.links.map((link) => (
+                      <li key={link.href}>
+                        <Link
+                          prefetch={false}
+                          href={link.href}
+                          className="group inline-flex items-center text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors duration-200"
+                        >
+                          <span className="relative">
+                            {t(link.labelKey)}
+                            <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-primary-600 transition-all duration-200 group-hover:w-full"></span>
+                          </span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+              ))}
+            </div>
+          </div>
+        </details>
 
         {/* Trust Badges - elegant & minimal */}
         <div className="flex justify-center mb-12 opacity-90 hover:opacity-100 transition-all duration-300">

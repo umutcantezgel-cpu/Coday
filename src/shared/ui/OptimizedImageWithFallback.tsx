@@ -1,7 +1,8 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import Image from 'next/image';
 
-interface OptimizedImageProps {
+interface OptimizedImageWithFallbackProps {
   src: string;
   alt: string;
   className?: string;
@@ -25,15 +26,13 @@ interface OptimizedImageProps {
 const DEFAULT_SIZES = '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw';
 
 /**
- * Server-safe next/image wrapper: no hooks and no 'use client', so the server
- * sections that render it (Footer, PortfolioTeaser, LogoLoop, TestimonialBlock,
- * ...) stay server components instead of becoming client boundaries.
+ * Client variant of OptimizedImage with an onError fallback ("Image N/A").
  *
- * Images that can come from a remote host and may 404 (cdn.sanity.io,
- * images.provenexpert.com) should use OptimizedImageWithFallback, which keeps
- * the onError "Image N/A" placeholder.
+ * Use it only where the src can be a remote URL that may 404 (cdn.sanity.io,
+ * images.provenexpert.com, CMS-fed content). Everywhere else use the
+ * server-safe OptimizedImage so server sections stay server components.
  */
-export const OptimizedImage: React.FC<OptimizedImageProps> = ({
+export const OptimizedImageWithFallback: React.FC<OptimizedImageWithFallbackProps> = ({
   src,
   alt,
   className = '',
@@ -47,6 +46,8 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   loading,
   // srcSet is accepted but ignored — next/image generates its own
 }) => {
+  const [hasError, setHasError] = useState(false);
+
   // Dynamic aspect ratio container
   const getAspectRatioClass = () => {
     switch (aspectRatio) {
@@ -96,9 +97,23 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
               })}
           priority={priority}
           sizes={sizes || DEFAULT_SIZES}
+          onError={() => setHasError(true)}
           {...(fetchPriority ? { fetchPriority } : {})}
           {...(loading ? { loading } : {})}
         />
+      </div>
+    );
+  }
+
+  if (hasError) {
+    return (
+      <div
+        className={`relative overflow-hidden bg-gray-200 ${getAspectRatioClass()} ${className}`}
+        style={containerStyle}
+      >
+        <div className="absolute inset-0 flex items-center justify-center text-gray-400 text-xs">
+          Image N/A
+        </div>
       </div>
     );
   }
@@ -117,6 +132,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
         sizes={sizes || DEFAULT_SIZES}
         priority={priority}
         quality={80}
+        onError={() => setHasError(true)}
         {...(fetchPriority ? { fetchPriority } : {})}
         {...(loading ? { loading } : {})}
       />

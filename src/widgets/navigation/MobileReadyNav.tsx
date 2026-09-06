@@ -396,16 +396,7 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
                 aria-expanded={activeCategory === item.label}
                 onClick={() => setActiveCategory(activeCategory === item.label ? null : item.label)}
               >
-                {item.label === 'nav.locations.label' ? (
-                  <>
-                    <span className="lg:hidden xl:inline">{t(item.label)}</span>
-                    <span className="hidden lg:inline xl:hidden">
-                      {t('nav.locations.short_label')}
-                    </span>
-                  </>
-                ) : (
-                  t(item.label)
-                )}
+                {t(item.label)}
                 <OptimizedIcon
                   icon={CaretDown}
                   className={`nav-chevron ${activeCategory === item.label ? 'rotate' : ''}`}

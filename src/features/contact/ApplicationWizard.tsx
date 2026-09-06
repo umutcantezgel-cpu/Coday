@@ -5,14 +5,34 @@ import { useForm, useWatch } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useSearchParams } from 'next/navigation';
-import { Icon } from '@/shared/ui/Icon';
+import dynamic from 'next/dynamic';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import {
+  ArrowRight,
+  Calendar,
+  CaretDown,
+  CircleNotch,
+  DownloadSimple,
+  Star,
+  Warning,
+} from '@phosphor-icons/react/dist/ssr';
 import { saveLeadInternalAction } from '@/features/contact/actions/saveLeadInternal';
 import { useTranslations, useLocale } from 'next-intl';
 import { useCalculatorStore } from '@/features/calculator/model/store';
-import BookingCalendar from '@/features/booking/ui/BookingCalendar';
 import { trackEvent } from '@/shared/lib/analytics/tracking';
 import { StrobiAvatar } from '@/entities/avatar';
 import { getPackage, PACKAGE_COUNT, type Locale } from '@/shared/data/packages';
+
+// The calendar is only needed on the success screen, so it stays out of the wizard chunk.
+const BookingCalendar = dynamic(() => import('@/features/booking/ui/BookingCalendar'), {
+  ssr: false,
+  loading: () => (
+    <div
+      className="h-[260px] md:h-[340px] w-full animate-pulse rounded-2xl bg-slate-100"
+      aria-hidden="true"
+    />
+  ),
+});
 
 type WizardFormData = {
   project?: string;
@@ -175,7 +195,7 @@ export const ApplicationWizard: React.FC = () => {
       >
         <div className="flex items-start justify-between gap-3 mb-3.5 pb-3 border-b border-amber-200/60">
           <div className="flex items-center gap-2.5">
-            <div className="w-6 h-6 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-xs shadow-xs shrink-0">
+            <div className="w-6 h-6 rounded-full bg-amber-700 text-white flex items-center justify-center font-bold text-xs shadow-xs shrink-0">
               ✓
             </div>
             <div>
@@ -271,7 +291,7 @@ export const ApplicationWizard: React.FC = () => {
           <div className="grid md:grid-cols-2 gap-6 text-left">
             <div className="p-6 bg-blue-50 rounded-2xl border border-blue-100">
               <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
-                <Icon name="download" className="text-primary w-5 h-5" />
+                <OptimizedIcon icon={DownloadSimple} className="text-primary w-5 h-5" />
                 Bonus: 47-Punkte-Audit PDF
               </h4>
               <p className="text-sm text-gray-600 mb-4">
@@ -284,14 +304,15 @@ export const ApplicationWizard: React.FC = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-blue-700 transition-colors motion-reduce:duration-[0.01ms]"
               >
-                Jetzt herunterladen <Icon name="arrow_forward" size="sm" />
+                Jetzt herunterladen{' '}
+                <OptimizedIcon icon={ArrowRight} size="sm" className="rtl:-scale-x-100" />
               </a>
             </div>
 
             <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100 flex flex-col justify-center">
               <div className="flex gap-1 text-yellow-400 mb-3">
                 {[...Array(5)].map((_, i) => (
-                  <Icon key={i} name="star" className="w-4 h-4 fill-current" />
+                  <OptimizedIcon key={i} icon={Star} className="w-4 h-4 fill-current" />
                 ))}
               </div>
               <p className="text-sm text-gray-600 italic mb-3">{t('wizard.success.trust_text')}</p>
@@ -385,7 +406,7 @@ export const ApplicationWizard: React.FC = () => {
                     <option value="audit">{t('wizard.step1.project_type.options.audit')}</option>
                   </select>
                   <div className="absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
-                    <Icon name="expand_more" className="w-5 h-5" />
+                    <OptimizedIcon icon={CaretDown} className="w-5 h-5" />
                   </div>
                 </div>
                 <AnimatePresence>
@@ -399,7 +420,7 @@ export const ApplicationWizard: React.FC = () => {
                       role="alert"
                       className="absolute bottom-0 left-0 flex items-center gap-1.5 text-red-500 text-sm"
                     >
-                      <Icon name="warning" className="w-4 h-4" />
+                      <OptimizedIcon icon={Warning} className="w-4 h-4" />
                       <p>{errors.project.message}</p>
                     </m.div>
                   )}
@@ -437,7 +458,7 @@ export const ApplicationWizard: React.FC = () => {
                       role="alert"
                       className="absolute bottom-0 left-0 flex items-center gap-1.5 text-red-500 text-sm"
                     >
-                      <Icon name="warning" className="w-4 h-4" />
+                      <OptimizedIcon icon={Warning} className="w-4 h-4" />
                       <p>{errors.name.message}</p>
                     </m.div>
                   )}
@@ -474,7 +495,7 @@ export const ApplicationWizard: React.FC = () => {
                       role="alert"
                       className="absolute bottom-0 left-0 flex items-center gap-1.5 text-red-500 text-sm"
                     >
-                      <Icon name="warning" className="w-4 h-4" />
+                      <OptimizedIcon icon={Warning} className="w-4 h-4" />
                       <p>{errors.email.message}</p>
                     </m.div>
                   )}
@@ -534,7 +555,7 @@ export const ApplicationWizard: React.FC = () => {
                     role="alert"
                     className="absolute bottom-0 left-0 flex items-center gap-1.5 text-red-500 text-sm"
                   >
-                    <Icon name="warning" className="w-4 h-4" />
+                    <OptimizedIcon icon={Warning} className="w-4 h-4" />
                     <p>{errors.privacy.message}</p>
                   </m.div>
                 )}
@@ -546,7 +567,7 @@ export const ApplicationWizard: React.FC = () => {
                 role="alert"
                 className="p-4 bg-red-50 text-red-600 rounded-xl text-sm flex items-center gap-2"
               >
-                <Icon name="alert-triangle" />
+                <OptimizedIcon icon={Warning} className="w-3.5 h-3.5 shrink-0" />
                 {error}
               </div>
             )}
@@ -559,8 +580,8 @@ export const ApplicationWizard: React.FC = () => {
               >
                 {isSubmitting ? (
                   <div className="flex items-center gap-2 py-1 pr-4">
-                    <Icon
-                      name="loader"
+                    <OptimizedIcon
+                      icon={CircleNotch}
                       className="animate-spin motion-reduce:animate-none"
                       size="sm"
                     />
@@ -570,7 +591,7 @@ export const ApplicationWizard: React.FC = () => {
                   <>
                     <span>{t('wizard.buttons.submit_next')}</span>
                     <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center transition duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-0.5 group-hover:-translate-y-[1px] group-hover:scale-105 group-hover:bg-white/30 shrink-0">
-                      <Icon name="calendar_today" size="sm" />
+                      <OptimizedIcon icon={Calendar} size="sm" />
                     </div>
                   </>
                 )}

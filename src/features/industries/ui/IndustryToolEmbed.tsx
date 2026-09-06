@@ -299,7 +299,7 @@ export function IndustryToolEmbed({ industryKey, theme = 'light' }: IndustryTool
               {/* Primary: the request form on this page. The demo is a secondary preview. */}
               <a
                 href="#lead-form"
-                className="group w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl font-bold text-white transition duration-300 shadow-lg bg-amber-500 hover:bg-amber-600 active:scale-[0.98] text-base"
+                className="group w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl font-bold text-white transition duration-300 shadow-lg bg-amber-700 hover:bg-amber-800 active:scale-[0.98] text-base"
               >
                 <span>{isEn ? 'Quick request' : 'Kurz anfragen'}</span>
               </a>

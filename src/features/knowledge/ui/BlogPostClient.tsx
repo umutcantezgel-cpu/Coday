@@ -12,7 +12,7 @@ import {
   EnvelopeSimple,
 } from '@phosphor-icons/react/dist/ssr';
 import { getBlogPost, getBlogPosts } from '@/features/blog/model/data';
-import { OptimizedImage } from '@/shared/ui/OptimizedImage';
+import { OptimizedImageWithFallback as OptimizedImage } from '@/shared/ui/OptimizedImageWithFallback';
 import BlurText from '@/shared/ui/BlurText';
 import { BlockRenderer } from '@/features/blog/ui/BlockRenderer';
 import { ReadingProgress, TableOfContents } from '@/features/blog/ui/ImmersiveReader';

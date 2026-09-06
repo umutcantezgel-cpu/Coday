@@ -82,8 +82,13 @@ export const MobileConversionBar: React.FC = () => {
     const observe = () =>
       document.querySelectorAll('[data-lead-form]').forEach((el) => observer.observe(el));
     observe();
+    // Lead forms live inside <main>; watching only that subtree keeps the
+    // floating widgets (chat, FAB, cookie banner) from re-triggering the scan.
     const mutation = new MutationObserver(observe);
-    mutation.observe(document.body, { childList: true, subtree: true });
+    mutation.observe(document.getElementById('main-content') ?? document.body, {
+      childList: true,
+      subtree: true,
+    });
     return () => {
       observer.disconnect();
       mutation.disconnect();
@@ -152,7 +157,7 @@ export const MobileConversionBar: React.FC = () => {
             onClick={openSheet}
             aria-haspopup="dialog"
             aria-expanded={sheetOpen}
-            className={`${itemClass} bg-amber-500 text-white hover:bg-amber-600`}
+            className={`${itemClass} bg-amber-700 text-white hover:bg-amber-800`}
           >
             <OptimizedIcon icon={PaperPlaneRight} className="h-5 w-5" />
             {t('bar.inquiry')}

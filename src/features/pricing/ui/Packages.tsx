@@ -178,7 +178,7 @@ export default async function Packages() {
                 key={idx}
                 className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 flex gap-4"
               >
-                <span className="w-10 h-10 rounded-full bg-amber-500 text-white font-display font-black flex items-center justify-center shrink-0 shadow-md">
+                <span className="w-10 h-10 rounded-full bg-amber-700 text-white font-display font-black flex items-center justify-center shrink-0 shadow-md">
                   {idx + 1}
                 </span>
                 <div>

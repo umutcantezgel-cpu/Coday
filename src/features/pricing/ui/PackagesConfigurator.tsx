@@ -267,7 +267,7 @@ export const PackagesConfigurator: React.FC = () => {
             }}
             className={`group active:scale-[0.98] w-full py-4 px-5 rounded-full font-bold text-sm transition-all duration-200 flex items-center justify-between gap-2 focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none ${
               isSelected
-                ? 'bg-amber-500 text-white hover:bg-amber-600 shadow-lg shadow-amber-500/20'
+                ? 'bg-amber-700 text-white hover:bg-amber-800 shadow-lg shadow-amber-700/20'
                 : pkg.popular
                   ? 'bg-primary-700 text-white hover:bg-primary-800 shadow-md'
                   : 'bg-slate-900 text-white hover:bg-slate-800'
@@ -473,7 +473,7 @@ export const PackagesConfigurator: React.FC = () => {
                           isIncluded
                             ? 'bg-emerald-500 text-white border-emerald-500'
                             : isChecked
-                              ? 'bg-amber-500 text-white border-amber-500'
+                              ? 'bg-amber-700 text-white border-amber-700'
                               : 'bg-slate-100 text-slate-700 border-slate-200'
                         }`}
                       >
@@ -484,7 +484,7 @@ export const PackagesConfigurator: React.FC = () => {
                           isIncluded
                             ? 'bg-emerald-500 border-emerald-500 text-white'
                             : isChecked
-                              ? 'bg-amber-500 border-amber-500 text-white'
+                              ? 'bg-amber-700 border-amber-700 text-white'
                               : 'border-slate-300 bg-white'
                         }`}
                       >

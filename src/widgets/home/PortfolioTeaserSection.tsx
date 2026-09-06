@@ -5,6 +5,7 @@ import { FadeInUp, ScaleIn } from '@/shared/ui/MotionWrappers';
 import { ArrowUpRight, ArrowRight } from '@phosphor-icons/react/dist/ssr';
 import { workData } from '@/shared/data/work';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
+import { TrackedLink } from '@/shared/ui/TrackedLink';
 
 export const PortfolioTeaserSection: React.FC = () => {
   const t = useTranslations('home');
@@ -132,9 +133,11 @@ export const PortfolioTeaserSection: React.FC = () => {
                       still inline-flex, so the underline keeps hugging the text
                       wherever it fits. */}
                   <div className="relative z-20">
+                    {/* No aria-label: the visible text already names the case study,
+                        and a label that did not start with it made Lighthouse flag
+                        label-content-name-mismatch. */}
                     <Link
                       href={`/work/${project.slug}`}
-                      aria-label={`${content.title} Case Study`}
                       className="inline-flex items-center gap-3 font-bold text-lg text-secondary-900 hover:text-action-primary transition-colors group outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-sm"
                     >
                       <span className="border-b-2 border-secondary-900 group-hover:border-action-primary pb-1 transition-colors">
@@ -147,6 +150,24 @@ export const PortfolioTeaserSection: React.FC = () => {
                         className="shrink-0 transform group-hover:translate-x-2 transition-transform duration-300 w-5 h-5"
                       />
                     </Link>
+                    {/* Secondary link to the customer's live site. It stays inside
+                        this z-20 wrapper so the H3 link's ::before overlay
+                        (before:-inset-8, z-10) cannot cover it. */}
+                    {project.liveUrl && (
+                      <div className="mt-4">
+                        <TrackedLink
+                          href={project.liveUrl}
+                          event="outbound_click"
+                          ctaPosition="home_teaser"
+                          ctaLabel={project.slug}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center text-sm font-medium text-secondary-600 hover:text-action-primary underline-offset-4 hover:underline transition-colors outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-sm"
+                        >
+                          {currentLang === 'en' ? 'View live website ↗' : 'Live-Website ansehen ↗'}
+                        </TrackedLink>
+                      </div>
+                    )}
                   </div>
                 </FadeInUp>
               </div>

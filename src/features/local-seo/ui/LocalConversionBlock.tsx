@@ -121,7 +121,7 @@ export default function LocalConversionBlock({
           <ol className="mt-8 space-y-4">
             {steps.map((step, idx) => (
               <li key={step.title} className="flex gap-4">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-amber-500 font-display font-black text-white shadow-md">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-amber-700 font-display font-black text-white shadow-md">
                   {idx + 1}
                 </span>
                 <div>

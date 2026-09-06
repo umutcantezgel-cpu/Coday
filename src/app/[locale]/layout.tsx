@@ -14,11 +14,7 @@ import { pickMessages, ROOT_CLIENT_NAMESPACES } from '@/i18n/clientMessages';
 import { getCountryNode, getOrganizationSchema, getWebSiteSchema } from '@/lib/schema';
 import MainLayout from '@/widgets/layout/MainLayout';
 import { MotionProvider } from '@/shared/ui/providers/MotionProvider';
-import { GoogleAnalytics } from '@/shared/lib/analytics/GoogleAnalytics';
-import { PostHogAnalytics } from '@/shared/lib/analytics/PostHogAnalytics';
-import { MetaPixel } from '@/shared/lib/analytics/MetaPixel';
-import { LinkedInInsight } from '@/shared/lib/analytics/LinkedInInsight';
-import { ClarityAnalytics } from '@/shared/lib/analytics/ClarityAnalytics';
+import { AnalyticsScripts } from '@/shared/lib/analytics/AnalyticsScripts';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
@@ -139,11 +135,7 @@ export default async function RootLayout({
         <Suspense fallback={null}>
           <Analytics />
           <SpeedInsights />
-          <GoogleAnalytics />
-          <PostHogAnalytics />
-          <MetaPixel />
-          <LinkedInInsight />
-          <ClarityAnalytics />
+          <AnalyticsScripts />
         </Suspense>
       </body>
     </html>

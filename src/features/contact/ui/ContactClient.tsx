@@ -1,15 +1,26 @@
 'use client';
 
-import React, { Suspense, useEffect, useState } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';
-import BookingCalendar from '@/features/booking/ui/BookingCalendar';
 import { m } from 'motion/react';
 import dynamic from 'next/dynamic';
 const InteractiveMap = dynamic(() => import('@/shared/ui/InteractiveMap'), { ssr: false });
 const ApplicationWizard = dynamic(() => import('@/features/contact/ApplicationWizard'), {
   ssr: false,
+});
+// Loaded on demand so phones never download the calendar for the hidden desktop tree.
+// The skeleton matches the calendar's initial height (padding, steps nav, heading,
+// 14 date cards, continue button) so nothing shifts when it appears.
+const BookingCalendar = dynamic(() => import('@/features/booking/ui/BookingCalendar'), {
+  ssr: false,
+  loading: () => (
+    <div
+      className="h-[260px] md:h-[340px] w-full animate-pulse rounded-3xl bg-slate-100"
+      aria-hidden="true"
+    />
+  ),
 });
 import { TestimonialCard } from '@/shared/ui/TestimonialCard';
 import LogoLoop from '@/shared/ui/LogoLoop';
@@ -35,6 +46,7 @@ import { Skeleton } from '@/shared/ui/Skeleton';
 import { MobileContactLayout } from '@/features/contact/ui/MobileContactLayout';
 import { DirectContactCard } from '@/features/contact/ui/DirectContactCard';
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
+import { useIsDesktop } from '@/shared/hooks/useIsDesktop';
 
 export const ContactClient: React.FC = () => {
   const t = useTranslations('contact');
@@ -43,12 +55,9 @@ export const ContactClient: React.FC = () => {
   const setPackageAndAddons = useCalculatorStore((state) => state.setPackageAndAddons);
   const setStep = useCalculatorStore((state) => state.setStep);
   const hasPackage = !!selectedPackageId || !!searchParams?.get('package');
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsMounted(true), 0);
-    return () => clearTimeout(timer);
-  }, []);
+  // Server HTML is the desktop tree; after hydration exactly one tree is mounted,
+  // so phones no longer hydrate the calendar, logo loop, testimonial and wizard twice.
+  const isDesktop = useIsDesktop();
 
   // Sync URL parameters if present
   useEffect(() => {
@@ -91,235 +100,246 @@ export const ContactClient: React.FC = () => {
         </div>
       )}
 
-      {/* Mobile Layout (Tabbed) */}
-      <div className="lg:hidden mt-4 min-h-screen">{isMounted && <MobileContactLayout />}</div>
+      {/* Mobile Layout (Tabbed). The wrapper is always in the server HTML so its
+          min-h-screen reserves the space the tabbed layout fills after hydration;
+          without it the whole page jumped down once the mobile tree mounted
+          (CLS 0.9 on a phone). Only the content is viewport-gated. */}
+      <div className="lg:hidden mt-4 min-h-screen">{!isDesktop && <MobileContactLayout />}</div>
 
       {/* Desktop Layout (Original Split) */}
-      <div className="hidden lg:block">
-        <section
-          className={`relative ${hasPackage ? 'pt-4 md:pt-6' : 'pt-4 md:pt-8'} pb-48 md:pb-64 px-4 overflow-hidden`}
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
-              {/* Text Side */}
-              <div>
-                <div className="mb-4">
-                  <Breadcrumbs />
-                </div>
-                <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
-                  {t('hero.badge')}
-                </span>
-                <h1 className="block font-display font-black text-3xl sm:text-5xl lg:text-6xl text-secondary mb-6 tracking-tight text-balance">
-                  <BlurText
-                    text={t('hero.title_start')}
-                    delay={100}
-                    animateBy="words"
-                    className="inline-block mr-3"
-                  />{' '}
-                  <GradientText
-                    colors={['#3B82F6', '#2563EB', '#1D4ED8']}
-                    animationSpeed={4}
-                    className="inline-block"
-                  >
-                    {t('hero.title_gradient')}
-                  </GradientText>
-                </h1>
-                <p className="text-xl text-slate-600 leading-relaxed mb-8">{t('hero.desc')}</p>
-
-                <DirectContactCard />
-
-                <div className="mb-12">
-                  <BookingCalendar />
-                </div>
-
-                <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-6">
-                  <h2 className="font-bold text-gray-900 text-lg">Kontaktinformationen</h2>
-
-                  <m.div
-                    variants={staggerContainer}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true, margin: '-50px' }}
-                    className="grid gap-6"
-                  >
-                    <m.a
-                      variants={staggerItem}
-                      href="mailto:umut@codayweb.de"
-                      className="flex items-start gap-4 text-slate-600 hover:text-primary transition-colors duration-200 motion-reduce:duration-[0.01ms] group"
+      {isDesktop && (
+        <div className="hidden lg:block">
+          <section
+            className={`relative ${hasPackage ? 'pt-4 md:pt-6' : 'pt-4 md:pt-8'} pb-48 md:pb-64 px-4 overflow-hidden`}
+          >
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+              <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+                {/* Text Side */}
+                <div>
+                  <div className="mb-4">
+                    <Breadcrumbs />
+                  </div>
+                  <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
+                    {t('hero.badge')}
+                  </span>
+                  <h1 className="block font-display font-black text-3xl sm:text-5xl lg:text-6xl text-secondary mb-6 tracking-tight text-balance">
+                    <BlurText
+                      text={t('hero.title_start')}
+                      delay={100}
+                      animateBy="words"
+                      className="inline-block mr-3"
+                    />{' '}
+                    <GradientText
+                      colors={['#3B82F6', '#2563EB', '#1D4ED8']}
+                      animationSpeed={4}
+                      className="inline-block"
                     >
-                      <div className="w-10 h-10 bg-purple-50 rounded-lg flex items-center justify-center text-purple-600 group-hover:scale-[1.05] group-active:scale-[0.97] transition-transform duration-200 ease-out flex-shrink-0">
-                        <OptimizedIcon icon={Envelope} />
-                      </div>
-                      <div>
-                        <span className="block font-bold text-secondary text-sm mb-1">
-                          {t('location.email.label', { fallback: 'E-Mail' })}
-                        </span>
-                        <span className="text-sm">umut@codayweb.de</span>
-                      </div>
-                    </m.a>
+                      {t('hero.title_gradient')}
+                    </GradientText>
+                  </h1>
+                  <p className="text-xl text-slate-600 leading-relaxed mb-8">{t('hero.desc')}</p>
 
-                    <m.a
-                      variants={staggerItem}
-                      href="tel:+4917641195301"
-                      className="flex items-start gap-4 text-slate-600 hover:text-primary transition-colors duration-200 motion-reduce:duration-[0.01ms] group"
+                  <DirectContactCard />
+
+                  <div className="mb-12">
+                    <BookingCalendar />
+                  </div>
+
+                  <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-6">
+                    <h2 className="font-bold text-gray-900 text-lg">Kontaktinformationen</h2>
+
+                    <m.div
+                      variants={staggerContainer}
+                      initial="hidden"
+                      whileInView="show"
+                      viewport={{ once: true, margin: '-50px' }}
+                      className="grid gap-6"
                     >
-                      <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-primary group-hover:scale-[1.05] group-active:scale-[0.97] transition-transform duration-200 ease-out flex-shrink-0">
-                        <OptimizedIcon icon={Phone} />
-                      </div>
-                      <div>
-                        <span className="block font-bold text-secondary text-sm mb-1">
-                          {t('location.phone.label', { fallback: 'Telefon' })}
-                        </span>
-                        <span className="text-sm">+49 176 41195301</span>
-                      </div>
-                    </m.a>
+                      <m.a
+                        variants={staggerItem}
+                        href="mailto:umut@codayweb.de"
+                        className="flex items-start gap-4 text-slate-600 hover:text-primary transition-colors duration-200 motion-reduce:duration-[0.01ms] group"
+                      >
+                        <div className="w-10 h-10 bg-purple-50 rounded-lg flex items-center justify-center text-purple-600 group-hover:scale-[1.05] group-active:scale-[0.97] transition-transform duration-200 ease-out flex-shrink-0">
+                          <OptimizedIcon icon={Envelope} />
+                        </div>
+                        <div>
+                          <span className="block font-bold text-secondary text-sm mb-1">
+                            {t('location.email.label', { fallback: 'E-Mail' })}
+                          </span>
+                          <span className="text-sm">umut@codayweb.de</span>
+                        </div>
+                      </m.a>
 
-                    <m.div variants={staggerItem} className="flex items-start gap-4 text-slate-600">
-                      <div className="w-10 h-10 bg-orange-50 rounded-lg flex items-center justify-center text-orange-600 flex-shrink-0">
-                        <OptimizedIcon icon={MapPin} />
-                      </div>
-                      <div>
-                        <span className="block font-bold text-secondary text-sm mb-1">
-                          {t('location.address.label', { fallback: 'Standort' })}
-                        </span>
-                        <span className="text-sm">
-                          Wetzlar, Deutschland
-                          <br />
-                          (Remote weltweit)
-                        </span>
-                      </div>
-                    </m.div>
+                      <m.a
+                        variants={staggerItem}
+                        href="tel:+4917641195301"
+                        className="flex items-start gap-4 text-slate-600 hover:text-primary transition-colors duration-200 motion-reduce:duration-[0.01ms] group"
+                      >
+                        <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-primary group-hover:scale-[1.05] group-active:scale-[0.97] transition-transform duration-200 ease-out flex-shrink-0">
+                          <OptimizedIcon icon={Phone} />
+                        </div>
+                        <div>
+                          <span className="block font-bold text-secondary text-sm mb-1">
+                            {t('location.phone.label', { fallback: 'Telefon' })}
+                          </span>
+                          <span className="text-sm">+49 176 41195301</span>
+                        </div>
+                      </m.a>
 
-                    <m.div variants={staggerItem} className="flex items-start gap-4 text-slate-600">
-                      <div className="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center text-green-600 flex-shrink-0">
-                        <OptimizedIcon icon={Clock} />
-                      </div>
-                      <div>
-                        <span className="block font-bold text-secondary text-sm mb-1">
-                          {t('location.hours.label', { fallback: 'Erreichbarkeit' })}
-                        </span>
-                        <span className="text-sm">
-                          Mo. - Fr.: 09:00 - 18:00 Uhr
-                          <br />
-                          (Termine nach Vereinbarung)
-                        </span>
-                      </div>
-                    </m.div>
+                      <m.div
+                        variants={staggerItem}
+                        className="flex items-start gap-4 text-slate-600"
+                      >
+                        <div className="w-10 h-10 bg-orange-50 rounded-lg flex items-center justify-center text-orange-600 flex-shrink-0">
+                          <OptimizedIcon icon={MapPin} />
+                        </div>
+                        <div>
+                          <span className="block font-bold text-secondary text-sm mb-1">
+                            {t('location.address.label', { fallback: 'Standort' })}
+                          </span>
+                          <span className="text-sm">
+                            Wetzlar, Deutschland
+                            <br />
+                            (Remote weltweit)
+                          </span>
+                        </div>
+                      </m.div>
 
-                    <m.div variants={staggerItem} className="pt-2 border-t border-gray-100">
-                      <h3 className="text-sm font-bold text-gray-900 mb-3">
-                        {t('location.socials.label', { fallback: 'Folgen Sie uns' })}
-                      </h3>
-                      <div className="flex gap-3">
-                        <a
-                          href="https://www.instagram.com/codayweb/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="Instagram"
-                          className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors motion-reduce:duration-[0.01ms]"
-                        >
-                          <OptimizedIcon icon={InstagramLogo} />
-                        </a>
-                        <a
-                          href="https://www.linkedin.com/in/umutcan-emre-tezgel-65a41a3aa/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="LinkedIn"
-                          className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors motion-reduce:duration-[0.01ms]"
-                        >
-                          <OptimizedIcon icon={LinkedinLogo} />
-                        </a>
-                        <a
-                          href="https://www.facebook.com/people/Coday/61588758264018/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="Facebook"
-                          className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors motion-reduce:duration-[0.01ms]"
-                        >
-                          <OptimizedIcon icon={FacebookLogo} />
-                        </a>
-                      </div>
-                    </m.div>
+                      <m.div
+                        variants={staggerItem}
+                        className="flex items-start gap-4 text-slate-600"
+                      >
+                        <div className="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center text-green-600 flex-shrink-0">
+                          <OptimizedIcon icon={Clock} />
+                        </div>
+                        <div>
+                          <span className="block font-bold text-secondary text-sm mb-1">
+                            {t('location.hours.label', { fallback: 'Erreichbarkeit' })}
+                          </span>
+                          <span className="text-sm">
+                            Mo. - Fr.: 09:00 - 18:00 Uhr
+                            <br />
+                            (Termine nach Vereinbarung)
+                          </span>
+                        </div>
+                      </m.div>
 
-                    <m.div variants={staggerItem} className="pt-4 border-t border-gray-100">
-                      <span className="block font-bold text-secondary text-xs uppercase tracking-wider mb-2">
-                        Verifizierte Bewertungen
-                      </span>
-                      <div className="space-y-2">
-                        <a
-                          href="https://www.google.com/maps?cid=8570940562624494590"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-blue-500/50 hover:bg-blue-50/30 transition-all group"
-                          title="Google Maps Rezensionen für Coday"
-                        >
-                          <div className="flex items-center gap-2">
-                            <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-                            <span className="text-xs font-bold text-slate-800 group-hover:text-blue-700">
-                              Google Maps Rezensionen
-                            </span>
-                            <span className="text-[11px] text-slate-500">(4 verifiziert)</span>
-                          </div>
-                          <span className="text-xs font-bold text-amber-600">5.0 ★★★★★</span>
-                        </a>
-                        <a
-                          href="https://www.provenexpert.com/de-de/coday-webagentur/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-emerald-500/50 hover:bg-emerald-50/30 transition-all group"
-                          title="ProvenExpert Profil von Coday"
-                        >
-                          <div className="flex items-center gap-2">
-                            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                            <span className="text-xs font-bold text-slate-800 group-hover:text-emerald-700">
-                              ProvenExpert Profil
-                            </span>
-                            <span className="text-[11px] text-slate-500">(4 verifiziert)</span>
-                          </div>
-                          <span className="text-xs font-bold text-amber-600">5.0 ★★★★★</span>
-                        </a>
-                      </div>
+                      <m.div variants={staggerItem} className="pt-2 border-t border-gray-100">
+                        <h3 className="text-sm font-bold text-gray-900 mb-3">
+                          {t('location.socials.label', { fallback: 'Folgen Sie uns' })}
+                        </h3>
+                        <div className="flex gap-3">
+                          <a
+                            href="https://www.instagram.com/codayweb/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram"
+                            className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors motion-reduce:duration-[0.01ms]"
+                          >
+                            <OptimizedIcon icon={InstagramLogo} />
+                          </a>
+                          <a
+                            href="https://www.linkedin.com/in/umutcan-emre-tezgel-65a41a3aa/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                            className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors motion-reduce:duration-[0.01ms]"
+                          >
+                            <OptimizedIcon icon={LinkedinLogo} />
+                          </a>
+                          <a
+                            href="https://www.facebook.com/people/Coday/61588758264018/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Facebook"
+                            className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors motion-reduce:duration-[0.01ms]"
+                          >
+                            <OptimizedIcon icon={FacebookLogo} />
+                          </a>
+                        </div>
+                      </m.div>
+
+                      <m.div variants={staggerItem} className="pt-4 border-t border-gray-100">
+                        <span className="block font-bold text-secondary text-xs uppercase tracking-wider mb-2">
+                          Verifizierte Bewertungen
+                        </span>
+                        <div className="space-y-2">
+                          <a
+                            href="https://www.google.com/maps?cid=8570940562624494590"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-blue-500/50 hover:bg-blue-50/30 transition-all group"
+                            title="Google Maps Rezensionen für Coday"
+                          >
+                            <div className="flex items-center gap-2">
+                              <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+                              <span className="text-xs font-bold text-slate-800 group-hover:text-blue-700">
+                                Google Maps Rezensionen
+                              </span>
+                              <span className="text-[11px] text-slate-500">(4 verifiziert)</span>
+                            </div>
+                            <span className="text-xs font-bold text-amber-600">5.0 ★★★★★</span>
+                          </a>
+                          <a
+                            href="https://www.provenexpert.com/de-de/coday-webagentur/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-emerald-500/50 hover:bg-emerald-50/30 transition-all group"
+                            title="ProvenExpert Profil von Coday"
+                          >
+                            <div className="flex items-center gap-2">
+                              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                              <span className="text-xs font-bold text-slate-800 group-hover:text-emerald-700">
+                                ProvenExpert Profil
+                              </span>
+                              <span className="text-[11px] text-slate-500">(4 verifiziert)</span>
+                            </div>
+                            <span className="text-xs font-bold text-amber-600">5.0 ★★★★★</span>
+                          </a>
+                        </div>
+                      </m.div>
                     </m.div>
-                  </m.div>
+                  </div>
                 </div>
-              </div>
 
-              {/* Wizard Application Form */}
-              <div className="relative flex flex-col gap-8">
-                {/* Logo Bar Above Form */}
-                <div className="w-full overflow-hidden bg-white/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-100 shadow-sm">
-                  <p className="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-6">
-                    {t('logobar.title', {
-                      fallback: 'Vertrauen schenken uns innovative Unternehmen',
-                    })}
-                  </p>
-                  <LogoLoop
-                    logos={clientLogos}
-                    speed={25}
-                    logoHeight={32}
-                    gap={48}
-                    pauseOnHover={true}
-                  />
-                </div>
+                {/* Wizard Application Form */}
+                <div className="relative flex flex-col gap-8">
+                  {/* Logo Bar Above Form */}
+                  <div className="w-full overflow-hidden bg-white/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <p className="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-6">
+                      {t('logobar.title', {
+                        fallback: 'Vertrauen schenken uns innovative Unternehmen',
+                      })}
+                    </p>
+                    <LogoLoop
+                      logos={clientLogos}
+                      speed={25}
+                      logoHeight={32}
+                      gap={48}
+                      pauseOnHover={true}
+                    />
+                  </div>
 
-                <Suspense fallback={<Skeleton className="h-[600px] w-full rounded-3xl" />}>
-                  <ApplicationWizard />
-                </Suspense>
+                  <Suspense fallback={<Skeleton className="h-[600px] w-full rounded-3xl" />}>
+                    <ApplicationWizard />
+                  </Suspense>
 
-                {/* Trust Indicators - Testimonial */}
-                <div className="mt-8">
-                  <TestimonialCard
-                    quote={t('testimonial.text')}
-                    authorName={t('testimonial.author')}
-                    authorPosition={t('testimonial.role')}
-                    rating={5}
-                  />
+                  {/* Trust Indicators - Testimonial */}
+                  <div className="mt-8">
+                    <TestimonialCard
+                      quote={t('testimonial.text')}
+                      authorName={t('testimonial.author')}
+                      authorPosition={t('testimonial.role')}
+                      rating={5}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-      </div>
+          </section>
+        </div>
+      )}
 
       {/* FAQs for Rich Snippets */}
       <RelevantFAQs

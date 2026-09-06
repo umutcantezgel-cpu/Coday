@@ -107,10 +107,16 @@ function main() {
   pages.set('/', home);
 
   // Level 1: what the header itself links.
+  //
+  // The 38 location pages (city and Kreis hubs) are no longer in the header:
+  // they sit in the footer's collapsed "Alle Standorte" <details> block, and a
+  // closed <details> still ships every link in the prerendered HTML. The footer
+  // renders on every page, so those links are picked up at level 2 through any
+  // header-linked page; nothing here needs to know about the footer.
   const headerHtml = home.slice(home.indexOf('<header'), home.indexOf('</header>'));
   const headerLinks = linksIn(headerHtml);
 
-  // Level 2: what those pages link in turn.
+  // Level 2: what those pages link in turn (their footer included).
   const reachable = new Set(headerLinks);
   for (const target of headerLinks) {
     const html = pages.get(target);

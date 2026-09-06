@@ -118,7 +118,7 @@ export const LeadQuickFormFields: React.FC<LeadQuickFormFieldsProps> = ({
             id={`${idPrefix}-contact`}
             type="text"
             name="contact"
-            autoComplete="tel email"
+            autoComplete="on"
             inputMode="email"
             enterKeyHint="next"
             value={values.contact}
@@ -196,7 +196,7 @@ export const LeadQuickFormFields: React.FC<LeadQuickFormFieldsProps> = ({
       <button
         type="submit"
         disabled={submitting}
-        className={`group flex w-full items-center justify-center gap-2 rounded-xl bg-amber-500 px-4 ${dense ? 'min-h-[54px] py-4 text-base' : 'min-h-[48px] py-3.5 text-sm sm:text-base'} font-bold text-white shadow-lg shadow-amber-500/25 transition-all hover:bg-amber-600 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2`}
+        className={`group flex w-full items-center justify-center gap-2 rounded-xl bg-amber-700 px-4 ${dense ? 'min-h-[54px] py-4 text-base' : 'min-h-[48px] py-3.5 text-sm sm:text-base'} font-bold text-white shadow-lg shadow-amber-700/25 transition-all hover:bg-amber-800 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2`}
       >
         {submitting ? (
           <span className="h-5 w-5 animate-spin rounded-full border-2 border-white/30 border-t-white" />

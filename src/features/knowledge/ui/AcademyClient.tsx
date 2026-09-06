@@ -4,7 +4,7 @@ import React, { useState, useEffect, Suspense } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
 import { Link } from '@/i18n/navigation';
-import { OptimizedImage } from '@/shared/ui/OptimizedImage';
+import { OptimizedImageWithFallback as OptimizedImage } from '@/shared/ui/OptimizedImageWithFallback';
 import { createPortal } from 'react-dom';
 import {
   X,

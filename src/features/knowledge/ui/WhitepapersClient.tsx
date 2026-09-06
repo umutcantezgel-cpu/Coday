@@ -16,7 +16,7 @@ import {
   Sparkle,
   CheckCircle,
 } from '@phosphor-icons/react/dist/ssr';
-import { OptimizedImage } from '@/shared/ui/OptimizedImage';
+import { OptimizedImageWithFallback as OptimizedImage } from '@/shared/ui/OptimizedImageWithFallback';
 import { whitepaperData } from '@/shared/data/whitepapers';
 
 const Whitepapers: React.FC = () => {

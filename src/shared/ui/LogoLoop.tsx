@@ -1,5 +1,4 @@
-'use client';
-import React, { useCallback, useMemo } from 'react';
+import React from 'react';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 
 export type LogoItem =
@@ -43,6 +42,13 @@ const toCssLength = (value?: number | string): string | undefined =>
 
 const cx = (...parts: Array<string | false | null | undefined>) => parts.filter(Boolean).join(' ');
 
+/**
+ * Pure CSS marquee (keyframes in globals.css). No hooks and no 'use client':
+ * every value below derives from props, so the component renders on the server
+ * and the server sections that use it (TrustBar, Footer, LogoBarSection) stay
+ * server components. The list is rendered twice on purpose (track A + an
+ * aria-hidden track B) so the loop is seamless.
+ */
 const LogoLoop = React.memo<LogoLoopProps>(
   ({
     logos,
@@ -63,107 +69,26 @@ const LogoLoop = React.memo<LogoLoopProps>(
     const isVertical = direction === 'up' || direction === 'down';
 
     // Calculate pure CSS marquee duration based on content length and requested speed
-    const animationDuration = useMemo(() => {
-      const itemSpan = (gap || 32) + 120;
-      const totalSequenceSpan = (logos?.length || 1) * itemSpan;
-      const effectiveSpeed = Math.max(10, Math.abs(speed || 30));
-      return Math.max(12, Math.round(totalSequenceSpan / effectiveSpeed));
-    }, [logos?.length, gap, speed]);
+    const itemSpan = (gap || 32) + 120;
+    const totalSequenceSpan = (logos?.length || 1) * itemSpan;
+    const effectiveSpeed = Math.max(10, Math.abs(speed || 30));
+    const animationDuration = Math.max(12, Math.round(totalSequenceSpan / effectiveSpeed));
 
-    const cssVariables = useMemo(
-      () =>
-        ({
-          '--logoloop-gap': `${gap}px`,
-          '--logoloop-logoHeight': `${logoHeight}px`,
-          ...(fadeOutColor && { '--logoloop-fadeColor': fadeOutColor }),
-        }) as React.CSSProperties,
-      [gap, logoHeight, fadeOutColor]
+    const cssVariables = {
+      '--logoloop-gap': `${gap}px`,
+      '--logoloop-logoHeight': `${logoHeight}px`,
+      ...(fadeOutColor && { '--logoloop-fadeColor': fadeOutColor }),
+    } as React.CSSProperties;
+
+    const rootClasses = cx(
+      'relative group',
+      isVertical ? 'overflow-hidden h-full inline-block' : 'overflow-x-hidden',
+      scaleOnHover && 'py-[calc(var(--logoloop-logoHeight)*0.1)]',
+      className
     );
 
-    const rootClasses = useMemo(
-      () =>
-        cx(
-          'relative group',
-          isVertical ? 'overflow-hidden h-full inline-block' : 'overflow-x-hidden',
-          scaleOnHover && 'py-[calc(var(--logoloop-logoHeight)*0.1)]',
-          className
-        ),
-      [isVertical, scaleOnHover, className]
-    );
-
-    const renderLogoItem = useCallback(
-      (item: LogoItem, key: React.Key) => {
-        if (renderItem) {
-          return (
-            <li
-              className={cx(
-                'flex-none text-[length:var(--logoloop-logoHeight)] leading-[1]',
-                isVertical ? 'mb-[var(--logoloop-gap)]' : 'mr-[var(--logoloop-gap)]',
-                scaleOnHover && 'overflow-visible group/item'
-              )}
-              key={key}
-              role="listitem"
-            >
-              {renderItem(item, key)}
-            </li>
-          );
-        }
-
-        const isNodeItem = 'node' in item;
-
-        const content = isNodeItem ? (
-          <span
-            className={cx(
-              'inline-flex items-center',
-              'motion-reduce:transition-none',
-              scaleOnHover &&
-                'transition-transform motion-reduce:duration-[0.01ms] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/item:scale-120'
-            )}
-          >
-            {(item as { node: React.ReactNode }).node}
-          </span>
-        ) : (
-          <OptimizedImage
-            className={cx(
-              'h-[var(--logoloop-logoHeight)] w-auto block object-contain',
-              '[-webkit-user-drag:none] pointer-events-none',
-              'motion-reduce:transition-none',
-              scaleOnHover &&
-                'transition-transform motion-reduce:duration-[0.01ms] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/item:scale-120'
-            )}
-            src={(item as { src: string }).src}
-            alt={(item as { alt?: string }).alt ?? ''}
-            title={(item as { title?: string }).title}
-            draggable={false}
-          />
-        );
-
-        const itemHref = (item as { href?: string }).href;
-        const itemTitle = (item as { title?: string }).title;
-        const itemAriaLabel = isNodeItem
-          ? ((item as { ariaLabel?: string }).ariaLabel ?? itemTitle)
-          : ((item as { alt?: string }).alt ?? itemTitle);
-
-        const inner = itemHref ? (
-          <a
-            className={cx(
-              'inline-flex items-center no-underline rounded',
-              'transition-opacity motion-reduce:duration-[0.01ms] duration-200 ease-linear',
-              'hover:opacity-80',
-              'focus-visible:outline focus-visible:outline-current focus-visible:outline-offset-2'
-            )}
-            href={itemHref}
-            aria-label={itemAriaLabel || 'logo link'}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className="sr-only">{itemAriaLabel || 'logo link'}</span>
-            {content}
-          </a>
-        ) : (
-          content
-        );
-
+    const renderLogoItem = (item: LogoItem, key: React.Key) => {
+      if (renderItem) {
         return (
           <li
             className={cx(
@@ -174,25 +99,90 @@ const LogoLoop = React.memo<LogoLoopProps>(
             key={key}
             role="listitem"
           >
-            {inner}
+            {renderItem(item, key)}
           </li>
         );
-      },
-      [isVertical, scaleOnHover, renderItem]
-    );
+      }
 
-    const containerStyle = useMemo(
-      (): React.CSSProperties => ({
-        width: isVertical
-          ? toCssLength(width) === '100%'
-            ? undefined
-            : toCssLength(width)
-          : (toCssLength(width) ?? '100%'),
-        ...cssVariables,
-        ...style,
-      }),
-      [width, cssVariables, style, isVertical]
-    );
+      const isNodeItem = 'node' in item;
+
+      const content = isNodeItem ? (
+        <span
+          className={cx(
+            'inline-flex items-center',
+            'motion-reduce:transition-none',
+            scaleOnHover &&
+              'transition-transform motion-reduce:duration-[0.01ms] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/item:scale-120'
+          )}
+        >
+          {(item as { node: React.ReactNode }).node}
+        </span>
+      ) : (
+        <OptimizedImage
+          className={cx(
+            'h-[var(--logoloop-logoHeight)] w-auto block object-contain',
+            '[-webkit-user-drag:none] pointer-events-none',
+            'motion-reduce:transition-none',
+            scaleOnHover &&
+              'transition-transform motion-reduce:duration-[0.01ms] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/item:scale-120'
+          )}
+          src={(item as { src: string }).src}
+          alt={(item as { alt?: string }).alt ?? ''}
+          title={(item as { title?: string }).title}
+          draggable={false}
+        />
+      );
+
+      const itemHref = (item as { href?: string }).href;
+      const itemTitle = (item as { title?: string }).title;
+      const itemAriaLabel = isNodeItem
+        ? ((item as { ariaLabel?: string }).ariaLabel ?? itemTitle)
+        : ((item as { alt?: string }).alt ?? itemTitle);
+
+      const inner = itemHref ? (
+        <a
+          className={cx(
+            'inline-flex items-center no-underline rounded',
+            'transition-opacity motion-reduce:duration-[0.01ms] duration-200 ease-linear',
+            'hover:opacity-80',
+            'focus-visible:outline focus-visible:outline-current focus-visible:outline-offset-2'
+          )}
+          href={itemHref}
+          aria-label={itemAriaLabel || 'logo link'}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span className="sr-only">{itemAriaLabel || 'logo link'}</span>
+          {content}
+        </a>
+      ) : (
+        content
+      );
+
+      return (
+        <li
+          className={cx(
+            'flex-none text-[length:var(--logoloop-logoHeight)] leading-[1]',
+            isVertical ? 'mb-[var(--logoloop-gap)]' : 'mr-[var(--logoloop-gap)]',
+            scaleOnHover && 'overflow-visible group/item'
+          )}
+          key={key}
+          role="listitem"
+        >
+          {inner}
+        </li>
+      );
+    };
+
+    const containerStyle: React.CSSProperties = {
+      width: isVertical
+        ? toCssLength(width) === '100%'
+          ? undefined
+          : toCssLength(width)
+        : (toCssLength(width) ?? '100%'),
+      ...cssVariables,
+      ...style,
+    };
 
     return (
       <div className={rootClasses} style={containerStyle} role="region" aria-label={ariaLabel}>

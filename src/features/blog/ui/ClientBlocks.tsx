@@ -8,7 +8,7 @@ import {
   Plus,
   Minus,
 } from '@phosphor-icons/react/dist/ssr';
-import { OptimizedImage } from '@/shared/ui/OptimizedImage';
+import { OptimizedImageWithFallback as OptimizedImage } from '@/shared/ui/OptimizedImageWithFallback';
 import { useTranslations } from 'next-intl';
 
 import type {

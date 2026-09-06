@@ -5,7 +5,7 @@ import Script from 'next/script';
 import { useTranslations } from 'next-intl';
 import { ArrowSquareOut, GoogleLogo } from '@phosphor-icons/react/dist/ssr';
 import { Link } from '@/i18n/navigation';
-import { BASE_URL } from '@/lib/schema';
+import { BASE_URL } from '@/shared/config/site';
 import { trackEvent } from '@/shared/lib/analytics/tracking';
 
 const SITE_HOST = new URL(BASE_URL).host;

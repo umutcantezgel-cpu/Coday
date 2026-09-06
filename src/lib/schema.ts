@@ -3,7 +3,8 @@ import { PACKAGE_LIST, type Locale as PackageLocale } from '@/shared/data/packag
 import { academyData } from '@/shared/data/academy';
 import { GOOGLE_REVIEWS, REVIEWS_SUMMARY } from '@/shared/data/reviews';
 
-export const BASE_URL = 'https://www.codayweb.de';
+import { BASE_URL } from '@/shared/config/site';
+export { BASE_URL };
 export const ORG_ID = `${BASE_URL}/#organization`;
 export const FOUNDER_ID = `${BASE_URL}/#founder`;
 export const WEBSITE_ID = `${BASE_URL}/#website`;

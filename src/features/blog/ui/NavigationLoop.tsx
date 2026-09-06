@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from '@/i18n/navigation';
 import { ArrowRight } from '@phosphor-icons/react/dist/ssr';
 import { getBlogPosts } from '@/features/blog/model/data';
-import { OptimizedImage } from '@/shared/ui/OptimizedImage';
+import { OptimizedImageWithFallback as OptimizedImage } from '@/shared/ui/OptimizedImageWithFallback';
 import { useTranslations, useLocale } from 'next-intl';
 
 export { ShareFAB } from './ShareFAB';

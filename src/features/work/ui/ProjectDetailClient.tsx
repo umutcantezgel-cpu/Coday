@@ -13,10 +13,12 @@ import {
   Warning,
   ArrowLeft,
   ArrowRight,
+  ArrowSquareOut,
 } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { workData } from '@/shared/data/work';
 import { AnimatedCounter } from '@/shared/ui/AnimatedCounter';
+import { trackEvent } from '@/shared/lib/analytics/tracking';
 
 import { m, AnimatePresence } from 'motion/react';
 import { X } from '@phosphor-icons/react/dist/ssr';
@@ -29,6 +31,15 @@ const iconMap: Record<string, React.ElementType> = {
   warning: Warning,
 };
 
+/** Bare host for display ("www.batherm.de"); falls back to the raw string. */
+const getHost = (url: string): string => {
+  try {
+    return new URL(url).host;
+  } catch {
+    return url;
+  }
+};
+
 const ProjectDetail: React.FC = () => {
   const t = useTranslations('work');
   const locale = useLocale();
@@ -38,6 +49,11 @@ const ProjectDetail: React.FC = () => {
   const currentLang = locale as 'de' | 'en';
   const projectData = workData[slug || ''];
   const project = projectData ? projectData.content[currentLang] : null;
+
+  // The customer's live website. The hero and the sidebar link to it; the
+  // sidebar shows only the bare host, the full URL stays the target.
+  const liveUrl = projectData?.liveUrl;
+  const liveHost = liveUrl ? getHost(liveUrl) : null;
 
   const projectKeys = Object.keys(workData);
   const currentIndex = projectKeys.indexOf(slug || '');
@@ -136,6 +152,24 @@ const ProjectDetail: React.FC = () => {
             <p className="text-xl sm:text-2xl text-gray-500 max-w-3xl mx-auto leading-relaxed">
               {project.subtitle}
             </p>
+            {liveUrl && (
+              <a
+                href={liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  trackEvent('outbound_click', {
+                    destination: liveUrl,
+                    cta_label: 'live_site',
+                    cta_position: 'case_study_hero',
+                  })
+                }
+                className="mt-8 inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gray-900 text-white font-bold hover:bg-black transition-colors motion-reduce:duration-[0.01ms] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+              >
+                {t('project_detail.live_site_cta')}
+                <OptimizedIcon icon={ArrowSquareOut} size="sm" weight="bold" />
+              </a>
+            )}
           </m.div>
 
           {/* Hero Image / Gradient Fallback.
@@ -225,6 +259,32 @@ const ProjectDetail: React.FC = () => {
                   <span>{t('project_detail.sidebar.period')}</span>
                   <span className="font-bold text-gray-900 text-right">2025</span>
                 </li>
+                {liveUrl && liveHost && (
+                  <li className="flex justify-between gap-4 border-b border-gray-100 pb-2">
+                    <span>{t('project_detail.sidebar.live_site')}</span>
+                    <a
+                      href={liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() =>
+                        trackEvent('outbound_click', {
+                          destination: liveUrl,
+                          cta_label: 'live_site',
+                          cta_position: 'case_study_sidebar',
+                        })
+                      }
+                      className="inline-flex items-center gap-1 font-bold text-primary text-right break-all hover:underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded-sm"
+                    >
+                      {liveHost}
+                      <OptimizedIcon
+                        icon={ArrowSquareOut}
+                        size="sm"
+                        weight="bold"
+                        className="shrink-0"
+                      />
+                    </a>
+                  </li>
+                )}
                 <li className="flex justify-between pt-2">
                   <span>{t('project_detail.sidebar.result')}</span>
                   <span className="font-bold text-primary text-right">High Impact</span>

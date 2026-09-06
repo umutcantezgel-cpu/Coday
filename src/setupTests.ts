@@ -52,6 +52,17 @@ class ResizeObserverMock {
 vi.stubGlobal('ResizeObserver', ResizeObserverMock);
 window.ResizeObserver = ResizeObserverMock;
 
+// Mock @sentry/nextjs: the real package pulls in @sentry/server-utils, which
+// builds a file URL from document.baseURI and throws under jsdom. Server
+// actions and the e-mail helper only call these four functions.
+vi.mock('@sentry/nextjs', () => ({
+  captureException: vi.fn(),
+  captureMessage: vi.fn(),
+  captureRequestError: vi.fn(),
+  init: vi.fn(),
+  withSentryConfig: (config: unknown) => config,
+}));
+
 // Mock next-intl
 vi.mock('next-intl', () => ({
   useLocale: () => 'de',

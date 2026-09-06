@@ -86,7 +86,7 @@ export const PackageStickyBar: React.FC<PackageStickyBarProps> = ({
           type="button"
           onClick={onRequest}
           tabIndex={visible ? 0 : -1}
-          className="shrink-0 inline-flex items-center gap-1.5 px-4 py-3 rounded-xl bg-amber-500 text-white text-sm font-bold hover:bg-amber-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+          className="shrink-0 inline-flex items-center gap-1.5 px-4 py-3 rounded-xl bg-amber-700 text-white text-sm font-bold hover:bg-amber-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
         >
           {t('sticky.cta')}
           <ArrowRight className="w-4 h-4" weight="bold" />

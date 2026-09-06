@@ -98,6 +98,7 @@
     "not_found": "Project not found",
     "back_to_overview": "Back to overview",
     "breadcrumb_projects": "Projects",
+    "live_site_cta": "View live website",
     "sidebar": {
       "client": "Client",
       "industry": "Industry",
@@ -109,7 +110,8 @@
       "result": "Result",
       "interested_title": "Interested in similar results?",
       "request_project": "Request Project",
-      "related": "Related Services"
+      "related": "Related Services",
+      "live_site": "Live website"
     },
     "cta": {
       "title": "Ready for the next step?",

@@ -43,7 +43,11 @@ export const ConditionalWrapper = ({ children }: { children: React.ReactNode }) 
         </DelayedRender>
       )}
       {children}
-      <MobileConversionBar />
+      {/* The bar only shows after 300 px of scrolling anyway; the first touch or
+          scroll mounts it right away, the timeout is the fallback. */}
+      <DelayedRender delayMs={3000}>
+        <MobileConversionBar />
+      </DelayedRender>
       <DelayedRender delayMs={8000}>
         <ChatWidget hideTrigger={true} />
       </DelayedRender>

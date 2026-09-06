@@ -3,7 +3,7 @@
 import React, { useState, useMemo } from 'react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { ArrowRight, Star, MagnifyingGlass } from '@phosphor-icons/react/dist/ssr';
-import { OptimizedImage } from '@/shared/ui/OptimizedImage';
+import { OptimizedImageWithFallback as OptimizedImage } from '@/shared/ui/OptimizedImageWithFallback';
 
 import { Link } from '@/i18n/navigation';
 import { getBlogPosts } from '@/features/blog/model/data';
