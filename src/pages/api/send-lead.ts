@@ -106,7 +106,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const emailHtml = generateAgencyLeadEmailHtml({
       name: data.name,
-      email: data.email,
+      email: data.email ?? '',
       phone: data.phone,
       company: data.company,
       message: data.message,

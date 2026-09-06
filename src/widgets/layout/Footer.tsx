@@ -4,6 +4,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { FooterPrivacyButton } from '@/widgets/layout/FooterPrivacyButton';
 
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { TrackedLink } from '@/shared/ui/TrackedLink';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import Image from 'next/image';
 import GradientText from '@/shared/ui/GradientText';
@@ -306,7 +307,9 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-4 text-sm text-slate-600">
               <li>
-                <a
+                <TrackedLink
+                  event="email_click"
+                  ctaPosition="footer"
                   href="mailto:umut@codayweb.de"
                   className="hover:text-primary-700 transition-colors duration-200 flex items-center gap-3 group font-medium"
                 >
@@ -317,10 +320,12 @@ export const Footer: React.FC = () => {
                     />
                   </div>
                   umut@codayweb.de
-                </a>
+                </TrackedLink>
               </li>
               <li>
-                <a
+                <TrackedLink
+                  event="phone_click"
+                  ctaPosition="footer"
                   href="tel:+4917641195301"
                   className="hover:text-primary-700 transition-colors duration-200 flex items-center gap-3 group font-medium"
                 >
@@ -331,7 +336,7 @@ export const Footer: React.FC = () => {
                     />
                   </div>
                   +49 176 41195301
-                </a>
+                </TrackedLink>
               </li>
               <li className="pt-3 text-slate-700 text-xs leading-relaxed border-t border-slate-200 mt-4">
                 Umutcan Emre Tezgel (Coday)

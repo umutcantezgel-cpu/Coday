@@ -7,6 +7,8 @@ import { CaretDown, ArrowUpRight, ArrowRight } from '@phosphor-icons/react/dist/
 import CodayLogo from '@/assets/images/coday_logo.png';
 import Image from 'next/image';
 import { LanguageSwitcher } from '@/widgets/navigation/LanguageSwitcher';
+import { HeaderContactActions } from '@/widgets/navigation/HeaderContactActions';
+import { trackEvent } from '@/shared/lib/analytics/tracking';
 
 import { Link } from '@/i18n/navigation';
 import { usePathname } from '@/i18n/navigation';
@@ -556,6 +558,9 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
 
             <Link
               href="/pricing"
+              onClick={() =>
+                trackEvent('cta_click', { cta_label: 'packages', cta_position: 'header_desktop' })
+              }
               className="nav-pill-cta hidden xl:flex"
               style={{
                 backgroundColor: 'var(--color-accent-700)',
@@ -568,6 +573,9 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
 
             <Link
               href="/contact"
+              onClick={() =>
+                trackEvent('cta_click', { cta_label: 'contact', cta_position: 'header_desktop' })
+              }
               className="nav-pill-cta"
               style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
             >
@@ -577,7 +585,8 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
           </div>
 
           {/* Mobile Hamburger (Visible only on mobile) */}
-          <div className="mobile-only-actions lg:hidden flex items-center gap-3">
+          <div className="mobile-only-actions lg:hidden flex items-center gap-2">
+            <HeaderContactActions />
             <React.Suspense fallback={null}>
               <LanguageSwitcher />
             </React.Suspense>

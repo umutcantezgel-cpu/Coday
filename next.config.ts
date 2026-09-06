@@ -933,12 +933,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/analyzer',
-        destination: '/de/calculator',
+        destination: '/de/website-check',
         permanent: true,
       },
       {
         source: '/:locale(de|en)/analyzer',
-        destination: '/:locale/calculator',
+        destination: '/:locale/website-check',
         permanent: true,
       },
       {

@@ -11,7 +11,7 @@
     "close": "Close",
     "menu": "Menu",
     "start": "Start",
-    "start_project": "Start Potential Analysis",
+    "start_project": "Quick request",
     "contact": "Contact Us",
     "view_work": "View References",
     "cta_analysis": "Start Potential Analysis"
@@ -154,8 +154,8 @@
         "desc": "Weekly tips"
       },
       "audit": {
-        "label": "Free Audit",
-        "desc": "Website Analysis"
+        "label": "Free website check",
+        "desc": "I review your site personally"
       },
       "desc": "Free Knowledge for Your Success",
       "label": "Academy"
@@ -163,7 +163,7 @@
     "booking": {
       "label": "Book a Call"
     },
-    "cta_booking": "Book",
+    "cta_booking": "Quick request",
     "career": {
       "label": "Career",
       "desc": "Join the team",

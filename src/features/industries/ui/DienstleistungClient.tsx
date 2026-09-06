@@ -2,7 +2,9 @@
 
 import React from 'react';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
+import LocalConversionBlock from '@/features/local-seo/ui/LocalConversionBlock';
 import { useTranslations } from 'next-intl';
+import { trackEvent } from '@/shared/lib/analytics/tracking';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { Funnel, PaperPlaneRight, ChartLineUp } from '@phosphor-icons/react/dist/ssr';
 import BlurText from '@/shared/ui/BlurText';
@@ -51,9 +53,18 @@ const Dienstleistung: React.FC = () => {
                 {t('unternehmensberatung.hero.description')}
               </p>
               <div className="flex gap-4 mb-12">
-                <button className="active:scale-[0.97] bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:bg-secondary/90 transition-colors motion-reduce:duration-[0.01ms]">
+                <a
+                  href="#lead-form"
+                  onClick={() =>
+                    trackEvent('cta_click', {
+                      cta_label: 'industry_hero',
+                      cta_position: 'industries_dienstleistung',
+                    })
+                  }
+                  className="inline-flex items-center justify-center active:scale-[0.97] bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:bg-secondary/90 transition-colors motion-reduce:duration-[0.01ms]"
+                >
                   {t('unternehmensberatung.customFeatures.termin_kalender.title')}
-                </button>
+                </a>
               </div>
             </div>
 
@@ -114,6 +125,14 @@ const Dienstleistung: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <LocalConversionBlock
+        industry={{
+          slug: 'dienstleistung',
+          label: { de: 'Dienstleister', en: 'service providers' },
+        }}
+        sourceTag="industries_dienstleistung_bottom"
+      />
 
       <SeoContentBlock
         title={t('unternehmensberatung.seoText.title')}

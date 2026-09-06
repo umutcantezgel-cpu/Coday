@@ -1,0 +1,94 @@
+{
+  "form": {
+    "heading": "Kurz anfragen",
+    "subheading": "Drei Felder genügen. Ich melde mich innerhalb von 24 Stunden persönlich bei Ihnen.",
+    "reply_badge": "Antwort innerhalb von 24 Stunden",
+    "name_label": "Ihr Name",
+    "name_placeholder": "Ihr Name",
+    "contact_label": "Telefon oder E-Mail",
+    "contact_placeholder": "Telefon oder E-Mail",
+    "message_label": "Worum geht es?",
+    "message_placeholder": "Worum geht es? (optional)",
+    "district_label": "Ort oder Stadtteil",
+    "district_placeholder": "Bitte wählen (optional)",
+    "submit": "Kurz anfragen",
+    "submitting": "Wird gesendet …",
+    "privacy_notice": "Mit dem Absenden stimmen Sie zu, dass ich Ihre Angaben zur Bearbeitung Ihrer Anfrage verwende. Keine Weitergabe, keine Werbung.",
+    "privacy_link": "Datenschutz",
+    "errors": {
+      "name": "Bitte geben Sie Ihren Namen ein (mindestens 2 Zeichen).",
+      "contact": "Bitte geben Sie eine Telefonnummer oder E-Mail-Adresse an.",
+      "generic": "Das hat leider nicht geklappt. Bitte versuchen Sie es erneut oder rufen Sie kurz an."
+    },
+    "success": {
+      "title": "Danke, {name}!",
+      "text": "Ihre Anfrage ist angekommen. Ich melde mich innerhalb von 24 Stunden persönlich bei Ihnen.",
+      "text_email": "Eine Bestätigung ist unterwegs an {email}.",
+      "faster": "Soll es schneller gehen?",
+      "call": "Anrufen",
+      "whatsapp": "WhatsApp",
+      "booking": "Lieber gleich einen Termin wählen?",
+      "booking_cta": "Termin buchen",
+      "again": "Weitere Anfrage senden",
+      "close": "Schließen"
+    }
+  },
+  "sheet": {
+    "title": "Kurz anfragen",
+    "subtitle": "Drei Felder, dann melde ich mich innerhalb von 24 Stunden."
+  },
+  "bar": {
+    "call": "Anrufen",
+    "whatsapp": "WhatsApp",
+    "inquiry": "Kurz anfragen",
+    "aria": "Schnellkontakt"
+  },
+  "header": {
+    "call": "Anrufen",
+    "whatsapp": "Per WhatsApp schreiben"
+  },
+  "website_check": {
+    "badge": "Kostenlos und unverbindlich",
+    "heading": "Kostenloser Website-Check",
+    "subheading": "Schicken Sie mir die Adresse Ihrer Website. Ich schaue sie mir persönlich an und sage Ihnen innerhalb von 24 Stunden ehrlich, was gut ist und wo Sie Kunden verlieren.",
+    "checks_title": "Das prüfe ich für Sie",
+    "checks": [
+      "Wie Ihre Seite auf dem Handy aussieht und ob alles bedienbar ist",
+      "Wie schnell sie lädt und ob Besucher abspringen",
+      "Ob Google Sie für Ihre Leistungen und Ihren Ort findet",
+      "Welchen ersten Eindruck ein neuer Kunde bekommt"
+    ],
+    "promise": "Sie erhalten das Ergebnis per E-Mail, in Klartext, ohne Verkaufsdruck. Wenn alles gut ist, sage ich Ihnen auch das.",
+    "url_label": "Adresse Ihrer Website",
+    "url_placeholder": "www.ihre-firma.de",
+    "email_label": "Ihre E-Mail-Adresse",
+    "email_placeholder": "Ihre E-Mail-Adresse",
+    "phone_placeholder": "Telefon (optional)",
+    "submit": "Website-Check anfordern",
+    "errors": {
+      "url": "Bitte geben Sie die Adresse Ihrer Website an, zum Beispiel www.ihre-firma.de.",
+      "email": "Bitte geben Sie eine gültige E-Mail-Adresse an."
+    },
+    "success": {
+      "title": "Danke! Ihr Website-Check ist unterwegs.",
+      "text": "Ich schaue mir {url} persönlich an und schicke Ihnen das Ergebnis innerhalb von 24 Stunden an {email}."
+    },
+    "how_title": "So läuft es",
+    "how": [
+      {
+        "title": "Adresse senden",
+        "text": "Sie tragen Ihre Website-Adresse und Ihre E-Mail ein. Das dauert 20 Sekunden."
+      },
+      {
+        "title": "Ich schaue persönlich hin",
+        "text": "Kein Automat: Ich prüfe Ihre Seite selbst auf Handy, Tempo, Auffindbarkeit und Eindruck."
+      },
+      {
+        "title": "Ergebnis in Klartext",
+        "text": "Innerhalb von 24 Stunden erhalten Sie meine Einschätzung per E-Mail. Was Sie damit machen, entscheiden Sie."
+      }
+    ],
+    "meta_title": "Kostenloser Website-Check | Coday Wetzlar",
+    "meta_description": "Schicken Sie mir Ihre Website-Adresse. Ich prüfe Handy-Darstellung, Ladezeit, Auffindbarkeit bei Google und den ersten Eindruck und antworte innerhalb von 24 Stunden. Kostenlos, ohne Verkaufsdruck."
+  }
+}

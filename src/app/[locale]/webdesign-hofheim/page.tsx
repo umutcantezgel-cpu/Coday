@@ -8,12 +8,10 @@ import {
   getPyramidBreadcrumbs,
 } from '@/features/local-seo/model/schemaPyramid';
 import { LocalSplitHero } from '@/features/local-seo/ui/LocalSplitHero';
+import LocalConversionBlock from '@/features/local-seo/ui/LocalConversionBlock';
 import { RegionalSilo } from '@/features/local-seo/ui/RegionalSilo';
-import { Link } from '@/i18n/navigation';
-import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
 import {
-  ArrowRight,
   Lightning,
   ShieldCheck,
   Code,
@@ -48,9 +46,9 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Hofheim am Taunus | Web Agency · Coday',
+      title: 'Web Design Hofheim: Get Your Website Built at a Fixed Price | Coday',
       description:
-        'Web design & SEO in Hofheim am Taunus. Modern websites with <0.5s load time for clinics, law firms & services. Binding fixed price on request.',
+        'A new website for your business in Hofheim: fixed price, live in 10 to 14 business days, built personally by the developer. Free call, reply within 24 hours.',
       keywords: [
         'Web Design Hofheim am Taunus',
         'Web Agency Hofheim',
@@ -63,9 +61,9 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Hofheim am Taunus | Webagentur · Coday',
+    title: 'Webdesign Hofheim: Website erstellen lassen zum Festpreis | Coday',
     description:
-      'Webdesign & SEO in Hofheim am Taunus. Next.js Websites mit <0.5s Ladezeit für Praxen, Kanzleien & Dienstleister. Festpreis auf Anfrage.',
+      'Neue Website für Ihr Unternehmen in Hofheim: fester Preis, in 10 bis 14 Werktagen online, persönlich vom Entwickler. Kostenloses Gespräch, Antwort innerhalb von 24 Stunden.',
     keywords: [
       'Webdesign Hofheim',
       'Webagentur Hofheim am Taunus',
@@ -531,27 +529,7 @@ export default async function WebdesignHofheimPage({
       </section>
 
       {/* 9. BOTTOM CTA */}
-      <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
-            Digitale Spitzenklasse für Ihr Unternehmen in Hofheim sichern
-          </h2>
-          <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-            Vereinbaren Sie jetzt ein persönliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
-            Emre Tezgel für Ihren Standort in Hofheim und im Main-Taunus-Kreis.
-          </p>
-          <Link href="/contact">
-            <Button
-              variant="primary"
-              size="lg"
-              className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
-            >
-              Hofheimer Erstgespräch anfordern
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </Link>
-        </div>
-      </section>
+      <LocalConversionBlock cityName="Hofheim" sourceTag="local_seo_webdesign_hofheim_bottom" />
 
       <RegionalSilo citySlug="webdesign-hofheim" locale={_locale} />
     </div>

@@ -22,6 +22,9 @@ import { ReadingScore } from '@/features/blog/ui/ReadingScore';
 import { useTranslations, useLocale } from 'next-intl';
 import { SeoTextInjector } from '@/features/seo/ui/SeoTextInjector';
 import { PreferredSourceCta } from '@/shared/ui/PreferredSourceCta';
+import { LeadQuickForm } from '@/features/lead/ui/LeadQuickForm';
+import { trackEvent } from '@/shared/lib/analytics/tracking';
+import { ctaLabel } from '@/shared/config/ctaLabels';
 
 const BlogPost: React.FC = () => {
   const params = useParams();
@@ -182,13 +185,28 @@ const BlogPost: React.FC = () => {
                     <p className="text-slate-600">{t('cta.desc')}</p>
                   </div>
                   <Link
-                    href="/contact"
+                    href="/website-check"
+                    onClick={() =>
+                      trackEvent('cta_click', {
+                        cta_label: 'website_check',
+                        cta_position: 'blog_article',
+                      })
+                    }
                     className="shrink-0 px-6 py-3 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/30 hover:bg-primary-dark transition motion-reduce:duration-[0.01ms] transform hover:-translate-y-1 flex items-center gap-2"
                   >
                     <EnvelopeSimple size={20} />
-                    {t('cta.button')}
+                    {ctaLabel('websiteCheck', locale)}
                   </Link>
                 </div>
+              </div>
+
+              {/* Quick request: the lowest-commitment action at the end of the article */}
+              <div className="max-w-prose mx-auto mb-16">
+                <LeadQuickForm
+                  variant="inline"
+                  formKind="quick"
+                  source={`blog_${slug || 'article'}`}
+                />
               </div>
 
               {/* Google Preferred Sources */}

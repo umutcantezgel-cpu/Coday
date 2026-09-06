@@ -33,6 +33,7 @@ import { useCalculatorStore } from '@/features/calculator/model/store';
 import StepIndicator from '@/shared/ui/StepIndicator';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { MobileContactLayout } from '@/features/contact/ui/MobileContactLayout';
+import { DirectContactCard } from '@/features/contact/ui/DirectContactCard';
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 
 export const ContactClient: React.FC = () => {
@@ -124,6 +125,8 @@ export const ContactClient: React.FC = () => {
                   </GradientText>
                 </h1>
                 <p className="text-xl text-slate-600 leading-relaxed mb-8">{t('hero.desc')}</p>
+
+                <DirectContactCard />
 
                 <div className="mb-12">
                   <BookingCalendar />

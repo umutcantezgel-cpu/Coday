@@ -19,6 +19,11 @@ const CookieConsentBanner = dynamic(() => import('@/widgets/cookie/CookieConsent
 const WaterCursor = dynamic(() => import('@/shared/ui/WaterCursor'), {
   ssr: false,
 });
+const MobileConversionBar = dynamic(
+  () =>
+    import('@/widgets/mobile-conversion/MobileConversionBar').then((m) => m.MobileConversionBar),
+  { ssr: false }
+);
 
 export const ConditionalWrapper = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname() || '';
@@ -38,6 +43,7 @@ export const ConditionalWrapper = ({ children }: { children: React.ReactNode }) 
         </DelayedRender>
       )}
       {children}
+      <MobileConversionBar />
       <DelayedRender delayMs={8000}>
         <ChatWidget hideTrigger={true} />
       </DelayedRender>

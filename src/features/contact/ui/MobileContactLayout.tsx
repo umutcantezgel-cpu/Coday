@@ -8,6 +8,7 @@ import BookingCalendar from '@/features/booking/ui/BookingCalendar';
 const ApplicationWizard = lazy(() => import('@/features/contact/ApplicationWizard'));
 import { Icon } from '@/shared/ui/Icon';
 import { Skeleton } from '@/shared/ui/Skeleton';
+import { DirectContactCard } from '@/features/contact/ui/DirectContactCard';
 
 export const MobileContactLayout: React.FC = () => {
   const t = useTranslations('contact');
@@ -16,8 +17,10 @@ export const MobileContactLayout: React.FC = () => {
   const hasPackage = !!selectedPackageId || !!searchParams?.get('package');
 
   const [userTab, setUserTab] = useState<'booking' | 'contact' | null>(null);
+  // The message form is the lowest-commitment action, so it is the default.
+  // The calendar stays one tap away and can be requested with ?tab=booking.
   const activeTab =
-    userTab ?? (hasPackage || searchParams?.get('tab') === 'contact' ? 'contact' : 'booking');
+    userTab ?? (!hasPackage && searchParams?.get('tab') === 'booking' ? 'booking' : 'contact');
 
   return (
     <div className="min-h-dvh bg-gray-50 pb-20">
@@ -65,6 +68,9 @@ export const MobileContactLayout: React.FC = () => {
               <Suspense fallback={<Skeleton className="h-[400px] w-full rounded-2xl" />}>
                 <ApplicationWizard />
               </Suspense>
+              <div className="mt-6">
+                <DirectContactCard />
+              </div>
             </m.div>
           )}
         </AnimatePresence>

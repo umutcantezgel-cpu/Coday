@@ -38,9 +38,9 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Löhnberg & Web Agency · Coday',
+      title: 'Web Design Löhnberg: Get Your Website Built at a Fixed Price | Coday',
       description:
-        'Web design & Local SEO for Löhnberg (35792), Niedershausen, Selters & Obershausen. Ultra-fast Next.js websites for crafts, industry along B49 & tourism.',
+        'A new website for your business in Löhnberg: fixed price, live in 10 to 14 business days, built personally by the developer. Free call, reply within 24 hours.',
       keywords: [
         'Web Design Löhnberg',
         'Web Agency Löhnberg 35792',
@@ -53,9 +53,9 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Löhnberg & Webentwicklung · Coday',
+    title: 'Webdesign Löhnberg: Website erstellen lassen zum Festpreis | Coday',
     description:
-      'Webdesign & Local SEO für Löhnberg (35792), Niedershausen, Selters & Obershausen. Schnelle Next.js Websites für Handwerk & Tourismus. Feste Konditionen.',
+      'Neue Website für Ihr Unternehmen in Löhnberg: fester Preis, in 10 bis 14 Werktagen online, persönlich vom Entwickler. Kostenloses Gespräch, Antwort innerhalb von 24 Stunden.',
     keywords: [
       'Webdesign Löhnberg',
       'Webagentur Löhnberg 35792',

@@ -39,6 +39,38 @@ describe('leadSubmissionSchema', () => {
     expect(unknown.packageId).toBeNull();
   });
 
+  it('accepts phone-only requests and rejects requests without any contact detail', () => {
+    const phoneOnly = leadSubmissionSchema.safeParse({ name: 'Max', phone: '0170 1234567' });
+    expect(phoneOnly.success).toBe(true);
+    if (phoneOnly.success) expect(phoneOnly.data.email).toBeUndefined();
+    expect(leadSubmissionSchema.safeParse({ name: 'Max' }).success).toBe(false);
+    expect(leadSubmissionSchema.safeParse({ name: 'Max', phone: '12' }).success).toBe(false);
+  });
+
+  it('validates website-check and industry fields', () => {
+    const ok = leadSubmissionSchema.parse({
+      name: 'Check',
+      email: 'a@b.de',
+      formKind: 'website_check',
+      websiteUrl: 'https://www.firma.de/start',
+      industry: 'gastronomie',
+    });
+    expect(ok.formKind).toBe('website_check');
+    expect(ok.websiteUrl).toBe('https://www.firma.de/start');
+    expect(ok.industry).toBe('gastronomie');
+    expect(
+      leadSubmissionSchema.safeParse({ name: 'X Y', email: 'a@b.de', websiteUrl: 'not a url' })
+        .success
+    ).toBe(false);
+    expect(
+      leadSubmissionSchema.safeParse({ name: 'X Y', email: 'a@b.de', formKind: 'industries' })
+        .success
+    ).toBe(true);
+    expect(
+      leadSubmissionSchema.safeParse({ name: 'X Y', email: 'a@b.de', formKind: 'nope' }).success
+    ).toBe(false);
+  });
+
   it('keeps the honeypot value so the action can drop bots', () => {
     const result = leadSubmissionSchema.parse({
       name: 'Bot',

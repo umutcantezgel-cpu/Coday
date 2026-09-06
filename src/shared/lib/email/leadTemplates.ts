@@ -52,7 +52,19 @@ export interface LeadEmailData {
   /** Ortsteil, only the Löhnberg form collects one today. */
   district?: string;
   /** Which form was used — decides how the confirmation is worded. */
-  formKind?: 'contact' | 'quick' | 'local' | 'gov' | 'newsletter';
+  formKind?:
+    | 'contact'
+    | 'quick'
+    | 'local'
+    | 'gov'
+    | 'newsletter'
+    | 'website_check'
+    | 'industries'
+    | 'sticky';
+  /** Industry slug for industry landing pages. */
+  industry?: string;
+  /** Website-check: the address the owner should review. */
+  websiteUrl?: string;
   /** Straight-line km from Wetzlar, when the city is one we have coordinates for. */
   distanceKm?: number;
 }
@@ -75,6 +87,9 @@ const FORM_KIND_LABELS: Record<NonNullable<LeadEmailData['formKind']>, string> =
   local: 'Stadtseite',
   gov: 'Öffentlicher Sektor',
   newsletter: 'Newsletter',
+  website_check: 'Website-Check',
+  industries: 'Branchenseite',
+  sticky: 'Sticky-Leiste (mobil)',
 };
 
 export function getAgencyLeadSubject(data: LeadEmailData): string {
@@ -215,6 +230,16 @@ export function generateAgencyLeadEmailHtml(data: LeadEmailData): string {
             ]
           : []),
         ...(data.district ? [{ label: 'Ortsteil', value: escapeHtml(data.district) }] : []),
+        ...(data.industry ? [{ label: 'Branche', value: escapeHtml(data.industry) }] : []),
+        ...(data.websiteUrl
+          ? [
+              {
+                label: 'Website',
+                value: `<a href="${escapeHtml(data.websiteUrl)}" style="color: ${EMAIL_COLORS.info};">${escapeHtml(data.websiteUrl)}</a>`,
+                highlight: true,
+              },
+            ]
+          : []),
         {
           label: 'Formular',
           value: data.formKind ? FORM_KIND_LABELS[data.formKind] : source,

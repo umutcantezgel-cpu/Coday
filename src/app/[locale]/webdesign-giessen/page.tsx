@@ -8,12 +8,10 @@ import {
   getPyramidBreadcrumbs,
 } from '@/features/local-seo/model/schemaPyramid';
 import { LocalSplitHero } from '@/features/local-seo/ui/LocalSplitHero';
+import LocalConversionBlock from '@/features/local-seo/ui/LocalConversionBlock';
 import { RegionalSilo } from '@/features/local-seo/ui/RegionalSilo';
-import { Link } from '@/i18n/navigation';
-import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
 import {
-  ArrowRight,
   Lightning,
   ShieldCheck,
   Code,
@@ -45,9 +43,9 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Giessen | Next.js Agency & SEO · Coday',
+      title: 'Web Design Gießen: Get Your Website Built at a Fixed Price | Coday',
       description:
-        'High-end web design in Giessen. Sub-500ms load times, measurable new clients & fixed pricing for practices & mid-market companies.',
+        'A new website for your business in Gießen: fixed price, live in 10 to 14 business days, built personally by the developer. Free call, reply within 24 hours.',
       keywords: [
         'Web Design Giessen',
         'Web Agency Giessen',
@@ -60,9 +58,9 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Gießen | Next.js Webagentur & SEO · Coday',
+    title: 'Webdesign Gießen: Website erstellen lassen zum Festpreis | Coday',
     description:
-      'Webdesign für Gießen: Ultraschnelle Ladezeiten, messbare Neukunden & transparente Festpreise für Praxen, Startups & Mittelstand.',
+      'Neue Website für Ihr Unternehmen in Gießen: fester Preis, in 10 bis 14 Werktagen online, persönlich vom Entwickler. Kostenloses Gespräch, Antwort innerhalb von 24 Stunden.',
     keywords: [
       'Webdesign Gießen',
       'Webagentur Gießen',
@@ -584,27 +582,15 @@ export default async function WebdesignGiessenPage({
       </section>
 
       {/* 10. BOTTOM CTA */}
-      <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
-            Digitale Spitzenposition für Ihr Gießener Unternehmen sichern
-          </h2>
-          <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-            Lassen Sie uns in einem unverbindlichen 20-Minuten-Gespräch analysieren, wie Next.js 15
-            und lokales SEO messbare Anfragen für Ihren Standort in Gießen generieren.
-          </p>
-          <Link href="/contact">
-            <Button
-              variant="primary"
-              size="lg"
-              className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
-            >
-              Gießener Strategiegespräch anfordern
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </Link>
-        </div>
-      </section>
+      <LocalConversionBlock
+        cityName="Gießen"
+        sourceTag="local_seo_webdesign_giessen_bottom"
+        reference={{
+          name: 'Lindener Ratsstuben, Linden bei Gießen',
+          result: 'Ladezeit unter 0,8 Sekunden und spürbar mehr Sichtbarkeit bei Google Maps.',
+          href: 'https://lindener-ratsstuben.de',
+        }}
+      />
 
       <RegionalSilo citySlug="webdesign-giessen" locale={_locale} />
     </div>

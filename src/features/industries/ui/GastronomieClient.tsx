@@ -2,7 +2,9 @@
 
 import React from 'react';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
+import LocalConversionBlock from '@/features/local-seo/ui/LocalConversionBlock';
 import { useTranslations } from 'next-intl';
+import { trackEvent } from '@/shared/lib/analytics/tracking';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { IMAGES } from '@/shared/config/images';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
@@ -66,9 +68,18 @@ const Gastronomie: React.FC = () => {
                 {t('gastronomie-hotellerie.hero.subheadline')}
               </p>
               <div className="flex gap-4 mb-12">
-                <button className="active:scale-[0.97] bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:bg-secondary/90 transition-colors motion-reduce:duration-[0.01ms]">
+                <a
+                  href="#lead-form"
+                  onClick={() =>
+                    trackEvent('cta_click', {
+                      cta_label: 'industry_hero',
+                      cta_position: 'industries_gastronomie',
+                    })
+                  }
+                  className="inline-flex items-center justify-center active:scale-[0.97] bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:bg-secondary/90 transition-colors motion-reduce:duration-[0.01ms]"
+                >
                   {t('gastronomie-hotellerie.features.cta', { defaultValue: 'Termin vereinbaren' })}
-                </button>
+                </a>
               </div>
             </div>
 
@@ -135,6 +146,14 @@ const Gastronomie: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <LocalConversionBlock
+        industry={{
+          slug: 'gastronomie',
+          label: { de: 'Gastronomie & Hotellerie', en: 'restaurants & hotels' },
+        }}
+        sourceTag="industries_gastronomie_bottom"
+      />
 
       <SeoContentBlock
         title={t('gastronomie-hotellerie.seoText.title')}

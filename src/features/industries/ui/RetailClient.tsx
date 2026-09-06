@@ -2,7 +2,9 @@
 
 import React from 'react';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
+import LocalConversionBlock from '@/features/local-seo/ui/LocalConversionBlock';
 import { useTranslations } from 'next-intl';
+import { trackEvent } from '@/shared/lib/analytics/tracking';
 import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
@@ -59,9 +61,18 @@ const Retail: React.FC = () => {
                 {t('ecommerce-retail.hero.description')}
               </p>
               <div className="flex gap-4 mb-12">
-                <button className="active:scale-[0.97] bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:bg-secondary/90 transition-colors motion-reduce:duration-[0.01ms]">
+                <a
+                  href="#lead-form"
+                  onClick={() =>
+                    trackEvent('cta_click', {
+                      cta_label: 'industry_hero',
+                      cta_position: 'industries_retail',
+                    })
+                  }
+                  className="inline-flex items-center justify-center active:scale-[0.97] bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:bg-secondary/90 transition-colors motion-reduce:duration-[0.01ms]"
+                >
                   {t('ecommerce-retail.customFeatures.produkt_konfigurator.title')}
-                </button>
+                </a>
               </div>
             </div>
 
@@ -85,6 +96,14 @@ const Retail: React.FC = () => {
           <LoyaltyLoop />
         </div>
       </section>
+
+      <LocalConversionBlock
+        industry={{
+          slug: 'retail',
+          label: { de: 'Einzelhandel & Online-Shops', en: 'retail & online shops' },
+        }}
+        sourceTag="industries_retail_bottom"
+      />
 
       <SeoContentBlock
         title={t('retail.seoText.title')}

@@ -1,6 +1,7 @@
 /* eslint-disable */
 'use client';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { trackEvent } from '@/shared/lib/analytics/tracking';
 import { usePathname } from 'next/navigation';
 import { m, AnimatePresence } from 'motion/react';
 import {
@@ -624,12 +625,7 @@ export const FloatingWidgetsManager: React.FC = () => {
     );
     const url = `https://api.whatsapp.com/send?phone=4917641195301&text=${encodeURIComponent(msg)}`;
     window.open(url, '_blank');
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'whatsapp_click', {
-        event_category: 'engagement',
-        event_label: pathname,
-      });
-    }
+    trackEvent('whatsapp_click', { cta_position: 'floating_widget', destination: pathname });
   };
 
   if (!mounted) return null;

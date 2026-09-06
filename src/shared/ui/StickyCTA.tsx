@@ -5,6 +5,7 @@ import { Link as NavLink } from '@/i18n/navigation';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { RocketLaunch } from '@phosphor-icons/react/dist/ssr';
 import { useTranslations } from 'next-intl';
+import { trackEvent } from '@/shared/lib/analytics/tracking';
 
 export const StickyCTA: React.FC = () => {
   const t = useTranslations('common');
@@ -40,6 +41,12 @@ export const StickyCTA: React.FC = () => {
             </div>
             <NavLink
               href="/contact"
+              onClick={() =>
+                trackEvent('sticky_bar_click', {
+                  cta_label: 'contact',
+                  cta_position: 'sticky_services',
+                })
+              }
               className="bg-gray-900 text-white px-5 py-3 rounded-xl font-bold text-sm hover:bg-black transition-colors motion-reduce:duration-[0.01ms] flex items-center gap-2 shadow-lg"
             >
               {t('buttons.start_project')}

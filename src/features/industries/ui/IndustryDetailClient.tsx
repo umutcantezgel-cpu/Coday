@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { industriesData } from '@/shared/data/industries';
+import LocalConversionBlock from '@/features/local-seo/ui/LocalConversionBlock';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import {
   industryHeroImages,
@@ -99,12 +100,12 @@ export function IndustryDetailClient({ industrySlug }: { industrySlug?: string }
               {t(industry.hero.subheadline)}
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link
-                href="/contact"
+              <a
+                href="#lead-form"
                 className="px-8 py-3 bg-primary text-white font-bold rounded-lg hover:bg-opacity-90 transition motion-reduce:duration-[0.01ms] shadow-flat hover:translate-y-[-2px]"
               >
                 {t('detail.hero.cta_primary')}
-              </Link>
+              </a>
               <Link
                 href="/calculator"
                 className="px-8 py-3 bg-white text-secondary border border-gray-200 font-bold rounded-lg hover:border-primary hover:text-primary transition motion-reduce:duration-[0.01ms] shadow-sm"
@@ -317,6 +318,11 @@ export function IndustryDetailClient({ industrySlug }: { industrySlug?: string }
       </section>
 
       {/* SEO Injection Block for Word Count and Keywords */}
+      <LocalConversionBlock
+        industry={{ slug, label: t(industry.title) }}
+        sourceTag={`industries_${slug}_bottom`}
+      />
+
       <SeoContentBlock title={`${t(industry.title)} Webdesign`} h1={t(industry.hero.headline)} />
     </main>
   );

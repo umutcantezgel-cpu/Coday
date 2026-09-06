@@ -8,12 +8,10 @@ import {
   getPyramidBreadcrumbs,
 } from '@/features/local-seo/model/schemaPyramid';
 import { LocalSplitHero } from '@/features/local-seo/ui/LocalSplitHero';
+import LocalConversionBlock from '@/features/local-seo/ui/LocalConversionBlock';
 import { RegionalSilo } from '@/features/local-seo/ui/RegionalSilo';
-import { Link } from '@/i18n/navigation';
-import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
 import {
-  ArrowRight,
   Lightning,
   ShieldCheck,
   Code,
@@ -46,9 +44,9 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Get a Website Built in Wetzlar | Fixed Price · Coday',
+      title: 'Web Design Wetzlar: Get Your Website Built at a Fixed Price | Coday',
       description:
-        'Get your website built in Wetzlar: fixed price, live in 10 to 14 working days and sub-0.3s load times. Built by the owner directly.',
+        'A new website for your business in Wetzlar: fixed price, live in 10 to 14 business days, built personally by the developer. Free call, reply within 24 hours.',
       keywords: [
         'Get a Website Built in Wetzlar',
         'Website Creation Wetzlar',
@@ -62,9 +60,9 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: 'Website erstellen lassen in Wetzlar | Festpreis · Coday',
+    title: 'Webdesign Wetzlar: Website erstellen lassen zum Festpreis | Coday',
     description:
-      'Website erstellen lassen in Wetzlar: Verbindlicher Festpreis, in 10 bis 14 Werktagen online und Ladezeit < 0,3s. Vom Inhaber gebaut.',
+      'Neue Website für Ihr Unternehmen in Wetzlar: fester Preis, in 10 bis 14 Werktagen online, persönlich vom Entwickler. Kostenloses Gespräch, Antwort innerhalb von 24 Stunden.',
     keywords: [
       'Website erstellen lassen Wetzlar',
       'Homepage erstellen lassen Wetzlar',
@@ -598,27 +596,16 @@ export default async function WebdesignWetzlarPage({
       </section>
 
       {/* 10. BOTTOM CTA */}
-      <section className="py-20 bg-slate-50/80 text-center border-t border-slate-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
-            Digitalen Spitzenplatz für Ihr Wetzlarer Unternehmen sichern
-          </h2>
-          <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-            Vereinbaren Sie jetzt ein persönliches 20-Minuten-Strategiegespräch direkt mit Inhaber
-            Umutcan Emre Tezgel in Wetzlar.
-          </p>
-          <Link href="/contact">
-            <Button
-              variant="primary"
-              size="lg"
-              className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
-            >
-              Wetzlarer Strategiegespräch anfordern
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </Link>
-        </div>
-      </section>
+      <LocalConversionBlock
+        cityName="Wetzlar"
+        sourceTag="local_seo_webdesign_agentur_wetzlar_bottom"
+        reference={{
+          name: 'Batherm, Wetzlar',
+          result:
+            'Nach dem Relaunch kamen im ersten Quartal deutlich mehr qualifizierte Anfragen von Geschäftskunden.',
+          href: 'https://www.batherm.de',
+        }}
+      />
 
       <RegionalSilo citySlug="webdesign-agentur-wetzlar" locale={_locale} />
     </div>

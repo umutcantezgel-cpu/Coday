@@ -11,7 +11,7 @@
     "close": "Schließen",
     "menu": "Menü",
     "start": "Starten",
-    "start_project": "Potenzialanalyse starten",
+    "start_project": "Kurz anfragen",
     "contact": "Kontakt aufnehmen",
     "view_work": "Referenzen ansehen",
     "cta_analysis": "Potenzial-Analyse starten"
@@ -154,8 +154,8 @@
         "desc": "Wöchentliche Tipps"
       },
       "audit": {
-        "label": "Kostenloses Audit",
-        "desc": "Website Analyse"
+        "label": "Kostenloser Website-Check",
+        "desc": "Ich prüfe Ihre Seite persönlich"
       },
       "desc": "Wissen & Erfolg",
       "label": "Academy"
@@ -163,7 +163,7 @@
     "booking": {
       "label": "Termin buchen"
     },
-    "cta_booking": "Termin",
+    "cta_booking": "Kurz anfragen",
     "career": {
       "label": "Karriere",
       "desc": "Werde Teil des Teams",

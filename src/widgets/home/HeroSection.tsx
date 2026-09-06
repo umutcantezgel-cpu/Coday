@@ -5,6 +5,7 @@ import { cn } from '@/shared/lib/utils';
 import { LazyQuickContactForm } from './LazyQuickContactForm';
 import { MobileQuickContact } from './MobileQuickContact';
 import { Link } from '@/i18n/navigation';
+import { TrackedLink } from '@/shared/ui/TrackedLink';
 import { ArrowRight, Briefcase } from '@phosphor-icons/react/dist/ssr';
 import { baseButtonStyles, buttonVariants, buttonSizes } from '@/shared/ui/ButtonStyles';
 
@@ -99,8 +100,11 @@ export const HeroSection: React.FC = () => {
               as compact outlines rather than competing for the same emphasis. */}
           <div className="mt-8 flex flex-col w-full gap-3 lg:hidden">
             <MobileQuickContact />
-            <Link
-              href="/booking"
+            <TrackedLink
+              event="cta_click"
+              ctaPosition="hero_mobile"
+              ctaLabel="booking"
+              href={isEn ? '/en/booking' : '/de/booking'}
               className={cn(
                 baseButtonStyles,
                 buttonVariants['outline'],
@@ -108,9 +112,9 @@ export const HeroSection: React.FC = () => {
                 'w-full justify-center text-sm'
               )}
             >
-              <span>{isEn ? 'Book Strategy Call' : 'Online-Termin buchen'}</span>
+              <span>{isEn ? 'Book a call' : 'Termin buchen'}</span>
               <ArrowRight className="w-4 h-4 ml-2" />
-            </Link>
+            </TrackedLink>
             <Link
               href="/work"
               className={cn(

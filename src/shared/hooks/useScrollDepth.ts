@@ -1,5 +1,5 @@
 import { useEffect, useRef, useCallback } from 'react';
-import { trackEvent } from '@/shared/lib/analytics';
+import { trackEvent } from '@/shared/lib/analytics/tracking';
 
 /**
  * SEQ-15 Task 4: Tracks scroll depth at 25%, 50%, 75%, 100% thresholds.

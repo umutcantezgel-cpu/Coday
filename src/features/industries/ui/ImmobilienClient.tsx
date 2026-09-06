@@ -2,7 +2,9 @@
 
 import React from 'react';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
+import LocalConversionBlock from '@/features/local-seo/ui/LocalConversionBlock';
 import { useTranslations } from 'next-intl';
+import { trackEvent } from '@/shared/lib/analytics/tracking';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { Cube, ShieldCheck, At } from '@phosphor-icons/react/dist/ssr';
 import BlurText from '@/shared/ui/BlurText';
@@ -69,9 +71,18 @@ const Immobilien: React.FC = () => {
                 {t('immobilien-makler.hero.subheadline')}
               </p>
               <div className="flex gap-4 mb-12">
-                <button className="active:scale-[0.97] bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:bg-secondary/90 transition-colors motion-reduce:duration-[0.01ms]">
+                <a
+                  href="#lead-form"
+                  onClick={() =>
+                    trackEvent('cta_click', {
+                      cta_label: 'industry_hero',
+                      cta_position: 'industries_immobilien',
+                    })
+                  }
+                  className="inline-flex items-center justify-center active:scale-[0.97] bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:bg-secondary/90 transition-colors motion-reduce:duration-[0.01ms]"
+                >
                   {t('immobilien-makler.features.virtual_tour.cta')}
-                </button>
+                </a>
               </div>
 
               <PropertyRoiCalculator />
@@ -142,6 +153,14 @@ const Immobilien: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <LocalConversionBlock
+        industry={{
+          slug: 'immobilien',
+          label: { de: 'Immobilienmakler', en: 'real-estate agents' },
+        }}
+        sourceTag="industries_immobilien_bottom"
+      />
 
       <SeoContentBlock
         title={t('immobilien-makler.seoText.title')}

@@ -137,6 +137,24 @@ describe('saveLeadInternalAction', () => {
     expect(customerCall[0].subject).toBe('Ihre Anfrage bei Coday: Webdesign & Corporate Website');
   });
 
+  it('sends only the agency mail for phone-only requests and stores the origin', async () => {
+    const result = await saveLeadInternalAction({
+      name: 'Anna Beispiel',
+      phone: '0170 1234567',
+      cityName: 'Gießen',
+      formKind: 'local',
+      source: 'local_seo_giessen_hero',
+      websiteUrl: 'https://www.beispiel.de',
+    });
+    expect(result.success).toBe(true);
+    expect(sendMock).toHaveBeenCalledTimes(1);
+    expect(sendMock.mock.calls[0][0].html).toContain('https://www.beispiel.de');
+    const row = insertMock.mock.calls[0][0][0];
+    expect(row.email).toBe('');
+    expect(row.form_kind).toBe('local');
+    expect(row.website_url).toBe('https://www.beispiel.de');
+  });
+
   it('rejects invalid payloads before touching Resend', async () => {
     const result = await saveLeadInternalAction({ name: 'X', email: 'not-an-email' });
     expect(result.success).toBe(false);

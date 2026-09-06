@@ -377,7 +377,11 @@ export const getNavItems = (): NavItem[] => [
         title: 'nav.resources.tools.title',
         links: [
           // Was listed twice here, once as the audit and once as the calculator.
-          { label: 'nav.academy.audit.label', href: '/calculator', desc: 'nav.academy.audit.desc' },
+          {
+            label: 'nav.academy.audit.label',
+            href: '/website-check',
+            desc: 'nav.academy.audit.desc',
+          },
           { label: 'nav.booking.label', href: '/booking' },
           {
             label: 'nav.resources.tools.strobi.label',

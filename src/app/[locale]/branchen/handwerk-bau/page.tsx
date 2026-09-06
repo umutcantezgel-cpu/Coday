@@ -21,6 +21,7 @@ import {
   Star,
 } from '@phosphor-icons/react/dist/ssr';
 import { IndustryToolEmbed } from '@/features/industries/ui/IndustryToolEmbed';
+import LocalConversionBlock from '@/features/local-seo/ui/LocalConversionBlock';
 
 export const dynamic = 'force-static';
 
@@ -301,6 +302,13 @@ export default async function HandwerkBauPage({ params }: { params: Promise<{ lo
 
       {/* Live Akquise-Kanal Embed */}
       <IndustryToolEmbed industryKey="handwerk-bau" />
+      <LocalConversionBlock
+        industry={{
+          slug: 'handwerk-bau',
+          label: { de: 'Handwerk & Bau', en: 'trades & construction' },
+        }}
+        sourceTag="industries_handwerk_bau_bottom"
+      />
 
       {/* Real References Showcase */}
       <section className="py-16 bg-white border-t border-slate-200">

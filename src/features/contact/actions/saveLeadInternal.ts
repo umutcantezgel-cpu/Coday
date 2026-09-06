@@ -140,11 +140,13 @@ export async function saveLeadInternalAction(
 
     const emailPayload: LeadEmailData = {
       name: lead.name,
-      email: lead.email,
+      email: lead.email ?? '',
       phone: lead.phone,
       company: lead.company,
       message: lead.message,
       project: lead.project,
+      industry: lead.industry,
+      websiteUrl: lead.websiteUrl,
       packageId: pkg?.id,
       packageTier: pkg?.tier,
       packageName: packageName || lead.project,
@@ -160,7 +162,7 @@ export async function saveLeadInternalAction(
       distanceKm: distanceFromWetzlar(lead.cityName),
     };
 
-    const summaryLine = `${lead.name} · ${packageName || lead.project || 'Projekt'} · ${lead.email}${lead.phone ? ` · ${lead.phone}` : ''}`;
+    const summaryLine = `${lead.name} · ${packageName || lead.project || 'Projekt'} · ${lead.email ?? 'ohne E-Mail'}${lead.phone ? ` · ${lead.phone}` : ''}${lead.websiteUrl ? ` · ${lead.websiteUrl}` : ''}`;
 
     // 4. Persist first (non-blocking). Skipped silently when Supabase is not configured.
     let dbStatus: 'stored' | 'skipped' | 'failed' = 'skipped';
@@ -169,7 +171,7 @@ export async function saveLeadInternalAction(
         const supabase = createAdminClient();
         const baseRow = {
           name: lead.name,
-          email: lead.email,
+          email: lead.email ?? '',
           phone: lead.phone ?? null,
           company: lead.company ?? null,
           message: lead.message ?? null,
@@ -186,6 +188,8 @@ export async function saveLeadInternalAction(
           city_name: lead.cityName ?? null,
           district: lead.district ?? null,
           form_kind: lead.formKind ?? null,
+          industry: lead.industry ?? null,
+          website_url: lead.websiteUrl ?? null,
         };
 
         let { error: dbError } = await supabase
@@ -242,33 +246,38 @@ export async function saveLeadInternalAction(
         kind: isNewsletter ? 'newsletter_agency' : 'lead_agency',
         to: adminEmail,
         subject: isNewsletter
-          ? getAgencyNewsletterSubject(lead.email)
+          ? getAgencyNewsletterSubject(lead.email ?? '')
           : getAgencyLeadSubject(emailPayload),
         html: isNewsletter
-          ? generateAgencyNewsletterHtml(lead.email, dateStr)
+          ? generateAgencyNewsletterHtml(lead.email ?? '', dateStr)
           : generateAgencyLeadEmailHtml(emailPayload),
         replyTo: lead.email,
         tags: [{ name: 'kind', value: isNewsletter ? 'newsletter_agency' : 'lead_agency' }],
       }),
-      sendEmail(
-        {
-          kind: isNewsletter ? 'newsletter_customer' : 'lead_customer',
-          to: lead.email,
-          subject: isNewsletter
-            ? getNewsletterConfirmationSubject(lead.locale)
-            : getCustomerConfirmationSubject(emailPayload),
-          html: isNewsletter
-            ? generateNewsletterConfirmationHtml(lead.locale)
-            : generateCustomerConfirmationEmailHtml(emailPayload),
-          replyTo: primaryAdmin,
-          tags: [{ name: 'kind', value: isNewsletter ? 'newsletter_customer' : 'lead_customer' }],
-        },
-        // Never send a customer-facing mail from onboarding@resend.dev: a German
-        // branded message from a stranger's domain reads as phishing and burns
-        // the reputation of the single mailbox this agency owns. The agency copy
-        // above keeps the fallback, so the lead still arrives.
-        { allowFallbackSender: false }
-      ),
+      // Phone-only requests have nobody to confirm to; the agency mail still goes out.
+      !lead.email
+        ? Promise.resolve({ ok: false, attempts: 0, error: 'no_customer_email' })
+        : sendEmail(
+            {
+              kind: isNewsletter ? 'newsletter_customer' : 'lead_customer',
+              to: lead.email,
+              subject: isNewsletter
+                ? getNewsletterConfirmationSubject(lead.locale)
+                : getCustomerConfirmationSubject(emailPayload),
+              html: isNewsletter
+                ? generateNewsletterConfirmationHtml(lead.locale)
+                : generateCustomerConfirmationEmailHtml(emailPayload),
+              replyTo: primaryAdmin,
+              tags: [
+                { name: 'kind', value: isNewsletter ? 'newsletter_customer' : 'lead_customer' },
+              ],
+            },
+            // Never send a customer-facing mail from onboarding@resend.dev: a German
+            // branded message from a stranger's domain reads as phishing and burns
+            // the reputation of the single mailbox this agency owns. The agency copy
+            // above keeps the fallback, so the lead still arrives.
+            { allowFallbackSender: false }
+          ),
     ]);
 
     const emailStatus =

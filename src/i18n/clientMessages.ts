@@ -30,7 +30,7 @@ export function pickMessages(
  * PageTransition, ConditionalWrapper and its deferred widgets — plus `faq`, whose
  * accordion is rendered on about, contact and most industry pages.
  */
-export const ROOT_CLIENT_NAMESPACES = ['common', 'error', 'faq'] as const;
+export const ROOT_CLIENT_NAMESPACES = ['common', 'error', 'faq', 'lead'] as const;
 
 /** Route-family additions, each merged on top of the root set by a nested provider. */
 export const ROUTE_CLIENT_NAMESPACES = {

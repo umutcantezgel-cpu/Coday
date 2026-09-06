@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 import { useLocale } from 'next-intl';
+import { buildWhatsAppUrl } from '@/shared/lib/whatsapp';
+import { trackEvent } from '@/shared/lib/analytics/tracking';
 import { m } from 'motion/react';
 import {
   Check,
@@ -634,9 +636,16 @@ export default function AngebotHandwerker() {
             </p>
 
             <a
-              href={isEn ? '/en/contact' : '/de/contact'}
+              href={buildWhatsAppUrl(
+                isEn
+                  ? 'Hi, I am interested in the craftsmen package.'
+                  : 'Hallo, ich interessiere mich für das Handwerker-Paket.'
+              )}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                trackEvent('whatsapp_click', { cta_position: 'angebot_handwerker_bottom' })
+              }
               className="inline-flex items-center justify-center gap-4 bg-teal-500 text-white px-10 py-6 rounded-2xl font-bold uppercase tracking-widest text-xl hover:bg-teal-400 transition-colors motion-reduce:duration-[0.01ms] shadow-[0_0_40px_rgba(44,165,160,0.4)] hover:shadow-[0_0_60px_rgba(44,165,160,0.6)]"
             >
               {isEn ? 'Message me on WhatsApp' : 'Schreib mir in WhatsApp'}{' '}

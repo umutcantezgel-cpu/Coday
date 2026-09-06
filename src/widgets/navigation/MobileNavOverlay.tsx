@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import { trackEvent } from '@/shared/lib/analytics/tracking';
 import { createPortal } from 'react-dom';
 import { m, AnimatePresence, useReducedMotion } from 'motion/react';
 import { Link } from '@/i18n/navigation';
@@ -307,7 +308,10 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
               <Link
                 href="/contact"
                 className="flex-1 flex items-center justify-center gap-2 bg-primary-700 hover:bg-primary-800 text-white py-3.5 rounded-xl font-bold active:scale-[0.98] transition-transform motion-reduce:duration-[0.01ms] shadow-lg shadow-primary-700/25"
-                onClick={onClose}
+                onClick={() => {
+                  trackEvent('cta_click', { cta_label: 'contact', cta_position: 'mobile_menu' });
+                  onClose();
+                }}
               >
                 <span>{t('nav.cta_booking', { defaultValue: 'Termin buchen' })}</span>
                 <OptimizedIcon icon={ArrowRight} className="w-5 h-5" />

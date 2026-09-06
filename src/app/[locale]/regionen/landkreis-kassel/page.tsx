@@ -8,12 +8,11 @@ import {
   getPyramidBreadcrumbs,
 } from '@/features/local-seo/model/schemaPyramid';
 import { LocalSplitHero } from '@/features/local-seo/ui/LocalSplitHero';
+import LocalConversionBlock from '@/features/local-seo/ui/LocalConversionBlock';
 import { CountySilo } from '@/features/local-seo/ui/CountySilo';
 import { Link } from '@/i18n/navigation';
-import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
 import {
-  ArrowRight,
   Lightning,
   ShieldCheck,
   Code,
@@ -648,27 +647,10 @@ export default async function LandkreisKasselPage({
       </section>
 
       {/* 10. BOTTOM CTA */}
-      <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
-            Digitale Spitzenklasse für Ihr Unternehmen im Landkreis Kassel sichern
-          </h2>
-          <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-            Vereinbaren Sie jetzt ein persönliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
-            Emre Tezgel für Ihren Standort im Landkreis Kassel.
-          </p>
-          <Link href="/contact">
-            <Button
-              variant="primary"
-              size="lg"
-              className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
-            >
-              Erstgespräch für den Landkreis Kassel anfordern
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </Link>
-        </div>
-      </section>
+      <LocalConversionBlock
+        cityName="Landkreis Kassel"
+        sourceTag="local_seo_landkreis_kassel_bottom"
+      />
 
       <CountySilo countySlug="landkreis-kassel" locale={_locale} />
     </div>

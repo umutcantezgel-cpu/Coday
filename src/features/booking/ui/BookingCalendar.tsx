@@ -5,6 +5,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { m, AnimatePresence } from 'motion/react';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { bookAppointment } from '@/app/actions/booking';
+import { getBookedSlots } from '@/app/actions/getBookedSlots';
 import { StrobiAvatar } from '@/entities/avatar';
 
 interface BookingCalendarProps {
@@ -19,6 +20,10 @@ interface BookingCalendarProps {
 }
 
 const TIME_SLOTS = ['09:00', '10:00', '11:00', '13:00', '14:00', '15:00', '16:00'];
+
+/** YYYY-MM-DD from local date parts; `toISOString()` would shift the day near midnight. */
+const formatLocalDate = (d: Date) =>
+  `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 
 const BookingCalendar = ({
   className,
@@ -58,10 +63,17 @@ const BookingCalendar = ({
     return d;
   });
 
-  const handleDateSelect = (date: Date) => {
+  const handleDateSelect = async (date: Date) => {
     setSelectedDate(date);
     setSelectedTime(null);
-    setBookedSlots(new Set()); // Reset while fetching
+    setBookedSlots(new Set());
+    setFetchingSlots(true);
+    try {
+      const taken = await getBookedSlots(formatLocalDate(date));
+      setBookedSlots(new Set(taken));
+    } finally {
+      setFetchingSlots(false);
+    }
   };
 
   const handleBook = async (e: React.FormEvent) => {
@@ -72,7 +84,7 @@ const BookingCalendar = ({
     setError(null);
 
     try {
-      const formattedDate = selectedDate.toISOString().split('T')[0];
+      const formattedDate = formatLocalDate(selectedDate);
 
       const res = await bookAppointment({
         ...formData,

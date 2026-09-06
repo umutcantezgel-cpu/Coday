@@ -1,0 +1,94 @@
+{
+  "form": {
+    "heading": "Quick request",
+    "subheading": "Three fields are enough. I will get back to you personally within 24 hours.",
+    "reply_badge": "Reply within 24 hours",
+    "name_label": "Your name",
+    "name_placeholder": "Your name",
+    "contact_label": "Phone or e-mail",
+    "contact_placeholder": "Phone or e-mail",
+    "message_label": "What is it about?",
+    "message_placeholder": "What is it about? (optional)",
+    "district_label": "Town or district",
+    "district_placeholder": "Please choose (optional)",
+    "submit": "Send quick request",
+    "submitting": "Sending …",
+    "privacy_notice": "By sending you agree that I use your details to handle your request. No sharing, no advertising.",
+    "privacy_link": "Privacy",
+    "errors": {
+      "name": "Please enter your name (at least 2 characters).",
+      "contact": "Please enter a phone number or an e-mail address.",
+      "generic": "That did not work. Please try again or give me a quick call."
+    },
+    "success": {
+      "title": "Thank you, {name}!",
+      "text": "Your request has arrived. I will get back to you personally within 24 hours.",
+      "text_email": "A confirmation is on its way to {email}.",
+      "faster": "Need it faster?",
+      "call": "Call",
+      "whatsapp": "WhatsApp",
+      "booking": "Prefer to pick a time right away?",
+      "booking_cta": "Book a call",
+      "again": "Send another request",
+      "close": "Close"
+    }
+  },
+  "sheet": {
+    "title": "Quick request",
+    "subtitle": "Three fields, then I get back to you within 24 hours."
+  },
+  "bar": {
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "inquiry": "Quick request",
+    "aria": "Quick contact"
+  },
+  "header": {
+    "call": "Call",
+    "whatsapp": "Message on WhatsApp"
+  },
+  "website_check": {
+    "badge": "Free and non-binding",
+    "heading": "Free website check",
+    "subheading": "Send me your website address. I take a personal look and tell you honestly within 24 hours what works and where you lose customers.",
+    "checks_title": "What I check for you",
+    "checks": [
+      "How your site looks on a phone and whether everything works",
+      "How fast it loads and whether visitors leave",
+      "Whether Google finds you for your services and your town",
+      "What first impression a new customer gets"
+    ],
+    "promise": "You receive the result by e-mail, in plain language, with no sales pressure. If everything is fine, I will tell you that too.",
+    "url_label": "Your website address",
+    "url_placeholder": "www.your-company.com",
+    "email_label": "Your e-mail address",
+    "email_placeholder": "Your e-mail address",
+    "phone_placeholder": "Phone (optional)",
+    "submit": "Request website check",
+    "errors": {
+      "url": "Please enter your website address, for example www.your-company.com.",
+      "email": "Please enter a valid e-mail address."
+    },
+    "success": {
+      "title": "Thank you! Your website check is on its way.",
+      "text": "I will personally look at {url} and send the result to {email} within 24 hours."
+    },
+    "how_title": "How it works",
+    "how": [
+      {
+        "title": "Send the address",
+        "text": "Enter your website address and your e-mail. It takes 20 seconds."
+      },
+      {
+        "title": "I take a personal look",
+        "text": "No robot: I check your site myself for phone, speed, findability and impression."
+      },
+      {
+        "title": "Result in plain language",
+        "text": "Within 24 hours you receive my assessment by e-mail. What you do with it is up to you."
+      }
+    ],
+    "meta_title": "Free Website Check | Coday Wetzlar",
+    "meta_description": "Send me your website address. I check mobile display, load time, findability on Google and first impression and reply within 24 hours. Free, no sales pressure."
+  }
+}

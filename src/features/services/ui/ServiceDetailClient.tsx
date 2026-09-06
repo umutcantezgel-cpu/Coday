@@ -14,7 +14,6 @@ import {
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { useTranslations, useLocale } from 'next-intl';
 
-import { StickyCTA } from '@/shared/ui/StickyCTA';
 import { SeoMethodologyBlock } from '@/features/services/ui/SeoMethodologyBlock';
 import {
   Lightning,
@@ -444,7 +443,6 @@ export function ServiceDetailClient() {
         </div>
       </section>
       <SeoMethodologyBlock />
-      <StickyCTA />
     </main>
   );
 }

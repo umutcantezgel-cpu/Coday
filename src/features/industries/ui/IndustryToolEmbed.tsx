@@ -40,7 +40,7 @@ const TOOLS_CONFIG: Record<string, ToolConfig> = {
   handwerk: {
     title: 'Handwerker-Akquise & Meister-Funnel',
     titleEn: 'Craftsman Acquisition & Master Funnel',
-    badge: 'LIVE AKQUISE-KANAL HANDWERK & BAU',
+    badge: 'DEMO-ANWENDUNG HANDWERK & BAU',
     badgeEn: 'LIVE CRAFTSMAN ACQUISITION CHANNEL',
     headline: 'Interaktiver Akquise- & Recruiting-Kanal für Handwerksbetriebe',
     headlineEn: 'Interactive Acquisition & Recruiting Channel for Tradesmen',
@@ -75,7 +75,7 @@ const TOOLS_CONFIG: Record<string, ToolConfig> = {
   gesundheit: {
     title: 'PraxisExzellenz Sales & Patienten-Dashboard',
     titleEn: 'PraxisExzellenz Sales & Patient Dashboard',
-    badge: 'LIVE AKQUISE-KANAL GESUNDHEITSWESEN',
+    badge: 'DEMO-ANWENDUNG GESUNDHEITSWESEN',
     badgeEn: 'LIVE HEALTHCARE ACQUISITION CHANNEL',
     headline: 'Digitales Akquise- & Patienten-Dashboard für Praxen & Kliniken',
     headlineEn: 'Digital Acquisition & Patient Dashboard for Practices & Clinics',
@@ -107,7 +107,7 @@ const TOOLS_CONFIG: Record<string, ToolConfig> = {
   automobil: {
     title: 'Automobile Digital Sales & Lead Engine',
     titleEn: 'Automobile Digital Sales & Lead Engine',
-    badge: 'LIVE AKQUISE-KANAL AUTOMOBIL & KFZ',
+    badge: 'DEMO-ANWENDUNG AUTOMOBIL & KFZ',
     badgeEn: 'LIVE AUTOMOTIVE ACQUISITION CHANNEL',
     headline: 'Interaktive Lead-Maschine & Probefahrt-Funnel für Autohäuser',
     headlineEn: 'Interactive Lead Engine & Test Drive Funnel for Car Dealerships',
@@ -290,18 +290,24 @@ export function IndustryToolEmbed({ industryKey, theme = 'light' }: IndustryTool
                 <div className="flex justify-between items-center text-slate-500">
                   <span>Status:</span>
                   <span className="text-emerald-700 font-semibold flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
-                    Aktiv & Betriebsbereit
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-400" />
+                    {isEn ? 'Demo (external preview)' : 'Demo (externe Vorschau)'}
                   </span>
                 </div>
               </div>
 
-              {/* Direct Forwarding Button */}
+              {/* Primary: the request form on this page. The demo is a secondary preview. */}
+              <a
+                href="#lead-form"
+                className="group w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl font-bold text-white transition duration-300 shadow-lg bg-amber-500 hover:bg-amber-600 active:scale-[0.98] text-base"
+              >
+                <span>{isEn ? 'Quick request' : 'Kurz anfragen'}</span>
+              </a>
               <a
                 href={config.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl font-bold text-white transition duration-300 shadow-lg bg-primary-700 hover:bg-primary-800 hover:scale-[1.02] active:scale-[0.98] text-base`}
+                className={`group mt-3 w-full inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-slate-700 transition duration-300 border border-slate-200 bg-white hover:border-slate-400 active:scale-[0.98] text-sm`}
               >
                 <span>{isEn ? config.ctaTextEn : config.ctaText}</span>
                 <ArrowSquareOut

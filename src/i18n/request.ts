@@ -29,6 +29,7 @@ const namespaces = [
   'images',
   'industries',
   'knowledge',
+  'lead',
   'legal',
   'logobar',
   'metadata',

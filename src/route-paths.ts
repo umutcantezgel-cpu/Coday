@@ -45,7 +45,8 @@ export const ROUTES = {
     CULTURE: '/career/culture',
     BENEFITS: '/career/benefits',
   },
-  ANALYZER: '/calculator',
+  ANALYZER: '/website-check',
+  WEBSITE_CHECK: '/website-check',
 } as const;
 
 export type RoutePath = (typeof ROUTES)[keyof typeof ROUTES];
