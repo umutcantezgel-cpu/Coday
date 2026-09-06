@@ -41,6 +41,7 @@
     "@sanity/client": "^7.22.0",
     "@sanity/image-url": "^2.1.1",
     "@sanity/preview-url-secret": "^4.1.4",
+    "@sentry/nextjs": "^10.73.0",
     "@supabase/ssr": "^0.8.0",
     "@supabase/supabase-js": "^2.94.0",
     "@types/canvas-confetti": "^1.9.0",

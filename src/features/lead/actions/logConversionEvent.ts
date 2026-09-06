@@ -3,6 +3,7 @@
 import { createHash } from 'node:crypto';
 import { headers } from 'next/headers';
 import { createAdminClient } from '@/shared/lib/supabase/server';
+import * as Sentry from '@sentry/nextjs';
 import {
   CONVERSION_EVENTS,
   type ConversionEventInput,
@@ -65,5 +66,6 @@ export async function logConversionEvent(input: ConversionEventInput): Promise<v
     }
   } catch (err) {
     console.warn('[logConversionEvent] non-blocking failure:', err);
+    Sentry.captureException(err, { tags: { area: 'conversion' } });
   }
 }

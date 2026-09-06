@@ -15,6 +15,7 @@ import {
 } from '@/shared/lib/email/bookingTemplates';
 import { berlinToUtc, buildIcs } from '@/shared/lib/email/ics';
 import { EMAIL_BASE_URL, EMAIL_BRAND } from '@/shared/lib/email/layout';
+import * as Sentry from '@sentry/nextjs';
 import {
   sendEmail,
   getAdminEmail,
@@ -137,6 +138,7 @@ export async function bookAppointment(payload: BookingPayload): Promise<BookingR
         }
       } catch (dbErr) {
         console.error('Supabase admin client error (non-blocking):', dbErr);
+        Sentry.captureException(dbErr, { tags: { area: 'booking', stage: 'db' } });
         dbStatus = 'failed';
       }
     }
@@ -231,6 +233,7 @@ export async function bookAppointment(payload: BookingPayload): Promise<BookingR
     };
   } catch (error) {
     console.error('Booking Action Error:', error);
+    Sentry.captureException(error, { tags: { area: 'booking', stage: 'action' } });
     return { error: msg.failed };
   }
 }

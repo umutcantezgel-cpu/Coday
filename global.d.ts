@@ -5,10 +5,6 @@ declare module '@axe-core/playwright' {
   }
 }
 
-declare module '@sentry/nextjs' {
-  export const captureException: (e: unknown) => void;
-}
-
 type Messages = typeof import('./messages/de.json');
 
 declare module 'sanity' {

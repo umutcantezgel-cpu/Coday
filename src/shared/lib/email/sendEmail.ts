@@ -1,4 +1,5 @@
 import { Resend } from 'resend';
+import * as Sentry from '@sentry/nextjs';
 import { htmlToText } from './layout';
 
 /**
@@ -167,6 +168,12 @@ export async function sendEmail(
           continue;
         }
         if (kind === 'fatal') {
+          Sentry.captureException(
+            new Error(`email ${input.kind} fatal via ${from}: ${lastError}`),
+            {
+              tags: { area: 'email', kind: input.kind, outcome: 'fatal' },
+            }
+          );
           return { ok: false, attempts, from, error: lastError };
         }
         // 'sender' or transient retries exhausted → try the next sender
@@ -176,5 +183,11 @@ export async function sendEmail(
   }
 
   console.error(`[email:${input.kind}] giving up after ${attempts} attempt(s): ${lastError}`);
+  Sentry.captureException(
+    new Error(`email ${input.kind} gave up after ${attempts} attempt(s): ${lastError}`),
+    {
+      tags: { area: 'email', kind: input.kind, outcome: 'exhausted' },
+    }
+  );
   return { ok: false, attempts, error: lastError };
 }

@@ -1,6 +1,7 @@
 import path from 'path';
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
+import { withSentryConfig } from '@sentry/nextjs';
 
 const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
@@ -1000,4 +1001,17 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default withNextIntl(nextConfig);
+// Sentry is server-only here (see src/instrumentation.ts): no client SDK, no
+// source-map upload (would need SENTRY_AUTH_TOKEN), no release injection, so
+// the browser bundle is untouched.
+export default withSentryConfig(withNextIntl(nextConfig), {
+  org: process.env.SENTRY_ORG ?? 'coday',
+  project: process.env.SENTRY_PROJECT ?? 'javascript-react',
+  silent: true,
+  telemetry: false,
+  sourcemaps: { disable: true },
+  release: { create: false },
+  disableLogger: true,
+  widenClientFileUpload: false,
+  automaticVercelMonitors: false,
+});

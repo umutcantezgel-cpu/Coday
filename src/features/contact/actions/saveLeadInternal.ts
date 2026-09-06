@@ -26,6 +26,7 @@ import {
 } from '@/shared/lib/email/newsletterTemplates';
 import { CITIES_HIERARCHY } from '@/features/local-seo/model/schemaPyramid';
 import { haversineDistance } from '@/shared/data/cities/utils';
+import * as Sentry from '@sentry/nextjs';
 
 const HQ = CITIES_HIERARCHY['webdesign-agentur-wetzlar'];
 
@@ -214,6 +215,7 @@ export async function saveLeadInternalAction(
         }
       } catch (dbErr) {
         console.error('Supabase admin client error (non-blocking):', dbErr);
+        Sentry.captureException(dbErr, { tags: { area: 'lead', stage: 'db' } });
         dbStatus = 'failed';
       }
     }
@@ -314,6 +316,7 @@ export async function saveLeadInternalAction(
     return { success: true, status: `${emailStatus}:${dbStatus}`, score };
   } catch (error) {
     console.error('Internal Save Error:', error);
+    Sentry.captureException(error, { tags: { area: 'lead', stage: 'action' } });
     return { success: false, error: 'CATCH_ERROR: ' + String(error) };
   }
 }
