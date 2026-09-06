@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
@@ -160,22 +160,26 @@ export default async function WebdesignGiessenPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR */}
-      <LocalSplitHero
-        badgeText="HIGH-END WEBAGENTUR FÜR GIESSEN & MITTELHESSEN"
-        headline={isEn ? 'Web Design Giessen:' : 'Webdesign Gießen:'}
-        headlineGradient={
-          isEn
-            ? 'Digital Excellence for Local Market Leaders'
-            : 'Digitale Exzellenz für lokale Marktführer'
-        }
-        description="Als spezialisierte High-Performance Webagentur für Gießen entwickeln wir maßgeschneiderte B2B-Websites, Klinik-Portale und moderne Next.js Entwicklung für anspruchsvolle Unternehmen. Maximale Ladezeiten unter 500ms, perfekte Google-Rankings und automatisierte Lead-Erfassung zum verbindlichen Festpreis."
-        cityName="Gießen"
-        sourceTag="local_seo_giessen"
-        formHeading="Kostenlose Bedarfsanalyse für Gießen"
-        formSubtitle="Persönliche Beratung durch Inhaber Umutcan Emre Tezgel innerhalb von 24h."
-        secondaryCtaText="Gießener Referenzen ansehen"
-      />
+      {/* 1. SPLIT-HERO SECTION MIT ABOVE-THE-FOLD KONTAKTFORMULAR.
+          The Suspense boundary gives the client island (hero form) its own
+          hydration unit; the server HTML is unchanged. */}
+      <Suspense fallback={null}>
+        <LocalSplitHero
+          badgeText="HIGH-END WEBAGENTUR FÜR GIESSEN & MITTELHESSEN"
+          headline={isEn ? 'Web Design Giessen:' : 'Webdesign Gießen:'}
+          headlineGradient={
+            isEn
+              ? 'Digital Excellence for Local Market Leaders'
+              : 'Digitale Exzellenz für lokale Marktführer'
+          }
+          description="Als spezialisierte High-Performance Webagentur für Gießen entwickeln wir maßgeschneiderte B2B-Websites, Klinik-Portale und moderne Next.js Entwicklung für anspruchsvolle Unternehmen. Maximale Ladezeiten unter 500ms, perfekte Google-Rankings und automatisierte Lead-Erfassung zum verbindlichen Festpreis."
+          cityName="Gießen"
+          sourceTag="local_seo_giessen"
+          formHeading="Kostenlose Bedarfsanalyse für Gießen"
+          formSubtitle="Persönliche Beratung durch Inhaber Umutcan Emre Tezgel innerhalb von 24h."
+          secondaryCtaText="Gießener Referenzen ansehen"
+        />
+      </Suspense>
 
       {/* 2. TRUSTBAR (REAL PROOF) */}
       <section className="border-y border-slate-200 bg-white">
@@ -581,16 +585,18 @@ export default async function WebdesignGiessenPage({
         </div>
       </section>
 
-      {/* 10. BOTTOM CTA */}
-      <LocalConversionBlock
-        cityName="Gießen"
-        sourceTag="local_seo_webdesign_giessen_bottom"
-        reference={{
-          name: 'Lindener Ratsstuben, Linden bei Gießen',
-          result: 'Ladezeit unter 0,8 Sekunden und spürbar mehr Sichtbarkeit bei Google Maps.',
-          href: 'https://lindener-ratsstuben.de',
-        }}
-      />
+      {/* 10. BOTTOM CTA (own hydration unit, server HTML unchanged) */}
+      <Suspense fallback={null}>
+        <LocalConversionBlock
+          cityName="Gießen"
+          sourceTag="local_seo_webdesign_giessen_bottom"
+          reference={{
+            name: 'Lindener Ratsstuben, Linden bei Gießen',
+            result: 'Ladezeit unter 0,8 Sekunden und spürbar mehr Sichtbarkeit bei Google Maps.',
+            href: 'https://lindener-ratsstuben.de',
+          }}
+        />
+      </Suspense>
 
       <RegionalSilo citySlug="webdesign-giessen" locale={_locale} />
     </div>

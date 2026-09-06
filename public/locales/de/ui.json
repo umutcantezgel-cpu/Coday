@@ -1,0 +1,403 @@
+{
+  "close": "Schließen",
+  "actions": {
+    "read_more": "Mehr erfahren"
+  },
+  "buttons": {
+    "start_project": "Kurz anfragen"
+  },
+  "cta": {
+    "sticky": {
+      "label": "Bereit für Skalierung?",
+      "text": "Audit anfordern"
+    }
+  },
+  "scroll_cta": {
+    "book_audit": "Strategiegespräch buchen",
+    "dominate": "Dominieren Sie Ihren Markt.",
+    "ready": "Bereit für exponentielles Wachstum?"
+  },
+  "global_cta": {
+    "title_prefix": "Bereit für Ihr",
+    "title_highlight": "digitales Upgrade?",
+    "subtitle": "Kostenloses Erstgespräch: Wir zeigen Ihnen konkret, wo Ihre aktuelle Website Kunden verschenkt.",
+    "button": "Kostenloses Erstgespräch"
+  },
+  "steps": {
+    "packages": "Paket wählen",
+    "calculator": "Extras wählen",
+    "contact": "Anfrage senden"
+  },
+  "breadcrumb": {
+    "academy": "Academy",
+    "benefits": "Benefits",
+    "branchen": "Branchen",
+    "calendar": "Kalender",
+    "community": "Community",
+    "culture": "Arbeitskultur",
+    "events": "Events",
+    "faq": "Häufige Fragen",
+    "jobs": "Stellenangebote",
+    "marketplace": "Marktplatz",
+    "members": "Mitglieder",
+    "newsletter": "Newsletter",
+    "whitepapers": "Whitepaper",
+    "wiki": "Tech-Wiki",
+    "wikihub": "Wiki-Hub"
+  },
+  "preferredSources": {
+    "sectionTitle": "Updates & Ressourcen",
+    "footerTitle": "Coday als bevorzugte Quelle bei Google",
+    "footerDesc": "Verpassen Sie keine neuen Beiträge zu Webentwicklung, SEO und Next.js: Fügen Sie Coday in der Google Suche als bevorzugte Quelle hinzu – so sehen Sie unsere Inhalte häufiger in den Top-Meldungen und KI-Übersichten.",
+    "articleTitle": "Mehr davon? Coday als bevorzugte Quelle speichern",
+    "articleDesc": "Wenn Ihnen dieser Beitrag geholfen hat: Speichern Sie Coday als bevorzugte Quelle in der Google Suche und entdecken Sie künftig mehr Fachwissen zu Webdesign, SEO und Performance direkt in Ihren Suchergebnissen.",
+    "articleButton": "Als bevorzugte Quelle speichern",
+    "loadButton": "Google-Button laden",
+    "notice": "Beim Laden des Buttons wird eine Verbindung zu Google LLC (USA) hergestellt.",
+    "deeplinkLabel": "Direkt bei Google als bevorzugte Quelle hinterlegen",
+    "newTabHint": "öffnet in neuem Tab",
+    "moreLabel": "Weiterlesen:",
+    "moreBlog": "Blog-Übersicht",
+    "moreServices": "Unsere Leistungen"
+  },
+  "generic_detail": {
+    "faq": {
+      "title": "Häufige Fragen (FAQ)"
+    },
+    "trust": {
+      "title": "Vertraut von führenden Unternehmen"
+    }
+  },
+  "nav": {
+    "a11y": {
+      "sections": "Abschnitte in {category}"
+    },
+    "main": {
+      "home": "Startseite",
+      "pricing": "Preise",
+      "partnerschaft": "Partner-Programm",
+      "garantie": "Garantie",
+      "presse": "Presse"
+    },
+    "about": {
+      "desc": "Die Agentur",
+      "process": {
+        "label": "Unser Prozess",
+        "desc": "Unser Workflow"
+      },
+      "contact": {
+        "label": "Kontakt",
+        "desc": "Lassen Sie uns sprechen"
+      }
+    },
+    "academy": {
+      "blog": {
+        "label": "Blog & Insights",
+        "desc": "News & Trends"
+      },
+      "whitepapers": {
+        "label": "Whitepapers",
+        "desc": "Guides & PDFs"
+      },
+      "newsletter": {
+        "label": "Newsletter",
+        "desc": "Wöchentliche Tipps"
+      },
+      "audit": {
+        "label": "Kostenloser Website-Check",
+        "desc": "Ich prüfe Ihre Seite persönlich"
+      },
+      "desc": "Wissen & Erfolg",
+      "label": "Academy"
+    },
+    "booking": {
+      "label": "Termin buchen"
+    },
+    "cta_booking": "Kurz anfragen",
+    "career": {
+      "label": "Karriere",
+      "desc": "Werde Teil des Teams",
+      "jobs": {
+        "label": "Offene Stellen",
+        "desc": "Aktuelle Jobs"
+      },
+      "culture": {
+        "label": "Kultur",
+        "desc": "Wie wir arbeiten"
+      },
+      "benefits": {
+        "label": "Benefits",
+        "desc": "Deine Vorteile"
+      }
+    },
+    "company": {
+      "label": "Unternehmen",
+      "agency": "Die Agentur",
+      "about": "Über uns",
+      "legal": "Rechtliches",
+      "action": "Starten"
+    },
+    "industries": {
+      "label": "Branchen",
+      "automotive": {
+        "title": "Automobil & KFZ",
+        "overview": "Übersicht: Automobil",
+        "desc": "Digitale Lösungen für die Autobranche",
+        "werkstatt": "KFZ-Werkstätten",
+        "mechatroniker": "KFZ-Mechatroniker",
+        "haendler": "Autohändler"
+      },
+      "healthcare": {
+        "title": "Gesundheitswesen",
+        "overview": "Übersicht: Gesundheit",
+        "desc": "Smarte Praxen und Kliniken",
+        "wetzlar": "Arzt in Wetzlar",
+        "giessen": "Arzt in Gießen",
+        "aerzte": "Ärzte & Gesundheit"
+      },
+      "crafts": {
+        "title": "Handwerk & Bau",
+        "overview": "Übersicht: Handwerk",
+        "desc": "Digitale Handwerksbetriebe",
+        "wetzlar": "Handwerker in Wetzlar",
+        "bau": "Handwerk & Bau",
+        "offer": "Exklusiv-Angebot Handwerk"
+      },
+      "other": {
+        "title": "Weitere Branchen",
+        "overview": "Alle Branchen ansehen",
+        "real_estate": "Immobilien Makler",
+        "gastronomy": "Gastronomie",
+        "services": "Dienstleistungen",
+        "retail": "Handel & E-Commerce",
+        "public_sector": "Öffentlicher Sektor",
+        "dienstleistung": "Dienstleistungen",
+        "consulting": "Unternehmensberatung",
+        "lawyers": "Anwälte & Kanzleien",
+        "startups": "Startups & Tech",
+        "gastronomy_hotel": "Gastronomie & Hotellerie",
+        "real_estate_agent": "Immobilienmakler"
+      },
+      "all": "Alle Branchen",
+      "overview": "Übersicht",
+      "craft": "Handwerk",
+      "ecommerce": "E-Commerce",
+      "gastronomy": "Gastronomie",
+      "health": "Gesundheit",
+      "real_estate": "Immobilien",
+      "service": "Dienstleistung",
+      "public": "Öffentliche Aufträge",
+      "tech": "Tech Startups"
+    },
+    "packages": {
+      "label": "Pakete"
+    },
+    "locations": {
+      "label": "Standorte & Branchen",
+      "short_label": "Standorte",
+      "hessen_mittelhessen": {
+        "title": "Mittelhessen & HQ",
+        "hessen_hub": "Webdesign Hessen",
+        "hessen_hub_desc": "Interaktiver Hessen-Navigator",
+        "wetzlar": "Website erstellen lassen",
+        "wetzlar_desc": "Wetzlar · Festpreis nach Bedarfsanalyse",
+        "giessen": "Webdesign Gießen",
+        "giessen_desc": "Universitäts- & Medizinstadt",
+        "marburg": "Webdesign Marburg",
+        "marburg_desc": "Biotech & historische Oberstadt",
+        "herborn": "Webdesign Herborn",
+        "herborn_desc": "Industrie- & Mittelstandszentrum",
+        "dillenburg": "Webdesign Dillenburg",
+        "dillenburg_desc": "Oranienstadt & Werkzeugbau",
+        "limburg": "Webdesign Limburg",
+        "limburg_desc": "Wirtschaftsraum Lahntal",
+        "weilburg": "Webdesign Weilburg",
+        "weilburg_desc": "Residenzstadt & Gewerbe Lahntal",
+        "loehnberg": "Webdesign Löhnberg",
+        "loehnberg_desc": "Handwerk & Mittelstand im Lahntal"
+      },
+      "rhein_main": {
+        "title": "Rhein-Main & Taunus",
+        "frankfurt": "Webdesign Frankfurt",
+        "frankfurt_desc": "Finanzmetropole & B2B-Flaggschiff",
+        "wiesbaden": "Webdesign Wiesbaden",
+        "wiesbaden_desc": "Hessische Landeshauptstadt",
+        "bad_homburg": "Webdesign Bad Homburg",
+        "bad_homburg_desc": "Enterprise & Family Offices",
+        "oberursel": "Webdesign Oberursel",
+        "bad_vilbel": "Webdesign Bad Vilbel",
+        "offenbach": "Webdesign Offenbach",
+        "hanau": "Webdesign Hanau",
+        "hofheim": "Webdesign Hofheim",
+        "ruesselsheim": "Webdesign Rüsselsheim",
+        "rodgau": "Webdesign Rodgau",
+        "dietzenbach": "Webdesign Dietzenbach",
+        "friedberg": "Webdesign Friedberg"
+      },
+      "sued_nord_ost": {
+        "title": "Süd-, Nord- & Osthessen",
+        "darmstadt": "Webdesign Darmstadt",
+        "darmstadt_desc": "Wissenschaftsstadt & Digital-Hub",
+        "bensheim": "Webdesign Bensheim",
+        "bensheim_desc": "Wirtschaftszentrum Bergstraße",
+        "kassel": "Webdesign Kassel",
+        "kassel_desc": "Nordhessische Metropole & Industrie",
+        "fulda": "Webdesign Fulda",
+        "fulda_desc": "Osthessischer B2B- & Logistikknoten"
+      },
+      "districts": {
+        "title": "13 Landkreis-Hubs",
+        "lahn_dill": "Webdesign Lahn-Dill-Kreis",
+        "giessen_lk": "Webdesign Landkreis Gießen",
+        "wetterau": "Webdesign Wetteraukreis",
+        "hochtaunus": "Webdesign Hochtaunuskreis",
+        "main_taunus": "Webdesign Main-Taunus",
+        "kreis_offenbach": "Webdesign Kreis Offenbach",
+        "main_kinzig": "Webdesign Main-Kinzig",
+        "marburg_biedenkopf": "Webdesign Marburg-Biedenkopf",
+        "limburg_weilburg": "Webdesign Limburg-Weilburg",
+        "rheingau_taunus": "Webdesign Rheingau-Taunus",
+        "darmstadt_dieburg": "Webdesign Darmstadt-Dieburg",
+        "fulda_lk": "Webdesign Landkreis Fulda",
+        "kassel_lk": "Webdesign Landkreis Kassel"
+      }
+    },
+    "resources": {
+      "label": "Ressourcen",
+      "knowledge": {
+        "title": "Wissen",
+        "faq": {
+          "label": "FAQ",
+          "desc": "Häufige Fragen"
+        },
+        "wiki": {
+          "label": "Tech-Wiki",
+          "desc": "Begriffe & Technologien erklärt"
+        }
+      },
+      "tools": {
+        "title": "Tools",
+        "strobi": {
+          "label": "Strobi World",
+          "desc": "Interaktiver KI-Avatar"
+        },
+        "sitemap": {
+          "label": "Seitenübersicht",
+          "desc": "Alle Seiten von A bis Z"
+        }
+      },
+      "community": {
+        "title": "Community",
+        "marketplace": {
+          "label": "Website-Bausteine",
+          "desc": "Terminbuchung, Kalkulator & mehr"
+        },
+        "calendar": {
+          "label": "Verfügbarkeit",
+          "desc": "Vorlauf & Starttermine"
+        },
+        "events": {
+          "label": "Workshops & Meetups",
+          "desc": "Formate aus Wetzlar"
+        },
+        "members": {
+          "label": "Partner-Netzwerk",
+          "desc": "Freelancer & Agenturen"
+        }
+      }
+    },
+    "services": {
+      "label": "Leistungen",
+      "overview": {
+        "title": "Überblick"
+      },
+      "all": {
+        "label": "Alle Leistungen",
+        "desc": "Jede Disziplin auf einen Blick"
+      },
+      "development": {
+        "title": "Entwicklung"
+      },
+      "web_development": {
+        "label": "Webentwicklung",
+        "desc": "Schnell & Skalierbar"
+      },
+      "web_apps": {
+        "label": "Web Applikationen"
+      },
+      "ecommerce": {
+        "label": "E-Commerce",
+        "desc": "Shops mit Umsatz"
+      },
+      "cms": {
+        "label": "Headless CMS"
+      },
+      "api": {
+        "label": "API-Integrationen"
+      },
+      "migration": {
+        "label": "Migrationen"
+      },
+      "enterprise": {
+        "label": "Enterprise Weblösungen",
+        "desc": "Portale & Systeme"
+      },
+      "design": {
+        "title": "Design"
+      },
+      "web_design": {
+        "label": "Webdesign",
+        "desc": "High-End UX/UI"
+      },
+      "ui_ux": {
+        "label": "UI/UX Optimierung"
+      },
+      "brand": {
+        "label": "Brand Identity"
+      },
+      "design_systems": {
+        "label": "Design Systeme"
+      },
+      "audit": {
+        "label": "UX-Audit"
+      },
+      "growth": {
+        "title": "Wachstum"
+      },
+      "seo": {
+        "label": "SEO & Sichtbarkeit",
+        "desc": "Organisches Wachstum"
+      },
+      "performance": {
+        "label": "Performance",
+        "desc": "Ladezeiten < 1s"
+      },
+      "consulting": {
+        "label": "Consulting",
+        "desc": "Digitale Strategie"
+      },
+      "geo": {
+        "label": "GEO & KI-Suche",
+        "desc": "Sichtbar in ChatGPT & Co."
+      }
+    },
+    "work": {
+      "label": "Referenzen",
+      "featured": {
+        "title": "Highlights"
+      },
+      "batherm": "Batherm",
+      "schluesseldienst": "MS Schlüsseldienst",
+      "ratsstuben": "Lindener Ratsstuben",
+      "talia": "Talia Boutique",
+      "hey_fede": "Hey Fede",
+      "all": {
+        "title": "Portfolio"
+      },
+      "view_all": "Alle Projekte"
+    },
+    "mobile": {
+      "label": "Menü"
+    }
+  }
+}

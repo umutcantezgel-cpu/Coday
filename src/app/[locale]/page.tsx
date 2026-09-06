@@ -6,7 +6,7 @@ import { Skeleton } from '@/shared/ui/Skeleton';
 import { TrustBar } from '@/shared/ui/TrustBar';
 import { HeroSection } from '@/widgets/home/HeroSection';
 import { setRequestLocale } from 'next-intl/server';
-import React from 'react';
+import React, { Suspense } from 'react';
 
 import { ScrollReveal } from '@/shared/ui/animations/ScrollReveal';
 import { SeoContentSection } from '@/widgets/home/SeoContentSection';
@@ -127,7 +127,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <HeroSection />
 
       <ScrollReveal index={0}>
-        <TrustBar />
+        <Suspense fallback={null}>
+          <TrustBar />
+        </Suspense>
       </ScrollReveal>
 
       <ScrollReveal index={1} className="section-defer">
@@ -155,7 +157,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </ScrollReveal>
 
       <ScrollReveal index={1} className="section-defer">
-        <TestimonialsSection />
+        <Suspense fallback={null}>
+          <TestimonialsSection />
+        </Suspense>
       </ScrollReveal>
 
       <div className="section-defer">

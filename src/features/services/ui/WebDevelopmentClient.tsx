@@ -66,7 +66,7 @@ const TestimonialCard = dynamic(() =>
 
 export function WebDevelopmentClient() {
   const t = useTranslations('services');
-  const tCommon = useTranslations('common');
+  const tCommon = useTranslations('ui');
   const categoryData = servicesData['web-development'];
   const features = Object.values(categoryData);
 

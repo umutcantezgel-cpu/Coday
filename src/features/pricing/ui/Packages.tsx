@@ -261,7 +261,7 @@ export default async function Packages() {
                     <span className="text-xs font-bold text-slate-700">
                       {t('proof.screenshot_label')}
                     </span>
-                    <span className="text-xs font-bold text-emerald-600 whitespace-nowrap">
+                    <span className="text-xs font-bold text-emerald-700 whitespace-nowrap">
                       {t('proof.screenshot_score')}
                     </span>
                   </div>

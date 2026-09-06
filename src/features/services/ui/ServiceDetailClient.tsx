@@ -93,7 +93,7 @@ export function ServiceDetailClient() {
 
   // Find the service data based on URL params
   const t = useTranslations('services');
-  const tCommon = useTranslations('common');
+  const tCommon = useTranslations('ui');
   const locale = useLocale();
   const serviceCategory = servicesData[category || ''];
   const service = serviceCategory ? serviceCategory[slug || ''] : null;

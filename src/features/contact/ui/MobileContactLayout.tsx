@@ -12,7 +12,7 @@ import { Skeleton } from '@/shared/ui/Skeleton';
 // Same boundary as ContactClient so the wizard is one chunk, not two.
 const ApplicationWizard = dynamic(() => import('@/features/contact/ApplicationWizard'), {
   ssr: false,
-  loading: () => <Skeleton className="h-[400px] w-full rounded-2xl" />,
+  loading: () => <Skeleton className="h-[940px] w-full rounded-2xl" />,
 });
 // Only fetched when the booking tab is opened. The skeleton matches the calendar's
 // initial height on phones (p-4, steps nav, heading, date cards) so nothing shifts.
@@ -43,7 +43,9 @@ export const MobileContactLayout: React.FC = () => {
     <div className="min-h-dvh bg-gray-50 pb-20">
       {/* Content Area */}
       <div className="px-4 py-6 pb-32">
-        <AnimatePresence mode="wait">
+        {/* initial={false}: the first panel is already in the server HTML and must
+            paint at full opacity (it is the mobile LCP); only tab switches animate. */}
+        <AnimatePresence mode="wait" initial={false}>
           {activeTab === 'booking' ? (
             <m.div
               key="booking"
@@ -82,7 +84,7 @@ export const MobileContactLayout: React.FC = () => {
                 </h2>
                 <p className="text-slate-600">{t('mobile.contact_intro')}</p>
               </div>
-              <Suspense fallback={<Skeleton className="h-[400px] w-full rounded-2xl" />}>
+              <Suspense fallback={<Skeleton className="h-[940px] w-full rounded-2xl" />}>
                 <ApplicationWizard />
               </Suspense>
               <div className="mt-6">

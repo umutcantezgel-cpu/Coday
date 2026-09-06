@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
 
-import MobileReadyNav from '@/widgets/navigation/MobileReadyNav';
+import { Header } from '@/widgets/navigation/Header';
 import { Footer } from '@/widgets/layout/Footer';
 import { RouteAnnouncer } from '@/shared/ui/RouteAnnouncer';
 import { ConditionalWrapper } from './ConditionalWrapper';
@@ -22,7 +22,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       >
         {t('skipLink')}
       </a>
-      <MobileReadyNav />
+      <Header />
       <RouteAnnouncer />
 
       {/* Spacer for fixed nav */}

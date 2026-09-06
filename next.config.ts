@@ -983,12 +983,92 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  webpack: (config, { dev, isServer }) => {
+  webpack: (config, { dev, isServer, webpack }) => {
     // Next requires the dev overlay from client modules that are all guarded by
     // `process.env.NODE_ENV !== 'production'`, but webpack still bundles the
     // 820 kB payload into rootMainFiles — the <head> of every production route.
     // Alias it to a stub for the production client build only.
     if (!dev && !isServer) {
+      // Next's app-index / app-router / layout-router / react-client-callbacks
+      // require these dev-only modules with *relative* paths, all behind
+      // `process.env.NODE_ENV !== 'production'`. Webpack still bundled the
+      // whole tree into the shared 8261 chunk. enhanced-resolve matches alias
+      // keys against the absolute path a relative request resolves to, so each
+      // key is the absolute module path (with and without `.js`, both request
+      // forms occur) and each value a stub under src/shims that keeps the same
+      // named exports.
+      const nextDist = path.resolve(process.cwd(), 'node_modules/next/dist');
+      const shim = (file: string) => path.resolve(process.cwd(), 'src/shims', file);
+      const devOnlyModuleStubs: Record<string, string> = {
+        // Root dev overlay wrapper required by client/app-index.js.
+        'next-devtools/userspace/app/client-entry': 'next-devtools-client-entry.js',
+        // Dev overlay error boundary (client-entry, hot-reloader-app, error-boundary-callbacks).
+        'next-devtools/userspace/app/app-dev-overlay-error-boundary':
+          'next-devtools-app-dev-overlay-error-boundary.js',
+        // Browser-log forwarding to the dev terminal.
+        'next-devtools/userspace/app/forward-logs': 'next-devtools-forward-logs.js',
+        // Segment explorer markers rendered by layout-router in dev.
+        'next-devtools/userspace/app/segment-explorer-node':
+          'next-devtools-segment-explorer-node.js',
+        // `browserDebugInfoInTerminal` flag reader.
+        'next-devtools/userspace/app/terminal-logging-config':
+          'next-devtools-terminal-logging-config.js',
+        // Barrel required by react-client-callbacks/error-boundary-callbacks.js.
+        'next-devtools/userspace/app/errors': 'next-devtools-errors-index.js',
+        'next-devtools/userspace/app/errors/index': 'next-devtools-errors-index.js',
+        // Owner-stack stitching (react-client-callbacks/on-recoverable-error.js).
+        'next-devtools/userspace/app/errors/stitched-error': 'next-devtools-stitched-error.js',
+        // Global error / rejection listeners for the overlay.
+        'next-devtools/userspace/app/errors/use-error-handler':
+          'next-devtools-use-error-handler.js',
+        // Console forwarding hook.
+        'next-devtools/userspace/app/errors/use-forward-console-log':
+          'next-devtools-use-forward-console-log.js',
+        // Replays SSR-only errors into the overlay.
+        'next-devtools/userspace/app/errors/replay-ssr-only-errors':
+          'next-devtools-replay-ssr-only-errors.js',
+        // Console patching helper shared with the overlay.
+        'next-devtools/shared/forward-logs-shared': 'next-devtools-forward-logs-shared.js',
+        // console.error tagging shared with the overlay.
+        'next-devtools/shared/console-error': 'next-devtools-console-error.js',
+        // HotReloader component mounted by client/components/app-router.js in dev.
+        'client/dev/hot-reloader/app/hot-reloader-app': 'next-dev-hot-reloader-app.js',
+        // HMR websocket hooks.
+        'client/dev/hot-reloader/app/use-websocket': 'next-dev-use-websocket.js',
+        // HMR websocket URL builder.
+        'client/dev/hot-reloader/get-socket-url': 'next-dev-get-socket-url.js',
+        // Fast Refresh full-reload messages.
+        'client/dev/hot-reloader/shared': 'next-dev-hot-reloader-shared.js',
+        // Turbopack HMR bookkeeping class.
+        'client/dev/hot-reloader/turbopack-hot-reloader-common':
+          'next-dev-turbopack-hot-reloader-common.js',
+        // Fast Refresh latency logger.
+        'client/dev/report-hmr-latency': 'next-dev-report-hmr-latency.js',
+        // Webpack remap target for the Turbopack HMR client.
+        'client/dev/noop-turbopack-hmr': 'next-dev-noop-turbopack-hmr.js',
+        // `hadRuntimeError` flag flipped by the overlay.
+        'client/dev/runtime-error-handler': 'next-dev-runtime-error-handler.js',
+        // HMR message enum (server/dev, imported by the client hot reloader).
+        'server/dev/hot-reloader-types': 'next-dev-hot-reloader-types.js',
+      };
+      // `resolve.alias` keys are matched against the *request* string, so an
+      // absolute key never sees Next's relative requires. NormalModuleReplacement
+      // also runs after resolution and tests the resolved file path, which is
+      // what these regexes target (with or without the `.js` extension).
+      const escapeRegExp = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      // The client compiler consumes the ESM copies under next/dist/esm/, the
+      // CommonJS ones live directly under next/dist/: match both.
+      for (const [modulePath, stubFile] of Object.entries(devOnlyModuleStubs)) {
+        config.plugins.push(
+          new webpack.NormalModuleReplacementPlugin(
+            new RegExp(
+              `^${escapeRegExp(nextDist)}[\\\\/](?:esm[\\\\/])?${escapeRegExp(modulePath)}(\\.js)?$`
+            ),
+            shim(stubFile)
+          )
+        );
+      }
+
       config.resolve.alias = {
         ...config.resolve.alias,
         'next/dist/compiled/next-devtools': path.resolve(

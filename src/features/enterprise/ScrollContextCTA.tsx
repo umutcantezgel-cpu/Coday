@@ -7,7 +7,7 @@ import { useTranslations } from 'next-intl';
 
 export const ScrollContextCTA: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const t = useTranslations('common');
+  const t = useTranslations('ui');
 
   useEffect(() => {
     const handleScroll = () => {

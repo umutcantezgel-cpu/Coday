@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Link } from '@/i18n/navigation';
 import { useTranslations, useLocale } from 'next-intl';
 import { FooterPrivacyButton } from '@/widgets/layout/FooterPrivacyButton';
@@ -93,7 +93,9 @@ export const Footer: React.FC = () => {
           <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-slate-700 mb-8 bg-slate-50 inline-block px-4 relative z-10 left-1/2 -translate-x-1/2">
             {t('logobar.title')}
           </p>
-          <LogoLoop logos={clientLogos} speed={30} logoHeight={24} gap={64} />
+          <Suspense fallback={null}>
+            <LogoLoop logos={clientLogos} speed={30} logoHeight={24} gap={64} />
+          </Suspense>
         </div>
 
         {/* Minimalist Structured Grid (5 Columns) */}
@@ -414,7 +416,9 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Updates & Ressourcen: Google Preferred Sources */}
-        <PreferredSourceCta variant="footer" />
+        <Suspense fallback={null}>
+          <PreferredSourceCta variant="footer" />
+        </Suspense>
 
         {/* Bottom Bar: Legal & Social */}
         <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-6">

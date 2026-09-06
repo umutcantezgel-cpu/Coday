@@ -26,7 +26,7 @@ interface PreferredSourceCtaProps {
  * in newsletters or social posts.
  */
 export const PreferredSourceCta: React.FC<PreferredSourceCtaProps> = ({ variant }) => {
-  const t = useTranslations('common');
+  const t = useTranslations('ui');
   const [googleButtonActive, setGoogleButtonActive] = React.useState(false);
 
   const handleActivate = () => {

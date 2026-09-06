@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl';
 import { trackEvent } from '@/shared/lib/analytics/tracking';
 
 export const StickyCTA: React.FC = () => {
-  const t = useTranslations('common');
+  const t = useTranslations('ui');
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {

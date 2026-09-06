@@ -8,19 +8,52 @@ import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { CaretDown, ArrowRight, X } from '@phosphor-icons/react/dist/ssr';
 import { LanguageSwitcher } from '@/widgets/navigation/LanguageSwitcher';
-import { NavItem } from '@/widgets/navigation/config';
 
 import { useFocusTrap } from '@/shared/hooks/useFocusTrap';
 import { useScrollLock } from '@/hooks/use-scroll-lock';
 
+/**
+ * The nav config with every label, title and desc already translated. The
+ * server header builds these once per request, so the overlay no longer needs
+ * the config module or ~150 `t()` calls on the client.
+ */
+export interface MobileNavLink {
+  /** Translated link text. */
+  label: string;
+  href: string;
+  /** Translated description, if any. */
+  desc?: string;
+  locale?: string;
+}
+
+export interface MobileNavGroup {
+  /** Translated group heading. */
+  title: string;
+  links: MobileNavLink[];
+}
+
+export interface MobileNavItem {
+  /**
+   * Stable key (the untranslated label key), used for accordion state. Falls
+   * back to `label`, which keeps the raw `NavItem[]` shape assignable for the
+   * retired callers still on disk (MobileReadyNav, CardNav).
+   */
+  key?: string;
+  /** Translated accordion label. */
+  label: string;
+  groups?: MobileNavGroup[];
+  links?: MobileNavLink[];
+}
+
 interface MobileNavOverlayProps {
-  items: NavItem[];
+  items: MobileNavItem[];
   isOpen: boolean;
   onClose: () => void;
 }
 
 export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpen, onClose }) => {
-  const t = useTranslations('common');
+  // 'ui' is the trimmed client copy of the common keys (src/i18n/clientMessages.ts).
+  const t = useTranslations('ui');
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
   const containerRef = useFocusTrap(isOpen);
   const shouldReduceMotion = useReducedMotion();
@@ -172,130 +205,133 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
               initial="closed"
               animate="open"
             >
-              {items.map((item) => (
-                <m.div key={item.label} className="mobile-group-wrapper" variants={itemVariants}>
-                  <m.button
-                    className={`mobile-accordion-trigger ${expandedItem === item.label ? 'active' : ''}`}
-                    onClick={() => toggleItem(item.label)}
-                    aria-expanded={expandedItem === item.label}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <span className="text-2xl font-normal tracking-tight text-slate-900">
-                      {t(item.label)}
-                    </span>
-                    <OptimizedIcon
-                      icon={CaretDown}
-                      className={`w-5 h-5 transition-transform motion-reduce:duration-[0.01ms] duration-300 ${
-                        expandedItem === item.label
-                          ? 'rotate-180 text-primary-700'
-                          : 'text-slate-500'
-                      }`}
-                    />
-                  </m.button>
+              {items.map((item) => {
+                const itemKey = item.key ?? item.label;
+                return (
+                  <m.div key={itemKey} className="mobile-group-wrapper" variants={itemVariants}>
+                    <m.button
+                      className={`mobile-accordion-trigger ${expandedItem === itemKey ? 'active' : ''}`}
+                      onClick={() => toggleItem(itemKey)}
+                      aria-expanded={expandedItem === itemKey}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <span className="text-2xl font-normal tracking-tight text-slate-900">
+                        {item.label}
+                      </span>
+                      <OptimizedIcon
+                        icon={CaretDown}
+                        className={`w-5 h-5 transition-transform motion-reduce:duration-[0.01ms] duration-300 ${
+                          expandedItem === itemKey
+                            ? 'rotate-180 text-primary-700'
+                            : 'text-slate-500'
+                        }`}
+                      />
+                    </m.button>
 
-                  <AnimatePresence initial={false}>
-                    {expandedItem === item.label && (
-                      <m.div
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 0.3, ease: 'easeInOut' }}
-                        className="overflow-hidden"
-                      >
-                        <div className="mobile-accordion-content">
-                          {item.groups ? (
-                            item.groups.map((group, groupIdx) => (
-                              <div key={groupIdx} className="mb-6 last:mb-2">
-                                {item.groups!.length > 1 && (
-                                  <h4 className="text-xs uppercase tracking-wider text-slate-700 font-bold mb-3 pl-2 border-l-2 border-primary-600">
-                                    {t(group.title)}
-                                  </h4>
-                                )}
-                                <div className="space-y-1">
-                                  {group.links.map((link, linkIdx) => {
-                                    const isExternal = link.href.startsWith('http');
+                    <AnimatePresence initial={false}>
+                      {expandedItem === itemKey && (
+                        <m.div
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          transition={{ duration: 0.3, ease: 'easeInOut' }}
+                          className="overflow-hidden"
+                        >
+                          <div className="mobile-accordion-content">
+                            {item.groups ? (
+                              item.groups.map((group, groupIdx) => (
+                                <div key={groupIdx} className="mb-6 last:mb-2">
+                                  {item.groups!.length > 1 && (
+                                    <h4 className="text-xs uppercase tracking-wider text-slate-700 font-bold mb-3 pl-2 border-l-2 border-primary-600">
+                                      {group.title}
+                                    </h4>
+                                  )}
+                                  <div className="space-y-1">
+                                    {group.links.map((link, linkIdx) => {
+                                      const isExternal = link.href.startsWith('http');
 
-                                    const LinkComponent = (
-                                      isExternal ? 'a' : Link
-                                    ) as React.ElementType;
-                                    const linkProps = isExternal
-                                      ? {
-                                          href: link.href,
-                                          target: '_blank',
-                                          rel: 'noopener noreferrer',
-                                          locale: false,
-                                        }
-                                      : {
-                                          href: link.href,
-                                          ...(link.locale ? { locale: link.locale } : {}),
-                                        };
+                                      const LinkComponent = (
+                                        isExternal ? 'a' : Link
+                                      ) as React.ElementType;
+                                      const linkProps = isExternal
+                                        ? {
+                                            href: link.href,
+                                            target: '_blank',
+                                            rel: 'noopener noreferrer',
+                                            locale: false,
+                                          }
+                                        : {
+                                            href: link.href,
+                                            ...(link.locale ? { locale: link.locale } : {}),
+                                          };
 
-                                    return (
-                                      <LinkComponent
-                                        key={`${link.href}-${linkIdx}`}
-                                        {...linkProps}
-                                        className="mobile-link-item"
-                                        onClick={onClose}
-                                        aria-label={t(link.label)}
-                                        title={t(link.label)}
-                                      >
-                                        <span className="font-semibold text-slate-900">
-                                          {t(link.label)}
-                                        </span>
-                                        {link.desc && (
-                                          <span
-                                            className="text-xs text-slate-700 line-clamp-1 font-medium"
-                                            aria-hidden="true"
-                                          >
-                                            {t(link.desc)}
+                                      return (
+                                        <LinkComponent
+                                          key={`${link.href}-${linkIdx}`}
+                                          {...linkProps}
+                                          className="mobile-link-item"
+                                          onClick={onClose}
+                                          aria-label={link.label}
+                                          title={link.label}
+                                        >
+                                          <span className="font-semibold text-slate-900">
+                                            {link.label}
                                           </span>
-                                        )}
-                                      </LinkComponent>
-                                    );
-                                  })}
+                                          {link.desc && (
+                                            <span
+                                              className="text-xs text-slate-700 line-clamp-1 font-medium"
+                                              aria-hidden="true"
+                                            >
+                                              {link.desc}
+                                            </span>
+                                          )}
+                                        </LinkComponent>
+                                      );
+                                    })}
+                                  </div>
                                 </div>
-                              </div>
-                            ))
-                          ) : (
-                            <div className="space-y-1">
-                              {item.links?.map((link, linkIdx) => {
-                                const isExternal = link.href.startsWith('http');
-                                const LinkComponent = (
-                                  isExternal ? 'a' : Link
-                                ) as React.ElementType;
-                                const linkProps = isExternal
-                                  ? {
-                                      href: link.href,
-                                      target: '_blank',
-                                      rel: 'noopener noreferrer',
-                                      locale: false,
-                                    }
-                                  : {
-                                      href: link.href,
-                                      ...(link.locale ? { locale: link.locale } : {}),
-                                    };
+                              ))
+                            ) : (
+                              <div className="space-y-1">
+                                {item.links?.map((link, linkIdx) => {
+                                  const isExternal = link.href.startsWith('http');
+                                  const LinkComponent = (
+                                    isExternal ? 'a' : Link
+                                  ) as React.ElementType;
+                                  const linkProps = isExternal
+                                    ? {
+                                        href: link.href,
+                                        target: '_blank',
+                                        rel: 'noopener noreferrer',
+                                        locale: false,
+                                      }
+                                    : {
+                                        href: link.href,
+                                        ...(link.locale ? { locale: link.locale } : {}),
+                                      };
 
-                                return (
-                                  <LinkComponent
-                                    key={`${link.href}-${linkIdx}`}
-                                    {...linkProps}
-                                    className="mobile-link-item"
-                                    onClick={onClose}
-                                  >
-                                    <span className="font-semibold text-slate-900">
-                                      {t(link.label)}
-                                    </span>
-                                  </LinkComponent>
-                                );
-                              })}
-                            </div>
-                          )}
-                        </div>
-                      </m.div>
-                    )}
-                  </AnimatePresence>
-                </m.div>
-              ))}
+                                  return (
+                                    <LinkComponent
+                                      key={`${link.href}-${linkIdx}`}
+                                      {...linkProps}
+                                      className="mobile-link-item"
+                                      onClick={onClose}
+                                    >
+                                      <span className="font-semibold text-slate-900">
+                                        {link.label}
+                                      </span>
+                                    </LinkComponent>
+                                  );
+                                })}
+                              </div>
+                            )}
+                          </div>
+                        </m.div>
+                      )}
+                    </AnimatePresence>
+                  </m.div>
+                );
+              })}
             </m.nav>
           </div>
 

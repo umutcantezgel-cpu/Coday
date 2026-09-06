@@ -1,0 +1,403 @@
+{
+  "close": "Close",
+  "actions": {
+    "read_more": "Read more"
+  },
+  "buttons": {
+    "start_project": "Quick request"
+  },
+  "cta": {
+    "sticky": {
+      "label": "Ready to Scale?",
+      "text": "Request Audit"
+    }
+  },
+  "scroll_cta": {
+    "book_audit": "Book Strategy Session",
+    "dominate": "Dominate your market.",
+    "ready": "Ready for exponential growth?"
+  },
+  "global_cta": {
+    "title_prefix": "Ready for your",
+    "title_highlight": "digital upgrade?",
+    "subtitle": "Free consultation: We'll show you exactly where your current website is losing customers.",
+    "button": "Book Free Consultation"
+  },
+  "steps": {
+    "packages": "Choose package",
+    "calculator": "Choose extras",
+    "contact": "Send request"
+  },
+  "breadcrumb": {
+    "academy": "Academy",
+    "benefits": "Benefits",
+    "branchen": "Industries",
+    "calendar": "Calendar",
+    "community": "Community",
+    "culture": "Work Culture",
+    "events": "Events",
+    "faq": "FAQ",
+    "jobs": "Jobs",
+    "marketplace": "Marketplace",
+    "members": "Members",
+    "newsletter": "Newsletter",
+    "whitepapers": "Whitepapers",
+    "wiki": "Tech Wiki",
+    "wikihub": "Wiki Hub"
+  },
+  "preferredSources": {
+    "sectionTitle": "Updates & Resources",
+    "footerTitle": "Add Coday as a preferred source on Google",
+    "footerDesc": "Never miss new articles on web development, SEO and Next.js: add Coday as a preferred source in Google Search to see our content more often in Top Stories and AI Overviews.",
+    "articleTitle": "Want more of this? Save Coday as a preferred source",
+    "articleDesc": "If this article helped you, add Coday as a preferred source in Google Search and discover more expertise on web design, SEO and performance right in your search results.",
+    "articleButton": "Save as preferred source",
+    "loadButton": "Load Google button",
+    "notice": "Loading the button establishes a connection to Google LLC (USA).",
+    "deeplinkLabel": "Set Coday as a preferred source directly on Google",
+    "newTabHint": "opens in a new tab",
+    "moreLabel": "Keep reading:",
+    "moreBlog": "Blog overview",
+    "moreServices": "Our services"
+  },
+  "generic_detail": {
+    "faq": {
+      "title": "Frequently Asked Questions (FAQ)"
+    },
+    "trust": {
+      "title": "Trusted by leading companies"
+    }
+  },
+  "nav": {
+    "a11y": {
+      "sections": "Sections in {category}"
+    },
+    "main": {
+      "home": "Home",
+      "pricing": "Pricing",
+      "partnerschaft": "Partner Program",
+      "garantie": "Guarantee",
+      "presse": "Press"
+    },
+    "about": {
+      "desc": "The Agency",
+      "process": {
+        "label": "Our Process",
+        "desc": "How we work"
+      },
+      "contact": {
+        "label": "Contact",
+        "desc": "Let's talk"
+      }
+    },
+    "academy": {
+      "blog": {
+        "label": "Blog & Insights",
+        "desc": "News & Trends"
+      },
+      "whitepapers": {
+        "label": "White papers",
+        "desc": "Guides & PDFs"
+      },
+      "newsletter": {
+        "label": "Newsletter",
+        "desc": "Weekly tips"
+      },
+      "audit": {
+        "label": "Free website check",
+        "desc": "I review your site personally"
+      },
+      "desc": "Free Knowledge for Your Success",
+      "label": "Academy"
+    },
+    "booking": {
+      "label": "Book a Call"
+    },
+    "cta_booking": "Quick request",
+    "career": {
+      "label": "Career",
+      "desc": "Join the team",
+      "jobs": {
+        "label": "Open Positions",
+        "desc": "Current jobs"
+      },
+      "culture": {
+        "label": "Culture",
+        "desc": "How we work"
+      },
+      "benefits": {
+        "label": "Benefits",
+        "desc": "Your perks"
+      }
+    },
+    "company": {
+      "label": "Company",
+      "agency": "The Agency",
+      "about": "About Us",
+      "legal": "Legal",
+      "action": "Get Started"
+    },
+    "industries": {
+      "label": "Industries",
+      "automotive": {
+        "title": "Automotive",
+        "overview": "Overview: Automotive",
+        "desc": "Digital solutions for cars",
+        "werkstatt": "Car Repair Shops",
+        "mechatroniker": "Mechatronics",
+        "haendler": "Car Dealers"
+      },
+      "healthcare": {
+        "title": "Healthcare",
+        "overview": "Overview: Healthcare",
+        "desc": "Smart clinics and doctors",
+        "wetzlar": "Doctors in Wetzlar",
+        "giessen": "Doctors in Giessen",
+        "aerzte": "Doctors & Healthcare"
+      },
+      "crafts": {
+        "title": "Crafts & Construction",
+        "overview": "Overview: Crafts",
+        "desc": "Digital crafts businesses",
+        "wetzlar": "Crafts in Wetzlar",
+        "bau": "Crafts & Construction",
+        "offer": "Exclusive Trades Offer"
+      },
+      "other": {
+        "title": "Other Industries",
+        "overview": "View all industries",
+        "real_estate": "Real Estate Agents",
+        "gastronomy": "Gastronomy & Hotels",
+        "services": "Services",
+        "retail": "Retail & E-Commerce",
+        "public_sector": "Public Sector",
+        "dienstleistung": "Services",
+        "consulting": "Consulting",
+        "lawyers": "Law Firms",
+        "startups": "Startups & Tech",
+        "gastronomy_hotel": "Gastronomy & Hotels",
+        "real_estate_agent": "Real Estate Agents"
+      },
+      "all": "All Industries",
+      "overview": "Overview",
+      "craft": "Craft & Construction",
+      "ecommerce": "E-commerce",
+      "gastronomy": "Gastronomy",
+      "health": "Health",
+      "real_estate": "Real Estate",
+      "service": "Services",
+      "public": "Public Contracts",
+      "tech": "Tech Startups"
+    },
+    "packages": {
+      "label": "Packages"
+    },
+    "locations": {
+      "label": "Locations & Industries",
+      "short_label": "Locations",
+      "hessen_mittelhessen": {
+        "title": "Central Hesse & HQ",
+        "hessen_hub": "Web Design Hesse",
+        "hessen_hub_desc": "Interactive Hesse Navigator",
+        "wetzlar": "Get a Website Built",
+        "wetzlar_desc": "Wetzlar · Fixed price after analysis",
+        "giessen": "Web Design Giessen",
+        "giessen_desc": "University & Medical City",
+        "marburg": "Web Design Marburg",
+        "marburg_desc": "Biotech & Historic Center",
+        "herborn": "Web Design Herborn",
+        "herborn_desc": "Dill Region & Industry",
+        "dillenburg": "Web Design Dillenburg",
+        "dillenburg_desc": "Orange City & Toolmaking",
+        "limburg": "Web Design Limburg",
+        "limburg_desc": "Lahn Valley Economy",
+        "weilburg": "Web Design Weilburg",
+        "weilburg_desc": "Residency City & Lahn Commerce",
+        "loehnberg": "Web Design Loehnberg",
+        "loehnberg_desc": "Crafts & SMEs in the Lahn Valley"
+      },
+      "rhein_main": {
+        "title": "Rhine-Main & Taunus",
+        "frankfurt": "Web Design Frankfurt",
+        "frankfurt_desc": "Financial & B2B Flagship Hub",
+        "wiesbaden": "Web Design Wiesbaden",
+        "wiesbaden_desc": "Hesse State Capital",
+        "bad_homburg": "Web Design Bad Homburg",
+        "bad_homburg_desc": "Enterprise & Family Offices",
+        "oberursel": "Web Design Oberursel",
+        "bad_vilbel": "Web Design Bad Vilbel",
+        "offenbach": "Web Design Offenbach",
+        "hanau": "Web Design Hanau",
+        "hofheim": "Web Design Hofheim",
+        "ruesselsheim": "Web Design Ruesselsheim",
+        "rodgau": "Web Design Rodgau",
+        "dietzenbach": "Web Design Dietzenbach",
+        "friedberg": "Web Design Friedberg"
+      },
+      "sued_nord_ost": {
+        "title": "South, North & East Hesse",
+        "darmstadt": "Web Design Darmstadt",
+        "darmstadt_desc": "City of Science & Tech Hub",
+        "bensheim": "Web Design Bensheim",
+        "bensheim_desc": "Bergstrasse Economic Center",
+        "kassel": "Web Design Kassel",
+        "kassel_desc": "North Hesse Metropolis",
+        "fulda": "Web Design Fulda",
+        "fulda_desc": "East Hesse Logistics & B2B Hub"
+      },
+      "districts": {
+        "title": "13 District Hubs",
+        "lahn_dill": "Web Design Lahn-Dill",
+        "giessen_lk": "Web Design Giessen District",
+        "wetterau": "Web Design Wetterau",
+        "hochtaunus": "Web Design Hochtaunus",
+        "main_taunus": "Web Design Main-Taunus",
+        "kreis_offenbach": "Web Design Offenbach District",
+        "main_kinzig": "Web Design Main-Kinzig",
+        "marburg_biedenkopf": "Web Design Marburg-Biedenkopf",
+        "limburg_weilburg": "Web Design Limburg-Weilburg",
+        "rheingau_taunus": "Web Design Rheingau-Taunus",
+        "darmstadt_dieburg": "Web Design Darmstadt-Dieburg",
+        "fulda_lk": "Web Design Fulda District",
+        "kassel_lk": "Web Design Kassel District"
+      }
+    },
+    "resources": {
+      "label": "Resources",
+      "knowledge": {
+        "title": "Knowledge",
+        "faq": {
+          "label": "FAQ",
+          "desc": "Common questions"
+        },
+        "wiki": {
+          "label": "Tech Wiki",
+          "desc": "Terms & technologies explained"
+        }
+      },
+      "tools": {
+        "title": "Tools",
+        "strobi": {
+          "label": "Strobi World",
+          "desc": "Interactive AI avatar"
+        },
+        "sitemap": {
+          "label": "Site Overview",
+          "desc": "Every page from A to Z"
+        }
+      },
+      "community": {
+        "title": "Community",
+        "marketplace": {
+          "label": "Website Modules",
+          "desc": "Booking, calculators & more"
+        },
+        "calendar": {
+          "label": "Availability",
+          "desc": "Lead times & start dates"
+        },
+        "events": {
+          "label": "Workshops & Meetups",
+          "desc": "Formats run from Wetzlar"
+        },
+        "members": {
+          "label": "Partner Network",
+          "desc": "Freelancers & agencies"
+        }
+      }
+    },
+    "services": {
+      "label": "Services",
+      "overview": {
+        "title": "Overview"
+      },
+      "all": {
+        "label": "All Services",
+        "desc": "Every discipline at a glance"
+      },
+      "development": {
+        "title": "Development"
+      },
+      "web_development": {
+        "label": "Web Development",
+        "desc": "Fast & Scalable"
+      },
+      "web_apps": {
+        "label": "Web Applications"
+      },
+      "ecommerce": {
+        "label": "E-commerce",
+        "desc": "Shops that convert"
+      },
+      "cms": {
+        "label": "Headless CMS"
+      },
+      "api": {
+        "label": "API Integrations"
+      },
+      "migration": {
+        "label": "Migrations"
+      },
+      "enterprise": {
+        "label": "Enterprise Web Solutions",
+        "desc": "Portals & Systems"
+      },
+      "design": {
+        "title": "Design"
+      },
+      "web_design": {
+        "label": "Web Design",
+        "desc": "High-end UX/UI"
+      },
+      "ui_ux": {
+        "label": "UI/UX Optimization"
+      },
+      "brand": {
+        "label": "Brand Identity"
+      },
+      "design_systems": {
+        "label": "Design Systems"
+      },
+      "audit": {
+        "label": "UX Audit"
+      },
+      "growth": {
+        "title": "Growth"
+      },
+      "seo": {
+        "label": "SEO & Visibility",
+        "desc": "Organic Growth"
+      },
+      "performance": {
+        "label": "Performance",
+        "desc": "Load times < 1s"
+      },
+      "consulting": {
+        "label": "Consulting",
+        "desc": "Digital Strategy"
+      },
+      "geo": {
+        "label": "GEO & AI Search",
+        "desc": "Visible in ChatGPT & Co."
+      }
+    },
+    "work": {
+      "label": "Work",
+      "featured": {
+        "title": "Highlights"
+      },
+      "batherm": "Batherm",
+      "schluesseldienst": "MS Locksmith Service",
+      "ratsstuben": "Lindener Ratsstuben",
+      "talia": "Talia Boutique",
+      "hey_fede": "Hey Fede",
+      "all": {
+        "title": "Portfolio"
+      },
+      "view_all": "View All Projects"
+    },
+    "mobile": {
+      "label": "Menu"
+    }
+  }
+}

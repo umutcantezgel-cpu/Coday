@@ -11,7 +11,7 @@ interface BreadcrumbsProps {
 }
 
 export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ className = '' }) => {
-  const t = useTranslations('common');
+  const t = useTranslations('ui');
   const pathname = usePathname() || '';
 
   // Ensure locale is stripped (next-intl usePathname sometimes includes it during SSG)

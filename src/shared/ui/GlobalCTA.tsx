@@ -20,7 +20,7 @@ export const GlobalCTA: React.FC<GlobalCTAProps> = ({
   buttonText,
   buttonLink = '/contact',
 }) => {
-  const t = useTranslations('common');
+  const t = useTranslations('ui');
 
   return (
     <section className="py-[var(--space-section)] relative overflow-hidden bg-secondary text-white">

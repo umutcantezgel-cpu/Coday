@@ -55,8 +55,11 @@ export const ContactClient: React.FC = () => {
   const setPackageAndAddons = useCalculatorStore((state) => state.setPackageAndAddons);
   const setStep = useCalculatorStore((state) => state.setStep);
   const hasPackage = !!selectedPackageId || !!searchParams?.get('package');
-  // Server HTML is the desktop tree; after hydration exactly one tree is mounted,
-  // so phones no longer hydrate the calendar, logo loop, testimonial and wizard twice.
+  // `null` on the server and during the hydration render: both trees are in the
+  // HTML (each hidden by its breakpoint class) so phones see the mobile content
+  // before any JavaScript runs. Right after hydration the hook reports the real
+  // viewport and the tree that does not fit unmounts, so phones stop paying for
+  // the desktop calendar, logo loop, testimonial and wizard.
   const isDesktop = useIsDesktop();
 
   // Sync URL parameters if present
@@ -100,14 +103,17 @@ export const ContactClient: React.FC = () => {
         </div>
       )}
 
-      {/* Mobile Layout (Tabbed). The wrapper is always in the server HTML so its
-          min-h-screen reserves the space the tabbed layout fills after hydration;
-          without it the whole page jumped down once the mobile tree mounted
-          (CLS 0.9 on a phone). Only the content is viewport-gated. */}
-      <div className="lg:hidden mt-4 min-h-screen">{!isDesktop && <MobileContactLayout />}</div>
+      {/* Mobile Layout (Tabbed). Rendered on the server and while the viewport is
+          still unknown (isDesktop === null), so phones get the tab bar, heading and
+          form skeleton in the first HTML; it only unmounts once a desktop viewport
+          is confirmed. The wrapper keeps min-h-screen so nothing jumps. */}
+      <div className="lg:hidden mt-4 min-h-screen">
+        {isDesktop !== true && <MobileContactLayout />}
+      </div>
 
-      {/* Desktop Layout (Original Split) */}
-      {isDesktop && (
+      {/* Desktop Layout (Original Split). Same rule mirrored: in the server HTML
+          and until a phone viewport is confirmed, unmounted afterwards on phones. */}
+      {isDesktop !== false && (
         <div className="hidden lg:block">
           <section
             className={`relative ${hasPackage ? 'pt-4 md:pt-6' : 'pt-4 md:pt-8'} pb-48 md:pb-64 px-4 overflow-hidden`}

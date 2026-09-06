@@ -50,6 +50,8 @@ const namespaces = [
   'techStack',
   'testimonials',
   'tools',
+  // `ui`: the client-side slice of `common` (see clientMessages.ts).
+  'ui',
   'ui_ux_page',
   'ux_audit_page',
   'web_apps_page',

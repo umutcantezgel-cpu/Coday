@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
@@ -300,15 +300,20 @@ export default async function HandwerkBauPage({ params }: { params: Promise<{ lo
         </div>
       </section>
 
-      {/* Live Akquise-Kanal Embed */}
-      <IndustryToolEmbed industryKey="handwerk-bau" />
-      <LocalConversionBlock
-        industry={{
-          slug: 'handwerk-bau',
-          label: { de: 'Handwerk & Bau', en: 'trades & construction' },
-        }}
-        sourceTag="industries_handwerk_bau_bottom"
-      />
+      {/* Live Akquise-Kanal Embed and conversion block: each client island gets
+          its own Suspense boundary (own hydration unit); server HTML unchanged. */}
+      <Suspense fallback={null}>
+        <IndustryToolEmbed industryKey="handwerk-bau" />
+      </Suspense>
+      <Suspense fallback={null}>
+        <LocalConversionBlock
+          industry={{
+            slug: 'handwerk-bau',
+            label: { de: 'Handwerk & Bau', en: 'trades & construction' },
+          }}
+          sourceTag="industries_handwerk_bau_bottom"
+        />
+      </Suspense>
 
       {/* Real References Showcase */}
       <section className="py-16 bg-white border-t border-slate-200">

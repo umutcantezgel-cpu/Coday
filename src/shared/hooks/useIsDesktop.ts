@@ -8,16 +8,20 @@ const subscribe = (callback: () => void) => {
   return () => mql.removeEventListener('change', callback);
 };
 
-const getSnapshot = () => window.matchMedia(DESKTOP_QUERY).matches;
+const getSnapshot = (): boolean | null => window.matchMedia(DESKTOP_QUERY).matches;
 
-// The server (and the first client render) assume desktop, so server HTML and
-// hydration stay identical; phones switch to the mobile tree right after.
-const getServerSnapshot = () => true;
+// The server (and the hydrating client render) do not know the viewport, so the
+// snapshot is `null`: callers render BOTH trees, each hidden by its Tailwind
+// breakpoint class, and the server HTML matches the first client render exactly.
+// Right after hydration useSyncExternalStore swaps in the real match, and the
+// tree that does not fit the viewport unmounts.
+const getServerSnapshot = (): boolean | null => null;
 
 /**
- * True at Tailwind's `lg` breakpoint (min-width: 1024px) and above.
- * Server snapshot is `true` so SSR output matches the desktop tree.
+ * True at Tailwind's `lg` breakpoint (min-width: 1024px) and above, false
+ * below it, and `null` while the viewport is unknown (SSR and the hydration
+ * render). Treat `null` as "render both trees".
  */
-export function useIsDesktop(): boolean {
+export function useIsDesktop(): boolean | null {
   return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 }

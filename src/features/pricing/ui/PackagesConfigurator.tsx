@@ -168,12 +168,12 @@ export const PackagesConfigurator: React.FC = () => {
       {copy.not_included.map((item) => (
         <li
           key={item.addon_id}
-          className={`flex items-start gap-2.5 ${tone === 'dark' ? 'text-slate-400' : 'text-slate-400'}`}
+          className={`flex items-start gap-2.5 ${tone === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}
         >
           <MinusCircle className="w-5 h-5 shrink-0 mt-0.5" />
           <span>
             {item.label}
-            <span className="block text-[11px] uppercase tracking-wider font-semibold opacity-80">
+            <span className="block text-[11px] uppercase tracking-wider font-semibold">
               {t('card.not_included')}
             </span>
           </span>
@@ -200,7 +200,7 @@ export const PackagesConfigurator: React.FC = () => {
       >
         {copy.badge && (
           <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap">
-            <span className="inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-500 to-amber-600 text-white text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-md">
+            <span className="inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-700 to-amber-800 text-white text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-md">
               <Sparkle className="w-3.5 h-3.5" />
               <span>{copy.badge}</span>
             </span>
@@ -301,7 +301,7 @@ export const PackagesConfigurator: React.FC = () => {
       >
         {copy.badge && (
           <div className="absolute -top-3.5 left-6 sm:left-8 z-20 whitespace-nowrap">
-            <span className="inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-500 to-amber-600 text-white text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-md">
+            <span className="inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-700 to-amber-800 text-white text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-md">
               <Sparkle className="w-3.5 h-3.5" />
               <span>{copy.badge}</span>
             </span>

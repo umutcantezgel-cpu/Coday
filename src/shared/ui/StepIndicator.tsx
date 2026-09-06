@@ -16,7 +16,7 @@ interface StepIndicatorProps {
 }
 
 const StepIndicator: React.FC<StepIndicatorProps> = ({ currentStep, className = '' }) => {
-  const t = useTranslations('common');
+  const t = useTranslations('ui');
   const steps: Step[] = stepIds.map((id) => ({
     id,
     label: t(`steps.${id}`),
