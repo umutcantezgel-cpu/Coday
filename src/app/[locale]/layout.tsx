@@ -25,8 +25,10 @@ const inter = Inter({
   preload: true,
 });
 
-// Both faces stay preloaded with display:'swap'. Measured alternative: dropping
-// the Outfit preload made FCP worse (1.50s -> 1.65s) with no LCP gain.
+// Both faces stay preloaded with display:'swap'. Measured alternatives: dropping
+// the Outfit preload made FCP worse (1.50s -> 1.65s) with no LCP gain;
+// display:'optional' on one or both faces (2026-09) left FCP, LCP and CLS
+// unchanged, so the swap is not what Lighthouse waits for.
 const outfit = Outfit({
   subsets: ['latin'],
   variable: '--font-outfit',

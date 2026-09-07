@@ -30,6 +30,9 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     reactCompiler: true,
+    // NOTE: experimental.inlineCss was measured (2026-09) and rejected: the
+    // 330 kB stylesheet inlined into every document grew /de from 88 kB to
+    // 220 kB on the wire and pushed FCP from 1.50 s to 1.75 s (simulated 4G).
     // NOTE: optimizeCss was removed here — it is inert on the App Router. Next
     // only reaches critters from server/post-process.js, which the Pages Router
     // renderer calls; the served head had zero inlined <style> tags.
